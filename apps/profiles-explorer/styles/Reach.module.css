@@ -70,3 +70,10 @@
 .indicatorSection {
   @apply py-3;
 }
+
+.geogList {
+}
+
+.geogListItem {
+  @apply inline-block;
+}
