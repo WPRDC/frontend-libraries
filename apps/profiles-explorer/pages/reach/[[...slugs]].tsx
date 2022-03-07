@@ -220,33 +220,41 @@ function GeogOverlapListing({ geog }: GeogOverlapListingProps) {
       {!!hoods && !!hoods.length && (
         <div>
           <div className={styles.overlapTitle}>Overlapping Neighborhoods</div>
-          {hoods.map((hood) => (
-            <Link href={`/explore?geog=${hood.slug}`}>
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.overlapLink}
-              >
-                {hood.name}
-              </a>
-            </Link>
-          ))}
+          <ul>
+            {hoods.map((hood) => (
+              <li key={hood.slug}>
+                <Link href={`/explore?geog=${hood.slug}`}>
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.overlapLink}
+                  >
+                    {hood.name}
+                  </a>
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       )}
       {!!munis && !!munis.length && (
         <div>
           <div className={styles.overlapTitle}>Overlapping Towns/Cities</div>
-          {munis.map((muni) => (
-            <Link href={`/explore?geog=${muni.slug}`}>
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.overlapLink}
-              >
-                {muni.name}
-              </a>
-            </Link>
-          ))}
+          <ul>
+            {munis.map((muni) => (
+              <li key={muni.slug}>
+                <Link href={`/explore?geog=${muni.slug}`}>
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.overlapLink}
+                  >
+                    {muni.name}
+                  </a>
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       )}
     </div>
