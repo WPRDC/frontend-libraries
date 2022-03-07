@@ -11,6 +11,7 @@ export function useGeography(geogSlug?: string) {
   const [error, setError] = useState<string>();
 
   useEffect(() => {
+    console.log(geogSlug);
     function handleResponse({ data, error }: ResponsePackage<Geog>) {
       setGeog(data);
       setError(error);

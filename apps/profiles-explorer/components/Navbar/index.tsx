@@ -5,7 +5,9 @@ export default function Navbar() {
   return (
     <div className={styles.wrapper}>
       <div className={styles.branding}>
-        <div className={styles.title}>Profiles</div>
+        <div className={styles.title}>
+          <a href="/">Profiles</a>
+        </div>
         <div className={styles.subtitle}>
           neighborhood statistics at your fingertips
         </div>

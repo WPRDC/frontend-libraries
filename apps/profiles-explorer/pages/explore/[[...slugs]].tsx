@@ -40,21 +40,22 @@ import {
   useProvider,
 } from '@wprdc/toolkit';
 import { GeographyPicker } from '@wprdc-widgets/geography-picker';
+import { useTaxonomy } from '@wprdc-connections/profiles';
 
 export default function Home() {
   // state
-  const [taxonomy, setTaxonomy] = useState<Taxonomy>();
   const [geogLevels, setGeogLevels] = useState<GeogLevel[]>();
   const [geogLevel, setGeogLevel] = useState<GeogLevel>();
-  const [geogSlug, setGeogSlug] = useState<string>(DEFAULT_GEOG.slug);
+  const [geogSlug, setGeogSlug] = useState<string>();
   const [pathSlugs, setPathSlugs] = useState<string[]>([]);
 
   const [domainSlug, subdomainSlug, indicatorSlug, dataVizSlug] = pathSlugs;
 
   // hooks
   const context = useProvider();
+  const { taxonomy } = useTaxonomy('child-health-explorer');
   const { geog } = useGeography(geogSlug);
-
+  console.log({ geogSlug, geog });
   // handling browser state
   const { width } = useWindowSize();
   const onSmallScreen = !!width && width < 768;
@@ -76,7 +77,10 @@ export default function Home() {
 
   // update state when geog param is passed
   useEffect(() => {
-    if (typeof router.query.geog === 'string') setGeogSlug(router.query.geog);
+    if (typeof router.query.geog === 'string') {
+      console.log('UPDATE', router);
+      setGeogSlug(router.query.geog);
+    }
   }, [router.query]);
 
   useEffect(() => {
@@ -85,10 +89,6 @@ export default function Home() {
 
   // initialization
   useEffect(() => {
-    // load up full taxonomy
-    ProfilesAPI.requestTaxonomy().then((response) =>
-      setTaxonomy(response.data),
-    );
     // get available geography levels
     GeoAPI.requestGeoLayers().then(({ data }) => {
       if (!!data && !!data.length) {
@@ -96,8 +96,6 @@ export default function Home() {
         setGeogLevel(data[0]);
       }
     });
-    //
-    handleGeogSelection(DEFAULT_GEOG);
   }, []);
 
   // event handlers
@@ -105,7 +103,7 @@ export default function Home() {
     setGeogLevel(selectedGeogLevel);
   }
 
-  function handleGeogSelection(geog?: GeogBrief) {
+  function handleGeogSelection(geog?: { slug: string }) {
     if (!!geog) {
       const path = router.asPath.split('?')[0];
       router.push(`${path}/?geog=${geog.slug}`);

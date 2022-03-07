@@ -17,7 +17,7 @@ export default function Home() {
               <h1 className={styles.title}>
                 Find information about your neighborhood.
               </h1>
-              <div className={styles.subtitle}>The fut</div>
+              <div className={styles.subtitle}></div>
             </div>
           </div>
           <div className={styles.heroSection}></div>
@@ -36,6 +36,14 @@ export default function Home() {
                 <p className={styles.buttonText}>
                   Explore data and statistics about different areas in Southwest
                   PA.
+                </p>
+              </div>
+            </Link>
+            <Link href="/reach">
+              <div className={styles.bigButton}>
+                <div className={styles.buttonTitle}>REACH/SSPGH</div>
+                <p className={styles.buttonText}>
+                  Explore health data for select neighborhoods in SWPA.
                 </p>
               </div>
             </Link>

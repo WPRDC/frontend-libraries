@@ -63,7 +63,7 @@
 }
 
 .appsMenu {
-  @apply grid grid-cols-3 gap-4;
+  @apply grid grid-cols-4 gap-4;
   @apply mb-6 mt-2;
 }
 
