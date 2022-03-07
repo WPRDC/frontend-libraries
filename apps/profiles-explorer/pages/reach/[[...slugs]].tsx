@@ -110,17 +110,33 @@ const Home: NextPage = () => {
           </div>
           <div className={styles.subtitle}>Indicators of some sort</div>
           <p className={styles.description}>
-            Grandis visus satis manifestums brabeuta est. Candidatus de emeritis
-            gluten, prensionem accentor! Est castus decor, cesaris. Liberi de
-            audax devirginato, attrahendam classis! Neuter spatii nunquam locuss
-            gluten est. Ubi est peritus galatae.
+            Municipal governments have a profound role and responsibility for
+            leading the way to quality of life and equitable access to
+            opportunity in the communities of our region. The University of
+            Pittsburgh’s Graduate School of Public Health, Sustainable
+            Pittsburgh, and the Western Pennsylvania Regional Data Center have
+            collaboratively developed a set of tools that municipal governments
+            in REACH communities can use to improve social equity and reduce
+            health disparities. By pairing civic data about social determinants
+            of health and health outcomes with specific actions that people in
+            municipal governments can take to address them, community leaders
+            can follow a road map informed by local conditions to inclusively
+            advance equity in partnership with community members. The
+            Sustainable PA Municipal Equity Toolkit contains an array of actions
+            taken from the updated Sustainable PA Community Certification. Many
+            of these actions have bearing or impact on the structural and social
+            determinants of health.
           </p>
           <p className={styles.description}>
-            Cum ignigena mori, omnes mineralises transferre brevis, fortis
-            coordinataees. Festus, noster detriuss acceleratrix acquirere de
-            germanus, flavum sectam. Cum demissio volare, omnes classises amor
-            noster, superbus hilotaees. Barbatus, altus mineraliss unus
-            prensionem de albus, pius luba.
+            The project team developed a list of data sources describing
+            resident health and well-being along with structural and social
+            determinants of health. This data allows for each action item
+            described in the toolkit to be informed by data. Our approach also
+            allows for the identification of data gaps, and enables continuous
+            monitoring and improvement. Additionally, comprehensive information
+            on health, well-being and structural and social determinants helps
+            community members understand more about their current conditions,
+            and informs their efforts for change.
           </p>
         </div>
         <div className={styles.mapSection}>

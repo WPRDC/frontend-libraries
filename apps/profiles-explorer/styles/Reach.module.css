@@ -24,7 +24,7 @@
 }
 
 .mapSection {
-  @apply basis-1/2 h-96;
+  @apply basis-1/2;
   @apply border-l-2;
 }
 
