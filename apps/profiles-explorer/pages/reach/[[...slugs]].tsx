@@ -106,9 +106,11 @@ const Home: NextPage = () => {
       <div className={styles.main}>
         <div className={styles.intro}>
           <div className={styles.title}>
-            <a href="/reach">REACH/SSPGH</a>
+            <a href="/reach">Community Data Explorer</a>
           </div>
-          <div className={styles.subtitle}>Indicators of some sort</div>
+          <div className={styles.subtitle}>
+            Indicators to inform municipal equity practices
+          </div>
           <p className={styles.description}>
             Municipal governments have a profound role and responsibility for
             leading the way to quality of life and equitable access to
