@@ -80,6 +80,8 @@ export default function Home() {
     if (typeof router.query.geog === 'string') {
       console.log('UPDATE', router);
       setGeogSlug(router.query.geog);
+    } else {
+      router.push(`${router.pathname}?geog=county-42003`);
     }
   }, [router.query]);
 
