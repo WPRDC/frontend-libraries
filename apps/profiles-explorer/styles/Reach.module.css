@@ -1,6 +1,10 @@
 .wrapper {
-  @apply md:container mx-auto pt-4;
+  @apply w-full;
   @apply overflow-auto;
+}
+
+.subWrapper {
+  @apply md:container mx-auto pt-4;
 }
 
 .main {

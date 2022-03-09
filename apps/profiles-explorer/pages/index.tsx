@@ -41,7 +41,9 @@ export default function Home() {
             </Link>
             <Link href="/reach">
               <div className={styles.bigButton}>
-                <div className={styles.buttonTitle}>REACH/SSPGH</div>
+                <div className={styles.buttonTitle}>
+                  Community Data Explorer
+                </div>
                 <p className={styles.buttonText}>
                   Explore health data for select neighborhoods in SWPA.
                 </p>

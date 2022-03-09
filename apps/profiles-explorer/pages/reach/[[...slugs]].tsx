@@ -27,8 +27,9 @@ import {
 
 import { useRouter } from 'next/router';
 import Link from 'next/link';
+import BlankLayout from '../../components/BlankLayout';
 
-const Home: NextPage = () => {
+const ReachPage: NextPage = () => {
   const [geogBrief, setGeogBrief] = React.useState<GeogBrief>(defaultGeogBrief);
   const [pathSlugs, setPathSlugs] = React.useState<string[]>([]);
 
@@ -103,106 +104,107 @@ const Home: NextPage = () => {
 
   return (
     <div className={styles.wrapper}>
-      <div className={styles.main}>
-        <div className={styles.intro}>
-          <div className={styles.title}>
-            <a href="/reach">Community Data Explorer</a>
+      <div className={styles.subWrapper}>
+        <div className={styles.main}>
+          <div className={styles.intro}>
+            <div className={styles.title}>
+              <a href="/reach">Community Data Explorer</a>
+            </div>
+            <div className={styles.subtitle}>
+              Indicators to inform municipal equity practices
+            </div>
+            <p className={styles.description}>
+              Municipal governments have a profound role and responsibility for
+              leading the way to quality of life and equitable access to
+              opportunity in the communities of our region. The University of
+              Pittsburgh’s Graduate School of Public Health, Sustainable
+              Pittsburgh, and the Western Pennsylvania Regional Data Center have
+              collaboratively developed a set of tools that municipal
+              governments in REACH communities can use to improve social equity
+              and reduce health disparities. By pairing civic data about social
+              determinants of health and health outcomes with specific actions
+              that people in municipal governments can take to address them,
+              community leaders can follow a road map informed by local
+              conditions to inclusively advance equity in partnership with
+              community members. The Sustainable PA Municipal Equity Toolkit
+              contains an array of actions taken from the updated Sustainable PA
+              Community Certification. Many of these actions have bearing or
+              impact on the structural and social determinants of health.
+            </p>
+            <p className={styles.description}>
+              The project team developed a list of data sources describing
+              resident health and well-being along with structural and social
+              determinants of health. This data allows for each action item
+              described in the toolkit to be informed by data. Our approach also
+              allows for the identification of data gaps, and enables continuous
+              monitoring and improvement. Additionally, comprehensive
+              information on health, well-being and structural and social
+              determinants helps community members understand more about their
+              current conditions, and informs their efforts for change.
+            </p>
           </div>
-          <div className={styles.subtitle}>
-            Indicators to inform municipal equity practices
-          </div>
-          <p className={styles.description}>
-            Municipal governments have a profound role and responsibility for
-            leading the way to quality of life and equitable access to
-            opportunity in the communities of our region. The University of
-            Pittsburgh’s Graduate School of Public Health, Sustainable
-            Pittsburgh, and the Western Pennsylvania Regional Data Center have
-            collaboratively developed a set of tools that municipal governments
-            in REACH communities can use to improve social equity and reduce
-            health disparities. By pairing civic data about social determinants
-            of health and health outcomes with specific actions that people in
-            municipal governments can take to address them, community leaders
-            can follow a road map informed by local conditions to inclusively
-            advance equity in partnership with community members. The
-            Sustainable PA Municipal Equity Toolkit contains an array of actions
-            taken from the updated Sustainable PA Community Certification. Many
-            of these actions have bearing or impact on the structural and social
-            determinants of health.
-          </p>
-          <p className={styles.description}>
-            The project team developed a list of data sources describing
-            resident health and well-being along with structural and social
-            determinants of health. This data allows for each action item
-            described in the toolkit to be informed by data. Our approach also
-            allows for the identification of data gaps, and enables continuous
-            monitoring and improvement. Additionally, comprehensive information
-            on health, well-being and structural and social determinants helps
-            community members understand more about their current conditions,
-            and informs their efforts for change.
-          </p>
-        </div>
-        <div className={styles.mapSection}>
-          <Map
-            initialViewState={{
-              zoom: 9.5,
-              longitude: -79.92,
-              latitude: 40.37,
-            }}
-            layerPanelVariant={LayerPanelVariant.None}
-            connections={[menuLayerConnection] as ConnectionCollection}
-            onClick={handleClick}
-            connectionHookArgs={{
-              [ProjectKey.GeoMenu]: {
-                layerItems: geogLevels,
-                layerSelection: selectedGeogLevel,
-                options: {
-                  baseFilter: [
-                    'in',
-                    ['get', 'global_geoid'],
-                    ['literal', REACH_TRACTS],
-                  ],
+          <div className={styles.mapSection}>
+            <Map
+              initialViewState={{
+                zoom: 9.5,
+                longitude: -79.92,
+                latitude: 40.37,
+              }}
+              layerPanelVariant={LayerPanelVariant.None}
+              connections={[menuLayerConnection] as ConnectionCollection}
+              onClick={handleClick}
+              connectionHookArgs={{
+                [ProjectKey.GeoMenu]: {
+                  layerItems: geogLevels,
+                  layerSelection: selectedGeogLevel,
+                  options: {
+                    baseFilter: [
+                      'in',
+                      ['get', 'global_geoid'],
+                      ['literal', REACH_TRACTS],
+                    ],
+                  },
                 },
-              },
-            }}
-          />
-        </div>
-      </div>
-
-      <div className={styles.details}>
-        <div className={styles.geoDetails}>
-          {!!geog && (
-            <div>
-              <div className={styles.geogTitle}>{geog.title}</div>
-            </div>
-          )}
-          {!!geog && <GeogOverlapListing geog={geog} />}
-        </div>
-      </div>
-
-      {!taxonomyIsLoading && !!taxonomy && (
-        <div className={styles.dashboard}>
-          {!!taxonomyIsLoading && (
-            <div className={styles.loader}>
-              <LoadingMessage message="Loading dashboard..." />
-            </div>
-          )}
-
-          {taxonomy && (
-            <TaxonomySection
-              taxonomy={taxonomy}
-              currentDomainSlug={domainSlug}
-              currentSubdomainSlug={subdomainSlug}
-              currentIndicatorSlug={indicatorSlug}
-              currentDataVizSlug={dataVizSlug}
-              onExploreDataViz={handleExploreDataViz}
-              onExploreIndicator={handleExploreIndicator}
-              onTabsChange={handleTabChange}
-              LinkComponent={Link}
+              }}
             />
-          )}
+          </div>
         </div>
-      )}
-      <footer className={styles.footer}></footer>
+
+        <div className={styles.details}>
+          <div className={styles.geoDetails}>
+            {!!geog && (
+              <div>
+                <div className={styles.geogTitle}>{geog.title}</div>
+              </div>
+            )}
+          </div>
+        </div>
+
+        {!taxonomyIsLoading && !!taxonomy && (
+          <div className={styles.dashboard}>
+            {!!taxonomyIsLoading && (
+              <div className={styles.loader}>
+                <LoadingMessage message="Loading dashboard..." />
+              </div>
+            )}
+
+            {taxonomy && (
+              <TaxonomySection
+                taxonomy={taxonomy}
+                currentDomainSlug={domainSlug}
+                currentSubdomainSlug={subdomainSlug}
+                currentIndicatorSlug={indicatorSlug}
+                currentDataVizSlug={dataVizSlug}
+                onExploreDataViz={handleExploreDataViz}
+                onExploreIndicator={handleExploreIndicator}
+                onTabsChange={handleTabChange}
+                LinkComponent={Link}
+              />
+            )}
+          </div>
+        )}
+        <footer className={styles.footer}></footer>
+      </div>
     </div>
   );
 };
@@ -321,4 +323,4 @@ const REACH_TRACTS = [
   '42003552100',
 ];
 
-export default Home;
+export default ReachPage;
