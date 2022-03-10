@@ -3,7 +3,7 @@
   "version": "0.0.2",
   "description": "Form field for text input.",
   "keywords": [],
-  "license": "AGPLv3",
+  "license": "AGPL-3.0-or-later",
   "author": "Steve Saylor &lt;steven.saylor@pitt.edu&gt;",
   "repository": {
     "type": "git",

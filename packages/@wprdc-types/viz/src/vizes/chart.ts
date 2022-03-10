@@ -4,5 +4,5 @@ import { TabularData, DataVizBase } from './common';
 
 export interface ChartViz extends DataVizBase {
   data?: TabularData;
-  vizType: DataVizType.Chart;
+  vizType: DataVizType.BarChart;
 }

@@ -53,7 +53,7 @@ export const defaultVizListBoxProps: ListBoxOptions<
     Icon: RiLineChartLine,
     getIcon: (item) => {
       switch (item.vizType) {
-        case DataVizType.Chart:
+        case DataVizType.BarChart:
           return RiLineChartLine;
         case DataVizType.MiniMap:
           return RiMap2Line;
@@ -69,7 +69,7 @@ export const defaultVizListBoxProps: ListBoxOptions<
     },
     subtitleAccessor: (item: DataVizID) => {
       switch (item.vizType) {
-        case DataVizType.Chart:
+        case DataVizType.BarChart:
           return 'Chart';
         case DataVizType.MiniMap:
           return 'Map';

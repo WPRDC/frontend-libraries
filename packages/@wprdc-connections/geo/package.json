@@ -3,7 +3,7 @@
   "version": "0.0.18",
   "description": "",
   "keywords": [],
-  "license": "AGPLv3",
+  "license": "AGPL-3.0-or-later",
   "author": "Steve Saylor <steven.saylor@pitt.edu>",
   "repository": {
     "type": "git",

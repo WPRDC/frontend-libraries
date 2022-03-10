@@ -17,5 +17,5 @@ export type MiniMapData = null;
 
 export interface MiniMapViz extends DataVizBase {
   options?: MiniMapOptions;
-  vizType: DataVizType.Chart;
+  vizType: DataVizType.MiniMap;
 }
