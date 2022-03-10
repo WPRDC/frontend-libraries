@@ -1,5 +1,7 @@
 import { Provider } from '../packages/@wprdc-components/provider';
 
+import 'mapbox-gl/dist/mapbox-gl.css';
+
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {

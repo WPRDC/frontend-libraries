@@ -52,10 +52,17 @@ export function DataVizCard(props: DataVizCardProps) {
     switch (vizType) {
       case DataVizType.Table:
         return RiTableFill;
-      case DataVizType.Chart:
+      case DataVizType.BarChart:
+      case DataVizType.LineChart:
+      case DataVizType.PieChart:
+      case DataVizType.PyramidChart:
+      case DataVizType.ScatterPlot:
+      case DataVizType.Histogram:
         return RiBarChart2Fill;
       case DataVizType.MiniMap:
         return RiMapFill;
+      case DataVizType.BigValue:
+      case DataVizType.Sentence:
       default:
         return RiNumbersFill;
     }

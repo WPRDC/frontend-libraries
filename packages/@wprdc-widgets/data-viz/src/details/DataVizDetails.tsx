@@ -16,6 +16,7 @@ import { Heading } from '@wprdc-components/heading';
 import { DataVizType } from '@wprdc-types/shared';
 
 import { Message } from '../message';
+import { isVega } from '../util';
 
 export function DataVizDetails(props: DataVizDetailsProps) {
   const {
@@ -33,6 +34,8 @@ export function DataVizDetails(props: DataVizDetailsProps) {
     width: 0,
     height: 0,
   });
+
+  console.log('DEETZ', { props });
 
   return (
     <div className={styles.wrapper}>
@@ -52,7 +55,7 @@ export function DataVizDetails(props: DataVizDetailsProps) {
           <div ref={measureRef}>
             <div
               className={classnames(styles.vizWrapper, {
-                [styles.chartWrapper]: dataViz?.vizType === DataVizType.Chart,
+                [styles.chartWrapper]: isVega(dataViz?.vizType),
                 [styles.mapWrapper]: dataViz?.vizType === DataVizType.MiniMap,
               })}
               aria-label="data presentation"

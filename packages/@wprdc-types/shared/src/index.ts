@@ -32,7 +32,12 @@ export enum ColorScheme {
 
 export enum DataVizType {
   Table = 'Table',
-  Chart = 'Chart',
+  BarChart = 'BarChart',
+  LineChart = 'LineChart',
+  PieChart = 'PieChart',
+  PyramidChart = 'PyramidChart',
+  ScatterPlot = 'ScatterPlot',
+  Histogram = 'Histogram',
   MiniMap = 'MiniMap',
   Sentence = 'Sentence',
   BigValue = 'BigValue',

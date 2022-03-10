@@ -34,7 +34,12 @@ export function getSpecificDataViz(
   if (!dataViz) return undefined;
 
   const componentMap: Record<DataVizType, React.FC<any>> = {
-    [DataVizType.Chart]: Chart,
+    [DataVizType.BarChart]: Chart,
+    [DataVizType.LineChart]: Chart,
+    [DataVizType.PieChart]: Chart,
+    [DataVizType.PyramidChart]: Chart,
+    [DataVizType.ScatterPlot]: Chart,
+    [DataVizType.Histogram]: Chart,
     [DataVizType.BigValue]: BigValue,
     [DataVizType.MiniMap]: MiniMap,
     [DataVizType.Table]: Table,
@@ -113,4 +118,20 @@ function _csvRow(row: RowRecord): string {
   return Object.values(row)
     .map((v) => (typeof v === 'string' ? `"${v}` : v))
     .join(',');
+}
+
+/**
+ * Determine whether a dataViz type uses Vega
+ */
+export function isVega(vizType?: DataVizType): boolean {
+  if (vizType)
+    return [
+      DataVizType.BarChart,
+      DataVizType.LineChart,
+      DataVizType.PieChart,
+      DataVizType.PyramidChart,
+      DataVizType.ScatterPlot,
+      DataVizType.Histogram,
+    ].includes(vizType);
+  return false;
 }
