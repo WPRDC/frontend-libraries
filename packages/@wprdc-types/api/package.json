@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-types/api",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "Collection of TypeScript/JS libraries for use in/with WPRDC projects.",
   "keywords": [],
   "license": "AGPL-3.0-or-later",

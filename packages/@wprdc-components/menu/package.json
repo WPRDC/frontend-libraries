@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-components/menu",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "",
   "keywords": [],
   "license": "AGPL-3.0-or-later",
@@ -80,8 +80,8 @@
     "@react-aria/separator": "^3.1.3",
     "@react-aria/utils": "^3.10.0",
     "@react-stately/tree": "^3.2.0",
-    "@wprdc-components/util": "^0.0.9",
-    "@wprdc-types/menu": "^0.0.9",
-    "@wprdc-types/shared": "^0.0.11"
+    "@wprdc-components/util": "^0.0.10",
+    "@wprdc-types/menu": "^0.0.10",
+    "@wprdc-types/shared": "^0.0.12"
   }
 }

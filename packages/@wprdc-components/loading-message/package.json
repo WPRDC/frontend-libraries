@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-components/loading-message",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "",
   "keywords": [],
   "license": "AGPL-3.0-or-later",
@@ -75,7 +75,7 @@
     "typescript": "^3.9.10"
   },
   "dependencies": {
-    "@wprdc-components/spinner": "^0.0.11",
-    "@wprdc-types/loading-message": "^0.0.10"
+    "@wprdc-components/spinner": "^0.0.12",
+    "@wprdc-types/loading-message": "^0.0.11"
   }
 }

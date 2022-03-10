@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-components/button",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "",
   "keywords": [],
   "license": "AGPL-3.0-or-later",
@@ -76,7 +76,7 @@
   },
   "dependencies": {
     "@react-aria/button": "^3.3.4",
-    "@wprdc-types/button": "^0.0.9",
+    "@wprdc-types/button": "^0.0.10",
     "classnames": "^2.3.1"
   }
 }

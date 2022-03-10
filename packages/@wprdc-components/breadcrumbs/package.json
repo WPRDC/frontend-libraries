@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-components/breadcrumbs",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "",
   "keywords": [],
   "license": "AGPL-3.0-or-later",
@@ -76,7 +76,7 @@
   },
   "dependencies": {
     "@react-aria/breadcrumbs": "^3.1.5",
-    "@wprdc-types/breadcrumbs": "^0.0.9",
+    "@wprdc-types/breadcrumbs": "^0.0.10",
     "classnames": "^2.3.1",
     "react-icons": "^4.3.1"
   }

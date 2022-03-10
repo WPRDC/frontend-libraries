@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-types/data-viz",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "description": "Collection of TypeScript/JS libraries for use in/with WPRDC projects.",
   "keywords": [],
   "license": "AGPL-3.0-or-later",
@@ -75,7 +75,7 @@
   },
   "dependencies": {
     "@types/react": "^17.0.38",
-    "@wprdc-types/geo": "^0.0.12",
-    "@wprdc-types/viz": "^0.0.14"
+    "@wprdc-types/geo": "^0.0.13",
+    "@wprdc-types/viz": "^0.0.15"
   }
 }

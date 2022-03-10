@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-viz/value",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "",
   "keywords": [],
   "license": "AGPL-3.0-or-later",
@@ -75,6 +75,6 @@
     "typescript": "^3.9.10"
   },
   "dependencies": {
-    "@wprdc-types/viz": "^0.0.14"
+    "@wprdc-types/viz": "^0.0.15"
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-widgets/geography-picker",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "description": "",
   "keywords": [],
   "license": "AGPL-3.0-or-later",
@@ -77,16 +77,16 @@
   "dependencies": {
     "@react-aria/button": "^3.3.4",
     "@react-aria/label": "^3.2.1",
-    "@wprdc-components/popover": "^0.0.10",
-    "@wprdc-components/search-box": "^0.0.13",
-    "@wprdc-components/select": "^0.0.15",
-    "@wprdc-components/util": "^0.0.9",
-    "@wprdc-connections/geo": "^0.0.18",
-    "@wprdc-types/connections": "^0.0.11",
-    "@wprdc-types/geo": "^0.0.12",
-    "@wprdc-types/map": "^0.0.11",
-    "@wprdc-types/shared": "^0.0.11",
-    "@wprdc-widgets/map": "^0.0.14",
+    "@wprdc-components/popover": "^0.0.11",
+    "@wprdc-components/search-box": "^0.0.14",
+    "@wprdc-components/select": "^0.0.16",
+    "@wprdc-components/util": "^0.0.10",
+    "@wprdc-connections/geo": "^0.0.19",
+    "@wprdc-types/connections": "^0.0.12",
+    "@wprdc-types/geo": "^0.0.13",
+    "@wprdc-types/map": "^0.0.12",
+    "@wprdc-types/shared": "^0.0.12",
+    "@wprdc-widgets/map": "^0.0.15",
     "react-icons": "^4.3.1"
   }
 }
