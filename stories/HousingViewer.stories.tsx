@@ -8,7 +8,9 @@ import { ProjectIndex } from '@wprdc-types/housecat';
 import {
   affordableHousingProjectConnection,
   defaultAffordableHousingListBoxProps,
+  usePublicHousingProject,
 } from '../packages/@wprdc-connections/housecat';
+import { AHProjectView } from '@wprdc-widgets/ah-project-view';
 
 export default {
   title: 'Tools/Housing Projects Viewer',
@@ -17,6 +19,8 @@ export default {
 
 export const AffordableHousingProjects = () => {
   const [project, setProject] = React.useState<ProjectIndex>();
+
+  const { affordableHousingProject } = usePublicHousingProject(project);
 
   return (
     <div>
@@ -28,16 +32,8 @@ export const AffordableHousingProjects = () => {
         listBoxProps={defaultAffordableHousingListBoxProps}
         onSelection={setProject}
       />
-      {!!project && (
-        <div className="border-2 border-black p-4">
-          <div>
-            <span className="">{project.name} </span>
-            {!!project.propertyId && (
-              <span className="mono text-sm">({project.propertyId})</span>
-            )}
-          </div>
-          <div className="text-sm">{project.propertyStreetAddress}</div>
-        </div>
+      {!!affordableHousingProject && (
+        <AHProjectView project={affordableHousingProject} />
       )}
     </div>
   );

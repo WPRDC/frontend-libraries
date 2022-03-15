@@ -19,6 +19,7 @@ import {
 } from '@wprdc-types/map';
 import { DataVizID } from '@wprdc-types/viz';
 import { AssetType } from '@wprdc-types/neighborhood-assets';
+import { ProjectIndex } from '@wprdc-types/housecat';
 
 export interface ConnectableMapProps extends MapProps {
   onHover?: ConnectedMapEventHandler;
@@ -231,6 +232,7 @@ export interface ConnectionResourcesRecord {
   [ProjectKey.GeoMenu]: GeogBrief[];
   [ProjectKey.Viz]: DataVizID[];
   [ProjectKey.NeighborhoodAssets]: AssetType[];
+  [ProjectKey.Housecat]: ProjectIndex[];
   // todo: add projects here as we need them
 }
 

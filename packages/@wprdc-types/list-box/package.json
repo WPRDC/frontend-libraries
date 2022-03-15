@@ -76,6 +76,7 @@
   "dependencies": {
     "@react-aria/listbox": "^3.4.0",
     "@react-stately/list": "^3.4.1",
+    "@react-types/select": "^3.5.4",
     "@react-types/shared": "^3.10.1",
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",

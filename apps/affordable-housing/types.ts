@@ -1,3 +1,4 @@
 export interface FilterFormValues {
-  'risk-level': string;
+  'risk-level'?: string;
+  watchlist?: string;
 }

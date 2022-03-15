@@ -6,16 +6,20 @@
 import * as React from 'react';
 import { MapFilterForm } from '../parts/MapFilterForm';
 import { MapInterface } from '../parts/MapInterface';
-import { DataDashboard } from '../parts/DataDashboard';
 
 import styles from '../styles/Map.module.css';
 import { Item, Tabs } from '@wprdc/toolkit';
 import { FilterFormValues } from '../types';
+import { usePublicHousingProject } from '@wprdc-connections/housecat';
+import { AHProjectView } from '@wprdc-widgets/ah-project-view';
 
 interface Props {}
 
 function MapPage(props: Props) {
   const [filterParams, setFilterParams] = React.useState<FilterFormValues>();
+  const [currentProject, setCurrentProject] = React.useState<number>();
+
+  const { affordableHousingProject } = usePublicHousingProject(currentProject);
 
   function handleFormChange(params: FilterFormValues) {
     setFilterParams(params);
@@ -32,10 +36,15 @@ function MapPage(props: Props) {
         </Tabs>
       </div>
       <div className={styles.mapSection}>
-        <MapInterface filterParams={filterParams} />
+        <MapInterface
+          filterParams={filterParams}
+          handleProjectSelection={setCurrentProject}
+        />
       </div>
       <div className={styles.dashboardSection}>
-        <DataDashboard />
+        {!!affordableHousingProject && (
+          <AHProjectView project={affordableHousingProject} />
+        )}
       </div>
     </div>
   );

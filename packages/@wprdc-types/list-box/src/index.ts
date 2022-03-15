@@ -14,7 +14,8 @@ import {
 import { CollectionChildren, Node } from '@react-types/shared';
 
 import { ListState } from '@react-stately/list';
-import { Resource } from '@wprdc-types/shared';
+import { ListConnectableComponentProps, Resource } from '@wprdc-types/shared';
+import { AriaSelectProps } from '@react-types/select';
 
 /**
  * Set of list box props to allow parent components to control its appearance.
@@ -74,11 +75,18 @@ export interface ResourceOptionTemplateOptions<T extends Resource> {
 }
 
 // Component Props
-
 export interface ListBoxProps<T, O extends object = {}>
   extends AriaListBoxOptions<T>,
     ListBoxOptions<T, O> {
   children: CollectionChildren<T>;
+}
+
+export interface ListSelectPros<T, O extends object = {}>
+  extends AriaSelectProps<T> {
+  /** Function run when an item is selected */
+  onSelection?: (item: T) => void;
+  /** Props to pass along to underlying list box */
+  listBoxProps?: ListBoxOptions<T, O>;
 }
 
 export interface StatelessListBoxProps<T, O extends object = {}>
@@ -118,4 +126,16 @@ export interface ListBoxState<T> extends ListState<T> {
 
   /** Sets whether the select is focused. */
   setFocused?(isFocused: boolean): void;
+}
+
+export interface ConnectedListBoxProps<
+  T extends Resource,
+  O extends object = {}
+> extends ListConnectableComponentProps<T>,
+    Omit<StatelessListBoxProps<T, O>, 'children'> {
+  label?: string;
+  /** Function run when an item is selected */
+  onSelection?: (item: T) => void;
+  /** Props to pass along to underlying list box */
+  listBoxProps?: ListBoxOptions<T, O>;
 }

@@ -9,6 +9,7 @@ import { HousecatAPI } from './api';
 import { ProjectIndexMapProperties } from '@wprdc-types/housecat';
 
 import styles from './PopupContent.module.css';
+import { RiCommunityFill } from 'react-icons/ri';
 
 interface AffordableHousingLayer extends Resource {}
 
@@ -64,7 +65,6 @@ export const affordableHousingProjectMapConnection: MapPluginConnection<
           !!feature.properties &&
           feature.source === 'all-public-housing-projects'
       );
-
       return features.map(
         ({ properties }) => properties as ProjectIndexMapProperties
       );
@@ -78,9 +78,11 @@ export const affordableHousingProjectMapConnection: MapPluginConnection<
     if (!!items && !!items.length)
       setLegendSection(
         <LegendSection title="Affordable Housing">
-          {items.map((item) => (
-            <LegendItem {...item} />
-          ))}
+          <LegendItem
+            variant="categorical"
+            marker={<RiCommunityFill style={{ height: '100%' }} />}
+            label="Affordable Housing Project"
+          />
         </LegendSection>
       );
     else setLegendSection();

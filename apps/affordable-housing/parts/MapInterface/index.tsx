@@ -21,9 +21,11 @@ import {
 } from '@wprdc/toolkit';
 import { FilterFormValues } from '../../types';
 import { MapRef } from 'react-map-gl';
+import { ConnectedMapEventHandler } from '@wprdc-types/connections';
 
 interface Props {
   filterParams?: FilterFormValues;
+  handleProjectSelection: (id: number) => void;
 }
 
 function makeConnectionHookArgs(filterParams?: FilterFormValues) {
@@ -36,7 +38,7 @@ function makeConnectionHookArgs(filterParams?: FilterFormValues) {
   };
 }
 
-export function MapInterface({ filterParams }: Props) {
+export function MapInterface({ filterParams, handleProjectSelection }: Props) {
   const mapRef = React.useRef<MapRef>(null);
 
   const handleZoomSelect = React.useCallback(
@@ -47,6 +49,13 @@ export function MapInterface({ filterParams }: Props) {
     },
     [],
   );
+
+  const handleClick: ConnectedMapEventHandler = (_, __, toolboxItems) => {
+    if (!!toolboxItems) {
+      const items = toolboxItems[ProjectKey.Housecat];
+      if (!!items && items.length) handleProjectSelection(items[0].id);
+    }
+  };
 
   return (
     <div className={styles.wrapper}>
@@ -90,6 +99,7 @@ export function MapInterface({ filterParams }: Props) {
           connectionHookArgs={{
             [ProjectKey.Housecat]: makeConnectionHookArgs(filterParams),
           }}
+          onClick={handleClick}
         />
       </div>
     </div>

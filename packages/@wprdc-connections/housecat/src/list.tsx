@@ -42,3 +42,20 @@ export const defaultAffordableHousingListBoxProps: ListBoxOptions<
     subtitleAccessor: 'propertyStreetAddress',
   },
 };
+
+export const makeWatchlistConnection = (slug: string) =>
+  ({
+    async load({ signal }) {
+      const res = await fetch(
+        `https://api.profiles.wprdc.org/public-housing/watchlist/${slug}?limit=5000`,
+        { signal }
+      );
+      const json = await res.json();
+
+      return {
+        items: json.projectIndices,
+      };
+    },
+    renderItem: (item) => <Item key={item.id}>{item.name}</Item>,
+    getKey: (item) => item.id.toString(),
+  } as ListConnection<ProjectIndex>);

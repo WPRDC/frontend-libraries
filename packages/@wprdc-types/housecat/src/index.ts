@@ -1,6 +1,16 @@
 /** Primary index of housing projects **/
 import { Resource } from '@wprdc-types/shared';
 
+export interface WatchlistBrief extends Resource {
+  userName: string;
+  items: string[];
+}
+
+export interface Watchlist extends Resource {
+  userName: string;
+  projectIndices: ProjectIndex[];
+}
+
 export interface ProjectIndex extends Resource {
   id: number;
   url: string;
@@ -136,7 +146,7 @@ export interface AllBuildingsFromLIHTCProjects {
 }
 
 export interface HUDInspectionScores {
-  development_code?: string | null;
+  developmentCode?: string | null;
   state?: string | null;
   county?: string | null;
   countyFipsCode?: string | null;
@@ -144,10 +154,10 @@ export interface HUDInspectionScores {
   propertyStreetAddress?: string | null;
   inspectionId?: number | null;
   inspectionPropertyIdMultiformat?: string | null;
-  inspection_score?: number | null;
-  inspection_date?: string | null;
-  participant_code?: string | null;
-  formal_participant_name?: string | null;
+  inspectionScore?: number | null;
+  inspectionDate?: string | null;
+  participantCode?: string | null;
+  formalParticipantName?: string | null;
 }
 
 export interface HUDPublicHousingDevelopments {

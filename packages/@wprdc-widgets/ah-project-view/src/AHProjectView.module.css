@@ -1,0 +1,61 @@
+.wrapper {
+}
+
+.heading {
+}
+
+.title {
+  @apply text-4xl;
+  @apply font-thin;
+}
+
+.propertyID {
+}
+
+.address {
+}
+
+.sectionWrapper {
+  @apply py-4;
+}
+
+.sectionTitle {
+  @apply font-semibold;
+  @apply text-gray-700;
+  @apply text-lg;
+  @apply pb-2;
+}
+
+.bolded {
+  @apply font-semibold;
+}
+
+.itemWrapper {
+  @apply px-2;
+}
+
+.infoTable {
+  @apply table-auto;
+  @apply border;
+  @apply w-full;
+}
+
+.fieldCell {
+  @apply font-semibold;
+  @apply p-1;
+  @apply pr-3;
+}
+
+.valueCell {
+  @apply p-1;
+  @apply pl-1;
+  @apply text-right;
+}
+
+.stringCell {
+  @apply text-left;
+}
+
+tr:first-child > .valueCell {
+  @apply border-t-0 !important;
+}

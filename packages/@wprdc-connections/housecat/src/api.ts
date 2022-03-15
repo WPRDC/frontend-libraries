@@ -2,13 +2,14 @@ import { createAPI } from '@wprdc-connections/api';
 
 import { ResponsePackage, Method } from '@wprdc-types/api';
 import { APIMapBoxResponse } from '@wprdc-types/connections';
-import { ProjectIndexDetails } from '@wprdc-types/housecat';
+import { ProjectIndexDetails, Watchlist } from '@wprdc-types/housecat';
 
 const HOST = 'https://api.profiles.wprdc.org';
 
 export enum Endpoint {
   PHProject = 'public-housing/project',
   PHProjectMap = 'public-housing/vector-map',
+  Watchlist = 'public-housing/watchlist',
 }
 
 const api = createAPI<Endpoint>(HOST);
@@ -52,7 +53,14 @@ export function requestPublicHousingProjectMap(params?: Record<string, any>) {
   );
 }
 
+export function requestWatchlist(slug: string) {
+  return api.callAndProcessEndpoint<Watchlist>(Endpoint.Watchlist, Method.GET, {
+    id: slug,
+  });
+}
+
 export const HousecatAPI = {
   requestAffordableHousingProject,
   requestPublicHousingProjectMap,
+  requestWatchlist,
 };
