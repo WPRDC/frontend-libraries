@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-types/select",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "description": "Collection of TypeScript/JS libraries for use in/with WPRDC projects.",
   "keywords": [],
   "license": "AGPL-3.0-or-later",
@@ -76,6 +76,6 @@
   "dependencies": {
     "@react-types/select": "^3.5.0",
     "@types/react": "^17.0.38",
-    "@wprdc-types/list-box": "^0.0.12"
+    "@wprdc-types/list-box": "^0.0.13"
   }
 }

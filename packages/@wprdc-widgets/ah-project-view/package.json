@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-widgets/ah-project-view",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "keywords": [],
   "license": "AGPL-3.0-or-later",
@@ -77,12 +77,12 @@
     "typescript": "^3.9.10"
   },
   "dependencies": {
-    "@wprdc-connections/housecat": "^0.0.17",
-    "@wprdc-types/connections": "^0.0.12",
+    "@wprdc-connections/housecat": "^0.0.18",
+    "@wprdc-types/connections": "^0.0.13",
     "@wprdc-types/shared": "^0.0.12",
     "classnames": "^2.3.1",
     "marked": "^4.0.12",
-    "sanitize-html": "^2.7.0",
-    "react-icons": "^4.3.1"
+    "react-icons": "^4.3.1",
+    "sanitize-html": "^2.7.0"
   }
 }
