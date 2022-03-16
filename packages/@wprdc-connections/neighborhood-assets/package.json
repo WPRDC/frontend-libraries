@@ -88,5 +88,6 @@
     "@wprdc-types/shared": "^0.0.12",
     "@wprdc-widgets/map": "^0.0.16",
     "chroma-js": "^2.1.2"
-  }
+  },
+  "gitHead": "4ce907548b9290aa52e96b65949072a485bf379b"
 }
