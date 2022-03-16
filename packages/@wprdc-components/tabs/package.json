@@ -78,6 +78,7 @@
     "@react-aria/tabs": "^3.1.0 ",
     "@react-stately/tabs": "^3.0.1",
     "@wprdc-components/util": "^0.0.10",
+    "@wprdc-connections/util": "^0.0.19",
     "@wprdc-types/shared": "^0.0.12",
     "@wprdc-types/tabs": "^0.0.13",
     "classnames": "^2.3.1",
