@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-types/search-box",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "Collection of TypeScript/JS libraries for use in/with WPRDC projects.",
   "keywords": [],
   "license": "AGPL-3.0-or-later",
@@ -77,8 +77,8 @@
     "@react-stately/data": "^3.4.3",
     "@react-types/shared": "^3.10.1",
     "@types/react": "^17.0.38",
-    "@wprdc-types/combo-box": "^0.0.13",
-    "@wprdc-types/list-box": "^0.0.13",
+    "@wprdc-types/combo-box": "^0.0.14",
+    "@wprdc-types/list-box": "^0.0.14",
     "@wprdc-types/shared": "^0.0.12"
   },
   "gitHead": "4ce907548b9290aa52e96b65949072a485bf379b"
