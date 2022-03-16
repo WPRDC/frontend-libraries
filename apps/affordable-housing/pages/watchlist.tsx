@@ -6,12 +6,13 @@ import {
   defaultAffordableHousingProjectMapConnectionProps,
   usePublicHousingProject,
   useWatchlist,
-} from '@wprdc-connections/housecat';
-import { ListSelect } from '@wprdc-components/list-box';
-import { AHProjectView } from '@wprdc-widgets/ah-project-view';
-import { ProjectKey } from '@wprdc-types/shared';
+  ListSelect,
+  AHProjectView,
+  ProjectKey,
+  ConnectedMapEventHandler,
+} from '@wprdc/toolkit';
+
 import { FilterFormValues } from '../types';
-import { ConnectedMapEventHandler } from '@wprdc-types/connections';
 
 interface Props {}
 

@@ -8,14 +8,10 @@ import { MapFilterForm } from '../parts/MapFilterForm';
 import { MapInterface } from '../parts/MapInterface';
 
 import styles from '../styles/Map.module.css';
-import { Item, Tabs } from '@wprdc/toolkit';
 import { FilterFormValues } from '../types';
-import { usePublicHousingProject } from '@wprdc-connections/housecat';
-import { AHProjectView } from '@wprdc-widgets/ah-project-view';
+import { usePublicHousingProject, AHProjectView } from '@wprdc/toolkit';
 
-interface Props {}
-
-function MapPage(props: Props) {
+function MapPage() {
   const [filterParams, setFilterParams] = React.useState<FilterFormValues>();
   const [currentProject, setCurrentProject] = React.useState<number>();
 
