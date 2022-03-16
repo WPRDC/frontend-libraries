@@ -32,6 +32,15 @@ export default function Navbar() {
             <a>Search</a>
           </Link>
         </div>
+        <div className={styles.menuItem}>
+          <a
+            href="https://profiles.wprdc.org/housing"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            Indicators
+          </a>
+        </div>
       </div>
     </div>
   );

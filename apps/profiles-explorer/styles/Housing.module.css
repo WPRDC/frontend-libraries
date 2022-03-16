@@ -8,13 +8,11 @@
 }
 
 .main {
-  @apply flex flex-row;
+  @apply pb-4;
 }
 
 .intro {
-  @apply basis-1/2;
   @apply pb-4;
-  @apply min-h-[500px];
 }
 
 .title {
@@ -27,6 +25,7 @@
 
 .description {
   @apply pt-6;
+  @apply w-2/3;
 }
 
 .mapSection {
@@ -45,6 +44,7 @@
 }
 
 .geogTitle {
+  @apply mt-4;
   @apply font-semibold text-3xl;
 }
 

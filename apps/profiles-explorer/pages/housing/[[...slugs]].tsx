@@ -2,7 +2,7 @@ import React from 'react';
 
 import type { NextPage } from 'next';
 
-import styles from '../../styles/Reach.module.css';
+import styles from '../../styles/Housing.module.css';
 
 import {
   Map,
@@ -28,6 +28,7 @@ import {
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import BlankLayout from '../../components/BlankLayout';
+import { GeographyPicker } from '@wprdc-widgets/geography-picker';
 
 const ReachPage: NextPage = () => {
   const [geogBrief, setGeogBrief] = React.useState<GeogBrief>(defaultGeogBrief);
@@ -39,7 +40,7 @@ const ReachPage: NextPage = () => {
 
   function handleTabChange(domain: React.Key): void {
     router.push(
-      `/reach/${domain}/${serializeParams(router.query)}`,
+      `/housing/${domain}/${serializeParams(router.query)}`,
       undefined,
       {
         shallow: true,
@@ -83,7 +84,7 @@ const ReachPage: NextPage = () => {
 
   function handleExploreDataViz(dataViz: DataVizBase): void {
     router.push(
-      `/reach/${domainSlug}/${subdomainSlug}/${indicatorSlug}/${
+      `/housing/${domainSlug}/${subdomainSlug}/${indicatorSlug}/${
         dataViz.slug
       }/${serializeParams(router.query)}`,
     );
@@ -95,7 +96,7 @@ const ReachPage: NextPage = () => {
       domain = indicator.hierarchies[0].domain.slug;
       subdomain = indicator.hierarchies[0].subdomain.slug;
       router.push(
-        `/reach/${domain}/${subdomain}/${indicator.slug}/${serializeParams(
+        `/housing/${domain}/${subdomain}/${indicator.slug}/${serializeParams(
           router.query,
         )}`,
       );
@@ -108,48 +109,33 @@ const ReachPage: NextPage = () => {
         <div className={styles.main}>
           <div className={styles.intro}>
             <div className={styles.title}>
-              <a href="/reach">Housing Indicators</a>
+              <a href="/housing">Housing Indicators</a>
             </div>
             <div className={styles.subtitle}>
               Indicators to inform affordable housing work
             </div>
-            <p className={styles.description}></p>
-            <p className={styles.description}></p>
-          </div>
-          <div className={styles.mapSection}>
-            <Map
-              initialViewState={{
-                zoom: 9.5,
-                longitude: -79.92,
-                latitude: 40.37,
-              }}
-              layerPanelVariant={LayerPanelVariant.None}
-              connections={[menuLayerConnection] as ConnectionCollection}
-              onClick={handleClick}
-              connectionHookArgs={{
-                [ProjectKey.GeoMenu]: {
-                  layerItems: geogLevels,
-                  layerSelection: selectedGeogLevel,
-                  options: {
-                    baseFilter: [
-                      'in',
-                      ['get', 'global_geoid'],
-                      ['literal', REACH_TRACTS],
-                    ],
-                  },
-                },
-              }}
-            />
+            <p className={styles.description}>
+              Flavum, clemens advenas virtualiter imperium de domesticus, alter
+              lanista! Cum candidatus peregrinatione, omnes abaculuses pugna
+              barbatus, domesticus accolaes! Cur lamia velum? prarere
+              virtualiter ducunt ad azureus lanista! Sensorem potus foris ducunt
+              ad alter hibrida. homos studere!
+            </p>
+            <p className={styles.description}>
+              Cum axona mori, omnes particulaes imperium nobilis, brevis
+              amicitiaes. Altus agripeta sensim apertos accentor est. Lotus
+              byssus una visums apolloniates est. Flavum navis aliquando amors
+              zirbus est. sunt classises examinare nobilis, velox danistaes.
+              abaculuss tolerare!
+            </p>
           </div>
         </div>
 
         <div className={styles.details}>
           <div className={styles.geoDetails}>
-            {!!geog && (
-              <div>
-                <div className={styles.geogTitle}>{geog.title}</div>
-              </div>
-            )}
+            <GeographyPicker onSelection={setGeogBrief} />
+
+            {!!geog && <div className={styles.geogTitle}>{geog.title}</div>}
           </div>
         </div>
 
@@ -255,45 +241,5 @@ function GeogOverlapListing({ geog }: GeogOverlapListingProps) {
 }
 
 const selectedGeogLevel: Set<React.Key> = new Set([GeographyType.Tract]);
-
-const REACH_TRACTS = [
-  '42003220600',
-  '42003250300',
-  '42003250900',
-  '42003261400',
-  '42003262000',
-  '42003562700',
-  '42003563200',
-  '42003030500',
-  '42003050100',
-  '42003050900',
-  '42003051100',
-  '42003101600',
-  '42003101700',
-  '42003120300',
-  '42003120400',
-  '42003130100',
-  '42003130200',
-  '42003130300',
-  '42003130400',
-  '42003130600',
-  '42003560600',
-  '42003561000',
-  '42003561100',
-  '42003561200',
-  '42003561500',
-  '42003486700',
-  '42003492700',
-  '42003492800',
-  '42003492900',
-  '42003504100',
-  '42003510000',
-  '42003512800',
-  '42003514000',
-  '42003551200',
-  '42003551900',
-  '42003552000',
-  '42003552100',
-];
 
 export default ReachPage;
