@@ -14,6 +14,7 @@ import { ConnectedMapEventHandler } from '@wprdc-types/connections';
 import { ListSelect } from '@wprdc-components/list-box';
 import { AHProjectView } from '@wprdc-widgets/ah-project-view';
 import { Item } from '@wprdc-components/util';
+import { LayerPanelVariant } from '@wprdc-types/map';
 
 interface Props {}
 
@@ -47,6 +48,7 @@ function Watchlist(props: Props) {
       </div>
       <div className={styles.mapSection}>
         <Map
+          layerPanelVariant={LayerPanelVariant.None}
           onClick={handleClick}
           connections={[affordableHousingProjectMapConnection]}
           connectionHookArgs={{

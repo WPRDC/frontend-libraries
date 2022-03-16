@@ -23,6 +23,7 @@ import { ProjectIndex } from '@wprdc-types/housecat';
 import { Map } from '@wprdc-widgets/map';
 
 import { FilterFormValues } from '../../types';
+import { LayerPanelVariant } from '@wprdc-types/map';
 
 interface Props {
   filterParams?: FilterFormValues;
@@ -94,6 +95,7 @@ export function MapInterface({ filterParams, handleProjectSelection }: Props) {
       </div>
       <div className={styles.mapSection}>
         <Map
+          layerPanelVariant={LayerPanelVariant.None}
           ref={mapRef}
           connections={[affordableHousingProjectMapConnection]}
           connectionHookArgs={{
