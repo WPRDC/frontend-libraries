@@ -1,9 +1,11 @@
 .wrapper {
-  @apply flex flex-nowrap flex-col justify-center items-stretch h-full;
+  @apply flex flex-nowrap flex-col;
+  @apply justify-center items-stretch h-full;
 }
 
 .mapSection {
   @apply flex-grow self-auto;
+  @apply border border-black border-b-0;
 }
 
 .timeSection {
@@ -11,6 +13,7 @@
 }
 
 .menuSection {
+  @apply px-3 pb-1;
   @apply flex;
 }
 

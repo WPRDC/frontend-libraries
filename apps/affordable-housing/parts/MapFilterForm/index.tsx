@@ -50,6 +50,7 @@ export function MapFilterForm({ onSubmit }: Props) {
                     }}
                     errorMessage={meta.touched && meta.error}
                   >
+                    <Item key="">---</Item>
                     <Item key="future">Subsidy expiration 5+ years away</Item>
                     <Item key="5yr">Subsidy expiration within 5 years</Item>
                     <Item key="3yr">Subsidy expiration within 3 years</Item>

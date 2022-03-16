@@ -41,14 +41,12 @@ function makeConnectionHookArgs(filterParams?: FilterFormValues) {
 export function MapInterface({ filterParams, handleProjectSelection }: Props) {
   const mapRef = React.useRef<MapRef>(null);
 
-  const handleZoomSelect = React.useCallback(
-    ({ centroid }: { centroid?: [number, number] }) => {
+  const handleZoomSelect = (zoom: number) =>
+    React.useCallback(({ centroid }: { centroid?: [number, number] }) => {
       if (!!centroid) {
-        mapRef.current?.flyTo({ center: centroid, zoom: 11, duration: 1000 });
+        mapRef.current?.flyTo({ center: centroid, zoom, duration: 1300 });
       }
-    },
-    [],
-  );
+    }, []);
 
   const handleClick: ConnectedMapEventHandler = (_, __, toolboxItems) => {
     if (!!toolboxItems) {
@@ -70,27 +68,28 @@ export function MapInterface({ filterParams, handleProjectSelection }: Props) {
               aria-label="zoom to zip code"
               id="zip-code-zoom"
               connection={new GeographyConnection(GeographyType.ZCTA, 100)}
-              onSelection={handleZoomSelect}
+              onSelection={handleZoomSelect(14)}
             />
           </div>
           <div className={styles.zoomSection}>
             <ConnectedSelect<GeogBrief>
-              label="Neighborhood"
+              label="Pittsburgh Neighborhood"
               aria-label="zoom to neighborhood"
               connection={
                 new GeographyConnection(GeographyType.Neighborhood, 100)
               }
-              onSelection={handleZoomSelect}
+              onSelection={handleZoomSelect(14)}
+            />
+          </div>
+
+          <div className={styles.searchBox}>
+            <ConnectedSearchBox<ProjectIndex>
+              label="Project"
+              connection={affordableHousingProjectConnection}
+              onSelection={handleZoomSelect(16)}
             />
           </div>
         </fieldset>
-        <div className={styles.searchBox}>
-          <ConnectedSearchBox<ProjectIndex>
-            label="Project"
-            connection={affordableHousingProjectConnection}
-            onSelection={handleZoomSelect}
-          />
-        </div>
       </div>
       <div className={styles.mapSection}>
         <Map

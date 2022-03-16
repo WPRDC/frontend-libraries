@@ -30,7 +30,6 @@ function Watchlist(props: Props) {
       if (!!items && items.length) setCurrentProject(items[0].id);
     }
   };
-
   return (
     <div className={styles.wrapper}>
       <div className={styles.menuSection}>
@@ -55,8 +54,18 @@ function Watchlist(props: Props) {
         />
       </div>
       <div className={styles.dashboardSection}>
-        {!!affordableHousingProject && (
+        {!!affordableHousingProject ? (
           <AHProjectView project={affordableHousingProject} />
+        ) : (
+          <div className={styles.infoSection}>
+            <h2 className={styles.infoTitle}>
+              Find information on affordable housing
+            </h2>
+            <p className={styles.infoText}>
+              Filter the data or zoom the map to locate the affordable housing
+              project you are interested in.
+            </p>
+          </div>
         )}
       </div>
     </div>

@@ -9,9 +9,19 @@
   @apply font-thin;
 }
 
-.propertyID {
+.topBar {
+  @apply flex w-full;
 }
-
+.IDSection {
+  @apply text-xs;
+  @apply flex-grow;
+}
+.propertyID {
+  @apply font-medium;
+}
+.bolded {
+  @apply font-semibold;
+}
 .address {
 }
 
@@ -24,10 +34,6 @@
   @apply text-gray-700;
   @apply text-lg;
   @apply pb-2;
-}
-
-.bolded {
-  @apply font-semibold;
 }
 
 .itemWrapper {
@@ -52,10 +58,18 @@
   @apply text-right;
 }
 
+.notApp {
+  @apply italic text-gray-700;
+}
+
 .stringCell {
   @apply text-left;
 }
 
 tr:first-child > .valueCell {
   @apply border-t-0 !important;
+}
+
+.menuSection {
+  @apply print:hidden;
 }

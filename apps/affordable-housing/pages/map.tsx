@@ -28,12 +28,8 @@ function MapPage(props: Props) {
   return (
     <div className={styles.wrapper}>
       <div className={styles.menuSection}>
-        <Tabs aria-label="menu sections">
-          <Item title="Filter">
-            <MapFilterForm onSubmit={handleFormChange} />
-          </Item>
-          <Item title="Layer">TBD</Item>
-        </Tabs>
+        <h2 className={styles.filterTitle}>Filter</h2>
+        <MapFilterForm onSubmit={handleFormChange} />
       </div>
       <div className={styles.mapSection}>
         <MapInterface
@@ -42,8 +38,18 @@ function MapPage(props: Props) {
         />
       </div>
       <div className={styles.dashboardSection}>
-        {!!affordableHousingProject && (
+        {!!affordableHousingProject ? (
           <AHProjectView project={affordableHousingProject} />
+        ) : (
+          <div className={styles.infoSection}>
+            <h2 className={styles.infoTitle}>
+              Find information on affordable housing
+            </h2>
+            <p className={styles.infoText}>
+              Filter the data or zoom the map to locate the affordable housing
+              project you are interested in.
+            </p>
+          </div>
         )}
       </div>
     </div>

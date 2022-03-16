@@ -114,18 +114,7 @@ export const affordableHousingProjectMapConnection: MapPluginConnection<
       );
     return null;
   },
-  makeClickContent: (clickedItems) => {
-    if (!!clickedItems && !!clickedItems.length)
-      return (
-        <div>
-          <div className={styles.title}>
-            {clickedItems[0]['hud_property_name']}
-          </div>
-          <div className={styles.details}>
-            {clickedItems[0]['property_street_address']}
-          </div>
-        </div>
-      );
+  makeClickContent: () => {
     return null;
   },
 };

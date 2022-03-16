@@ -8,11 +8,14 @@ import styles from './AHProjectView.module.css';
 import { LoadingMessage } from '@wprdc-components/loading-message';
 import { ProjectIndexDetails } from '@wprdc-types/housecat';
 
+import { RiPrinterFill } from 'react-icons/ri';
+
 import {
   affordableHousingSchema,
   SchemaItem,
   SchemaSection,
 } from './housingSchema';
+import { Button } from '@wprdc-components/button';
 
 export interface AHProjectViewProps {
   project: ProjectIndexDetails;
@@ -26,17 +29,34 @@ export const AHProjectView: React.FC<AHProjectViewProps> = ({
   if (!!isLoading) return <LoadingMessage />;
   if (!project) return <div />;
 
+  function handlePrint() {
+    if (!!window) {
+      window.print();
+    }
+  }
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.heading}>
         <div>
+          <div className={styles.topBar}>
+            <div className={styles.IDSection}>
+              {!!project.propertyId && (
+                <>
+                  <span className={styles.bolded}>ID: </span>
+                  <span className={styles.propertyID}>
+                    {project.propertyId}
+                  </span>
+                </>
+              )}
+            </div>
+            <div className={styles.menuSection}>
+              <Button onPress={handlePrint}>
+                <RiPrinterFill />
+              </Button>
+            </div>
+          </div>
           <h2 className={styles.title}>{project.name} </h2>
-          {!!project.propertyId && (
-            <>
-              <span className={styles.bolded}>ID: </span>
-              <span className={styles.propertyID}>{project.propertyId}</span>
-            </>
-          )}
         </div>
         <div className={styles.address}>{project.propertyStreetAddress}</div>
 
@@ -76,27 +96,31 @@ function MiniTable<T>(props: TableProps<T>) {
   return (
     <table className={styles.infoTable}>
       <tbody>
-        {schemaEntry.items.map(({ accessor, label, format }) => (
-          <tr>
-            <td className={styles.fieldCell}>{label}</td>
-            <td
-              className={classNames(styles.valueCell, {
-                [styles.stringCell]:
-                  !!format && ['string', 'date'].includes(format),
-              })}
-            >
-              {formatValue({ format, accessor, label }, record)}
-            </td>
-          </tr>
-        ))}
+        {schemaEntry.items.map(({ accessor, label, format }) => {
+          const displayValue = formatValue({ format, accessor, label }, record);
+          return (
+            <tr>
+              <td className={styles.fieldCell}>{label}</td>
+              <td
+                className={classNames(styles.valueCell, {
+                  [styles.notApp]: displayValue === 'N/A',
+                })}
+              >
+                {displayValue}
+              </td>
+            </tr>
+          );
+        })}
       </tbody>
     </table>
   );
 }
 
 function formatValue<T>({ format, accessor }: SchemaItem<T>, record: T) {
-  const value =
+  const value: React.ReactNode | undefined =
     typeof accessor === 'function' ? accessor(record) : record[accessor];
+
+  if (value === null || value === undefined || value === '') return 'N/A';
 
   switch (format) {
     case 'percent':

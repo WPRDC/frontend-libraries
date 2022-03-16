@@ -6,6 +6,7 @@ import { NextPage } from 'next';
 import { ReactElement, ReactNode } from 'react';
 
 import 'mapbox-gl/dist/mapbox-gl.css';
+import Layout from '../components/Layout';
 type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode;
 };
@@ -21,7 +22,9 @@ const MAPBOX_KEY =
 function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   return (
     <Provider usingSSR mapboxAPIToken={MAPBOX_KEY}>
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </Provider>
   );
 }

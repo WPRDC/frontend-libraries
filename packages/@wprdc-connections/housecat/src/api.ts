@@ -24,6 +24,7 @@ export function requestAffordableHousingProject(
   projectID: null | undefined,
   params?: Record<string, string>
 ): Promise<ResponsePackage<ProjectIndexDetails[]>>;
+
 /**
  * Request project data details or a list of projects
  *
