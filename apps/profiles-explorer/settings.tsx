@@ -1,4 +1,4 @@
-import { GeogBrief, GeogLevel, GeographyType } from '@wprdc/toolkit';
+import { GeogBrief, GeographyType } from '@wprdc-types/geo';
 
 export const DEFAULT_GEOG: GeogBrief = {
   id: 104,

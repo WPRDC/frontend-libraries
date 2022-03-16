@@ -4,7 +4,8 @@
  *
  */
 import * as React from 'react';
-import { Tabs, Item } from '@wprdc/toolkit';
+import { Tabs } from '@wprdc-components/tabs';
+import { Item } from '@wprdc-components/util';
 
 interface Props {}
 

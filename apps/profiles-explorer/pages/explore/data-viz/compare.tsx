@@ -1,21 +1,16 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 
-import {
-  ConnectedSearchBox,
-  DataViz,
-  dataVizConnection,
-  DataVizID,
-  DataVizVariant,
-  defaultVizListBoxProps,
-  GeogBrief,
-  GeographyPicker,
-  serializeParams,
-  useDataViz,
-  useGeography,
-} from '@wprdc/toolkit';
-
 import styles from '../../../styles/Compare.module.css';
+import { useGeography } from '@wprdc-connections/geo';
+import { dataVizConnection, defaultVizListBoxProps, useDataViz } from '@wprdc-connections/viz';
+import { GeogBrief } from '@wprdc-types/geo';
+import { serializeParams } from '@wprdc-connections/api';
+import { DataVizID } from '@wprdc-types/viz';
+import { ConnectedSearchBox } from '@wprdc-components/search-box';
+import { GeographyPicker } from '@wprdc-widgets/geography-picker';
+import { DataVizVariant } from '@wprdc-types/data-viz';
+import { DataViz } from '@wprdc-widgets/data-viz';
 
 export default function IndicatorComparisonPage() {
   const [dataVizSlug, setDataVizSlug] = useState<string>();

@@ -11,8 +11,13 @@
   @apply flex flex-row;
 }
 
+.mapSection {
+  @apply basis-2/3;
+  @apply border-l-2;
+}
+
 .intro {
-  @apply basis-1/2;
+  @apply basis-1/3;
   @apply pb-4;
   @apply min-h-[500px];
 }
@@ -27,11 +32,6 @@
 
 .description {
   @apply pt-6;
-}
-
-.mapSection {
-  @apply basis-1/2;
-  @apply border-l-2;
 }
 
 .details {

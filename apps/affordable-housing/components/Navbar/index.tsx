@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import styles from './Navbar.module.css';
-// import { Button } from '@wprdc/toolkit';
 
 export default function Navbar() {
   return (

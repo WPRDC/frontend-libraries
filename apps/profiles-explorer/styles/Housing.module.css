@@ -9,9 +9,12 @@
 
 .main {
   @apply pb-4;
+  @apply flex flex-row;
 }
 
 .intro {
+  @apply basis-1/2;
+
   @apply pb-4;
 }
 

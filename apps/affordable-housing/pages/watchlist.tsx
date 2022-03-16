@@ -1,18 +1,19 @@
 import * as React from 'react';
 import styles from '../styles/Watchlist.module.css';
-import { Item, Map } from '@wprdc/toolkit';
+
+import { FilterFormValues } from '../types';
+import { ProjectKey } from '@wprdc-types/shared';
 import {
   affordableHousingProjectMapConnection,
   defaultAffordableHousingProjectMapConnectionProps,
   usePublicHousingProject,
   useWatchlist,
-  ListSelect,
-  AHProjectView,
-  ProjectKey,
-  ConnectedMapEventHandler,
-} from '@wprdc/toolkit';
-
-import { FilterFormValues } from '../types';
+} from '@wprdc-connections/housecat';
+import { Map } from '@wprdc-widgets/map';
+import { ConnectedMapEventHandler } from '@wprdc-types/connections';
+import { ListSelect } from '@wprdc-components/list-box';
+import { AHProjectView } from '@wprdc-widgets/ah-project-view';
+import { Item } from '@wprdc-components/util';
 
 interface Props {}
 
@@ -25,6 +26,7 @@ function Watchlist(props: Props) {
   function handleSelect(x: React.Key) {
     setCurrentProject(parseInt(x as string));
   }
+
   const handleClick: ConnectedMapEventHandler = (_, __, toolboxItems) => {
     if (!!toolboxItems) {
       const items = toolboxItems[ProjectKey.Housecat];

@@ -2,15 +2,15 @@ import React from 'react';
 
 import type { NextPage } from 'next';
 import styles from '../styles/Search.module.css';
+import { ResourceOptionTemplateOptions } from '@wprdc-types/list-box';
 import {
   affordableHousingProjectConnection,
   defaultAffordableHousingListBoxProps,
   usePublicHousingProject,
-  AHProjectView,
-  ProjectIndex,
-  ResourceOptionTemplateOptions,
-  ConnectedSearchBox,
-} from '@wprdc/toolkit';
+} from '@wprdc-connections/housecat';
+import { ConnectedSearchBox } from '@wprdc-components/search-box';
+import { AHProjectView } from '@wprdc-widgets/ah-project-view';
+import { ProjectIndex } from '@wprdc-types/housecat';
 
 const SearchPage: NextPage = () => {
   const [currentProject, setCurrentProject] = React.useState<ProjectIndex>();

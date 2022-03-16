@@ -1,12 +1,13 @@
 import '../styles/globals.css';
 
-import { Provider } from '@wprdc/toolkit';
 import { AppProps } from 'next/app';
 import { NextPage } from 'next';
 import { ReactElement, ReactNode } from 'react';
 
 import 'mapbox-gl/dist/mapbox-gl.css';
 import Layout from '../components/Layout';
+import { Provider } from '@wprdc-components/provider';
+
 type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode;
 };

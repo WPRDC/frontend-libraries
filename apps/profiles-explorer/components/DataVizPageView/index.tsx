@@ -1,23 +1,24 @@
-import { DataVizVariant, ErrorMessage, LoadingMessage } from '@wprdc/toolkit';
 import { useRouter } from 'next/router';
 import { useEffect, useMemo, useState } from 'react';
-
-import {
-  useGeography,
-  dataVizConnection,
-  defaultVizListBoxProps,
-  useDataViz,
-  ConnectedSearchBox,
-  GeogBrief,
-  serializeParams,
-  DataVizID,
-  DataViz,
-} from '@wprdc/toolkit';
 
 import styles from '../../styles/ItemPage.module.css';
 import DataVizLandingPage from '../../parts/DataVizLandingPage';
 import { DEFAULT_GEOG_SLUG } from '../../settings';
 import { GeographyPicker } from '@wprdc-widgets/geography-picker';
+import { DataVizVariant } from '@wprdc-types/data-viz';
+import {
+  dataVizConnection,
+  defaultVizListBoxProps,
+  useDataViz,
+} from '@wprdc-connections/viz';
+import { ConnectedSearchBox } from '@wprdc-components/search-box';
+import { useGeography } from '@wprdc-connections/geo';
+import { serializeParams } from '@wprdc-connections/api';
+import { GeogBrief } from '@wprdc-types/geo';
+import { LoadingMessage } from '@wprdc-components/loading-message';
+import { ErrorMessage } from '@wprdc-components/error-message';
+import { DataVizID } from '@wprdc-types/viz';
+import { DataViz } from '@wprdc-widgets/data-viz';
 
 export default function DataVizPageView({ embed }: { embed?: boolean }) {
   const [slug, setSlug] = useState<string>();

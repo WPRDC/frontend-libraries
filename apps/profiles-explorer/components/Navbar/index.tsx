@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import styles from './Navbar.module.css';
-// import { Button } from '@wprdc/toolkit';
 
 export default function Navbar() {
   return (
@@ -8,11 +7,11 @@ export default function Navbar() {
       <div className={styles.branding}>
         <div className={styles.title}>
           <Link href="/">
-            <a>Profiles</a>
+            <a>Community Profiles</a>
           </Link>
         </div>
         <div className={styles.subtitle}>
-          neighborhood statistics at your fingertips
+          Directory of all WPRDC indicators for Southwestern PA
         </div>
       </div>
       <div className={styles.filler} />

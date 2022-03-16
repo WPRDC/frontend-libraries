@@ -1,5 +1,7 @@
 .wrapper {
-  @apply w-full h-16 flex-none bg-secondary-200 p-2 flex shadow-lg;
+  @apply w-full h-20 flex-none p-2 px-5 flex shadow-lg;
+  @apply bg-secondary-800;
+  @apply text-white;
 }
 
 .branding {
@@ -8,13 +10,13 @@
 .filler {
   @apply flex-grow;
 }
-
 .title {
-  @apply text-xl font-bold;
+  @apply text-3xl font-semibold;
 }
 
 .subtitle {
   @apply text-sm italic;
+  @apply text-gray-200;
 }
 
 .menu {

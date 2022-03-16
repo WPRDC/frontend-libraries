@@ -49,22 +49,14 @@ export default function Home() {
                 </p>
               </div>
             </Link>
-            <a href="https://tools.wprdc.org/greenprint">
+            <Link href="/housing">
               <div className={styles.bigButton}>
-                <div className={styles.buttonTitle}>Greenprint</div>
+                <div className={styles.buttonTitle}>Housing Indicators</div>
                 <p className={styles.buttonText}>
-                  Make maps with environmental data.
+                  Community-level indicators focused on housing.
                 </p>
               </div>
-            </a>
-            <a href="https://assets.wprdc.org">
-              <div className={styles.bigButton}>
-                <div className={styles.buttonTitle}>Asset Map</div>
-                <p className={styles.buttonText}>
-                  Explore community asset and place of interest data.
-                </p>
-              </div>
-            </a>
+            </Link>
           </div>
 
           <h2 className={styles.sectionTitle}>Tools</h2>

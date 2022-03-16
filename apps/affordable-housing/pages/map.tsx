@@ -9,7 +9,8 @@ import { MapInterface } from '../parts/MapInterface';
 
 import styles from '../styles/Map.module.css';
 import { FilterFormValues } from '../types';
-import { usePublicHousingProject, AHProjectView } from '@wprdc/toolkit';
+import { usePublicHousingProject } from '@wprdc-connections/housecat';
+import { AHProjectView } from '@wprdc-widgets/ah-project-view';
 
 function MapPage() {
   const [filterParams, setFilterParams] = React.useState<FilterFormValues>();

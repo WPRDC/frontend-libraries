@@ -6,22 +6,23 @@
 import * as React from 'react';
 
 import styles from './MapInterface.module.css';
+import { MapRef } from 'react-map-gl';
+
+import { ConnectedMapEventHandler } from '@wprdc-types/connections';
 import {
   affordableHousingProjectConnection,
   affordableHousingProjectMapConnection,
-  ConnectedSearchBox,
-  ConnectedSelect,
   defaultAffordableHousingProjectMapConnectionProps,
-  GeogBrief,
-  GeographyConnection,
-  GeographyType,
-  Map,
-  ProjectIndex,
-  ProjectKey,
-} from '@wprdc/toolkit';
+} from '@wprdc-connections/housecat';
+import { ProjectKey } from '@wprdc-types/shared';
+import { ConnectedSelect } from '@wprdc-components/select';
+import { GeogBrief, GeographyType } from '@wprdc-types/geo';
+import { GeographyConnection } from '@wprdc-connections/geo';
+import { ConnectedSearchBox } from '@wprdc-components/search-box';
+import { ProjectIndex } from '@wprdc-types/housecat';
+import { Map } from '@wprdc-widgets/map';
+
 import { FilterFormValues } from '../../types';
-import { MapRef } from 'react-map-gl';
-import { ConnectedMapEventHandler } from '@wprdc-types/connections';
 
 interface Props {
   filterParams?: FilterFormValues;

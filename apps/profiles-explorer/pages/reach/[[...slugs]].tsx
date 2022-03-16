@@ -4,30 +4,25 @@ import type { NextPage } from 'next';
 
 import styles from '../../styles/Reach.module.css';
 
-import {
-  Map,
-  Geog,
-  GeogBrief,
-  GeogLevel,
-  GeographyType,
-  Indicator,
-  DataVizBase,
-  useProvider,
-  menuLayerConnection,
-  useGeography,
-  useTaxonomy,
-  ConnectedMapEventHandler,
-  ConnectionCollection,
-  ProjectKey,
-  LayerPanelVariant,
-  LoadingMessage,
-  TaxonomySection,
-  serializeParams,
-} from '@wprdc/toolkit';
-
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import BlankLayout from '../../components/BlankLayout';
+
+import { ProjectKey } from '@wprdc-types/shared';
+import { LayerPanelVariant } from '@wprdc-types/map';
+import {
+  ConnectedMapEventHandler,
+  ConnectionCollection,
+} from '@wprdc-types/connections';
+import { TaxonomySection } from '@wprdc-widgets/taxonomy-section';
+import { Geog, GeogBrief, GeogLevel, GeographyType } from '@wprdc-types/geo';
+import { DataVizBase } from '@wprdc-types/viz';
+import { Indicator } from '@wprdc-types/profiles';
+import { useTaxonomy } from '@wprdc-connections/profiles';
+import { menuLayerConnection, useGeography } from '@wprdc-connections/geo';
+import { serializeParams } from '@wprdc-connections/api';
+import { useProvider } from '@wprdc-components/provider';
+import { LoadingMessage } from '@wprdc-components/loading-message';
+import { Map } from '@wprdc-widgets/map';
 
 const ReachPage: NextPage = () => {
   const [geogBrief, setGeogBrief] = React.useState<GeogBrief>(defaultGeogBrief);

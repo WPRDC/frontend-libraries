@@ -2,45 +2,39 @@ import Head from 'next/head';
 import Link from 'next/link';
 
 import { useEffect, useMemo, useState } from 'react';
-
-import { DEFAULT_GEOG } from '../../settings';
 import { useRouter } from 'next/router';
 
-import {
-  DataVizBase,
-  GeogBrief,
-  GeogLevel,
-  Indicator,
-  ProfilesAPI,
-  serializeParams,
-  Taxonomy,
-  useWindowSize,
-  Map,
-  ConnectedMapEventHandler,
-  ConnectedSelect,
-  geographyTypeConnection,
-  defaultGeogLevelListBoxProps,
-  useGeography,
-  ConnectedSearchBox,
-  defaultGeogListBoxProps,
-  ProjectKey,
-  LayerPanelVariant,
-  menuLayerConnection,
-  ConnectionCollection,
-  GeoAPI,
-  Breadcrumbs,
-} from '@wprdc/toolkit';
-
 import styles from '../../styles/Explorer.module.css';
-import {
-  LoadingMessage,
-  BreadcrumbItem,
-  makeGeographyConnection,
-  TaxonomySection,
-  useProvider,
-} from '@wprdc/toolkit';
+
 import { GeographyPicker } from '@wprdc-widgets/geography-picker';
 import { useTaxonomy } from '@wprdc-connections/profiles';
+import { ProjectKey } from '@wprdc-types/shared';
+import {
+  defaultGeogLevelListBoxProps,
+  defaultGeogListBoxProps,
+  GeoAPI,
+  geographyTypeConnection,
+  makeGeographyConnection,
+  menuLayerConnection,
+  useGeography,
+} from '@wprdc-connections/geo';
+import { ConnectedSelect } from '@wprdc-components/select';
+import { useWindowSize } from '@wprdc-connections/util';
+import { GeogBrief, GeogLevel } from '@wprdc-types/geo';
+import { ConnectedSearchBox } from '@wprdc-components/search-box';
+import { useProvider } from '@wprdc-components/provider';
+import { LoadingMessage } from '@wprdc-components/loading-message';
+import { LayerPanelVariant } from '@wprdc-types/map';
+import {
+  ConnectedMapEventHandler,
+  ConnectionCollection,
+} from '@wprdc-types/connections';
+import { TaxonomySection } from '@wprdc-widgets/taxonomy-section';
+import { BreadcrumbItem, Breadcrumbs } from '@wprdc-components/breadcrumbs';
+import { DataVizBase } from '@wprdc-types/viz';
+import { Indicator } from '@wprdc-types/profiles';
+import { serializeParams } from '@wprdc-connections/api';
+import { Map } from '@wprdc-widgets/map';
 
 export default function Home() {
   // state

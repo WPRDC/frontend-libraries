@@ -1,22 +1,16 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 
-import {
-  GeogBrief,
-  ConnectedSearchBox,
-  useGeography,
-  defaultIndicatorListBoxProps,
-  indicatorConnection,
-  GeographyPicker,
-  Indicator,
-  IndicatorView,
-  useIndicator,
-} from '@wprdc/toolkit';
-
 import styles from '../../../styles/Compare.module.css';
 import { serializeParams } from '@wprdc-connections/api';
 import { DataVizBase } from '@wprdc-types/viz';
-import { Divider } from '@wprdc-components/divider';
+import { defaultIndicatorListBoxProps, indicatorConnection, useIndicator } from '@wprdc-connections/profiles';
+import { ConnectedSearchBox } from '@wprdc-components/search-box';
+import { useGeography } from '@wprdc-connections/geo';
+import { GeogBrief } from '@wprdc-types/geo';
+import { GeographyPicker } from '@wprdc-widgets/geography-picker';
+import { Indicator } from '@wprdc-types/profiles';
+import { IndicatorView } from '@wprdc-widgets/indicator-view';
 
 const DEFAULT_PARAMS: Record<'g1' | 'g2' | 'i', string> = {
   g1: 'county-42003',

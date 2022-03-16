@@ -5,10 +5,13 @@
  */
 import * as React from 'react';
 import { Form, Formik, Field, FieldProps } from 'formik';
-import { Item, Select } from '@wprdc/toolkit';
 
 import styles from './MapFilterMenu.module.css';
+
 import { Button } from '@wprdc-components/button';
+import { Item } from '@wprdc-components/util';
+import { Select } from '@wprdc-components/select';
+
 import { FilterFormValues } from '../../types';
 
 interface Props {
