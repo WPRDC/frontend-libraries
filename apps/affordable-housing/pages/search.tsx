@@ -8,11 +8,11 @@ import {
   affordableHousingProjectConnection,
   defaultAffordableHousingListBoxProps,
   usePublicHousingProject,
-} from '@wprdc-connections/housecat';
-import { AHProjectView } from '@wprdc-widgets/ah-project-view';
-import { ProjectIndex } from '@wprdc-types/housecat';
-import { ResourceOptionTemplateOptions } from '@wprdc-types/list-box';
-import { ConnectedSearchBox } from '@wprdc-components/search-box';
+  AHProjectView,
+  ProjectIndex,
+  ResourceOptionTemplateOptions,
+  ConnectedSearchBox,
+} from '@wprdc/toolkit';
 
 const SearchPage: NextPage = () => {
   const [currentProject, setCurrentProject] = React.useState<ProjectIndex>();
