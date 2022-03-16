@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-components/combo-box",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "",
   "keywords": [],
   "license": "AGPL-3.0-or-later",
@@ -82,7 +82,7 @@
     "@react-stately/combobox": "^3.0.1",
     "@react-stately/data": "^3.4.3",
     "@react-types/combobox": "^3.2.0",
-    "@wprdc-components/list-box": "^0.0.15",
+    "@wprdc-components/list-box": "^0.0.16",
     "@wprdc-components/popover": "^0.0.11",
     "@wprdc-components/util": "^0.0.10",
     "@wprdc-types/combo-box": "^0.0.13",
