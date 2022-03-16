@@ -7,7 +7,7 @@ import { AriaListBoxOptions } from '@react-aria/listbox';
 import { HiddenSelect, useSelect } from '@react-aria/select';
 import { useSelectState } from '@react-stately/select';
 
-import { StatelessListBox } from '@wprdc-components/list-box';
+import { StatelessListBox } from './StatelessListBox';
 import { SelectProps } from '@wprdc-types/select';
 
 export function ListSelect<T extends object, O extends object = {}>(
