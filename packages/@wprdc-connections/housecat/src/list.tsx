@@ -18,10 +18,6 @@ const headers = {
   'X-CSRFToken': getCookie('csrftoken') || '',
 };
 
-if (typeof window !== 'undefined') {
-  document.domain = 'api.profiles.wprdc.org';
-}
-
 export const affordableHousingProjectConnection: ListConnection<ProjectIndex> =
   {
     async load({ signal, cursor, filterText }) {

@@ -15,6 +15,7 @@ export function usePublicHousingProject(
 ) {
   const [affordableHousingProject, setAffordableHousingProject] =
     useState<ProjectIndexDetails>();
+
   const [isLoading, setIsLoading] = useState<boolean>();
   const [error, setError] = useState<ErrorRecord>();
 

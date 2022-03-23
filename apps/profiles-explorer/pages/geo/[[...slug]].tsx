@@ -55,6 +55,7 @@ export default function GeogPage() {
           {!!geogLevels &&
             geogLevels.map((geogLevel) => (
               <LayerMenuItem
+                key={geogLevel.slug}
                 geogLevel={geogLevel}
                 {...geogLevelOptions[geogLevel.slug]}
               />

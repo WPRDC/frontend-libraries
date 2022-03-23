@@ -10,7 +10,7 @@ const Home: NextPage = () => {
       </h2>
 
       <div className={styles.buttonSection}>
-        <Link href="/map">
+        <Link href="/housecat/map">
           <button className={styles.bigButton}>
             <div className={styles.buttonTitle}>Map</div>
             <div className={styles.buttonText}>
@@ -18,13 +18,13 @@ const Home: NextPage = () => {
             </div>
           </button>
         </Link>
-        <Link href="/watchlist">
+        <Link href="/housecat/watchlist">
           <button className={styles.bigButton}>
             <div className={styles.buttonTitle}>Watchlist</div>
             <div className={styles.buttonText}>Limit to selected projects</div>
           </button>
         </Link>
-        <Link href="/search">
+        <Link href="/housecat/search">
           <button className={styles.bigButton}>
             <div className={styles.buttonTitle}>Search</div>
             <div className={styles.buttonText}>

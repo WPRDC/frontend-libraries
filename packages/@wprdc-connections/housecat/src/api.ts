@@ -15,10 +15,6 @@ export enum Endpoint {
 
 const api = createAPI<Endpoint>(HOST);
 
-if (typeof window !== 'undefined') {
-  document.domain = 'api.profiles.wprdc.org';
-}
-
 const headers = {
   'Content-Type': 'application/json',
   'X-CSRFToken': getCookie('csrftoken'),
