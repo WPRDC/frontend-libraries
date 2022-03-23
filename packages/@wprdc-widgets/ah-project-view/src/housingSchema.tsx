@@ -117,7 +117,7 @@ export const affordableHousingSchema: HousingSchema = {
       },
       {
         accessor: 'termInMonths',
-        label: 'Term (in months)D',
+        label: 'Term (in months)',
       },
       {
         accessor: 'interestRate',

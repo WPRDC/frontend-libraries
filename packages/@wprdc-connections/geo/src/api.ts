@@ -12,7 +12,7 @@ export enum Endpoint {
 
 const api = createAPI<Endpoint>(HOST);
 
-function requestGeoLayers() {
+export function requestGeoLayers() {
   return api.callAndProcessEndpoint<GeogLevel[]>(
     Endpoint.GeogTypes,
     Method.GET

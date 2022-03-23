@@ -11,6 +11,16 @@ import { ResourceOptionTemplate } from '@wprdc-components/list-box';
 import { Item } from '@wprdc-components/util';
 
 import { RiCommunityFill } from 'react-icons/ri';
+import { getCookie } from '@wprdc-connections/util';
+
+const headers = {
+  'Content-Type': 'application/json',
+  'X-CSRFToken': getCookie('csrftoken') || '',
+};
+
+if (typeof window !== 'undefined') {
+  document.domain = 'api.profiles.wprdc.org';
+}
 
 export const affordableHousingProjectConnection: ListConnection<ProjectIndex> =
   {
@@ -18,7 +28,7 @@ export const affordableHousingProjectConnection: ListConnection<ProjectIndex> =
       const res = await fetch(
         cursor ||
           `https://api.profiles.wprdc.org/public-housing/project/?search=${filterText}&limit=10`,
-        { signal }
+        { signal, headers }
       );
       const json = await res.json();
 
@@ -48,7 +58,7 @@ export const makeWatchlistConnection = (slug: string) =>
     async load({ signal }) {
       const res = await fetch(
         `https://api.profiles.wprdc.org/public-housing/watchlist/${slug}?limit=5000`,
-        { signal }
+        { signal, headers }
       );
       const json = await res.json();
 

@@ -1,0 +1,24 @@
+.wrapper {
+  @apply flex flex-row justify-items-stretch;
+  @apply w-full;
+}
+
+.navSection {
+  @apply p-3;
+  @apply lg:w-80;
+  @apply print:hidden;
+}
+
+.mapSection {
+  @apply flex-grow;
+  @apply print:hidden;
+}
+
+.dashboardSection {
+  @apply p-3;
+  @apply w-72 w-80 print:w-full;
+  @apply overflow-auto;
+}
+
+.menuSection {
+}

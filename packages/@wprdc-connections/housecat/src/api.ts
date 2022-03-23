@@ -3,6 +3,7 @@ import { createAPI } from '@wprdc-connections/api';
 import { ResponsePackage, Method } from '@wprdc-types/api';
 import { APIMapBoxResponse } from '@wprdc-types/connections';
 import { ProjectIndexDetails, Watchlist } from '@wprdc-types/housecat';
+import { getCookie } from '@wprdc-connections/util';
 
 const HOST = 'https://api.profiles.wprdc.org';
 
@@ -13,6 +14,15 @@ export enum Endpoint {
 }
 
 const api = createAPI<Endpoint>(HOST);
+
+if (typeof window !== 'undefined') {
+  document.domain = 'api.profiles.wprdc.org';
+}
+
+const headers = {
+  'Content-Type': 'application/json',
+  'X-CSRFToken': getCookie('csrftoken'),
+};
 
 // if projectID is provided a single detailed response will be expected
 export function requestAffordableHousingProject(
@@ -39,7 +49,8 @@ export function requestAffordableHousingProject(
     ProjectIndexDetails | ProjectIndexDetails[]
   >(Endpoint.PHProject, Method.GET, {
     id: projectID,
-    params: params,
+    headers,
+    params,
   });
 }
 
@@ -50,13 +61,14 @@ export function requestPublicHousingProjectMap(params?: Record<string, any>) {
   return api.callAndProcessEndpoint<APIMapBoxResponse>(
     Endpoint.PHProjectMap,
     Method.GET,
-    { params }
+    { params, headers }
   );
 }
 
 export function requestWatchlist(slug: string) {
   return api.callAndProcessEndpoint<Watchlist>(Endpoint.Watchlist, Method.GET, {
     id: slug,
+    headers,
   });
 }
 

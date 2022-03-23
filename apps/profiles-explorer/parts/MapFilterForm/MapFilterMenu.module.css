@@ -1,0 +1,25 @@
+.wrapper {
+  @apply h-full w-full;
+  @apply p-4;
+}
+
+.numberField {
+  @apply rounded border border-gray-300 w-20;
+}
+
+.label {
+  @apply text-xs flex-initial px-1;
+}
+
+.field {
+  @apply py-2;
+}
+
+.buttonSection {
+  @apply py-2;
+  @apply text-center;
+}
+
+.legend {
+  @apply text-sm font-sans font-medium text-gray-700;
+}

@@ -30,4 +30,9 @@
   @apply px-4;
   @apply hover:text-gray-300;
   @apply active:text-gray-500;
+  @apply flex items-stretch;
+}
+
+.extIcon {
+  @apply h-2.5;
 }

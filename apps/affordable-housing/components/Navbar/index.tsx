@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import styles from './Navbar.module.css';
 
+import { FaExternalLinkAlt } from 'react-icons/fa';
+
 export default function Navbar() {
   return (
     <div className={styles.wrapper}>
@@ -39,6 +41,7 @@ export default function Navbar() {
           >
             Indicators
           </a>
+          <FaExternalLinkAlt className={styles.extIcon} />
         </div>
       </div>
     </div>
