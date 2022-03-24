@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-connections/viz",
-  "version": "0.0.24",
+  "version": "0.0.25",
   "description": "",
   "keywords": [],
   "license": "AGPL-3.0-or-later",
@@ -78,7 +78,7 @@
     "@wprdc-components/list-box": "^0.0.17",
     "@wprdc-components/radio-group": "^0.0.12",
     "@wprdc-components/util": "^0.0.10",
-    "@wprdc-connections/api": "^0.0.14",
+    "@wprdc-connections/api": "^0.0.15",
     "@wprdc-connections/util": "^0.0.20",
     "@wprdc-types/api": "^0.0.13",
     "@wprdc-types/connections": "^0.0.14",
