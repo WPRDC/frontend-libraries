@@ -41,7 +41,7 @@ class API<E extends Endpoint> {
    * @returns {Promise<Response>}
    */
   callEndpoint(endpoint: E, method: Method, options?: APIOptions) {
-    const { id, params, headers, fetchInit } = options || {
+    const { id, params, headers, fetchInit, credentials } = options || {
       id: undefined,
       params: undefined,
       body: undefined,
@@ -58,6 +58,7 @@ class API<E extends Endpoint> {
       ...{
         method,
         headers: { ...baseHeaders, ...headers },
+        credentials,
       },
     });
   }
