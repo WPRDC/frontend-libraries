@@ -47,6 +47,7 @@ export function requestAffordableHousingProject(
     id: projectID,
     headers,
     params,
+    credentials: 'include',
   });
 }
 
@@ -57,7 +58,7 @@ export function requestPublicHousingProjectMap(params?: Record<string, any>) {
   return api.callAndProcessEndpoint<APIMapBoxResponse>(
     Endpoint.PHProjectMap,
     Method.GET,
-    { params, headers }
+    { params, headers, credentials: 'include' }
   );
 }
 
@@ -65,6 +66,7 @@ export function requestWatchlist(slug: string) {
   return api.callAndProcessEndpoint<Watchlist>(Endpoint.Watchlist, Method.GET, {
     id: slug,
     headers,
+    credentials: 'include',
   });
 }
 

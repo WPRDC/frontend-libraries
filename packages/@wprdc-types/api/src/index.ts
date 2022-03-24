@@ -17,4 +17,5 @@ export interface APIOptions {
   params?: Record<string, string | number | boolean | null | undefined>;
   headers?: Record<string, string | number | boolean | null | undefined>;
   fetchInit?: {};
+  credentials?: 'omit' | 'same-origin' | 'include';
 }
