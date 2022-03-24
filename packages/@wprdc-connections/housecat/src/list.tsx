@@ -24,7 +24,7 @@ export const affordableHousingProjectConnection: ListConnection<ProjectIndex> =
       const res = await fetch(
         cursor ||
           `https://api.profiles.wprdc.org/public-housing/project/?search=${filterText}&limit=10`,
-        { signal, headers }
+        { signal, headers, credentials: 'include' }
       );
       const json = await res.json();
 
