@@ -15,6 +15,8 @@ import { ListSelect } from '@wprdc-components/list-box';
 import { AHProjectView } from '@wprdc-widgets/ah-project-view';
 import { Item } from '@wprdc-components/util';
 import { LayerPanelVariant } from '@wprdc-types/map';
+import Layout from '../../components/Layout';
+import { HousecatNavbar } from '../../components/Navbar';
 
 interface Props {}
 
@@ -86,5 +88,9 @@ function makeConnectionHookArgs(filterParams?: FilterFormValues) {
     },
   };
 }
+
+Watchlist.getLayout = function getLayout(page: React.ReactChildren) {
+  return <Layout Navbar={HousecatNavbar}>{page}</Layout>;
+};
 
 export default Watchlist;

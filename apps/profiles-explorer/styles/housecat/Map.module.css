@@ -5,7 +5,7 @@
 
 .menuSection {
   @apply p-3;
-  @apply lg:w-80;
+  @apply lg:w-96;
   @apply print:hidden;
 }
 

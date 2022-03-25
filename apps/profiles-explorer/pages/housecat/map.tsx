@@ -11,6 +11,8 @@ import styles from '../../styles/housecat/Map.module.css';
 import { FilterFormValues } from '../../types';
 import { usePublicHousingProject } from '@wprdc-connections/housecat';
 import { AHProjectView } from '@wprdc-widgets/ah-project-view';
+import { HousecatNavbar } from '../../components/Navbar';
+import Layout from '../../components/Layout';
 
 function MapPage() {
   const [filterParams, setFilterParams] = React.useState<FilterFormValues>();
@@ -52,5 +54,9 @@ function MapPage() {
     </div>
   );
 }
+
+MapPage.getLayout = function getLayout(page: React.ReactChildren) {
+  return <Layout Navbar={HousecatNavbar}>{page}</Layout>;
+};
 
 export default MapPage;

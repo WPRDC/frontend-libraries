@@ -1,6 +1,8 @@
 .wrapper {
   @apply w-full h-20 flex-none p-2 px-5 flex shadow-lg;
+  @apply bg-amber-600;
   @apply text-white;
+  @apply print:hidden;
 }
 
 .branding {
@@ -9,6 +11,7 @@
 .filler {
   @apply flex-grow;
 }
+
 .title {
   @apply text-3xl font-semibold;
 }
@@ -19,5 +22,12 @@
 }
 
 .menu {
-  @apply flex justify-center align-middle flex-col;
+  @apply flex justify-center align-middle flex items-center;
+}
+
+.menuItem {
+  @apply text-lg font-semibold uppercase;
+  @apply px-4;
+  @apply hover:text-gray-300;
+  @apply active:text-gray-500;
 }

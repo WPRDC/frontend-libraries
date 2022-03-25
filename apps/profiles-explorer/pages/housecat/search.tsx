@@ -1,6 +1,4 @@
 import React from 'react';
-
-import type { NextPage } from 'next';
 import styles from '../../styles/housecat/Search.module.css';
 import { ResourceOptionTemplateOptions } from '@wprdc-types/list-box';
 import {
@@ -11,8 +9,10 @@ import {
 import { ConnectedSearchBox } from '@wprdc-components/search-box';
 import { AHProjectView } from '@wprdc-widgets/ah-project-view';
 import { ProjectIndex } from '@wprdc-types/housecat';
+import Layout from '../../components/Layout';
+import { HousecatNavbar } from '../../components/Navbar';
 
-const SearchPage: NextPage = () => {
+function SearchPage() {
   const [currentProject, setCurrentProject] = React.useState<ProjectIndex>();
   const { affordableHousingProject } = usePublicHousingProject(currentProject);
 
@@ -37,6 +37,10 @@ const SearchPage: NextPage = () => {
       </div>
     </div>
   );
+}
+
+SearchPage.getLayout = function getLayout(page: React.ReactChildren) {
+  return <Layout Navbar={HousecatNavbar}>{page}</Layout>;
 };
 
 export default SearchPage;

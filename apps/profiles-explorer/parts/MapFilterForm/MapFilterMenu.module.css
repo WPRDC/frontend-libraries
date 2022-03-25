@@ -23,3 +23,11 @@
 .legend {
   @apply text-sm font-sans font-medium text-gray-700;
 }
+
+.buttonSection > button:first-child {
+  @apply bg-green-100 border-2 border-green-900;
+}
+
+.buttonSection > button {
+  @apply mx-4;
+}

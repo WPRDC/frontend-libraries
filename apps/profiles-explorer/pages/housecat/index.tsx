@@ -1,8 +1,9 @@
-import type { NextPage } from 'next';
 import Link from 'next/link';
+import Layout from '../../components/Layout';
 import styles from '../../styles/housecat/Home.module.css';
+import { HousecatNavbar } from '../../components/Navbar';
 
-const Home: NextPage = () => {
+function HousecatHome() {
   return (
     <div className={styles.wrapper}>
       <h2 className={styles.infoTitle}>
@@ -35,6 +36,10 @@ const Home: NextPage = () => {
       </div>
     </div>
   );
+}
+
+HousecatHome.getLayout = function getLayout(page: React.ReactChildren) {
+  return <Layout Navbar={HousecatNavbar}>{page}</Layout>;
 };
 
-export default Home;
+export default HousecatHome;

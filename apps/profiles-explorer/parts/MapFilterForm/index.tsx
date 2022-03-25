@@ -14,60 +14,75 @@ import { Select } from '@wprdc-components/select';
 
 import { FilterFormValues } from '../../types';
 
+import { initValues, schema } from './schema';
+
 interface Props {
   onSubmit: (params: FilterFormValues) => void;
 }
 
 export function MapFilterForm({ onSubmit }: Props) {
   function handleSubmit(params: FilterFormValues) {
+    console.debug({ params });
     onSubmit(params);
   }
 
   return (
     <div className={styles.wrapper}>
       <Formik<FilterFormValues>
-        initialValues={{
-          'risk-level': '3y',
-        }}
+        initialValues={initValues}
         validateOnBlur
         onSubmit={handleSubmit}
       >
-        <Form>
-          <div className={styles.field}>
-            <Field name="risk-level">
-              {({
-                field, // { name, value, onChange, onBlur }
-                meta,
-              }: FieldProps) => {
+        {(formikProps) => {
+          function handleReset() {
+            formikProps.resetForm();
+            formikProps.submitForm();
+          }
+          return (
+            <form
+              onReset={formikProps.handleReset}
+              onSubmit={formikProps.handleSubmit}
+            >
+              {Object.entries(schema).map(([slug, record]) => {
                 return (
-                  <Select
-                    id="risk-level"
-                    label="At risk units"
-                    name={field.name}
-                    onBlur={field.onBlur}
-                    selectedKey={field.value}
-                    onSelection={(x) => {
-                      field.onChange({
-                        target: { value: x, name: field.name },
-                      });
-                    }}
-                    errorMessage={meta.touched && meta.error}
-                  >
-                    <Item key="">---</Item>
-                    <Item key="future">Subsidy expiration 5+ years away</Item>
-                    <Item key="5yr">Subsidy expiration within 5 years</Item>
-                    <Item key="3yr">Subsidy expiration within 3 years</Item>
-                    <Item key="1yr">Subsidy expiration within 1 year</Item>
-                    <Item key="6mo">Subsidy expiration within 6 months</Item>
-                  </Select>
+                  <div className={styles.field} key={slug}>
+                    <Field name={slug}>
+                      {({
+                        field, // { name, value, onChange, onBlur }
+                        meta,
+                      }: FieldProps) => {
+                        return (
+                          <Select
+                            id={slug}
+                            label={record.label}
+                            name={field.name}
+                            onBlur={field.onBlur}
+                            selectedKey={field.value}
+                            onSelection={(x) => {
+                              field.onChange({
+                                target: { value: x, name: field.name },
+                              });
+                            }}
+                            errorMessage={meta.touched && meta.error}
+                          >
+                            {record.items.map((item) => (
+                              <Item key={item.id}>{item.label}</Item>
+                            ))}
+                          </Select>
+                        );
+                      }}
+                    </Field>
+                  </div>
                 );
-              }}
-            </Field>
-          </div>
-          <div className={styles.buttonSection}>
-            <Button type="submit">Submit</Button>
-          </div>
-        </Form>
+              })}
+
+              <div className={styles.buttonSection}>
+                <Button type="submit">Apply Filters</Button>
+                <Button onPress={handleReset}>Reset</Button>
+              </div>
+            </form>
+          );
+        }}
       </Formik>
     </div>
   );
