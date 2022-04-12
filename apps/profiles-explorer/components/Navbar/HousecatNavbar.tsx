@@ -36,6 +36,11 @@ export function HousecatNavbar() {
             <a>Indicators</a>
           </Link>
         </div>
+        <div className={styles.menuItem}>
+          <Link href="/housecat/about">
+            <a>About</a>
+          </Link>
+        </div>
       </div>
     </div>
   );

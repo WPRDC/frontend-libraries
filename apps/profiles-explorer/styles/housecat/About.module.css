@@ -1,0 +1,58 @@
+.wrapper {
+  @apply container p-4 mx-auto;
+  @apply flex flex-row-reverse;
+}
+
+.content {
+  @apply overflow-auto;
+  @apply leading-relaxed;
+  @apply p-4;
+}
+
+.content a {
+  @apply font-medium text-blue-600 underline;
+}
+
+.content h2 {
+  @apply font-thin text-5xl;
+}
+
+.content h3 {
+  @apply pt-6 mb-2;
+  @apply font-semibold text-3xl;
+  @apply border-b border-black;
+}
+
+.content p {
+  @apply mb-2;
+}
+
+.content li {
+  @apply mb-2;
+}
+
+.content ul {
+  @apply pl-4;
+  @apply list-disc;
+}
+
+.sidebar {
+  @apply w-96;
+  @apply flex-shrink-0;
+  @apply hidden lg:block;
+  @apply p-4;
+}
+
+.sidebar h3 {
+  @apply font-semibold text-2xl;
+  @apply py-2;
+}
+
+.sidebar ul {
+  @apply ml-2;
+}
+.sidebar li {
+  @apply text-lg;
+  @apply my-2;
+  @apply font-medium underline;
+}
