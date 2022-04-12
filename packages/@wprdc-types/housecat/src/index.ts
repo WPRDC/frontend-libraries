@@ -50,7 +50,6 @@ export interface ProjectIndexDetails extends ProjectIndex {
   allBuildingsFromLihtcProjects: AllBuildingsFromLIHTCProjects[];
   hudInspectionScores: HUDInspectionScores[];
   hudPublicHousingDevelopments: HUDPublicHousingDevelopments[];
-  hudPublicHousingBuildings: HUDPublicHousingBuildings[];
   subsidyExtractHudInsuredMultifamilyProperties: SubsidyExtractHUDInsuredMultifamilyProperties[];
   subsidyExtractMultifamilyAssistanceAndSection8Contracts: SubsidyExtractMultifamilyAssistanceAndSection8Contracts[];
   multifamilyAssistanceAndSection8Contracts: MultifamilyAssistanceAndSection8Contracts[];

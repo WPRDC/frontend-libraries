@@ -76,7 +76,6 @@ export interface HousingSchema
   allBuildingsFromLihtcProjects: SchemaSection<AllBuildingsFromLIHTCProjects>;
   hudInspectionScores: SchemaSection<HUDInspectionScores>;
   hudPublicHousingDevelopments: SchemaSection<HUDPublicHousingDevelopments>;
-  hudPublicHousingBuildings: SchemaSection<HUDPublicHousingBuildings>;
   subsidyExtractHudInsuredMultifamilyProperties: SchemaSection<SubsidyExtractHUDInsuredMultifamilyProperties>;
   subsidyExtractMultifamilyAssistanceAndSection8Contracts: SchemaSection<SubsidyExtractMultifamilyAssistanceAndSection8Contracts>;
   multifamilyAssistanceAndSection8Contracts: SchemaSection<MultifamilyAssistanceAndSection8Contracts>;
@@ -319,48 +318,6 @@ export const affordableHousingSchema: HousingSchema = {
       { accessor: 'pctDisabledLt62All', label: '% Disabled < 62 All' },
       { accessor: 'scatteredSiteInd', label: 'Scattered Site Ind' },
       { accessor: 'pdStatusTypeCode', label: 'Pd Status Type Code' },
-    ],
-  },
-  hudPublicHousingBuildings: {
-    title: 'Hud Public Housing Buildings',
-    items: [
-      { accessor: 'developmentCode', label: 'Development Code' },
-      { accessor: 'units', label: 'Units' },
-      { accessor: 'ownerOrganizationName', label: 'Owner Organization Name' },
-      { accessor: 'participantCode', label: 'Participant Code' },
-      { accessor: 'formalParticipantName', label: 'Formal Participant Name' },
-      { accessor: 'projectName', label: 'Project Name' },
-      { accessor: 'totalDwellingUnits', label: 'Total Dwelling Units' },
-      { accessor: 'accUnits', label: 'Acc Units' },
-      { accessor: 'totalOccupied', label: 'Total Occupied' },
-      { accessor: 'regularVacant', label: 'Regular Vacant' },
-      { accessor: 'phaTotalUnits', label: 'Pha Total Units' },
-      { accessor: 'percentOccupied', label: 'Percent Occupied' },
-      { accessor: 'peoplePerUnit', label: 'People Per Unit' },
-      { accessor: 'peopleTotal', label: 'People Total' },
-      { accessor: 'rentPerMonth', label: 'Rent Per Month' },
-      { accessor: 'medianIncAmnt', label: 'Median Inc Amnt' },
-      { accessor: 'hhIncome', label: 'Hh Income' },
-      { accessor: 'personIncome', label: 'Person Income' },
-      { accessor: 'pctLt5K', label: '% < 5 K' },
-      { accessor: 'pct5KLt10K', label: '% 5 K < 10 K' },
-      { accessor: 'pct10KLt15K', label: '% 10 K < 15 K' },
-      { accessor: 'pct15KLt20K', label: '% 15 K < 20 K' },
-      { accessor: 'pctGe20K', label: '% Ge 20 K' },
-      { accessor: 'pctLt80Median', label: '% < 80 Median' },
-      { accessor: 'pctLt50Median', label: '% < 50 Median' },
-      { accessor: 'pctLt30Median', label: '% < 30 Median' },
-      { accessor: 'pctBed1', label: '% Bed 1' },
-      { accessor: 'pctBed2', label: '% Bed 2' },
-      { accessor: 'pctBed3', label: '% Bed 3' },
-      { accessor: 'pctOverhoused', label: '% Overhoused' },
-      { accessor: 'tminority', label: 'Tminority' },
-      { accessor: 'tpoverty', label: 'Tpoverty' },
-      { accessor: 'tpctOwnsfd', label: 'Tpct Ownsfd' },
-      { accessor: 'chldrnMbrCnt', label: 'Chldrn Mbr Cnt' },
-      { accessor: 'eldlyPrcnt', label: '% Elderly' },
-      { accessor: 'pctDisabledLt62All', label: '% Disabled < 62 All' },
-      { accessor: 'nationalBuildingId', label: 'National Building Id' },
     ],
   },
   subsidyExtractHudInsuredMultifamilyProperties: {
