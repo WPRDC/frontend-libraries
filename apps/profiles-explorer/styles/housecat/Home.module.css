@@ -15,12 +15,12 @@
 .bigButton {
   @apply p-4;
   @apply h-32;
-  @apply border rounded-lg;
+  @apply border border-black rounded-lg;
   @apply flex flex-col items-center;
-  @apply bg-background;
+  @apply bg-amber-100;
   @apply drop-shadow-md hover:drop-shadow-lg;
-  @apply hover:border-2 hover:bg-gray-50;
-  @apply active:border-4 active:bg-gray-50;
+  @apply hover:border-2 hover:bg-amber-50;
+  @apply active:border-2 active:bg-amber-50 active:shadow-inner active:drop-shadow-none;
 }
 
 .buttonTitle {
@@ -36,6 +36,22 @@
 }
 
 .buttonSection {
+  @apply py-4;
   @apply grid grid-cols-3 gap-12;
   @apply max-w-3xl mx-auto;
+}
+
+.content {
+  @apply my-6;
+  @apply text-left;
+  @apply max-w-5xl mx-auto;
+}
+.content p {
+  @apply text-lg;
+  @apply mb-6;
+  @apply leading-loose;
+}
+
+.content p strong {
+  @apply text-2xl font-semibold;
 }
