@@ -1,7 +1,12 @@
 import Link from 'next/link';
+import Image from 'next/Image';
+
 import Layout from '../../components/Layout';
 import styles from '../../styles/housecat/Home.module.css';
 import { HousecatNavbar } from '../../components/Navbar';
+
+import CREATELogo from '../../assets/logos/create_logo.png';
+import WPRDCLogo from '../../assets/logos/wprdc-square.png';
 
 function HousecatHome() {
   return (
@@ -91,6 +96,15 @@ function HousecatHome() {
           affordability is at risk. Properties can be viewed on a map, with data
           associated with each property displayed on screen.
         </p>
+      </div>
+      <div className={styles.logos}>
+        <h2></h2>
+        <a href="https://www.wprdc.org">
+          <Image src={WPRDCLogo} alt="WPRDC" />
+        </a>
+        <a href="https://cmucreatelab.org/">
+          <Image src={CREATELogo} alt="WPRDC" />
+        </a>
       </div>
     </div>
   );

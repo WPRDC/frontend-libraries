@@ -1,6 +1,7 @@
 .wrapper {
-  @apply container pt-28 mx-auto;
+  @apply container py-24 mx-auto;
   @apply text-center;
+  @apply overflow-auto;
 }
 
 .wrapper a {
@@ -64,4 +65,15 @@
 
 .content p strong {
   @apply text-2xl font-semibold;
+}
+
+.logos {
+  @apply py-6;
+  @apply max-w-lg mx-auto;
+  @apply flex;
+}
+
+.logos > a {
+  @apply mx-4;
+  @apply h-24;
 }
