@@ -10,6 +10,7 @@ import { ProjectIndexMapProperties } from '@wprdc-types/housecat';
 
 import styles from './PopupContent.module.css';
 import { RiCommunityFill } from 'react-icons/ri';
+import { CategoricalLegendItemProps } from '@wprdc-types/map';
 
 interface AffordableHousingLayer extends Resource {}
 
@@ -77,12 +78,19 @@ export const affordableHousingProjectMapConnection: MapPluginConnection<
   makeLegendSection: (setLegendSection, items) => {
     if (!!items && !!items.length)
       setLegendSection(
-        <LegendSection title="Affordable Housing">
-          <LegendItem
-            variant="categorical"
-            marker={<RiCommunityFill style={{ height: '100%' }} />}
-            label="Affordable Housing Project"
-          />
+        <LegendSection title="Affordable Housing Projects by Funding Type">
+          {items.map((item) => {
+            const color: string =
+              ((item as CategoricalLegendItemProps).marker as string) || 'gray';
+            return (
+              <LegendItem
+                variant="categorical"
+                marker={<RiCommunityFill style={{ color }} />}
+                label={item.label}
+              />
+            );
+          })}
+          <p style={{ fontStyle: 'italic' }}>Marker size based on unit count</p>
         </LegendSection>
       );
     else setLegendSection();
@@ -114,7 +122,8 @@ export const affordableHousingProjectMapConnection: MapPluginConnection<
       );
     return null;
   },
-  makeClickContent: () => {
+  makeClickContent: (e) => {
+    console.log('E', e);
     return null;
   },
 };
