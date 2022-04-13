@@ -1,6 +1,6 @@
 {
   "name": "@wprdc/toolkit",
-  "version": "0.0.44",
+  "version": "0.0.45",
   "description": "Dummy package depending on all WPRDC site building packages.  Useful for development and testing.",
   "author": "Steve Saylor <steven.saylor@pitt.edu>",
   "homepage": "https://github.com/WPRDC/frontend-libraries#readme",
@@ -104,7 +104,7 @@
     "@wprdc-components/util": "^0.0.10",
     "@wprdc-connections/api": "^0.0.15",
     "@wprdc-connections/geo": "^0.0.24",
-    "@wprdc-connections/housecat": "^0.0.26",
+    "@wprdc-connections/housecat": "^0.0.27",
     "@wprdc-connections/neighborhood-assets": "^0.0.22",
     "@wprdc-connections/profiles": "^0.0.25",
     "@wprdc-connections/util": "^0.0.20",
