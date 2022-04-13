@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import Layout from '../../components/Layout';
 import styles from '../../styles/housecat/About.module.css';
 import { HousecatNavbar } from '../../components/Navbar';
@@ -48,6 +47,7 @@ function HousecatAbout() {
               <a href="https://www.google.com/url?q=https://www.hud.gov/program_offices/housing/mfh/progdesc&amp;sa=D&amp;source=editors&amp;ust=1649794639877094&amp;usg=AOvVaw1KrJXRhbkvIuxEHf8p_1e3">
                 available from HUD
               </a>
+              .
             </li>
             <li>
               The Low Income Housing Tax Credit (LIHTC) program is the most

@@ -3,6 +3,10 @@
   @apply text-center;
 }
 
+.wrapper a {
+  @apply font-medium text-blue-600 underline;
+}
+
 .infoTitle {
   @apply font-medium;
   @apply text-5xl;
@@ -39,6 +43,12 @@
   @apply py-4;
   @apply grid grid-cols-3 gap-12;
   @apply max-w-3xl mx-auto;
+}
+
+.smallButtonSection {
+  @apply py-8;
+  @apply grid grid-cols-2 gap-12;
+  @apply max-w-lg mx-auto;
 }
 
 .content {
