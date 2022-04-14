@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-connections/neighborhood-assets",
-  "version": "0.0.22",
+  "version": "0.0.23",
   "description": "",
   "keywords": [],
   "license": "AGPL-3.0-or-later",
@@ -86,7 +86,7 @@
     "@wprdc-types/map": "^0.0.12",
     "@wprdc-types/neighborhood-assets": "^0.0.12",
     "@wprdc-types/shared": "^0.0.12",
-    "@wprdc-widgets/map": "^0.0.17",
+    "@wprdc-widgets/map": "^0.0.18",
     "chroma-js": "^2.1.2"
   },
   "gitHead": "4ce907548b9290aa52e96b65949072a485bf379b"
