@@ -64,7 +64,11 @@ type IgnoredFields =
   | 'houseCatId'
   | 'status'
   | 'url'
-  | 'centroid';
+  | 'centroid'
+  | 'maxUnits'
+  | 'subsidyExpirationDate'
+  | 'lihtcYearOfService'
+  | 'reacScores';
 
 export type ComplexItems = Omit<ProjectIndexDetails, IgnoredFields>;
 

@@ -82,5 +82,6 @@
     "@wprdc-types/shared": "^0.0.12",
     "@wprdc-types/viz": "^0.0.15",
     "@wprdc-widgets/map": "^0.0.18"
-  }
+  },
+  "gitHead": "0d071a3dd4e93b865db197e5d1746a1572488954"
 }
