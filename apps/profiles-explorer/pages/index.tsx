@@ -4,7 +4,7 @@ import styles from '../styles/Home.module.css';
 
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <div className={styles.wrapper}>
       <Head>
         <title>WPRDC Indicators - Home</title>
         <meta name="description" content="New WPRDC App" />

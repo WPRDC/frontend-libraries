@@ -10,7 +10,6 @@ import { MapRef } from 'react-map-gl';
 
 import { ConnectedMapEventHandler } from '@wprdc-types/connections';
 import {
-  affordableHousingProjectConnection,
   affordableHousingProjectMapConnection,
   defaultAffordableHousingProjectMapConnectionProps,
 } from '@wprdc-connections/housecat';
@@ -18,8 +17,6 @@ import { ProjectKey } from '@wprdc-types/shared';
 import { ConnectedSelect } from '@wprdc-components/select';
 import { GeogBrief, GeographyType } from '@wprdc-types/geo';
 import { GeographyConnection } from '@wprdc-connections/geo';
-import { ConnectedSearchBox } from '@wprdc-components/search-box';
-import { ProjectIndex } from '@wprdc-types/housecat';
 import { Map } from '@wprdc-widgets/map';
 
 import { FilterFormValues } from '../../types';
@@ -62,7 +59,11 @@ export function MapInterface({ filterParams, handleProjectSelection }: Props) {
       <div className={styles.menuSection}>
         <fieldset className={styles.zoomControls}>
           <div className={styles.zoomLabel}>
-            <legend className={styles.menuLegend}>Zoom Map To</legend>
+            <legend className={styles.menuLegend}>
+              Zoom
+              <br />
+              Map To
+            </legend>
           </div>
           <div className={styles.zoomSection}>
             <ConnectedSelect<GeogBrief>
@@ -81,14 +82,6 @@ export function MapInterface({ filterParams, handleProjectSelection }: Props) {
                 new GeographyConnection(GeographyType.Neighborhood, 100)
               }
               onSelection={handleZoomSelect(14)}
-            />
-          </div>
-
-          <div className={styles.searchBox}>
-            <ConnectedSearchBox<ProjectIndex>
-              label="Project"
-              connection={affordableHousingProjectConnection}
-              onSelection={handleZoomSelect(16)}
             />
           </div>
         </fieldset>

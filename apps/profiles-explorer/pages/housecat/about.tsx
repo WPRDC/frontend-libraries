@@ -148,29 +148,96 @@ function HousecatAbout() {
               as much of an early warning as possible, we have attempted to
               provide inspection updates within 24 hours of new data being
               published.
-            </li>
-            <li>
-              The LIHTC program also requires inspections, but this compliance
-              process managed by state agencies and the IRS. This process is not
-              the same as the one managed by HUD for Multifamily, Public
-              Housing, and Housing Choice Voucher programs. Data from the LIHTC
-              compliance process is reported in{' '}
-              <a href="https://www.google.com/url?q=https://www.irs.gov/pub/irs-access/f8823_accessible.pdf&amp;sa=D&amp;source=editors&amp;ust=1649794639880990&amp;usg=AOvVaw0j0B15Y2eR00Z38p5Jac8D">
-                IRS Form 8823
-              </a>
-              , and is not made publicly-available.
+              <ul>
+                <li>
+                  The LIHTC program also requires inspections, but this
+                  compliance process managed by state agencies and the IRS. This
+                  process is not the same as the one managed by HUD for
+                  Multifamily, Public Housing, and Housing Choice Voucher
+                  programs. Data from the LIHTC compliance process is reported
+                  in{' '}
+                  <a href="https://www.google.com/url?q=https://www.irs.gov/pub/irs-access/f8823_accessible.pdf&amp;sa=D&amp;source=editors&amp;ust=1649794639880990&amp;usg=AOvVaw0j0B15Y2eR00Z38p5Jac8D">
+                    IRS Form 8823
+                  </a>
+                  , and is not made publicly-available.
+                </li>
+              </ul>
             </li>
           </ul>
         </section>
 
-        <section id="from-data-to-action">
-          <h3>From Data to Action</h3>
-          <p>tbd</p>
-        </section>
-
         <section id="sources">
           <h3>Sources</h3>
-          <p>tbd</p>
+          <p>
+            This tool compiles a broad list of available data from a number of
+            different locations, including:{' '}
+          </p>
+          <h4>HUD Multifamily</h4>
+          <ul>
+            <li>
+              <a href="https://www.hud.gov/program_offices/housing/comp/rpts/mfh/mf_f47">
+                Active HUD Multifamily Insured Mortgages
+              </a>
+            </li>
+
+            <li>
+              <a href="https://www.huduser.gov/portal/datasets/pis.html">
+                HUD Inspection Scores
+              </a>
+            </li>
+
+            <li>
+              <a href="https://www.hud.gov/program_offices/housing/mfh/rems/remsinspecscores/remsphysinspscores">
+                HUD Multifamily Inspection Scores
+              </a>
+            </li>
+
+            <li>
+              <a href="https://hudgis-hud.opendata.arcgis.com/datasets/hud-insured-multifamily-properties">
+                HUD Insured Multifamily Properties
+              </a>
+            </li>
+
+            <li>
+              <a href="https://www.hud.gov/program_offices/housing/mfh/mfdata/mfproduction">
+                HUD Multifamily Fiscal Year Production
+              </a>
+            </li>
+
+            <li>
+              <a href="https://www.hud.gov/program_offices/housing/mfh/exp/mfhdiscl">
+                HUD Multifamily Assistance and Section 8 Contracts
+              </a>
+            </li>
+          </ul>
+          <h4>LIHTC</h4>
+          <ul>
+            <li>
+              <a href="https://www.phfa.org/forms/multifamily_inventory/dv_allegheny.pdf">
+                Funded Projects (PHFA) List emailed, but similar format to
+                online data
+              </a>
+            </li>
+            <li>
+              <a href="https://lihtc.huduser.gov/">
+                Projects and Buildings (HUD)
+              </a>
+            </li>
+          </ul>
+          <h4>Public Housing</h4>
+          <ul>
+            <li>
+              <a href="https://hudgis-hud.opendata.arcgis.com/datasets/public-housing-developments">
+                HUD Public Housing Developments
+              </a>
+            </li>
+
+            <li>
+              <a href="https://hudgis-hud.opendata.arcgis.com/datasets/public-housing-buildings">
+                HUD Public Housing Buildings
+              </a>
+            </li>
+          </ul>
         </section>
       </div>
     </div>

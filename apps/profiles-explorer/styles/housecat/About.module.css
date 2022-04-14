@@ -1,12 +1,12 @@
 .wrapper {
-  @apply container p-4 mx-auto;
+  @apply container mx-auto;
   @apply flex flex-row-reverse;
 }
 
 .content {
   @apply overflow-auto;
   @apply leading-relaxed;
-  @apply p-4;
+  @apply p-8 pb-8;
 }
 
 .content a {
@@ -23,8 +23,17 @@
   @apply border-b border-black;
 }
 
+.content h4 {
+  @apply mt-4 mb-2;
+  @apply font-semibold;
+}
+
 .content p {
   @apply mb-2;
+}
+
+.content ul {
+  @apply mt-2;
 }
 
 .content li {

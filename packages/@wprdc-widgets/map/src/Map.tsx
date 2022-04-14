@@ -137,7 +137,7 @@ export const Map = React.forwardRef<MapRef, ConnectableMapProps>(
       const overInteractiveLayer = _isOverInteractiveLayer(event);
 
       if (overInteractiveLayer) setCursor('pointer');
-      else setCursor('');
+      else setCursor('auto');
 
       if (useFeaturelessEvents || hasFeatures(event)) {
         if (overInteractiveLayer) {
@@ -196,6 +196,7 @@ export const Map = React.forwardRef<MapRef, ConnectableMapProps>(
 
     const handleMouseLeave = () => {
       if (hoverPopup) setHoverPopup(null);
+      setCursor('auto');
     };
 
     // Prepare for render

@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Image from 'next/Image';
+import Image from 'next/image';
 
 import Layout from '../../components/Layout';
 import styles from '../../styles/housecat/Home.module.css';

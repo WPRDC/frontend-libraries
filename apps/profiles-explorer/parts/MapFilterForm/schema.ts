@@ -8,7 +8,7 @@ type Schema = Record<
 
 export const schema: Schema = {
   'risk-level': {
-    label: 'At risk units',
+    label: 'HUD Multifamily Subsidy Expiration',
     items: [
       { id: '', label: '---' },
       { id: 'future', label: 'Subsidy expiration 5+ years away' },
@@ -19,7 +19,7 @@ export const schema: Schema = {
     ],
   },
   'lihtc-compliance': {
-    label: 'LIHTC age',
+    label: 'LIHTC Compliance Period',
     items: [
       { id: '', label: '---' },
       { id: 'initial', label: 'Within initial compliance period (0-15yrs)' },
@@ -35,15 +35,19 @@ export const schema: Schema = {
     ],
   },
   'reac-score': {
-    label: 'REAC Inspection Scores',
+    label: 'HUD Multifamily and Public Housing inspection Scores',
     items: [
       { id: '', label: '---' },
       { id: 'failing', label: 'Failing (<60)' },
-      { id: 'annual-inspection', label: 'Require annual inspection (<80)' },
+      { id: 'annual-inspection', label: 'Annual Inspection Required (<80)' },
+      {
+        id: 'minimal-inspection',
+        label: 'Inspection Required Every 2-3 Years (>=80)',
+      },
     ],
   },
   'last-inspection': {
-    label: 'Recency of inspection',
+    label: 'Recent Inspections',
     items: [
       { id: '', label: '---' },
       { id: '3mos', label: 'Inspected in past 3 months' },
