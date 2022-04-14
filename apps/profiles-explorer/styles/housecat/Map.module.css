@@ -16,7 +16,7 @@
 
 .dashboardSection {
   @apply p-3;
-  @apply w-72 lg:w-[640px] print:w-full;
+  @apply w-72 lg:w-[540px] print:w-full;
   @apply overflow-auto;
 }
 

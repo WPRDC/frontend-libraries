@@ -41,9 +41,16 @@ export interface ProjectIndexMapProperties {
   hud_property_name?: string;
   units?: string;
   scattered_sites: boolean;
+  max_units?: number;
+  funding_category?: string;
 }
 
 export interface ProjectIndexDetails extends ProjectIndex {
+  maxUnits?: number;
+  subsidyExpirationDate?: string;
+  lihtcYearOfService?: number;
+  reacScores?: Record<string, string>;
+
   activeHudMultifamilyInsuredMortgages: ActiveHUDMultifamilyInsuredMortgages[];
   hudMultifamilyFiscalYearProduction: HUDMultifamilyFiscalYearProduction[];
   lihtc: LIHTC[];

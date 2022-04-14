@@ -26,24 +26,34 @@
 }
 
 .sectionWrapper {
-  @apply py-4;
-}
-
-.sectionTitle {
-  @apply font-semibold;
-  @apply text-gray-700;
-  @apply text-lg;
-  @apply pb-2;
+  @apply relative;
+  @apply pb-8;
 }
 
 .itemWrapper {
   @apply px-2;
+  @apply py-2;
 }
 
 .infoTable {
   @apply table-auto;
-  @apply border;
   @apply w-full;
+}
+
+.infoTable tbody {
+  @apply border-2 border-zinc-700;
+}
+
+.tocCta {
+  @apply text-sm font-medium;
+}
+
+.infoTable tr:not(:last-child) {
+  @apply border-b border-zinc-300;
+}
+
+.infoTable tr:nth-child(even) {
+  @apply bg-zinc-50;
 }
 
 .fieldCell {
@@ -72,4 +82,47 @@ tr:first-child > .valueCell {
 
 .menuSection {
   @apply print:hidden;
+}
+
+.mainFields {
+  @apply py-2;
+  @apply text-lg;
+}
+
+.mainFields > div {
+  @apply my-0.5;
+}
+
+.reacTable {
+  @apply ml-4;
+}
+.reacTable td:first-child {
+  @apply pr-1;
+}
+
+.wrapper h3 {
+  @apply mt-4 mb-2;
+  @apply font-semibold uppercase text-xs text-amber-500;
+}
+
+.wrapper h4 {
+  @apply font-semibold;
+  @apply text-gray-700;
+  @apply text-lg;
+  @apply mb-2 pb-0;
+  @apply border-b-4 border-black;
+}
+
+.toc {
+  @apply pl-4 pb-4;
+  @apply text-xs font-medium;
+}
+
+.toc li {
+  @apply hover:text-amber-500 text-amber-800;
+  @apply py-0.5;
+}
+
+.topButton {
+  @apply absolute top-0 right-2;
 }

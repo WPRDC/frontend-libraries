@@ -36,7 +36,7 @@ export const AHProjectView: React.FC<AHProjectViewProps> = ({
   }
 
   return (
-    <div className={styles.wrapper}>
+    <div id="data-dashboard" className={styles.wrapper}>
       <div className={styles.heading}>
         <div>
           <div className={styles.topBar}>
@@ -59,27 +59,65 @@ export const AHProjectView: React.FC<AHProjectViewProps> = ({
           <h2 className={styles.title}>{project.name} </h2>
         </div>
         <div className={styles.address}>{project.propertyStreetAddress}</div>
+        <div className={styles.mainFields}>
+          <h3>Quick Facts</h3>
+          <div>
+            <strong>Subsidy Expiration Date:</strong>{' '}
+            <span>{project.subsidyExpirationDate || 'N/A'}</span>
+          </div>
+          <div>
+            <strong>LIHTC Year of Service:</strong>{' '}
+            <span>{project.lihtcYearOfService || 'N/A'}</span>
+          </div>
+          <div>
+            <strong>Est. # of Units:</strong>{' '}
+            <span>{project.maxUnits || 'N/A'}</span>
+          </div>
+          <div>
+            <strong>REAC Scores:</strong>{' '}
+            <span>{formatREACScores(project.reacScores) || 'N/A'}</span>
+          </div>
+        </div>
+        <div>
+          <h3>All Data</h3>
+          <p className={styles.tocCta}>Jump to a dataset:</p>
+          <ul role="directory" className={styles.toc}>
+            {Object.entries(affordableHousingSchema).map(([key, { title }]) => {
+              // @ts-ignore\
+              if (!!project[key].length)
+                return (
+                  <li key={key}>
+                    <a href={`#${key}`}>{title}</a>
+                  </li>
+                );
+              return null;
+            })}
+          </ul>
 
-        {Object.entries(affordableHousingSchema).map(([key, section]) => {
-          // @ts-ignore
-          const recordData: any[] = project[key];
+          {Object.entries(affordableHousingSchema).map(([key, section]) => {
+            // @ts-ignore
+            const recordData: any[] = project[key];
 
-          if (!recordData.length) return null;
+            if (!recordData.length) return null;
 
-          return (
-            <div key={key} className={styles.sectionWrapper}>
-              <h3 className={styles.sectionTitle}>{section.title}</h3>
-              {/* for each record in the section*/}
-              {recordData.map((record) => (
-                <div className={styles.itemWrapper}>
-                  <MiniTable schemaEntry={section} record={record} />
-                </div>
-              ))}
-            </div>
-          );
-        })}
-
-        <div className={styles.wrapper}>{}</div>
+            return (
+              <section id={key} key={key} className={styles.sectionWrapper}>
+                <h4>{section.title}</h4>
+                <span className={styles.topButton}>
+                  <a type="button" href="#data-dashboard">
+                    🔝
+                  </a>
+                </span>
+                {/* for each record in the section*/}
+                {recordData.map((record) => (
+                  <div className={styles.itemWrapper}>
+                    <MiniTable schemaEntry={section} record={record} />
+                  </div>
+                ))}
+              </section>
+            );
+          })}
+        </div>
       </div>
     </div>
   );
@@ -140,4 +178,24 @@ function formatValue<T>({ format, accessor }: SchemaItem<T>, record: T) {
     default:
       return value;
   }
+}
+
+function formatREACScores(scores?: Record<string, string>) {
+  if (!!scores && !!Object.keys(scores).length) {
+    return (
+      <table className={styles.reacTable}>
+        <tbody>
+          {Object.entries(scores).map(([k, v]) => (
+            <tr>
+              <td>
+                <strong>{k}:</strong>
+              </td>
+              <td>{v}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    );
+  }
+  return null;
 }
