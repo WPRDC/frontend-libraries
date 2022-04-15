@@ -35,9 +35,11 @@
 .address > ul > li:first-child {
   @apply text-zinc-700;
   @apply font-medium;
+  @apply text-base;
 }
 
 .address ul {
+  @apply text-sm;
   @apply text-zinc-700;
 }
 

@@ -15,6 +15,8 @@ import { HousecatNavbar } from '../../components/Navbar';
 import Layout from '../../components/Layout';
 
 function MapPage() {
+  const boardRef = React.useRef<HTMLDivElement>(null);
+
   const [filterParams, setFilterParams] = React.useState<FilterFormValues>();
   const [currentProject, setCurrentProject] = React.useState<number>();
 
@@ -22,6 +24,10 @@ function MapPage() {
 
   function handleFormChange(params: FilterFormValues) {
     setFilterParams(params);
+  }
+
+  if (!!boardRef && boardRef.current) {
+    boardRef.current.scrollTop = 0;
   }
 
   return (
@@ -36,7 +42,7 @@ function MapPage() {
           handleProjectSelection={setCurrentProject}
         />
       </div>
-      <div className={styles.dashboardSection}>
+      <div ref={boardRef} className={styles.dashboardSection}>
         {!!affordableHousingProject ? (
           <AHProjectView project={affordableHousingProject} />
         ) : (
