@@ -1,11 +1,15 @@
 .wrapper {
-  @apply container py-24 mx-auto;
+  @apply w-full;
   @apply text-center;
   @apply overflow-auto;
 }
 
 .wrapper a {
   @apply font-medium text-blue-600 underline;
+}
+
+.wrapper > div {
+  @apply container py-24 mx-auto;
 }
 
 .infoTitle {
