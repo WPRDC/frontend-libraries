@@ -127,7 +127,6 @@ tr:first-child > .valueCell {
 
 .mainFields {
   @apply py-2;
-  @apply text-lg;
 }
 
 .mainFields > div {
