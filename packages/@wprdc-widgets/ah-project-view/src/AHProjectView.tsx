@@ -164,7 +164,7 @@ function formatValue<T>({ format, accessor }: SchemaItem<T>, record: T) {
     case 'percent':
       let tmpVal: number = value as number;
       if (tmpVal > 1) {
-        tmpVal /= 10;
+        tmpVal /= 100;
       }
       return tmpVal.toLocaleString('en-US', { style: 'percent' });
     case 'money':
