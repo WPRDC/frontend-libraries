@@ -9,7 +9,6 @@ import { HousecatAPI } from './api';
 import { ProjectIndexMapProperties } from '@wprdc-types/housecat';
 
 import styles from './PopupContent.module.css';
-import { RiCommunityFill } from 'react-icons/ri';
 import { CategoricalLegendItemProps } from '@wprdc-types/map';
 
 interface AffordableHousingLayer extends Resource {}
@@ -85,12 +84,14 @@ export const affordableHousingProjectMapConnection: MapPluginConnection<
             return (
               <LegendItem
                 variant="categorical"
-                marker={<RiCommunityFill style={{ color }} />}
+                marker={color}
                 label={item.label}
               />
             );
           })}
-          <p style={{ fontStyle: 'italic' }}>Marker size based on unit count</p>
+          <p style={{ fontStyle: 'italic', fontWeight: 500 }}>
+            Marker size based on unit count
+          </p>
         </LegendSection>
       );
     else setLegendSection();

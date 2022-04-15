@@ -78,7 +78,7 @@ export const AHProjectView: React.FC<AHProjectViewProps> = ({
             <span>{project.maxUnits || 'N/A'}</span>
           </div>
           <div>
-            <strong>Funding Category</strong>{' '}
+            <strong>Funding Category:</strong>{' '}
             <span>
               {formatFundingCategory(project.fundingCategory) || 'N/A'}
             </span>
