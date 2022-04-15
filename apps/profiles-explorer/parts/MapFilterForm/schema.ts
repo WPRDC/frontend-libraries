@@ -54,15 +54,22 @@ export const schema: Schema = {
       { id: '6mos', label: 'Inspected in past 6 months' },
     ],
   },
-  // 'funding-type': {
-  //   label: 'Funding Type',
-  //   items: [{ id: '', label: '---' }],
-  // },
+  'funding-category': {
+    label: 'Funding Category',
+    items: [
+      { id: '', label: '---' },
+      { id: 'hud-mf', label: 'HUD Mutlifamily' },
+      { id: 'lihtc', label: 'LIHTC' },
+      { id: 'public-housing', label: 'Public Housing' },
+      { id: 'multiple', label: 'Multiple Sources' },
+    ],
+  },
 };
 
-export const initValues: Record<string, string> = {
-  'risk-level': '',
-  'lihtc-compliance': '',
-  'reac-score': '',
-  'last-inspection': '',
+export const initValues: Record<string, string | null> = {
+  'risk-level': null,
+  'lihtc-compliance': null,
+  'reac-score': null,
+  'last-inspection': null,
+  'funding-category': null,
 };

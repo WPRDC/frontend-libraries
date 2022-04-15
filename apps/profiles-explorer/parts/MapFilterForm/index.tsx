@@ -23,7 +23,11 @@ interface Props {
 export function MapFilterForm({ onSubmit }: Props) {
   function handleSubmit(params: FilterFormValues) {
     console.debug({ params });
-    onSubmit(params);
+    // clear out null values
+    const cleanParams = Object.fromEntries(
+      Object.entries(params).filter(([_, v]) => v !== null),
+    );
+    onSubmit(cleanParams);
   }
 
   return (
@@ -38,6 +42,7 @@ export function MapFilterForm({ onSubmit }: Props) {
             formikProps.resetForm();
             formikProps.submitForm();
           }
+
           return (
             <form
               onReset={formikProps.handleReset}
