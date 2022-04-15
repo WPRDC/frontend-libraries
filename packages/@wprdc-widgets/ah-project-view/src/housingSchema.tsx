@@ -66,6 +66,7 @@ type IgnoredFields =
   | 'url'
   | 'centroid'
   | 'maxUnits'
+  | 'fundingCategory'
   | 'subsidyExpirationDate'
   | 'lihtcYearOfService'
   | 'reacScores';

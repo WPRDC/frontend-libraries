@@ -56,9 +56,13 @@ export const AHProjectView: React.FC<AHProjectViewProps> = ({
               </Button>
             </div>
           </div>
-          <h2 className={styles.title}>{project.name} </h2>
+          <h2 className={styles.title}>{formatTitle(project.name)}</h2>
         </div>
-        <div className={styles.address}>{project.propertyStreetAddress}</div>
+
+        <div className={styles.address}>
+          {formatAddress(project.propertyStreetAddress)}
+        </div>
+
         <div className={styles.mainFields}>
           <h3>Quick Facts</h3>
           <div>
@@ -72,6 +76,12 @@ export const AHProjectView: React.FC<AHProjectViewProps> = ({
           <div>
             <strong>Est. # of Units:</strong>{' '}
             <span>{project.maxUnits || 'N/A'}</span>
+          </div>
+          <div>
+            <strong>Funding Category</strong>{' '}
+            <span>
+              {formatFundingCategory(project.fundingCategory) || 'N/A'}
+            </span>
           </div>
           <div>
             <strong>REAC Scores:</strong>{' '}
@@ -198,4 +208,57 @@ function formatREACScores(scores?: Record<string, string>) {
     );
   }
   return null;
+}
+
+function formatFundingCategory(fc?: string): string | null {
+  if (!!fc) return fc.replaceAll('|', ' / ');
+  return null;
+}
+
+/**
+ * If alternative names exist, separate them so that they can
+ * be styled differently.
+ */
+function formatTitle(title: string): React.ReactNode {
+  const parts = title.split('|');
+  if (parts.length > 1)
+    return (
+      <>
+        {parts.map((part, i) => (
+          <span key={part}>
+            {!!i && <span>aka </span>}
+            {part}
+          </span>
+        ))}
+      </>
+    );
+  return <span>{parts[0]}</span>;
+}
+
+function formatAddress(addr?: string | null): React.ReactNode {
+  if (!addr) return '';
+
+  const parts = addr.split('|');
+  if (parts.length > 1)
+    return (
+      <ul>
+        {parts.map((part, i) => {
+          let conj = null;
+          if (!!i) {
+            if (part.toUpperCase() === 'SCATTERED SITES') {
+              conj = 'and';
+            } else {
+              conj = 'and/or';
+            }
+          }
+          return (
+            <li key={part}>
+              {!!conj && <span>{conj}</span>}
+              {part}
+            </li>
+          );
+        })}
+      </ul>
+    );
+  return <p>{parts[0]}</p>;
 }

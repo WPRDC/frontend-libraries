@@ -5,24 +5,63 @@
 }
 
 .title {
+  @apply mb-1;
+  @apply border-b border-amber-500;
+  @apply pb-1;
+}
+
+/* Primary name */
+.title > span:first-child {
   @apply text-4xl;
-  @apply font-thin;
+  @apply font-light;
+  @apply block;
+}
+
+/* Alternative names */
+.title > span:not(:first-child) {
+  @apply font-medium;
+  @apply text-base;
+  @apply ml-1;
+  @apply px-1 py-0.5;
+}
+
+/* AKA part */
+.title > span > span {
+  @apply text-xs text-zinc-400;
+  @apply uppercase;
+}
+
+.address,
+.address > ul > li:first-child {
+  @apply text-zinc-700;
+  @apply font-medium;
+}
+
+.address ul {
+  @apply text-zinc-700;
+}
+
+/* conjunction */
+.address li > span {
+  @apply text-xs text-zinc-400 pr-1;
+  @apply uppercase;
 }
 
 .topBar {
   @apply flex w-full;
 }
+
 .IDSection {
   @apply text-xs;
   @apply flex-grow;
 }
+
 .propertyID {
   @apply font-medium;
 }
+
 .bolded {
   @apply font-semibold;
-}
-.address {
 }
 
 .sectionWrapper {
@@ -96,6 +135,7 @@ tr:first-child > .valueCell {
 .reacTable {
   @apply ml-4;
 }
+
 .reacTable td:first-child {
   @apply pr-1;
 }

@@ -47,6 +47,7 @@ export interface ProjectIndexMapProperties {
 
 export interface ProjectIndexDetails extends ProjectIndex {
   maxUnits?: number;
+  fundingCategory?: string;
   subsidyExpirationDate?: string;
   lihtcYearOfService?: number;
   reacScores?: Record<string, string>;
