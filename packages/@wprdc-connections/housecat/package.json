@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-connections/housecat",
-  "version": "0.0.28",
+  "version": "0.0.29",
   "description": "",
   "keywords": [],
   "license": "AGPL-3.0-or-later",
@@ -81,12 +81,12 @@
     "@wprdc-types/api": "^0.0.13",
     "@wprdc-types/connections": "^0.0.14",
     "@wprdc-types/geo": "^0.0.13",
-    "@wprdc-types/housecat": "^0.0.18",
+    "@wprdc-types/housecat": "^0.0.19",
     "@wprdc-types/list-box": "^0.0.14",
     "@wprdc-types/map": "^0.0.12",
     "@wprdc-types/shared": "^0.0.12",
     "@wprdc-types/viz": "^0.0.15",
-    "@wprdc-widgets/map": "^0.0.18",
+    "@wprdc-widgets/map": "^0.0.19",
     "react-icons": "^4.3.1"
   },
   "gitHead": "0d071a3dd4e93b865db197e5d1746a1572488954"
