@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-connections/housecat",
-  "version": "0.0.29",
+  "version": "0.0.30",
   "description": "",
   "keywords": [],
   "license": "AGPL-3.0-or-later",
@@ -81,7 +81,7 @@
     "@wprdc-types/api": "^0.0.13",
     "@wprdc-types/connections": "^0.0.14",
     "@wprdc-types/geo": "^0.0.13",
-    "@wprdc-types/housecat": "^0.0.19",
+    "@wprdc-types/housecat": "^0.0.20",
     "@wprdc-types/list-box": "^0.0.14",
     "@wprdc-types/map": "^0.0.12",
     "@wprdc-types/shared": "^0.0.12",
