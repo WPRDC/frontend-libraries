@@ -137,6 +137,11 @@ tr:first-child > .valueCell {
   @apply ml-4;
 }
 
+.reacTable td {
+  @apply border-none;
+  @apply bg-none;
+}
+
 .reacTable td:first-child {
   @apply pr-1;
 }

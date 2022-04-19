@@ -24,12 +24,12 @@
 .bigButton {
   @apply p-4;
   @apply h-32;
-  @apply border border-black rounded-lg;
+  @apply border border-zinc-400 rounded-lg;
   @apply flex flex-col items-center;
   @apply bg-amber-100;
   @apply drop-shadow-md hover:drop-shadow-lg;
-  @apply hover:border-2 hover:bg-amber-50;
-  @apply active:border-2 active:bg-amber-50 active:shadow-inner active:drop-shadow-none;
+  @apply hover:border-zinc-800 hover:bg-amber-50;
+  @apply active:border-black active:bg-amber-50 active:shadow-inner active:drop-shadow-none;
 }
 
 .buttonTitle {
@@ -57,18 +57,31 @@
 }
 
 .content {
-  @apply my-6;
-  @apply text-left;
-  @apply max-w-5xl mx-auto;
+  @apply overflow-auto;
+  @apply p-8 pb-8;
+  @apply max-w-4xl mx-auto text-left;
 }
+
+.content a,
+.content p,
+.content ul {
+  @apply font-serif;
+  @apply text-xl text-zinc-800;
+  @apply leading-relaxed;
+}
+
+.content a {
+  @apply font-medium text-blue-800 underline;
+  @apply hover:text-blue-400;
+}
+
+.content ul,
 .content p {
-  @apply text-lg;
   @apply mb-6;
-  @apply leading-loose;
 }
 
 .content p strong {
-  @apply text-2xl font-semibold;
+  @apply text-xl font-semibold;
 }
 
 .logos {

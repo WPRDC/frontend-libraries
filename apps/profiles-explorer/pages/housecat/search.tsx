@@ -11,6 +11,7 @@ import { AHProjectView } from '@wprdc-widgets/ah-project-view';
 import { ProjectIndex } from '@wprdc-types/housecat';
 import Layout from '../../components/Layout';
 import { HousecatNavbar } from '../../components/Navbar';
+import HousecatFooter from '../../components/Footer/HousecatFooter';
 
 function SearchPage() {
   const [currentProject, setCurrentProject] = React.useState<ProjectIndex>();
@@ -19,7 +20,7 @@ function SearchPage() {
   return (
     <div className={styles.wrapper}>
       <div className={styles.searchSection}>
-        <h2 className={styles.cta}> Find information on affordable housing</h2>
+        <h2 className={styles.cta}>Find information on subsidized housing</h2>
         <ConnectedSearchBox<
           ProjectIndex,
           ResourceOptionTemplateOptions<ProjectIndex>
@@ -40,7 +41,11 @@ function SearchPage() {
 }
 
 SearchPage.getLayout = function getLayout(page: React.ReactChildren) {
-  return <Layout Navbar={HousecatNavbar}>{page}</Layout>;
+  return (
+    <Layout Navbar={HousecatNavbar} Footer={HousecatFooter}>
+      {page}
+    </Layout>
+  );
 };
 
 export default SearchPage;

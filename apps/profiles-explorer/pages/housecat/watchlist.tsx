@@ -17,6 +17,7 @@ import { Item } from '@wprdc-components/util';
 import { LayerPanelVariant } from '@wprdc-types/map';
 import Layout from '../../components/Layout';
 import { HousecatNavbar } from '../../components/Navbar';
+import HousecatFooter from '../../components/Footer/HousecatFooter';
 
 interface Props {}
 
@@ -90,7 +91,11 @@ function makeConnectionHookArgs(filterParams?: FilterFormValues) {
 }
 
 Watchlist.getLayout = function getLayout(page: React.ReactChildren) {
-  return <Layout Navbar={HousecatNavbar}>{page}</Layout>;
+  return (
+    <Layout Navbar={HousecatNavbar} Footer={HousecatFooter}>
+      {page}
+    </Layout>
+  );
 };
 
 export default Watchlist;

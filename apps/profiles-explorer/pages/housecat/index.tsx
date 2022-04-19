@@ -7,13 +7,14 @@ import { HousecatNavbar } from '../../components/Navbar';
 
 import CREATELogo from '../../assets/logos/create_logo.png';
 import WPRDCLogo from '../../assets/logos/wprdc-square.png';
+import HousecatFooter from '../../components/Footer/HousecatFooter';
 
 function HousecatHome() {
   return (
     <div className={styles.wrapper}>
       <div>
         <h2 className={styles.infoTitle}>
-          Find information on affordable housing
+          Find information on subsidized housing
         </h2>
         <div className={styles.buttonSection}>
           <Link href="/housecat/map">
@@ -36,7 +37,7 @@ function HousecatHome() {
             <button className={styles.bigButton}>
               <div className={styles.buttonTitle}>🔍 Search</div>
               <div className={styles.buttonText}>
-                Find information on housing projects
+                Find information on subsidized housing
               </div>
             </button>
           </Link>
@@ -116,7 +117,11 @@ function HousecatHome() {
 }
 
 HousecatHome.getLayout = function getLayout(page: React.ReactChildren) {
-  return <Layout Navbar={HousecatNavbar}>{page}</Layout>;
+  return (
+    <Layout Navbar={HousecatNavbar} Footer={HousecatFooter}>
+      {page}
+    </Layout>
+  );
 };
 
 export default HousecatHome;
