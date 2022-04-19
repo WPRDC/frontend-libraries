@@ -46,7 +46,7 @@
     "@wprdc-types/select": "^0.0.16",
     "@wprdc-types/shared": "^0.0.12",
     "@wprdc-types/viz": "^0.0.15",
-    "@wprdc-widgets/ah-project-view": "^0.0.16",
+    "@wprdc-widgets/ah-project-view": "^0.0.17",
     "@wprdc-widgets/data-viz": "^0.0.27",
     "@wprdc-widgets/geography-picker": "^0.0.26",
     "@wprdc-widgets/indicator-view": "^0.0.30",
