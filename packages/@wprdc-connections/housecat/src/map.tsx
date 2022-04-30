@@ -123,8 +123,7 @@ export const affordableHousingProjectMapConnection: MapPluginConnection<
       );
     return null;
   },
-  makeClickContent: (e) => {
-    console.log('E', e);
+  makeClickContent: (_) => {
     return null;
   },
 };

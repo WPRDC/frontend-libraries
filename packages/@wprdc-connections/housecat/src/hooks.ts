@@ -34,7 +34,6 @@ export function usePublicHousingProject(
     if (typeof identifier === 'object') argID = identifier.id;
     else argID = parseInt(identifier as string);
     setIsLoading(true);
-    console.log(identifier, argID);
     HousecatAPI.requestAffordableHousingProject(argID).then(handleResponse);
 
     return function cleanup() {};

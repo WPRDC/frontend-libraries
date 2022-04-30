@@ -1,5 +1,11 @@
 import { Feature } from 'geojson';
-import { LayerProps, MapLayerMouseEvent, SourceProps } from 'react-map-gl';
+import {
+  LayerProps,
+  MapLayerMouseEvent,
+  MapRef,
+  SourceProps,
+  ViewState,
+} from 'react-map-gl';
 import {
   ASSETS_SOURCE_ID,
   MAPS_API_ENDPOINT,
@@ -13,6 +19,8 @@ import {
   ConnectionResourcesRecord,
   MapPluginToolbox,
 } from '@wprdc-types/connections';
+import { RefObject } from 'react';
+import React from 'react';
 
 export function makeContentProps(event: MapLayerMouseEvent): PopupContentProps {
   const features: Feature[] = event.features || [];
@@ -144,6 +152,29 @@ function sortFeatures(
   return sortedFeatures;
 }
 
+/**
+ * Builds viewState by combining provided toolbox viewStates right-to-left.
+ * This prioritizes earlier toolboxes in the array.
+ * @param toolboxes
+ */
+export function flattenToolboxViewStates(
+  toolboxes: MapPluginToolbox<any, any>[]
+): Partial<ViewState> {
+  return toolboxes.reduceRight((acc, toolbox) => {
+    if (!!toolbox.viewState) {
+      return { ...acc, ...toolbox.viewState };
+    }
+    return acc;
+  }, {} as Partial<ViewState>);
+}
+
+/**
+ * Serializes view state object so that it can be easily checked for differences.
+ */
+export function hashViewState(vs: Partial<ViewState>) {
+  return Object.values(vs).join('/');
+}
+
 export const layerType = (l: LayerProps) => l.id && l.id.split('/')[1];
 
 export const layerFilter = (l: LayerProps) => layerType(l) === 'fill';
@@ -232,3 +263,25 @@ export const DEFAULT_GEOIDS: Record<GeographyType, string> = {
   [GeographyType.SchoolDistrict]: '4219170',
   [GeographyType.Neighborhood]: '4219170',
 };
+
+/**
+ * Hook that combines inner and outer (and any other) map refs to allow
+ * controlling the map to be done by default in the library component
+ */
+export function useCombinedRefs(...refs: any[]): RefObject<MapRef> {
+  const targetRef = React.useRef<MapRef>(null);
+
+  React.useEffect(() => {
+    refs.forEach((ref) => {
+      if (!ref) return;
+
+      if (typeof ref === 'function') {
+        ref(targetRef.current);
+      } else {
+        ref.current = targetRef.current;
+      }
+    });
+  }, [refs]);
+
+  return targetRef;
+}

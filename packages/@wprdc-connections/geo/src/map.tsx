@@ -47,7 +47,9 @@ export const menuLayerConnection: MapPluginConnection<GeogLevel, GeogBrief> = {
   getInteractiveLayerIDs: (items, selected) => {
     if (typeof selected === 'string')
       throw Error('Multiple select should not be available in map menu.');
+
     const selectedLayer = items.find((item) => selected.has(item.id));
+
     if (!!selectedLayer) return [`${selectedLayer.id}/fill`];
     return [];
   },
@@ -81,10 +83,10 @@ export const menuLayerConnection: MapPluginConnection<GeogLevel, GeogBrief> = {
   makeFilter: (item) => {
     if (Array.isArray(item)) {
       if (!item.length) return clearLayerFilter();
-      if (item.length === 1) return ['==', 'global_geoid', item[0].geogID];
-      return ['in', 'global_geoid', item.map((i) => i.geogID)];
+      if (item.length === 1) return ['==', 'slug', item[0].slug];
+      return ['in', 'slug', item.map((i) => i.slug)];
     }
-    return ['==', 'global_geoid', item.geogID];
+    return ['==', 'slug', item.slug];
   },
   // the menu layer doesn't need to be indicated in the legend section for now
   makeLegendSection: (setLegendSection) => setLegendSection(),
@@ -142,4 +144,15 @@ export const menuLayerConnection: MapPluginConnection<GeogLevel, GeogBrief> = {
       }
     }
   },
+  makeViewState: (selectedItem: GeogBrief) => {
+    const { centroid } = selectedItem;
+    if (!!centroid) {
+      return {
+        latitude: centroid[0],
+        longitude: centroid[1],
+      };
+    }
+    return {};
+  },
+  hashElement: (selectedItem) => (selectedItem ? selectedItem.slug : null),
 };

@@ -3,7 +3,6 @@ import { useState, useEffect, Key } from 'react';
 import theme from './theme';
 
 import { GeographyType } from '@wprdc-types/geo';
-
 import { MapPluginHookArgs, MapPluginToolbox } from '@wprdc-types/connections';
 
 import {
@@ -13,7 +12,9 @@ import {
   Expression,
   MapLayerMouseEvent,
 } from '@wprdc-types/map';
+
 import { ColorScheme, Resource, Selection } from '@wprdc-types/shared';
+import { ViewState } from 'react-map-gl';
 
 export const CARTO_USER = 'wprdc';
 export const MAPS_API_ENDPOINT = `https://${CARTO_USER}.carto.com/api/v1/map`;
@@ -23,6 +24,7 @@ export function useMapPlugin<T extends Resource, E>({
   layerItems,
   layerSelection,
   selectedMapItem,
+  selectedFilter: defaultSelectedFilter,
   options,
   context,
 }: MapPluginHookArgs<T, E>): MapPluginToolbox<T, E> {
@@ -38,15 +40,20 @@ export function useMapPlugin<T extends Resource, E>({
   const [selection, setSelection] = useState<Selection>(
     layerSelection || (new Set() as Set<Key>)
   );
+
   // for filtering styled layers for interaction states
   const [hoveredFilter, setHoveredFilter] = useState<Expression>(
     clearLayerFilter()
   );
   const [selectedFilter, setSelectedFilter] = useState<Expression>(
-    clearLayerFilter()
+    defaultSelectedFilter || clearLayerFilter()
   );
   const [interactiveLayerIDs, setInteractiveLayerIDs] = useState<string[]>([]);
   const [selectedItems, setSelectedItems] = useState<T[]>([]);
+  const [viewState, setViewState] = useState<Partial<ViewState>>();
+
+  // handle keeping track of freshness of selected item
+  const hashElement = connection.hashElement || ((e?: E) => e);
 
   // When a selection is provided, it needs to override the inside state
   useEffect(() => {
@@ -58,12 +65,16 @@ export function useMapPlugin<T extends Resource, E>({
     connection.makeMapSection(setMapSection, sources, layers);
   }, [sources, layers]);
 
-  // Update filters on selection change
+  // Update filters and handle viewport changes on selection change
+
   useEffect(() => {
-    if (selectedMapItem)
+    if (!!selectedMapItem) {
+      // handle panning/zooming to item if the connection supports it
+      if (!!connection.makeViewState)
+        setViewState(connection.makeViewState(selectedMapItem));
       setSelectedFilter(connection.makeFilter(selectedMapItem));
-    else setSelectedFilter(clearLayerFilter());
-  }, [selectedMapItem]);
+    } else setSelectedFilter(clearLayerFilter());
+  }, [hashElement(selectedMapItem)]);
 
   // Update filters on hover change
   useEffect(() => {
@@ -82,9 +93,6 @@ export function useMapPlugin<T extends Resource, E>({
 
   // Update map data on selection or option change
   useEffect(() => {
-    console.groupCollapsed('Map connection update');
-    console.groupEnd();
-    // todo:
     if (!!layerItems) {
       // signal that the first layer is the only layer to render, and is always rendered
       if (!!options && !!options.permanentLayer) {
@@ -135,8 +143,6 @@ export function useMapPlugin<T extends Resource, E>({
 
   /**
    * Runs when a layer is selected in the map's menu.
-   *
-   * @param selection
    */
   const handleLayerSelection = (selection: Selection) => {
     setSelection(selection);
@@ -180,6 +186,7 @@ export function useMapPlugin<T extends Resource, E>({
     interactiveLayerIDs,
     mapSection,
     selectedItems,
+    viewState,
     handleLayerSelection,
     handleHover,
     handleClick,

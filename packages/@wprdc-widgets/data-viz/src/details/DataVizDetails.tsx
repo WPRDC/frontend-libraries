@@ -35,8 +35,6 @@ export function DataVizDetails(props: DataVizDetailsProps) {
     height: 0,
   });
 
-  console.log('DEETZ', { props });
-
   return (
     <div className={styles.wrapper}>
       <div className={styles.topSection}>

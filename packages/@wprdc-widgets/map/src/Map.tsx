@@ -6,9 +6,7 @@
  */
 
 import * as React from 'react';
-
 import styles from './Map.module.css';
-
 import {
   Map as ReactMapGLMap,
   Layer,
@@ -18,25 +16,26 @@ import {
   Source,
   SourceProps,
   MapRef,
+  ViewState,
+  ViewStateChangeEvent,
 } from 'react-map-gl';
-
 import { LayerPanelVariant, PopupContentProps } from '@wprdc-types/map';
-
 import {
   MouseEventHandler,
   MapPluginToolbox,
   ConnectableMapProps,
   ConnectedLayerPanelProps,
 } from '@wprdc-types/connections';
-
 import { ColorScheme } from '@wprdc-types/shared';
 import { useProvider } from '@wprdc-components/provider';
-
 import { basemaps, DEFAULT_BASEMAP_STYLE, DEFAULT_VIEWSTATE } from './settings';
 import {
+  flattenToolboxViewStates,
   handleMouseEventForToolboxes,
   hasFeatures,
+  hashViewState,
   makeContentProps,
+  useCombinedRefs,
 } from './utils';
 
 import { LayerPanel } from './layerpanel';
@@ -87,13 +86,20 @@ export const Map = React.forwardRef<MapRef, ConnectableMapProps>(
     },
     ref
   ) => {
+    const innerRef = React.useRef<MapRef>(null);
+    const combinedRef = useCombinedRefs(ref, innerRef);
+
     // context record to share data across plugins
     const [pluginContext, setPluginContext] = React.useState<
       Record<string, any>
     >({});
+
     // Internal state
     // ------------------------------------------------------------------------
     const [cursor, setCursor] = React.useState<string>('auto');
+    const [viewState, setViewState] = React.useState<Partial<ViewState>>(
+      initialViewState || DEFAULT_VIEWSTATE
+    );
     const [hoverPopup, setHoverPopup] = React.useState<React.ReactNode>();
     const [clickPopup, setClickPopup] = React.useState<React.ReactNode>();
 
@@ -103,7 +109,7 @@ export const Map = React.forwardRef<MapRef, ConnectableMapProps>(
       ? basemaps[basemapStyle]
       : DEFAULT_BASEMAP_STYLE;
 
-    // if any connections are provided, run through
+    // if any connections are provided, run through them
     const toolboxes: MapPluginToolbox<any, any>[] = connections.map(
       (connection) => {
         const hookArgs = connectionHookArgs[connection.name] || {};
@@ -115,6 +121,24 @@ export const Map = React.forwardRef<MapRef, ConnectableMapProps>(
         });
       }
     );
+
+    console.debug('Map Connection Toolboxes');
+    console.debug(toolboxes);
+
+    // extract the viewstate from toolboxes -- union all viewstates
+    // todo: maybe it's better to just use the first one found
+    const toolboxViewState = flattenToolboxViewStates(toolboxes);
+
+    // check if toolbox viewState has changed
+    React.useEffect(() => {
+      if (!!toolboxViewState.latitude && !!toolboxViewState.longitude) {
+        const { latitude, longitude, ...viewStateProps } = toolboxViewState;
+        combinedRef.current?.easeTo({
+          center: [latitude, longitude],
+          ...viewStateProps,
+        });
+      }
+    }, [combinedRef, hashViewState(toolboxViewState)]);
 
     // Wrappers around commonly-used event handlers
     // ------------------------------------------------------------------------
@@ -151,7 +175,6 @@ export const Map = React.forwardRef<MapRef, ConnectableMapProps>(
           }
           const { toolboxItems, toolboxContents } =
             handleMouseEventForToolboxes(toolboxes, event, eventType);
-
           if (
             !!customContents ||
             (!!toolboxContents && !!toolboxContents.length)
@@ -171,6 +194,7 @@ export const Map = React.forwardRef<MapRef, ConnectableMapProps>(
         }
       }
     };
+
     const handleHover = (event: MapLayerMouseEvent) => {
       handleMouseEvent(
         'hover',
@@ -183,7 +207,7 @@ export const Map = React.forwardRef<MapRef, ConnectableMapProps>(
     };
 
     const handleClick = (event: MapLayerMouseEvent) => {
-      console.debug('Map Click', event);
+      console.debug('Map Click', event, event.features);
       return handleMouseEvent(
         'click',
         event,
@@ -199,10 +223,17 @@ export const Map = React.forwardRef<MapRef, ConnectableMapProps>(
       setCursor('auto');
     };
 
+    /**
+     *
+     */
+    const handleViewportChange = (e: ViewStateChangeEvent) => {
+      setViewState(e.viewState);
+    };
+
     // Prepare for render
     // ------------------------------------------------------------------------
 
-    // get mapbox api key, preferring prop over context
+    // get mapbox api key, preferring prop to context
     const { mapboxAPIToken: ctxToken } = useProvider();
     const mapboxToken: string | undefined = mapboxApiAccessToken || ctxToken;
 
@@ -257,15 +288,15 @@ export const Map = React.forwardRef<MapRef, ConnectableMapProps>(
         )}
         <div className={styles.mapContainer}>
           <ReactMapGLMap
-            ref={ref}
+            ref={combinedRef}
             cursor={cursor}
-            initialViewState={initialViewState || DEFAULT_VIEWSTATE}
+            {...viewState}
             mapboxAccessToken={mapboxToken}
             mapStyle={mapStyle}
             onMouseMove={handleHover}
             onClick={handleClick}
             onMouseLeave={handleMouseLeave}
-            // onMove={handleViewportChange}  todo: implement this
+            onMove={handleViewportChange}
             interactiveLayerIds={interactiveLayerIDs}
             fog={fog || undefined}
             terrain={terrain || undefined}

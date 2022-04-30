@@ -20,7 +20,7 @@ import {
 } from '@wprdc-connections/geo';
 import { ConnectedSelect } from '@wprdc-components/select';
 import { useWindowSize } from '@wprdc-connections/util';
-import { GeogBrief, GeogLevel } from '@wprdc-types/geo';
+import { Geog, GeogBrief, GeogLevel } from '@wprdc-types/geo';
 import { ConnectedSearchBox } from '@wprdc-components/search-box';
 import { useProvider } from '@wprdc-components/provider';
 import { LoadingMessage } from '@wprdc-components/loading-message';
@@ -42,14 +42,13 @@ export default function Home() {
   const [geogLevel, setGeogLevel] = useState<GeogLevel>();
   const [geogSlug, setGeogSlug] = useState<string>();
   const [pathSlugs, setPathSlugs] = useState<string[]>([]);
-
   const [domainSlug, subdomainSlug, indicatorSlug, dataVizSlug] = pathSlugs;
 
   // hooks
   const context = useProvider();
   const { taxonomy } = useTaxonomy('child-health-explorer');
   const { geog } = useGeography(geogSlug);
-  console.log({ geogSlug, geog });
+
   // handling browser state
   const { width } = useWindowSize();
   const onSmallScreen = !!width && width < 768;
@@ -71,28 +70,35 @@ export default function Home() {
 
   // update state when geog param is passed
   useEffect(() => {
-    if (typeof router.query.geog === 'string') {
-      console.log('UPDATE', router);
+    // get geog levels first if they don't exist
+    if (!geogLevels) initGeogLevels();
+    else if (typeof router.query.geog === 'string') {
+      const geogLevelSlug = router.query.geog.slice(
+        0,
+        router.query.geog.lastIndexOf('-'),
+      );
+
       setGeogSlug(router.query.geog);
+      const glevel = geogLevels.find((g) => g.slug === geogLevelSlug);
+      setGeogLevel(glevel);
     } else {
-      router.push(`${router.pathname}?geog=county-42003`);
+      router.push(`${router.pathname}?geog=county-42003`, undefined, {
+        shallow: true,
+      });
     }
-  }, [router.query]);
+  }, [router.query, geogLevels]);
 
   useEffect(() => {
     context.setGeog(geog);
   }, [geog]);
 
-  // initialization
-  useEffect(() => {
-    // get available geography levels
+  function initGeogLevels() {
     GeoAPI.requestGeoLayers().then(({ data }) => {
       if (!!data && !!data.length) {
         setGeogLevels(data);
-        setGeogLevel(data[0]);
       }
     });
-  }, []);
+  }
 
   // event handlers
   function handleGeogLevelSelection(selectedGeogLevel: GeogLevel) {
@@ -220,13 +226,14 @@ export default function Home() {
               [ProjectKey.GeoMenu]: {
                 layerItems: [geogLevel],
                 layerSelection: geogLevelSelection,
+                selectedMapItem: geog,
               },
             }}
           />
         </div>,
       ];
     }
-  }, [geogLevel, onSmallScreen, geogLevelSelection]);
+  }, [geogLevel, onSmallScreen, geogLevelSelection, geog]);
 
   const mainContent = (
     <div className={styles.content}>
