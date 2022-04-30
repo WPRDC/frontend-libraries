@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-widgets/ah-project-view",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "description": "",
   "keywords": [],
   "license": "AGPL-3.0-or-later",
@@ -77,8 +77,8 @@
     "typescript": "^3.9.10"
   },
   "dependencies": {
-    "@wprdc-connections/housecat": "^0.0.30",
-    "@wprdc-types/connections": "^0.0.14",
+    "@wprdc-connections/housecat": "^0.0.31",
+    "@wprdc-types/connections": "^0.0.15",
     "@wprdc-types/shared": "^0.0.12",
     "classnames": "^2.3.1",
     "marked": "^4.0.12",

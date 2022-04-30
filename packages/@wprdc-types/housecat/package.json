@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-types/housecat",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "description": "Collection of TypeScript/JS libraries for use in/with WPRDC projects.",
   "keywords": [],
   "license": "AGPL-3.0-or-later",
@@ -75,7 +75,7 @@
   },
   "dependencies": {
     "@types/react": "^17.0.38",
-    "@wprdc-types/geo": "^0.0.13",
+    "@wprdc-types/geo": "^0.0.14",
     "@wprdc-types/shared": "^0.0.12"
   },
   "gitHead": "0d071a3dd4e93b865db197e5d1746a1572488954"

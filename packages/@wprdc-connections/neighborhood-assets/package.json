@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-connections/neighborhood-assets",
-  "version": "0.0.24",
+  "version": "0.0.25",
   "description": "",
   "keywords": [],
   "license": "AGPL-3.0-or-later",
@@ -79,14 +79,14 @@
     "@wprdc-components/checkbox-group": "^0.0.12",
     "@wprdc-components/util": "^0.0.10",
     "@wprdc-connections/api": "^0.0.15",
-    "@wprdc-connections/util": "^0.0.20",
+    "@wprdc-connections/util": "^0.0.21",
     "@wprdc-types/api": "^0.0.13",
-    "@wprdc-types/connections": "^0.0.14",
-    "@wprdc-types/geo": "^0.0.13",
-    "@wprdc-types/map": "^0.0.12",
+    "@wprdc-types/connections": "^0.0.15",
+    "@wprdc-types/geo": "^0.0.14",
+    "@wprdc-types/map": "^0.0.13",
     "@wprdc-types/neighborhood-assets": "^0.0.12",
     "@wprdc-types/shared": "^0.0.12",
-    "@wprdc-widgets/map": "^0.0.19",
+    "@wprdc-widgets/map": "^0.0.20",
     "chroma-js": "^2.1.2"
   },
   "gitHead": "0d071a3dd4e93b865db197e5d1746a1572488954"
