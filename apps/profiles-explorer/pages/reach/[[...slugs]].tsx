@@ -243,7 +243,7 @@ function GeogOverlapListing({ geog }: GeogOverlapListingProps) {
     <div className={styles.overlapSection}>
       {!!hoods && !!hoods.length && (
         <div>
-          <div className={styles.overlapTitle}>Overlapping Neighborhoods</div>
+          <div className={styles.overlapTitle}>located in</div>
           <ul className={styles.geogList}>
             {hoods.map((hood) => (
               <li key={hood.slug} className={styles.geogListItem}>
@@ -253,9 +253,9 @@ function GeogOverlapListing({ geog }: GeogOverlapListingProps) {
           </ul>
         </div>
       )}
-      {!!munis && !!munis.length && (
+      {!hoods?.length && !!munis && !!munis.length && (
         <div>
-          <div className={styles.overlapTitle}>Overlapping Towns/Cities</div>
+          <div className={styles.overlapTitle}>located in</div>
           <ul className={styles.geogList}>
             {munis.map((muni) => (
               <li key={muni.slug} className={styles.geogListItem}>

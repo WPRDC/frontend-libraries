@@ -55,7 +55,7 @@
 }
 
 .geogTitle {
-  @apply font-bold text-5xl whitespace-nowrap;
+  @apply font-medium text-xl whitespace-nowrap;
   @apply mb-0.5;
 }
 
@@ -80,8 +80,8 @@
 }
 
 .overlapTitle {
-  @apply text-xs font-semibold text-cyan-800;
-  @apply py-1;
+  @apply text-xs italic font-semibold text-cyan-700;
+  @apply py-1 pl-1;
 }
 
 .overlapLink {
@@ -91,7 +91,7 @@
 
 .geogListItem {
   @apply inline-block;
-  @apply text-sm;
+  @apply text-4xl font-bold;
 }
 
 .indicatorSection {
