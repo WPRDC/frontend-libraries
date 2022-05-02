@@ -32,6 +32,7 @@ export interface TaxonomySectionProps extends SectionSharedProps {
 
 export interface SectionSharedProps {
   geog?: GeogBrief;
-  onExploreIndicator?: (indicator: Indicator) => unknown;
-  onExploreDataViz?: (dataViz: DataVizBase) => unknown;
+  onExploreIndicator?: (indicator: Indicator) => void;
+  onExploreDataViz?: (dataViz: DataVizBase) => void;
+  onCompareIndicator?: (indicator: Indicator) => void;
 }

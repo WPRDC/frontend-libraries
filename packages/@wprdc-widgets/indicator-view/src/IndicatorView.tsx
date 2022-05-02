@@ -24,6 +24,7 @@ import { LoadingMessage } from '@wprdc-components/loading-message';
 import { ConnectedDataViz } from '@wprdc-widgets/data-viz';
 
 import { GeographyPicker } from '@wprdc-widgets/geography-picker';
+import { Button } from '@wprdc-components/button';
 
 export const IndicatorView: React.FC<IndicatorViewProps> = ({
   indicator,
@@ -32,6 +33,7 @@ export const IndicatorView: React.FC<IndicatorViewProps> = ({
   card,
   onExploreDataViz,
   onExploreIndicator,
+  onCompareIndicator,
   isLoading,
   showGeog,
 }) => {
@@ -69,6 +71,7 @@ export const IndicatorView: React.FC<IndicatorViewProps> = ({
       __html: sanitizeHtml(marked.parse(content)),
     };
   }
+
   function handleExploreIndicator() {
     if (!!onExploreIndicator && !!indicator) onExploreIndicator(indicator);
   }
@@ -134,6 +137,19 @@ export const IndicatorView: React.FC<IndicatorViewProps> = ({
         )}
       </div>
 
+      {/* Options */}
+      {!!onCompareIndicator && (
+        <div className={styles.menuSection}>
+          <h2 className={styles.subtitle}>Actions</h2>
+          <div className="w-20">
+            <Button onPress={() => onCompareIndicator(indicator)}>
+              ⚖️ Compare with other places
+            </Button>
+          </div>
+        </div>
+      )}
+
+      {/* Quick facts */}
       {!!blurbs && !!blurbs.length && (
         <div className={styles.blurbs}>
           <h2 className={styles.subtitle}>Quick Facts</h2>
@@ -151,6 +167,8 @@ export const IndicatorView: React.FC<IndicatorViewProps> = ({
           </ul>
         </div>
       )}
+
+      {/* Data Vizes */}
       {!!vizes && !!vizes.length && (
         <div className={styles.vizes}>
           <h2 className={styles.subtitle}>Tables and Visualizations</h2>
@@ -168,6 +186,7 @@ export const IndicatorView: React.FC<IndicatorViewProps> = ({
           </ul>
         </div>
       )}
+      {/* More Context*/}
       <div className={classnames(styles.details)}>
         {(fullDescription || longDescription) && (
           <>

@@ -13,8 +13,9 @@ export interface IndicatorViewProps {
   onGeogSelection?: (geog: GeogBrief) => any;
   card?: boolean;
   isLoading?: boolean;
-  onExploreIndicator?: (indicator: Indicator) => unknown;
-  onExploreDataViz?: (dataViz: DataVizBase) => unknown;
+  onExploreIndicator?: (indicator: Indicator) => void;
+  onExploreDataViz?: (dataViz: DataVizBase) => void;
+  onCompareIndicator?: (indicator: Indicator) => void;
   showGeog?: boolean;
 }
 

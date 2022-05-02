@@ -97,6 +97,15 @@ const ReachPage: NextPage = () => {
     }
   }
 
+  function handleCompareIndicator(indicator?: Indicator): void {
+    if (!!geog && indicator) {
+      router.push({
+        pathname: `/explore/indicator/compare`,
+        query: { g1: geog.slug, g2: 'county-42003', i: indicator.slug },
+      });
+    }
+  }
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.subWrapper}>
@@ -175,6 +184,7 @@ const ReachPage: NextPage = () => {
                 currentDataVizSlug={dataVizSlug}
                 onExploreDataViz={handleExploreDataViz}
                 onExploreIndicator={handleExploreIndicator}
+                onCompareIndicator={handleCompareIndicator}
                 onTabsChange={handleTabChange}
                 LinkComponent={Link}
               />

@@ -4,7 +4,11 @@ import { useRouter } from 'next/router';
 import styles from '../../../styles/Compare.module.css';
 import { serializeParams } from '@wprdc-connections/api';
 import { DataVizBase } from '@wprdc-types/viz';
-import { defaultIndicatorListBoxProps, indicatorConnection, useIndicator } from '@wprdc-connections/profiles';
+import {
+  defaultIndicatorListBoxProps,
+  indicatorConnection,
+  useIndicator,
+} from '@wprdc-connections/profiles';
 import { ConnectedSearchBox } from '@wprdc-components/search-box';
 import { useGeography } from '@wprdc-connections/geo';
 import { GeogBrief } from '@wprdc-types/geo';
@@ -97,6 +101,7 @@ export default function IndicatorComparisonPage() {
         <div className={styles.dashboardSection}>
           <div className={styles.geoSection}>
             <GeographyPicker
+              label="Select a community"
               onSelection={handleGeogSelection('a')}
               selectedGeog={geogA}
             />
@@ -116,6 +121,7 @@ export default function IndicatorComparisonPage() {
         <div className={styles.dashboardSection}>
           <div className={styles.geoSection}>
             <GeographyPicker
+              label="Select a community"
               onSelection={handleGeogSelection('b')}
               selectedGeog={geogB}
             />

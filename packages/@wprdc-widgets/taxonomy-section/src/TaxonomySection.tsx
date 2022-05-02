@@ -23,6 +23,7 @@ export const TaxonomySection: React.FC<TaxonomySectionProps> = ({
   geog,
   onExploreIndicator,
   onExploreDataViz,
+  onCompareIndicator,
   currentDomainSlug,
   currentDomainHref,
   currentSubdomainSlug,
@@ -69,7 +70,6 @@ export const TaxonomySection: React.FC<TaxonomySectionProps> = ({
       currentDataVizSlug,
     ]
   );
-  console.log('T Geog', geog);
   let breadcrumbs: BreadcrumbItemProps[] = [];
   if (currentDomain)
     breadcrumbs.push({
@@ -131,6 +131,7 @@ export const TaxonomySection: React.FC<TaxonomySectionProps> = ({
         )}
         {!currentDataViz && !!currentIndicator && (
           <IndicatorView
+            onCompareIndicator={onCompareIndicator}
             indicator={currentIndicator}
             geog={geog}
             onExploreDataViz={onExploreDataViz}

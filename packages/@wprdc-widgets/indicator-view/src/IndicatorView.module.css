@@ -59,7 +59,7 @@
 }
 
 .menuSection {
-  @apply border-b rounded-b p-2.5;
+  @apply border-b border-t py-2.5;
 }
 
 .vizes {
