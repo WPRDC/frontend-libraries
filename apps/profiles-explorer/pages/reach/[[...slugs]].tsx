@@ -126,7 +126,8 @@ const ReachPage: NextPage = () => {
             in REACH communities can use to improve social equity and reduce
             health disparities. This Community Data Explorer shares metrics from
             existing data to capture structural and social factors among the
-            REACH neighborhoods.
+            REACH neighborhoods (Northside, Hill District, Garfield, Larimer,
+            Homewood, East Hills, Wilkinsburg and Mon Valley).
           </p>
           <div className={styles.geoDetails}>
             {!!geog && (
@@ -134,6 +135,7 @@ const ReachPage: NextPage = () => {
                 <div className={styles.geogTitle}>{geog.title}</div>
               </div>
             )}
+
             {!!geog && <GeogOverlapListing geog={geog} />}
           </div>
         </div>

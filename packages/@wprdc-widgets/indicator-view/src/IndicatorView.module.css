@@ -59,7 +59,6 @@
 }
 
 .menuSection {
-  @apply border-b border-t py-2.5;
 }
 
 .menuSection button {

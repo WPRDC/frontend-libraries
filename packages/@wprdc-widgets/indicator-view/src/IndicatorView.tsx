@@ -126,7 +126,15 @@ export const IndicatorView: React.FC<IndicatorViewProps> = ({
                 />
               </p>
             )}
+            {/* Options */}
           </div>
+          {!!onCompareIndicator && (
+            <div className={styles.menuSection}>
+              <Button onPress={() => onCompareIndicator(indicator)}>
+                ⚖️ {'  '}Compare
+              </Button>
+            </div>
+          )}
         </div>
         <p className={styles.detailsItem}>{description}</p>
 
@@ -136,16 +144,6 @@ export const IndicatorView: React.FC<IndicatorViewProps> = ({
           </div>
         )}
       </div>
-
-      {/* Options */}
-      {!!onCompareIndicator && (
-        <div className={styles.menuSection}>
-          <h2 className={styles.subtitle}>Actions</h2>
-          <Button onPress={() => onCompareIndicator(indicator)}>
-            ⚖️ Compare
-          </Button>
-        </div>
-      )}
 
       {/* Quick facts */}
       {!!blurbs && !!blurbs.length && (

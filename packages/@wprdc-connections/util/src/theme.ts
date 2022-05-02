@@ -39,18 +39,22 @@ const polygons = {
     },
   },
   lineOpacity: {
+    opaque: 1,
     standard: 0.8,
   },
   lineColor: colors.gunmetal,
+  highlightLineColor: '#3182CE',
   fillColor: [
     'case',
     ['==', ['get', 'geogID'], ''],
     colors.secondary,
     colors.primary,
   ] as Expression,
+  highlightFillColor: '#3182CE',
   hoverColor: colors.primary,
   selectedColor: colors.secondary,
   fillOpacity: {
+    light: 0.2,
     standard: 0.6,
     selection: [
       'case',
