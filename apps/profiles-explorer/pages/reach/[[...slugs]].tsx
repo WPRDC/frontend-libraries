@@ -33,13 +33,10 @@ const ReachPage: NextPage = () => {
   const router = useRouter();
 
   function handleTabChange(domain: React.Key): void {
-    router.push(
-      `/reach/${domain}/${serializeParams(router.query)}`,
-      undefined,
-      {
-        shallow: true,
-      },
-    );
+    const { slugs, ...params } = router.query;
+    router.push(`/reach/${domain}/${serializeParams(params)}`, undefined, {
+      shallow: true,
+    });
   }
 
   const [domainSlug, subdomainSlug, indicatorSlug, dataVizSlug] = pathSlugs;
@@ -77,21 +74,25 @@ const ReachPage: NextPage = () => {
   };
 
   function handleExploreDataViz(dataViz: DataVizBase): void {
+    const { slugs, ...params } = router.query;
+
     router.push(
       `/reach/${domainSlug}/${subdomainSlug}/${indicatorSlug}/${
         dataViz.slug
-      }/${serializeParams(router.query)}`,
+      }/${serializeParams(params)}`,
     );
   }
 
   function handleExploreIndicator(indicator: Indicator): void {
+    const { slugs, ...params } = router.query;
+
     let domain: string, subdomain: string;
     if (!!indicator.hierarchies && !!indicator.hierarchies.length) {
       domain = indicator.hierarchies[0].domain.slug;
       subdomain = indicator.hierarchies[0].subdomain.slug;
       router.push(
         `/reach/${domain}/${subdomain}/${indicator.slug}/${serializeParams(
-          router.query,
+          params,
         )}`,
       );
     }
@@ -129,6 +130,11 @@ const ReachPage: NextPage = () => {
             REACH neighborhoods (Northside, Hill District, Garfield, Larimer,
             Homewood, East Hills, Wilkinsburg and Mon Valley).
           </p>
+          <p>
+            <strong>
+              Click on the map to see indicators for other tracts.{' '}
+            </strong>
+          </p>
           <div className={styles.geoDetails}>
             {!!geog && (
               <div>
@@ -142,7 +148,7 @@ const ReachPage: NextPage = () => {
         <div className={styles.mapSection}>
           <Map
             initialViewState={{
-              zoom: 9.5,
+              zoom: 9.8,
               longitude: -79.92,
               latitude: 40.37,
             }}
