@@ -164,6 +164,7 @@ const ReachPage: NextPage = () => {
                 <div className={styles.geogTitle}>{geog.title}</div>
               </div>
             )}
+            {!!geog && <GeogOverlapListing geog={geog} />}
           </div>
         </div>
 
