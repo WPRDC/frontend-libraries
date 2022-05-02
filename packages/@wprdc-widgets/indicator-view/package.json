@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-widgets/indicator-view",
-  "version": "0.0.31",
+  "version": "0.0.32",
   "description": "",
   "keywords": [],
   "license": "AGPL-3.0-or-later",
@@ -85,11 +85,11 @@
     "@wprdc-connections/profiles": "^0.0.26",
     "@wprdc-types/connections": "^0.0.15",
     "@wprdc-types/data-viz": "^0.0.16",
-    "@wprdc-types/indicator-view": "^0.0.14",
+    "@wprdc-types/indicator-view": "^0.0.15",
     "@wprdc-types/shared": "^0.0.12",
     "@wprdc-types/viz": "^0.0.16",
-    "@wprdc-widgets/data-viz": "^0.0.28",
-    "@wprdc-widgets/geography-picker": "^0.0.27",
+    "@wprdc-widgets/data-viz": "^0.0.29",
+    "@wprdc-widgets/geography-picker": "^0.0.28",
     "classnames": "^2.3.1",
     "marked": "^4.0.12",
     "sanitize-html": "^2.7.0"
