@@ -141,11 +141,9 @@ export const IndicatorView: React.FC<IndicatorViewProps> = ({
       {!!onCompareIndicator && (
         <div className={styles.menuSection}>
           <h2 className={styles.subtitle}>Actions</h2>
-          <div className="w-20">
-            <Button onPress={() => onCompareIndicator(indicator)}>
-              ⚖️ Compare
-            </Button>
-          </div>
+          <Button onPress={() => onCompareIndicator(indicator)}>
+            ⚖️ Compare
+          </Button>
         </div>
       )}
 

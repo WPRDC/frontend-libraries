@@ -108,56 +108,26 @@ const ReachPage: NextPage = () => {
 
   return (
     <div className={styles.wrapper}>
-      <div className={styles.subWrapper}>
-        <div className={styles.main}>
-          <div className={styles.intro}>
-            <div className={styles.title}>
-              <a href="/reach">Community Data Explorer</a>
-            </div>
-            <div className={styles.subtitle}>
-              Indicators to inform municipal equity practices
-            </div>
-            <p className={styles.description}>
-              Municipal governments have a profound role and responsibility for
-              leading the way to quality of life and equitable access to
-              opportunity in the communities of our region. The University of
-              Pittsburgh’s Graduate School of Public Health, Sustainable
-              Pittsburgh, and the Western Pennsylvania Regional Data Center have
-              collaboratively developed a set of tools that municipal
-              governments in REACH communities can use to improve social equity
-              and reduce health disparities. This Community Data Explorer shares
-              metrics from existing data to capture structural and social
-              factors among the REACH neighborhoods.
-            </p>
+      <div className={styles.main}>
+        <div className={styles.intro}>
+          <div className={styles.title}>
+            <a href="/reach">Community Data Explorer</a>
           </div>
-          <div className={styles.mapSection}>
-            <Map
-              initialViewState={{
-                zoom: 9.5,
-                longitude: -79.92,
-                latitude: 40.37,
-              }}
-              layerPanelVariant={LayerPanelVariant.None}
-              connections={[menuLayerConnection] as ConnectionCollection}
-              onClick={handleClick}
-              connectionHookArgs={{
-                [ProjectKey.GeoMenu]: {
-                  layerItems: geogLevels,
-                  layerSelection: selectedGeogLevel,
-                  options: {
-                    highlightFilter: [
-                      'in',
-                      ['get', 'global_geoid'],
-                      ['literal', REACH_TRACTS],
-                    ],
-                  },
-                },
-              }}
-            />
+          <div className={styles.subtitle}>
+            Indicators to inform municipal equity practices
           </div>
-        </div>
-
-        <div className={styles.details}>
+          <p className={styles.description}>
+            Municipal governments have a profound role and responsibility for
+            leading the way to quality of life and equitable access to
+            opportunity in the communities of our region. The University of
+            Pittsburgh’s Graduate School of Public Health, Sustainable
+            Pittsburgh, and the Western Pennsylvania Regional Data Center have
+            collaboratively developed a set of tools that municipal governments
+            in REACH communities can use to improve social equity and reduce
+            health disparities. This Community Data Explorer shares metrics from
+            existing data to capture structural and social factors among the
+            REACH neighborhoods.
+          </p>
           <div className={styles.geoDetails}>
             {!!geog && (
               <div>
@@ -167,33 +137,70 @@ const ReachPage: NextPage = () => {
             {!!geog && <GeogOverlapListing geog={geog} />}
           </div>
         </div>
+        <div className={styles.mapSection}>
+          <Map
+            initialViewState={{
+              zoom: 9.5,
+              longitude: -79.92,
+              latitude: 40.37,
+            }}
+            layerPanelVariant={LayerPanelVariant.None}
+            connections={[menuLayerConnection] as ConnectionCollection}
+            onClick={handleClick}
+            connectionHookArgs={{
+              [ProjectKey.GeoMenu]: {
+                layerItems: geogLevels,
+                layerSelection: selectedGeogLevel,
+                options: {
+                  highlightFilter: [
+                    'in',
+                    ['get', 'global_geoid'],
+                    ['literal', REACH_TRACTS],
+                  ],
+                },
+              },
+            }}
+          />
+        </div>
+      </div>
 
-        {!taxonomyIsLoading && !!taxonomy && (
-          <div className={styles.dashboard}>
-            {!!taxonomyIsLoading && (
-              <div className={styles.loader}>
-                <LoadingMessage message="Loading dashboard..." />
-              </div>
-            )}
-
-            {taxonomy && (
-              <TaxonomySection
-                taxonomy={taxonomy}
-                currentDomainSlug={domainSlug}
-                currentSubdomainSlug={subdomainSlug}
-                currentIndicatorSlug={indicatorSlug}
-                currentDataVizSlug={dataVizSlug}
-                onExploreDataViz={handleExploreDataViz}
-                onExploreIndicator={handleExploreIndicator}
-                onCompareIndicator={handleCompareIndicator}
-                onTabsChange={handleTabChange}
-                LinkComponent={Link}
-              />
-            )}
+      <div className={styles.geoDetails}>
+        {!!geog && (
+          <div>
+            <div className={styles.geogTitle}>{geog.title}</div>
           </div>
         )}
-        <footer className={styles.footer}></footer>
+        {!!geog && <GeogOverlapListing geog={geog} />}
       </div>
+
+      {!taxonomyIsLoading && !!taxonomy && (
+        <div className={styles.dashboard}>
+          {!!taxonomyIsLoading && (
+            <div className={styles.loader}>
+              <LoadingMessage message="Loading dashboard..." />
+            </div>
+          )}
+
+          {taxonomy && (
+            <TaxonomySection
+              taxonomy={taxonomy}
+              currentDomainSlug={domainSlug}
+              currentDomainHref={`/reach/${domainSlug}`}
+              currentSubdomainSlug={subdomainSlug}
+              currentSubdomainHref={`/reach/${domainSlug}/${subdomainSlug}`}
+              currentIndicatorSlug={indicatorSlug}
+              currentIndicatorHref={`/reach/${domainSlug}/${subdomainSlug}/${indicatorSlug}`}
+              currentDataVizSlug={dataVizSlug}
+              onExploreDataViz={handleExploreDataViz}
+              onExploreIndicator={handleExploreIndicator}
+              onCompareIndicator={handleCompareIndicator}
+              onTabsChange={handleTabChange}
+              LinkComponent={Link}
+            />
+          )}
+        </div>
+      )}
+      <footer className={styles.footer}></footer>
     </div>
   );
 };
@@ -225,22 +232,14 @@ function GeogOverlapListing({ geog }: GeogOverlapListingProps) {
   const munis = geog.overlap.countySubdivision;
 
   return (
-    <div>
+    <div className={styles.overlapSection}>
       {!!hoods && !!hoods.length && (
         <div>
           <div className={styles.overlapTitle}>Overlapping Neighborhoods</div>
           <ul className={styles.geogList}>
             {hoods.map((hood) => (
               <li key={hood.slug} className={styles.geogListItem}>
-                <Link href={`/explore?geog=${hood.slug}`}>
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.overlapLink}
-                  >
-                    {hood.name}
-                  </a>
-                </Link>
+                {hood.name}
               </li>
             ))}
           </ul>
@@ -252,15 +251,7 @@ function GeogOverlapListing({ geog }: GeogOverlapListingProps) {
           <ul className={styles.geogList}>
             {munis.map((muni) => (
               <li key={muni.slug} className={styles.geogListItem}>
-                <Link href={`/explore?geog=${muni.slug}`}>
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.overlapLink}
-                  >
-                    {muni.name}
-                  </a>
-                </Link>
+                {muni.name}
               </li>
             ))}
           </ul>
