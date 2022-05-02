@@ -69,12 +69,13 @@ export const TaxonomySection: React.FC<TaxonomySectionProps> = ({
       currentDataVizSlug,
     ]
   );
-
+  console.log('T Geog', geog);
   let breadcrumbs: BreadcrumbItemProps[] = [];
   if (currentDomain)
     breadcrumbs.push({
       key: 'domain',
-      href: currentDomainHref || `/explore/${currentDomainSlug}`,
+      href:
+        currentDomainHref || `/explore/${currentDomainSlug}?geog=${geog?.slug}`,
       children: currentDomain.name,
       LinkComponent,
     });
@@ -83,7 +84,7 @@ export const TaxonomySection: React.FC<TaxonomySectionProps> = ({
       key: 'subdomain',
       href:
         currentSubdomainHref ||
-        `/explore/${currentDomainSlug}/${currentSubdomainSlug}`,
+        `/explore/${currentDomainSlug}/${currentSubdomainSlug}?geog=${geog?.slug}`,
       children: currentSubdomain.name,
       LinkComponent,
     });
@@ -92,7 +93,7 @@ export const TaxonomySection: React.FC<TaxonomySectionProps> = ({
       key: 'indicator',
       href:
         currentIndicatorHref ||
-        `/explore/${currentDomainSlug}/${currentSubdomainSlug}/${currentIndicatorSlug}`,
+        `/explore/${currentDomainSlug}/${currentSubdomainSlug}/${currentIndicatorSlug}?geog=${geog?.slug}`,
       children: currentIndicator.name,
       LinkComponent,
     });
@@ -101,7 +102,7 @@ export const TaxonomySection: React.FC<TaxonomySectionProps> = ({
       key: 'dataViz',
       href:
         currentDataVizHref ||
-        `/explore/${currentDomainSlug}/${currentSubdomainSlug}/${currentIndicatorSlug}/${currentDataVizSlug}`,
+        `/explore/${currentDomainSlug}/${currentSubdomainSlug}/${currentIndicatorSlug}/${currentDataVizSlug}?geog=${geog?.slug}`,
       children: currentDataViz.name,
       LinkComponent,
     });
@@ -131,6 +132,7 @@ export const TaxonomySection: React.FC<TaxonomySectionProps> = ({
         {!currentDataViz && !!currentIndicator && (
           <IndicatorView
             indicator={currentIndicator}
+            geog={geog}
             onExploreDataViz={onExploreDataViz}
           />
         )}

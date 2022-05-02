@@ -83,6 +83,7 @@ export const IndicatorView: React.FC<IndicatorViewProps> = ({
         <div className={styles.vizPane}>
           {card && primaryDataViz && (
             <ConnectedDataViz
+              geog={geog}
               variant={DataVizVariant.Preview}
               key={primaryDataViz.slug}
               dataVizSlug={primaryDataViz.slug}

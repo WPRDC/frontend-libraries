@@ -9,12 +9,14 @@ interface Props extends SectionSharedProps {
 
 export default function IndicatorSection({
   indicator,
+  geog,
   onExploreDataViz,
   onExploreIndicator,
 }: Props) {
   return (
     <IndicatorView
       card
+      geog={geog}
       indicator={indicator}
       onExploreDataViz={onExploreDataViz}
       onExploreIndicator={onExploreIndicator}
