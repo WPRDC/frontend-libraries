@@ -116,26 +116,9 @@ const ReachPage: NextPage = () => {
               Pittsburgh, and the Western Pennsylvania Regional Data Center have
               collaboratively developed a set of tools that municipal
               governments in REACH communities can use to improve social equity
-              and reduce health disparities. By pairing civic data about social
-              determinants of health and health outcomes with specific actions
-              that people in municipal governments can take to address them,
-              community leaders can follow a road map informed by local
-              conditions to inclusively advance equity in partnership with
-              community members. The Sustainable PA Municipal Equity Toolkit
-              contains an array of actions taken from the updated Sustainable PA
-              Community Certification. Many of these actions have bearing or
-              impact on the structural and social determinants of health.
-            </p>
-            <p className={styles.description}>
-              The project team developed a list of data sources describing
-              resident health and well-being along with structural and social
-              determinants of health. This data allows for each action item
-              described in the toolkit to be informed by data. Our approach also
-              allows for the identification of data gaps, and enables continuous
-              monitoring and improvement. Additionally, comprehensive
-              information on health, well-being and structural and social
-              determinants helps community members understand more about their
-              current conditions, and informs their efforts for change.
+              and reduce health disparities. This Community Data Explorer shares
+              metrics from existing data to capture structural and social
+              factors among the REACH neighborhoods.
             </p>
           </div>
           <div className={styles.mapSection}>
@@ -153,7 +136,7 @@ const ReachPage: NextPage = () => {
                   layerItems: geogLevels,
                   layerSelection: selectedGeogLevel,
                   options: {
-                    baseFilter: [
+                    highlightFilter: [
                       'in',
                       ['get', 'global_geoid'],
                       ['literal', REACH_TRACTS],

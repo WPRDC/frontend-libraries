@@ -34,11 +34,17 @@ export const menuLayerConnection: MapPluginConnection<GeogLevel, GeogBrief> = {
     if (typeof selected === 'string')
       throw Error('Multiple select should not be available in map menu.');
     const selectedLayer = items.find((item) => selected.has(item.id));
-    const { hoveredFilter, selectedFilter, baseFilter } = options || {};
+    const { hoveredFilter, selectedFilter, highlightFilter } = options || {};
     // todo: build source based on selection.  or just put them all up at once tbh
     if (!!selectedLayer)
       setLayers(
-        makeLayers(selectedLayer.id, hoveredFilter, selectedFilter, baseFilter)
+        makeLayers(
+          selectedLayer.id,
+          hoveredFilter,
+          selectedFilter,
+          undefined,
+          highlightFilter
+        )
       );
   },
   getLegendItems: () => {

@@ -264,7 +264,8 @@ export function makeLayers(
   geogType: GeographyType,
   hoveredFilter?: Expression,
   selectedFilter?: Expression,
-  baseFilter?: Expression
+  baseFilter?: Expression,
+  highlightFilter?: Expression
 ): LayerProps[] {
   const source = `menu/${geogType}`;
   const sourceLayer = `maps.v_${geogType.toLowerCase()}`;
@@ -294,6 +295,20 @@ export function makeLayers(
       },
       filter: selectedFilter || clearLayerFilter(),
     },
+    {
+      id: `${geogType}/highlighted`,
+      type: 'line',
+      source,
+      'source-layer': sourceLayer,
+      layout: {},
+      paint: {
+        'line-width': theme.polygons.lineWidth.standard,
+        'line-opacity': theme.polygons.lineOpacity.standard,
+        'line-color': theme.polygons.lineColor,
+      },
+      filter: highlightFilter || clearLayerFilter(),
+    },
+
     {
       id: `${geogType}/borders`,
       type: 'line',
