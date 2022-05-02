@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-widgets/taxonomy-section",
-  "version": "0.0.35",
+  "version": "0.0.36",
   "description": "Display hierarchy of indicators.",
   "keywords": [],
   "license": "AGPL-3.0-or-later",
@@ -75,15 +75,15 @@
   },
   "dependencies": {
     "@wprdc-components/breadcrumbs": "^0.0.13",
-    "@wprdc-components/tabs": "^0.0.18",
+    "@wprdc-components/tabs": "^0.0.19",
     "@wprdc-components/util": "^0.0.10",
     "@wprdc-types/breadcrumbs": "^0.0.10",
     "@wprdc-types/data-viz": "^0.0.16",
     "@wprdc-types/profiles": "^0.0.17",
     "@wprdc-types/taxonomy-section": "^0.0.13",
     "@wprdc-types/viz": "^0.0.16",
-    "@wprdc-widgets/data-viz": "^0.0.29",
-    "@wprdc-widgets/indicator-view": "^0.0.34"
+    "@wprdc-widgets/data-viz": "^0.0.30",
+    "@wprdc-widgets/indicator-view": "^0.0.35"
   },
   "gitHead": "0d071a3dd4e93b865db197e5d1746a1572488954"
 }

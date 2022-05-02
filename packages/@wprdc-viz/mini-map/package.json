@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-viz/mini-map",
-  "version": "0.0.29",
+  "version": "0.0.30",
   "description": "",
   "keywords": [],
   "license": "AGPL-3.0-or-later",
@@ -76,7 +76,7 @@
   },
   "dependencies": {
     "@wprdc-components/provider": "^0.0.14",
-    "@wprdc-connections/viz": "^0.0.29",
+    "@wprdc-connections/viz": "^0.0.30",
     "@wprdc-types/geo": "^0.0.14",
     "@wprdc-types/map": "^0.0.13",
     "@wprdc-types/shared": "^0.0.12",
