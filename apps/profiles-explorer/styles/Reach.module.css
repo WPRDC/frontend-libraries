@@ -25,7 +25,7 @@
 }
 
 .intro > .geoDetails {
-  @apply sm:hidden lg:block lg:h-24;
+  @apply hidden lg:block lg:h-24;
 }
 
 .geoDetails {

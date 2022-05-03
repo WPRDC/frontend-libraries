@@ -134,7 +134,7 @@ const ReachPage: NextPage = () => {
                 Western Pennsylvania Regional Data Center
               </a>{' '}
               have collaboratively developed a set of tools that municipal
-              governments in
+              governments in{' '}
               <a href="https://livewellallegheny.com/reach/">REACH</a>{' '}
               communities can use to improve social equity and reduce health
               disparities.{' '}
@@ -179,6 +179,7 @@ const ReachPage: NextPage = () => {
               longitude: -79.92,
               latitude: 40.37,
             }}
+            interactiveLayerIds={['tract/fill']}
             layerPanelVariant={LayerPanelVariant.None}
             connections={[menuLayerConnection] as ConnectionCollection}
             onClick={handleClick}

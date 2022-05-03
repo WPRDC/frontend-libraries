@@ -272,56 +272,6 @@ export function makeLayers(
 
   return [
     {
-      id: `${geogType}/hover`,
-      type: 'fill',
-      source,
-      'source-layer': sourceLayer,
-      layout: {},
-      paint: {
-        'fill-opacity': theme.polygons.fillOpacity.standard,
-        'fill-color': theme.polygons.hoverColor,
-      },
-      filter: hoveredFilter || clearLayerFilter(),
-    },
-    {
-      id: `${geogType}/selected`,
-      type: 'fill',
-      source,
-      'source-layer': sourceLayer,
-      layout: {},
-      paint: {
-        'fill-opacity': theme.polygons.fillOpacity.standard,
-        'fill-color': theme.polygons.selectedColor,
-      },
-      filter: selectedFilter || clearLayerFilter(),
-    },
-    {
-      id: `${geogType}/highlighted/line`,
-      type: 'line',
-      source,
-      'source-layer': sourceLayer,
-      layout: {},
-      paint: {
-        'line-width': theme.polygons.lineWidth.standard,
-        'line-opacity': theme.polygons.lineOpacity.opaque,
-        'line-color': theme.polygons.highlightLineColor,
-      },
-      filter: highlightFilter || clearLayerFilter(),
-    },
-    {
-      id: `${geogType}/highlighted/fill`,
-      type: 'fill',
-      source,
-      'source-layer': sourceLayer,
-      layout: {},
-      paint: {
-        'fill-opacity': theme.polygons.fillOpacity.light,
-        'fill-color': theme.polygons.highlightFillColor,
-      },
-      filter: highlightFilter || clearLayerFilter(),
-    },
-
-    {
       id: `${geogType}/borders`,
       type: 'line',
       source,
@@ -347,6 +297,55 @@ export function makeLayers(
         'fill-color': theme.polygons.fillColor,
       },
       filter: baseFilter || ['!=', 'global_geoid', ''],
+    },
+    {
+      id: `${geogType}/highlighted/line`,
+      type: 'line',
+      source,
+      'source-layer': sourceLayer,
+      layout: {},
+      paint: {
+        'line-width': theme.polygons.lineWidth.dense,
+        'line-opacity': theme.polygons.lineOpacity.opaque,
+        'line-color': theme.polygons.highlightLineColor,
+      },
+      filter: highlightFilter || clearLayerFilter(),
+    },
+    {
+      id: `${geogType}/highlighted/fill`,
+      type: 'fill',
+      source,
+      'source-layer': sourceLayer,
+      layout: {},
+      paint: {
+        'fill-opacity': theme.polygons.fillOpacity.light,
+        'fill-color': theme.polygons.highlightFillColor,
+      },
+      filter: highlightFilter || clearLayerFilter(),
+    },
+    {
+      id: `${geogType}/selected`,
+      type: 'fill',
+      source,
+      'source-layer': sourceLayer,
+      layout: {},
+      paint: {
+        'fill-opacity': theme.polygons.fillOpacity.standard,
+        'fill-color': theme.polygons.selectedColor,
+      },
+      filter: selectedFilter || clearLayerFilter(),
+    },
+    {
+      id: `${geogType}/hover`,
+      type: 'fill',
+      source,
+      'source-layer': sourceLayer,
+      layout: {},
+      paint: {
+        'fill-opacity': theme.polygons.fillOpacity.standard,
+        'fill-color': theme.polygons.hoverColor,
+      },
+      filter: hoveredFilter || clearLayerFilter(),
     },
   ];
 }
