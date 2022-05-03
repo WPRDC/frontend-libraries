@@ -117,24 +117,51 @@ const ReachPage: NextPage = () => {
           <div className={styles.subtitle}>
             Indicators to inform municipal equity practices
           </div>
-          <p className={styles.description}>
-            Municipal governments have a profound role and responsibility for
-            leading the way to quality of life and equitable access to
-            opportunity in the communities of our region. The University of
-            Pittsburgh’s Graduate School of Public Health, Sustainable
-            Pittsburgh, and the Western Pennsylvania Regional Data Center have
-            collaboratively developed a set of tools that municipal governments
-            in REACH communities can use to improve social equity and reduce
-            health disparities. This Community Data Explorer shares metrics from
-            existing data to capture structural and social factors among the
-            REACH neighborhoods (Northside, Hill District, Garfield, Larimer,
-            Homewood, East Hills, Wilkinsburg and Mon Valley).
-          </p>
-          <p>
-            <strong>
-              Click on the map to see indicators for other tracts.{' '}
-            </strong>
-          </p>
+          <div className={styles.description}>
+            <p>
+              Municipal governments have a profound role and responsibility for
+              leading the way to quality of life and equitable access to
+              opportunity in the communities of our region.{' '}
+              <a href="https://publichealth.pitt.edu/">
+                The University of Pittsburgh’s Graduate School of Public Health
+              </a>
+              ,{' '}
+              <a href="https://sustainablepittsburgh.org/">
+                Sustainable Pittsburgh
+              </a>
+              , and the{' '}
+              <a href="http://www.wprdc.org">
+                Western Pennsylvania Regional Data Center
+              </a>{' '}
+              have collaboratively developed a set of tools that municipal
+              governments in
+              <a href="https://livewellallegheny.com/reach/">REACH</a>{' '}
+              communities can use to improve social equity and reduce health
+              disparities.{' '}
+            </p>
+
+            <p>
+              <a href="https://sustainablepittsburgh.org/wp-content/uploads/SustainablePA_MunicipalEquityToolkit_Feb16.pdf">
+                The Sustainable PA Municipal Equity Toolkit
+              </a>{' '}
+              is designed to be a resource for Pennsylvania’s local government
+              staff and elected officials when considering, developing,
+              implementing and/or administering equity measures.
+            </p>
+
+            <p>
+              This Community Data Explorer shares metrics from existing data to
+              capture structural and social factors among the{' '}
+              <a href="https://livewellallegheny.com/reach/">REACH</a>{' '}
+              neighborhoods (Northside, Hill District, Garfield, Larimer,
+              Homewood, East Hills, Wilkinsburg and Mon Valley).&nbsp;{' '}
+            </p>
+            <p>
+              <strong>
+                Click on the map to see indicators for other tracts.{' '}
+              </strong>
+            </p>
+          </div>
           <div className={styles.geoDetails}>
             {!!geog && (
               <div>

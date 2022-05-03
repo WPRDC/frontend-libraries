@@ -54,6 +54,15 @@
   @apply text-zinc-800 font-medium;
 }
 
+.description p {
+  @apply mb-4;
+}
+
+.description a {
+  @apply underline text-blue-800 font-medium;
+  @apply hover:text-blue-500 active:text-blue-900;
+}
+
 .geogTitle {
   @apply font-medium text-xl whitespace-nowrap;
   @apply mb-0.5;
