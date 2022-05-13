@@ -16,21 +16,14 @@ const Template: Story<BreadcrumbsProps<string>> = (args) => (
   <Breadcrumbs {...args} />
 );
 
-export const Primary = Template.bind({});
-Primary.args = {
+export const Default = Template.bind({});
+Default.args = {
   showCurrent: true,
-  bigTitle: true,
   children: [
-    <BreadcrumbItem href={'#'}>Test</BreadcrumbItem>,
+    <BreadcrumbItem isDisabled href={'#'}>
+      Test
+    </BreadcrumbItem>,
     <BreadcrumbItem href={'#'}>Thingamabob</BreadcrumbItem>,
-    <BreadcrumbItem href={'#'}>Another one</BreadcrumbItem>,
-  ],
-};
-export const Secondary = Template.bind({});
-Secondary.args = {
-  showCurrent: false,
-  children: [
-    <BreadcrumbItem href={'#'}>Test</BreadcrumbItem>,
     <BreadcrumbItem href={'#'}>Another one</BreadcrumbItem>,
   ],
 };

@@ -6,11 +6,15 @@
 }
 
 .label {
+  @apply block text-left cursor-default;
+  @apply text-xs font-mono uppercase font-semibold text-gray-500;
 }
 
 .itemLabel {
+  @apply cursor-pointer;
 }
 
 .input {
   @apply mr-1;
+  @apply cursor-pointer;
 }

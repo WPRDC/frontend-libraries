@@ -24,10 +24,10 @@ export const ErrorMessage: React.FC<ErrorMessageProps> = ({
       </div>
     );
   return (
-    <span className={styles.inlineContainer}>
-      <span className={styles.inlineTitle}>{title}</span>
-      <span className={styles.inlineMessage}>{message}</span>
-    </span>
+    <div className={styles.inlineContainer}>
+      <div className={styles.inlineTitle}>{title}</div>{' '}
+      <div className={styles.inlineMessage}>{message}</div>
+    </div>
   );
 };
 

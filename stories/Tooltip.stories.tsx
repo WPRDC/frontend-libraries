@@ -10,9 +10,7 @@ export default {
 };
 
 const Template: Story<TooltipProps> = (args) => (
-  <Tooltip {...args}>
-    <button>click me, please</button>
-  </Tooltip>
+  <Tooltip {...args}>click me, please</Tooltip>
 );
 
 export const Primary = Template.bind({});

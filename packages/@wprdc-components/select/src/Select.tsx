@@ -17,7 +17,6 @@ import { StatelessListBox } from '@wprdc-components/list-box';
 
 import { SelectProps } from '@wprdc-types/select';
 
-// todo: get icons
 import { HiSelector } from 'react-icons/hi';
 import { AriaListBoxOptions } from '@react-aria/listbox';
 
@@ -50,7 +49,7 @@ export function Select<T extends object, O extends object = {}>(
   // Get props for the button based on the trigger props from useSelect
   let { buttonProps } = useButton(triggerProps, ref);
   let { focusProps, isFocusVisible } = useFocusRing();
-
+  console.log('is open', state.isOpen);
   return (
     <div className={styles.container}>
       {!!props.label && (
@@ -90,8 +89,9 @@ export function Select<T extends object, O extends object = {}>(
           />
         </span>
       </button>
+
       {state.isOpen && (
-        <Popover isOpen={state.isOpen} onClose={state.close}>
+        <Popover isOpen={state.isOpen} onClose={state.close} shouldCloseOnBlur>
           <div className={styles.popoverContent}>
             <StatelessListBox<T, O>
               listBoxRef={listBoxRef}

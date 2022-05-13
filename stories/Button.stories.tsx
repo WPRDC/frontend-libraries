@@ -17,11 +17,18 @@ const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 export const Default = Template.bind({});
 Default.args = {
   color: 'default',
-  children: 'Button',
+  children: 'Press me',
+  onPress: () => alert('Hey!'),
 };
 
-export const Primary = Template.bind({});
-Primary.args = {
-  color: 'primary',
-  children: 'Button',
+export const Dense = Template.bind({});
+Dense.args = {
+  children: 'Press me',
+  dense: true,
+};
+
+export const Elevated = Template.bind({});
+Elevated.args = {
+  children: 'Press me',
+  elevated: true,
 };

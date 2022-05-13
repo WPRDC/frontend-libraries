@@ -1,9 +1,11 @@
 .container {
   @apply inline-flex flex-col relative w-full;
+  @apply bg-background;
 }
 
 .label {
-  @apply block text-xs font-semibold text-gray-500 text-left cursor-default;
+  @apply block text-left cursor-default;
+  @apply text-xs font-mono uppercase font-semibold text-gray-500;
 }
 
 .box {
@@ -15,7 +17,6 @@
 }
 
 .focusVis {
-  @apply border-pink-600;
 }
 
 .value {
@@ -32,10 +33,13 @@
 
 .realInput {
   @apply block;
+  @apply pl-9 pr-2 py-1;
+  @apply focus:outline-none;
+  @apply text-sm;
   @apply placeholder:italic placeholder:text-gray-400;
-  @apply bg-white w-full border border-gray-300;
-  @apply rounded-md py-2 pl-9 pr-3 shadow-sm  sm:text-sm;
-  @apply focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1;
+  @apply focus:outline-none focus:ring-primary-400 focus:ring;
+  @apply w-full border border-black;
+  @apply shadow-inner;
 }
 
 .clearButton {
@@ -47,7 +51,6 @@
   @apply w-5 h-5;
 }
 
-.popoverContent {
-  @apply bg-background;
-  @apply border border-gray-300 rounded-md;
+.popoverContents {
+  @apply bg-background border border-black;
 }

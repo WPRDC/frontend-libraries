@@ -99,7 +99,12 @@ export function Tooltip(props: TooltipProps) {
   );
   return (
     <>
-      <button {...buttonProps} {...triggerProps} ref={triggerRef}>
+      <button
+        {...buttonProps}
+        {...triggerProps}
+        ref={triggerRef}
+        className={styles.wrapper}
+      >
         {children}
       </button>
       {state.isOpen && (

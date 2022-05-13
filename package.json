@@ -1,6 +1,7 @@
 {
   "name": "wprdc-frontend-libraries",
   "private": true,
+  "module": "CommonJS",
   "workspaces": [
     "packages/**/*",
     "apps/*"
@@ -26,7 +27,9 @@
     "create:lib": "plop",
     "create:app": "npx create-next-app@latest --typescript",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "update-tailwind": "find ./packages -name tailwind.config.js -prune -exec cp ~/projects/wprdc/tailwind.config.js {} \\;",
+    "plop": "plop"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^21.0.1",
@@ -44,7 +47,7 @@
     "@types/react-dom": "^17.0.11",
     "eslint-config-next": "^12.0.9",
     "inquirer": "^8.2.0",
-    "plop": "^3.0.5",
+    "plop": "^3.1.0",
     "postcss": "^8.4.5",
     "postcss-import": "^14.0.2",
     "postcss-loader": "^6.2.1",
@@ -55,6 +58,8 @@
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-typescript2": "^0.31.1",
+    "ts-node": "^10.7.0",
+    "ts-node-dev": "^1.1.8",
     "typescript": "^4.5.5"
   },
   "dependencies": {

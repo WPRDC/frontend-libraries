@@ -75,8 +75,8 @@
     "typescript": "^3.9.10"
   },
   "dependencies": {
-    "@react-aria/focus": "^3.5.0",
-    "@react-aria/overlays": "^3.7.3",
+    "@react-aria/focus": "^3.5.5",
+    "@react-aria/overlays": "^3.8.2",
     "@wprdc-types/popover": "^0.0.11"
   }
 }

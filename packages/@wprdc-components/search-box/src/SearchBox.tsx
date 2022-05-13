@@ -27,14 +27,13 @@ import { Resource } from '@wprdc-types/shared';
 export function SearchBox<T extends Resource, O extends object = {}>(
   props: SearchBoxProps<T, O>
 ) {
-  const { loadingState, listBoxProps: extListBoxProps } = props;
-  const { contains } = useFilter({ sensitivity: 'base' });
-  const state = useComboBoxState({ ...props, defaultFilter: contains });
-
   const inputRef = React.useRef<HTMLInputElement>(null);
   const listBoxRef = React.useRef<HTMLUListElement>(null);
   const popoverRef = React.useRef<HTMLDivElement>(null);
   const clearButtonRef = React.useRef<HTMLButtonElement>(null);
+
+  const { contains } = useFilter({ sensitivity: 'base' });
+  const state = useComboBoxState({ ...props, defaultFilter: contains });
 
   const {
     inputProps,
@@ -50,6 +49,8 @@ export function SearchBox<T extends Resource, O extends object = {}>(
     state
   );
 
+  // apply list box props in main props is necessary
+  const { loadingState, listBoxProps: extListBoxProps } = props;
   const listBoxProps = { ...comboBoxListBoxProps, ...extListBoxProps };
 
   // todo: handling loading state
@@ -89,6 +90,8 @@ export function SearchBox<T extends Resource, O extends object = {}>(
     }
   }, [props.loadingState]);
 
+  console.log('🔍', { listBoxProps });
+
   return (
     <div className={styles.container}>
       {props.label && (
@@ -117,7 +120,7 @@ export function SearchBox<T extends Resource, O extends object = {}>(
           isOpen={state.isOpen}
           onClose={state.close}
         >
-          <div className={styles.popoverContent}>
+          <div className={styles.popoverContents}>
             <StatelessListBox<T, O>
               fullWidth
               {...listBoxProps}

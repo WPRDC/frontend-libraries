@@ -1,4 +1,0 @@
-# put any package specific ignores in here
-# the repo's top-level gitignore has most things covered
-dist/
-node_modules/

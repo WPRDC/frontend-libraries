@@ -9,6 +9,8 @@ import * as React from 'react';
 import './main.css';
 import styles from './CheckboxGroup.module.css';
 
+import classNames from 'classnames';
+
 import {
   CheckboxGroupState,
   useCheckboxGroupState,
@@ -47,18 +49,25 @@ export function Checkbox(props: CheckboxProps) {
   const { inputProps } = useCheckboxGroupItem(props, state, ref);
 
   const isDisabled = state.isDisabled || props.isDisabled;
-  const isSelected = state.isSelected(props.value);
 
   return (
     <label
       style={{
-        display: 'block',
-        color: (isDisabled && 'gray') || (isSelected && 'blue') || undefined,
+        color: (isDisabled && 'gray') || undefined,
       }}
       className={styles.itemLabel}
     >
-      <input {...inputProps} ref={ref} className={styles.input} />
-      {children || label}
+      <div className={styles.inputDiv}>
+        <input
+          {...inputProps}
+          ref={ref}
+          className={classNames(styles.input, {
+            [styles.disabledInput]: isDisabled,
+          })}
+        />
+        <div className={styles.checkmark}></div>
+      </div>
+      <div>{children || label}</div>
     </label>
   );
 }

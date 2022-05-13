@@ -1,4 +1,5 @@
-.container {
+.wrapper {
+  @apply cursor-help;
 }
 
 .popover {

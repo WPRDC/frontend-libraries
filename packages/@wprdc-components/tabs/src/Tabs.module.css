@@ -8,18 +8,18 @@
 
 .tabList {
   @apply flex flex-grow overflow-x-hidden;
-  @apply pt-0.5;
-  @apply border-b;
+  @apply pt-1;
+  @apply border-b border-black;
 }
 
 .tab {
   @apply px-1.5 py-1.5;
-  @apply text-sm font-medium whitespace-nowrap text-center;
+  @apply text-sm font-medium whitespace-nowrap text-center font-mono uppercase;
   @apply cursor-pointer;
-  @apply focus:outline-none focus-visible:border-sky-500 focus-visible:ring-sky-500 focus-visible:ring-1;
-  @apply rounded;
-  @apply border border-transparent;
-  @apply hover:font-semibold hover:border hover:border-gray-300 hover:bg-slate-50;
+  @apply border-4 border-transparent;
+  @apply outline-none;
+  @apply focus-visible:border-primary-400 focus-visible:border-primary-400;
+  @apply hover:border-4 hover:border-primary-400 hover:bg-slate-50;
 }
 
 .tab::before {
@@ -38,11 +38,13 @@
 }
 
 .tabWrapper.selected {
-  @apply border-b-4 border-b-cyan-600;
+  @apply border-b-4 border-b-primary-400;
 }
 
 .disabled {
   @apply opacity-50;
+  @apply hover:border-transparent;
+  @apply cursor-not-allowed;
 }
 
 .disabledButton {

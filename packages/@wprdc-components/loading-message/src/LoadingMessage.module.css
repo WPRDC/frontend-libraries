@@ -2,10 +2,15 @@
   @apply h-full w-full flex flex-col justify-center items-center;
 }
 
+.container > div {
+}
+
 .spinnerDiv {
   @apply flex flex-col items-center;
+  @apply p-1;
 }
 
 .message {
-  @apply italic;
+  @apply italic font-semibold;
+  @apply p-1;
 }

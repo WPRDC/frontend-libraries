@@ -4,25 +4,43 @@ const colors = require('tailwindcss/colors');
 const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
-  content: [
-    './packages/**/src/*.{js,jsx,ts,tsx}',
-    './stories/*.{js,jsx,ts,tsx}',
-  ],
+  content: ['./src/**/*.{js,jsx,ts,tsx}'],
   darkMode: 'media', // or 'media' or 'class'
   theme: {
     extend: {
       fontFamily: {
-        sans: ['"Public Sans"', ...defaultTheme.fontFamily.sans],
+        sans: ['Helvetica', 'Arial', 'sans-serif'],
       },
       colors: {
-        primary: colors.blueGray,
-        secondary: colors.lightBlue,
+        primary: colors.cyan,
+        secondary: colors.yellow,
         background: colors.white,
+        focused: colors.cyan,
+        error: colors.red,
+        warning: colors.orange,
+        text: colors.black,
+        textSecondary: colors.slate,
       },
       maxHeight: {
         '1/4': '25%',
         '1/2': '50%',
         '3/4': '75%',
+      },
+      boxShadow: {
+        sm: '2px 2px 0 rgba(0,0,0,0.9)',
+        DEFAULT: '3px 3px 0 rgba(0,0,0,0.9)',
+        md: '4px 4px 0 rgba(0,0,0,0.9)',
+        lg: '5px 5px 0 rgba(0,0,0,0.9)',
+        xl: '6px 6px 0 rgba(0,0,0,0.9)',
+        '2xl': '8px 8px 0 rgba(0,0,0,0.9)',
+        'sm-reverse': '-2px -2px 0 rgba(0,0,0,0.9)',
+        reverse: '-3px -3px 0 rgba(0,0,0,0.9)',
+        'md-reverse': '-4px -4px 0 rgba(0,0,0,0.9)',
+        'lg-reverse': '-5px -5px 0 rgba(0,0,0,0.9)',
+        'xl-reverse': '-6px -6px 0 rgba(0,0,0,0.9)',
+        '2xl-reverse': '-8px -8px 0 rgba(0,0,0,0.9)',
+        inner: '2px 2px 0 #cbd5e1 inset',
+        none: 'none',
       },
     },
   },

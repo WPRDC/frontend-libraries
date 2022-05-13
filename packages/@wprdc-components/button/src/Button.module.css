@@ -1,25 +1,40 @@
-.container {
-  @apply py-0.5 px-1.5;
-  @apply font-medium;
-  @apply rounded border-gray-400 border  hover:border-gray-600;
-  @apply transition duration-300;
+.wrapper {
+  @apply py-1 px-2.5;
+  @apply font-mono uppercase;
+  @apply border;
+  @apply shadow-md active:shadow hover:shadow-xl;
+  @apply outline-none focus:ring-1 focus:ring-offset-0 focus:ring-primary-400 active:ring-0;
 }
 
 .default {
-  @apply hover:bg-gray-100;
+  @apply text-black;
+  @apply bg-background;
+  @apply border-black;
+  @apply shadow-black;
 }
 
 .primary {
-  @apply bg-primary-400;
-  @apply hover:bg-primary-500;
+  @apply text-primary-600;
+  @apply bg-primary-600;
+  @apply border-primary-600;
+  @apply shadow-primary-600;
 }
 
 .secondary {
-  @apply bg-secondary-400;
-  @apply hover:bg-secondary-500;
+  @apply text-secondary-600;
+  @apply bg-secondary-600;
+  @apply border-secondary-600;
+  @apply shadow-secondary-600;
 }
 
 .elevated {
-  @apply shadow;
-  @apply hover:shadow-md;
+  @apply shadow-black shadow-xl;
+  @apply active:shadow-lg hover:shadow-2xl;
+}
+
+.dense {
+  @apply py-0.5 px-1.5;
+  @apply text-xs;
+  @apply shadow-sm hover:shadow-md active:shadow-none;
+  @apply focus:border-black;
 }

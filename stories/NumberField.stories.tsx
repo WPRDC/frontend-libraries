@@ -9,7 +9,13 @@ export default {
   component: NumberField,
 };
 
-const Template: Story<NumberFieldProps> = (args) => <NumberField {...args} />;
+const Template: Story<NumberFieldProps> = (args) => (
+  <div style={{ width: '220px' }}>
+    <NumberField {...args} />
+  </div>
+);
 
 export const Primary = Template.bind({});
-Primary.args = {};
+Primary.args = {
+  label: 'Enter a number',
+};
