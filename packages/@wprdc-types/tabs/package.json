@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-types/tabs",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "Collection of TypeScript/JS libraries for use in/with WPRDC projects.",
   "keywords": [],
   "license": "AGPL-3.0-or-later",
@@ -79,6 +79,6 @@
     "@react-types/shared": "^3.10.1",
     "@react-types/tabs": "^3.0.1",
     "@types/react": "^17.0.38",
-    "@wprdc-types/shared": "^0.0.12"
+    "@wprdc-types/shared": "^0.0.13"
   }
 }

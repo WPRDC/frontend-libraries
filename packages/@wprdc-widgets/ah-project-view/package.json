@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-widgets/ah-project-view",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "description": "",
   "keywords": [],
   "license": "AGPL-3.0-or-later",
@@ -78,9 +78,9 @@
     "typescript": "^3.9.10"
   },
   "dependencies": {
-    "@wprdc-connections/housecat": "^0.0.31",
-    "@wprdc-types/connections": "^0.0.15",
-    "@wprdc-types/shared": "^0.0.12",
+    "@wprdc-connections/housecat": "^0.0.32",
+    "@wprdc-types/connections": "^0.0.16",
+    "@wprdc-types/shared": "^0.0.13",
     "classnames": "^2.3.1",
     "marked": "^4.0.12",
     "react-icons": "^4.3.1",

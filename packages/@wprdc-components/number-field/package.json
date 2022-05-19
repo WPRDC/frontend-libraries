@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-components/number-field",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Form field for handling numeric data.",
   "keywords": [],
   "license": "AGPL3",
@@ -80,7 +80,7 @@
     "@react-aria/focus": "^3.5.0",
     "@react-aria/i18n": "^3.3.4",
     "@react-aria/numberfield": "^3.1.1",
-    "@wprdc-types/number-field": "^0.0.1",
+    "@wprdc-types/number-field": "^0.0.2",
     "classnames": "^2.3.1",
     "react-icons": "^4.3.1"
   }

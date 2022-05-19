@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-components/source-list",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "description": "",
   "keywords": [],
   "license": "AGPL-3.0-or-later",
@@ -76,9 +76,9 @@
     "typescript": "^3.9.10"
   },
   "dependencies": {
-    "@wprdc-components/data-chip": "^0.0.12",
+    "@wprdc-components/data-chip": "^0.0.13",
     "@wprdc-components/link": "^0.0.12",
-    "@wprdc-components/tooltip": "^0.0.13",
-    "@wprdc-types/viz": "^0.0.16"
+    "@wprdc-components/tooltip": "^0.0.14",
+    "@wprdc-types/viz": "^0.0.17"
   }
 }

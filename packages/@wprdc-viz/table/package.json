@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-viz/table",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "description": "",
   "keywords": [],
   "license": "AGPL-3.0-or-later",
@@ -76,7 +76,7 @@
     "typescript": "^3.9.10"
   },
   "dependencies": {
-    "@wprdc-types/viz": "^0.0.16",
+    "@wprdc-types/viz": "^0.0.17",
     "classnames": "^2.3.1",
     "react-table": "^7.7.0"
   }

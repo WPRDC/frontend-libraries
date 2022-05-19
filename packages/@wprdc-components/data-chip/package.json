@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-components/data-chip",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "",
   "keywords": [],
   "license": "AGPL-3.0-or-later",
@@ -76,7 +76,7 @@
     "typescript": "^3.9.10"
   },
   "dependencies": {
-    "@wprdc-types/data-chip": "^0.0.10",
+    "@wprdc-types/data-chip": "^0.0.11",
     "classnames": "^2.3.1",
     "react-icons": "^4.3.1"
   }
