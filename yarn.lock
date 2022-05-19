@@ -4130,7 +4130,7 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-table@^7.7.9":
+"@types/react-table@^7.7.12":
   version "7.7.12"
   resolved "https://registry.yarnpkg.com/@types/react-table/-/react-table-7.7.12.tgz#628011d3cb695b07c678704a61f2f1d5b8e567fd"
   integrity sha512-bRUent+NR/WwtDGwI/BqhZ8XnHghwHw0HUKeohzB5xN3K2qKWYE5w19e7GCuOkL1CXD9Gi1HFy7TIm2AvgWUHg==
@@ -4648,6 +4648,20 @@
   integrity sha512-F/25dBP+RkbIBdgOKUQ9QPNX3M0gA4C/C6RGMhO31IQfUWrFRyV0EkOVH4VMtF+2SKIvJ0nVSxI2dzABwnAvbw==
   dependencies:
     "@wprdc-types/menu-item" "^0.0.10"
+
+"@wprdc-types/link@^0.0.10":
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/@wprdc-types/link/-/link-0.0.10.tgz#aac343a3270e7ff12ac30896b1c8faf8a8f5ecfe"
+  integrity sha512-V7nkOPbxtKMnT5vGXbIDvZZUIfWpJ8P5xIbmL1rsnnwHWwzeZKV2l2jo7QNmTEAMKlVxPYN2kaZKmZpFc8sftA==
+  dependencies:
+    "@react-aria/link" "^3.2.0"
+    "@types/react" "^17.0.38"
+    "@types/react-dom" "^17.0.11"
+
+"@wprdc-types/menu-item@^0.0.10":
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/@wprdc-types/menu-item/-/menu-item-0.0.10.tgz#79eba642b3167dc43fee8356d1342641a86b4027"
+  integrity sha512-Yj1DgVE8YPmfh5M5afZNg0lpHKdQ1UbCm70MaaDXbuZcR3ApXzhuehBvJhFIm8BowQyuEkcA8iwP07zJZaTDmQ==
 
 "@xtuc/ieee754@^1.2.0":
   version "1.2.0"

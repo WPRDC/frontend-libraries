@@ -76,7 +76,7 @@
   },
   "dependencies": {
     "@types/react": "^17.0.38",
-    "@types/react-table": "^7.7.9",
+    "@types/react-table": "^7.7.12",
     "@wprdc-types/geo": "^0.0.15",
     "@wprdc-types/map": "^0.0.14",
     "@wprdc-types/shared": "^0.0.13",

@@ -5,8 +5,7 @@ import { APIMapBoxResponse } from '@wprdc-types/connections';
 import { ProjectIndexDetails, Watchlist } from '@wprdc-types/housecat';
 import { getCookie } from '@wprdc-connections/util';
 
-// const HOST = 'https://api.profiles.wprdc.org';
-const HOST = 'http://localhost:8000';
+const HOST = 'https://api.profiles.wprdc.org';
 
 export enum Endpoint {
   PHProject = 'public-housing/project',

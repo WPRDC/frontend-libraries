@@ -23,6 +23,7 @@ import { serializeParams } from '@wprdc-connections/api';
 import { useProvider } from '@wprdc-components/provider';
 import { LoadingMessage } from '@wprdc-components/loading-message';
 import { Map } from '@wprdc-widgets/map';
+import Head from 'next/head';
 
 const AgingPage: NextPage = () => {
   const [geogBrief, setGeogBrief] = React.useState<GeogBrief>(defaultGeogBrief);
@@ -113,6 +114,11 @@ const AgingPage: NextPage = () => {
 
   return (
     <div className={styles.wrapper}>
+      <Head>
+        <title>State of Aging - Indicators</title>
+        <meta name="description" content="Community indicators related to aging" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <div className={styles.main}>
         <div className={styles.intro}>
           <div className={styles.title}>
