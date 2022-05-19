@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-widgets/geography-picker",
-  "version": "0.0.31",
+  "version": "0.0.32",
   "description": "",
   "keywords": [],
   "license": "AGPL-3.0-or-later",
@@ -82,12 +82,12 @@
     "@wprdc-components/search-box": "^0.0.18",
     "@wprdc-components/select": "^0.0.20",
     "@wprdc-components/util": "^0.0.11",
-    "@wprdc-connections/geo": "^0.0.31",
-    "@wprdc-types/connections": "^0.0.16",
+    "@wprdc-connections/geo": "^0.0.32",
+    "@wprdc-types/connections": "^0.0.17",
     "@wprdc-types/geo": "^0.0.15",
     "@wprdc-types/map": "^0.0.14",
     "@wprdc-types/shared": "^0.0.13",
-    "@wprdc-widgets/map": "^0.0.21",
+    "@wprdc-widgets/map": "^0.0.22",
     "react-icons": "^4.3.1"
   },
   "gitHead": "0d071a3dd4e93b865db197e5d1746a1572488954"

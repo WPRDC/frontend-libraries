@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-connections/profiles",
-  "version": "0.0.27",
+  "version": "0.0.28",
   "description": "",
   "keywords": [],
   "license": "AGPL-3.0-or-later",
@@ -83,8 +83,8 @@
     "@wprdc-types/geo": "^0.0.15",
     "@wprdc-types/list-box": "^0.0.15",
     "@wprdc-types/map": "^0.0.14",
-    "@wprdc-types/profiles": "^0.0.18",
+    "@wprdc-types/profiles": "^0.0.19",
     "@wprdc-types/shared": "^0.0.13",
-    "@wprdc-types/viz": "^0.0.17"
+    "@wprdc-types/viz": "^0.0.18"
   }
 }
