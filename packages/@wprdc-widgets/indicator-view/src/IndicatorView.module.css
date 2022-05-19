@@ -4,7 +4,8 @@
 
 .cardContainer {
   @apply w-full shadow border-2 border-black outline-none;
-  @apply hover:shadow-lg hover:ring-1 hover:ring-black;
+  @apply transition duration-150 ease-in-out;
+  @apply hover:shadow-lg hover:border-focused-600;
   @apply focus:shadow-lg focus:border-focused-400 focus:ring-1 focus:ring-focused-400;
   @apply text-left;
 }

@@ -123,10 +123,10 @@ const AgingPage: NextPage = () => {
           </div>
           <div className={styles.description}>
             <p>
-              We'll put a description of this tool here as well as one for the
-              survey itself. We'll flood this with links to UCSUR/Pitt sites,
+              We&apos;ll put a description of this tool here as well as one for the
+              survey itself. We&apos;ll flood this with links to UCSUR/Pitt sites,
               the report on the state of aging, the data released, and whatever
-              else we'll need.
+              else we&apos;ll need.
             </p>
             <p>
               Another paragraph of description. Ubi est audax vortex? Pius,
