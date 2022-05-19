@@ -1,8 +1,10 @@
 .wrapper {
-  @apply focus:outline-none focus:border focus:border-focused-500 focus:ring-focused-500 focus:ring-1;
+  @apply focus:outline-none focus-visible:outline-none;
+  @apply focus:border focus:border-focused-500 focus:ring-focused-500 focus:ring-1;
 }
 
 .focused {
+  @apply outline-none;
 }
 
 .label {
@@ -45,6 +47,7 @@
   @apply outline-none cursor-default border border-transparent;
   @apply focus-visible:ring-1 focus-visible:border focus-visible:border-focused-400 focus-visible:ring-primary-400;
   @apply focus-visible:text-black;
+  @apply focus-visible:outline-none focus:outline-none;
 }
 
 .optionSelected {

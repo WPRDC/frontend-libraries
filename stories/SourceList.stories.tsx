@@ -4,7 +4,7 @@ import { Item } from '../packages/@wprdc-components/util';
 import { SourceList } from '../packages/@wprdc-components/source-list';
 
 export default {
-  title: 'Components/Select',
+  title: 'Components/SourceList',
   component: SourceList,
 };
 
