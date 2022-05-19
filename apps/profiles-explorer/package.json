@@ -1,7 +1,7 @@
 {
   "name": "profiles-explorer",
   "private": true,
-  "version": "0.0.2",
+  "version": "0.0.3",
   "scripts": {
     "dev": "next dev --port 3030",
     "build": "next build",
@@ -48,9 +48,9 @@
     "@wprdc-widgets/ah-project-view": "^0.0.19",
     "@wprdc-widgets/data-viz": "^0.0.32",
     "@wprdc-widgets/geography-picker": "^0.0.31",
-    "@wprdc-widgets/indicator-view": "^0.0.37",
+    "@wprdc-widgets/indicator-view": "^0.0.38",
     "@wprdc-widgets/map": "^0.0.21",
-    "@wprdc-widgets/taxonomy-section": "^0.0.38",
+    "@wprdc-widgets/taxonomy-section": "^0.0.39",
     "autoprefixer": "^10.4.5",
     "classnames": "^2.3.1",
     "formik": "^2.2.9",
