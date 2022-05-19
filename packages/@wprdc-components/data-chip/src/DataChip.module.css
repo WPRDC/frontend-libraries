@@ -3,7 +3,6 @@
   @apply rounded-3xl border border-black;
   @apply w-max;
   @apply bg-background sm:text-sm;
-  @apply shadow-sm;
 }
 
 .label {

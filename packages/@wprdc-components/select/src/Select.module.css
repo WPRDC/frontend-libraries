@@ -9,10 +9,14 @@
 
 .button {
   @apply relative inline-flex flex-row  w-full;
-  @apply bg-background border border-black;
+  @apply bg-background border border-black outline-none;
   @apply py-1 pl-2 pr-1;
-  @apply shadow-inner text-sm;
-  @apply focus:outline-none focus:ring-primary-400 focus:ring;
+  @apply text-sm;
+  @apply hover:border-focused-600;
+  @apply transition duration-150 ease-in-out;
+  @apply focus:ring-focused-400 focus:ring-1 focus:border-focused-400;
+  @apply shadow-sm hover:shadow;
+  @apply focus:outline-none focus-visible:outline-none;
 }
 
 .value {

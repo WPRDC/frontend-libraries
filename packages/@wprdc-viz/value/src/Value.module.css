@@ -4,7 +4,12 @@
 
 .inPreview {
   @apply flex h-full items-center justify-center;
+  @apply text-center;
   @apply p-2;
+}
+
+.inPreview .name {
+  @apply px-3;
 }
 
 .name {
@@ -16,9 +21,13 @@
 }
 
 .value {
-  @apply text-3xl text-gray-800;
+  @apply text-3xl font-mono text-gray-800;
 }
 
 .denom {
-  @apply text-gray-500 text-sm;
+  @apply text-left text-black text-sm;
+}
+
+.percent {
+  @apply text-gray-500;
 }

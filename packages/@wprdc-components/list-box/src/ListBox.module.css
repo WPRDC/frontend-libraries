@@ -1,5 +1,5 @@
 .wrapper {
-  @apply focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1;
+  @apply focus:outline-none focus:border focus:border-focused-500 focus:ring-focused-500 focus:ring-1;
 }
 
 .focused {
@@ -42,10 +42,9 @@
   @apply flex items-center justify-between;
   @apply py-0.5 px-2 m-1;
   @apply text-sm;
-  @apply outline-none cursor-default;
-  @apply focus-visible:ring focus-visible:ring focus-visible:ring-primary-400;
+  @apply outline-none cursor-default border border-transparent;
+  @apply focus-visible:ring-1 focus-visible:border focus-visible:border-focused-400 focus-visible:ring-primary-400;
   @apply focus-visible:text-black;
-  @apply hover:bg-slate-50;
 }
 
 .optionSelected {
@@ -59,8 +58,7 @@
 }
 
 .optionFocused {
-  @apply ring ring ring-primary-400;
-  @apply text-black;
+  @apply bg-slate-200 text-black;
 }
 
 .dense {

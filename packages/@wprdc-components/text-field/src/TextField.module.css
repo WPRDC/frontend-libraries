@@ -8,13 +8,12 @@
 }
 
 .input {
-  @apply block;
-  @apply placeholder:italic placeholder:text-gray-400;
-  @apply w-full border border-black;
-  @apply py-1 px-2;
-  @apply text-sm;
-  @apply focus:outline-none focus:ring-primary-400 focus:ring;
-  @apply shadow-inner;
+  @apply py-1 px-2 block;
+  @apply text-sm placeholder:italic placeholder:text-gray-400;
+  @apply transition duration-150 ease-in-out;
+  @apply w-full border border-black focus:border-focused-400;
+  @apply hover:border-focused-600;
+  @apply focus:outline-none focus:ring-focused-400 focus:ring-1;
 }
 
 .description {

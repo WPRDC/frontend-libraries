@@ -36,9 +36,14 @@ export const IndicatorView: React.FC<IndicatorViewProps> = ({
   onCompareIndicator,
   isLoading,
   showGeog,
+  headingLevel,
 }) => {
   if (!!isLoading) return <LoadingMessage />;
   if (!indicator) return <div />;
+
+  const Heading: keyof JSX.IntrinsicElements = headingLevel
+    ? (`h${headingLevel}` as 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6')
+    : 'div';
 
   const {
     name,
@@ -99,7 +104,7 @@ export const IndicatorView: React.FC<IndicatorViewProps> = ({
             {!!name && (
               <div className={styles.titleBar}>
                 <div className={styles.titleDiv}>
-                  <h5 className={styles.cardTitle}>{name}</h5>
+                  <Heading className={styles.cardTitle}>{name}</Heading>
                 </div>
               </div>
             )}
@@ -136,7 +141,7 @@ export const IndicatorView: React.FC<IndicatorViewProps> = ({
             </div>
           )}
         </div>
-        <p className={styles.detailsItem}>{description}</p>
+        <p className={styles.description}>{description}</p>
 
         {!!importance && (
           <div>

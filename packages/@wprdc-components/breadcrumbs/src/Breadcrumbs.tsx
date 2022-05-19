@@ -36,7 +36,7 @@ export function Breadcrumbs<T>(props: BreadcrumbsProps<T>) {
               hideDivider: !showCurrent && i == children.length - 1,
             });
           }
-          if (!!showCurrent && !bigTitle) {
+          if (showCurrent && !bigTitle) {
             return React.cloneElement(child as React.ReactElement, {
               isCurrent: true,
               elementType: titleElement,
@@ -86,12 +86,7 @@ export function BreadcrumbItem(props: BreadcrumbItemProps) {
   } else {
     breadcrumbContent = (
       <>
-        <Link
-          {...itemProps}
-          ref={ref}
-          href={props.href || '#'}
-          className={styles.link}
-        >
+        <Link {...itemProps} ref={ref} href={props.href || '#'}>
           {props.children}
         </Link>
         {!hideDivider && dividerContent}

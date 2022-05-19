@@ -128,3 +128,12 @@ export function Tooltip(props: TooltipProps) {
 }
 
 export default Tooltip;
+
+export function TooltipText(props: TooltipProps) {
+  const { children, ...tooltipProps } = props;
+  return (
+    <Tooltip {...tooltipProps}>
+      <div className={styles.label}>{children}</div>
+    </Tooltip>
+  );
+}

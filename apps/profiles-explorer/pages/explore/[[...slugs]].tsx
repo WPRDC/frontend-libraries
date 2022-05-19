@@ -258,11 +258,14 @@ export default function Home() {
           <div className={styles.geogContainer}>
             {!!geog ? (
               <>
-                <Breadcrumbs>
+                <Breadcrumbs showCurrent={false}>
                   {[{ name: 'pa', title: 'Pennsylvania' }]
                     .concat(geog.hierarchy.concat(geog))
                     .map((item) => (
-                      <BreadcrumbItem key={item.name}>
+                      <BreadcrumbItem
+                        key={item.name}
+                        isDisabled={item.name === 'pa'}
+                      >
                         {item.title}
                       </BreadcrumbItem>
                     ))}
@@ -276,6 +279,7 @@ export default function Home() {
           <div className={styles.taxonomyContainer}>
             {!!taxonomy && !!domainSlug ? (
               <TaxonomySection
+                // todo: baseHeadingLevel={3}
                 taxonomy={taxonomy}
                 geog={geog}
                 currentDomainSlug={domainSlug}

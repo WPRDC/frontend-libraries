@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Expression } from 'mapbox-gl';
+
 import {
   LayerProps,
   MapLayerMouseEvent,

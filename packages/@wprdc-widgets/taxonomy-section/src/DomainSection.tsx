@@ -17,7 +17,6 @@ export default function DomainSection({
 }: Props) {
   return (
     <div id={domain.slug} className={styles.wrapper}>
-      <h3 className={styles.title}>{domain.name}</h3>
       <div className={styles.description}>{domain.description}</div>
       {domain.subdomains.map((subdomain) => (
         <SubdomainSection

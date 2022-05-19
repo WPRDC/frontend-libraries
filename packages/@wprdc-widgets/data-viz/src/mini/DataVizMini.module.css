@@ -3,5 +3,5 @@
 }
 
 .vizDiv {
-  @apply rounded border w-max p-2 shadow-sm;
+  @apply border border-black shadow w-max p-2;
 }

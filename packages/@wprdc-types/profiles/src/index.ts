@@ -1,5 +1,5 @@
 import { Resource } from '@wprdc-types/shared';
-import { DataVizID } from '@wprdc-types/viz';
+import { DataVizIDWithSources } from '@wprdc-types/viz';
 
 interface IndicatorHierarchy {
   domain: Resource;
@@ -13,7 +13,7 @@ export interface Indicator extends Resource {
   importance: string;
   source: string;
   provenance: string;
-  dataVizes: DataVizID[];
+  dataVizes: DataVizIDWithSources[];
   hierarchies: IndicatorHierarchy[];
 }
 

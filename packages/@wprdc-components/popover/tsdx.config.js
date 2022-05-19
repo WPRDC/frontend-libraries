@@ -11,7 +11,7 @@ module.exports = {
             extract: !!options.writeMeta,
           },
         },
-      })
+      }),
     );
     return config;
   },

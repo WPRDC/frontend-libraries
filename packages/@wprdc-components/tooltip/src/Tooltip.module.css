@@ -1,9 +1,12 @@
 .wrapper {
-  @apply cursor-help;
+  @apply cursor-pointer;
+  @apply border-2 border-transparent outline-none;
+  @apply focus:border-2 focus:border-focused-500;
+  @apply focus-visible:border-2 focus-visible:border-focused-500;
 }
 
 .popover {
-  @apply p-2.5 border shadow-lg bg-background;
+  @apply m-2 p-2.5 border shadow-lg bg-background;
 }
 
 .popover:focus-visible {
@@ -12,4 +15,9 @@
 
 .popoverTitle {
   @apply font-semibold;
+}
+
+.label {
+  @apply font-semibold text-sm;
+  @apply underline decoration-textSecondary-400 decoration-dashed decoration-2;
 }

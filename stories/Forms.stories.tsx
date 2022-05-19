@@ -10,6 +10,7 @@ import {
   defaultGeogListBoxProps,
   makeGeographyConnection,
 } from '@wprdc-connections/geo';
+import { GeographyPicker } from '@wprdc-widgets/geography-picker';
 
 export default {
   title: 'Components/Form',
@@ -34,6 +35,7 @@ export const Default = () => {
         listBoxProps={defaultGeogListBoxProps}
         onSelection={console.log}
       />
+      <GeographyPicker label="Pick a place" />
     </div>
   );
 };

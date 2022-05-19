@@ -12,10 +12,13 @@ body {
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+  @apply underline font-semibold;
+  @apply hover:text-primary-400 active:text-secondary-400;
 }
 
-* {
-  box-sizing: border-box;
+/* external links */
+a[href*="//"]:not([href*="profiles.wprdc.org"])
+{
+  @apply underline font-semibold;
+  @apply hover:text-primary-400 active:text-secondary-400;
 }

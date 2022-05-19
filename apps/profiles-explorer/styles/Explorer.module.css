@@ -5,10 +5,10 @@
 }
 
 .navMenu {
-  @apply flex-1 flex shadow-lg md:border-b lg:border-r lg:border-b-0;
+  @apply flex-1 flex;
   /* on medium screens, it's horizontal */
   @apply flex-col md:flex-row lg:flex-col;
-
+  @apply border-black md:border-b-2 lg:border-r-2 lg:border-b-0;
   @apply md:col-span-12 md:row-span-1 md:w-full;
   @apply lg:col-span-4 xl:col-span-3;
 }
@@ -35,15 +35,15 @@
 
 /* Content parts */
 .geogContainer {
-  @apply py-4 pl-4 shadow-md border-b;
+  @apply py-4 pl-4 shadow-md border-b-2 border-black;
 }
 
 .geogTitle {
-  @apply text-4xl font-medium;
+  @apply mt-4 mb-2 text-4xl font-medium;
 }
 
 .taxonomyContainer {
-  @apply p-4 pt-1;
+  @apply p-4;
   @apply flex-grow overflow-y-auto;
 }
 

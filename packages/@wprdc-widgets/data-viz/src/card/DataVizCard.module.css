@@ -1,32 +1,32 @@
 .wrapper {
-  @apply rounded border w-full relative shadow-md;
+  @apply border-2 border-black w-full relative;
 }
 
 .header {
-  @apply rounded-t p-2.5;
+  @apply p-2.5;
 }
 
 .title {
-  @apply font-medium;
+  @apply my-2 text-xl font-bold;
 }
 
 .description {
-  @apply text-xs italic text-gray-600;
+  @apply my-2 text-sm text-black;
 }
 
 .sources {
 }
 
 .extras {
-  @apply p-2.5;
+  @apply p-4;
 }
 
 .menuSection {
-  @apply border-b rounded-b p-2.5;
+  @apply p-4;
 }
 
 .dataViz {
-  @apply p-2.5;
+  @apply border-y border-black;
 }
 
 .vizPane {
@@ -34,7 +34,8 @@
 }
 
 .typeLabel {
-  @apply text-xs text-gray-500 flex items-center;
+  @apply text-xs text-primary-600 uppercase  font-mono;
+  @apply flex items-center;
 }
 
 .typeIcon {

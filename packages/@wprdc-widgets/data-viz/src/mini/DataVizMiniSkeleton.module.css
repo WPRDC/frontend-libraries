@@ -4,7 +4,6 @@
 
 .box {
   @apply bg-gradient-to-r from-zinc-400 to-slate-400;
-  @apply rounded-sm;
 }
 
 .pulser {
@@ -12,7 +11,7 @@
 }
 
 .vizDiv {
-  @apply rounded border p-2 shadow-sm w-52;
+  @apply border border-black p-2 shadow w-52;
 }
 
 .title {

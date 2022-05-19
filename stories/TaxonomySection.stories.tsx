@@ -6,7 +6,7 @@ import { useProvider } from '@wprdc-components/provider';
 import { Indicator, Taxonomy } from '@wprdc-types/profiles';
 import { DataVizID } from '@wprdc-types/viz';
 
-import { ProfilesAPI } from '@wprdc-connections/profiles';
+import { ProfilesAPI, useTaxonomy } from '@wprdc-connections/profiles';
 
 import { TaxonomySection } from '@wprdc-widgets/taxonomy-section';
 import { useGeography } from '@wprdc-connections/geo';
@@ -18,7 +18,6 @@ export default {
 };
 
 export const Default = () => {
-  const [taxonomy, setTaxonomy] = useState<Taxonomy>();
   const [domainSlug, setDomainSlug] = useState<React.Key>('dev');
   const [subdomainSlug, _] = useState<React.Key>('dev');
   const [indicatorSlug, setIndicatorSlug] = useState<React.Key>();
@@ -28,14 +27,9 @@ export const Default = () => {
   const context = useProvider();
   const { geog } = useGeography(geogBrief && geogBrief.slug);
 
-  useEffect(() => {
-    ProfilesAPI.requestTaxonomy().then((response) =>
-      setTaxonomy(response.data),
-    );
-  }, []);
+  const { taxonomy } = useTaxonomy('child-health-explorer');
 
   useEffect(() => {
-    console.log({ geogBrief, geog });
     context.setGeog(geog);
   }, [geog]);
 

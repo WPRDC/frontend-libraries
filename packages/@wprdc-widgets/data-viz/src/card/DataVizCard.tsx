@@ -36,6 +36,7 @@ export function DataVizCard(props: DataVizCardProps) {
     // menu,
     onExplore,
     error,
+    headingLevel,
   } = props;
   const { name, description, vizType } = dataViz || {};
   /* Keep track fo dimensions to send to vega charts */
@@ -44,9 +45,18 @@ export function DataVizCard(props: DataVizCardProps) {
     height: 0,
   });
 
+  const Heading: keyof JSX.IntrinsicElements = headingLevel
+    ? (`h${headingLevel}` as 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6')
+    : 'div';
+
   function handleExplore() {
     if (!!onExplore && !!dataViz) onExplore(dataViz);
   }
+
+  /* subheadings */
+  let subheadingLevel: typeof headingLevel = undefined;
+  if (headingLevel && headingLevel < 6)
+    subheadingLevel = (headingLevel + 1) as 1 | 2 | 3 | 4 | 5 | 6;
 
   const Icon = React.useMemo(() => {
     switch (vizType) {
@@ -86,16 +96,16 @@ export function DataVizCard(props: DataVizCardProps) {
           <Icon className={styles.typeIcon} />
           <span>{vizType}</span>
         </div>
-        <h6 className={styles.title}>
+        <Heading className={styles.title}>
           {name}
           {geogTitle}
-        </h6>
+        </Heading>
         <p className={styles.description}>{description}</p>
       </div>
       <div className={styles.dataViz}>
         <Measure
           bounds
-          onResize={(contentRect) => {
+          onResize={contentRect => {
             if (contentRect.bounds) setDimensions(contentRect.bounds);
           }}
         >
@@ -120,20 +130,20 @@ export function DataVizCard(props: DataVizCardProps) {
           )}
         </Measure>
       </div>
-      <div className={styles.extras}>
-        <div className={styles.sources}>
-          {!!dataViz && !!dataViz.sources && (
-            <SourceList sources={dataViz.sources} />
-          )}
-        </div>
-      </div>
       <div className={styles.menuSection}>
         <div className="flex">
-          <div className="flex-grow" />
+          <div className="flex-grow">
+            <div className={styles.sources}>
+              {!!dataViz && !!dataViz.sources && (
+                <SourceList
+                  headingLevel={subheadingLevel}
+                  sources={dataViz.sources}
+                />
+              )}
+            </div>
+          </div>
           <div>
-            <Button onPress={handleExplore} elevated>
-              Learn More
-            </Button>
+            <Button onPress={handleExplore}>Learn More</Button>
           </div>
         </div>
       </div>

@@ -17,4 +17,6 @@
 .input {
   @apply mr-1;
   @apply cursor-pointer;
+  @apply border border-transparent outline-none;
+  @apply focus:border-focused-400 focus:ring focus:ring-focused-400;
 }

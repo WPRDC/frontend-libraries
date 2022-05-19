@@ -55,13 +55,10 @@ export function BigValue(props: ValueVizProps) {
     const isShownAlone = options.format === 'PCT';
     displayPercent = (
       <span className={styles.value}>
-        {' '}
         {isShownAlone ? (
           content
         ) : (
-          <span>
-            (<span>{content}</span>)
-          </span>
+          <span className={styles.percent}>({content})</span>
         )}
       </span>
     );
@@ -70,7 +67,7 @@ export function BigValue(props: ValueVizProps) {
   if (['FRN', 'BTH'].includes(options.format) && typeof denom === 'number') {
     displayDenom = (
       <span className={styles.denom}>
-        {' /'}
+        {'/ '}
         {denom.toLocaleString(
           'en-US',
           denomVariable ? denomVariable.localeOptions : undefined
@@ -88,10 +85,9 @@ export function BigValue(props: ValueVizProps) {
         <p className={styles.name}>{dataViz.name}</p>
         <p className={styles.valueGroup}>
           {displayValue}
-          <wbr />
-          {displayDenom}
-          <wbr />
           {displayPercent}
+          <br />
+          {displayDenom}
         </p>
       </div>
     </div>

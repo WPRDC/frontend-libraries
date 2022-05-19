@@ -18,7 +18,7 @@ import { DialogProps } from '@wprdc-types/dialog';
 import { Heading } from '@wprdc-components/heading';
 import classNames from 'classnames';
 
-export const Dialog: React.FC<DialogProps> = (props) => {
+export const Dialog: React.FC<DialogProps> = props => {
   let {
     title,
     size = 'M',

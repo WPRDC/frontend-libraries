@@ -16,10 +16,10 @@
   @apply px-1.5 py-1.5;
   @apply text-sm font-medium whitespace-nowrap text-center font-mono uppercase;
   @apply cursor-pointer;
-  @apply border-4 border-transparent;
-  @apply outline-none;
+  @apply border-2 border-transparent;
+  @apply outline-none focus:outline-none focus-visible:outline-none;
   @apply focus-visible:border-primary-400 focus-visible:border-primary-400;
-  @apply hover:border-4 hover:border-primary-400 hover:bg-slate-50;
+  @apply hover:border-2 hover:border-primary-400 hover:bg-slate-50;
 }
 
 .tab::before {

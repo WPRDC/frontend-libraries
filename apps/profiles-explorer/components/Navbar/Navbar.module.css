@@ -6,6 +6,10 @@
 .branding {
 }
 
+.branding a {
+  @apply no-underline;
+}
+
 .filler {
   @apply flex-grow;
 }

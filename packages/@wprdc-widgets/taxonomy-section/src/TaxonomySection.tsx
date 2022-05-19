@@ -115,7 +115,7 @@ export const TaxonomySection: React.FC<TaxonomySectionProps> = ({
 
   return (
     <div className={styles.wrapper}>
-      <Breadcrumbs>
+      <Breadcrumbs showCurrent={false}>
         {breadcrumbs.map((breadcrumb) => (
           <BreadcrumbItem {...breadcrumb} />
         ))}

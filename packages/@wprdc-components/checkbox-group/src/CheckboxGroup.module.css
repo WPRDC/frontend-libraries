@@ -26,6 +26,7 @@
   @apply w-full h-full;
   @apply bg-background checked:bg-zinc-800;
   @apply border-black border-2;
+  @apply focus:outline-none focus-visible:outline-none focus:border-focused-500;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */

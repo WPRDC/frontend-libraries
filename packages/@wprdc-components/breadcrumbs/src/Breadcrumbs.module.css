@@ -3,7 +3,7 @@
 
 .list {
   @apply font-mono uppercase text-xs;
-  @apply flex;
+  @apply flex h-4;
 }
 
 .listItem {
@@ -20,7 +20,7 @@
 }
 
 .link {
-  @apply hover:underline hover:text-blue-600;
+  @apply hover:text-blue-600;
 }
 
 .divider {

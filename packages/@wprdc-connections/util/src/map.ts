@@ -298,6 +298,7 @@ export function makeLayers(
       },
       filter: baseFilter || ['!=', 'global_geoid', ''],
     },
+
     {
       id: `${geogType}/highlighted/line`,
       type: 'line',

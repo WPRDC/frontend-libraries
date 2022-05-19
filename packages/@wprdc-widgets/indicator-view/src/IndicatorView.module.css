@@ -3,14 +3,15 @@
 }
 
 .cardContainer {
-  @apply w-full shadow-md rounded border;
-  @apply hover:shadow-lg hover:outline hover:outline-1 hover:outline-gray-300;
-  @apply focus:outline focus:outline-cyan-600;
+  @apply w-full shadow border-2 border-black outline-none;
+  @apply hover:shadow-lg hover:ring-1 hover:ring-black;
+  @apply focus:shadow-lg focus:border-focused-400 focus:ring-1 focus:ring-focused-400;
   @apply text-left;
 }
 
 .vizPane {
-  @apply h-48 relative flex;
+  @apply h-48 relative flex overflow-hidden;
+  @apply border-b border-black;
 }
 
 .titleSection {
@@ -30,9 +31,12 @@
   @apply mt-2;
 }
 
+.detailsItem p {
+  @apply mb-2;
+}
+
 .importance {
   @apply mt-2;
-  @apply italic;
 }
 
 .geogPicker {
@@ -45,12 +49,12 @@
 }
 
 .bigTitle {
-  @apply text-4xl font-bold;
+  @apply mt-4 mb-2 text-4xl font-bold;
 }
 
 .description {
-  @apply my-1 pt-0.5 pb-1 mb-2;
-  @apply text-sm;
+  @apply text-black;
+  @apply pt-0.5 pb-1 mb-4;
 }
 
 .cardDescription {

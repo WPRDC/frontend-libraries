@@ -34,12 +34,16 @@
 .realInput {
   @apply block;
   @apply pl-9 pr-2 py-1;
-  @apply focus:outline-none;
   @apply text-sm;
   @apply placeholder:italic placeholder:text-gray-400;
-  @apply focus:outline-none focus:ring-primary-400 focus:ring;
-  @apply w-full border border-black;
-  @apply shadow-inner;
+
+  @apply w-full border border-black outline-none;
+
+  @apply transition duration-150 ease-in-out;
+  @apply hover:border-focused-600;
+
+  @apply focus:ring-focused-400 focus:ring-1 focus:border-focused-400;
+  @apply focus-visible:outline-none focus:outline-none;
 }
 
 .clearButton {

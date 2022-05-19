@@ -30,11 +30,11 @@ export function Button(props: ButtonProps) {
           ? ''
           : classNames([
               styles.wrapper,
-              styles[color],
               {
                 [styles.elevated]: props.elevated,
                 [styles.dense]: props.dense,
               },
+              styles[color],
             ])
       }
     >

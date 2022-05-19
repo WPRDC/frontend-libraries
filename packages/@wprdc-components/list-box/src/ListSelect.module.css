@@ -10,7 +10,7 @@
   @apply relative inline-flex flex-row  w-full;
   @apply bg-background border border-gray-300;
   @apply rounded-md py-2 px-3 shadow-sm  sm:text-sm;
-  @apply focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1;
+  @apply focus:outline-none focus:border-focused-500 focus:ring-focused-500 focus:ring-1;
 }
 
 .value {

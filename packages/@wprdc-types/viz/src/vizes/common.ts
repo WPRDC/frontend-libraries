@@ -11,6 +11,10 @@ export interface DataVizID extends Resource<number> {
   vizType: DataVizType;
 }
 
+export interface DataVizIDWithSources extends DataVizID {
+  Sources: SourceBase[];
+}
+
 /** Shared fields across all data vizes */
 export interface DataVizBase extends DataVizID {
   staticOptions?: Record<string, any>;

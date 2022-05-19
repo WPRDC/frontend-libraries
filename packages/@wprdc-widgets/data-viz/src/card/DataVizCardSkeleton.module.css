@@ -1,5 +1,5 @@
 .wrapper {
-  @apply rounded border w-full relative shadow-md;
+  @apply border border-black w-full relative;
 }
 
 .pulser {
@@ -7,7 +7,7 @@
 }
 
 .header {
-  @apply rounded-t p-2.5;
+  @apply p-2.5;
 }
 
 .typeLabel {
@@ -26,7 +26,6 @@
 }
 
 .dataViz {
-  @apply rounded !important;
   @apply h-44 w-full;
   @apply aspect-video relative overflow-auto;
 }
@@ -43,7 +42,6 @@
 }
 
 .source {
-  @apply rounded !important;
   @apply w-36 h-5 my-1;
 }
 
@@ -52,13 +50,11 @@
 }
 
 .button {
-  @apply rounded !important;
   @apply w-24 h-8;
 }
 
 .box {
   @apply bg-gradient-to-r from-zinc-400 to-slate-400;
-  @apply rounded-sm;
 }
 
 .textLine {

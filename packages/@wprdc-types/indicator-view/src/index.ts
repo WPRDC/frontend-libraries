@@ -17,6 +17,7 @@ export interface IndicatorViewProps {
   onExploreDataViz?: (dataViz: DataVizBase) => void;
   onCompareIndicator?: (indicator: Indicator) => void;
   showGeog?: boolean;
+  headingLevel?: 1 | 2 | 3 | 4 | 5 | 6;
 }
 
 export interface ConnectedIndicatorViewProps

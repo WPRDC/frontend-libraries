@@ -56,6 +56,7 @@
     "react": ">=16"
   },
   "devDependencies": {
+    "@rollup/plugin-replace": "^4.0.0",
     "@size-limit/preset-small-lib": "^7.0.5",
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
@@ -74,9 +75,9 @@
     "typescript": "^4.5.5"
   },
   "dependencies": {
+    "@types/mapbox-gl": "^2.6.4",
     "@types/react": "^17.0.38",
     "@wprdc-types/shared": "^0.0.12",
-    "geojson": "^0.5.0",
-    "mapbox-gl": "^2.8.2"
+    "geojson": "^0.5.0"
   }
 }

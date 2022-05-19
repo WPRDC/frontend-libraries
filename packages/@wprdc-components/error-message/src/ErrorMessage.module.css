@@ -10,7 +10,7 @@
   @apply text-center w-full;
   @apply bg-none text-red-600;
   @apply border border-red-600;
-  @apply shadow-md-reverse;
+  @apply shadow-md shadow-red-700;
 }
 
 .inlineTitle {
@@ -28,5 +28,5 @@
 .inlineContainer {
   @apply flex w-max;
   @apply border border-red-600;
-  box-shadow: -4px -4px 0 rgba(220, 38, 38, 0.9);
+  @apply shadow-md shadow-red-700;
 }

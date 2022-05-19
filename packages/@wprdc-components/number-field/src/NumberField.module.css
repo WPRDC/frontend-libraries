@@ -11,11 +11,12 @@
   @apply flex flex-row w-full items-center;
   @apply bg-background border border-black;
   @apply pr-1;
-  @apply shadow-inner;
+  @apply transition duration-150 ease-in-out;
+  @apply hover:border-focused-600;
 }
 
 .focused {
-  @apply outline-none ring-primary-400 ring;
+  @apply outline-none ring-focused-400 ring-1 border-focused-400;
 }
 
 .realInput {

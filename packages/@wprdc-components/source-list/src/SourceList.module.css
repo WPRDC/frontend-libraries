@@ -2,10 +2,21 @@
 }
 
 .title {
-  @apply font-medium text-sm text-gray-600 mb-0.5;
+  @apply font-medium text-sm;
 }
 
 .popover {
+  @apply max-w-lg;
+}
+
+.popover > a:first-child {
+  @apply block w-full;
+  @apply whitespace-nowrap text-ellipsis;
+  @apply overflow-hidden overflow-ellipsis;
+}
+
+.popover p {
+  @apply my-2;
 }
 
 .list {
