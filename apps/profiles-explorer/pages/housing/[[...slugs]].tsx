@@ -13,8 +13,8 @@ import {
   ConnectionCollection,
 } from '@wprdc-types/connections';
 import { Geog, GeogBrief, GeogLevel, GeographyType } from '@wprdc-types/geo';
-import { DataVizBase } from '@wprdc-types/viz';
-import { Indicator } from '@wprdc-types/profiles';
+import { IndicatorBase } from '@wprdc-types/viz';
+import { Topic } from '@wprdc-types/profiles';
 import { useTaxonomy } from '@wprdc-connections/profiles';
 import { menuLayerConnection, useGeography } from '@wprdc-connections/geo';
 import { serializeParams } from '@wprdc-connections/api';
@@ -41,7 +41,7 @@ const ReachPage: NextPage = () => {
     );
   }
 
-  const [domainSlug, subdomainSlug, indicatorSlug, dataVizSlug] = pathSlugs;
+  const [domainSlug, subdomainSlug, topicSlug, indicatorSlug] = pathSlugs;
 
   // update state when path updates
   React.useEffect(() => {
@@ -75,21 +75,21 @@ const ReachPage: NextPage = () => {
     }
   };
 
-  function handleExploreDataViz(dataViz: DataVizBase): void {
+  function handleExploreIndicator(indicator: IndicatorBase): void {
     router.push(
-      `/housing/${domainSlug}/${subdomainSlug}/${indicatorSlug}/${
-        dataViz.slug
+      `/housing/${domainSlug}/${subdomainSlug}/${topicSlug}/${
+        indicator.slug
       }/${serializeParams(router.query)}`,
     );
   }
 
-  function handleExploreIndicator(indicator: Indicator): void {
+  function handleExploreTopic(topic: Topic): void {
     let domain: string, subdomain: string;
-    if (!!indicator.hierarchies && !!indicator.hierarchies.length) {
-      domain = indicator.hierarchies[0].domain.slug;
-      subdomain = indicator.hierarchies[0].subdomain.slug;
+    if (!!topic.hierarchies && !!topic.hierarchies.length) {
+      domain = topic.hierarchies[0].domain.slug;
+      subdomain = topic.hierarchies[0].subdomain.slug;
       router.push(
-        `/housing/${domain}/${subdomain}/${indicator.slug}/${serializeParams(
+        `/housing/${domain}/${subdomain}/${topic.slug}/${serializeParams(
           router.query,
         )}`,
       );
@@ -102,10 +102,10 @@ const ReachPage: NextPage = () => {
         <div className={styles.main}>
           <div className={styles.intro}>
             <div className={styles.title}>
-              <a href="/housing">Housing Indicators</a>
+              <a href="/housing">Housing Topics</a>
             </div>
             <div className={styles.subtitle}>
-              Indicators to inform affordable housing work
+              Topics to inform affordable housing work
             </div>
             <p className={styles.description}>
               Flavum, clemens advenas virtualiter imperium de domesticus, alter
@@ -161,10 +161,10 @@ const ReachPage: NextPage = () => {
                 taxonomy={taxonomy}
                 currentDomainSlug={domainSlug}
                 currentSubdomainSlug={subdomainSlug}
+                currentTopicSlug={topicSlug}
                 currentIndicatorSlug={indicatorSlug}
-                currentDataVizSlug={dataVizSlug}
-                onExploreDataViz={handleExploreDataViz}
                 onExploreIndicator={handleExploreIndicator}
+                onExploreTopic={handleExploreTopic}
                 onTabsChange={handleTabChange}
                 LinkComponent={Link}
               />

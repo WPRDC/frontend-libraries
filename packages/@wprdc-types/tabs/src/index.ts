@@ -23,3 +23,12 @@ export interface TabProps<T extends object> extends AriaTabProps {
 export interface TabPanelProps<T extends object> extends AriaTabPanelProps {
   state: TabListState<T>;
 }
+
+export interface NavTabProps<T extends Resource> {
+  items?: T[];
+  makeLinkProps?: (item: T) => object;
+  selectedKey?: React.Key;
+  getKey?: (item: T) => React.Key;
+  disabledKeys?: Set<React.Key>;
+  Link?: React.FC<{ item: T }>;
+}

@@ -4,7 +4,7 @@
   @apply overflow-auto;
 }
 
-.indicatorSection {
+.topicSection {
   @apply mb-2 px-4 pt-4;
 }
 

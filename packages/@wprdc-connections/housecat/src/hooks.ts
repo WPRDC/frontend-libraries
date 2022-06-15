@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 
-import { ErrorRecord } from '@wprdc-types/viz';
 import { ResponsePackage } from '@wprdc-types/api';
 import {
   ProjectIndex,
@@ -9,12 +8,14 @@ import {
 } from '@wprdc-types/housecat';
 
 import { HousecatAPI } from './api';
+import { ErrorRecord } from '@wprdc-types/profiles';
 
 export function usePublicHousingProject(
   identifier?: number | string | ProjectIndex
 ) {
-  const [affordableHousingProject, setAffordableHousingProject] =
-    useState<ProjectIndexDetails>();
+  const [affordableHousingProject, setAffordableHousingProject] = useState<
+    ProjectIndexDetails
+  >();
 
   const [isLoading, setIsLoading] = useState<boolean>();
   const [error, setError] = useState<ErrorRecord>();

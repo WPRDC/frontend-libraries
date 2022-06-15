@@ -23,7 +23,7 @@ import {
   PopupContentComponent,
   LayerPanelProps,
 } from '@wprdc-types/map';
-import { DataVizID } from '@wprdc-types/viz';
+import { IndicatorBase } from '@wprdc-types/profiles';
 import { AssetType } from '@wprdc-types/neighborhood-assets';
 import { ProjectIndex } from '@wprdc-types/housecat';
 
@@ -244,7 +244,7 @@ export type Connected<T> = T & {
 
 export interface ConnectionResourcesRecord {
   [ProjectKey.GeoMenu]: GeogBrief[];
-  [ProjectKey.Viz]: DataVizID[];
+  [ProjectKey.Profiles]: IndicatorBase[];
   [ProjectKey.NeighborhoodAssets]: AssetType[];
   [ProjectKey.Housecat]: ProjectIndex[];
   // todo: add projects here as we need them

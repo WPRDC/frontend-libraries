@@ -12,17 +12,14 @@ export interface NavbarProps {
 }
 
 export default function DefaultNavbar({
-  color = '#075985FF',
-  textColor = '#FFFFFF',
+  color: background,
+  textColor: color,
   title = 'Community Profiles',
-  subtitle = 'Directory of all WPRDC indicators for Southwestern PA',
+  subtitle = 'Directory of all WPRDC topics for Southwestern PA',
   titleLink = '/',
 }: NavbarProps): JSX.Element {
   return (
-    <div
-      className={styles.wrapper}
-      style={{ background: color, color: textColor }}
-    >
+    <div className={styles.wrapper} style={{ background, color }}>
       <div className={styles.branding}>
         <div className={styles.title}>
           <Link href={titleLink}>

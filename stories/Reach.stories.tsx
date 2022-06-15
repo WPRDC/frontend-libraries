@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import styles from './Reach.module.css';
 
-import { Map } from '../packages/@wprdc-widgets/map';
+import { Map } from '../packages/@wprdc-components/map';
 import { menuLayerConnection } from '../packages/@wprdc-connections/geo';
 import {
   ConnectionCollection,
@@ -17,10 +17,10 @@ import {
 import { ProjectKey } from '../packages/@wprdc-types/shared';
 import { useGeography } from '../packages/@wprdc-connections/geo';
 import { useTaxonomy } from '../packages/@wprdc-connections/profiles';
-import { IndicatorView } from '../packages/@wprdc-widgets/indicator-view';
+import { TopicView } from '../packages/@wprdc-widgets/topic-view';
 import { useProvider } from '../packages/@wprdc-components/provider';
 import { LoadingMessage } from '../packages/@wprdc-components/loading-message';
-import { Indicator } from '../packages/@wprdc-types/profiles';
+import { Topic } from '../packages/@wprdc-types/profiles';
 import { DataVizBase } from '../packages/@wprdc-types/viz';
 
 export default {
@@ -29,7 +29,7 @@ export default {
 
 export const Default = () => {
   const [geogBrief, setGeogBrief] = React.useState<GeogBrief>(defaultGeogBrief);
-  const [selectedIndicator, setSelectedIndicator] = React.useState<Indicator>();
+  const [selectedTopic, setSelectedTopic] = React.useState<Topic>();
   const [dataViz, setDataViz] = React.useState<DataVizBase>();
 
   const context = useProvider();
@@ -54,8 +54,8 @@ export const Default = () => {
     }
   };
 
-  function handleExploreIndicator(indicator: Indicator) {
-    setSelectedIndicator(indicator);
+  function handleExploreTopic(topic: Topic) {
+    setSelectedTopic(topic);
   }
 
   function handleExploreDataViz(dataViz: DataVizBase) {
@@ -64,7 +64,7 @@ export const Default = () => {
 
   const domain = React.useMemo(() => {
     if (!!taxonomy)
-      return taxonomy.find((d) => (d.slug = 'reach-sustainable-pgh'));
+      return taxonomy.find(d => (d.slug = 'reach-sustainable-pgh'));
     return undefined;
   }, [taxonomy]);
 
@@ -74,7 +74,7 @@ export const Default = () => {
         <div className={styles.main}>
           <div className={styles.intro}>
             <div className={styles.title}>REACH/SSPGH</div>
-            <div className={styles.subtitle}>Indicators of some sort</div>
+            <div className={styles.subtitle}>Topics of some sort</div>
             <p className={styles.description}>
               Grandis visus satis manifestums brabeuta est. Candidatus de
               emeritis gluten, prensionem accentor! Est castus decor, cesaris.
@@ -122,16 +122,16 @@ export const Default = () => {
           </div>
         </div>
 
-        {!!selectedIndicator && (
-          <IndicatorView
-            indicator={selectedIndicator}
+        {!!selectedTopic && (
+          <TopicView
+            topic={selectedTopic}
             geog={geog}
-            onExploreIndicator={handleExploreIndicator}
+            onExploreTopic={handleExploreTopic}
             onExploreDataViz={handleExploreDataViz}
           />
         )}
 
-        {!selectedIndicator && !taxonomyIsLoading && !!domain && (
+        {!selectedTopic && !taxonomyIsLoading && !!domain && (
           <div className={styles.dashboard}>
             {!!taxonomyIsLoading && (
               <div className={styles.loader}>
@@ -139,20 +139,20 @@ export const Default = () => {
               </div>
             )}
 
-            {domain.subdomains.map((subdomain) => (
+            {domain.subdomains.map(subdomain => (
               <div
                 className={styles.subdomainSection}
-                style={{ display: !!selectedIndicator ? 'hidden' : 'visible' }}
+                style={{ display: !!selectedTopic ? 'hidden' : 'visible' }}
               >
                 <div className={styles.subdomainTitle}>{subdomain.name}</div>
                 <div className={styles.subdomainContent}>
-                  {subdomain.indicators.map((indicator) => (
-                    <div className={styles.indicatorSection}>
-                      <IndicatorView
+                  {subdomain.topics.map(topic => (
+                    <div className={styles.topicSection}>
+                      <TopicView
                         card
-                        indicator={indicator}
+                        topic={topic}
                         geog={geog}
-                        onExploreIndicator={handleExploreIndicator}
+                        onExploreTopic={handleExploreTopic}
                         onExploreDataViz={handleExploreDataViz}
                       />
                     </div>

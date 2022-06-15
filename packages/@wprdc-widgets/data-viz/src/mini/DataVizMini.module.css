@@ -1,7 +1,0 @@
-.container {
-  @apply relative w-max;
-}
-
-.vizDiv {
-  @apply border border-black shadow w-max p-2;
-}

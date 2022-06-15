@@ -23,7 +23,7 @@ import { ColorScheme, ProjectKey } from '@wprdc-types/shared';
 
 import { fetchCartoVectorSource } from '@wprdc-connections/util';
 
-import { LegendSection, LegendItem } from '@wprdc-widgets/map';
+import { LegendSection, LegendItem } from '@wprdc-components/map';
 import { CheckboxGroup, Checkbox } from '@wprdc-components/checkbox-group';
 
 import {
@@ -41,40 +41,34 @@ export const assetMapConnection: MapPluginConnection<
   use: useMapPlugin,
   getSources: (_, __, setSources) => {
     fetchCartoVectorSource(ASSETS_SOURCE_ID, ASSETS_CARTO_SQL).then(
-      (source) => setSources([source]),
-      (err) => console.error('CARTO', err)
+      source => setSources([source]),
+      err => console.error('CARTO', err)
     );
   },
   getLayers: (items, selected, setLayers, options) => {
     const { colorScheme } = options || {};
     const categories =
-      selected === 'all'
-        ? items.map((item) => item.name)
-        : Array.from(selected);
+      selected === 'all' ? items.map(item => item.name) : Array.from(selected);
     setLayers([makeAssetLayer(categories, colorScheme)]);
   },
   getLegendItems: (items, selected, setLegendItems, options) => {
     const selectedTypes =
-      selected === 'all'
-        ? items.map((item) => item.name)
-        : Array.from(selected);
+      selected === 'all' ? items.map(item => item.name) : Array.from(selected);
     const { colorScheme } = options || {};
     const legendItems = makeAssetLegendItems(items, selectedTypes, colorScheme);
     setLegendItems(legendItems);
   },
   getInteractiveLayerIDs: (items, selected) => {
     const categories =
-      selected === 'all'
-        ? items.map((item) => item.name)
-        : Array.from(selected);
+      selected === 'all' ? items.map(item => item.name) : Array.from(selected);
     // for now asset layer just has one id
     if (!!categories.length) return [ASSETS_LAYER_ID];
     return [];
   },
-  parseMapEvent: (event) => {
+  parseMapEvent: event => {
     if (!!event && !!event.features) {
       const features = event.features.filter(
-        (feature) =>
+        feature =>
           !!feature &&
           !!feature.source &&
           !!feature.properties &&
@@ -84,15 +78,15 @@ export const assetMapConnection: MapPluginConnection<
     }
     return [];
   },
-  makeFilter: (item) => {
-    if (Array.isArray(item)) return ['in', 'geoid', item.map((i) => i.id)];
+  makeFilter: item => {
+    if (Array.isArray(item)) return ['in', 'geoid', item.map(i => i.id)];
     return ['==', 'id', item.id];
   },
   makeLegendSection: (setLegendSection, items) => {
     if (!!items && !!items.length)
       setLegendSection(
         <LegendSection title="Neighborhood Assets">
-          {items.map((item) => (
+          {items.map(item => (
             <LegendItem {...item} />
           ))}
         </LegendSection>
@@ -112,7 +106,7 @@ export const assetMapConnection: MapPluginConnection<
   getSelectedItems(items, selection) {
     return selection === 'all'
       ? items
-      : items.filter((item) => selection.has(item.name));
+      : items.filter(item => selection.has(item.name));
   },
   makeLayerPanelSection(setLayerPanelSection, items, _, handleChange) {
     function _handleChange(val: string[]) {
@@ -127,7 +121,7 @@ export const assetMapConnection: MapPluginConnection<
             aria-label="select neighborhood asset layers to display"
             onChange={_handleChange}
           >
-            {items.map((item) => (
+            {items.map(item => (
               <Checkbox
                 key={`assets/${item.name}`}
                 value={`assets/${item.name}`}
@@ -139,7 +133,7 @@ export const assetMapConnection: MapPluginConnection<
         </div>
       );
   },
-  makeHoverContent: (hoveredItems) => {
+  makeHoverContent: hoveredItems => {
     if (!!hoveredItems && !!hoveredItems.length)
       return <div className="text-xs">{hoveredItems[0].name}</div>;
     return null;
@@ -155,13 +149,13 @@ export const makeAssetLegendItems = (
   colorScheme: ColorScheme = ColorScheme.Light
 ) => {
   return availableAssetTypes
-    .filter((at) => selectedAssetTypes.includes(at.name))
-    .map((at) => ({
+    .filter(at => selectedAssetTypes.includes(at.name))
+    .map(at => ({
       variant: 'categorical',
       key: at.name,
       label: at.title,
       marker: categoryColors(
-        selectedAssetTypes.map((t) => t.toString()),
+        selectedAssetTypes.map(t => t.toString()),
         colorScheme
       )[at.name],
     })) as CategoricalLegendItemProps[];
@@ -188,7 +182,7 @@ export const makeAssetLayer = (
       12,
     ],
     'circle-color': colorExpression(
-      categories.map((c) => `${c}`),
+      categories.map(c => `${c}`),
       colorScheme,
       field
     ),

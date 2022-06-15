@@ -1,0 +1,19 @@
+.wrapper {
+  @apply min-w-0 w-full h-full;
+  @apply max-h-full max-w-full flex-grow flex min-h-0;
+}
+
+.wrapper .inPreview {
+  @apply max-h-full max-w-full flex-grow flex min-h-0;
+}
+
+.inPreview .mapWithChart {
+}
+
+.chartWithTable {
+}
+
+.chartWithTable > div > h3 {
+  @apply text-sm;
+  @apply pt-4 pb-1;
+}

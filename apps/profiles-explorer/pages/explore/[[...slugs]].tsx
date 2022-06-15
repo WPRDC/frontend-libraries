@@ -1,6 +1,4 @@
 import Head from 'next/head';
-import Link from 'next/link';
-
 import { useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/router';
 
@@ -18,7 +16,7 @@ import {
   useGeography,
   useGeographyLevels,
 } from '@wprdc-connections/geo';
-import { ConnectedSelect } from '@wprdc-components/select';
+import { ConnectedSelect, Select } from '@wprdc-components/select';
 import { useWindowSize } from '@wprdc-connections/util';
 import { GeogBrief, GeogLevel } from '@wprdc-types/geo';
 import { ConnectedSearchBox } from '@wprdc-components/search-box';
@@ -28,19 +26,20 @@ import {
   ConnectedMapEventHandler,
   ConnectionCollection,
 } from '@wprdc-types/connections';
-import { TaxonomySection } from '@wprdc-widgets/taxonomy-section';
 import { BreadcrumbItem, Breadcrumbs } from '@wprdc-components/breadcrumbs';
-import { DataVizBase } from '@wprdc-types/viz';
-import { Indicator } from '@wprdc-types/profiles';
-import { Map } from '@wprdc-widgets/map';
+import { IndicatorBase } from '@wprdc-types/profiles';
+import { Topic } from '@wprdc-types/profiles';
+import { Map } from '@wprdc-components/map';
 import { useProvider } from '@wprdc-components/provider';
+import { TaxonomySection } from '../../components/TaxonomySection';
+import { Item } from '@wprdc-components/util';
 
 export default function Home() {
   // state
   const [geogLevel, setGeogLevel] = useState<GeogLevel>();
   const [geogSlug, setGeogSlug] = useState<string>();
   const [pathSlugs, setPathSlugs] = useState<string[]>([]);
-  const [domainSlug, subdomainSlug, indicatorSlug, dataVizSlug] = pathSlugs;
+  const [domainSlug, subdomainSlug, topicSlug, indicatorSlug] = pathSlugs;
 
   // hooks
   const context = useProvider();
@@ -61,6 +60,8 @@ export default function Home() {
 
   // when the url changes
   useEffect(() => {
+    // todo: this effect is run when the url changes, however there is a huge lag in rendering afterwards
+
     if (!!geogLevels && !!taxonomy) {
       // first check geog or taxonomy are missing or malformed.
       //  if so, push with a default(s) added
@@ -74,7 +75,6 @@ export default function Home() {
 
       // if any defaults are used, they must be pushed to the router history
       if (!!defaultGeog || !!defaultTaxonomyPath) {
-        console.log('🚨 Missing path items', router);
         router.push(
           {
             pathname: defaultTaxonomyPath || router.pathname,
@@ -89,7 +89,7 @@ export default function Home() {
         const gSlug = router.query.geog as string;
         // find geogLevel for the geog
         const geogLevelSlug = gSlug.slice(0, gSlug.lastIndexOf('-'));
-        const glevel = geogLevels.find((g) => g.slug === geogLevelSlug);
+        const glevel = geogLevels.find(g => g.slug === geogLevelSlug);
 
         // ensure `slugs` is an array
         const slugs: string[] =
@@ -98,14 +98,12 @@ export default function Home() {
             : (router.query.slugs as string[]); // would have default if undefined
 
         // update state
-        console.log('🚚 Updating State\n', slugs, gSlug, glevel, router);
         setPathSlugs(slugs);
         setGeogSlug(gSlug);
         setGeogLevel(glevel);
       }
     }
   }, [router.pathname, router.query, geogLevels, taxonomy]);
-
   // event handlers
   function handleGeogLevelSelection(selectedGeogLevel: GeogLevel) {
     setGeogLevel(selectedGeogLevel);
@@ -113,46 +111,37 @@ export default function Home() {
 
   function handleGeogSelection(geog?: { slug: string }) {
     if (!!geog) {
-      console.log('🗺 Geog select', router, router.asPath);
       const path = router.asPath.split('?')[0];
       router.push(`${path}/?geog=${geog.slug}`);
     }
   }
 
-  function handleExploreDataViz(dataViz: DataVizBase): void {
+  function handleExploreIndicator(indicator: IndicatorBase): void {
     const { slugs, ...sansSlugs } = router.query;
-    console.log('🚨 handleExploreDataViz');
     router.push({
-      pathname: `/explore/${domainSlug}/${subdomainSlug}/${indicatorSlug}/${dataViz.slug}/`,
+      pathname: `/explore/${domainSlug}/${subdomainSlug}/${topicSlug}/${indicator.slug}/`,
       query: sansSlugs,
     });
   }
 
-  function handleExploreIndicator(indicator: Indicator): void {
+  function handleExploreTopic(topic: Topic): void {
     const { slugs, ...sansSlugs } = router.query;
-    let domain: string, subdomain: string;
-    console.log('🚨 handleExploreIndicator', geog, router);
-
-    if (!!indicator.hierarchies && !!indicator.hierarchies.length) {
-      domain = indicator.hierarchies[0].domain.slug;
-      subdomain = indicator.hierarchies[0].subdomain.slug;
+    let domain: string;
+    if (!!topic.hierarchies && !!topic.hierarchies.length) {
+      domain = topic.hierarchies[0].domain.slug;
 
       router.push({
-        pathname: `/explore/${domain}/${subdomain}/${indicator.slug}/`,
+        pathname: `/explore/${domain}/${topic.slug}/`,
         query: sansSlugs,
       });
     }
   }
 
   function handleTabChange(domain: React.Key): void {
-    console.group('📑 tab change', domainSlug, domain);
-    console.log('start', router.asPath, { router });
     router.push({
       pathname: `/explore/${domain}/`,
       query: { geog: geog?.slug },
     });
-    console.log('end', router.asPath, { router });
-    console.groupEnd();
   }
 
   const handleClick: ConnectedMapEventHandler = (_, __, toolboxItems) => {
@@ -175,7 +164,7 @@ export default function Home() {
     <div className={styles.container}>
       <Head>
         <title>Profiles - Explorer</title>
-        <meta name="description" content="Indicator explorer" />
+        <meta name="description" content="Topic explorer" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <>
@@ -261,7 +250,7 @@ export default function Home() {
                 <Breadcrumbs showCurrent={false}>
                   {[{ name: 'pa', title: 'Pennsylvania' }]
                     .concat(geog.hierarchy.concat(geog))
-                    .map((item) => (
+                    .map(item => (
                       <BreadcrumbItem
                         key={item.name}
                         isDisabled={item.name === 'pa'}
@@ -279,20 +268,17 @@ export default function Home() {
           <div className={styles.taxonomyContainer}>
             {!!taxonomy && !!domainSlug ? (
               <TaxonomySection
-                // todo: baseHeadingLevel={3}
                 taxonomy={taxonomy}
                 geog={geog}
                 currentDomainSlug={domainSlug}
-                currentSubdomainSlug={subdomainSlug}
+                currentTopicSlug={topicSlug}
                 currentIndicatorSlug={indicatorSlug}
-                currentDataVizSlug={dataVizSlug}
-                onExploreDataViz={handleExploreDataViz}
                 onExploreIndicator={handleExploreIndicator}
-                onTabsChange={handleTabChange}
-                LinkComponent={Link}
+                onExploreTopic={handleExploreTopic}
+                baseHeadingLevel={3}
               />
             ) : (
-              <LoadingMessage message="Loading indicators" />
+              <LoadingMessage message="Loading topics" />
             )}
           </div>
         </div>

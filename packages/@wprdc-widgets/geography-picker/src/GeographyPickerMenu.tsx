@@ -13,7 +13,7 @@ import styles from './GeographyPickerMenu.module.css';
 
 import { Select } from '@wprdc-components/select';
 import { ConnectedSearchBox } from '@wprdc-components/search-box';
-import { Map } from '@wprdc-widgets/map';
+import { Map } from '@wprdc-components/map';
 
 import {
   menuLayerConnection,
@@ -51,7 +51,7 @@ export const GeographyPickerMenu: React.FC<GeographyPickerMenuProps> = ({
   useEffect(() => {
     if (!!geogLevels) {
       setSelectedGeogLevel(
-        geogLevels.find((layer) => layer.id === selectedGeog?.geogType) ||
+        geogLevels.find(layer => layer.id === selectedGeog?.geogType) ||
           geogLevels[0]
       );
     }
@@ -92,7 +92,7 @@ export const GeographyPickerMenu: React.FC<GeographyPickerMenuProps> = ({
               selectedKey={selectedGeogLevel.id}
               onSelection={handleSelection}
             >
-              {(item) => <Item key={item.id}>{item.name}</Item>}
+              {item => <Item key={item.id}>{item.name}</Item>}
             </Select>
           </div>
         </div>

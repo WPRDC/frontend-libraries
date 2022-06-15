@@ -13,6 +13,7 @@ export interface PopupSectionProps {
   label: string;
   /** Icon next to label. */
   icon?: (props: any) => JSX.Element;
+  children?: React.ReactChild;
 }
 
 export interface PopupContentProps<

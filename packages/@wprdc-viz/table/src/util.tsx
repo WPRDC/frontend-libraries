@@ -21,8 +21,8 @@ export function extractAndFormatLabel<T extends AxisItem>(
   );
 }
 
-export function extractAxes(dataViz: DownloadedTableViz) {
-  const { geogs, timeAxis, variables, options } = dataViz;
+export function extractAxes(indicator: DownloadedTableViz) {
+  const { geogs, timeAxis, variables, options } = indicator;
   const columnAxisKey: AxisOption = options.columnAxis;
   const rowAxisKey: AxisOption = options.rowAxis;
   const viewAxisKey: AxisOption = options.columnAxis;

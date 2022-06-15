@@ -3,8 +3,7 @@ import {
   SearchBox,
   ConnectedSearchBox,
 } from '../packages/@wprdc-components/search-box';
-import { dataVizConnection } from '../packages/@wprdc-connections/viz';
-import { DataVizID } from '../packages/@wprdc-types/viz';
+import { topicConnection } from '../packages/@wprdc-connections/profiles';
 import { ResourceOptionTemplateOptions } from '../packages/@wprdc-types/list-box';
 import { GeogBrief, GeographyType } from '@wprdc-types/geo';
 import {
@@ -17,6 +16,7 @@ import {
   affordableHousingProjectConnection,
   defaultAffordableHousingListBoxProps,
 } from '../packages/@wprdc-connections/housecat';
+import { Topic } from '@wprdc-types/profiles';
 
 export default {
   title: 'Components/SearchBox',
@@ -24,7 +24,7 @@ export default {
 };
 
 export const DataViz = () => {
-  const [viz, setViz] = React.useState<DataVizID>();
+  const [topic, setTopic] = React.useState<Topic>();
   const [geog, setGeog] = React.useState<GeogBrief>();
   return (
     <div>
@@ -37,13 +37,13 @@ export const DataViz = () => {
       <br />
       <br />
       <div>
-        <ConnectedSearchBox<DataVizID, ResourceOptionTemplateOptions<DataVizID>>
-          connection={dataVizConnection}
+        <ConnectedSearchBox<Topic, ResourceOptionTemplateOptions<Topic>>
+          connection={topicConnection}
           listBoxProps={defaultVizListBoxProps}
-          onSelection={setViz}
+          onSelection={setTopic}
         />
       </div>
-      <pre>{JSON.stringify(viz, null, 2)}</pre>
+      <pre>{JSON.stringify(topic, null, 2)}</pre>
     </div>
   );
 };

@@ -5,11 +5,12 @@ import { BackgroundColorValue, ViewStyleProps } from '@react-types/shared';
 export interface MultiLegendProps extends ViewStyleProps {
   title?: React.ReactNode;
   legends?: JSX.Element[];
-  localeOptions?: Partial<Intl.NumberFormatOptions>;
+  numberFormatOptions?: Partial<Intl.NumberFormatOptions>;
 }
 
 export interface LegendProps {
   title?: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 export interface LegendItemListProps {

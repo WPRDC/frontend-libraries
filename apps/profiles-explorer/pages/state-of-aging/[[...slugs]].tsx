@@ -15,8 +15,8 @@ import {
 } from '@wprdc-types/connections';
 import { TaxonomySection } from '@wprdc-widgets/taxonomy-section';
 import { Geog, GeogBrief, GeogLevel, GeographyType } from '@wprdc-types/geo';
-import { DataVizBase } from '@wprdc-types/viz';
-import { Indicator } from '@wprdc-types/profiles';
+import { IndicatorBase } from '@wprdc-types/viz';
+import { Topic } from '@wprdc-types/profiles';
 import { useTaxonomy } from '@wprdc-connections/profiles';
 import { menuLayerConnection, useGeography } from '@wprdc-connections/geo';
 import { serializeParams } from '@wprdc-connections/api';
@@ -44,7 +44,7 @@ const AgingPage: NextPage = () => {
     );
   }
 
-  const [domainSlug, subdomainSlug, indicatorSlug, dataVizSlug] = pathSlugs;
+  const [domainSlug, subdomainSlug, topicSlug, indicatorSlug] = pathSlugs;
 
   // update state when path updates
   React.useEffect(() => {
@@ -78,36 +78,36 @@ const AgingPage: NextPage = () => {
     }
   };
 
-  function handleExploreDataViz(dataViz: DataVizBase): void {
+  function handleExploreIndicator(indicator: IndicatorBase): void {
     const { slugs, ...params } = router.query;
 
     router.push(
-      `/state-of-aging/${domainSlug}/${subdomainSlug}/${indicatorSlug}/${
-        dataViz.slug
+      `/state-of-aging/${domainSlug}/${subdomainSlug}/${topicSlug}/${
+        indicator.slug
       }/${serializeParams(params)}`,
     );
   }
 
-  function handleExploreIndicator(indicator: Indicator): void {
+  function handleExploreTopic(topic: Topic): void {
     const { slugs, ...params } = router.query;
 
     let domain: string, subdomain: string;
-    if (!!indicator.hierarchies && !!indicator.hierarchies.length) {
-      domain = indicator.hierarchies[0].domain.slug;
-      subdomain = indicator.hierarchies[0].subdomain.slug;
+    if (!!topic.hierarchies && !!topic.hierarchies.length) {
+      domain = topic.hierarchies[0].domain.slug;
+      subdomain = topic.hierarchies[0].subdomain.slug;
       router.push(
         `/state-of-aging/${domain}/${subdomain}/${
-          indicator.slug
+          topic.slug
         }/${serializeParams(params)}`,
       );
     }
   }
 
-  function handleCompareIndicator(indicator?: Indicator): void {
-    if (!!geog && indicator) {
+  function handleCompareTopic(topic?: Topic): void {
+    if (!!geog && topic) {
       router.push({
-        pathname: `/explore/indicator/compare`,
-        query: { g1: geog.slug, g2: 'county-42003', i: indicator.slug },
+        pathname: `/explore/topic/compare`,
+        query: { g1: geog.slug, g2: 'county-42003', i: topic.slug },
       });
     }
   }
@@ -115,8 +115,8 @@ const AgingPage: NextPage = () => {
   return (
     <div className={styles.wrapper}>
       <Head>
-        <title>State of Aging - Indicators</title>
-        <meta name="description" content="Community indicators related to aging" />
+        <title>State of Aging - Topics</title>
+        <meta name="description" content="Community topics related to aging" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className={styles.main}>
@@ -125,7 +125,7 @@ const AgingPage: NextPage = () => {
             <a href="/state-of-aging">Just a Number</a>
           </div>
           <div className={styles.subtitle}>
-            Community indicators related to the state of aging
+            Community topics related to the state of aging
           </div>
           <div className={styles.description}>
             <p>
@@ -142,7 +142,7 @@ const AgingPage: NextPage = () => {
             </p>
             <p>
               <strong>
-                Click on the map to see indicators for other tracts.{' '}
+                Click on the map to see topics for other tracts.{' '}
               </strong>
             </p>
           </div>
@@ -201,12 +201,12 @@ const AgingPage: NextPage = () => {
               currentDomainHref={`/state-of-aging/${domainSlug}`}
               currentSubdomainSlug={subdomainSlug}
               currentSubdomainHref={`/state-of-aging/${domainSlug}/${subdomainSlug}`}
+              currentTopicSlug={topicSlug}
+              currentTopicHref={`/state-of-aging/${domainSlug}/${subdomainSlug}/${topicSlug}`}
               currentIndicatorSlug={indicatorSlug}
-              currentIndicatorHref={`/state-of-aging/${domainSlug}/${subdomainSlug}/${indicatorSlug}`}
-              currentDataVizSlug={dataVizSlug}
-              onExploreDataViz={handleExploreDataViz}
               onExploreIndicator={handleExploreIndicator}
-              onCompareIndicator={handleCompareIndicator}
+              onExploreTopic={handleExploreTopic}
+              onCompareTopic={handleCompareTopic}
               onTabsChange={handleTabChange}
               LinkComponent={Link}
             />

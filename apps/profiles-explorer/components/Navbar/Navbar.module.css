@@ -1,6 +1,6 @@
 .wrapper {
   @apply w-full h-20 flex-none p-2 px-5 flex shadow-lg;
-  @apply text-white;
+  @apply bg-cyan-800 text-white;
 }
 
 .branding {

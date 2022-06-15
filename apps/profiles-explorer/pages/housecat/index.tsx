@@ -45,7 +45,7 @@ function HousecatHome() {
         <div className={styles.smallButtonSection}>
           <Link href="/housing">
             <button className={styles.bigButton}>
-              <div className={styles.buttonTitle}>📊 Indicators</div>
+              <div className={styles.buttonTitle}>📊 Topics</div>
               <div className={styles.buttonText}>
                 Community-level housing statistics.
               </div>

@@ -3,7 +3,8 @@ import { ResponsePackage, Method } from '@wprdc-types/api';
 
 import { Geog, GeogBrief, GeographyType, GeogLevel } from '@wprdc-types/geo';
 
-const HOST = 'https://api.profiles.wprdc.org';
+// const HOST = 'https://api.profiles.wprdc.org';
+const HOST = 'http://localhost:8000';
 
 export enum Endpoint {
   Geog = 'geo',

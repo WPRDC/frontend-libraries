@@ -1,7 +1,12 @@
 import React from 'react';
 import { ConnectionProps, MapPluginConnection } from '@wprdc-types/connections';
 
-import { Layer, LegendItem, LegendSection, Source } from '@wprdc-widgets/map';
+import {
+  Layer,
+  LegendItem,
+  LegendSection,
+  Source,
+} from '@wprdc-components/map';
 import { useMapPlugin } from '@wprdc-connections/util';
 
 import { ProjectKey, Resource } from '@wprdc-types/shared';
@@ -29,37 +34,37 @@ export const affordableHousingProjectMapConnection: MapPluginConnection<
   getSources(_, __, setSources, options) {
     const { filterParams } = options || {};
     HousecatAPI.requestPublicHousingProjectMap(filterParams).then(
-      (r) => {
+      r => {
         if (r.data) setSources([r.data.source]);
       },
-      (err) => console.error(err)
+      err => console.error(err)
     );
   },
   getLayers(_, __, setLayers, options) {
     const { filterParams } = options || {};
     HousecatAPI.requestPublicHousingProjectMap(filterParams).then(
-      (r) => {
+      r => {
         if (r.data) setLayers(r.data.layers);
       },
-      (err) => console.error(err)
+      err => console.error(err)
     );
   },
   getLegendItems(_, __, setLegendItems, options) {
     const { filterParams } = options || {};
     HousecatAPI.requestPublicHousingProjectMap(filterParams).then(
-      (r) => {
+      r => {
         if (r.data) setLegendItems(r.data.extras.legendItems);
       },
-      (err) => console.error(err)
+      err => console.error(err)
     );
   },
   getInteractiveLayerIDs() {
     return ['all-public-housing-projects/marker'];
   },
-  parseMapEvent: (event) => {
+  parseMapEvent: event => {
     if (!!event && !!event.features) {
       const features = event.features.filter(
-        (feature) =>
+        feature =>
           !!feature &&
           !!feature.source &&
           !!feature.properties &&
@@ -78,7 +83,7 @@ export const affordableHousingProjectMapConnection: MapPluginConnection<
     if (!!items && !!items.length)
       setLegendSection(
         <LegendSection title="Affordable Housing Projects by Funding Type">
-          {items.map((item) => {
+          {items.map(item => {
             const color: string =
               ((item as CategoricalLegendItemProps).marker as string) || 'gray';
             return (
@@ -109,12 +114,12 @@ export const affordableHousingProjectMapConnection: MapPluginConnection<
   getSelectedItems(items, selection) {
     return selection === 'all'
       ? items
-      : items.filter((item) => selection.has(item.id));
+      : items.filter(item => selection.has(item.id));
   },
   makeLayerPanelSection() {
     // todo: implement
   },
-  makeHoverContent: (hoveredItems) => {
+  makeHoverContent: hoveredItems => {
     if (!!hoveredItems && !!hoveredItems.length)
       return (
         <div className={styles.title}>
@@ -123,12 +128,11 @@ export const affordableHousingProjectMapConnection: MapPluginConnection<
       );
     return null;
   },
-  makeClickContent: (_) => {
+  makeClickContent: _ => {
     return null;
   },
 };
 
-export const defaultAffordableHousingProjectMapConnectionProps: ConnectionProps =
-  {
-    layerItems: [{ id: 'default', name: 'default', slug: 'default' }],
-  };
+export const defaultAffordableHousingProjectMapConnectionProps: ConnectionProps = {
+  layerItems: [{ id: 'default', name: 'default', slug: 'default' }],
+};

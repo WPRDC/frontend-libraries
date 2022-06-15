@@ -90,8 +90,6 @@ export function SearchBox<T extends Resource, O extends object = {}>(
     }
   }, [props.loadingState]);
 
-  console.log('🔍', { listBoxProps });
-
   return (
     <div className={styles.container}>
       {props.label && (

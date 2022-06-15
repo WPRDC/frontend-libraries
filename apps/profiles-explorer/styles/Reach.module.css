@@ -103,7 +103,7 @@
   @apply text-4xl font-bold;
 }
 
-.indicatorSection {
+.topicSection {
   @apply py-3;
 }
 

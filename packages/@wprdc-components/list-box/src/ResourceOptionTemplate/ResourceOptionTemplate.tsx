@@ -20,9 +20,13 @@ export function ResourceOptionTemplate<T extends Resource>(
     subtitleAccessor = 'description',
   } = props;
 
-  function getContent(accessor: OptionFieldAccessor<T> | keyof T, item: T) {
+  function getContent(
+    accessor: OptionFieldAccessor<T> | keyof T,
+    item: T
+  ): React.ReactNode {
     if (typeof accessor == 'function') return accessor(item);
-    return item[accessor];
+    // fixme: figure out how to type this
+    return (item[accessor] as unknown) as React.ReactNode;
   }
 
   // Try `getIcon`, and then `Icon` to generate an icon.
@@ -34,7 +38,7 @@ export function ResourceOptionTemplate<T extends Resource>(
     return Icon;
   }, [item, getIcon, Icon]);
 
-  const title = React.useMemo(() => {
+  const title: React.ReactNode = React.useMemo(() => {
     return getContent(titleAccessor, item);
   }, [titleAccessor, item]);
 

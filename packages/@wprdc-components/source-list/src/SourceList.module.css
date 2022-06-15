@@ -9,7 +9,7 @@
   @apply max-w-lg;
 }
 
-.popover > a:first-child {
+.popover > a:first-of-type {
   @apply block w-full;
   @apply whitespace-nowrap text-ellipsis;
   @apply overflow-hidden overflow-ellipsis;

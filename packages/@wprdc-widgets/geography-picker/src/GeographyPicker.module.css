@@ -1,6 +1,7 @@
 .wrapper {
   @apply w-full flex flex-col items-stretch;
   @apply relative;
+  @apply bg-white;
 }
 
 .menu {

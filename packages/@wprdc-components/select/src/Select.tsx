@@ -36,7 +36,7 @@ export function Select<T extends object, O extends object = {}>(
   const listBoxRef = React.useRef<HTMLUListElement>(null);
 
   const onSelectionChange = props.onSelectionChange || selectionShim;
-  let state = useSelectState({ ...props, onSelectionChange });
+  const state = useSelectState({ ...props, onSelectionChange });
 
   // Get props for child elements from useSelect
   let ref = React.useRef(null);
@@ -49,7 +49,6 @@ export function Select<T extends object, O extends object = {}>(
   // Get props for the button based on the trigger props from useSelect
   let { buttonProps } = useButton(triggerProps, ref);
   let { focusProps, isFocusVisible } = useFocusRing();
-  console.log('is open', state.isOpen);
   return (
     <div className={styles.container}>
       {!!props.label && (

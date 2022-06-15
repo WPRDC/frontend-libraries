@@ -36,7 +36,7 @@
   @apply py-1;
 }
 
-.size-S > div:first-child {
+.size-S > div:first-of-type {
   @apply pl-2;
 }
 
@@ -48,7 +48,7 @@
   @apply py-1;
 }
 
-.size-M > div:first-child {
+.size-M > div:first-of-type {
   @apply pl-2;
 }
 
@@ -60,7 +60,7 @@
   @apply py-1;
 }
 
-.size-L > div:first-child {
+.size-L > div:first-of-type {
   @apply pl-2;
 }
 

@@ -119,7 +119,7 @@ export const AHProjectView: React.FC<AHProjectViewProps> = ({
                   </a>
                 </span>
                 {/* for each record in the section*/}
-                {recordData.map((record) => (
+                {recordData.map(record => (
                   <div className={styles.itemWrapper}>
                     <MiniTable schemaEntry={section} record={record} />
                   </div>
@@ -165,8 +165,11 @@ function MiniTable<T>(props: TableProps<T>) {
 }
 
 function formatValue<T>({ format, accessor }: SchemaItem<T>, record: T) {
+  // fixme: figure out this accessor typing
   const value: React.ReactNode | undefined =
-    typeof accessor === 'function' ? accessor(record) : record[accessor];
+    typeof accessor === 'function'
+      ? accessor(record)
+      : ((record[accessor] as unknown) as React.ReactNode);
 
   if (value === null || value === undefined || value === '') return 'N/A';
 

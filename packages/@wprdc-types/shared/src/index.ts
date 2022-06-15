@@ -14,12 +14,13 @@ export { CollectionBase, Selection } from '@react-types/shared';
 
 /** Slugs used to represent projects across connections */
 export enum ProjectKey {
-  Viz = 'viz',
   NeighborhoodAssets = 'neighborhood-assets',
   GeoMenu = 'geo-menu',
   Profiles = 'profiles',
   Housecat = 'housecat',
 }
+
+export type Identified = Omit<Resource, 'description'>;
 
 export type SizeCategory = 'S' | 'M' | 'L';
 
@@ -28,19 +29,6 @@ export type Datum = number | string;
 export enum ColorScheme {
   Light = 'light',
   Dark = 'dark',
-}
-
-export enum DataVizType {
-  Table = 'Table',
-  BarChart = 'BarChart',
-  LineChart = 'LineChart',
-  PieChart = 'PieChart',
-  PyramidChart = 'PyramidChart',
-  ScatterPlot = 'ScatterPlot',
-  Histogram = 'Histogram',
-  MiniMap = 'MiniMap',
-  Sentence = 'Sentence',
-  BigValue = 'BigValue',
 }
 
 export enum ErrorLevel {
@@ -74,3 +62,5 @@ export interface Size {
   width: number | undefined;
   height: number | undefined;
 }
+
+export interface TagRecord extends Identified {}

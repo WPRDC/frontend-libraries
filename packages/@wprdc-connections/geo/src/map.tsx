@@ -1,7 +1,7 @@
 import React from 'react';
 import { MapPluginConnection } from '@wprdc-types/connections';
 import { GeogBrief, GeogLevel } from '@wprdc-types/geo';
-import { Layer, Source } from '@wprdc-widgets/map';
+import { Layer, Source } from '@wprdc-components/map';
 import { Radio, RadioGroup } from '@wprdc-components/radio-group';
 import {
   clearLayerFilter,
@@ -19,7 +19,7 @@ export const menuLayerConnection: MapPluginConnection<GeogLevel, GeogBrief> = {
     // menu doesn't allow select many
     if (typeof selection === 'string')
       throw Error('Multiple select should not be available in map menu.');
-    const selectedLayer = items.find((item) => selection.has(item.id));
+    const selectedLayer = items.find(item => selection.has(item.id));
 
     if (!!selectedLayer)
       setSources([
@@ -33,7 +33,7 @@ export const menuLayerConnection: MapPluginConnection<GeogLevel, GeogBrief> = {
   getLayers: (items, selected, setLayers, options) => {
     if (typeof selected === 'string')
       throw Error('Multiple select should not be available in map menu.');
-    const selectedLayer = items.find((item) => selected.has(item.id));
+    const selectedLayer = items.find(item => selected.has(item.id));
     const { hoveredFilter, selectedFilter, highlightFilter } = options || {};
     // todo: build source based on selection.  or just put them all up at once tbh
     if (!!selectedLayer)
@@ -54,15 +54,15 @@ export const menuLayerConnection: MapPluginConnection<GeogLevel, GeogBrief> = {
     if (typeof selected === 'string')
       throw Error('Multiple select should not be available in map menu.');
 
-    const selectedLayer = items.find((item) => selected.has(item.id));
+    const selectedLayer = items.find(item => selected.has(item.id));
 
     if (!!selectedLayer) return [`${selectedLayer.id}/fill`];
     return [];
   },
-  parseMapEvent: (event) => {
+  parseMapEvent: event => {
     if (!!event && !!event.features) {
       const features = event.features.filter(
-        (feature) =>
+        feature =>
           !!feature &&
           !!feature.source &&
           typeof feature.source === 'string' &&
@@ -86,24 +86,24 @@ export const menuLayerConnection: MapPluginConnection<GeogLevel, GeogBrief> = {
     }
     return [];
   },
-  makeFilter: (item) => {
+  makeFilter: item => {
     if (Array.isArray(item)) {
       if (!item.length) return clearLayerFilter();
       if (item.length === 1) return ['==', 'slug', item[0].slug];
-      return ['in', 'slug', item.map((i) => i.slug)];
+      return ['in', 'slug', item.map(i => i.slug)];
     }
     return ['==', 'slug', item.slug];
   },
   // the menu layer doesn't need to be indicated in the legend section for now
-  makeLegendSection: (setLegendSection) => setLegendSection(),
+  makeLegendSection: setLegendSection => setLegendSection(),
   makeMapSection(setMapSection, sources, layers) {
     if (!!sources && !!layers) {
       setMapSection(
         <>
-          {sources.map((source) => (
+          {sources.map(source => (
             <Source {...source} />
           ))}
-          {layers.map((layer) => (
+          {layers.map(layer => (
             <Layer {...layer} key={layer.id} />
           ))}
         </>
@@ -113,9 +113,9 @@ export const menuLayerConnection: MapPluginConnection<GeogLevel, GeogBrief> = {
   getSelectedItems(items, selection) {
     return selection === 'all'
       ? items
-      : items.filter((item) => selection.has(item.id));
+      : items.filter(item => selection.has(item.id));
   },
-  makeHoverContent: (hoveredItems) => {
+  makeHoverContent: hoveredItems => {
     if (!!hoveredItems && !!hoveredItems.length)
       return <div className="text-xs">{hoveredItems[0].name}</div>;
     return null;
@@ -139,7 +139,7 @@ export const menuLayerConnection: MapPluginConnection<GeogLevel, GeogBrief> = {
               aria-label="select the geographic menu layer to display"
               onChange={_handleChange}
             >
-              {items.map((item) => (
+              {items.map(item => (
                 <Radio key={`menu/${item.id}`} value={`menu/${item.id}`}>
                   {item.name}
                 </Radio>
@@ -160,5 +160,5 @@ export const menuLayerConnection: MapPluginConnection<GeogLevel, GeogBrief> = {
     }
     return {};
   },
-  hashElement: (selectedItem) => (selectedItem ? selectedItem.slug : null),
+  hashElement: selectedItem => (selectedItem ? selectedItem.slug : null),
 };

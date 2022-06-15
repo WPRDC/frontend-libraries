@@ -18,4 +18,5 @@ export interface APIOptions {
   headers?: Record<string, string | number | boolean | null | undefined>;
   fetchInit?: {};
   credentials?: 'omit' | 'same-origin' | 'include';
+  controller?: AbortController;
 }

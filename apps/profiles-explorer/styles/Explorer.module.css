@@ -11,6 +11,7 @@
   @apply border-black md:border-b-2 lg:border-r-2 lg:border-b-0;
   @apply md:col-span-12 md:row-span-1 md:w-full;
   @apply lg:col-span-4 xl:col-span-3;
+  @apply bg-amber-50;
 }
 
 .content {
@@ -18,6 +19,7 @@
   @apply md:col-span-12 lg:col-span-8 xl:col-span-9;
   @apply md:flex-grow;
   @apply lg:overflow-y-hidden;
+  @apply bg-amber-50;
 }
 
 /* Navmenu parts */
@@ -31,15 +33,17 @@
 
 .map {
   @apply flex-grow;
+  @apply lg:border-t-2 border-black;
 }
 
 /* Content parts */
 .geogContainer {
-  @apply py-4 pl-4 shadow-md border-b-2 border-black;
+  @apply py-4 pl-4 border-b-2 border-black;
 }
 
 .geogTitle {
-  @apply mt-4 mb-2 text-4xl font-medium;
+  @apply mt-4 mb-2;
+  @apply text-4xl font-semibold lg:text-5xl xl:text-6xl lg:font-light;
 }
 
 .taxonomyContainer {

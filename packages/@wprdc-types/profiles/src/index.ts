@@ -1,28 +1,37 @@
-import { Resource } from '@wprdc-types/shared';
-import { DataVizIDWithSources } from '@wprdc-types/viz';
+import { Resource, TagRecord } from '@wprdc-types/shared';
+import { ContextItem } from './context';
+import { IndicatorBaseWithOptions } from './indicator';
 
-interface IndicatorHierarchy {
+export * from './context';
+export * from './indicator';
+export * from './source';
+export * from './time';
+export * from './variable';
+
+interface TopicHierarchy {
   domain: Resource;
-  subdomain: Resource;
 }
 
-export interface Indicator extends Resource {
+export interface TopicBrief extends Resource {}
+
+export interface Topic extends Resource {
   longDescription: string;
   fullDescription: string;
   limitations: string;
   importance: string;
   source: string;
   provenance: string;
-  dataVizes: DataVizIDWithSources[];
-  hierarchies: IndicatorHierarchy[];
-}
-
-export interface Subdomain extends Resource {
-  indicators: Indicator[];
+  indicators: IndicatorBaseWithOptions[];
+  hierarchies: TopicHierarchy[];
+  tags: TagRecord[];
+  context: ContextItem[];
+  primaryIndicatorIDs: IndicatorBaseWithOptions['id'][];
 }
 
 export interface Domain extends Resource {
-  subdomains: Subdomain[];
+  topics: Topic[];
+  tags: TagRecord[];
+  context: ContextItem[];
 }
 
 export interface Taxonomy extends Resource {
@@ -33,9 +42,8 @@ type URLNavParamKeys =
   | 'geogType'
   | 'geogID'
   | 'domainSlug'
-  | 'subdomainSlug'
-  | 'indicatorSlug'
-  | 'dataVizSlug';
+  | 'topicSlug'
+  | 'indicatorSlug';
 
 export type URLNavParams = Record<URLNavParamKeys, string>;
 

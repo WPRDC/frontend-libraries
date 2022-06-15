@@ -3,11 +3,13 @@ import { Item } from '@wprdc-components/util';
 import { NumberField } from '@wprdc-components/number-field';
 
 import { TextField } from '@wprdc-components/text-field';
-import { Select } from '@wprdc-components/select';
+import { ConnectedSelect, Select } from '@wprdc-components/select';
 import { ConnectedSearchBox, SearchBox } from '@wprdc-components/search-box';
-import { GeogBrief, GeographyType } from '@wprdc-types/geo';
+import { GeogBrief, GeogLevel, GeographyType } from '@wprdc-types/geo';
 import {
+  defaultGeogLevelListBoxProps,
   defaultGeogListBoxProps,
+  geographyTypeConnection,
   makeGeographyConnection,
 } from '@wprdc-connections/geo';
 import { GeographyPicker } from '@wprdc-widgets/geography-picker';
@@ -29,6 +31,12 @@ export const Default = () => {
         <Item key="kangaroo">Kangaroo</Item>
         <Item key="snake">Snake</Item>
       </Select>
+      <ConnectedSelect<GeogLevel>
+        aria-labelledby="geogLevelSelectLabel"
+        connection={geographyTypeConnection}
+        listBoxProps={defaultGeogLevelListBoxProps}
+        onSelection={console.log}
+      />
       <ConnectedSearchBox<GeogBrief>
         label="Search for a county"
         connection={makeGeographyConnection(GeographyType.County)}

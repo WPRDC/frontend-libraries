@@ -1,5 +1,6 @@
 .container {
   @apply inline-flex flex-col relative w-full;
+  @apply bg-white;
 }
 
 .label {

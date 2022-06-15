@@ -8,7 +8,7 @@ import React from 'react';
 import './main.css';
 import styles from './SourceList.module.css';
 
-import { SourceBase } from '@wprdc-types/viz';
+import { SourceBase } from '@wprdc-types/profiles';
 
 import { TooltipText } from '@wprdc-components/tooltip';
 

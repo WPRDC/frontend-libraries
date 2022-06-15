@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Map } from '../packages/@wprdc-widgets/map';
+import { Map } from '../packages/@wprdc-components/map';
 
 import 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';

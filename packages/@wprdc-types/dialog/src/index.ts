@@ -12,4 +12,5 @@ export interface DialogProps extends AriaDialogProps, OverlayProps {
   withCloseButton?: boolean;
   size?: 'S' | 'M' | 'L' | 'XL' | 'Full';
   titleHeadingLevel?: HeadingLevel;
+  children?: React.ReactNode;
 }
