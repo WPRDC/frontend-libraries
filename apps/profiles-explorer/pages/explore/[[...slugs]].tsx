@@ -16,7 +16,7 @@ import {
   useGeography,
   useGeographyLevels,
 } from '@wprdc-connections/geo';
-import { ConnectedSelect, Select } from '@wprdc-components/select';
+import { ConnectedSelect } from '@wprdc-components/select';
 import { useWindowSize } from '@wprdc-connections/util';
 import { GeogBrief, GeogLevel } from '@wprdc-types/geo';
 import { ConnectedSearchBox } from '@wprdc-components/search-box';
@@ -27,25 +27,23 @@ import {
   ConnectionCollection,
 } from '@wprdc-types/connections';
 import { BreadcrumbItem, Breadcrumbs } from '@wprdc-components/breadcrumbs';
-import { IndicatorBase } from '@wprdc-types/profiles';
-import { Topic } from '@wprdc-types/profiles';
+import { IndicatorBase, Topic } from '@wprdc-types/profiles';
 import { Map } from '@wprdc-components/map';
 import { useProvider } from '@wprdc-components/provider';
 import { TaxonomySection } from '../../components/TaxonomySection';
-import { Item } from '@wprdc-components/util';
 
 export default function Home() {
   // state
   const [geogLevel, setGeogLevel] = useState<GeogLevel>();
   const [geogSlug, setGeogSlug] = useState<string>();
   const [pathSlugs, setPathSlugs] = useState<string[]>([]);
-  const [domainSlug, subdomainSlug, topicSlug, indicatorSlug] = pathSlugs;
+  const [domainSlug, topicSlug] = pathSlugs;
 
   // hooks
   const context = useProvider();
-  const { geogLevels } = useGeographyLevels();
-  const { taxonomy } = useTaxonomy('child-health-explorer');
-  const { geog } = useGeography(geogSlug);
+  const { data: geogLevels } = useGeographyLevels();
+  const { data: taxonomy } = useTaxonomy('child-health-explorer');
+  const { data: geog } = useGeography(geogSlug);
 
   // handling browser state
   const { width } = useWindowSize();
@@ -116,19 +114,11 @@ export default function Home() {
     }
   }
 
-  function handleExploreIndicator(indicator: IndicatorBase): void {
-    const { slugs, ...sansSlugs } = router.query;
-    router.push({
-      pathname: `/explore/${domainSlug}/${subdomainSlug}/${topicSlug}/${indicator.slug}/`,
-      query: sansSlugs,
-    });
-  }
-
   function handleExploreTopic(topic: Topic): void {
+    console.log('EXPLORING', topic);
     const { slugs, ...sansSlugs } = router.query;
-    let domain: string;
     if (!!topic.hierarchies && !!topic.hierarchies.length) {
-      domain = topic.hierarchies[0].domain.slug;
+      const domain = topic.hierarchies[0].domain.slug;
 
       router.push({
         pathname: `/explore/${domain}/${topic.slug}/`,
@@ -272,8 +262,6 @@ export default function Home() {
                 geog={geog}
                 currentDomainSlug={domainSlug}
                 currentTopicSlug={topicSlug}
-                currentIndicatorSlug={indicatorSlug}
-                onExploreIndicator={handleExploreIndicator}
                 onExploreTopic={handleExploreTopic}
                 baseHeadingLevel={3}
               />

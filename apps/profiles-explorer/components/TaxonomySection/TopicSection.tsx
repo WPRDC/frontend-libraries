@@ -22,7 +22,6 @@ export default function TopicSection({
         card
         geog={geog}
         topic={topic}
-        onExploreIndicator={onExploreIndicator}
         onExploreTopic={onExploreTopic}
         abortController={topicFetchController}
       />

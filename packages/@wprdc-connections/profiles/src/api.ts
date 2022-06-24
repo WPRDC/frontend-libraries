@@ -6,22 +6,20 @@
  *
  */
 import { createAPI } from '@wprdc-connections/api';
-import { Method, ResponsePackage } from '@wprdc-types/api';
+import { Method } from '@wprdc-types/api';
 
 import {
-  Topic,
-  Taxonomy,
-  IndicatorWithData,
   Domain,
+  IndicatorWithData,
+  Taxonomy,
+  Topic,
 } from '@wprdc-types/profiles';
 
-// const HOST = 'https://api.profiles.wprdc.org';
-const HOST = 'http://localhost:8000';
+const HOST = 'https://api.profiles.wprdc.org';
 
 enum Endpoint {
   Taxonomy = 'taxonomy',
   Domain = 'domain',
-  // Subdomain = 'subdomain', // might not be necessary to use here
   Topic = 'topic', //   or here
   Indicator = 'indicator',
 }
@@ -31,7 +29,9 @@ const api = createAPI<Endpoint>(HOST);
 function requestTaxonomy(
   slug?: string,
   controller?: AbortController
-): Promise<ResponsePackage<Taxonomy>> {
+): Promise<Taxonomy> {
+  if (!slug) throw Error('slug not provided');
+
   return api.callAndProcessEndpoint<Taxonomy>(Endpoint.Taxonomy, Method.GET, {
     id: slug,
     controller,
@@ -41,7 +41,9 @@ function requestTaxonomy(
 function requestDomain(
   slug?: string,
   controller?: AbortController
-): Promise<ResponsePackage<Domain>> {
+): Promise<Domain> {
+  if (!slug) throw Error('slug not provided');
+
   return api.callAndProcessEndpoint<Domain>(Endpoint.Domain, Method.GET, {
     id: slug,
     controller,
@@ -51,7 +53,8 @@ function requestDomain(
 function requestTopic(
   slug?: string,
   controller?: AbortController
-): Promise<ResponsePackage<Topic>> {
+): Promise<Topic> {
+  if (!slug) throw Error('slug not provided');
   return api.callAndProcessEndpoint<Topic>(Endpoint.Topic, Method.GET, {
     id: slug,
     controller,
@@ -59,10 +62,13 @@ function requestTopic(
 }
 
 function requestIndicator(
-  indicatorSlug: string,
-  geogSlug: string,
+  indicatorSlug?: string,
+  geogSlug?: string,
   controller?: AbortController
-): Promise<ResponsePackage<IndicatorWithData>> {
+): Promise<IndicatorWithData> {
+  if (!indicatorSlug) throw Error('indicator slug not provided');
+  if (!geogSlug) throw Error('geog slug not provided');
+
   return api.callAndProcessEndpoint<IndicatorWithData>(
     Endpoint.Indicator,
     Method.GET,
@@ -70,6 +76,12 @@ function requestIndicator(
       id: indicatorSlug,
       params: { geog: geogSlug },
       controller,
+      validator: (indicator: IndicatorWithData) => {
+        if (!!indicator.error.level) {
+          console.warn(indicator.error);
+          throw Error(indicator.error.message);
+        }
+      },
     }
   );
 }

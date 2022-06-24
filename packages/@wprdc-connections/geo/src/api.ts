@@ -1,10 +1,9 @@
 import { createAPI } from '@wprdc-connections/api';
-import { ResponsePackage, Method } from '@wprdc-types/api';
+import { Method } from '@wprdc-types/api';
 
 import { Geog, GeogBrief, GeographyType, GeogLevel } from '@wprdc-types/geo';
 
-// const HOST = 'https://api.profiles.wprdc.org';
-const HOST = 'http://localhost:8000';
+const HOST = 'https://api.profiles.wprdc.org';
 
 export enum Endpoint {
   Geog = 'geo',
@@ -13,23 +12,22 @@ export enum Endpoint {
 
 const api = createAPI<Endpoint>(HOST);
 
-export function requestGeoLayers() {
+export function requestGeoLayers(): Promise<GeogLevel[]> {
   return api.callAndProcessEndpoint<GeogLevel[]>(
     Endpoint.GeogTypes,
     Method.GET
   );
 }
 
-export function requestGeogDetails(
-  geogSlug: string
-): Promise<ResponsePackage<Geog>> {
+export function requestGeogDetails(geogSlug?: string): Promise<Geog> {
+  if (!geogSlug) throw Error('no slug provided');
   return api.callAndProcessEndpoint<Geog>(Endpoint.Geog, Method.GET, {
     id: geogSlug,
     params: { details: true },
   });
 }
 
-export function requestGeogList(geogType: GeographyType) {
+export function requestGeogList(geogType: GeographyType): Promise<GeogBrief[]> {
   return api.callAndProcessEndpoint<GeogBrief[]>(Endpoint.Geog, Method.GET, {
     id: geogType,
   });

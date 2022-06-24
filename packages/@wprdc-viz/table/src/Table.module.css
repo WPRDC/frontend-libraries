@@ -40,7 +40,7 @@ tr.subrow th {
 
 .flatWrapper {
   @apply border-2 border-black;
-  @apply shadow-lg;
+  @apply text-sm;
 }
 
 .flatWrapper th,
@@ -53,8 +53,16 @@ tr.subrow th {
   @apply text-left;
 }
 
+.flatWrapper th:not(:first-of-type) {
+  @apply text-center;
+}
+
 .flatWrapper tbody td {
   @apply text-right;
+  @apply font-mono;
+}
+
+.flatWrapper td {
 }
 
 .flatWrapper thead {

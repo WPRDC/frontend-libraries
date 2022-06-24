@@ -3,8 +3,7 @@ import * as React from 'react';
 import styles from './TaxonomySection.module.css';
 
 import { BreadcrumbItemProps } from '@wprdc-types/breadcrumbs';
-import { TaxonomySectionProps } from '@wprdc-types/taxonomy-section';
-import { Domain, IndicatorBase, Topic } from '@wprdc-types/profiles';
+import { Domain, IndicatorBase, TopicBrief } from '@wprdc-types/profiles';
 
 import { Breadcrumbs, BreadcrumbItem } from '@wprdc-components/breadcrumbs';
 
@@ -13,27 +12,21 @@ import { TopicView } from '@wprdc-widgets/topic-view';
 import DomainSection from './DomainSection';
 import { useDomain } from '@wprdc-connections/profiles';
 import { NavTabs } from './NavTabs';
+import { TaxonomySectionProps } from './types';
 
 export const TaxonomySection: React.FC<TaxonomySectionProps> = ({
   taxonomy,
   geog,
   onExploreTopic,
-  onExploreIndicator,
   onCompareTopic,
   currentDomainSlug,
   currentDomainHref,
   currentTopicSlug,
   currentTopicHref,
-  currentIndicatorSlug,
-  currentIndicatorHref,
   breadcrumbLinkComponent,
 }: TaxonomySectionProps) => {
-  function handleExploreTopic(topic: Topic) {
+  function handleExploreTopic(topic: TopicBrief) {
     if (!!onExploreTopic) onExploreTopic(topic);
-  }
-
-  function handleExploreIndicator(indicator: IndicatorBase) {
-    if (!!onExploreIndicator) onExploreIndicator(indicator);
   }
 
   const topicFetchController = new AbortController();
@@ -41,20 +34,13 @@ export const TaxonomySection: React.FC<TaxonomySectionProps> = ({
   // fixme: this is where my lag is at!!!!
   //  there's a few second delay where currentDomainSlug and currentDomain.slug don't match
   //  this makes me think that the fetch happening in useDomain is being held up
-  const { domain: currentDomain } = useDomain(currentDomainSlug);
+  const { data: currentDomain } = useDomain(currentDomainSlug);
 
   const currentTopic = React.useMemo(
     () =>
       !!currentDomain &&
       currentDomain.topics.find(t => t.slug === currentTopicSlug),
     [currentDomainSlug, currentTopicSlug],
-  );
-
-  const currentIndicator = React.useMemo(
-    () =>
-      currentTopic &&
-      currentTopic.indicators.find(dv => dv.slug === currentIndicatorSlug),
-    [currentDomainSlug, currentTopicSlug, currentIndicatorSlug],
   );
 
   let breadcrumbs: BreadcrumbItemProps[] = [];
@@ -76,15 +62,6 @@ export const TaxonomySection: React.FC<TaxonomySectionProps> = ({
       children: currentTopic.name,
       LinkComponent: breadcrumbLinkComponent,
     });
-  if (currentIndicator)
-    breadcrumbs.push({
-      key: 'indicator',
-      href:
-        currentIndicatorHref ||
-        `/explore/${currentDomainSlug}/${currentTopicSlug}/${currentIndicatorSlug}?geog=${geog?.slug}`,
-      children: currentIndicator.name,
-      LinkComponent: breadcrumbLinkComponent,
-    });
 
   return (
     <div className={styles.wrapper}>
@@ -94,28 +71,28 @@ export const TaxonomySection: React.FC<TaxonomySectionProps> = ({
         ))}
       </Breadcrumbs>
       <div className={styles.content}>
-        {!currentIndicator && !!currentTopic && (
+        {!!currentTopic && (
           <TopicView
             onCompareTopic={onCompareTopic}
             topic={currentTopic}
             geog={geog}
-            onExploreIndicator={onExploreIndicator}
           />
         )}
-        {!currentIndicator && !currentTopic && (
-          <NavTabs<Domain>
-            items={taxonomy.domains}
-            selectedKey={currentDomainSlug}
-            geog={geog}
-          />
+        {!currentTopic && (
+          <div>
+            <NavTabs<Domain>
+              items={taxonomy.domains}
+              selectedKey={currentDomainSlug}
+              geog={geog}
+            />
+            <DomainSection
+              domain={currentDomain}
+              geog={geog}
+              onExploreTopic={handleExploreTopic}
+              topicFetchController={topicFetchController}
+            />
+          </div>
         )}
-        <DomainSection
-          domain={currentDomain}
-          geog={geog}
-          onExploreIndicator={handleExploreIndicator}
-          onExploreTopic={handleExploreTopic}
-          topicFetchController={topicFetchController}
-        />
       </div>
     </div>
   );

@@ -22,6 +22,22 @@ const bar: vega.Spec = {
     { name: 'highlight', values: {} },
   ],
 
+  legends: [
+    {
+      fill: 'color',
+      orient: 'bottom-right',
+      symbolType: 'square',
+      symbolStrokeWidth: 2,
+      symbolStrokeColor: 'black',
+      symbolSize: 16 * 16,
+      labelFontSize: 12,
+      labelFontStyle: 'bold',
+      fillColor: 'white',
+      strokeColor: 'black',
+      padding: 4,
+    },
+  ],
+
   scales: [
     // variable scale
     {

@@ -25,14 +25,16 @@ export const ConnectedViz: React.FC<ConnectedVizWidgetProps> = ({
     geog,
     propsGeog,
   ]);
-  console.log(indicatorSlug);
-  const { indicator, isLoading, error } = useIndicator(indicatorSlug, geogSlug);
+  const { data: indicator, isLoading, error } = useIndicator(
+    indicatorSlug,
+    geogSlug
+  );
 
   if (!!error) {
     return (
       <ErrorMessage
         variant="centered"
-        title={`Not Found`}
+        title={`Error`}
         message={error.message}
       />
     );

@@ -23,7 +23,7 @@ export const Viz: React.FC<VizWidgetProps> = ({
 }: VizWidgetProps) => {
   let vizContent: React.ReactNode;
   // if variant is mini, only provide a `Value` viz
-  if (mini || (indicator.options.isMappable && inPreview)) {
+  if (mini || (indicator.options.isSingleValue && inPreview)) {
     vizContent = <BigValue indicator={indicator} inPreview={inPreview} />;
   }
   // otherwise, if single var and single time, show map with cross-geog chart
@@ -49,12 +49,10 @@ export const Viz: React.FC<VizWidgetProps> = ({
       // anything left should be chartable
       vizContent = (
         <div className={styles.chartWithTable}>
-          <div>
-            <h3>Chart</h3>
+          <div className={styles.chart}>
             <BarChart inPreview={inPreview} indicator={indicator} />
           </div>
-          <div>
-            <h3>Table</h3>
+          <div className={styles.table}>
             <FlatTable indicator={indicator} />
           </div>
         </div>

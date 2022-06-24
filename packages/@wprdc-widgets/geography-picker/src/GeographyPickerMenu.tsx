@@ -44,7 +44,7 @@ export const GeographyPickerMenu: React.FC<GeographyPickerMenuProps> = ({
 
   // on mount, get list of available layers
   useEffect(() => {
-    GeoAPI.requestGeoLayers().then(({ data }) => setGeogLevels(data));
+    GeoAPI.requestGeoLayers().then(data => setGeogLevels(data));
   }, []);
 
   // when the geogLevels load, select a default geogLevel

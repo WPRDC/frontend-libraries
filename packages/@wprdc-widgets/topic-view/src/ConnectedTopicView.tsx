@@ -16,7 +16,7 @@ export const ConnectedTopicView: React.FC<ConnectedTopicViewProps> = ({
 }) => {
   const { geog } = useProvider();
   const usedGeog = React.useMemo(() => propsGeog || geog, [geog, propsGeog]);
-  const { topic, isLoading, error } = useTopic(topicSlug);
+  const { data: topic, isLoading, error } = useTopic(topicSlug);
 
   if (!!error) {
     return <ErrorMessage title={`Not Found`} message="Indicator" />;

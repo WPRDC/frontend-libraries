@@ -1,12 +1,11 @@
 import { createAPI } from '@wprdc-connections/api';
 
-import { ResponsePackage, Method } from '@wprdc-types/api';
+import { Method } from '@wprdc-types/api';
 import { APIMapBoxResponse } from '@wprdc-types/connections';
 import { ProjectIndexDetails, Watchlist } from '@wprdc-types/housecat';
 import { getCookie } from '@wprdc-connections/util';
 
-// const HOST = 'https://api.profiles.wprdc.org';
-const HOST = 'http://localhost:8000';
+const HOST = 'https://api.profiles.wprdc.org';
 
 export enum Endpoint {
   PHProject = 'public-housing/project',
@@ -25,12 +24,12 @@ const headers = {
 export function requestAffordableHousingProject(
   projectID: number,
   params?: Record<string, string>
-): Promise<ResponsePackage<ProjectIndexDetails>>;
+): Promise<ProjectIndexDetails>;
 // if projectID is not provided a list of projectIndexes will be expected
 export function requestAffordableHousingProject(
   projectID: null | undefined,
   params?: Record<string, string>
-): Promise<ResponsePackage<ProjectIndexDetails[]>>;
+): Promise<ProjectIndexDetails[]>;
 
 /**
  * Request project data details or a list of projects
@@ -63,7 +62,8 @@ export function requestPublicHousingProjectMap(params?: Record<string, any>) {
   );
 }
 
-export function requestWatchlist(slug: string) {
+export function requestWatchlist(slug?: string) {
+  if (!slug) throw Error('slug not provided');
   return api.callAndProcessEndpoint<Watchlist>(Endpoint.Watchlist, Method.GET, {
     id: slug,
     headers,

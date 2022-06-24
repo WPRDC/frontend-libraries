@@ -60,8 +60,6 @@ export const TopicViewCard: React.FC<TopicViewCardProps> = props => {
 
   if (!primaryIndicator || !geog) return null;
 
-  console.log('INDICATOR', primaryIndicator.slug);
-
   return (
     <button
       className={styles.cardContainer}

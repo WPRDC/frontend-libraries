@@ -88,7 +88,8 @@
     "@wprdc-types/profiles": "^0.0.19",
     "@wprdc-types/shared": "^0.0.13",
     "@wprdc-types/viz": "^0.0.18",
-    "@wprdc-components/map": "^0.0.22"
+    "@wprdc-components/map": "^0.0.22",
+    "react-query": "^3.39.1"
   },
   "gitHead": "0d071a3dd4e93b865db197e5d1746a1572488954"
 }

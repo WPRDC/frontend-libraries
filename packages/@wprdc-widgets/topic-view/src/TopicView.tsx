@@ -15,21 +15,15 @@ import { TopicViewCard } from './layouts/Card';
 import { TopicViewDetail } from './layouts/Detail';
 import { useTopic } from '@wprdc-connections/profiles';
 import { ErrorMessage } from '@wprdc-components/error-message';
-// import { TopicViewDetail } from './layouts/Detail';
 
 export const TopicView: React.FC<TopicViewProps> = ({
   topic: topicBrief,
   geog,
-  // onGeogSelection,
   card,
-  // onExploreTopic,
-  // onExploreIndicator,
-  // onCompareTopic,
-  // showGeog,
-  // headingLevel,
+  onExploreTopic,
 }) => {
   const topicSlug = topicBrief ? topicBrief.slug : '';
-  const { topic, isLoading, error } = useTopic(topicSlug);
+  const { data: topic, isLoading, error } = useTopic(topicSlug);
   if (!!error) {
     console.error(error);
     return (
@@ -45,6 +39,7 @@ export const TopicView: React.FC<TopicViewProps> = ({
         topic={topic}
         geog={geog}
         isLoading={isLoading}
+        onExploreTopic={onExploreTopic}
       />
     );
   }

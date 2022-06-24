@@ -34,8 +34,8 @@ export const affordableHousingProjectMapConnection: MapPluginConnection<
   getSources(_, __, setSources, options) {
     const { filterParams } = options || {};
     HousecatAPI.requestPublicHousingProjectMap(filterParams).then(
-      r => {
-        if (r.data) setSources([r.data.source]);
+      data => {
+        if (data) setSources([data.source]);
       },
       err => console.error(err)
     );
@@ -43,8 +43,8 @@ export const affordableHousingProjectMapConnection: MapPluginConnection<
   getLayers(_, __, setLayers, options) {
     const { filterParams } = options || {};
     HousecatAPI.requestPublicHousingProjectMap(filterParams).then(
-      r => {
-        if (r.data) setLayers(r.data.layers);
+      data => {
+        if (data) setLayers(data.layers);
       },
       err => console.error(err)
     );
@@ -52,8 +52,8 @@ export const affordableHousingProjectMapConnection: MapPluginConnection<
   getLegendItems(_, __, setLegendItems, options) {
     const { filterParams } = options || {};
     HousecatAPI.requestPublicHousingProjectMap(filterParams).then(
-      r => {
-        if (r.data) setLegendItems(r.data.extras.legendItems);
+      data => {
+        if (data) setLegendItems(data.extras.legendItems);
       },
       err => console.error(err)
     );

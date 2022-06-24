@@ -16,7 +16,7 @@ export function FlatTable(props: DataTableProps) {
     <table className={styles.flatWrapper}>
       <thead>
         <tr>
-          <th scope="col">Indicator</th>
+          <th scope="col">{''}</th>
           <td></td>
           {timeAxis.timeParts.map(timePart => (
             <th scope="col">{timePart.name}</th>

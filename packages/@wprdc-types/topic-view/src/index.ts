@@ -3,7 +3,7 @@
  * TopicView types
  *
  **/
-import { IndicatorBase, Topic, TopicBrief } from '@wprdc-types/profiles';
+import { Topic, TopicBrief } from '@wprdc-types/profiles';
 import { GeogBrief } from '@wprdc-types/geo';
 
 export interface TopicViewProps {
@@ -12,9 +12,8 @@ export interface TopicViewProps {
   onGeogSelection?: (geog: GeogBrief) => any;
   card?: boolean;
   isLoading?: boolean;
-  onExploreTopic?: (topic: Topic) => void;
-  onExploreIndicator?: (indicator: IndicatorBase) => void;
-  onCompareTopic?: (topic: Topic) => void;
+  onExploreTopic?: (topic: TopicBrief) => void;
+  onCompareTopic?: (topic: TopicBrief) => void;
   showGeog?: boolean;
   headingLevel?: 1 | 2 | 3 | 4 | 5 | 6;
   abortController?: AbortController;

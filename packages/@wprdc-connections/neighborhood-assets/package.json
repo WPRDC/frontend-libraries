@@ -88,7 +88,9 @@
     "@wprdc-types/neighborhood-assets": "^0.0.13",
     "@wprdc-types/shared": "^0.0.13",
     "@wprdc-components/map": "^0.0.22",
-    "chroma-js": "^2.1.2"
+    "chroma-js": "^2.1.2",
+    "react-query": "^3.39.1"
+
   },
   "gitHead": "0d071a3dd4e93b865db197e5d1746a1572488954"
 }

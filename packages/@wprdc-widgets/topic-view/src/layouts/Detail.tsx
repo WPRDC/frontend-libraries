@@ -96,7 +96,6 @@ export const TopicViewDetail: React.FC<TopicDetailViewProps> = props => {
       {/* Data Vizes */}
       {!!vizes && !!vizes.length && (
         <div className={styles.vizes}>
-          <h2 className={styles.subtitle}>Tables and Visualizations</h2>
           <ul className={styles.vizList}>
             {vizes.map(viz => (
               <li className={styles.vizListItem}>
