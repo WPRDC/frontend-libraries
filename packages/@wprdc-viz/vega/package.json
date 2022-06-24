@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-viz/vega",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "keywords": [],
   "license": "AGPL-3.0-or-later",
@@ -78,11 +78,11 @@
     "typescript": "^4.7.3"
   },
   "dependencies": {
-    "@wprdc-components/provider": "^0.0.15",
-    "@wprdc-types/geo": "^0.0.15",
-    "@wprdc-types/shared": "^0.0.13",
-    "@wprdc-types/viz": "^0.0.18",
     "@wprdc-components/map": "^0.0.4",
+    "@wprdc-components/provider": "^0.0.16",
+    "@wprdc-types/geo": "^0.0.16",
+    "@wprdc-types/shared": "^0.0.14",
+    "@wprdc-types/viz": "^0.0.19",
     "react-measure": "^2.5.2",
     "react-vega": "^7.5.1",
     "vega": "^5.22.1",

@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-components/util",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "",
   "keywords": [],
   "license": "AGPL-3.0-or-later",
@@ -77,6 +77,6 @@
   },
   "dependencies": {
     "@react-stately/collections": "^3.3.4",
-    "@wprdc-types/shared": "^0.0.13"
+    "@wprdc-types/shared": "^0.0.14"
   }
 }

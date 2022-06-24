@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-components/heading",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "",
   "keywords": [],
   "license": "AGPL-3.0-or-later",
@@ -76,6 +76,6 @@
     "typescript": "^4.7.3"
   },
   "dependencies": {
-    "@wprdc-types/heading": "^0.0.11"
+    "@wprdc-types/heading": "^0.0.12"
   }
 }

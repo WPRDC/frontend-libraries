@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-components/combo-box",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "description": "",
   "keywords": [],
   "license": "AGPL-3.0-or-later",
@@ -83,11 +83,11 @@
     "@react-stately/combobox": "^3.0.1",
     "@react-stately/data": "^3.4.3",
     "@react-types/combobox": "^3.2.0",
-    "@wprdc-components/list-box": "^0.0.18",
-    "@wprdc-components/popover": "^0.0.12",
-    "@wprdc-components/util": "^0.0.11",
-    "@wprdc-types/combo-box": "^0.0.15",
-    "@wprdc-types/shared": "^0.0.13",
+    "@wprdc-components/list-box": "^0.0.19",
+    "@wprdc-components/popover": "^0.0.13",
+    "@wprdc-components/util": "^0.0.12",
+    "@wprdc-types/combo-box": "^0.0.16",
+    "@wprdc-types/shared": "^0.0.14",
     "classnames": "^2.3.1"
   }
 }

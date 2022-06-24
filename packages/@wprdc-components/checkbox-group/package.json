@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-components/checkbox-group",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "",
   "keywords": [],
   "license": "AGPL-3.0-or-later",
@@ -79,6 +79,6 @@
     "@react-aria/checkbox": "^3.2.3",
     "@react-stately/checkbox": "^3.0.3",
     "@react-types/checkbox": "^3.2.3",
-    "@wprdc-types/checkbox-group": "^0.0.11"
+    "@wprdc-types/checkbox-group": "^0.0.12"
   }
 }

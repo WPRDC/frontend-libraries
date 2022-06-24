@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-components/text-field",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Form field for text input.",
   "keywords": [],
   "license": "AGPL-3.0-or-later",
@@ -77,7 +77,7 @@
   },
   "dependencies": {
     "@react-aria/textfield": "^3.5.0",
-    "@wprdc-types/text-field": "^0.0.4",
+    "@wprdc-types/text-field": "^0.0.5",
     "classnames": "^2.3.1"
   }
 }

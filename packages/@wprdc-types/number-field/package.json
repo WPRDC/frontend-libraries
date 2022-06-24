@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-types/number-field",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Form field for handling numeric data.",
   "keywords": [],
   "license": "AGPL3",

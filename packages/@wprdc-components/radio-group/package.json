@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-components/radio-group",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "",
   "keywords": [],
   "license": "AGPL-3.0-or-later",
@@ -78,6 +78,6 @@
   "dependencies": {
     "@react-aria/radio": "^3.1.6",
     "@react-stately/radio": "^3.3.2",
-    "@wprdc-types/radio-group": "^0.0.11"
+    "@wprdc-types/radio-group": "^0.0.12"
   }
 }

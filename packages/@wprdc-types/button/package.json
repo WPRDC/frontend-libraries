@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-types/button",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "Collection of TypeScript/JS libraries for use in/with WPRDC projects.",
   "keywords": [],
   "license": "AGPL-3.0-or-later",
