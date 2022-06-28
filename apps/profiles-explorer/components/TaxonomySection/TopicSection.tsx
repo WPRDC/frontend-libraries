@@ -12,7 +12,6 @@ interface Props extends SectionSharedProps {
 export default function TopicSection({
   topic,
   geog,
-  onExploreIndicator,
   onExploreTopic,
   topicFetchController,
 }: Props) {

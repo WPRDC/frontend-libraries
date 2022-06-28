@@ -115,7 +115,6 @@ export default function Home() {
   }
 
   function handleExploreTopic(topic: Topic): void {
-    console.log('EXPLORING', topic);
     const { slugs, ...sansSlugs } = router.query;
     if (!!topic.hierarchies && !!topic.hierarchies.length) {
       const domain = topic.hierarchies[0].domain.slug;

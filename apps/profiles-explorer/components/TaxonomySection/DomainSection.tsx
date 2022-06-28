@@ -12,12 +12,11 @@ interface Props extends SectionSharedProps {
 export default function DomainSection({
   domain,
   geog,
-  onExploreIndicator,
   onExploreTopic,
   topicFetchController,
 }: Props) {
-  if (!domain) return null;
-  const topics = React.useMemo(() => domain.topics, [domain.slug]);
+  const topics = React.useMemo(() => domain?.topics, [domain?.slug]);
+  if (!domain || !topics) return null;
 
   return (
     <div className={styles.wrapper}>
@@ -28,7 +27,6 @@ export default function DomainSection({
             key={topic.slug}
             topic={topic}
             geog={geog}
-            onExploreIndicator={onExploreIndicator}
             onExploreTopic={onExploreTopic}
             topicFetchController={topicFetchController}
           />

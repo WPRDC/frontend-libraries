@@ -8,7 +8,10 @@ import * as React from 'react';
 import styles from './MapInterface.module.css';
 import { MapRef } from 'react-map-gl';
 
-import { ConnectedMapEventHandler } from '@wprdc-types/connections';
+import {
+  APIMapBoxResponse,
+  ConnectedMapEventHandler,
+} from '@wprdc-types/connections';
 import {
   affordableHousingProjectMapConnection,
   defaultAffordableHousingProjectMapConnectionProps,
@@ -23,6 +26,7 @@ import { FilterFormValues } from '../../types';
 import { LayerPanelVariant } from '@wprdc-types/map';
 
 interface Props {
+  mapData?: APIMapBoxResponse;
   filterParams?: FilterFormValues;
   handleProjectSelection: (id: number) => void;
 }
@@ -37,7 +41,11 @@ function makeConnectionHookArgs(filterParams?: FilterFormValues) {
   };
 }
 
-export function MapInterface({ filterParams, handleProjectSelection }: Props) {
+export function MapInterface({
+  filterParams,
+  handleProjectSelection,
+  mapData,
+}: Props) {
   const mapRef = React.useRef<MapRef>(null);
 
   const handleZoomSelect = (zoom: number) =>
@@ -53,6 +61,12 @@ export function MapInterface({ filterParams, handleProjectSelection }: Props) {
       if (!!items && items.length) handleProjectSelection(items[0].id);
     }
   };
+
+  const {
+    source,
+    layers,
+    extras: { legendItems },
+  } = mapData || { extras: {} };
 
   return (
     <div className={styles.wrapper}>
@@ -87,15 +101,20 @@ export function MapInterface({ filterParams, handleProjectSelection }: Props) {
         </fieldset>
       </div>
       <div className={styles.mapSection}>
-        <Map
-          layerPanelVariant={LayerPanelVariant.None}
-          ref={mapRef}
-          connections={[affordableHousingProjectMapConnection]}
-          connectionHookArgs={{
-            [ProjectKey.Housecat]: makeConnectionHookArgs(filterParams),
-          }}
-          onClick={handleClick}
-        />
+        {!!source && (
+          <Map
+            layerPanelVariant={LayerPanelVariant.None}
+            ref={mapRef}
+            sources={[source]}
+            layers={layers}
+            legendItems={legendItems}
+            connections={[affordableHousingProjectMapConnection]}
+            connectionHookArgs={{
+              [ProjectKey.Housecat]: makeConnectionHookArgs(filterParams),
+            }}
+            onClick={handleClick}
+          />
+        )}
       </div>
     </div>
   );

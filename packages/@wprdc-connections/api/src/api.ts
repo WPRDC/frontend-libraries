@@ -36,31 +36,25 @@ class API<E extends Endpoint> {
    * @returns {Promise<Response>}
    */
   callEndpoint<T>(endpoint: E, method: Method, options?: APIOptions<T>) {
-    const {
-      id,
-      params,
-      headers,
-      fetchInit,
-      credentials,
-      controller,
-    } = options || {
+    const { id, params, headers, fetchInit, credentials } = options || {
       id: undefined,
       params: undefined,
       body: undefined,
       headers: {},
       fetchInit: {},
+      credentials: undefined,
     };
 
     const idPath = ['object', 'undefined'].includes(typeof id) ? '' : `${id}/`;
     const urlParams = serializeParams(params);
     const url = `${this.host}/${endpoint}/${idPath}${urlParams}`;
+
     return fetch(url, {
       ...fetchInit,
       ...{
         method,
         headers: { ...baseHeaders, ...headers },
         credentials,
-        signal: controller?.signal,
       },
     });
   }

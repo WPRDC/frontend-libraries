@@ -9,7 +9,10 @@ import { MapInterface } from '../../parts/MapInterface';
 
 import styles from '../../styles/housecat/Map.module.css';
 import { FilterFormValues } from '../../types';
-import { usePublicHousingProject } from '@wprdc-connections/housecat';
+import {
+  useHousingProjectMap,
+  usePublicHousingProject,
+} from '@wprdc-connections/housecat';
 import { AHProjectView } from '@wprdc-widgets/ah-project-view';
 import { HousecatNavbar } from '../../components/Navbar';
 import Layout from '../../components/Layout';
@@ -21,7 +24,11 @@ function MapPage() {
   const [filterParams, setFilterParams] = React.useState<FilterFormValues>();
   const [currentProject, setCurrentProject] = React.useState<number>();
 
-  const { affordableHousingProject } = usePublicHousingProject(currentProject);
+  const { data: mapData, error } = useHousingProjectMap(filterParams);
+
+  const { data: affordableHousingProject } = usePublicHousingProject(
+    currentProject,
+  );
 
   function handleFormChange(params: FilterFormValues) {
     setFilterParams(params);
@@ -39,6 +46,7 @@ function MapPage() {
       </div>
       <div className={styles.mapSection}>
         <MapInterface
+          mapData={mapData}
           filterParams={filterParams}
           handleProjectSelection={setCurrentProject}
         />
