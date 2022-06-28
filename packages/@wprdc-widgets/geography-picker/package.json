@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-widgets/geography-picker",
-  "version": "0.0.33",
+  "version": "0.0.34",
   "description": "",
   "keywords": [],
   "license": "AGPL-3.0-or-later",
@@ -83,7 +83,7 @@
     "@wprdc-components/search-box": "^0.0.19",
     "@wprdc-components/select": "^0.0.21",
     "@wprdc-components/util": "^0.0.12",
-    "@wprdc-connections/geo": "^0.0.33",
+    "@wprdc-connections/geo": "^0.0.34",
     "@wprdc-types/connections": "^0.0.18",
     "@wprdc-types/geo": "^0.0.16",
     "@wprdc-types/map": "^0.0.15",
