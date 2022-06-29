@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-viz/vega",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "",
   "keywords": [],
   "license": "AGPL-3.0-or-later",
@@ -79,7 +79,7 @@
   },
   "dependencies": {
     "@wprdc-components/map": "^0.0.4",
-    "@wprdc-components/provider": "^0.0.16",
+    "@wprdc-components/provider": "^0.0.17",
     "@wprdc-types/geo": "^0.0.16",
     "@wprdc-types/shared": "^0.0.14",
     "@wprdc-types/viz": "^0.0.19",

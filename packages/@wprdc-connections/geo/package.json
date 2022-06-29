@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-connections/geo",
-  "version": "0.0.34",
+  "version": "0.0.35",
   "description": "",
   "keywords": [],
   "license": "AGPL-3.0-or-later",
@@ -76,11 +76,11 @@
     "typescript": "^4.7.3"
   },
   "dependencies": {
-    "@wprdc-components/map": "^0.0.23",
-    "@wprdc-components/radio-group": "^0.0.14",
-    "@wprdc-components/util": "^0.0.12",
-    "@wprdc-connections/api": "^0.0.18",
-    "@wprdc-connections/util": "^0.0.27",
+    "@wprdc-components/map": "^0.0.24",
+    "@wprdc-components/radio-group": "^0.0.15",
+    "@wprdc-components/util": "^0.0.13",
+    "@wprdc-connections/api": "^0.0.19",
+    "@wprdc-connections/util": "^0.0.28",
     "@wprdc-types/api": "^0.0.15",
     "@wprdc-types/connections": "^0.0.18",
     "@wprdc-types/geo": "^0.0.16",
