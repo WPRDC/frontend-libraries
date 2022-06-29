@@ -5,31 +5,26 @@ import type { NextPage } from 'next';
 import styles from '../../styles/Reach.module.css';
 
 import { useRouter } from 'next/router';
-import Link from 'next/link';
 
 import { ProjectKey } from '@wprdc-types/shared';
 import { LayerPanelVariant } from '@wprdc-types/map';
-import {
-  ConnectedMapEventHandler,
-  ConnectionCollection,
-} from '@wprdc-types/connections';
-import { TaxonomySection } from '@wprdc-widgets/taxonomy-section';
+import { ConnectedMapEventHandler, ConnectionCollection } from '@wprdc-types/connections';
+import { TaxonomySection } from '../../components/TaxonomySection';
 import { Geog, GeogBrief, GeogLevel, GeographyType } from '@wprdc-types/geo';
-import { IndicatorBase } from '@wprdc-types/viz';
-import { Topic } from '@wprdc-types/profiles';
+import { IndicatorBase, TopicBrief } from '@wprdc-types/profiles';
 import { useTaxonomy } from '@wprdc-connections/profiles';
 import { menuLayerConnection, useGeography } from '@wprdc-connections/geo';
 import { serializeParams } from '@wprdc-connections/api';
 import { useProvider } from '@wprdc-components/provider';
 import { LoadingMessage } from '@wprdc-components/loading-message';
-import { Map } from '@wprdc-widgets/map';
+import { Map } from '@wprdc-components/map';
 
 const ReachPage: NextPage = () => {
   const [geogBrief, setGeogBrief] = React.useState<GeogBrief>(defaultGeogBrief);
   const [pathSlugs, setPathSlugs] = React.useState<string[]>([]);
 
   const context = useProvider();
-  const { geog, isLoading, error } = useGeography(geogBrief.slug);
+  const { data: geog, isLoading, error } = useGeography(geogBrief.slug);
   const router = useRouter();
 
   function handleTabChange(domain: React.Key): void {
@@ -59,7 +54,7 @@ const ReachPage: NextPage = () => {
   }, [geog]);
 
   const {
-    taxonomy,
+    data: taxonomy,
     isLoading: taxonomyIsLoading,
     error: taxonomyError,
   } = useTaxonomy('reach');
@@ -83,22 +78,18 @@ const ReachPage: NextPage = () => {
     );
   }
 
-  function handleExploreTopic(topic: Topic): void {
+  function handleExploreTopic(topic: TopicBrief): void {
     const { slugs, ...params } = router.query;
-
-    let domain: string, subdomain: string;
-    if (!!topic.hierarchies && !!topic.hierarchies.length) {
-      domain = topic.hierarchies[0].domain.slug;
-      subdomain = topic.hierarchies[0].subdomain.slug;
+    if (!!topic) {
       router.push(
-        `/reach/${domain}/${subdomain}/${topic.slug}/${serializeParams(
+        `/reach/${domainSlug}/${topic.slug}/${serializeParams(
           params,
         )}`,
       );
     }
   }
 
-  function handleCompareTopic(topic?: Topic): void {
+  function handleCompareTopic(topic?: TopicBrief): void {
     if (!!geog && topic) {
       router.push({
         pathname: `/explore/topic/compare`,
@@ -112,36 +103,37 @@ const ReachPage: NextPage = () => {
       <div className={styles.main}>
         <div className={styles.intro}>
           <div className={styles.title}>
-            <a href="/reach">Community Data Explorer</a>
+            <a href='/reach'>Community Data Explorer</a>
           </div>
           <div className={styles.subtitle}>
-            Topics to inform municipal equity practices
+            Indicators to inform municipal equity practices
           </div>
           <div className={styles.description}>
             <p>
               Municipal governments have a profound role and responsibility for
               leading the way to quality of life and equitable access to
               opportunity in the communities of our region.{' '}
-              <a href="https://publichealth.pitt.edu/">
+              <a href='https://publichealth.pitt.edu/'>
                 The University of Pittsburgh’s Graduate School of Public Health
               </a>
               ,{' '}
-              <a href="https://sustainablepittsburgh.org/">
+              <a href='https://sustainablepittsburgh.org/'>
                 Sustainable Pittsburgh
               </a>
               , and the{' '}
-              <a href="http://www.wprdc.org">
+              <a href='http://www.wprdc.org'>
                 Western Pennsylvania Regional Data Center
               </a>{' '}
               have collaboratively developed a set of tools that municipal
               governments in{' '}
-              <a href="https://livewellallegheny.com/reach/">REACH</a>{' '}
+              <a href='https://livewellallegheny.com/reach/'>REACH</a>{' '}
               communities can use to improve social equity and reduce health
               disparities.{' '}
             </p>
 
             <p>
-              <a href="https://sustainablepittsburgh.org/wp-content/uploads/SustainablePA_MunicipalEquityToolkit_Feb16.pdf">
+              <a
+                href='https://sustainablepittsburgh.org/wp-content/uploads/SustainablePA_MunicipalEquityToolkit_Feb16.pdf'>
                 The Sustainable PA Municipal Equity Toolkit
               </a>{' '}
               is designed to be a resource for Pennsylvania’s local government
@@ -152,7 +144,7 @@ const ReachPage: NextPage = () => {
             <p>
               This Community Data Explorer shares metrics from existing data to
               capture structural and social factors among the{' '}
-              <a href="https://livewellallegheny.com/reach/">REACH</a>{' '}
+              <a href='https://livewellallegheny.com/reach/'>REACH</a>{' '}
               neighborhoods (Northside, Hill District, Garfield, Larimer,
               Homewood, East Hills, Wilkinsburg and Mon Valley).&nbsp;{' '}
             </p>
@@ -213,25 +205,23 @@ const ReachPage: NextPage = () => {
         <div className={styles.dashboard}>
           {!!taxonomyIsLoading && (
             <div className={styles.loader}>
-              <LoadingMessage message="Loading dashboard..." />
+              <LoadingMessage message='Loading dashboard...' />
             </div>
           )}
 
           {taxonomy && (
             <TaxonomySection
+              basePath="/reach"
               taxonomy={taxonomy}
+              geog={geog}
               currentDomainSlug={domainSlug}
               currentDomainHref={`/reach/${domainSlug}`}
-              currentSubdomainSlug={subdomainSlug}
-              currentSubdomainHref={`/reach/${domainSlug}/${subdomainSlug}`}
               currentTopicSlug={topicSlug}
               currentTopicHref={`/reach/${domainSlug}/${subdomainSlug}/${topicSlug}`}
               currentIndicatorSlug={indicatorSlug}
-              onExploreIndicator={handleExploreIndicator}
               onExploreTopic={handleExploreTopic}
               onCompareTopic={handleCompareTopic}
               onTabsChange={handleTabChange}
-              LinkComponent={Link}
             />
           )}
         </div>

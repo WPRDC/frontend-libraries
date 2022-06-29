@@ -22,9 +22,9 @@ export default function TopicComparisonPage() {
 
   const router = useRouter();
 
-  const { geog: geogA } = useGeography(geogSlugA);
-  const { geog: geogB } = useGeography(geogSlugB);
-  const { topic } = useTopic(topicSlug);
+  const { data: geogA } = useGeography(geogSlugA);
+  const { data: geogB } = useGeography(geogSlugB);
+  const { data: topic } = useTopic(topicSlug);
 
   useEffect(() => {
     if (router.query) {

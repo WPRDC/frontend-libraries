@@ -2,25 +2,24 @@ import React from 'react';
 
 import type { NextPage } from 'next';
 
-import styles from '../../styles/Housing.module.css';
+import styles from '../../styles/Reach.module.css';
 
 import { useRouter } from 'next/router';
-import Link from 'next/link';
+
 import { ProjectKey } from '@wprdc-types/shared';
-import { TaxonomySection } from '@wprdc-widgets/taxonomy-section';
+import { TaxonomySection } from '../../components/TaxonomySection';
 import {
   ConnectedMapEventHandler,
   ConnectionCollection,
 } from '@wprdc-types/connections';
 import { Geog, GeogBrief, GeogLevel, GeographyType } from '@wprdc-types/geo';
-import { IndicatorBase } from '@wprdc-types/viz';
-import { Topic } from '@wprdc-types/profiles';
+import { IndicatorBase, TopicBrief } from '@wprdc-types/profiles';
 import { useTaxonomy } from '@wprdc-connections/profiles';
 import { menuLayerConnection, useGeography } from '@wprdc-connections/geo';
 import { serializeParams } from '@wprdc-connections/api';
 import { useProvider } from '@wprdc-components/provider';
 import { LoadingMessage } from '@wprdc-components/loading-message';
-import { Map } from '@wprdc-widgets/map';
+import { Map } from '@wprdc-components/map';
 import { LayerPanelVariant } from '@wprdc-types/map';
 
 const ReachPage: NextPage = () => {
@@ -28,7 +27,7 @@ const ReachPage: NextPage = () => {
   const [pathSlugs, setPathSlugs] = React.useState<string[]>([]);
 
   const context = useProvider();
-  const { geog, isLoading, error } = useGeography(geogBrief.slug);
+  const { data: geog, isLoading, error } = useGeography(geogBrief.slug);
   const router = useRouter();
 
   function handleTabChange(domain: React.Key): void {
@@ -41,7 +40,7 @@ const ReachPage: NextPage = () => {
     );
   }
 
-  const [domainSlug, subdomainSlug, topicSlug, indicatorSlug] = pathSlugs;
+  const [domainSlug, subdomainSlug, topicSlug] = pathSlugs;
 
   // update state when path updates
   React.useEffect(() => {
@@ -61,7 +60,7 @@ const ReachPage: NextPage = () => {
   }, [geog]);
 
   const {
-    taxonomy,
+    data: taxonomy,
     isLoading: taxonomyIsLoading,
     error: taxonomyError,
   } = useTaxonomy('affordable-housing');
@@ -83,13 +82,10 @@ const ReachPage: NextPage = () => {
     );
   }
 
-  function handleExploreTopic(topic: Topic): void {
-    let domain: string, subdomain: string;
-    if (!!topic.hierarchies && !!topic.hierarchies.length) {
-      domain = topic.hierarchies[0].domain.slug;
-      subdomain = topic.hierarchies[0].subdomain.slug;
+  function handleExploreTopic(topic: TopicBrief): void {
+    if (!!topic) {
       router.push(
-        `/housing/${domain}/${subdomain}/${topic.slug}/${serializeParams(
+        `/housing/${domainSlug}/${topic.slug}/${serializeParams(
           router.query,
         )}`,
       );
@@ -102,25 +98,53 @@ const ReachPage: NextPage = () => {
         <div className={styles.main}>
           <div className={styles.intro}>
             <div className={styles.title}>
-              <a href="/housing">Housing Topics</a>
+              <a href='/housing'>Housing Indicators</a>
             </div>
             <div className={styles.subtitle}>
-              Topics to inform affordable housing work
+              Indicators to inform affordable housing work
             </div>
-            <p className={styles.description}>
-              Flavum, clemens advenas virtualiter imperium de domesticus, alter
-              lanista! Cum candidatus peregrinatione, omnes abaculuses pugna
-              barbatus, domesticus accolaes! Cur lamia velum? prarere
-              virtualiter ducunt ad azureus lanista! Sensorem potus foris ducunt
-              ad alter hibrida. homos studere!
-            </p>
-            <p className={styles.description}>
-              Cum axona mori, omnes particulaes imperium nobilis, brevis
-              amicitiaes. Altus agripeta sensim apertos accentor est. Lotus
-              byssus una visums apolloniates est. Flavum navis aliquando amors
-              zirbus est. sunt classises examinare nobilis, velox danistaes.
-              abaculuss tolerare!
-            </p>
+            <div className={styles.description}>
+              <p>
+                This tool provides a wide range of contextual information related to housing characteristics and housing
+                market conditions in Allegheny County. The data included here is compiled from a wide range of federal
+                and
+                local administrative and statistical data sources, including Census responses and estimates, sales data,
+                property assessment records, data reported by mail carriers, court system filings, output from
+                statistical
+                models, and mortgage records. We also include health indicators that are closely tied to housing and
+                other
+                neighborhood conditions. This tool uses 2010 Census tract boundaries as our common unit of analysis.
+              </p>
+              <p>
+                This data will be useful for residents looking to learn more about housing in their community. We also
+                expect it will have value for people engaged in a housing search process. Housing and community
+                development stakeholders and elected officials can also use this data to better-understand some of the
+                local contexts important when designing policy and developing and administering programs.
+              </p>
+              <p>
+                We drew heavily from the work of housing researcher Alan Mallach in deciding which indicators to create
+                and include in this tool. We found his guides, including <a
+                href={
+                  'https://communityprogress.org/publication/neighborhoods-by-numbers-an-introduction-to-finding-and-using-small-area-data/'
+                }>Neighborhoods
+                by Numbers: An Introduction to
+                Finding and Using Small Area Data</a>, and a chapter in a report he co-authored for the Federal Reserve
+                Bank
+                with Chris Walker titled <a
+                href='https://www.federalreserve.gov/publications/putting-data-to-work-using-data.htm'>“Using Data to
+                Address the Challenge of Irresponsible Investors in Neighborhoods”</a>
+                especially valuable.
+              </p>
+            </div>
+            <div className={styles.geoDetails}>
+              {!!geog && (
+                <div>
+                  <div className={styles.geogTitle}>{geog.title}</div>
+                </div>
+              )}
+
+              {!!geog && <GeogOverlapListing geog={geog} />}
+            </div>
           </div>
           <div className={styles.mapSection}>
             <Map
@@ -142,31 +166,25 @@ const ReachPage: NextPage = () => {
           </div>
         </div>
 
-        <div className={styles.details}>
-          <div className={styles.geoDetails}>
-            {!!geog && <div className={styles.geogTitle}>{geog.title}</div>}
-          </div>
-        </div>
 
         {!taxonomyIsLoading && !!taxonomy && (
           <div className={styles.dashboard}>
             {!!taxonomyIsLoading && (
               <div className={styles.loader}>
-                <LoadingMessage message="Loading dashboard..." />
+                <LoadingMessage message='Loading dashboard...' />
               </div>
             )}
 
             {taxonomy && (
               <TaxonomySection
+                basePath="/housing"
                 taxonomy={taxonomy}
+                geog={geog}
                 currentDomainSlug={domainSlug}
-                currentSubdomainSlug={subdomainSlug}
                 currentTopicSlug={topicSlug}
-                currentIndicatorSlug={indicatorSlug}
-                onExploreIndicator={handleExploreIndicator}
                 onExploreTopic={handleExploreTopic}
+                baseHeadingLevel={3}
                 onTabsChange={handleTabChange}
-                LinkComponent={Link}
               />
             )}
           </div>
@@ -204,42 +222,26 @@ function GeogOverlapListing({ geog }: GeogOverlapListingProps) {
   const munis = geog.overlap.countySubdivision;
 
   return (
-    <div>
+    <div className={styles.overlapSection}>
       {!!hoods && !!hoods.length && (
         <div>
-          <div className={styles.overlapTitle}>Overlapping Neighborhoods</div>
+          <div className={styles.overlapTitle}>located in</div>
           <ul className={styles.geogList}>
             {hoods.map((hood) => (
               <li key={hood.slug} className={styles.geogListItem}>
-                <Link href={`/explore?geog=${hood.slug}`}>
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.overlapLink}
-                  >
-                    {hood.name}
-                  </a>
-                </Link>
+                {hood.name}
               </li>
             ))}
           </ul>
         </div>
       )}
-      {!!munis && !!munis.length && (
+      {!hoods?.length && !!munis && !!munis.length && (
         <div>
-          <div className={styles.overlapTitle}>Overlapping Towns/Cities</div>
+          <div className={styles.overlapTitle}>located in</div>
           <ul className={styles.geogList}>
             {munis.map((muni) => (
               <li key={muni.slug} className={styles.geogListItem}>
-                <Link href={`/explore?geog=${muni.slug}`}>
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.overlapLink}
-                  >
-                    {muni.name}
-                  </a>
-                </Link>
+                {muni.name}
               </li>
             ))}
           </ul>

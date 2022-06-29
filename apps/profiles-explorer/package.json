@@ -48,8 +48,6 @@
     "@wprdc-widgets/ah-project-view": "^0.0.22",
     "@wprdc-widgets/data-viz": "^0.0.33",
     "@wprdc-widgets/geography-picker": "^0.0.34",
-    "@wprdc-widgets/map": "^0.0.22",
-    "@wprdc-widgets/taxonomy-section": "^0.0.40",
     "@wprdc-widgets/topic-view": "^0.0.41",
     "autoprefixer": "^10.4.5",
     "classnames": "^2.3.1",

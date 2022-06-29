@@ -24,6 +24,7 @@ export const TaxonomySection: React.FC<TaxonomySectionProps> = ({
   currentTopicSlug,
   currentTopicHref,
   breadcrumbLinkComponent,
+  basePath,
 }: TaxonomySectionProps) => {
   function handleExploreTopic(topic: TopicBrief) {
     if (!!onExploreTopic) onExploreTopic(topic);
@@ -84,6 +85,7 @@ export const TaxonomySection: React.FC<TaxonomySectionProps> = ({
               items={taxonomy.domains}
               selectedKey={currentDomainSlug}
               geog={geog}
+              basePath={basePath}
             />
             <DomainSection
               domain={currentDomain}

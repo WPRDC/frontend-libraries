@@ -20,7 +20,7 @@ import { ProjectKey } from '@wprdc-types/shared';
 import { ConnectedSelect } from '@wprdc-components/select';
 import { GeogBrief, GeographyType } from '@wprdc-types/geo';
 import { GeographyConnection } from '@wprdc-connections/geo';
-import { Map } from '@wprdc-widgets/map';
+import { Map } from '@wprdc-components/map';
 
 import { FilterFormValues } from '../../types';
 import { LayerPanelVariant } from '@wprdc-types/map';

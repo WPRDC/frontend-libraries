@@ -28,9 +28,9 @@ export default function TopicComparisonPage() {
 
   const router = useRouter();
 
-  const { geog: geogA } = useGeography(geogSlugA);
-  const { geog: geogB } = useGeography(geogSlugB);
-  const { topic } = useTopic(topicSlug);
+  const { data: geogA } = useGeography(geogSlugA);
+  const { data: geogB } = useGeography(geogSlugB);
+  const { data: topic } = useTopic(topicSlug);
 
   useEffect(() => {
     let useDefaults = false;
@@ -111,12 +111,7 @@ export default function TopicComparisonPage() {
             </h2>
           </div>
           <div className={styles.indSection}>
-            <TopicView
-              topic={topic}
-              geog={geogA}
-              onExploreTopic={handleExploreTopic}
-              onExploreIndicator={handleExploreIndicator}
-            />
+            <TopicView topic={topic} geog={geogA} />
           </div>
         </div>
         <div className={styles.dashboardSection}>
@@ -131,12 +126,7 @@ export default function TopicComparisonPage() {
             </h2>
           </div>
           <div className={styles.indSection}>
-            <TopicView
-              topic={topic}
-              geog={geogB}
-              onExploreTopic={handleExploreTopic}
-              onExploreIndicator={handleExploreIndicator}
-            />
+            <TopicView topic={topic} geog={geogB} />
           </div>
         </div>
       </div>

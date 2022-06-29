@@ -15,7 +15,9 @@ import HousecatFooter from '../../components/Footer/HousecatFooter';
 
 function SearchPage() {
   const [currentProject, setCurrentProject] = React.useState<ProjectIndex>();
-  const { affordableHousingProject } = usePublicHousingProject(currentProject);
+  const { data: affordableHousingProject } = usePublicHousingProject(
+    currentProject,
+  );
 
   return (
     <div className={styles.wrapper}>

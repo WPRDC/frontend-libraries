@@ -28,6 +28,7 @@ interface NavTabProps<T extends Resource> {
   getKey?: (item: T) => React.Key;
   disabledKeys?: Set<React.Key>;
   geog?: GeogBrief;
+  basePath?: string;
 }
 
 export function NavTabs<T extends Resource>(props: NavTabProps<T>) {
@@ -43,6 +44,7 @@ export function NavTabs<T extends Resource>(props: NavTabProps<T>) {
     getKey = item => item.slug,
     selectedKey,
     disabledKeys,
+    basePath = '/explore',
     geog,
   } = props;
 
@@ -124,7 +126,7 @@ export function NavTabs<T extends Resource>(props: NavTabProps<T>) {
                     [styles.selected]: getKey(item) === selectedKey,
                   })}
                 >
-                  <Link href={`/explore/${item.slug}?geog=${geog?.slug}`}>
+                  <Link href={`${basePath}/${item.slug}?geog=${geog?.slug}`}>
                     <a
                       className={classNames(styles.tab, styles.anchorFix, {
                         [styles.selected]: getKey(item) === selectedKey,

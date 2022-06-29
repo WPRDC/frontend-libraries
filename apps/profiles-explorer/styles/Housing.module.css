@@ -28,7 +28,7 @@
 
 .description {
   @apply pt-6;
-  @apply w-2/3;
+  @apply pr-4;
 }
 
 .mapSection {

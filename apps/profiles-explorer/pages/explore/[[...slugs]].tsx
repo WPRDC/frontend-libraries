@@ -27,7 +27,7 @@ import {
   ConnectionCollection,
 } from '@wprdc-types/connections';
 import { BreadcrumbItem, Breadcrumbs } from '@wprdc-components/breadcrumbs';
-import { IndicatorBase, Topic } from '@wprdc-types/profiles';
+import { IndicatorBase, Topic, TopicBrief } from '@wprdc-types/profiles';
 import { Map } from '@wprdc-components/map';
 import { useProvider } from '@wprdc-components/provider';
 import { TaxonomySection } from '../../components/TaxonomySection';
@@ -114,13 +114,11 @@ export default function Home() {
     }
   }
 
-  function handleExploreTopic(topic: Topic): void {
+  function handleExploreTopic(topic: TopicBrief): void {
     const { slugs, ...sansSlugs } = router.query;
-    if (!!topic.hierarchies && !!topic.hierarchies.length) {
-      const domain = topic.hierarchies[0].domain.slug;
-
+    if (!!topic.slug) {
       router.push({
-        pathname: `/explore/${domain}/${topic.slug}/`,
+        pathname: `/explore/${domainSlug}/${topic.slug}/`,
         query: sansSlugs,
       });
     }

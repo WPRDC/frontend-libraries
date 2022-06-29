@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div className={styles.wrapper}>
       <Head>
-        <title>WPRDC Topics - Home</title>
+        <title>WPRDC Indicators - Home</title>
         <meta name="description" content="New WPRDC App" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -51,7 +51,7 @@ export default function Home() {
             </Link>
             <Link href="/housing">
               <div className={styles.bigButton}>
-                <div className={styles.buttonTitle}>Housing Topics</div>
+                <div className={styles.buttonTitle}>Housing Indicators</div>
                 <p className={styles.buttonText}>
                   Community-level topics focused on housing.
                 </p>

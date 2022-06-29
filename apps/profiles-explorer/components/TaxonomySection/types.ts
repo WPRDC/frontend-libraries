@@ -19,6 +19,7 @@ export interface TaxonomySectionProps<L extends object = { href: string }>
   linkWrapper?: React.ComponentType<L>;
   onTabsChange?: (tab: React.Key) => any;
   baseHeadingLevel?: 1 | 2 | 3 | 4 | 5 | 6;
+  basePath?: string;
 }
 
 export interface SectionSharedProps {
