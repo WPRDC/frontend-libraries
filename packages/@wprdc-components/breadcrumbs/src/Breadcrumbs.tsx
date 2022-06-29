@@ -20,7 +20,7 @@ import classNames from 'classnames';
 export function Breadcrumbs<T>(props: BreadcrumbsProps<T>) {
   const { navProps } = useBreadcrumbs(props);
   const children = React.Children.toArray(props.children);
-  const { showCurrent = true, bigTitle, titleElement = 'h3' } = props;
+  const { showCurrent = true, bigTitle, titleElement = 'h3', shallow } = props;
 
   const lastChild = children[children.length - 1];
 
@@ -32,8 +32,8 @@ export function Breadcrumbs<T>(props: BreadcrumbsProps<T>) {
             return React.cloneElement(child as React.ReactElement, {
               isCurrent: false,
               elementType: 'a',
-
               hideDivider: !showCurrent && i == children.length - 1,
+              shallow,
             });
           }
           if (showCurrent && !bigTitle) {
@@ -41,6 +41,7 @@ export function Breadcrumbs<T>(props: BreadcrumbsProps<T>) {
               isCurrent: true,
               elementType: titleElement,
               bigTitle: bigTitle,
+              shallow,
             });
           }
           return null;
@@ -52,14 +53,21 @@ export function Breadcrumbs<T>(props: BreadcrumbsProps<T>) {
           isCurrent: true,
           elementType: titleElement,
           bigTitle: bigTitle,
+          shallow,
         })}
     </nav>
   );
 }
 
 export function BreadcrumbItem(props: BreadcrumbItemProps) {
-  const { LinkComponent, TitleComponent, divider, hideDivider, bigTitle } =
-    props;
+  const {
+    LinkComponent,
+    TitleComponent,
+    divider,
+    hideDivider,
+    bigTitle,
+    shallow,
+  } = props;
 
   const ref = React.useRef(null);
   const { itemProps } = useBreadcrumbItem(props, ref);
@@ -86,7 +94,12 @@ export function BreadcrumbItem(props: BreadcrumbItemProps) {
   } else {
     breadcrumbContent = (
       <>
-        <Link {...itemProps} ref={ref} href={props.href || '#'}>
+        <Link
+          {...itemProps}
+          ref={ref}
+          href={props.href || '#'}
+          shallow={shallow}
+        >
           {props.children}
         </Link>
         {!hideDivider && dividerContent}

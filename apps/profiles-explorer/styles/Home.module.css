@@ -1,6 +1,7 @@
 .wrapper {
   @apply overflow-auto;
   @apply pb-16;
+  @apply bg-amber-50;
 }
 
 .main {
@@ -42,8 +43,9 @@
 }
 
 .bigButton {
+  @apply bg-white;
   @apply cursor-pointer shadow-lg hover:shadow-2xl;
-  @apply w-56 h-48 border border-black rounded;
+  @apply w-56 h-48 border-2 border-black;
 }
 
 .buttonTitle {
@@ -78,8 +80,9 @@
 }
 
 .toolButton {
+  @apply bg-white;
   @apply cursor-pointer shadow-lg hover:shadow-2xl;
-  @apply w-56 h-32 border border-black rounded;
+  @apply w-56 h-32 border-2 border-black;
 }
 
 .toolButtonTitle {

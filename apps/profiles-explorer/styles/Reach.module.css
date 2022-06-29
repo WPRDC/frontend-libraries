@@ -1,6 +1,7 @@
 .wrapper {
   @apply w-full;
   @apply overflow-auto;
+  @apply bg-amber-50;
 }
 
 .main {

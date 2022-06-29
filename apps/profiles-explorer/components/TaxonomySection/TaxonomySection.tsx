@@ -3,7 +3,7 @@ import * as React from 'react';
 import styles from './TaxonomySection.module.css';
 
 import { BreadcrumbItemProps } from '@wprdc-types/breadcrumbs';
-import { Domain, IndicatorBase, TopicBrief } from '@wprdc-types/profiles';
+import { Domain, TopicBrief } from '@wprdc-types/profiles';
 
 import { Breadcrumbs, BreadcrumbItem } from '@wprdc-components/breadcrumbs';
 
@@ -32,9 +32,6 @@ export const TaxonomySection: React.FC<TaxonomySectionProps> = ({
 
   const topicFetchController = new AbortController();
 
-  // fixme: this is where my lag is at!!!!
-  //  there's a few second delay where currentDomainSlug and currentDomain.slug don't match
-  //  this makes me think that the fetch happening in useDomain is being held up
   const { data: currentDomain } = useDomain(currentDomainSlug);
 
   const currentTopic = React.useMemo(
@@ -49,7 +46,8 @@ export const TaxonomySection: React.FC<TaxonomySectionProps> = ({
     breadcrumbs.push({
       key: 'domain',
       href:
-        currentDomainHref || `/explore/${currentDomainSlug}?geog=${geog?.slug}`,
+        currentDomainHref ||
+        `${basePath}/${currentDomainSlug}?geog=${geog?.slug}`,
       children: currentDomain.name,
       LinkComponent: breadcrumbLinkComponent,
     });
@@ -59,7 +57,7 @@ export const TaxonomySection: React.FC<TaxonomySectionProps> = ({
       key: 'topic',
       href:
         currentTopicHref ||
-        `/explore/${currentDomainSlug}/${currentTopicSlug}?geog=${geog?.slug}`,
+        `${basePath}/${currentDomainSlug}/${currentTopicSlug}?geog=${geog?.slug}`,
       children: currentTopic.name,
       LinkComponent: breadcrumbLinkComponent,
     });

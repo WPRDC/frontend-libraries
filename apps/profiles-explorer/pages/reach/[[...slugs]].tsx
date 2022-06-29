@@ -24,7 +24,7 @@ const ReachPage: NextPage = () => {
   const [pathSlugs, setPathSlugs] = React.useState<string[]>([]);
 
   const context = useProvider();
-  const { data: geog, isLoading, error } = useGeography(geogBrief.slug);
+  const { data: geog } = useGeography(geogBrief.slug);
   const router = useRouter();
 
   function handleTabChange(domain: React.Key): void {
@@ -34,7 +34,7 @@ const ReachPage: NextPage = () => {
     });
   }
 
-  const [domainSlug, subdomainSlug, topicSlug, indicatorSlug] = pathSlugs;
+  const [domainSlug, topicSlug] = pathSlugs;
 
   // update state when path updates
   React.useEffect(() => {
@@ -68,15 +68,6 @@ const ReachPage: NextPage = () => {
     }
   };
 
-  function handleExploreIndicator(indicator: IndicatorBase): void {
-    const { slugs, ...params } = router.query;
-
-    router.push(
-      `/reach/${domainSlug}/${subdomainSlug}/${topicSlug}/${
-        indicator.slug
-      }/${serializeParams(params)}`,
-    );
-  }
 
   function handleExploreTopic(topic: TopicBrief): void {
     const { slugs, ...params } = router.query;
@@ -215,10 +206,7 @@ const ReachPage: NextPage = () => {
               taxonomy={taxonomy}
               geog={geog}
               currentDomainSlug={domainSlug}
-              currentDomainHref={`/reach/${domainSlug}`}
               currentTopicSlug={topicSlug}
-              currentTopicHref={`/reach/${domainSlug}/${subdomainSlug}/${topicSlug}`}
-              currentIndicatorSlug={indicatorSlug}
               onExploreTopic={handleExploreTopic}
               onCompareTopic={handleCompareTopic}
               onTabsChange={handleTabChange}
