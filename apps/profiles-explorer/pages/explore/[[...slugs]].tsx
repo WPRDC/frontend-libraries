@@ -58,8 +58,6 @@ export default function Home() {
 
   // when the url changes
   useEffect(() => {
-    // todo: this effect is run when the url changes, however there is a huge lag in rendering afterwards
-
     if (!!geogLevels && !!taxonomy) {
       // first check geog or taxonomy are missing or malformed.
       //  if so, push with a default(s) added
@@ -87,6 +85,7 @@ export default function Home() {
         const gSlug = router.query.geog as string;
         // find geogLevel for the geog
         const geogLevelSlug = gSlug.slice(0, gSlug.lastIndexOf('-'));
+        console.log({ geogLevelSlug });
         const glevel = geogLevels.find(g => g.slug === geogLevelSlug);
 
         // ensure `slugs` is an array
@@ -122,13 +121,6 @@ export default function Home() {
         query: sansSlugs,
       });
     }
-  }
-
-  function handleTabChange(domain: React.Key): void {
-    router.push({
-      pathname: `/explore/${domain}/`,
-      query: { geog: geog?.slug },
-    });
   }
 
   const handleClick: ConnectedMapEventHandler = (_, __, toolboxItems) => {

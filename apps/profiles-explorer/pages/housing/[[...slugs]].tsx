@@ -12,8 +12,9 @@ import {
   ConnectedMapEventHandler,
   ConnectionCollection,
 } from '@wprdc-types/connections';
+
 import { Geog, GeogBrief, GeogLevel, GeographyType } from '@wprdc-types/geo';
-import { IndicatorBase, TopicBrief } from '@wprdc-types/profiles';
+import { TopicBrief } from '@wprdc-types/profiles';
 import { useTaxonomy } from '@wprdc-connections/profiles';
 import { menuLayerConnection, useGeography } from '@wprdc-connections/geo';
 import { serializeParams } from '@wprdc-connections/api';
@@ -40,7 +41,7 @@ const ReachPage: NextPage = () => {
     );
   }
 
-  const [domainSlug, subdomainSlug, topicSlug] = pathSlugs;
+  const [domainSlug, topicSlug] = pathSlugs;
 
   // update state when path updates
   React.useEffect(() => {
@@ -51,7 +52,7 @@ const ReachPage: NextPage = () => {
           : router.query.slugs;
       setPathSlugs(slugs);
     } else {
-      setPathSlugs([]);
+      setPathSlugs(['housing-market']);
     }
   }, [router.query.slugs]);
 
@@ -73,14 +74,6 @@ const ReachPage: NextPage = () => {
         setGeogBrief(clickedGeogs[0]);
     }
   };
-
-  function handleExploreIndicator(indicator: IndicatorBase): void {
-    router.push(
-      `/housing/${domainSlug}/${subdomainSlug}/${topicSlug}/${
-        indicator.slug
-      }/${serializeParams(router.query)}`,
-    );
-  }
 
   function handleExploreTopic(topic: TopicBrief): void {
     if (!!topic) {
@@ -183,7 +176,6 @@ const ReachPage: NextPage = () => {
                 currentDomainSlug={domainSlug}
                 currentTopicSlug={topicSlug}
                 onExploreTopic={handleExploreTopic}
-                baseHeadingLevel={3}
                 onTabsChange={handleTabChange}
               />
             )}

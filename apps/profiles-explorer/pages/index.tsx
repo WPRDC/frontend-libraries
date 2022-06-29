@@ -61,24 +61,33 @@ export default function Home() {
 
           <h2 className={styles.sectionTitle}>Tools</h2>
           <div className={styles.toolsMenu}>
-            <a href="https://api.profiles.wprdc.org">
-              <div className={styles.toolButton}>
+            <a
+              href="https://api.profiles.wprdc.org"
+              className={styles.toolButton}
+            >
+              <div>
                 <div className={styles.buttonTitle}>API</div>
                 <p className={styles.toolButtonText}>
                   Build or enhance your app with open civic data.
                 </p>
               </div>
             </a>
-            <a href="https://api.profiles.wprdc.org/tiles/index.json">
-              <div className={styles.toolButton}>
+            <a
+              href="https://api.profiles.wprdc.org/tiles/index.json"
+              className={styles.toolButton}
+            >
+              <div>
                 <div className={styles.buttonTitle}>Map Tile Server</div>
                 <p className={styles.toolButtonText}>
                   Use our data layers in your maps or apps!
                 </p>
               </div>
             </a>
-            <a href="https://profiles.wprdc.org/components/">
-              <div className={styles.toolButton}>
+            <a
+              href="https://profiles.wprdc.org/components/"
+              className={styles.toolButton}
+            >
+              <div>
                 <div className={styles.buttonTitle}>Component Library</div>
                 <p className={styles.toolButtonText}>
                   UI components with connections to WPRDC data.

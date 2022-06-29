@@ -45,7 +45,7 @@ const ReachPage: NextPage = () => {
           : router.query.slugs;
       setPathSlugs(slugs);
     } else {
-      setPathSlugs([]);
+      setPathSlugs(['demographics']);
     }
   }, [router.query.slugs]);
 
@@ -202,7 +202,7 @@ const ReachPage: NextPage = () => {
 
           {taxonomy && (
             <TaxonomySection
-              basePath="/reach"
+              basePath='/reach'
               taxonomy={taxonomy}
               geog={geog}
               currentDomainSlug={domainSlug}
