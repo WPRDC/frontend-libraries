@@ -77,5 +77,6 @@
   },
   "dependencies": {
     "@wprdc-types/viz": "^0.0.20"
-  }
+  },
+  "gitHead": "e243414d947633b1d251608080ed78c755e93203"
 }

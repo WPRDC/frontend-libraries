@@ -77,5 +77,6 @@
   "dependencies": {
     "@types/react": "^18.0.12",
     "@wprdc-types/profiles": "^0.0.21"
-  }
+  },
+  "gitHead": "e243414d947633b1d251608080ed78c755e93203"
 }

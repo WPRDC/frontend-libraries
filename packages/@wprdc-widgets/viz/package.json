@@ -81,5 +81,6 @@
     "@wprdc-viz/table": "^0.0.21",
     "@wprdc-viz/vega": "^0.0.4",
     "classnames": "^2.3.1"
-  }
+  },
+  "gitHead": "e243414d947633b1d251608080ed78c755e93203"
 }

@@ -80,5 +80,6 @@
     "@wprdc-components/link": "^0.0.12",
     "@wprdc-components/tooltip": "^0.0.17",
     "@wprdc-types/profiles": "^0.0.21"
-  }
+  },
+  "gitHead": "e243414d947633b1d251608080ed78c755e93203"
 }

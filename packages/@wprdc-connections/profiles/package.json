@@ -87,5 +87,6 @@
     "@wprdc-types/shared": "^0.0.14",
     "@wprdc-types/viz": "^0.0.20",
     "react-query": "^3.39.1"
-  }
+  },
+  "gitHead": "e243414d947633b1d251608080ed78c755e93203"
 }

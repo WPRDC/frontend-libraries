@@ -79,5 +79,6 @@
     "@react-aria/button": "^3.3.4",
     "@wprdc-types/button": "^0.0.12",
     "classnames": "^2.3.1"
-  }
+  },
+  "gitHead": "e243414d947633b1d251608080ed78c755e93203"
 }

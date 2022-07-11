@@ -98,6 +98,7 @@ export const assetMapConnection: MapPluginConnection<
       setMapSection(
         <>
           <Source {...sources[0]} key={sources[0].id} />
+          {/* @ts-ignore todo: WTF is up with layer types */}
           <Layer {...layers[0]} key={layers[0].id} />
         </>
       );

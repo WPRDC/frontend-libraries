@@ -79,5 +79,6 @@
     "@wprdc-types/geo": "^0.0.16",
     "@wprdc-types/profiles": "^0.0.21",
     "@wprdc-types/shared": "^0.0.14"
-  }
+  },
+  "gitHead": "e243414d947633b1d251608080ed78c755e93203"
 }

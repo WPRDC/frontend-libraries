@@ -82,5 +82,6 @@
     "@wprdc-types/profiles": "^0.0.21",
     "@wprdc-types/shared": "^0.0.14",
     "react-map-gl": "^7.0.17"
-  }
+  },
+  "gitHead": "e243414d947633b1d251608080ed78c755e93203"
 }

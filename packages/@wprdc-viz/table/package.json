@@ -79,5 +79,6 @@
     "@wprdc-types/viz": "^0.0.20",
     "classnames": "^2.3.1",
     "react-table": "^7.7.0"
-  }
+  },
+  "gitHead": "e243414d947633b1d251608080ed78c755e93203"
 }
