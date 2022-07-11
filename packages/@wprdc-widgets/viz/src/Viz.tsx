@@ -24,9 +24,8 @@ import { FlatTable } from '@wprdc-viz/table';
 
 import { RiEditFill, RiPrinterFill, RiShareFill } from 'react-icons/ri';
 import { MdCompare } from 'react-icons/md';
-import { IndicatorWithData } from '@wprdc-types/profiles';
-import { Checkbox, CheckboxGroup } from '@wprdc-components/checkbox-group';
 import { Tooltip } from '@wprdc-components/tooltip';
+import { EditMenu } from './menus/edit';
 
 export const Viz: React.FC<VizWidgetProps> = ({
   indicator,
@@ -164,58 +163,6 @@ export const Viz: React.FC<VizWidgetProps> = ({
         </div>
       )}
       {vizContent}
-    </div>
-  );
-};
-
-interface EditMenuProps {
-  indicator: IndicatorWithData;
-  selectedTimeParts: string[];
-  selectedVariables: string[];
-
-  onTimePartChange: (selection: string[]) => void;
-  onVariableChange: (selection: string[]) => void;
-}
-
-const EditMenu: React.FC<EditMenuProps> = ({
-  indicator,
-  onTimePartChange,
-  onVariableChange,
-  selectedTimeParts,
-  selectedVariables,
-}) => {
-  function handleTimeChange(selectedTimeParts: string[]) {
-    onTimePartChange(selectedTimeParts);
-  }
-
-  function handleVariableChange(selectedVariables: string[]) {
-    onVariableChange(selectedVariables);
-  }
-
-  return (
-    <div>
-      <div>
-        <CheckboxGroup
-          label="Show/Hide Time Points"
-          onChange={handleTimeChange}
-          value={selectedTimeParts}
-        >
-          {indicator.timeAxis.timeParts.map(timePart => (
-            <Checkbox value={timePart.slug}>{timePart.name}</Checkbox>
-          ))}
-        </CheckboxGroup>
-      </div>
-      <div>
-        <CheckboxGroup
-          label="Show/Hide Variables"
-          onChange={handleVariableChange}
-          value={selectedVariables}
-        >
-          {indicator.variables.map(variable => (
-            <Checkbox value={variable.slug}>{variable.name}</Checkbox>
-          ))}
-        </CheckboxGroup>
-      </div>
     </div>
   );
 };
