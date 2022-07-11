@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-types/source-list",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "description": "Collection of TypeScript/JS libraries for use in/with WPRDC projects.",
   "keywords": [],
   "license": "AGPL-3.0-or-later",
@@ -76,7 +76,7 @@
   },
   "dependencies": {
     "@types/react": "^18.0.12",
-    "@wprdc-types/profiles": "^0.0.21"
+    "@wprdc-types/profiles": "^0.0.22"
   },
   "gitHead": "94a124feb01e557bf271b087ab91e7a6590f483b"
 }
