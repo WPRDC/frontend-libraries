@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-types/indicator",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Collection of TypeScript/JS libraries for use in/with WPRDC projects.",
   "keywords": [],
   "license": "AGPL-3.0-or-later",
@@ -77,7 +77,7 @@
   "dependencies": {
     "@types/react": "^18.0.12",
     "@wprdc-types/geo": "^0.0.16",
-    "@wprdc-types/profiles": "^0.0.20",
+    "@wprdc-types/profiles": "^0.0.21",
     "@wprdc-types/shared": "^0.0.14"
   }
 }
