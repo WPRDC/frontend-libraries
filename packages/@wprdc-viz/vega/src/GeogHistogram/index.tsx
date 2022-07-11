@@ -5,42 +5,91 @@
  */
 import * as React from 'react';
 import '../main.css';
-import { PlainObject, Vega } from 'react-vega';
+import { Vega } from 'react-vega';
 
 import { BarChartProps } from '@wprdc-types/viz';
 
-import spec from './spec';
-import { DataRecord, IndicatorWithData } from '@wprdc-types/profiles';
+import { makeSpec } from './spec';
+import { flattenData, useFilters } from '../util';
+import styles from '../Vega.module.css';
+import Measure from 'react-measure';
+import classNames from 'classnames';
 
 export function GeogHistogram(props: BarChartProps) {
-  const { indicator } = props;
+  const {
+    indicator,
+    inPreview,
+    selectedTimeParts,
+    selectedVariables,
+    onHover,
+    hoveredRecord,
+  } = props;
 
-  const data = prepDataForVega(indicator);
+  function handleHover(_: string, datum: unknown) {
+    if (!!onHover) onHover(datum as object);
+  }
 
-  return <Vega spec={spec} data={data} actions={false} />;
+  const signalListeners = { hover: handleHover };
+
+  const [{ width, height }, setDimensions] = React.useState({
+    width: 0,
+    height: 0,
+  });
+
+  const { renderVariables, renderTimeParts } = useFilters(
+    selectedVariables,
+    selectedTimeParts
+  );
+
+  const table = React.useMemo(
+    () => flattenData(indicator, renderTimeParts, renderVariables),
+    [indicator, renderVariables, renderTimeParts]
+  );
+
+  const labels = React.useMemo(
+    () =>
+      indicator.variables
+        .filter(v => renderVariables.has(v.slug))
+        .map(v => ({
+          var: v.slug,
+          fullLabel: v.name,
+          label: v.shortName || v.name,
+        })),
+    [indicator.slug, renderVariables]
+  );
+
+  const highlight = { highlight: hoveredRecord?.geog };
+
+  const spec = React.useMemo(() => makeSpec('percent'), []);
+
+  // TODO: highlight chart based on hover state
+
+  return (
+    <div
+      className={classNames(styles.wrapper, { [styles.inPreview]: inPreview })}
+    >
+      <Measure
+        bounds
+        onResize={contentRect => {
+          if (contentRect.bounds) setDimensions(contentRect.bounds);
+        }}
+      >
+        {({ measureRef }) => (
+          <div
+            ref={measureRef}
+            className={styles.insideWrapper}
+            aria-label="data presentation preview"
+          >
+            <Vega
+              spec={spec}
+              height={height - 7}
+              width={width - 5}
+              data={{ table, labels, highlight }}
+              signalListeners={signalListeners}
+            />
+          </div>
+        )}
+      </Measure>
+    </div>
+  );
 }
-
-/**
- * Copies and adds human-friendly labels to the tabular data provided from
- * the API and wraps it in the format Vega accepts.
- */
-function prepDataForVega(indicator: IndicatorWithData): PlainObject {
-  // todo: make lookup table for the labels and toss that into the vega spec!
-  const addLabels = makeLabeler(indicator);
-  // @ts-ignore
-  return { table: indicator.data.map(addLabels) };
-}
-
-/**
- * Returns a function that extracts human-readable labels from `indicator`.
- */
-const makeLabeler = (indicator: IndicatorWithData) => (datum: DataRecord) => {
-  // todo: memoize these lookups
-  const variable = indicator.variables[0];
-  const time = indicator.timeAxis.timeParts[0];
-
-  const variableLabel = variable.name;
-  const timeLabel = time.name;
-
-  return { ...datum, variableLabel, timeLabel };
-};

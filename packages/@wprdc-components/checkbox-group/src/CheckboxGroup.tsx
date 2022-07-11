@@ -20,8 +20,9 @@ import { useCheckboxGroup, useCheckboxGroupItem } from '@react-aria/checkbox';
 
 import { CheckboxGroupProps, CheckboxProps } from '@wprdc-types/checkbox-group';
 
-const CheckboxGroupContext =
-  React.createContext<CheckboxGroupState | null>(null);
+const CheckboxGroupContext = React.createContext<CheckboxGroupState | null>(
+  null
+);
 
 export function CheckboxGroup(props: CheckboxGroupProps) {
   const { children, label, items } = props;
@@ -35,7 +36,7 @@ export function CheckboxGroup(props: CheckboxGroupProps) {
       </span>
       <CheckboxGroupContext.Provider value={state}>
         <div className={styles.itemsWrapper}>
-          {children || (items && items.map((item) => <Checkbox {...item} />))}
+          {children || (items && items.map(item => <Checkbox {...item} />))}
         </div>
       </CheckboxGroupContext.Provider>
     </div>
@@ -67,7 +68,7 @@ export function Checkbox(props: CheckboxProps) {
         />
         <div className={styles.checkmark}></div>
       </div>
-      <div>{children || label}</div>
+      <div className={styles.labelDiv}>{children || label}</div>
     </label>
   );
 }

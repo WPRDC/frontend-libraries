@@ -1,5 +1,6 @@
 .wrapper {
   @apply py-1 px-2.5;
+  @apply bg-white;
   @apply font-mono font-semibold uppercase;
   @apply focus:outline-none focus-visible:outline-none border;
   @apply shadow active:shadow-sm hover:shadow-md;
@@ -10,9 +11,12 @@
 
 .default {
   @apply text-black;
-  @apply bg-background;
   @apply border-black;
   @apply shadow-black;
+}
+
+.wrapper.default {
+  @apply bg-white;
 }
 
 .elevated {

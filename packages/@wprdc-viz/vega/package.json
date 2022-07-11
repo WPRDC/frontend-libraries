@@ -84,7 +84,7 @@
     "@wprdc-types/shared": "^0.0.14",
     "@wprdc-types/viz": "^0.0.19",
     "react-measure": "^2.5.2",
-    "react-vega": "^7.5.1",
+    "react-vega": "^7.6.0",
     "vega": "^5.22.1",
     "vega-lite": "^5.2.0"
   },

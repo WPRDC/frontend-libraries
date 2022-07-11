@@ -15,6 +15,7 @@ interface TooltipPropsBase extends OverlayTriggerProps {
   content: ReactNode;
   popoverProps?: TooltipPopoverProps;
   size?: Size;
+  button?: boolean;
 }
 
 export type TooltipProps = PropsWithChildren<TooltipPropsBase>;

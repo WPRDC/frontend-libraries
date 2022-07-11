@@ -38,7 +38,7 @@
 
 /* Content parts */
 .geogContainer {
-  @apply py-4 pl-4 border-b-2 border-black;
+  @apply py-8 pl-4 border-b-2 border-black;
 }
 
 .geogTitle {
@@ -47,7 +47,7 @@
 }
 
 .taxonomyContainer {
-  @apply p-4;
+  @apply p-4 xl:pr-12;
   @apply flex-grow overflow-y-auto;
 }
 

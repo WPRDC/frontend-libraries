@@ -13,7 +13,6 @@
 .itemLabel {
   @apply cursor-pointer;
   @apply relative flex flex-row;
-  @apply h-7;
 }
 
 .inputDiv {
@@ -56,4 +55,7 @@
 
 .disabledInput {
   @apply border-zinc-700 bg-zinc-300 cursor-not-allowed;
+}
+
+.labelDiv {
 }

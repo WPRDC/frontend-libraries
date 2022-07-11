@@ -101,7 +101,7 @@ export const menuLayerConnection: MapPluginConnection<GeogLevel, GeogBrief> = {
       setMapSection(
         <>
           {sources.map(source => (
-            <Source {...source} />
+            <Source {...source} key={source.id} />
           ))}
           {layers.map(layer => (
             <Layer {...layer} key={layer.id} />

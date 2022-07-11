@@ -14,38 +14,41 @@ import { BarChartProps } from '@wprdc-types/viz';
 
 import columnSpec from './columnSpec';
 import barSpec from './barSpec';
-import { DataRecord, IndicatorWithData } from '@wprdc-types/profiles';
-
-interface BarChartRecord extends DataRecord {
-  geog: string;
-  variable: string;
-  time: string;
-
-  variableLabel: string;
-  variableAbbr?: string;
-  timeLabel: string;
-  geogLabel: string;
-}
+import { flattenData, useFilters } from '../util';
 
 export function BarChart(props: BarChartProps) {
-  const { indicator, inPreview } = props;
+  const { indicator, inPreview, selectedTimeParts, selectedVariables } = props;
   const { options } = indicator;
   const { useColumns } = options;
+  const spec = useColumns ? columnSpec : barSpec;
 
   const [{ width, height }, setDimensions] = React.useState({
     width: 0,
     height: 0,
   });
 
-  const spec = useColumns ? columnSpec : barSpec;
+  const { renderVariables, renderTimeParts } = useFilters(
+    selectedVariables,
+    selectedTimeParts
+  );
 
   // flatten data for use in vega
-  const table = flattenData(indicator);
-  const labels = indicator.variables.map(v => ({
-    var: v.slug,
-    fullLabel: v.name,
-    label: v.shortName || v.name,
-  }));
+  const table = React.useMemo(
+    () => flattenData(indicator, renderTimeParts, renderVariables),
+    [indicator, renderVariables, renderTimeParts]
+  );
+
+  const labels = React.useMemo(
+    () =>
+      indicator.variables
+        .filter(v => renderVariables.has(v.slug))
+        .map(v => ({
+          var: v.slug,
+          fullLabel: v.name,
+          label: v.shortName || v.name,
+        })),
+    [indicator.slug, renderVariables]
+  );
 
   return (
     <div
@@ -75,28 +78,4 @@ export function BarChart(props: BarChartProps) {
       </Measure>
     </div>
   );
-}
-
-function flattenData(indicator: IndicatorWithData) {
-  let result: BarChartRecord[] = [];
-
-  const { geog, time, vars } = indicator.dimensions;
-  const { variables, timeAxis, geogs } = indicator;
-  for (let g = 0; g < geog.length; g++) {
-    for (let t = 0; t < time.length; t++) {
-      for (let v = 0; v < vars.length; v++) {
-        result.push({
-          geog: geog[g],
-          time: time[t],
-          variable: vars[v],
-          variableLabel: variables[v].name,
-          variableAbbr: variables[v].shortName,
-          timeLabel: timeAxis.timeParts[t].name,
-          geogLabel: geogs[g].name,
-          ...indicator.data[g][t][v],
-        });
-      }
-    }
-  }
-  return result;
 }

@@ -46,7 +46,7 @@ class API<E extends Endpoint> {
     };
 
     const idPath = ['object', 'undefined'].includes(typeof id) ? '' : `${id}/`;
-    const urlParams = serializeParams(params);
+    const urlParams = serializeParams(stripUndefineds(params));
     const url = `${this.host}/${endpoint}/${idPath}${urlParams}`;
 
     return fetch(url, {
@@ -124,4 +124,11 @@ export function serializeParams(params?: object) {
 
 export function createAPI<E extends Endpoint>(host: string): API<E> {
   return new API<E>(host);
+}
+
+function stripUndefineds(params?: object) {
+  if (!params) return {};
+  return Object.fromEntries(
+    Object.entries(params).filter(([_, v]) => v != undefined)
+  );
 }

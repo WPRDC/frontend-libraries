@@ -24,6 +24,7 @@ export const TopicView: React.FC<TopicViewProps> = ({
 }) => {
   const topicSlug = topicBrief ? topicBrief.slug : '';
   const { data: topic, isLoading, error } = useTopic(topicSlug);
+
   if (!!error) {
     console.error(error);
     return (

@@ -89,7 +89,9 @@
 }
 
 .subtitle {
-  @apply font-medium text-gray-600 py-1 mb-2;
+  @apply py-1 my-2;
+  @apply border-t-2 border-black;
+  @apply font-medium text-cyan-600 text-sm uppercase;
 }
 
 .blurbs {

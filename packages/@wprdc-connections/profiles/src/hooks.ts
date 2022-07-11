@@ -27,11 +27,12 @@ export function useDomain(slug?: string): UseQueryResult<Domain> {
 
 export function useIndicator(
   indicatorSlug?: string,
-  geogSlug?: string
+  geogSlug?: string,
+  acrossGeogs?: boolean
 ): UseQueryResult<IndicatorWithData, Error> {
   return useQuery<IndicatorWithData, Error>(
-    ['domain', indicatorSlug, geogSlug],
-    () => ProfilesAPI.requestIndicator(indicatorSlug, geogSlug),
+    ['domain', indicatorSlug, geogSlug, acrossGeogs],
+    () => ProfilesAPI.requestIndicator(indicatorSlug, geogSlug, acrossGeogs),
     { enabled: !!indicatorSlug && !!geogSlug, staleTime }
   );
 }

@@ -93,6 +93,7 @@
     "@wprdc-widgets/viz": "^0.0.2",
     "classnames": "^2.3.1",
     "marked": "^4.0.12",
+    "react-icons" : "^4.4.0",
     "sanitize-html": "^2.7.0"
   },
   "gitHead": "0d071a3dd4e93b865db197e5d1746a1572488954"

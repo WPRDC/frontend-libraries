@@ -87,7 +87,7 @@
     "@wprdc-types/shared": "^0.0.14",
     "@wprdc-types/viz": "^0.0.19",
     "mapbox-gl": "^2.8.2",
-    "react-map-gl": "^7.0.12"
+    "react-map-gl": "^7.0.17"
   },
   "gitHead": "0d071a3dd4e93b865db197e5d1746a1572488954"
 }

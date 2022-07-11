@@ -1,8 +1,15 @@
+.wrapper {
+  @apply border-2 border-black;
+  @apply p-4;
+  @apply bg-white;
+}
+
 .number {
   @apply text-gray-500 text-3xl;
 }
 
-.inPreview {
+.wrapper.inPreview {
+  @apply border-none;
   @apply flex w-full h-full items-center justify-center;
   @apply text-center;
   @apply p-2;
@@ -13,7 +20,8 @@
 }
 
 .name {
-  @apply text-sm font-semibold p-0 m-0 text-gray-500 leading-none;
+  @apply mb-2;
+  @apply text-center text-sm font-semibold text-gray-900 leading-none;
 }
 
 .valueGroup {
@@ -26,6 +34,10 @@
 
 .denom {
   @apply text-left text-zinc-800 text-sm;
+}
+
+.secondLine {
+  @apply text-center;
 }
 
 .percent {

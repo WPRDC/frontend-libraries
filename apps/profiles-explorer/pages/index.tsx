@@ -32,7 +32,7 @@ export default function Home() {
           <div className={styles.appsMenu}>
             <Link href="/explore">
               <div className={styles.bigButton}>
-                <div className={styles.buttonTitle}>Data Explorer</div>
+                <div className={styles.buttonTitle}>Explore all the Data</div>
                 <p className={styles.buttonText}>
                   Explore data and statistics about different areas in Southwest
                   PA.

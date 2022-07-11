@@ -29,7 +29,7 @@ export function BigValue(props: BigValueProps) {
     return (
       <ErrorMessage
         title="Deprecated Indicator"
-        message={`Indicator d should be removed`}
+        message={`Indicator should be removed`}
       />
     );
   }
@@ -55,19 +55,21 @@ export function BigValue(props: BigValueProps) {
         <span className={styles.percent}>
           {percent.toLocaleString('en-US', { style: 'percent' })}
         </span>
-        <span className={styles.value}>
-          {value.toLocaleString(
-            'en-US',
-            primaryVariable ? primaryVariable.numberFormatOptions : undefined
-          )}
-        </span>
-        <span className={styles.denom}>
-          {'/ '}
-          {denom.toLocaleString(
-            'en-US',
-            denomVariable ? denomVariable.numberFormatOptions : undefined
-          )}
-        </span>
+        <div className={styles.secondLine}>
+          <span className={styles.value}>
+            {value.toLocaleString(
+              'en-US',
+              primaryVariable ? primaryVariable.numberFormatOptions : undefined
+            )}
+          </span>
+          <span className={styles.denom}>
+            {'/ '}
+            {denom.toLocaleString(
+              'en-US',
+              denomVariable ? denomVariable.numberFormatOptions : undefined
+            )}
+          </span>
+        </div>
       </div>
     );
   } else {
@@ -84,7 +86,7 @@ export function BigValue(props: BigValueProps) {
 
   return (
     <div
-      className={classNames({
+      className={classNames(styles.wrapper, {
         [styles.inPreview]: inPreview,
       })}
     >

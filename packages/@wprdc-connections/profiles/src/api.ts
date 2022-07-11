@@ -64,17 +64,18 @@ function requestTopic(
 function requestIndicator(
   indicatorSlug?: string,
   geogSlug?: string,
+  across?: boolean,
   controller?: AbortController
 ): Promise<IndicatorWithData> {
   if (!indicatorSlug) throw Error('indicator slug not provided');
   if (!geogSlug) throw Error('geog slug not provided');
-
+  const acrossGeogs = !!across || undefined;
   return api.callAndProcessEndpoint<IndicatorWithData>(
     Endpoint.Indicator,
     Method.GET,
     {
       id: indicatorSlug,
-      params: { geog: geogSlug },
+      params: { geog: geogSlug, acrossGeogs },
       controller,
       validator: (indicator: IndicatorWithData) => {
         if (!!indicator.error.level) {

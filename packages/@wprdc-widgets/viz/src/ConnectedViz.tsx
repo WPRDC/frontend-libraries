@@ -18,6 +18,7 @@ import { LoadingMessage } from '@wprdc-components/loading-message';
 export const ConnectedViz: React.FC<ConnectedVizWidgetProps> = ({
   indicatorSlug,
   geog: propsGeog,
+  acrossGeogs,
   ...indicatorProps
 }) => {
   const { geog } = useProvider();
@@ -27,7 +28,8 @@ export const ConnectedViz: React.FC<ConnectedVizWidgetProps> = ({
   ]);
   const { data: indicator, isLoading, error } = useIndicator(
     indicatorSlug,
-    geogSlug
+    geogSlug,
+    acrossGeogs
   );
 
   if (!!error) {

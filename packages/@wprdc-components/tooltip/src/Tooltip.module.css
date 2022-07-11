@@ -5,6 +5,25 @@
   @apply focus-visible:border-2 focus-visible:border-focused-500;
 }
 
+.button {
+  @apply font-mono font-semibold uppercase;
+  @apply focus:outline-none focus-visible:outline-none border;
+  @apply hover:border-focused-600;
+  @apply transition duration-150 ease-in-out;
+  @apply focus:border-focused-400 focus:ring-1 focus:ring-offset-0 focus:ring-focused-400 active:ring-0;
+  @apply text-black;
+  @apply border-black;
+  @apply bg-background;
+
+  @apply text-xs font-medium;
+  @apply shadow-sm hover:shadow active:shadow-none;
+}
+
+.button div {
+  @apply py-0.5 px-1.5;
+  @apply bg-white;
+}
+
 .popover {
   @apply m-2 p-2.5 border shadow-lg bg-background;
 }

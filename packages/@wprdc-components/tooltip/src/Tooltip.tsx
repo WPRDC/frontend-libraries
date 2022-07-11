@@ -70,7 +70,14 @@ const TooltipPopover = React.forwardRef<HTMLDivElement, TooltipPopoverProps>(
 );
 
 export function Tooltip(props: TooltipProps) {
-  const { children, content, popoverProps, title, size } = props;
+  const {
+    children,
+    content,
+    popoverProps,
+    title,
+    size,
+    button = false,
+  } = props;
 
   const state = useOverlayTriggerState(props);
 
@@ -91,6 +98,7 @@ export function Tooltip(props: TooltipProps) {
     isOpen: state.isOpen,
   });
 
+  // if using `button` variant, use Button compoment, else use button html elem
   const { buttonProps } = useButton(
     {
       onPress: () => state.open(),
@@ -103,7 +111,7 @@ export function Tooltip(props: TooltipProps) {
         {...buttonProps}
         {...triggerProps}
         ref={triggerRef}
-        className={styles.wrapper}
+        className={button ? styles.button : styles.wrapper}
       >
         {children}
       </button>

@@ -28,12 +28,12 @@ export interface IndicatorOptions {
   isSingleton: Record<Dimension, boolean>;
   isMappable: boolean;
   note?: string;
-  mapOptions?: MapOptions;
   chartOptions?: ChartOptions;
+  mapOptions?: MapOptions;
 }
 
 /** Options from backend for styling maps */
-export interface MapOptions {
+export interface MapOptions extends Partial<MapProps> {
   sources: SourceProps[];
   layers: LayerProps[];
   mapOptions: Partial<MapProps>;
@@ -66,9 +66,15 @@ export interface Indicator extends IndicatorBase {
   options: IndicatorOptions;
 }
 
-export interface IndicatorWithData extends Indicator {
+export interface IndicatorWithDataVariable extends Variable {
+  total: boolean;
+}
+
+export interface IndicatorWithData extends Omit<Indicator, 'variable'> {
+  variables: IndicatorWithDataVariable[];
   data: DataRecord[][][];
   options: IndicatorOptions;
+  mapOptions: MapOptions;
   error: ErrorRecord;
   warnings: ErrorRecord;
   geogs: GeogBrief[];

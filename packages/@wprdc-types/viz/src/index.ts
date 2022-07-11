@@ -1,4 +1,4 @@
-import { IndicatorWithData } from '@wprdc-types/profiles';
+import { DataRecord, IndicatorWithData } from '@wprdc-types/profiles';
 import { GeogBrief } from '@wprdc-types/geo';
 
 export enum VizType {
@@ -11,11 +11,18 @@ export interface DataVizCommonProps {
   /** The indicator with data to be visualized. */
   indicator: IndicatorWithData;
   inPreview?: boolean;
+  selectedTimeParts?: string[];
+  selectedVariables?: string[];
+  onHover?: (datum: ChartRecord | {}) => void;
+  hoveredRecord?: ChartRecord;
 }
 
-export interface BigValueProps extends DataVizCommonProps {}
-
+/** Props shared across all Vega vizes */
 export interface VegaCommonProps extends DataVizCommonProps {}
+
+// Specific viz props
+
+export interface BigValueProps extends DataVizCommonProps {}
 
 export interface BarChartProps extends VegaCommonProps {}
 
@@ -36,4 +43,16 @@ export interface ConnectedVizWidgetProps
   extends Omit<VizWidgetProps, 'indicator'> {
   indicatorSlug: string;
   geog: GeogBrief;
+  acrossGeogs?: boolean;
+}
+
+export interface ChartRecord extends DataRecord {
+  geog: string;
+  variable: string;
+  time: string;
+
+  variableLabel: string;
+  variableAbbr?: string;
+  timeLabel: string;
+  geogLabel: string;
 }

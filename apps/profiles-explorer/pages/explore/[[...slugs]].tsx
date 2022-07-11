@@ -27,7 +27,7 @@ import {
   ConnectionCollection,
 } from '@wprdc-types/connections';
 import { BreadcrumbItem, Breadcrumbs } from '@wprdc-components/breadcrumbs';
-import { IndicatorBase, Topic, TopicBrief } from '@wprdc-types/profiles';
+import { TopicBrief } from '@wprdc-types/profiles';
 import { Map } from '@wprdc-components/map';
 import { useProvider } from '@wprdc-components/provider';
 import { TaxonomySection } from '../../components/TaxonomySection';
@@ -85,7 +85,6 @@ export default function Home() {
         const gSlug = router.query.geog as string;
         // find geogLevel for the geog
         const geogLevelSlug = gSlug.slice(0, gSlug.lastIndexOf('-'));
-        console.log({ geogLevelSlug });
         const glevel = geogLevels.find(g => g.slug === geogLevelSlug);
 
         // ensure `slugs` is an array

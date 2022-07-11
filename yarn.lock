@@ -5018,6 +5018,25 @@
     "@webassemblyjs/wast-parser" "1.9.0"
     "@xtuc/long" "4.2.2"
 
+"@wprdc-components/button@^0.0.13":
+  version "0.0.13"
+  resolved "https://registry.yarnpkg.com/@wprdc-components/button/-/button-0.0.13.tgz#7cbd210c939aa944052a0c5957ca9ba389ce9490"
+  integrity sha512-5ZtiArXhzfZHPM/T8i8d/cI7I2YJrk2g4eemDO9uSa+8PnNHF0M9yTHaOps9OqLRZ6+voWMkiT3W3r8N5t4CyQ==
+  dependencies:
+    "@react-aria/button" "^3.3.4"
+    "@wprdc-types/button" "^0.0.11"
+    classnames "^2.3.1"
+
+"@wprdc-components/checkbox-group@^0.0.13":
+  version "0.0.13"
+  resolved "https://registry.yarnpkg.com/@wprdc-components/checkbox-group/-/checkbox-group-0.0.13.tgz#fdd2e07a9be9690ab17c7d37d0aa3921901f2e4c"
+  integrity sha512-2iBSC5qCAjmE01ha8lt0B8mmiGqe6zr/3T4TA90ZIK09RAQVCTW4huSjukeZxSCg6gHVJA4KEfys3Uxtzug8vw==
+  dependencies:
+    "@react-aria/checkbox" "^3.2.3"
+    "@react-stately/checkbox" "^3.0.3"
+    "@react-types/checkbox" "^3.2.3"
+    "@wprdc-types/checkbox-group" "^0.0.11"
+
 "@wprdc-components/checkbox-group@^0.0.5":
   version "0.0.5"
   resolved "https://registry.yarnpkg.com/@wprdc-components/checkbox-group/-/checkbox-group-0.0.5.tgz#5ef2f03b372bbb241f89b8e0169937328ea87e18"
@@ -5028,6 +5047,29 @@
     "@react-types/checkbox" "^3.2.3"
     "@wprdc-types/checkbox-group" "^0.0.5"
 
+"@wprdc-components/data-chip@^0.0.13":
+  version "0.0.13"
+  resolved "https://registry.yarnpkg.com/@wprdc-components/data-chip/-/data-chip-0.0.13.tgz#7c63ac229b9136d4f6cc2fec35a1711d904f62a7"
+  integrity sha512-r9WObBMoXJrNc6MBfS2LUFcuEExZ94uktwEGYTcl7Qu6iSO+mwqvfbmKJfAUaA0Nb3+6fOn84uaIoqAsBB8snQ==
+  dependencies:
+    "@wprdc-types/data-chip" "^0.0.11"
+    classnames "^2.3.1"
+    react-icons "^4.3.1"
+
+"@wprdc-components/error-message@^0.0.13":
+  version "0.0.13"
+  resolved "https://registry.yarnpkg.com/@wprdc-components/error-message/-/error-message-0.0.13.tgz#5c47d0a3cdcf4ba25e2ec9dd2752beb3186150fa"
+  integrity sha512-plmku3A1CJ6qUEvVu6Xonz7Wr4Q3shv1DiouD5TOVmN3nvHWfs2SI5MJxrqGcglafpK6zGvAcxoHFN1N04MeVg==
+  dependencies:
+    "@wprdc-types/error-message" "^0.0.11"
+
+"@wprdc-components/heading@^0.0.13":
+  version "0.0.13"
+  resolved "https://registry.yarnpkg.com/@wprdc-components/heading/-/heading-0.0.13.tgz#7ce27d7fd0706bec8881869577abf56882cc5ff4"
+  integrity sha512-Fisr3rhRbmqYxBBUKOjcgsYdFgi/DqpwNk03TTt7nDYW+Gvp5ecneUwirg6RQrHi/xoKPX8S4ofljMLIYxC9mw==
+  dependencies:
+    "@wprdc-types/heading" "^0.0.11"
+
 "@wprdc-components/link@^0.0.12":
   version "0.0.12"
   resolved "https://registry.yarnpkg.com/@wprdc-components/link/-/link-0.0.12.tgz#359197ab345cbaf14d93c567434e1d312a29e0a1"
@@ -5037,6 +5079,35 @@
     "@react-aria/link" "^3.2.0"
     "@wprdc-types/link" "^0.0.10"
     react-icons "^4.3.1"
+
+"@wprdc-components/list-box@^0.0.18":
+  version "0.0.18"
+  resolved "https://registry.yarnpkg.com/@wprdc-components/list-box/-/list-box-0.0.18.tgz#4c7e8ae19a0ad91346fa016511b35e8533efa629"
+  integrity sha512-aJXRAS/608RmTYTAzlHzZtA5gc8EuHVNKXlb+9sBUxBEBvx8UeogQ20AodV1kfclUznpsVlomyGjfDzHToenJw==
+  dependencies:
+    "@react-aria/focus" "^3.5.5"
+    "@react-aria/listbox" "^3.4.5"
+    "@react-aria/select" "^3.6.5"
+    "@react-aria/separator" "^3.1.7"
+    "@react-aria/utils" "^3.12.0"
+    "@react-stately/collections" "^3.3.8"
+    "@react-stately/list" "^3.4.5"
+    "@react-stately/select" "^3.1.7"
+    "@react-stately/tree" "^3.2.4"
+    "@wprdc-components/util" "^0.0.11"
+    "@wprdc-types/list-box" "^0.0.15"
+    "@wprdc-types/select" "^0.0.17"
+    "@wprdc-types/shared" "^0.0.13"
+    classnames "^2.3.1"
+    react-icons "^4.3.1"
+
+"@wprdc-components/loading-message@^0.0.13":
+  version "0.0.13"
+  resolved "https://registry.yarnpkg.com/@wprdc-components/loading-message/-/loading-message-0.0.13.tgz#069e823063b0f2564b4127a75e05565acff498ad"
+  integrity sha512-PSjZjuAQ9EDnipbxpdAQw4aFyPU4vrOcZvc9ACB9SThnfgehanOWo/RA5+ktOu5/9SW9Wcp0LlNjjMk/UROGDQ==
+  dependencies:
+    "@wprdc-components/spinner" "^0.0.13"
+    "@wprdc-types/loading-message" "^0.0.12"
 
 "@wprdc-components/map@^0.0.4":
   version "0.0.4"
@@ -5063,6 +5134,30 @@
   dependencies:
     "@wprdc-types/menu-item" "^0.0.10"
 
+"@wprdc-components/menu@^0.0.14":
+  version "0.0.14"
+  resolved "https://registry.yarnpkg.com/@wprdc-components/menu/-/menu-0.0.14.tgz#d97d0f14ceb693c63b5e1796d7a7c80bae5103da"
+  integrity sha512-2onyNtXsCI3wM9HZDrC0DVvKZ0SRVWy77+1rLuMylLu6IBSceCrfyQrgitlH85rk7DvOEkn0wkOBmOTJJr4T7w==
+  dependencies:
+    "@react-aria/interactions" "^3.7.0"
+    "@react-aria/menu" "^3.3.0"
+    "@react-aria/separator" "^3.1.3"
+    "@react-aria/utils" "^3.10.0"
+    "@react-stately/tree" "^3.2.0"
+    "@wprdc-components/util" "^0.0.11"
+    "@wprdc-types/menu" "^0.0.11"
+    "@wprdc-types/shared" "^0.0.13"
+
+"@wprdc-components/provider@^0.0.15":
+  version "0.0.15"
+  resolved "https://registry.yarnpkg.com/@wprdc-components/provider/-/provider-0.0.15.tgz#18e143823ac76c5ac25031c70b4d10c31399176a"
+  integrity sha512-tVMD2vospYj4vtnXBy8JfrCoa+Xz8TLE6yMtNkGzKbzDUmE5wKNEilAgP5I8cpx5RA604MY4WE6J2SJv3tstJg==
+  dependencies:
+    "@react-aria/overlays" "^3.7.3"
+    "@react-aria/ssr" "^3.1.0"
+    "@wprdc-types/geo" "^0.0.15"
+    "@wprdc-types/provider" "^0.0.15"
+
 "@wprdc-components/provider@^0.0.5":
   version "0.0.5"
   resolved "https://registry.yarnpkg.com/@wprdc-components/provider/-/provider-0.0.5.tgz#7e11a59e68b7eda847e15cbfe56853370f7d8221"
@@ -5072,6 +5167,76 @@
     "@react-aria/ssr" "^3.1.0"
     "@wprdc-types/geo" "^0.0.5"
     "@wprdc-types/provider" "^0.0.5"
+
+"@wprdc-components/radio-group@^0.0.13":
+  version "0.0.13"
+  resolved "https://registry.yarnpkg.com/@wprdc-components/radio-group/-/radio-group-0.0.13.tgz#dd32fad981742283e96e68a515b5360af10b955f"
+  integrity sha512-0qBidBu93+Lp5b0LaXCHHfP5kFUhORo4xF4G2edGrIgetdqGFB523W2MhhDR8498wY4TkYRRtMI6Xff5hkhMcw==
+  dependencies:
+    "@react-aria/radio" "^3.1.6"
+    "@react-stately/radio" "^3.3.2"
+    "@wprdc-types/radio-group" "^0.0.11"
+
+"@wprdc-components/source-list@^0.0.19":
+  version "0.0.19"
+  resolved "https://registry.yarnpkg.com/@wprdc-components/source-list/-/source-list-0.0.19.tgz#5da38300950aabf9b5fe9fecd5d21e824f77c0ab"
+  integrity sha512-wHGSZVgksc+6z2uC4NFuYb/EYskrQ9gby1qumgzwPbQeGrpmMFeouLOp2ZXAbnDp9FlhJm6QL864AlKw3X1ltg==
+  dependencies:
+    "@wprdc-components/data-chip" "^0.0.13"
+    "@wprdc-components/link" "^0.0.12"
+    "@wprdc-components/tooltip" "^0.0.14"
+    "@wprdc-types/viz" "^0.0.18"
+
+"@wprdc-components/spinner@^0.0.13":
+  version "0.0.13"
+  resolved "https://registry.yarnpkg.com/@wprdc-components/spinner/-/spinner-0.0.13.tgz#d59598224ed6abe44f436aaa608f8081e6423ccb"
+  integrity sha512-Y+WQDkoIkbZhZV5iAG4wxV2KOKQP0iaM7Rl1UBIDT+dhmslXoe4187b8lr3jgwm1EBWaqADijwlL1wwKsosAZA==
+  dependencies:
+    "@wprdc-types/shared" "^0.0.13"
+    "@wprdc-types/spinner" "^0.0.13"
+    react-spinners "^0.11.0"
+    svg-loaders-react "^2.2.1"
+
+"@wprdc-components/tooltip@^0.0.14":
+  version "0.0.14"
+  resolved "https://registry.yarnpkg.com/@wprdc-components/tooltip/-/tooltip-0.0.14.tgz#ac1f190403a44a288002e333b9448b4ee336b93f"
+  integrity sha512-lWXPnIjb04ZfrZfvFMOEjHvQLrP/L4SsfF9x6KgtCbjkfG+IhwvE14WNkVmHQFHOEwotrPV94fB3cYdFC/Bw0g==
+  dependencies:
+    "@react-aria/button" "^3.3.4"
+    "@react-aria/dialog" "^3.1.4"
+    "@react-aria/focus" "^3.5.0"
+    "@react-aria/overlays" "^3.7.3"
+    "@react-stately/overlays" "^3.1.3"
+    "@wprdc-types/tooltip" "^0.0.11"
+
+"@wprdc-components/util@^0.0.11":
+  version "0.0.11"
+  resolved "https://registry.yarnpkg.com/@wprdc-components/util/-/util-0.0.11.tgz#118b58565e9d16a75f2e7cb9f87dc155342a5dda"
+  integrity sha512-EFvzylKMwbUsB2MtKkjT45Qx3ub9L/XesRLmoxlEgFR58IQAGoygF/HyN4TPMPq6wK7cXFtuTCX52aNSklJ7YQ==
+  dependencies:
+    "@react-stately/collections" "^3.3.4"
+
+"@wprdc-connections/api@^0.0.16":
+  version "0.0.16"
+  resolved "https://registry.yarnpkg.com/@wprdc-connections/api/-/api-0.0.16.tgz#95d2fbc737ea714b2260810e5d07d0e1bcb21520"
+  integrity sha512-jFBS5G9D52bCCV3G64mstuw0uWySvyh+VAD1FB5RZMlb58VcgIjJtxtg60kRz4EAy6DqcOz+P+A9HsApmXyv7g==
+  dependencies:
+    "@wprdc-types/api" "^0.0.14"
+
+"@wprdc-connections/util@^0.0.26":
+  version "0.0.26"
+  resolved "https://registry.yarnpkg.com/@wprdc-connections/util/-/util-0.0.26.tgz#16757637abdbc28b13a90238d3b7797a1f1d9db5"
+  integrity sha512-FinbF+sfOhUHk3Q0Iy8GsoS7rZeVeVJWG01n6HjwR4rjoboAxiI8PKn0lQ2DYN/oJLXz0z7NdpORfTjhhy9NdA==
+  dependencies:
+    "@types/mapbox-gl" "^2.6.4"
+    "@wprdc-components/util" "^0.0.11"
+    "@wprdc-types/connections" "^0.0.17"
+    "@wprdc-types/geo" "^0.0.15"
+    "@wprdc-types/map" "^0.0.14"
+    "@wprdc-types/neighborhood-assets" "^0.0.13"
+    "@wprdc-types/shared" "^0.0.13"
+    "@wprdc-types/viz" "^0.0.18"
+    mapbox-gl "^2.8.2"
 
 "@wprdc-connections/viz@^0.0.33":
   version "0.0.33"
@@ -5094,10 +5259,42 @@
     "@wprdc-widgets/map" "^0.0.22"
     react-icons "^4.3.1"
 
+"@wprdc-types/api@^0.0.14":
+  version "0.0.14"
+  resolved "https://registry.yarnpkg.com/@wprdc-types/api/-/api-0.0.14.tgz#d1856784281502c00f1128d9016045a2a8ba2946"
+  integrity sha512-Y7oKPSdKilahTR6fpNYFCtM2JzyD03S68WpJfxiRsVcI4MjXOUwoGoi4Uxjwf11rZHgLwgvDyz+2gb6psOImkQ==
+
+"@wprdc-types/button@^0.0.11":
+  version "0.0.11"
+  resolved "https://registry.yarnpkg.com/@wprdc-types/button/-/button-0.0.11.tgz#6319e2f921042fb8c91c007578855ca4ba2ee7d0"
+  integrity sha512-dsriwydv+U/kl5i1gKzUx1rHT7WHhH7SQyMWHoMkfh9vhOtndgvqlRqj/v+JIbDGkwutQNNmw8LrQLV9uffveA==
+  dependencies:
+    "@react-types/button" "^3.4.1"
+    "@types/react" "^17.0.38"
+
+"@wprdc-types/checkbox-group@^0.0.11":
+  version "0.0.11"
+  resolved "https://registry.yarnpkg.com/@wprdc-types/checkbox-group/-/checkbox-group-0.0.11.tgz#5938514432a87bc209ec4a2c99581dd1f98c16d2"
+  integrity sha512-7rCB8fycJJfilZ0NRGtJ0R35GH3x89pVC7H1y3HxXWAn9ZB3m5KJ2RGdAQt5wRRzRV8sYyj9XaxQ6AKQFDQHwA==
+
 "@wprdc-types/checkbox-group@^0.0.5":
   version "0.0.5"
   resolved "https://registry.yarnpkg.com/@wprdc-types/checkbox-group/-/checkbox-group-0.0.5.tgz#95079136b7d84f7ce88d444c1d52c72b805b2ed7"
   integrity sha512-iehSXJSJ88zuxZVhzqylicqLC/mXF9RVqhg/7ddZ6HC2Ksj3/ra7G3VLuNXrSmP9FyuS/uqFgIi17uhw4O4uEw==
+
+"@wprdc-types/connections@^0.0.17":
+  version "0.0.17"
+  resolved "https://registry.yarnpkg.com/@wprdc-types/connections/-/connections-0.0.17.tgz#eb5f0b752274d3da3fc9ef76193fafa7009826cf"
+  integrity sha512-qwwWmdzgJRn7skM2/77x1EkuMXEFBsBfqv6zn3/SmtJW0pjeRIlKm3sDjwb7AMTefap4fSryRDndCSecCdJvcQ==
+  dependencies:
+    "@types/mapbox-gl" "^2.6.4"
+    "@types/react" "^17.0.38"
+    "@wprdc-types/geo" "^0.0.15"
+    "@wprdc-types/map" "^0.0.14"
+    "@wprdc-types/neighborhood-assets" "^0.0.13"
+    "@wprdc-types/shared" "^0.0.13"
+    "@wprdc-types/viz" "^0.0.18"
+    react-map-gl "^7.0.12"
 
 "@wprdc-types/connections@^0.0.2":
   version "0.0.2"
@@ -5112,6 +5309,15 @@
     "@wprdc-types/shared" "^0.0.5"
     "@wprdc-types/viz" "^0.0.5"
 
+"@wprdc-types/data-chip@^0.0.11":
+  version "0.0.11"
+  resolved "https://registry.yarnpkg.com/@wprdc-types/data-chip/-/data-chip-0.0.11.tgz#ec4ba06820adfce399a41ae8adbd3c3f79747d2f"
+  integrity sha512-NikObazsBUnd9lv8P086y4NN3sXkWX0eL9PL45wLCAkl/IBwn6jb0g7kdMdVx3ruk4gwaA4LWMC1bInLRBo2Xg==
+  dependencies:
+    "@react-stately/data" "^3.4.3"
+    "@react-types/combobox" "^3.2.0"
+    "@types/react" "^17.0.38"
+
 "@wprdc-types/data-viz@^0.0.18":
   version "0.0.18"
   resolved "https://registry.yarnpkg.com/@wprdc-types/data-viz/-/data-viz-0.0.18.tgz#89746ff4c20ee2b0d31127c35476323e48edcac8"
@@ -5121,6 +5327,23 @@
     "@wprdc-types/geo" "^0.0.15"
     "@wprdc-types/viz" "^0.0.18"
 
+"@wprdc-types/error-message@^0.0.11":
+  version "0.0.11"
+  resolved "https://registry.yarnpkg.com/@wprdc-types/error-message/-/error-message-0.0.11.tgz#6e8bf5d1c717027925fac17dc7bfd26a9a8d1662"
+  integrity sha512-XEWGQ93/wVRJVwRJElCkEpG1GCf7FzfUbcyTPfxR506BakhYaqMXbUcuGxdHArjk9ywTMx1iArwFiwCIPsrClg==
+  dependencies:
+    "@types/react" "^17.0.38"
+
+"@wprdc-types/geo@^0.0.15":
+  version "0.0.15"
+  resolved "https://registry.yarnpkg.com/@wprdc-types/geo/-/geo-0.0.15.tgz#a44528079e7ee410f79a4e36712df295a4ab77d7"
+  integrity sha512-aWBhWjgjJqQEuLAWu3EUIQ6M+42ij1t3Cei9c9CXZdzAOLoVTOzkjG0RQzGv/NOOZjo9QKgOakVDynuASP4g0g==
+  dependencies:
+    "@types/mapbox-gl" "^2.6.4"
+    "@types/react" "^17.0.38"
+    "@wprdc-types/shared" "^0.0.13"
+    geojson "^0.5.0"
+
 "@wprdc-types/geo@^0.0.5":
   version "0.0.5"
   resolved "https://registry.yarnpkg.com/@wprdc-types/geo/-/geo-0.0.5.tgz#96f820ad51b54d73cb22b61ae7243f3082165863"
@@ -5128,15 +5351,10 @@
   dependencies:
     "@wprdc-types/shared" "^0.0.5"
 
-"@wprdc-types/indicator-view@^0.0.17":
-  version "0.0.17"
-  resolved "https://registry.yarnpkg.com/@wprdc-types/indicator-view/-/indicator-view-0.0.17.tgz#e0cef84a8a063fcf69c66e39201a64d87f1ed0fa"
-  integrity sha512-Q+ywOPWA9swsKl6sR1LM7jgb0L0nGjreVWUS52zneXXu6xAK9N7qdmycd1+wGEKup3B2VrXZjRVMY7ruNxjHdg==
-  dependencies:
-    "@types/react" "^17.0.38"
-    "@wprdc-types/geo" "^0.0.15"
-    "@wprdc-types/profiles" "^0.0.19"
-    "@wprdc-types/viz" "^0.0.18"
+"@wprdc-types/heading@^0.0.11":
+  version "0.0.11"
+  resolved "https://registry.yarnpkg.com/@wprdc-types/heading/-/heading-0.0.11.tgz#4f0132baddaa358f9e263762540521426860266c"
+  integrity sha512-DlsUnqOCobBKA1c05kBPmMAoRuewmxLwoqo3pozM3prSJrkNjWI1Beb6LIf2a1CuPfs8uMXM8EDdET5z9ezkVg==
 
 "@wprdc-types/link@^0.0.10":
   version "0.0.10"
@@ -5146,6 +5364,38 @@
     "@react-aria/link" "^3.2.0"
     "@types/react" "^17.0.38"
     "@types/react-dom" "^17.0.11"
+
+"@wprdc-types/list-box@^0.0.15":
+  version "0.0.15"
+  resolved "https://registry.yarnpkg.com/@wprdc-types/list-box/-/list-box-0.0.15.tgz#e2921709c454584851253f5b459c68e8ff8f10fa"
+  integrity sha512-Huo+Ou5oVfcrR676BKlUC+CFs/TAU0b3JHsVer2HmbgbJ2A/zX+KYPC0/SSj96zyZaWJ0gAZlAPgVak800rpcw==
+  dependencies:
+    "@react-aria/listbox" "^3.4.0"
+    "@react-stately/list" "^3.4.1"
+    "@react-types/select" "^3.5.4"
+    "@react-types/shared" "^3.10.1"
+    "@types/react" "^17.0.38"
+    "@types/react-dom" "^17.0.11"
+    "@wprdc-types/shared" "^0.0.13"
+
+"@wprdc-types/loading-message@^0.0.12":
+  version "0.0.12"
+  resolved "https://registry.yarnpkg.com/@wprdc-types/loading-message/-/loading-message-0.0.12.tgz#a1bcda1a2b3a56e9968f569ff0dad48afe9af444"
+  integrity sha512-ZMBiw5lnsQ292BMIQ0Y2AkMvJ8POkrT3LOmb84XnI6dAXXx3EOg6WzHU0VAPVgW+bdreCbW02TWNS6hHG/+ang==
+
+"@wprdc-types/map@^0.0.14":
+  version "0.0.14"
+  resolved "https://registry.yarnpkg.com/@wprdc-types/map/-/map-0.0.14.tgz#0375a21187ddf0a4725926a8ce8f676e443bf787"
+  integrity sha512-3YJ56Trou7CXa210Wrd9tQiwI8vaMTrPjw0p7G4yuT1gH2gFD1VVfa1kPBhdmU2QLXEAFIDU0VQRVa1bXuQ9tw==
+  dependencies:
+    "@react-types/shared" "^3.10.1"
+    "@types/mapbox-gl" "^2.6.4"
+    "@types/react" "^17.0.38"
+    "@wprdc-types/geo" "^0.0.15"
+    "@wprdc-types/neighborhood-assets" "^0.0.13"
+    "@wprdc-types/shared" "^0.0.13"
+    geojson "^0.5.0"
+    react-map-gl "^7.0.12"
 
 "@wprdc-types/map@^0.0.4":
   version "0.0.4"
@@ -5165,6 +5415,26 @@
   resolved "https://registry.yarnpkg.com/@wprdc-types/menu-item/-/menu-item-0.0.10.tgz#79eba642b3167dc43fee8356d1342641a86b4027"
   integrity sha512-Yj1DgVE8YPmfh5M5afZNg0lpHKdQ1UbCm70MaaDXbuZcR3ApXzhuehBvJhFIm8BowQyuEkcA8iwP07zJZaTDmQ==
 
+"@wprdc-types/menu@^0.0.11":
+  version "0.0.11"
+  resolved "https://registry.yarnpkg.com/@wprdc-types/menu/-/menu-0.0.11.tgz#1f35cd4a002a741414cc0896bd044cc76f307c7e"
+  integrity sha512-u0+Al5BoOQs0cGvLWytaSt+Pdwt9NLsHxCO543dEMnjyDqISdc9R2Vh2EG6DEr56BkBmFzhW78qyALbZUH13xw==
+  dependencies:
+    "@react-aria/menu" "^3.3.0"
+    "@react-stately/tree" "^3.2.0"
+    "@react-types/menu" "^3.4.1"
+    "@react-types/shared" "^3.10.1"
+    "@types/react" "^17.0.38"
+
+"@wprdc-types/neighborhood-assets@^0.0.13":
+  version "0.0.13"
+  resolved "https://registry.yarnpkg.com/@wprdc-types/neighborhood-assets/-/neighborhood-assets-0.0.13.tgz#ea6042bb40395daa16da58965c58e6f8b6580b28"
+  integrity sha512-8v09xyoDA7ZlP6dvLqiB6EV8IHoPT31WA2ywBpT0UKbop3/rF2oUWWMlRTnXP4IcgUvyllNMP55yiTg5DVog2g==
+  dependencies:
+    "@types/react" "^17.0.38"
+    "@wprdc-types/shared" "^0.0.13"
+    geojson "^0.5.0"
+
 "@wprdc-types/neighborhood-assets@^0.0.5":
   version "0.0.5"
   resolved "https://registry.yarnpkg.com/@wprdc-types/neighborhood-assets/-/neighborhood-assets-0.0.5.tgz#68f644cc2982dfd202223cab99e3d0b4d86497c0"
@@ -5172,6 +5442,27 @@
   dependencies:
     "@wprdc-types/shared" "^0.0.5"
     geojson "^0.5.0"
+
+"@wprdc-types/profiles@^0.0.19":
+  version "0.0.19"
+  resolved "https://registry.yarnpkg.com/@wprdc-types/profiles/-/profiles-0.0.19.tgz#b27f0ccce6046936d017f4112ba51a8271bee3ff"
+  integrity sha512-vyzmxyZseVJa0pUof37dPsvpYjXIrNna6+1mxQ3s/lFaSQ+YjeFk0jR1VenGEemnKu/XSG9XTEyzMWWBAUO3xQ==
+  dependencies:
+    "@types/react" "^17.0.38"
+    "@wprdc-types/geo" "^0.0.15"
+    "@wprdc-types/shared" "^0.0.13"
+    "@wprdc-types/viz" "^0.0.18"
+    react-map-gl "^7.0.12"
+    react-table "^7.7.0"
+
+"@wprdc-types/provider@^0.0.15":
+  version "0.0.15"
+  resolved "https://registry.yarnpkg.com/@wprdc-types/provider/-/provider-0.0.15.tgz#7779db9a7b266d234fbfe637ca9e9e34f57281e0"
+  integrity sha512-QGWlIeQPp2y5xt63TgKEHCMNVjGYG+98n9qeVnaRCM4bQHO1S7h2BihdvotFkODQn1Dj4EalT6wqPqzAdxjfmg==
+  dependencies:
+    "@types/react" "^17.0.38"
+    "@wprdc-types/geo" "^0.0.15"
+    "@wprdc-types/shared" "^0.0.13"
 
 "@wprdc-types/provider@^0.0.5":
   version "0.0.5"
@@ -5181,6 +5472,32 @@
     "@wprdc-types/geo" "^0.0.5"
     "@wprdc-types/shared" "^0.0.5"
 
+"@wprdc-types/radio-group@^0.0.11":
+  version "0.0.11"
+  resolved "https://registry.yarnpkg.com/@wprdc-types/radio-group/-/radio-group-0.0.11.tgz#59d75754b0b94eb4c10f3996ec4e8b8a314e747b"
+  integrity sha512-RN0wPeNSVzaOG+V7dGtRItithbgNa1QSiLtwA7TWFq+XizE/VifaEQe8ynhVQLwRTPcSu9AV69KzNqBhRSjI0g==
+  dependencies:
+    "@react-types/radio" "^3.1.2"
+    "@types/react" "^17.0.38"
+
+"@wprdc-types/select@^0.0.17":
+  version "0.0.17"
+  resolved "https://registry.yarnpkg.com/@wprdc-types/select/-/select-0.0.17.tgz#68b447468963766d10875d79fd3733850422987a"
+  integrity sha512-8C6RuwaZSJHaArinuRFvIWhYacy44GT0rw+rQaQsqO1uG8yjJyELbbv4xLnAAVS7oh203nEkhJ36lTlxD1g3VQ==
+  dependencies:
+    "@react-types/select" "^3.5.0"
+    "@types/react" "^17.0.38"
+    "@wprdc-types/list-box" "^0.0.15"
+
+"@wprdc-types/shared@^0.0.13":
+  version "0.0.13"
+  resolved "https://registry.yarnpkg.com/@wprdc-types/shared/-/shared-0.0.13.tgz#cc1e714d2e9425b164f9ebfe4adeaff1ce664c44"
+  integrity sha512-GmSkl+08UJ3bF00zOrw5a5y4jIVzvEaKfcWqsZwuWDt3RGUOOeI24A/Z0cpb3OwSZxDCjmI+55LraCXh3dbL6w==
+  dependencies:
+    "@react-stately/data" "^3.4.3"
+    "@react-types/shared" "^3.10.1"
+    "@types/react" "^17.0.38"
+
 "@wprdc-types/shared@^0.0.5":
   version "0.0.5"
   resolved "https://registry.yarnpkg.com/@wprdc-types/shared/-/shared-0.0.5.tgz#81b166c0e805bbfed02c4597f98004e2e9336979"
@@ -5188,6 +5505,35 @@
   dependencies:
     "@react-stately/data" "^3.4.3"
     "@react-types/shared" "^3.10.0"
+
+"@wprdc-types/spinner@^0.0.13":
+  version "0.0.13"
+  resolved "https://registry.yarnpkg.com/@wprdc-types/spinner/-/spinner-0.0.13.tgz#f390782600edfcb3cc66b70b3a15dc0f02dfeee6"
+  integrity sha512-FKxHuiMwD/t9nGVjLfVo9wKUvM37HpTQN2/Bi0qoQMAK3KssZDhya8Smc3SNsN5mzQ8YR0EEknScdmoU7W2MEw==
+  dependencies:
+    "@types/react" "^17.0.38"
+    "@wprdc-types/shared" "^0.0.13"
+    react-spinners "^0.11.0"
+
+"@wprdc-types/tooltip@^0.0.11":
+  version "0.0.11"
+  resolved "https://registry.yarnpkg.com/@wprdc-types/tooltip/-/tooltip-0.0.11.tgz#a3243b6746e59e819834f1be6f510f1cc252a83e"
+  integrity sha512-gzc1ion1hiuaI61vfVsKTJKvr2JVLRZYdlz4cPdqJSuqrnIwmy7Q+4CGe1mQ9WRdRzmZHGh+15jcuCSIRHz3rg==
+  dependencies:
+    "@react-types/overlays" "^3.5.1"
+    "@types/react" "^17.0.38"
+
+"@wprdc-types/viz@^0.0.18":
+  version "0.0.18"
+  resolved "https://registry.yarnpkg.com/@wprdc-types/viz/-/viz-0.0.18.tgz#7c2a7f13b569d2554d61b6e6884d097eee8edee7"
+  integrity sha512-5HmT7qA9kA1EPsjWb1/A9jMHBoPjpaKD1kiZuRUNS/lyxQs7HhsocKBbTXHSXJtwp2IO+6KCTfyP7VoLZodEpQ==
+  dependencies:
+    "@types/react" "^17.0.38"
+    "@types/react-table" "^7.7.12"
+    "@wprdc-types/geo" "^0.0.15"
+    "@wprdc-types/map" "^0.0.14"
+    "@wprdc-types/shared" "^0.0.13"
+    react-map-gl "^7.0.12"
 
 "@wprdc-types/viz@^0.0.5":
   version "0.0.5"
@@ -5236,6 +5582,15 @@
     "@wprdc-types/viz" "^0.0.18"
     "@wprdc-widgets/map" "^0.0.22"
 
+"@wprdc-viz/table@^0.0.18":
+  version "0.0.18"
+  resolved "https://registry.yarnpkg.com/@wprdc-viz/table/-/table-0.0.18.tgz#63e9891da533537f15c287bf99508db8c80a547c"
+  integrity sha512-Ycimi6dM+Ty+So1KFANeoeJS+Z/bAtBq25UX8pWYhtTzOBr/6Gyr9ZU+DSVap0G6smNWK6SDn5jEnTsKqLuiJg==
+  dependencies:
+    "@wprdc-types/viz" "^0.0.18"
+    classnames "^2.3.1"
+    react-table "^7.7.0"
+
 "@wprdc-viz/value@^0.0.19":
   version "0.0.19"
   resolved "https://registry.yarnpkg.com/@wprdc-viz/value/-/value-0.0.19.tgz#6e626e4edaf713508331a6d0e79aa8b0269d0375"
@@ -5272,28 +5627,6 @@
     react-icons "^4.3.1"
     react-measure "^2.5.2"
 
-"@wprdc-widgets/indicator-view@^0.0.39":
-  version "0.0.39"
-  resolved "https://registry.yarnpkg.com/@wprdc-widgets/indicator-view/-/indicator-view-0.0.39.tgz#7981a43a21c4bae01fdc5bf7c33d4df83c29837d"
-  integrity sha512-h7M6y5EvhH1XW8wjDZ+zHJM0AiOhVCBGKU2z1/lHsoZwDXwuHUywd8dZjZaZZWNk0zeELb0I++NmTsTcYu3ytw==
-  dependencies:
-    "@wprdc-components/button" "^0.0.13"
-    "@wprdc-components/divider" "^0.0.13"
-    "@wprdc-components/error-message" "^0.0.13"
-    "@wprdc-components/loading-message" "^0.0.13"
-    "@wprdc-components/provider" "^0.0.15"
-    "@wprdc-connections/profiles" "^0.0.28"
-    "@wprdc-types/connections" "^0.0.17"
-    "@wprdc-types/data-viz" "^0.0.18"
-    "@wprdc-types/indicator-view" "^0.0.17"
-    "@wprdc-types/shared" "^0.0.13"
-    "@wprdc-types/viz" "^0.0.18"
-    "@wprdc-widgets/data-viz" "^0.0.33"
-    "@wprdc-widgets/geography-picker" "^0.0.32"
-    classnames "^2.3.1"
-    marked "^4.0.12"
-    sanitize-html "^2.7.0"
-
 "@wprdc-widgets/map@^0.0.22":
   version "0.0.22"
   resolved "https://registry.yarnpkg.com/@wprdc-widgets/map/-/map-0.0.22.tgz#48bfcb4a95c00d79da8da3fce4b4a8c40ad30674"
@@ -5310,22 +5643,6 @@
     "@wprdc-types/viz" "^0.0.18"
     mapbox-gl "^2.8.2"
     react-map-gl "^7.0.12"
-
-"@wprdc-widgets/taxonomy-section@^0.0.40":
-  version "0.0.40"
-  resolved "https://registry.yarnpkg.com/@wprdc-widgets/taxonomy-section/-/taxonomy-section-0.0.40.tgz#b21ec3d0b0e86461a3652f6bb61e7dbddc5acde8"
-  integrity sha512-8r1oK6kQKFefQej/RGL0UzXj9mn4Bv+WqHzPMDJMMAsUcWv/GzSE9hATBJvBbKx6LxCsZ/2mgGy0ru74xtQ5+w==
-  dependencies:
-    "@wprdc-components/breadcrumbs" "^0.0.14"
-    "@wprdc-components/tabs" "^0.0.22"
-    "@wprdc-components/util" "^0.0.11"
-    "@wprdc-types/breadcrumbs" "^0.0.11"
-    "@wprdc-types/data-viz" "^0.0.18"
-    "@wprdc-types/profiles" "^0.0.19"
-    "@wprdc-types/taxonomy-section" "^0.0.15"
-    "@wprdc-types/viz" "^0.0.18"
-    "@wprdc-widgets/data-viz" "^0.0.33"
-    "@wprdc-widgets/indicator-view" "^0.0.39"
 
 "@xtuc/ieee754@^1.2.0":
   version "1.2.0"
@@ -14178,6 +14495,11 @@ react-icons@^4.3.1:
   resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-4.3.1.tgz#2fa92aebbbc71f43d2db2ed1aed07361124e91ca"
   integrity sha512-cB10MXLTs3gVuXimblAdI71jrJx8njrJZmNMEMC+sQu5B/BIOmlsAjskdqpn81y8UBVEGuHODd7/ci5DvoSzTQ==
 
+react-icons@^4.4.0:
+  version "4.4.0"
+  resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-4.4.0.tgz#a13a8a20c254854e1ec9aecef28a95cdf24ef703"
+  integrity sha512-fSbvHeVYo/B5/L4VhB7sBA1i2tS8MkT0Hb9t2H1AVPkwGfVHLJCqyr2Py9dKMxsyM63Eng1GkdZfbWj+Fmv8Rg==
+
 react-inspector@^5.1.0:
   version "5.1.1"
   resolved "https://registry.yarnpkg.com/react-inspector/-/react-inspector-5.1.1.tgz#58476c78fde05d5055646ed8ec02030af42953c8"
@@ -14215,6 +14537,13 @@ react-map-gl@^7.0.12:
   version "7.0.12"
   resolved "https://registry.yarnpkg.com/react-map-gl/-/react-map-gl-7.0.12.tgz#b8492811aac997cf9781e2f598a0af3845d921db"
   integrity sha512-g0hgg1GbMI10W6LwPmjkbShcjn5MlXn26KnKh5gOD+UxQrz3P2mvB4JWiDZxZb2p7KEBFTJOw28Cg1uIZQjxtA==
+  dependencies:
+    "@types/mapbox-gl" "^2.6.0"
+
+react-map-gl@^7.0.17:
+  version "7.0.17"
+  resolved "https://registry.yarnpkg.com/react-map-gl/-/react-map-gl-7.0.17.tgz#8b6501db318d707793a0cf610f6424df87735330"
+  integrity sha512-pse1wdI5/K1G0V2yE4ZeY3etk9vONseTefMEXOqz4CIDd2xnrA6XsHg2/06fDXbETkBruVcjaBQwH/6AK98iyg==
   dependencies:
     "@types/mapbox-gl" "^2.6.0"
 
@@ -14295,10 +14624,20 @@ react-transition-group@^4.4.2:
     loose-envify "^1.4.0"
     prop-types "^15.6.2"
 
-react-vega@^7.4.4, react-vega@^7.5.1:
+react-vega@^7.4.4:
   version "7.5.1"
   resolved "https://registry.yarnpkg.com/react-vega/-/react-vega-7.5.1.tgz#574ada8b53aa8bdae61a286c1e0fb5a8efdbd064"
   integrity sha512-pbcSrLsqmUP2+1v+/im99GdGompT0jJwJo9Cjq3QQ9URUYMuEEvfTCergEtfVRcBjC6bPTN6sLbe+8yQSqB4jg==
+  dependencies:
+    "@types/react" "*"
+    fast-deep-equal "^3.1.1"
+    prop-types "^15.8.1"
+    vega-embed "^6.5.1"
+
+react-vega@^7.6.0:
+  version "7.6.0"
+  resolved "https://registry.yarnpkg.com/react-vega/-/react-vega-7.6.0.tgz#b791c944046b20e02d366c7d0f8dcc21bdb4a6bb"
+  integrity sha512-2oMML4wH9qWLnZPRxJm06ozwrVN/K+nkjqdI5/ofWWsrBnnH4iB9rRKrsV8px0nlWgZrwfdCH4g5RUiyyJHWSA==
   dependencies:
     "@types/react" "*"
     fast-deep-equal "^3.1.1"

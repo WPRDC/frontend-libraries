@@ -111,7 +111,7 @@ export const Map = React.forwardRef<MapRef, ConnectableMapProps>(
 
     // if any connections are provided, run through them
     const toolboxes: MapPluginToolbox<any, any>[] = connections.map(
-      (connection) => {
+      connection => {
         const hookArgs = connectionHookArgs[connection.name] || {};
         return connection.use({
           connection,
@@ -156,7 +156,7 @@ export const Map = React.forwardRef<MapRef, ConnectableMapProps>(
       const _isOverInteractiveLayer = (event: MapLayerMouseEvent) =>
         !!event.features &&
         !!interactiveLayerIDs &&
-        interactiveLayerIDs.includes(event.features[0].layer.id);
+        interactiveLayerIDs.includes(event.features[0]?.layer.id);
 
       const overInteractiveLayer = _isOverInteractiveLayer(event);
 
@@ -173,8 +173,10 @@ export const Map = React.forwardRef<MapRef, ConnectableMapProps>(
             const contentProps: PopupContentProps = makeContentProps(event);
             customContents = <CustomContentComponent {...contentProps} />;
           }
-          const { toolboxItems, toolboxContents } =
-            handleMouseEventForToolboxes(toolboxes, event, eventType);
+          const {
+            toolboxItems,
+            toolboxContents,
+          } = handleMouseEventForToolboxes(toolboxes, event, eventType);
           if (
             !!customContents ||
             (!!toolboxContents && !!toolboxContents.length)
@@ -223,9 +225,6 @@ export const Map = React.forwardRef<MapRef, ConnectableMapProps>(
       setCursor('auto');
     };
 
-    /**
-     *
-     */
     const handleViewportChange = (e: ViewStateChangeEvent) => {
       setViewState(e.viewState);
     };
@@ -252,7 +251,9 @@ export const Map = React.forwardRef<MapRef, ConnectableMapProps>(
 
     const customLegendContent = React.useMemo(() => {
       if (!!legendItems) {
-        return legendItems.map((itemProps) => <LegendItem {...itemProps} />);
+        return legendItems.map(itemProps => (
+          <LegendItem {...itemProps} key={itemProps.key} />
+        ));
       }
       return null;
     }, [legendItems]);
@@ -261,7 +262,7 @@ export const Map = React.forwardRef<MapRef, ConnectableMapProps>(
     // i.e. there's custom content, or any of the toolboxes have legend items
     const showLegend =
       !!customLegendContent ||
-      !!toolboxes.find((tb) => !!tb.legendItems && !!tb.legendItems.length);
+      !!toolboxes.find(tb => !!tb.legendItems && !!tb.legendItems.length);
 
     const { tbSources, tbLayers } = useMemo(() => {
       return toolboxes.reduce(
@@ -304,17 +305,17 @@ export const Map = React.forwardRef<MapRef, ConnectableMapProps>(
           >
             {/* Plugin layers */}
             {!!tbSources &&
-              tbSources.map((source) => <Source key={source.id} {...source} />)}
+              tbSources.map(source => <Source key={source.id} {...source} />)}
             {!!tbSources &&
               !!tbLayers &&
-              tbLayers.map((layer) => <Layer key={layer.id} {...layer} />)}
+              tbLayers.map(layer => <Layer key={layer.id} {...layer} />)}
 
             {/* Custom Layers */}
             {!!sources &&
-              sources.map((source) => <Source key={source.id} {...source} />)}
+              sources.map(source => <Source key={source.id} {...source} />)}
             {!!sources &&
               !!layers &&
-              layers.map((layer) => <Layer key={layer.id} {...layer} />)}
+              layers.map(layer => <Layer key={layer.id} {...layer} />)}
 
             {children}
             {hoverPopup}

@@ -25,12 +25,12 @@ export const TopicViewDetail: React.FC<TopicDetailViewProps> = props => {
 
   if (!topic || !geog) return null;
 
-  const { blurbs, vizes } = indicators.reduce(
+  const { blurbs, vizes: vizIndicators } = indicators.reduce(
     (acc, cur) => {
       if (cur.options.isSingleValue) {
         return {
           blurbs: [...acc.blurbs, cur],
-          vizes: acc.vizes,
+          vizes: [...acc.vizes, cur],
         };
       } else {
         return {
@@ -82,10 +82,10 @@ export const TopicViewDetail: React.FC<TopicDetailViewProps> = props => {
       {/* Quick facts */}
       {!!blurbs && !!blurbs.length && (
         <div className={styles.blurbs}>
-          <h2 className={styles.subtitle}>Quick Facts</h2>
+          <h2 className={styles.subtitle}>Quick Stats</h2>
           <ul className={styles.blurbList}>
             {blurbs.map(blurb => (
-              <li className={styles.blurbListItem}>
+              <li className={styles.blurbListItem} key={blurb.slug}>
                 <ConnectedViz mini indicatorSlug={blurb.slug} geog={geog} />
               </li>
             ))}
@@ -94,15 +94,22 @@ export const TopicViewDetail: React.FC<TopicDetailViewProps> = props => {
       )}
 
       {/* Data Vizes */}
-      {!!vizes && !!vizes.length && (
+      {!!vizIndicators && !!vizIndicators.length && (
         <div className={styles.vizes}>
-          <ul className={styles.vizList}>
-            {vizes.map(viz => (
-              <li className={styles.vizListItem}>
-                <ConnectedViz indicatorSlug={viz.slug} geog={geog} />
-              </li>
-            ))}
-          </ul>
+          <h2 className={styles.subtitle}>Detailed Indicators</h2>
+          <div className={styles.vizList}>
+            {vizIndicators.map(indicator => {
+              return (
+                <div className={styles.vizListItem} key={indicator.slug}>
+                  <ConnectedViz
+                    indicatorSlug={indicator.slug}
+                    geog={geog}
+                    acrossGeogs={indicator.options.isMappable}
+                  />
+                </div>
+              );
+            })}
+          </div>
         </div>
       )}
       {/* More Context*/}

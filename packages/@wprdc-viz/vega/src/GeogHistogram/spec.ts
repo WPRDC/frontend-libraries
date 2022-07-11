@@ -1,109 +1,118 @@
 import * as vega from 'vega';
 
-const acrossGeogs: vega.Spec = {
-  $schema: 'https://vega.github.io/schema/vega/v5.json',
-  description: 'A simple bar chart across one or more series.',
-  padding: 5,
-  autosize: { type: 'fit', resize: true },
-  signals: [
-    {
-      name: 'tooltip',
-      value: {},
-      on: [
-        { events: 'rect:mouseover', update: 'datum' },
-        { events: 'rect:mouseout', update: '{}' },
-      ],
-    },
-  ],
-  data: [
-    {
-      name: 'table',
-      values: [],
-    },
-    {
-      name: 'highlight',
-      values: [],
-    },
-  ],
-  scales: [
-    {
-      name: 'geogScale',
-      type: 'band',
-      domain: {
-        data: 'table',
-        field: 'geog',
-        sort: { op: 'median', field: 'value', order: 'ascending' },
+export function makeSpec(valueField: string): vega.Spec {
+  return {
+    $schema: 'https://vega.github.io/schema/vega/v5.json',
+    description: 'A simple bar chart across one or more series.',
+    padding: 5,
+    autosize: { type: 'fit', resize: true },
+    signals: [
+      {
+        name: 'tooltip',
+        value: {},
+        on: [
+          { events: 'rect:mouseover', update: 'datum' },
+          { events: 'rect:mouseout', update: '{}' },
+        ],
       },
-      range: 'width',
-      padding: 0.15,
-    },
-    {
-      name: 'valueScale',
-      domain: { data: 'table', field: 'value' },
-      nice: true,
-      range: 'height',
-    },
-  ],
-  axes: [
-    {
-      orient: 'bottom',
-      scale: 'geogScale',
-      labelFont: 'Helvetica Neue',
-      ticks: false,
-      labels: true,
-      labelAngle: 45,
-      labelAlign: 'left',
-      encode: {
-        labels: {
-          update: {
-            text: { signal: "datum.value == 'Pittsburgh' ? datum.value : ''" },
-          },
-        },
+      {
+        name: 'hover',
+        value: {},
+        on: [
+          { events: 'rect:mouseover', update: 'datum' },
+          { events: 'rect:mouseout', update: '{}' },
+        ],
       },
-    },
-    {
-      orient: 'left',
-      scale: 'valueScale',
-      labelFont: 'Helvetica Neue',
-      ticks: false,
-      labelPadding: 0,
-      grid: true,
-      domain: false,
-    },
-  ],
-  marks: [
-    {
-      name: 'bars',
-      from: { data: 'table' },
-      type: 'rect',
-      encode: {
-        enter: {
-          tooltip: {
-            signal: "datum.geog + ': ' + format(datum.value, '1,')",
-          },
-          x: { scale: 'geogScale', field: 'geog' },
-          width: { scale: 'geogScale', band: 1 },
-          y: { scale: 'valueScale', field: 'value' },
-          y2: { scale: 'valueScale', value: 0 },
-          cornerRadiusTopLeft: { value: 2 },
-          cornerRadiusTopRight: { value: 2 },
+    ],
+    data: [
+      {
+        name: 'table',
+        values: [],
+      },
+      {
+        name: 'labels',
+        values: [],
+      },
+      {
+        name: 'highlight',
+        values: [],
+      },
+    ],
+    scales: [
+      {
+        name: 'geogScale',
+        type: 'band',
+        domain: {
+          data: 'table',
+          field: 'geog',
+          sort: { op: 'median', field: valueField, order: 'ascending' },
         },
-        update: {
-          fill: [
-            {
-              test: "indata('highlight', 'highlight', datum.geog)",
-              value: '#F2B705',
+        range: 'width',
+        padding: 0.15,
+      },
+      {
+        name: 'valueScale',
+        domain: { data: 'table', field: valueField },
+        nice: true,
+        range: 'height',
+      },
+    ],
+    axes: [
+      {
+        orient: 'bottom',
+        scale: 'geogScale',
+        labelFont: 'Helvetica Neue',
+        ticks: false,
+        labels: false,
+        labelAngle: 45,
+        labelAlign: 'left',
+      },
+      {
+        orient: 'left',
+        scale: 'valueScale',
+        labelFont: 'Helvetica Neue',
+        ticks: false,
+        labelPadding: 0,
+        grid: true,
+        domain: false,
+      },
+    ],
+    marks: [
+      {
+        name: 'bars',
+        from: { data: 'table' },
+        type: 'rect',
+        encode: {
+          enter: {
+            tooltip: {
+              signal: `datum.geogLabel + ': ' + format(datum.${valueField}, '${
+                valueField === 'percent' ? '1.1%' : '1,'
+              }')`,
             },
-            { value: '#96C6D9' },
-          ],
-          stroke: { value: '' },
-        },
-        hover: {
-          stroke: { value: 'black' },
+            x: { scale: 'geogScale', field: 'geog' },
+            width: { scale: 'geogScale', band: 1 },
+            y: { scale: 'valueScale', field: valueField },
+            y2: { scale: 'valueScale', value: 0 },
+            stroke: { value: '#000000' },
+            strokeWidth: { value: 2 },
+            cornerRadiusBottomRight: { value: 0 },
+            cornerRadiusTopRight: { value: 0 },
+          },
+          update: {
+            fill: [
+              {
+                test: "indata('highlight', 'highlight', datum.geog)",
+                value: '#d95f02',
+              },
+              { value: '#1b9e77' },
+            ],
+            strokeWidth: { value: 2 },
+          },
+          hover: {
+            strokeWidth: { value: 3 },
+          },
         },
       },
-    },
-  ],
-};
-
-export default acrossGeogs;
+    ],
+  };
+}

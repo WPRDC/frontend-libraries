@@ -9,18 +9,65 @@ import * as React from 'react';
 import './main.css';
 import styles from './Viz.module.css';
 
-import { VizWidgetProps } from '@wprdc-types/viz';
+import classNames from 'classnames';
+
+import {
+  ChartRecord,
+  DataVizCommonProps,
+  VizWidgetProps,
+} from '@wprdc-types/viz';
+
 import { BigValue } from '@wprdc-viz/simple';
 import { DataMap } from '@wprdc-viz/map';
 import { BarChart, GeogHistogram } from '@wprdc-viz/vega';
 import { FlatTable } from '@wprdc-viz/table';
 
+import { RiEditFill, RiPrinterFill, RiShareFill } from 'react-icons/ri';
+import { MdCompare } from 'react-icons/md';
+import { IndicatorWithData } from '@wprdc-types/profiles';
+import { Checkbox, CheckboxGroup } from '@wprdc-components/checkbox-group';
+import { Tooltip } from '@wprdc-components/tooltip';
+
 export const Viz: React.FC<VizWidgetProps> = ({
   indicator,
   mini = false,
-  // coplanar = false,
+  // coplanar = false,  // todo: look into other display formats
   inPreview,
 }: VizWidgetProps) => {
+  const [selectedTimeParts, setSelectedTimeParts] = React.useState<string[]>(
+    indicator.timeAxis.timeParts.map(t => t.slug)
+  );
+  const [selectedVariables, setSelectedVariables] = React.useState<string[]>(
+    indicator.variables.map(v => v.slug)
+  );
+
+  const [hoveredRecord, setHoveredRecord] = React.useState<ChartRecord>();
+
+  function handleTimeChange(selection: string[]) {
+    setSelectedTimeParts(selection);
+  }
+
+  function handleVariableChange(selection: string[]) {
+    setSelectedVariables(selection);
+  }
+
+  function handleHover(datum: ChartRecord | {}) {
+    if (!!Object.keys(datum).length) setHoveredRecord(datum as ChartRecord);
+    else setHoveredRecord(undefined);
+  }
+
+  const chartHeight = 30 + indicator.variables.length * 45;
+
+  const vizProps: DataVizCommonProps = React.useMemo(
+    () => ({
+      indicator,
+      inPreview,
+      selectedVariables,
+      selectedTimeParts,
+    }),
+    [indicator.slug, inPreview, selectedVariables, selectedTimeParts]
+  );
+
   let vizContent: React.ReactNode;
   // if variant is mini, only provide a `Value` viz
   if (mini || (indicator.options.isSingleValue && inPreview)) {
@@ -30,11 +77,19 @@ export const Viz: React.FC<VizWidgetProps> = ({
   else if (indicator.options.isMappable) {
     vizContent = (
       <div className={styles.mapWithChart}>
-        <div>
-          <DataMap indicator={indicator} />
+        <div className={styles.mapDiv}>
+          <DataMap
+            {...vizProps}
+            onHover={handleHover}
+            hoveredRecord={hoveredRecord}
+          />
         </div>
-        <div>
-          <GeogHistogram indicator={indicator} />
+        <div className={styles.chartDiv}>
+          <GeogHistogram
+            {...vizProps}
+            onHover={handleHover}
+            hoveredRecord={hoveredRecord}
+          />
         </div>
       </div>
     );
@@ -42,18 +97,18 @@ export const Viz: React.FC<VizWidgetProps> = ({
     if (!!inPreview) {
       vizContent = (
         <div className={styles.inPreview}>
-          <BarChart inPreview={inPreview} indicator={indicator} />
+          <BarChart {...vizProps} />
         </div>
       );
     } else {
       // anything left should be chartable
       vizContent = (
         <div className={styles.chartWithTable}>
-          <div className={styles.chart}>
-            <BarChart inPreview={inPreview} indicator={indicator} />
+          <div className={styles.chart} style={{ height: chartHeight }}>
+            <BarChart {...vizProps} />
           </div>
           <div className={styles.table}>
-            <FlatTable indicator={indicator} />
+            <FlatTable {...vizProps} />
           </div>
         </div>
       );
@@ -61,5 +116,106 @@ export const Viz: React.FC<VizWidgetProps> = ({
   }
 
   // if multiple variables, show chart/table
-  return <div className={styles.wrapper}>{vizContent}</div>;
+  return (
+    <div
+      className={classNames(styles.wrapper, {
+        [styles.inPreview]: !!inPreview,
+      })}
+    >
+      {!mini && !inPreview && (
+        <div className={styles.vizListHeading}>
+          <div>
+            <h3>{indicator.name}</h3>
+          </div>
+          <div>
+            <Tooltip title="Compare" button content={'Compare'}>
+              <div>
+                <MdCompare /> Compare
+              </div>
+            </Tooltip>
+            <Tooltip
+              button
+              title="Edit"
+              content={
+                <EditMenu
+                  indicator={indicator}
+                  selectedTimeParts={selectedTimeParts}
+                  selectedVariables={selectedVariables}
+                  onTimePartChange={handleTimeChange}
+                  onVariableChange={handleVariableChange}
+                />
+              }
+            >
+              <div>
+                <RiEditFill /> Edit
+              </div>
+            </Tooltip>
+            <Tooltip button title="Edit" content={'woot'}>
+              <div>
+                <RiShareFill /> Share
+              </div>
+            </Tooltip>
+            <Tooltip button title="Edit" content={'woot'}>
+              <div>
+                <RiPrinterFill /> Print
+              </div>
+            </Tooltip>
+          </div>
+        </div>
+      )}
+      {vizContent}
+    </div>
+  );
+};
+
+interface EditMenuProps {
+  indicator: IndicatorWithData;
+  selectedTimeParts: string[];
+  selectedVariables: string[];
+
+  onTimePartChange: (selection: string[]) => void;
+  onVariableChange: (selection: string[]) => void;
+}
+
+const EditMenu: React.FC<EditMenuProps> = ({
+  indicator,
+  onTimePartChange,
+  onVariableChange,
+  selectedTimeParts,
+  selectedVariables,
+}) => {
+  function handleTimeChange(selectedTimeParts: string[]) {
+    onTimePartChange(selectedTimeParts);
+  }
+
+  function handleVariableChange(selectedVariables: string[]) {
+    onVariableChange(selectedVariables);
+  }
+
+  return (
+    <div>
+      <div>
+        <CheckboxGroup
+          label="Show/Hide Time Points"
+          onChange={handleTimeChange}
+          value={selectedTimeParts}
+        >
+          {indicator.timeAxis.timeParts.map(timePart => (
+            <Checkbox value={timePart.slug}>{timePart.name}</Checkbox>
+          ))}
+        </CheckboxGroup>
+      </div>
+      <div>
+        <CheckboxGroup
+          label="Show/Hide Variables"
+          onChange={handleVariableChange}
+          value={selectedVariables}
+        >
+          {indicator.variables.map(variable => (
+            <Checkbox value={variable.slug}>{variable.name}</Checkbox>
+          ))}
+        </CheckboxGroup>
+      </div>
+    </div>
+  );
 };
