@@ -39,6 +39,7 @@ export interface MapOptions extends Partial<MapProps> {
   mapOptions: Partial<MapProps>;
   legends: LegendItemProps[];
   numberFormatOptions?: Partial<Intl.NumberFormatOptions>;
+  defaultViewport?: { zoom: number; latitude: number; longitude: number };
 }
 
 /** Options from backend for styling Vega charts */

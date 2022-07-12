@@ -98,7 +98,7 @@ export const TopicViewDetail: React.FC<TopicDetailViewProps> = props => {
         <div className={styles.vizes}>
           <h2 className={styles.subtitle}>Detailed Indicators</h2>
           <div className={styles.vizList}>
-            {vizIndicators.map(indicator => {
+            {vizIndicators.sort(sortVizes).map(indicator => {
               return (
                 <div className={styles.vizListItem} key={indicator.slug}>
                   <ConnectedViz
@@ -147,3 +147,10 @@ export const TopicViewDetail: React.FC<TopicDetailViewProps> = props => {
     </div>
   );
 };
+
+function sortVizes(a: IndicatorBaseWithOptions, b: IndicatorBaseWithOptions) {
+  return (
+    (a.options.isSingleValue === true ? 1 : 0) -
+    (b.options.isSingleValue === true ? 1 : 0)
+  );
+}

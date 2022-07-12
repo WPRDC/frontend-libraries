@@ -33,7 +33,7 @@ export function DataMap(props: DataMapProps) {
   }
 
   if (!mapOptions) return <div />;
-  const { legends } = mapOptions;
+  const { legends, defaultViewport } = mapOptions;
 
   function PopupContent({ primaryFeatureProps }: PopupContentProps) {
     if (primaryFeatureProps) {
@@ -58,8 +58,6 @@ export function DataMap(props: DataMapProps) {
     }
     return <></>;
   }
-
-  console.log('MAP OPTIONS', mapOptions);
 
   // TODO: highlight map based on hover state
   const layers: LayerProps[] = React.useMemo(() => {
@@ -101,7 +99,9 @@ export function DataMap(props: DataMapProps) {
 
   return (
     <Map
-      initialViewState={{ zoom: 8, longitude: -79.9925, latitude: 40.440624 }}
+      initialViewState={
+        defaultViewport || { longitude: -79.9925, latitude: 40.440624 }
+      }
       layerPanelVariant={LayerPanelVariant.None}
       CustomHoverContents={PopupContent}
       legendItems={legends}
