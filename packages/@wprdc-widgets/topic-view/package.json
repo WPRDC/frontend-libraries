@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-widgets/topic-view",
-  "version": "0.0.47",
+  "version": "0.0.48",
   "description": "",
   "keywords": [],
   "license": "AGPL-3.0-or-later",
@@ -90,7 +90,7 @@
     "@wprdc-types/topic-view": "^0.0.21",
     "@wprdc-types/viz": "^0.0.22",
     "@wprdc-widgets/geography-picker": "^0.0.39",
-    "@wprdc-widgets/viz": "^0.0.7",
+    "@wprdc-widgets/viz": "^0.0.8",
     "classnames": "^2.3.1",
     "marked": "^4.0.12",
     "react-icons": "^4.4.0",
