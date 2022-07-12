@@ -9,6 +9,12 @@ import { ConnectedViz } from '@wprdc-widgets/viz';
 import { parseAndSanitize } from '../util';
 import { IndicatorBaseWithOptions } from '@wprdc-types/profiles';
 
+import {
+  RiBarChartFill,
+  RiInformationLine,
+  RiFlashlightLine,
+} from 'react-icons/ri';
+
 export const TopicViewDetail: React.FC<TopicDetailViewProps> = props => {
   const { topic, showGeog, geog, onGeogSelection, onCompareIndicator } = props;
 
@@ -50,7 +56,7 @@ export const TopicViewDetail: React.FC<TopicDetailViewProps> = props => {
       <div className={classnames(styles.titleSection)}>
         <div className={styles.titleBar}>
           <div className={styles.titleDiv}>
-            <h1 className={styles.bigTitle}>{name}</h1>
+            <h2 className={styles.bigTitle}>{name}</h2>
             {!!showGeog && (
               <p className={styles.geogPicker}>
                 for
@@ -66,7 +72,8 @@ export const TopicViewDetail: React.FC<TopicDetailViewProps> = props => {
         <p className={styles.description}>{description}</p>
 
         {!!importance && (
-          <div>
+          <div className={styles.callout}>
+            <p className={styles.title}>Why this data is useful</p>
             <p className={styles.importance}>{importance}</p>
           </div>
         )}
@@ -75,7 +82,9 @@ export const TopicViewDetail: React.FC<TopicDetailViewProps> = props => {
       {/* Quick facts */}
       {!!blurbs && !!blurbs.length && (
         <div className={styles.blurbs}>
-          <h2 className={styles.subtitle}>Quick Stats</h2>
+          <h3 className={styles.subtitle}>
+            <RiFlashlightLine /> Quick Stats
+          </h3>
           <ul className={styles.blurbList}>
             {blurbs.map(blurb => (
               <li className={styles.blurbListItem} key={blurb.slug}>
@@ -94,7 +103,9 @@ export const TopicViewDetail: React.FC<TopicDetailViewProps> = props => {
       {/* Data Vizes */}
       {!!vizIndicators && !!vizIndicators.length && (
         <div className={styles.vizes}>
-          <h2 className={styles.subtitle}>Detailed Indicators</h2>
+          <h3 className={styles.subtitle}>
+            <RiBarChartFill /> Indicators
+          </h3>
           <div className={styles.vizList}>
             {vizIndicators.sort(sortVizes).map(indicator => {
               return (
@@ -111,36 +122,41 @@ export const TopicViewDetail: React.FC<TopicDetailViewProps> = props => {
           </div>
         </div>
       )}
+
       {/* More Context*/}
-      <div className={classnames(styles.details)}>
+      <div className={classnames(styles.detailSection)}>
+        <h3 className={styles.subtitle}>
+          <RiInformationLine /> Details
+        </h3>
+
         {(!!fullDescription || !!longDescription) && (
-          <>
-            <h2 className={styles.detailsSectionHeader}>Description</h2>
+          <div className={styles.details}>
+            <h3 className={styles.title}>Description</h3>
             <div
               className={styles.detailsItem}
               dangerouslySetInnerHTML={parseAndSanitize(
                 (fullDescription || longDescription) as string
               )}
             />
-          </>
+          </div>
         )}
         {limitations && (
-          <>
-            <h2 className={styles.detailsSectionHeader}>Limitations</h2>
+          <div className={styles.details}>
+            <h3 className={styles.title}>Limitations</h3>
             <div
               className={styles.detailsItem}
               dangerouslySetInnerHTML={parseAndSanitize(limitations)}
             />
-          </>
+          </div>
         )}
         {provenance && (
-          <>
-            <h2 className={styles.detailsSectionHeader}>Provenance</h2>
+          <div className={styles.details}>
+            <h3 className={styles.title}>Provenance</h3>
             <div
               className={styles.detailsItem}
               dangerouslySetInnerHTML={parseAndSanitize(provenance)}
             />
-          </>
+          </div>
         )}
       </div>
     </div>
