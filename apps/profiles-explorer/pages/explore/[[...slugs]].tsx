@@ -94,12 +94,14 @@ export default function Home() {
             : (router.query.slugs as string[]); // would have default if undefined
 
         // update state
+        console.log(glevel, geogLevels);
         setPathSlugs(slugs);
         setGeogSlug(gSlug);
         setGeogLevel(glevel);
       }
     }
   }, [router.pathname, router.query, geogLevels, taxonomy]);
+
   // event handlers
   function handleGeogLevelSelection(selectedGeogLevel: GeogLevel) {
     setGeogLevel(selectedGeogLevel);

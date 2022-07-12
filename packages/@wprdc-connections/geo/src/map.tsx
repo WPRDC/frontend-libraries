@@ -35,6 +35,8 @@ export const menuLayerConnection: MapPluginConnection<GeogLevel, GeogBrief> = {
       throw Error('Multiple select should not be available in map menu.');
     const selectedLayer = items.find(item => selected.has(item.id));
     const { hoveredFilter, selectedFilter, highlightFilter } = options || {};
+
+    console.log({ hoveredFilter });
     // todo: build source based on selection.  or just put them all up at once tbh
     if (!!selectedLayer)
       setLayers(
@@ -90,7 +92,7 @@ export const menuLayerConnection: MapPluginConnection<GeogLevel, GeogBrief> = {
     if (Array.isArray(item)) {
       if (!item.length) return clearLayerFilter();
       if (item.length === 1) return ['==', 'slug', item[0].slug];
-      return ['in', 'slug', item.map(i => i.slug)];
+      return ['in', 'slug', ['literal', item.map(i => i.slug)]];
     }
     return ['==', 'slug', item.slug];
   },

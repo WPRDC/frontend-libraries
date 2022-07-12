@@ -63,7 +63,6 @@ export function DataMap(props: DataMapProps) {
   const layers: LayerProps[] = React.useMemo(() => {
     if (!!hoveredRecord) {
       const mainLayer: LayerProps = mapOptions.layers[0];
-      console.log({ mainLayer });
       return [
         ...mapOptions.layers,
 

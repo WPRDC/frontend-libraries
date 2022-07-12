@@ -242,11 +242,11 @@ export function fetchCartoVectorSource(
       },
     })
       .then(
-        (response) => response.json(),
-        (error) => reject(error)
+        response => response.json(),
+        error => reject(error)
       )
       .then(
-        (data) => {
+        data => {
           resolve({
             id,
             type,
@@ -255,7 +255,7 @@ export function fetchCartoVectorSource(
             maxzoom,
           });
         },
-        (error) => reject(error)
+        error => reject(error)
       );
   });
 }
