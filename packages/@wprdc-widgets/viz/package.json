@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-widgets/viz",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Visualizes data",
   "keywords": [],
   "license": "AGPL3",
@@ -75,12 +75,12 @@
     "typescript": "^4.7.3"
   },
   "dependencies": {
+    "@wprdc-components/tooltip": "^0.0.19",
     "@wprdc-types/viz": "^0.0.22",
     "@wprdc-viz/map": "^0.0.6",
     "@wprdc-viz/simple": "^0.0.6",
     "@wprdc-viz/table": "^0.0.23",
     "@wprdc-viz/vega": "^0.0.6",
-    "@wprdc-components/tooltip": "^0.0.19",
     "classnames": "^2.3.1"
   },
   "gitHead": "94a124feb01e557bf271b087ab91e7a6590f483b"
