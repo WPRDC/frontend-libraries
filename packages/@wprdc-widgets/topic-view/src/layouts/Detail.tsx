@@ -4,13 +4,13 @@ import styles from '../TopicView.module.css';
 import { TopicDetailViewProps } from '@wprdc-types/topic-view';
 import classnames from 'classnames';
 import { GeographyPicker } from '@wprdc-widgets/geography-picker';
-import { Button } from '@wprdc-components/button';
+
 import { ConnectedViz } from '@wprdc-widgets/viz';
 import { parseAndSanitize } from '../util';
 import { IndicatorBaseWithOptions } from '@wprdc-types/profiles';
 
 export const TopicViewDetail: React.FC<TopicDetailViewProps> = props => {
-  const { topic, showGeog, geog, onGeogSelection, onCompareTopic } = props;
+  const { topic, showGeog, geog, onGeogSelection, onCompareIndicator } = props;
 
   const {
     name,
@@ -62,13 +62,6 @@ export const TopicViewDetail: React.FC<TopicDetailViewProps> = props => {
             )}
             {/* Options */}
           </div>
-          {!!onCompareTopic && (
-            <div className={styles.menuSection}>
-              <Button onPress={() => onCompareTopic(topic)}>
-                ⚖️ {'  '}Compare
-              </Button>
-            </div>
-          )}
         </div>
         <p className={styles.description}>{description}</p>
 
@@ -86,7 +79,12 @@ export const TopicViewDetail: React.FC<TopicDetailViewProps> = props => {
           <ul className={styles.blurbList}>
             {blurbs.map(blurb => (
               <li className={styles.blurbListItem} key={blurb.slug}>
-                <ConnectedViz mini indicatorSlug={blurb.slug} geog={geog} />
+                <ConnectedViz
+                  mini
+                  indicatorSlug={blurb.slug}
+                  geog={geog}
+                  onCompare={onCompareIndicator}
+                />
               </li>
             ))}
           </ul>
@@ -105,6 +103,7 @@ export const TopicViewDetail: React.FC<TopicDetailViewProps> = props => {
                     indicatorSlug={indicator.slug}
                     geog={geog}
                     acrossGeogs={indicator.options.isMappable}
+                    onCompare={onCompareIndicator}
                   />
                 </div>
               );

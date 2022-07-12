@@ -37,6 +37,7 @@ export interface VizWidgetProps extends DataVizCommonProps {
   mini?: boolean;
   /** If true, all possible vizes will be displayed in at once */
   coplanar?: boolean;
+  onCompare?: (indicator: IndicatorWithData) => void;
 }
 
 export interface ConnectedVizWidgetProps

@@ -18,7 +18,7 @@ export const TaxonomySection: React.FC<TaxonomySectionProps> = ({
   taxonomy,
   geog,
   onExploreTopic,
-  onCompareTopic,
+  onCompareIndicator,
   currentDomainSlug,
   currentDomainHref,
   currentTopicSlug,
@@ -72,7 +72,7 @@ export const TaxonomySection: React.FC<TaxonomySectionProps> = ({
       <div className={styles.content}>
         {!!currentTopic && (
           <TopicView
-            onCompareTopic={onCompareTopic}
+            onCompareIndicator={onCompareIndicator}
             topic={currentTopic}
             geog={geog}
           />

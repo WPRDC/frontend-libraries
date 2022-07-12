@@ -34,6 +34,7 @@
 .vizListHeading {
   @apply flex;
   @apply mb-2;
+  @apply pr-1;
 }
 
 .vizListHeading > div {
@@ -73,4 +74,39 @@
 
 .mapWithChart > .chartDiv {
   @apply h-48;
+}
+
+.shareMenu {
+  @apply py-2;
+}
+
+.shareMenu a {
+  @apply underline decoration-2;
+}
+
+.shareMenu .bolded {
+  @apply font-semibold;
+}
+
+.shareMenu ul {
+  @apply space-y-2;
+}
+
+.shareMenu span svg {
+  @apply inline;
+  @apply font-bold;
+}
+
+.editMenu {
+  @apply py-2;
+}
+
+.shareMenu textarea {
+  @apply border shadow-inner;
+  @apply w-56 p-1;
+}
+
+.clickable {
+  @apply cursor-pointer;
+  @apply mx-1;
 }

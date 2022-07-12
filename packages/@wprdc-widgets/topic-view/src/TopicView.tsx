@@ -21,6 +21,7 @@ export const TopicView: React.FC<TopicViewProps> = ({
   geog,
   card,
   onExploreTopic,
+  onCompareIndicator,
 }) => {
   const topicSlug = topicBrief ? topicBrief.slug : '';
   const { data: topic, isLoading, error } = useTopic(topicSlug);
@@ -41,10 +42,18 @@ export const TopicView: React.FC<TopicViewProps> = ({
         geog={geog}
         isLoading={isLoading}
         onExploreTopic={onExploreTopic}
+        onCompareIndicator={onCompareIndicator}
       />
     );
   }
-  return <TopicViewDetail topic={topic} geog={geog} isLoading={isLoading} />;
+  return (
+    <TopicViewDetail
+      topic={topic}
+      geog={geog}
+      isLoading={isLoading}
+      onCompareIndicator={onCompareIndicator}
+    />
+  );
 };
 
 export default TopicView;

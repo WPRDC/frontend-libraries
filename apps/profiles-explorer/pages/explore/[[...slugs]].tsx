@@ -27,7 +27,7 @@ import {
   ConnectionCollection,
 } from '@wprdc-types/connections';
 import { BreadcrumbItem, Breadcrumbs } from '@wprdc-components/breadcrumbs';
-import { TopicBrief } from '@wprdc-types/profiles';
+import { IndicatorWithData, TopicBrief } from '@wprdc-types/profiles';
 import { Map } from '@wprdc-components/map';
 import { useProvider } from '@wprdc-components/provider';
 import { TaxonomySection } from '../../components/TaxonomySection';
@@ -94,7 +94,6 @@ export default function Home() {
             : (router.query.slugs as string[]); // would have default if undefined
 
         // update state
-        console.log(glevel, geogLevels);
         setPathSlugs(slugs);
         setGeogSlug(gSlug);
         setGeogLevel(glevel);
@@ -133,6 +132,12 @@ export default function Home() {
       }
     }
   };
+
+  function handleCompare(indicator: IndicatorWithData) {
+    router.push({
+      pathname: `/compare/${indicator.slug}`,
+    });
+  }
 
   // make `Selection` from selected geogLevel
   const geogLevelSelection: Set<string> = useMemo(() => {
@@ -254,6 +259,7 @@ export default function Home() {
                 currentTopicSlug={topicSlug}
                 onExploreTopic={handleExploreTopic}
                 baseHeadingLevel={3}
+                onCompareIndicator={handleCompare}
               />
             ) : (
               <LoadingMessage message="Loading topics" />

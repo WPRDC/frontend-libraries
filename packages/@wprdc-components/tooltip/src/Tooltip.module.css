@@ -34,7 +34,8 @@
 }
 
 .popoverTitle {
-  @apply font-semibold;
+  @apply font-bold text-cyan-600;
+  @apply text-sm uppercase;
 }
 
 .label {

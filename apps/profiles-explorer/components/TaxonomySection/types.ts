@@ -1,4 +1,4 @@
-import { Taxonomy, TopicBrief } from '@wprdc-types/profiles';
+import { IndicatorWithData, Taxonomy, TopicBrief } from '@wprdc-types/profiles';
 import { BreadcrumbItemLinkProps } from '@wprdc-types/breadcrumbs';
 import { GeogBrief } from '@wprdc-types/geo';
 
@@ -25,6 +25,6 @@ export interface TaxonomySectionProps<L extends object = { href: string }>
 export interface SectionSharedProps {
   geog?: GeogBrief;
   onExploreTopic?: (topic: TopicBrief) => void;
-  onCompareTopic?: (topic: TopicBrief) => void;
+  onCompareIndicator?: (indicator: IndicatorWithData) => void;
   topicFetchController?: AbortController;
 }

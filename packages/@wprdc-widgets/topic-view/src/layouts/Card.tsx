@@ -14,6 +14,7 @@ export const TopicViewCard: React.FC<TopicViewCardProps> = props => {
     onExploreTopic,
     headingLevel,
     isLoading,
+    onCompareIndicator,
   } = props;
 
   const { name, description, slug } = topic || topicBrief || {};
@@ -73,6 +74,7 @@ export const TopicViewCard: React.FC<TopicViewCardProps> = props => {
             inPreview
             indicatorSlug={primaryIndicator.slug}
             geog={geog}
+            onCompare={onCompareIndicator}
           />
         )}
       </div>

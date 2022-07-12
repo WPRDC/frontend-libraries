@@ -81,7 +81,8 @@
     "@wprdc-viz/simple": "^0.0.6",
     "@wprdc-viz/table": "^0.0.23",
     "@wprdc-viz/vega": "^0.0.7",
-    "classnames": "^2.3.1"
+    "classnames": "^2.3.1",
+    "react-icons": "^4.4.0"
   },
   "gitHead": "94a124feb01e557bf271b087ab91e7a6590f483b"
 }
