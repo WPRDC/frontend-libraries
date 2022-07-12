@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-connections/geo",
-  "version": "0.0.37",
+  "version": "0.0.38",
   "description": "",
   "keywords": [],
   "license": "AGPL-3.0-or-later",
@@ -76,19 +76,19 @@
     "typescript": "^4.7.3"
   },
   "dependencies": {
-    "@wprdc-components/map": "^0.0.26",
+    "@wprdc-components/map": "^0.0.27",
     "@wprdc-components/radio-group": "^0.0.15",
     "@wprdc-components/util": "^0.0.13",
     "@wprdc-connections/api": "^0.0.21",
-    "@wprdc-connections/util": "^0.0.30",
+    "@wprdc-connections/util": "^0.0.31",
     "@wprdc-types/api": "^0.0.15",
-    "@wprdc-types/connections": "^0.0.20",
+    "@wprdc-types/connections": "^0.0.21",
     "@wprdc-types/geo": "^0.0.16",
     "@wprdc-types/map": "^0.0.17",
     "@wprdc-types/neighborhood-assets": "^0.0.14",
-    "@wprdc-types/profiles": "^0.0.22",
+    "@wprdc-types/profiles": "^0.0.23",
     "@wprdc-types/shared": "^0.0.14",
-    "@wprdc-types/viz": "^0.0.21",
+    "@wprdc-types/viz": "^0.0.22",
     "react-query": "^3.39.1"
   },
   "gitHead": "94a124feb01e557bf271b087ab91e7a6590f483b"
