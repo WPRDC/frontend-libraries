@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-components/source-list",
-  "version": "0.0.24",
+  "version": "0.0.25",
   "description": "",
   "keywords": [],
   "license": "AGPL-3.0-or-later",
@@ -78,7 +78,7 @@
   "dependencies": {
     "@wprdc-components/data-chip": "^0.0.15",
     "@wprdc-components/link": "^0.0.12",
-    "@wprdc-components/tooltip": "^0.0.18",
+    "@wprdc-components/tooltip": "^0.0.19",
     "@wprdc-types/profiles": "^0.0.23"
   },
   "gitHead": "94a124feb01e557bf271b087ab91e7a6590f483b"
