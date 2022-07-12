@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-widgets/viz",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Visualizes data",
   "keywords": [],
   "license": "AGPL3",
@@ -77,7 +77,7 @@
   "dependencies": {
     "@wprdc-components/tooltip": "^0.0.19",
     "@wprdc-types/viz": "^0.0.22",
-    "@wprdc-viz/map": "^0.0.6",
+    "@wprdc-viz/map": "^0.0.7",
     "@wprdc-viz/simple": "^0.0.6",
     "@wprdc-viz/table": "^0.0.23",
     "@wprdc-viz/vega": "^0.0.6",
