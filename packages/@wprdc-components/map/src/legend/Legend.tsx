@@ -15,10 +15,11 @@ export const Legend: React.FC<ConnectedLegendProps> = ({
   toolboxes,
   children,
 }) => {
+  console.log(toolboxes);
   return (
     <div className={styles.container}>
       {!!title && <div className={styles.title}>{title}</div>}
-      {!!toolboxes && toolboxes.map((tb) => tb.legendSection)}
+      {!!toolboxes && toolboxes.map(tb => tb.legendSection)}
       {children}
     </div>
   );

@@ -107,7 +107,6 @@ export function MapInterface({
             ref={mapRef}
             sources={[source]}
             layers={layers}
-            legendItems={legendItems}
             connections={[affordableHousingProjectMapConnection]}
             connectionHookArgs={{
               [ProjectKey.Housecat]: makeConnectionHookArgs(filterParams),

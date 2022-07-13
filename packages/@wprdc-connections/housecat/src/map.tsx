@@ -1,13 +1,20 @@
 import React from 'react';
 import { ConnectionProps, MapPluginConnection } from '@wprdc-types/connections';
 
-import { Layer, Source } from '@wprdc-components/map';
+import {
+  Layer,
+  LegendItem,
+  LegendSection,
+  Source,
+} from '@wprdc-components/map';
 import { useMapPlugin } from '@wprdc-connections/util';
 
 import { ProjectKey, Resource } from '@wprdc-types/shared';
 import { ProjectIndexMapProperties } from '@wprdc-types/housecat';
 
 import styles from './PopupContent.module.css';
+import { CategoricalLegendItemProps } from '@wprdc-types/map';
+import { HousecatAPI } from './api';
 
 interface AffordableHousingLayer extends Resource {}
 
@@ -30,8 +37,14 @@ export const affordableHousingProjectMapConnection: MapPluginConnection<
   getLayers() {
     return undefined;
   },
-  getLegendItems() {
-    return undefined;
+  getLegendItems(_, __, setLegendItems, options) {
+    const { filterParams } = options || {};
+    HousecatAPI.requestPublicHousingProjectMap(filterParams).then(
+      r => {
+        if (r.extras) setLegendItems(r.extras.legendItems);
+      },
+      err => console.error(err)
+    );
   },
   getInteractiveLayerIDs() {
     return ['all-public-housing-projects/marker'];
@@ -54,7 +67,34 @@ export const affordableHousingProjectMapConnection: MapPluginConnection<
   makeFilter: () => {
     return ['==', 1, 1];
   },
-  makeLegendSection: () => {},
+  makeLegendSection: (setLegendSection, items) => {
+    if (!!items && !!items.length)
+      setLegendSection(
+        <LegendSection title="Affordable Housing Projects by Funding Type">
+          {items.map(item => {
+            const color: string =
+              ((item as CategoricalLegendItemProps).marker as string) || 'gray';
+            return (
+              <LegendItem
+                variant="categorical"
+                marker={color}
+                label={item.label}
+              />
+            );
+          })}
+          <p
+            style={{ fontStyle: 'italic', fontWeight: 500, marginTop: '12px' }}
+          >
+            Marker size based on unit count
+          </p>
+          <p style={{ fontStyle: 'italic', fontWeight: 500 }}>
+            Closed projects have a <span style={{ color: 'red' }}>red</span>{' '}
+            stroke.
+          </p>
+        </LegendSection>
+      );
+    else setLegendSection();
+  },
   makeMapSection: (setMapSection, sources, layers) => {
     if (!!sources && !!layers) {
       setMapSection(
