@@ -1,7 +1,7 @@
 {
   "name": "profiles-explorer",
   "private": true,
-  "version": "0.0.15",
+  "version": "0.0.16",
   "scripts": {
     "dev": "next dev --port 3030",
     "build": "next build",
@@ -45,7 +45,7 @@
     "@wprdc-types/select": "^0.0.18",
     "@wprdc-types/shared": "^0.0.14",
     "@wprdc-types/viz": "^0.0.23",
-    "@wprdc-widgets/ah-project-view": "^0.0.27",
+    "@wprdc-widgets/ah-project-view": "^0.0.28",
     "@wprdc-widgets/data-viz": "^0.0.33",
     "@wprdc-widgets/geography-picker": "^0.0.40",
     "@wprdc-widgets/topic-view": "^0.0.50",
