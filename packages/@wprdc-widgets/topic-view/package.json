@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-widgets/topic-view",
-  "version": "0.0.50",
+  "version": "0.0.51",
   "description": "",
   "keywords": [],
   "license": "AGPL-3.0-or-later",
@@ -89,8 +89,8 @@
     "@wprdc-types/shared": "^0.0.14",
     "@wprdc-types/topic-view": "^0.0.22",
     "@wprdc-types/viz": "^0.0.23",
-    "@wprdc-widgets/geography-picker": "^0.0.40",
-    "@wprdc-widgets/viz": "^0.0.9",
+    "@wprdc-widgets/geography-picker": "^0.0.41",
+    "@wprdc-widgets/viz": "^0.0.10",
     "classnames": "^2.3.1",
     "marked": "^4.0.12",
     "react-icons": "^4.4.0",
