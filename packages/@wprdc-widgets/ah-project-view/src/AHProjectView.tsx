@@ -75,12 +75,16 @@ export const AHProjectView: React.FC<AHProjectViewProps> = ({
           {formatAddress(project.propertyStreetAddress)}
         </div>
 
-        <h3>Status</h3>
-        <div className={styles.status}>
-          {project.status === 'Closed' && <RiCloseCircleLine />}
-          {project.status === 'Unknown' && <RiQuestionLine />}
-          <span>{project.status}</span>
-        </div>
+        {!!project.status && (
+          <div>
+            <h3>Status</h3>
+            <div className={styles.status}>
+              {project.status === 'Closed' && <RiCloseCircleLine />}
+              {project.status === 'Unknown' && <RiQuestionLine />}
+              <span>{project.status}</span>
+            </div>
+          </div>
+        )}
 
         <div className={styles.mainFields}>
           <h3>Quick Facts</h3>
