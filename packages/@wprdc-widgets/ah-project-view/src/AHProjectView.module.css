@@ -185,7 +185,7 @@ tr:first-of-type > .valueCell {
 
 .status {
   @apply flex items-center space-x-1;
-  @apply text-sm uppercase font-semi`;
+  @apply text-sm uppercase font-semibold;
   @apply max-w-max;
 }
 
