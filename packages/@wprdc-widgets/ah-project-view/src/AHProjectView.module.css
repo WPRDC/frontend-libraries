@@ -123,6 +123,7 @@ tr:first-of-type > .valueCell {
 
 .menuSection {
   @apply print:hidden;
+  @apply flex space-x-3;
 }
 
 .mainFields {
@@ -171,4 +172,23 @@ tr:first-of-type > .valueCell {
 
 .topButton {
   @apply absolute top-0 right-2;
+}
+
+.menuSection button {
+  @apply flex items-center;
+  @apply space-x-1;
+}
+
+.menuSection svg {
+  @apply inline;
+}
+
+.status {
+  @apply flex items-center space-x-1;
+  @apply text-sm uppercase font-semi`;
+  @apply max-w-max;
+}
+
+.status svg {
+  @apply inline-block;
 }

@@ -8,7 +8,12 @@ import styles from './AHProjectView.module.css';
 import { LoadingMessage } from '@wprdc-components/loading-message';
 import { ProjectIndexDetails } from '@wprdc-types/housecat';
 
-import { RiPrinterFill } from 'react-icons/ri';
+import {
+  RiPrinterFill,
+  RiMapPin2Fill,
+  RiCloseCircleLine,
+  RiQuestionLine,
+} from 'react-icons/ri';
 
 import {
   affordableHousingSchema,
@@ -20,11 +25,13 @@ import { Button } from '@wprdc-components/button';
 export interface AHProjectViewProps {
   project: ProjectIndexDetails;
   isLoading?: boolean;
+  onMapLinkPress?: () => void;
 }
 
 export const AHProjectView: React.FC<AHProjectViewProps> = ({
   project,
   isLoading,
+  onMapLinkPress,
 }) => {
   if (!!isLoading) return <LoadingMessage />;
   if (!project) return <div />;
@@ -51,6 +58,11 @@ export const AHProjectView: React.FC<AHProjectViewProps> = ({
               )}
             </div>
             <div className={styles.menuSection}>
+              {!!onMapLinkPress && (
+                <Button onPress={onMapLinkPress} color="secondary">
+                  <RiMapPin2Fill /> <span>Show on Map </span>
+                </Button>
+              )}
               <Button onPress={handlePrint}>
                 <RiPrinterFill />
               </Button>
@@ -61,6 +73,13 @@ export const AHProjectView: React.FC<AHProjectViewProps> = ({
 
         <div className={styles.address}>
           {formatAddress(project.propertyStreetAddress)}
+        </div>
+
+        <h3>Status</h3>
+        <div className={styles.status}>
+          {project.status === 'Closed' && <RiCloseCircleLine />}
+          {project.status === 'Unknown' && <RiQuestionLine />}
+          <span>{project.status}</span>
         </div>
 
         <div className={styles.mainFields}>

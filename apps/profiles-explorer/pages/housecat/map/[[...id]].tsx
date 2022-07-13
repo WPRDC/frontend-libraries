@@ -4,19 +4,23 @@
  *
  */
 import * as React from 'react';
-import { MapFilterForm } from '../../parts/MapFilterForm';
-import { MapInterface } from '../../parts/MapInterface';
 
-import styles from '../../styles/housecat/Map.module.css';
-import { FilterFormValues } from '../../types';
+import { useRouter } from 'next/router';
+
+import { MapFilterForm } from '../../../parts/MapFilterForm';
+import { MapInterface } from '../../../parts/MapInterface';
+
+import styles from '../../../styles/housecat/Map.module.css';
+import { FilterFormValues } from '../../../types';
 import {
   useHousingProjectMap,
   usePublicHousingProject,
 } from '@wprdc-connections/housecat';
 import { AHProjectView } from '@wprdc-widgets/ah-project-view';
-import { HousecatNavbar } from '../../components/Navbar';
-import Layout from '../../components/Layout';
-import HousecatFooter from '../../components/Footer/HousecatFooter';
+import { HousecatNavbar } from '../../../components/Navbar';
+import Layout from '../../../components/Layout';
+import HousecatFooter from '../../../components/Footer/HousecatFooter';
+import { LoadingMessage } from '@wprdc-components/loading-message';
 
 function MapPage() {
   const boardRef = React.useRef<HTMLDivElement>(null);
@@ -26,12 +30,28 @@ function MapPage() {
 
   const { data: mapData, error } = useHousingProjectMap(filterParams);
 
-  const { data: affordableHousingProject } = usePublicHousingProject(
+  const { data: affordableHousingProject, isLoading } = usePublicHousingProject(
     currentProject,
   );
 
+  console.log(affordableHousingProject, isLoading);
+
+  const router = useRouter();
+
+  // handle query params
+  React.useEffect(() => {
+    const { id: _projectID } = router.query;
+    // read data viz slug from path
+    if (!!_projectID && _projectID.length)
+      setCurrentProject(Number.parseInt(_projectID[0]));
+  }, [router.query]);
+
   function handleFormChange(params: FilterFormValues) {
     setFilterParams(params);
+  }
+
+  function handleProjectSelect(id: number) {
+    router.push(`/housecat/map/${id}`);
   }
 
   if (!!boardRef && boardRef.current) {
@@ -48,22 +68,21 @@ function MapPage() {
         <MapInterface
           mapData={mapData}
           filterParams={filterParams}
-          handleProjectSelection={setCurrentProject}
+          handleProjectSelection={handleProjectSelect}
         />
       </div>
       <div ref={boardRef} className={styles.dashboardSection}>
-        {!!affordableHousingProject ? (
+        {!!affordableHousingProject && (
           <AHProjectView project={affordableHousingProject} />
-        ) : (
+        )}
+        {!currentProject && (
           <section id="intro" className={styles.infoSection}>
             <p className={styles.cta}>Click on the map to explore the data.</p>
 
             <p>
               Affordable housing is a growing issue of regional importance in
-              our community.
-              {'  '}
-              In May, 2016, the City of Pittsburgh&rsquo;s Affordable Housing
-              Task Force released{' '}
+              our community. In May, 2016, the City of Pittsburgh&rsquo;s
+              Affordable Housing Task Force released{' '}
               <a href="https://apps.pittsburghpa.gov/mayorpeduto/FinalReport_5_31_16.pdf">
                 its report
               </a>{' '}
@@ -98,6 +117,9 @@ function MapPage() {
               on screen.
             </p>
           </section>
+        )}
+        {!!currentProject && !!isLoading && (
+          <LoadingMessage message="Loading project data" />
         )}
       </div>
     </div>

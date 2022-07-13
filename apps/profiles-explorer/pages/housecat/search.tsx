@@ -12,12 +12,18 @@ import { ProjectIndex } from '@wprdc-types/housecat';
 import Layout from '../../components/Layout';
 import { HousecatNavbar } from '../../components/Navbar';
 import HousecatFooter from '../../components/Footer/HousecatFooter';
+import { useRouter } from 'next/router';
 
 function SearchPage() {
   const [currentProject, setCurrentProject] = React.useState<ProjectIndex>();
   const { data: affordableHousingProject } = usePublicHousingProject(
     currentProject,
   );
+  const router = useRouter();
+
+  function handlePress() {
+    router.push(`/housecat/map/${currentProject?.id}`);
+  }
 
   return (
     <div className={styles.wrapper}>
@@ -35,7 +41,10 @@ function SearchPage() {
       </div>
       <div className={styles.dataSection}>
         {!!affordableHousingProject && (
-          <AHProjectView project={affordableHousingProject} />
+          <AHProjectView
+            project={affordableHousingProject}
+            onMapLinkPress={handlePress}
+          />
         )}
       </div>
     </div>

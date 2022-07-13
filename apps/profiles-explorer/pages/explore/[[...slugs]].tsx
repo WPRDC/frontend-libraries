@@ -136,6 +136,7 @@ export default function Home() {
   function handleCompare(indicator: IndicatorWithData) {
     router.push({
       pathname: `/compare/${indicator.slug}`,
+      query: { g1: geogSlug, g2: geogSlug },
     });
   }
 

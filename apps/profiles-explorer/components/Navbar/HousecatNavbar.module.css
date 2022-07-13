@@ -1,5 +1,5 @@
 .wrapper {
-  @apply w-full h-20 flex-none p-2 px-5 flex shadow-lg;
+  @apply w-full h-20 flex-none p-2 px-5 flex;
   @apply bg-amber-600;
   @apply text-white;
   @apply print:hidden;
