@@ -62,11 +62,7 @@ export function MapInterface({
     }
   };
 
-  const {
-    source,
-    layers,
-    extras: { legendItems },
-  } = mapData || { extras: {} };
+  const { source, layers } = mapData || { extras: {} };
 
   return (
     <div className={styles.wrapper}>

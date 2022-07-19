@@ -12,7 +12,7 @@ import classNames from 'classnames';
 
 import { useWindowSize } from '@wprdc-components/util';
 
-import { RiArrowLeftSLine, RiArrowRightSLine } from 'react-icons/ri';
+import { AiFillCaretLeft, AiFillCaretRight } from 'react-icons/ai';
 import { Resource } from '@wprdc-types/shared';
 import Link from 'next/link';
 import { GeogBrief } from '@wprdc-types/geo';
@@ -113,7 +113,7 @@ export function NavTabs<T extends Resource>(props: NavTabProps<T>) {
             })}
             onClick={handleScroll('left')}
           >
-            <RiArrowLeftSLine />
+            <AiFillCaretLeft />
           </button>
         )}
         <nav className={styles.navWrapper}>
@@ -151,7 +151,7 @@ export function NavTabs<T extends Resource>(props: NavTabProps<T>) {
             })}
             onClick={handleScroll('right')}
           >
-            <RiArrowRightSLine />
+            <AiFillCaretRight />
           </button>
         )}
       </div>

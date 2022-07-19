@@ -26,28 +26,30 @@ export function Breadcrumbs<T>(props: BreadcrumbsProps<T>) {
 
   return (
     <nav {...navProps} className={styles.wrapper}>
-      <ol className={styles.list}>
-        {children.map((child, i) => {
-          if (i < children.length - 1) {
-            return React.cloneElement(child as React.ReactElement, {
-              isCurrent: false,
-              elementType: 'a',
-              hideDivider: !showCurrent && i == children.length - 1,
-              shallow,
-            });
-          }
-          if (showCurrent && !bigTitle) {
-            return React.cloneElement(child as React.ReactElement, {
-              isCurrent: true,
-              elementType: titleElement,
-              bigTitle: bigTitle,
-              shallow,
-            });
-          }
-          return null;
-        })}
-      </ol>
-      {!!showCurrent &&
+      {(showCurrent || children.length > 1) && (
+        <ol className={styles.list}>
+          {children.map((child, i) => {
+            if (i < children.length - 1) {
+              return React.cloneElement(child as React.ReactElement, {
+                isCurrent: false,
+                elementType: 'a',
+                hideDivider: !showCurrent && i == children.length - 1,
+                shallow,
+              });
+            }
+            if (showCurrent && !bigTitle) {
+              return React.cloneElement(child as React.ReactElement, {
+                isCurrent: true,
+                elementType: titleElement,
+                bigTitle: bigTitle,
+                shallow,
+              });
+            }
+            return null;
+          })}
+        </ol>
+      )}
+      {showCurrent &&
         !!bigTitle &&
         React.cloneElement(lastChild as React.ReactElement, {
           isCurrent: true,
@@ -67,6 +69,7 @@ export function BreadcrumbItem(props: BreadcrumbItemProps) {
     hideDivider,
     bigTitle,
     shallow,
+    isDisabled,
   } = props;
 
   const ref = React.useRef(null);
@@ -94,14 +97,18 @@ export function BreadcrumbItem(props: BreadcrumbItemProps) {
   } else {
     breadcrumbContent = (
       <>
-        <Link
-          {...itemProps}
-          ref={ref}
-          href={props.href || '#'}
-          shallow={shallow}
-        >
-          {props.children}
-        </Link>
+        {isDisabled ? (
+          <span ref={ref}>{props.children}</span>
+        ) : (
+          <Link
+            {...itemProps}
+            ref={ref}
+            href={props.href || '#'}
+            shallow={shallow}
+          >
+            {props.children}
+          </Link>
+        )}
         {!hideDivider && dividerContent}
       </>
     );

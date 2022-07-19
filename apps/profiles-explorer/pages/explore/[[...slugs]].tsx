@@ -31,18 +31,20 @@ import { IndicatorWithData, TopicBrief } from '@wprdc-types/profiles';
 import { Map } from '@wprdc-components/map';
 import { useProvider } from '@wprdc-components/provider';
 import { TaxonomySection } from '../../components/TaxonomySection';
+import Link from 'next/link';
+import { BreadcrumbItemLinkProps } from '@wprdc-types/breadcrumbs';
 
 export default function Home() {
   // state
   const [geogLevel, setGeogLevel] = useState<GeogLevel>();
   const [geogSlug, setGeogSlug] = useState<string>();
   const [pathSlugs, setPathSlugs] = useState<string[]>([]);
-  const [domainSlug, topicSlug] = pathSlugs;
+  const [domainSlug, subdomainSlug, topicSlug] = pathSlugs;
 
   // hooks
   const context = useProvider();
   const { data: geogLevels } = useGeographyLevels();
-  const { data: taxonomy } = useTaxonomy('child-health-explorer');
+  const { data: taxonomy } = useTaxonomy('default');
   const { data: geog } = useGeography(geogSlug);
 
   // handling browser state
@@ -115,9 +117,13 @@ export default function Home() {
 
   function handleExploreTopic(topic: TopicBrief): void {
     const { slugs, ...sansSlugs } = router.query;
+
     if (!!topic.slug) {
+      const dSlug = topic.hierarchies['default'][0].slug;
+      const sdSLug = topic.hierarchies['default'][1].slug;
+
       router.push({
-        pathname: `/explore/${domainSlug}/${topic.slug}/`,
+        pathname: `/explore/${dSlug}/${sdSLug}/${topic.slug}/`,
         query: sansSlugs,
       });
     }
@@ -257,10 +263,13 @@ export default function Home() {
                 taxonomy={taxonomy}
                 geog={geog}
                 currentDomainSlug={domainSlug}
+                currentSubdomainSlug={subdomainSlug}
                 currentTopicSlug={topicSlug}
                 onExploreTopic={handleExploreTopic}
                 baseHeadingLevel={3}
+                basePath={'/explore'}
                 onCompareIndicator={handleCompare}
+                breadcrumbLinkComponent={BreadcrumbLink}
               />
             ) : (
               <LoadingMessage message="Loading topics" />
@@ -271,3 +280,7 @@ export default function Home() {
     </div>
   );
 }
+
+const BreadcrumbLink: React.FC<BreadcrumbItemLinkProps> = props => {
+  return <Link {...props} shallow={true} />;
+};

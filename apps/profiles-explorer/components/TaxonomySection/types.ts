@@ -9,6 +9,9 @@ export interface TaxonomySectionProps<L extends object = { href: string }>
   currentDomainSlug?: string;
   currentDomainHref?: string;
 
+  currentSubdomainSlug?: string;
+  currentSubdomainHref?: string;
+
   currentTopicSlug?: string;
   currentTopicHref?: string;
 

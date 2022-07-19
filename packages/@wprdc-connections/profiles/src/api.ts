@@ -11,6 +11,7 @@ import { Method } from '@wprdc-types/api';
 import {
   Domain,
   IndicatorWithData,
+  Subdomain,
   Taxonomy,
   Topic,
 } from '@wprdc-types/profiles';
@@ -20,6 +21,7 @@ const HOST = 'https://api.profiles.wprdc.org';
 enum Endpoint {
   Taxonomy = 'taxonomy',
   Domain = 'domain',
+  Subdomain = 'subdomain',
   Topic = 'topic', //   or here
   Indicator = 'indicator',
 }
@@ -45,6 +47,17 @@ function requestDomain(
   if (!slug) throw Error('slug not provided');
 
   return api.callAndProcessEndpoint<Domain>(Endpoint.Domain, Method.GET, {
+    id: slug,
+    controller,
+  });
+}
+
+function requestSubdomain(
+  slug?: string,
+  controller?: AbortController
+): Promise<Subdomain> {
+  if (!slug) throw Error('slug not provided');
+  return api.callAndProcessEndpoint<Subdomain>(Endpoint.Subdomain, Method.GET, {
     id: slug,
     controller,
   });
@@ -92,4 +105,5 @@ export const ProfilesAPI = {
   requestTopic,
   requestIndicator,
   requestDomain,
+  requestSubdomain,
 };

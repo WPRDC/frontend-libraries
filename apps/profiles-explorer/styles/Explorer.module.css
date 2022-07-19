@@ -47,8 +47,8 @@
 }
 
 .taxonomyContainer {
-  @apply p-4 xl:pr-12;
-  @apply flex-grow overflow-y-auto;
+  @apply flex flex-col;
+  @apply overflow-y-hidden;
 }
 
 .cta {

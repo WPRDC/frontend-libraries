@@ -34,8 +34,6 @@ function MapPage() {
     currentProject,
   );
 
-  console.log(affordableHousingProject, isLoading);
-
   const router = useRouter();
 
   // handle query params

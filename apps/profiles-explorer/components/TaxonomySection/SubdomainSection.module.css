@@ -1,0 +1,26 @@
+.indicatorList {
+  grid-template-columns: repeat(auto-fill, minmax(16rem, min-content));
+  @apply mx-1 py-2 grid gap-4;
+}
+
+.indicatorListItem {
+  @apply w-64;
+}
+
+.wrapper {
+  @apply py-1 my-2.5 mb-3.5 border-t border-gray-700 first:border-0;
+}
+
+.title {
+  @apply font-bold text-lg;
+}
+
+.description {
+  @apply text-sm mt-0.5 pb-1 mb-2;
+}
+
+.topics {
+  @apply px-8 md:px-0;
+  @apply grid grid-cols-1 gap-8;
+  @apply md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4;
+}

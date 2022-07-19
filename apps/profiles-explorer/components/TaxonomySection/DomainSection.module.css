@@ -1,5 +1,4 @@
 .wrapper {
-  @apply pt-3;
   @apply lg:h-auto;
 }
 
@@ -8,8 +7,7 @@
   @apply py-2;
 }
 
-.topics {
-  @apply px-8 md:px-0;
-  @apply grid grid-cols-1 gap-8;
-  @apply md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4;
+.wrapper h2 {
+  @apply font-bold;
+  @apply text-3xl;
 }

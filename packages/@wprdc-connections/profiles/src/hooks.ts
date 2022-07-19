@@ -1,6 +1,7 @@
 import {
   Domain,
   IndicatorWithData,
+  Subdomain,
   Taxonomy,
   Topic,
 } from '@wprdc-types/profiles';
@@ -21,6 +22,14 @@ export function useDomain(slug?: string): UseQueryResult<Domain> {
   return useQuery<Domain>(
     ['domain', slug],
     () => ProfilesAPI.requestDomain(slug),
+    { enabled: !!slug, staleTime }
+  );
+}
+
+export function useSubdomain(slug?: string): UseQueryResult<Subdomain> {
+  return useQuery<Subdomain>(
+    ['subdomain', slug],
+    () => ProfilesAPI.requestSubdomain(slug),
     { enabled: !!slug, staleTime }
   );
 }

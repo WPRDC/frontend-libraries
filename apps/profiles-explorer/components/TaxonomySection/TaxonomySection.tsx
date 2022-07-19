@@ -5,12 +5,12 @@ import styles from './TaxonomySection.module.css';
 import { BreadcrumbItemProps } from '@wprdc-types/breadcrumbs';
 import { Domain, TopicBrief } from '@wprdc-types/profiles';
 
-import { Breadcrumbs, BreadcrumbItem } from '@wprdc-components/breadcrumbs';
+import { BreadcrumbItem, Breadcrumbs } from '@wprdc-components/breadcrumbs';
 
 import { TopicView } from '@wprdc-widgets/topic-view';
 
 import DomainSection from './DomainSection';
-import { useDomain } from '@wprdc-connections/profiles';
+import { useDomain, useSubdomain, useTopic } from '@wprdc-connections/profiles';
 import { NavTabs } from './NavTabs';
 import { TaxonomySectionProps } from './types';
 
@@ -21,6 +21,8 @@ export const TaxonomySection: React.FC<TaxonomySectionProps> = ({
   onCompareIndicator,
   currentDomainSlug,
   currentDomainHref,
+  currentSubdomainSlug,
+  currentSubdomainHref,
   currentTopicSlug,
   currentTopicHref,
   breadcrumbLinkComponent,
@@ -30,18 +32,19 @@ export const TaxonomySection: React.FC<TaxonomySectionProps> = ({
     if (!!onExploreTopic) onExploreTopic(topic);
   }
 
-  const topicFetchController = new AbortController();
+  const scrollRef = React.useRef<HTMLDivElement>(null);
 
   const { data: currentDomain } = useDomain(currentDomainSlug);
+  const { data: currentSubdomain } = useSubdomain(currentSubdomainSlug);
+  const { data: currentTopic } = useTopic(currentTopicSlug);
 
-  const currentTopic = React.useMemo(
-    () =>
-      !!currentDomain &&
-      currentDomain.topics.find(t => t.slug === currentTopicSlug),
-    [currentDomainSlug, currentTopicSlug],
-  );
-
-  let breadcrumbs: BreadcrumbItemProps[] = [];
+  let breadcrumbs: BreadcrumbItemProps[] = [
+    {
+      key: 'taxonomy',
+      children: 'Profiles Explorer',
+      href: '/explore',
+    },
+  ];
   if (currentDomain)
     breadcrumbs.push({
       key: 'domain',
@@ -50,8 +53,18 @@ export const TaxonomySection: React.FC<TaxonomySectionProps> = ({
         `${basePath}/${currentDomainSlug}?geog=${geog?.slug}`,
       children: currentDomain.name,
       LinkComponent: breadcrumbLinkComponent,
+      shallow: true,
     });
-
+  if (currentSubdomain)
+    breadcrumbs.push({
+      key: 'subdomain',
+      href:
+        currentSubdomainHref ||
+        `/explore/${currentDomainSlug}/${currentSubdomainSlug}?geog=${geog?.slug}`,
+      children: currentSubdomain.name,
+      LinkComponent: breadcrumbLinkComponent,
+      shallow: true,
+    });
   if (currentTopic)
     breadcrumbs.push({
       key: 'topic',
@@ -60,16 +73,41 @@ export const TaxonomySection: React.FC<TaxonomySectionProps> = ({
         `${basePath}/${currentDomainSlug}/${currentTopicSlug}?geog=${geog?.slug}`,
       children: currentTopic.name,
       LinkComponent: breadcrumbLinkComponent,
+      shallow: true,
     });
+
+  // handle auto scrolling
+  // 1. subdomain selection - scroll to subdomain title
+  // 2. topic and domain selection - scroll to top
+  React.useEffect(() => {
+    if (!!currentTopicSlug) {
+      if (!!scrollRef.current) scrollRef.current.scrollTop = 0;
+    } else if (!!currentSubdomainSlug)
+      document.getElementById(currentSubdomainSlug)?.scrollIntoView();
+    else if (!!currentDomainSlug)
+      if (!!scrollRef.current) scrollRef.current.scrollTop = 0;
+  }, [currentDomainSlug, currentSubdomainSlug, currentTopicSlug]);
 
   return (
     <div className={styles.wrapper}>
-      <Breadcrumbs showCurrent={false}>
-        {breadcrumbs.map(breadcrumb => (
-          <BreadcrumbItem key={breadcrumb.key} {...breadcrumb} />
-        ))}
-      </Breadcrumbs>
-      <div className={styles.content}>
+      <div className={styles.nav}>
+        <div className={styles.breadcrumbs}>
+          <Breadcrumbs>
+            {breadcrumbs.map(breadcrumb => (
+              <BreadcrumbItem key={breadcrumb.key} {...breadcrumb} />
+            ))}
+          </Breadcrumbs>
+        </div>
+
+        <NavTabs<Domain>
+          items={taxonomy.domains}
+          selectedKey={currentDomainSlug}
+          geog={geog}
+          basePath={basePath}
+        />
+      </div>
+
+      <div className={styles.content} ref={scrollRef}>
         {!!currentTopic && (
           <TopicView
             onCompareIndicator={onCompareIndicator}
@@ -79,17 +117,10 @@ export const TaxonomySection: React.FC<TaxonomySectionProps> = ({
         )}
         {!currentTopic && (
           <div>
-            <NavTabs<Domain>
-              items={taxonomy.domains}
-              selectedKey={currentDomainSlug}
-              geog={geog}
-              basePath={basePath}
-            />
             <DomainSection
               domain={currentDomain}
               geog={geog}
               onExploreTopic={handleExploreTopic}
-              topicFetchController={topicFetchController}
             />
           </div>
         )}

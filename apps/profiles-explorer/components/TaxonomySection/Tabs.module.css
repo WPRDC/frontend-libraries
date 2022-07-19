@@ -4,12 +4,12 @@
 
 .tabSection {
   @apply flex flex-row;
+  @apply border-b border-black;
 }
 
 .tabList {
   @apply flex flex-grow overflow-x-hidden;
   @apply pt-1;
-  @apply border-b border-black;
 }
 
 .tab {
@@ -47,8 +47,8 @@
   @apply cursor-not-allowed;
 }
 
-.disabledButton {
-  @apply text-gray-300 cursor-default;
+.scrollButton.disabledButton {
+  @apply text-gray-300 hover:text-gray-300 cursor-default;
 }
 
 .tabPanel {
@@ -56,6 +56,9 @@
 }
 
 .scrollButton {
+  @apply px-1;
+  @apply pb-1;
+  @apply hover:text-cyan-500;
 }
 
 /* to override the default link styles (see main.css) */

@@ -8,13 +8,13 @@ export * from './source';
 export * from './time';
 export * from './variable';
 
-interface TopicHierarchy {
-  domain: Resource;
+type TopicHierarchy = Record<string, [Resource, Resource]>;
+
+export interface TopicBrief extends Resource {
+  hierarchies: TopicHierarchy;
 }
 
-export interface TopicBrief extends Resource {}
-
-export interface Topic extends Resource {
+export interface Topic extends TopicBrief {
   longDescription: string;
   fullDescription: string;
   limitations: string;
@@ -22,13 +22,19 @@ export interface Topic extends Resource {
   source: string;
   provenance: string;
   indicators: IndicatorBaseWithOptions[];
-  hierarchies: TopicHierarchy[];
   tags: TagRecord[];
   context: ContextItem[];
   primaryIndicatorIDs: IndicatorBaseWithOptions['id'][];
 }
 
 export interface Domain extends Resource {
+  topics: Topic[];
+  subdomains: Resource[];
+  tags: TagRecord[];
+  context: ContextItem[];
+}
+
+export interface Subdomain extends Resource {
   topics: Topic[];
   tags: TagRecord[];
   context: ContextItem[];

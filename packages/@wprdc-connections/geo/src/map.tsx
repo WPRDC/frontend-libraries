@@ -36,7 +36,6 @@ export const menuLayerConnection: MapPluginConnection<GeogLevel, GeogBrief> = {
     const selectedLayer = items.find(item => selected.has(item.id));
     const { hoveredFilter, selectedFilter, highlightFilter } = options || {};
 
-    console.log({ hoveredFilter });
     // todo: build source based on selection.  or just put them all up at once tbh
     if (!!selectedLayer)
       setLayers(

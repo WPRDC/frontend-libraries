@@ -17,8 +17,9 @@ export interface BreadcrumbsProps<T> extends AriaBreadcrumbsProps<T> {
   shallow?: boolean;
 }
 
-export interface BreadcrumbItemProps<T extends HTMLElement = HTMLElement>
-  extends AriaBreadcrumbItemProps {
+export interface BreadcrumbItemProps<
+  T extends HTMLAnchorElement = HTMLAnchorElement
+> extends AriaBreadcrumbItemProps {
   key?: Key;
   hideDivider?: boolean;
   href?: string;
@@ -29,8 +30,9 @@ export interface BreadcrumbItemProps<T extends HTMLElement = HTMLElement>
   shallow?: boolean;
 }
 
-export interface BreadcrumbItemLinkProps<T extends HTMLElement = HTMLElement>
-  extends HTMLAttributes<HTMLElement> {
+export interface BreadcrumbItemLinkProps<
+  T extends HTMLAnchorElement = HTMLAnchorElement
+> extends HTMLAttributes<HTMLAnchorElement> {
   href: string;
   ref?: Ref<T>;
   shallow?: boolean;

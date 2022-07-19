@@ -1,5 +1,18 @@
 .wrapper {
+  @apply flex-grow overflow-y-hidden;
+  @apply flex flex-col;
 }
 
 .content {
+  @apply flex-grow overflow-y-scroll;
+  @apply p-6;
+}
+
+.nav {
+  @apply px-6;
+}
+
+.breadcrumbs {
+  @apply py-6;
+  @apply px-1;
 }
