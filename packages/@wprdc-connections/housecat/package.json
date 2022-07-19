@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-connections/housecat",
-  "version": "0.0.41",
+  "version": "0.0.42",
   "description": "",
   "keywords": [],
   "license": "AGPL-3.0-or-later",
@@ -77,17 +77,17 @@
   },
   "dependencies": {
     "@wprdc-components/list-box": "^0.0.20",
-    "@wprdc-components/map": "^0.0.29",
+    "@wprdc-components/map": "^0.0.30",
     "@wprdc-components/util": "^0.0.13",
     "@wprdc-connections/api": "^0.0.21",
     "@wprdc-types/api": "^0.0.15",
-    "@wprdc-types/connections": "^0.0.21",
+    "@wprdc-types/connections": "^0.0.22",
     "@wprdc-types/geo": "^0.0.16",
     "@wprdc-types/housecat": "^0.0.23",
     "@wprdc-types/list-box": "^0.0.16",
     "@wprdc-types/map": "^0.0.17",
     "@wprdc-types/shared": "^0.0.14",
-    "@wprdc-types/viz": "^0.0.23",
+    "@wprdc-types/viz": "^0.0.24",
     "react-icons": "^4.3.1",
     "react-query": "^3.39.1"
   },
