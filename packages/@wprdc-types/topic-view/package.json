@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-types/topic-view",
-  "version": "0.0.23",
+  "version": "0.0.24",
   "description": "Collection of TypeScript/JS libraries for use in/with WPRDC projects.",
   "keywords": [],
   "license": "AGPL-3.0-or-later",
@@ -77,7 +77,7 @@
   "dependencies": {
     "@types/react": "^18.0.12",
     "@wprdc-types/geo": "^0.0.16",
-    "@wprdc-types/profiles": "^0.0.24"
+    "@wprdc-types/profiles": "^0.0.25"
   },
   "gitHead": "94a124feb01e557bf271b087ab91e7a6590f483b"
 }

@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-connections/util",
-  "version": "0.0.34",
+  "version": "0.0.35",
   "description": "",
   "keywords": [],
   "license": "AGPL-3.0-or-later",
@@ -78,12 +78,12 @@
   "dependencies": {
     "@types/mapbox-gl": "^2.6.4",
     "@wprdc-components/util": "^0.0.13",
-    "@wprdc-types/connections": "^0.0.22",
+    "@wprdc-types/connections": "^0.0.23",
     "@wprdc-types/geo": "^0.0.16",
     "@wprdc-types/map": "^0.0.17",
     "@wprdc-types/neighborhood-assets": "^0.0.14",
     "@wprdc-types/shared": "^0.0.14",
-    "@wprdc-types/viz": "^0.0.24",
+    "@wprdc-types/viz": "^0.0.25",
     "mapbox-gl": "^2.8.2"
   },
   "gitHead": "94a124feb01e557bf271b087ab91e7a6590f483b"

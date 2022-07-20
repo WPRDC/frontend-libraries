@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-components/map",
-  "version": "0.0.30",
+  "version": "0.0.31",
   "description": "",
   "keywords": [],
   "license": "AGPL-3.0-or-later",
@@ -80,12 +80,12 @@
     "@types/mapbox-gl": "^2.6.4",
     "@wprdc-components/checkbox-group": "^0.0.17",
     "@wprdc-components/provider": "^0.0.17",
-    "@wprdc-types/connections": "^0.0.22",
+    "@wprdc-types/connections": "^0.0.23",
     "@wprdc-types/geo": "^0.0.16",
     "@wprdc-types/map": "^0.0.17",
     "@wprdc-types/neighborhood-assets": "^0.0.14",
     "@wprdc-types/shared": "^0.0.14",
-    "@wprdc-types/viz": "^0.0.24",
+    "@wprdc-types/viz": "^0.0.25",
     "mapbox-gl": "^2.8.2",
     "react-map-gl": "^7.0.17"
   },

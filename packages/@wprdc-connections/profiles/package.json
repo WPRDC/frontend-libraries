@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-connections/profiles",
-  "version": "0.0.36",
+  "version": "0.0.37",
   "description": "",
   "keywords": [],
   "license": "AGPL-3.0-or-later",
@@ -83,9 +83,9 @@
     "@wprdc-types/geo": "^0.0.16",
     "@wprdc-types/list-box": "^0.0.16",
     "@wprdc-types/map": "^0.0.17",
-    "@wprdc-types/profiles": "^0.0.24",
+    "@wprdc-types/profiles": "^0.0.25",
     "@wprdc-types/shared": "^0.0.14",
-    "@wprdc-types/viz": "^0.0.24",
+    "@wprdc-types/viz": "^0.0.25",
     "react-query": "^3.39.1"
   },
   "gitHead": "94a124feb01e557bf271b087ab91e7a6590f483b"

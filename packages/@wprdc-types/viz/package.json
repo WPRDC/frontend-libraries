@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-types/viz",
-  "version": "0.0.24",
+  "version": "0.0.25",
   "description": "Collection of TypeScript/JS libraries for use in/with WPRDC projects.",
   "keywords": [],
   "license": "AGPL-3.0-or-later",
@@ -79,7 +79,7 @@
     "@types/react-table": "^7.7.12",
     "@wprdc-types/geo": "^0.0.16",
     "@wprdc-types/map": "^0.0.17",
-    "@wprdc-types/profiles": "^0.0.24",
+    "@wprdc-types/profiles": "^0.0.25",
     "@wprdc-types/shared": "^0.0.14",
     "react-map-gl": "^7.0.17"
   },
