@@ -13,6 +13,10 @@ import {
   ConnectionCollection,
 } from '@wprdc-types/connections';
 
+
+const TAXONOMY_SLUG = 'affordable-housing'
+const BASE_PATH = '/housing'
+
 import { Geog, GeogBrief, GeogLevel, GeographyType } from '@wprdc-types/geo';
 import { TopicBrief } from '@wprdc-types/profiles';
 import { useTaxonomy } from '@wprdc-connections/profiles';
@@ -22,14 +26,21 @@ import { useProvider } from '@wprdc-components/provider';
 import { LoadingMessage } from '@wprdc-components/loading-message';
 import { Map } from '@wprdc-components/map';
 import { LayerPanelVariant } from '@wprdc-types/map';
+import { BreadcrumbLink } from '../../components/BreadcrumbLink';
 
 const ReachPage: NextPage = () => {
+
   const [geogBrief, setGeogBrief] = React.useState<GeogBrief>(defaultGeogBrief);
   const [pathSlugs, setPathSlugs] = React.useState<string[]>([]);
 
   const context = useProvider();
-  const { data: geog, isLoading, error } = useGeography(geogBrief.slug);
   const router = useRouter();
+  const { data: geog, isLoading, error } = useGeography(geogBrief.slug);
+  const {
+    data: taxonomy,
+    isLoading: taxonomyIsLoading,
+    error: taxonomyError,
+  } = useTaxonomy('affordable-housing');
 
   function handleTabChange(domain: React.Key): void {
     router.push(
@@ -40,8 +51,29 @@ const ReachPage: NextPage = () => {
       },
     );
   }
+  function handleExploreTopic(topic: TopicBrief): void {
+    const { slugs, ...sansSlugs } = router.query;
 
-  const [domainSlug, topicSlug] = pathSlugs;
+    if (!!topic.slug) {
+      const dSlug = topic.hierarchies[TAXONOMY_SLUG][0].slug;
+      const sdSLug = topic.hierarchies[TAXONOMY_SLUG][1].slug;
+
+      router.push({
+        pathname: `/housing/${dSlug}/${sdSLug}/${topic.slug}/`,
+        query: sansSlugs,
+      });
+    }
+  }
+  const handleClick: ConnectedMapEventHandler = (_, __, toolboxItems) => {
+    if (!!toolboxItems) {
+      const clickedGeogs: GeogBrief[] | undefined =
+        toolboxItems[ProjectKey.GeoMenu];
+      if (!!clickedGeogs && !!clickedGeogs.length)
+        setGeogBrief(clickedGeogs[0]);
+    }
+  };
+
+  const [domainSlug, subdomainSlug, topicSlug] = pathSlugs;
 
   // update state when path updates
   React.useEffect(() => {
@@ -60,30 +92,6 @@ const ReachPage: NextPage = () => {
     if (!!geog) context.setGeog(geog);
   }, [geog]);
 
-  const {
-    data: taxonomy,
-    isLoading: taxonomyIsLoading,
-    error: taxonomyError,
-  } = useTaxonomy('affordable-housing');
-
-  const handleClick: ConnectedMapEventHandler = (_, __, toolboxItems) => {
-    if (!!toolboxItems) {
-      const clickedGeogs: GeogBrief[] | undefined =
-        toolboxItems[ProjectKey.GeoMenu];
-      if (!!clickedGeogs && !!clickedGeogs.length)
-        setGeogBrief(clickedGeogs[0]);
-    }
-  };
-
-  function handleExploreTopic(topic: TopicBrief): void {
-    if (!!topic) {
-      router.push(
-        `/housing/${domainSlug}/${topic.slug}/${serializeParams(
-          router.query,
-        )}`,
-      );
-    }
-  }
 
   return (
     <div className={styles.wrapper}>
@@ -91,7 +99,7 @@ const ReachPage: NextPage = () => {
         <div className={styles.main}>
           <div className={styles.intro}>
             <div className={styles.title}>
-              <a href='/housing'>Housing Indicators</a>
+              <a href={BASE_PATH}>Housing Indicators</a>
             </div>
             <div className={styles.subtitle}>
               Indicators to inform affordable housing work
@@ -170,13 +178,16 @@ const ReachPage: NextPage = () => {
 
             {taxonomy && (
               <TaxonomySection
-                basePath="/housing"
+                basePath={BASE_PATH}
                 taxonomy={taxonomy}
                 geog={geog}
+
                 currentDomainSlug={domainSlug}
+                currentSubdomainSlug={subdomainSlug}
                 currentTopicSlug={topicSlug}
                 onExploreTopic={handleExploreTopic}
                 onTabsChange={handleTabChange}
+                breadcrumbLinkComponent={BreadcrumbLink}
               />
             )}
           </div>

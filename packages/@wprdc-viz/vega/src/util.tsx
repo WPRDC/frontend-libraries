@@ -46,6 +46,7 @@ export function flattenData(
               variableAbbr: variables[v].shortName,
               timeLabel: timeAxis.timeParts[t].name,
               geogLabel: geogs[g].name,
+              timePoint: timeAxis.timeParts[t].timePoint,
               ...indicator.data[g][t][v],
             });
         }

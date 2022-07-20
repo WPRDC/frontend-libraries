@@ -24,7 +24,7 @@ export interface YearSeries extends SeriesBase {
 export interface TimePart {
   slug: string;
   name: string;
-  timePoint: Date;
+  timePoint: string;
   timeUnit: number;
 }
 

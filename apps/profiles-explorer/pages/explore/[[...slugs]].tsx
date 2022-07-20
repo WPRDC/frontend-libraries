@@ -31,8 +31,7 @@ import { IndicatorWithData, TopicBrief } from '@wprdc-types/profiles';
 import { Map } from '@wprdc-components/map';
 import { useProvider } from '@wprdc-components/provider';
 import { TaxonomySection } from '../../components/TaxonomySection';
-import Link from 'next/link';
-import { BreadcrumbItemLinkProps } from '@wprdc-types/breadcrumbs';
+import { BreadcrumbLink } from '../../components/BreadcrumbLink';
 
 export default function Home() {
   // state
@@ -49,9 +48,8 @@ export default function Home() {
 
   // handling browser state
   const { width } = useWindowSize();
-  const onSmallScreen = !!width && width < 768;
-
   const router = useRouter();
+  const onSmallScreen = !!width && width < 768;
 
   // set geog in the global context
   useEffect(() => {
@@ -260,16 +258,16 @@ export default function Home() {
           <div className={styles.taxonomyContainer}>
             {!!taxonomy && !!domainSlug ? (
               <TaxonomySection
+                basePath={'/explore'}
                 taxonomy={taxonomy}
                 geog={geog}
                 currentDomainSlug={domainSlug}
                 currentSubdomainSlug={subdomainSlug}
                 currentTopicSlug={topicSlug}
                 onExploreTopic={handleExploreTopic}
-                baseHeadingLevel={3}
-                basePath={'/explore'}
                 onCompareIndicator={handleCompare}
                 breadcrumbLinkComponent={BreadcrumbLink}
+                baseHeadingLevel={3}
               />
             ) : (
               <LoadingMessage message="Loading topics" />
@@ -280,7 +278,3 @@ export default function Home() {
     </div>
   );
 }
-
-const BreadcrumbLink: React.FC<BreadcrumbItemLinkProps> = props => {
-  return <Link {...props} shallow={true} />;
-};

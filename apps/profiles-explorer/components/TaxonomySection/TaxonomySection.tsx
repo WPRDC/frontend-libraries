@@ -41,7 +41,7 @@ export const TaxonomySection: React.FC<TaxonomySectionProps> = ({
   let breadcrumbs: BreadcrumbItemProps[] = [
     {
       key: 'taxonomy',
-      children: 'Profiles Explorer',
+      children: taxonomy.name,
       href: '/explore',
     },
   ];

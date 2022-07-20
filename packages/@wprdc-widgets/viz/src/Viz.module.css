@@ -17,13 +17,28 @@
   @apply flex;
 }
 
-.chart {
+.lineChartWithTable {
+  @apply max-h-full max-w-full min-h-0 w-full;
+  @apply space-y-4;
+  @apply flex flex-col;
+}
+
+.lineChartWithTable .chart {
+  @apply bg-white border-2 border-black p-2;
+  @apply w-full;
+}
+
+.lineChartWithTable .table {
+  @apply w-max;
+}
+
+.chartWithTable .chart {
   @apply bg-white border-2 border-black p-2;
   @apply max-h-full min-h-0;
   @apply lg:w-1/2;
 }
 
-.table {
+.chartWithTable .table {
   @apply lg:w-1/2;
 }
 

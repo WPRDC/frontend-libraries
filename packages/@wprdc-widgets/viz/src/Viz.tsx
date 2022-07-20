@@ -19,7 +19,7 @@ import {
 
 import { BigValue } from '@wprdc-viz/simple';
 import { DataMap } from '@wprdc-viz/map';
-import { BarChart, GeogHistogram } from '@wprdc-viz/vega';
+import { BarChart, GeogHistogram, LineChart } from '@wprdc-viz/vega';
 import { FlatTable } from '@wprdc-viz/table';
 
 import {
@@ -72,7 +72,8 @@ export const Viz: React.FC<VizWidgetProps> = ({
       navigator.clipboard.writeText(str);
   }
 
-  const chartHeight = 30 + indicator.variables.length * 45;
+  let chartHeight = 30 + indicator.variables.length * 45;
+  if (chartHeight < 200) chartHeight = 200;
 
   const embedString = `<iframe src='https://profiles.wprdc.org/indicator/${indicator.slug}?geog=${indicator.geogs[0].slug}' />`;
   const apiString = `https://api.profiles.wprdc.org/indicator/${indicator.slug}?geog=${indicator.geogs[0].slug}`;
@@ -86,6 +87,10 @@ export const Viz: React.FC<VizWidgetProps> = ({
     }),
     [indicator.slug, inPreview, selectedVariables, selectedTimeParts]
   );
+
+  const useLineChart = indicator.timeAxis.timeParts.length;
+
+  const Chart = useLineChart > 1 ? LineChart : BarChart;
 
   let vizContent: React.ReactNode;
   // if variant is mini, only provide a `Value` viz
@@ -116,15 +121,19 @@ export const Viz: React.FC<VizWidgetProps> = ({
     if (!!inPreview) {
       vizContent = (
         <div className={styles.inPreview}>
-          <BarChart {...vizProps} />
+          <Chart {...vizProps} />
         </div>
       );
     } else {
       // anything left should be chartable
       vizContent = (
-        <div className={styles.chartWithTable}>
+        <div
+          className={
+            useLineChart ? styles.lineChartWithTable : styles.chartWithTable
+          }
+        >
           <div className={styles.chart} style={{ height: chartHeight }}>
-            <BarChart {...vizProps} />
+            <Chart {...vizProps} />
           </div>
           <div className={styles.table}>
             <FlatTable {...vizProps} />

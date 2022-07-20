@@ -25,6 +25,7 @@ export interface VegaCommonProps extends DataVizCommonProps {}
 export interface BigValueProps extends DataVizCommonProps {}
 
 export interface BarChartProps extends VegaCommonProps {}
+export interface LineChartProps extends VegaCommonProps {}
 
 export interface DataMapProps extends DataVizCommonProps {}
 
@@ -56,4 +57,5 @@ export interface ChartRecord extends DataRecord {
   variableAbbr?: string;
   timeLabel: string;
   geogLabel: string;
+  timePoint: string;
 }

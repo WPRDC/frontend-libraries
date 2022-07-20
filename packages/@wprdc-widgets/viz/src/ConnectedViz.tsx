@@ -9,11 +9,14 @@ import * as React from 'react';
 import './main.css';
 
 import { ConnectedVizWidgetProps } from '@wprdc-types/viz';
+
 import { useProvider } from '@wprdc-components/provider';
-import { useIndicator } from '@wprdc-connections/profiles';
 import { ErrorMessage } from '@wprdc-components/error-message';
-import { Viz } from './Viz';
 import { LoadingMessage } from '@wprdc-components/loading-message';
+
+import { useIndicator } from '@wprdc-connections/profiles';
+
+import { Viz } from './Viz';
 
 export const ConnectedViz: React.FC<ConnectedVizWidgetProps> = ({
   indicatorSlug,
