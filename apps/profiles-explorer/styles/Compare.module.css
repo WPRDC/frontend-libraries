@@ -2,7 +2,7 @@
   @apply border;
   @apply flex flex-col flex-grow;
   @apply overflow-auto;
-  @apply bg-amber-50;
+  @apply bg-background-50;
 }
 
 .topicSection {

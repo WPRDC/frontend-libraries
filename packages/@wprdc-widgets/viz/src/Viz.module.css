@@ -89,6 +89,7 @@
 
 .mapWithChart > .chartDiv {
   @apply h-48;
+  @apply bg-white;
 }
 
 .shareMenu {

@@ -11,7 +11,7 @@
   @apply border-black md:border-b-2 lg:border-r-2 lg:border-b-0;
   @apply md:col-span-12 md:row-span-1 md:w-full;
   @apply lg:col-span-4 xl:col-span-3;
-  @apply bg-amber-50;
+  @apply bg-background-50;
 }
 
 .content {
@@ -19,7 +19,7 @@
   @apply md:col-span-12 lg:col-span-8 xl:col-span-9;
   @apply md:flex-grow;
   @apply lg:overflow-y-hidden;
-  @apply bg-amber-50;
+  @apply bg-background-50;
 }
 
 /* Navmenu parts */

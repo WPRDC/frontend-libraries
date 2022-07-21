@@ -1,7 +1,7 @@
 .wrapper {
   @apply w-full;
   @apply overflow-auto;
-  @apply bg-amber-50;
+  @apply bg-background-50;
 }
 
 .main {

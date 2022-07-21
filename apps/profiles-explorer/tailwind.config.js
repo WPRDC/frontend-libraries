@@ -14,7 +14,7 @@ module.exports = {
       colors: {
         primary: colors.cyan,
         secondary: colors.yellow,
-        background: colors.white,
+        background: colors.slate,
         focused: colors.cyan,
         error: colors.red,
         warning: colors.orange,

@@ -28,8 +28,8 @@
   @apply flex flex-col items-center;
   @apply bg-amber-100;
   @apply drop-shadow-md hover:drop-shadow-lg;
-  @apply hover:border-zinc-800 hover:bg-amber-50;
-  @apply active:border-black active:bg-amber-50 active:shadow-inner active:drop-shadow-none;
+  @apply hover:border-zinc-800 hover:bg-background-50;
+  @apply active:border-black active:bg-background-50 active:shadow-inner active:drop-shadow-none;
 }
 
 .buttonTitle {

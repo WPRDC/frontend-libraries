@@ -31,7 +31,7 @@ export function flattenData(
   const { geog, time, vars } = indicator.dimensions;
   const { variables, timeAxis, geogs } = indicator;
 
-  const totals = new Set(variables.filter(v => v.total).map(v => v.slug));
+  const totals = new Set(variables.filter(v => !!v.total).map(v => v.slug));
 
   for (let g = 0; g < geog.length; g++) {
     for (let t = 0; t < time.length; t++) {

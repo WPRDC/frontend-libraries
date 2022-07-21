@@ -60,7 +60,10 @@ export function GeogHistogram(props: BarChartProps) {
 
   const highlight = { highlight: hoveredRecord?.geog };
 
-  const spec = React.useMemo(() => makeSpec('percent'), []);
+  const spec = React.useMemo(
+    () => makeSpec(indicator.options.useDenominators ? 'percent' : 'value'),
+    []
+  );
 
   // TODO: highlight chart based on hover state
 

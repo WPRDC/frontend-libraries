@@ -88,9 +88,9 @@ export const Viz: React.FC<VizWidgetProps> = ({
     [indicator.slug, inPreview, selectedVariables, selectedTimeParts]
   );
 
-  const useLineChart = indicator.timeAxis.timeParts.length;
+  const useLineChart = indicator.timeAxis.timeParts.length > 2;
 
-  const Chart = useLineChart > 1 ? LineChart : BarChart;
+  const Chart = useLineChart ? LineChart : BarChart;
 
   let vizContent: React.ReactNode;
   // if variant is mini, only provide a `Value` viz
