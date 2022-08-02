@@ -39,8 +39,14 @@ export function useIndicator(
   geogSlug?: string,
   acrossGeogs?: boolean
 ): UseQueryResult<IndicatorWithData, Error> {
+  const keys: any[] = ['domain', indicatorSlug];
+  if (acrossGeogs && geogSlug) {
+    keys.push(geogSlug.slice(0, geogSlug.lastIndexOf('-')), acrossGeogs);
+  } else {
+    keys.push(geogSlug);
+  }
   return useQuery<IndicatorWithData, Error>(
-    ['domain', indicatorSlug, geogSlug, acrossGeogs],
+    keys,
     () => ProfilesAPI.requestIndicator(indicatorSlug, geogSlug, acrossGeogs),
     { enabled: !!indicatorSlug && !!geogSlug, staleTime }
   );
