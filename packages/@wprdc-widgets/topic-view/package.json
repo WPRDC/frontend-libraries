@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-widgets/topic-view",
-  "version": "0.0.56",
+  "version": "0.0.57",
   "description": "",
   "keywords": [],
   "license": "AGPL-3.0-or-later",
@@ -83,7 +83,7 @@
     "@wprdc-components/error-message": "^0.0.15",
     "@wprdc-components/loading-message": "^0.0.15",
     "@wprdc-components/provider": "^0.0.17",
-    "@wprdc-connections/profiles": "^0.0.37",
+    "@wprdc-connections/profiles": "^0.0.38",
     "@wprdc-types/connections": "^0.0.23",
     "@wprdc-types/data-viz": "^0.0.18",
     "@wprdc-types/shared": "^0.0.14",
