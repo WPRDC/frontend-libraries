@@ -38,12 +38,12 @@
 
 /* Content parts */
 .geogContainer {
-  @apply py-8 pl-6 border-b-2 border-black;
+  @apply pt-6 pb-3 pl-6 border-b-2 border-black;
 }
 
 .geogTitle {
   @apply mt-4 mb-2;
-  @apply text-4xl font-semibold lg:text-5xl xl:text-6xl lg:font-light;
+  @apply text-3xl font-semibold lg:text-4xl xl:text-4xl lg:font-light;
 }
 
 .taxonomyContainer {
