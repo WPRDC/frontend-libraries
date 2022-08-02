@@ -7,11 +7,11 @@ export function HousecatNavbar() {
       <div className={styles.branding}>
         <div className={styles.title}>
           <Link href="/housecat">
-            <a>Housecat</a>
+            <a>HouseCat</a>
           </Link>
         </div>
         <div className={styles.subtitle}>
-          Affordable housing information portal
+          affordable housing information catalogue
         </div>
       </div>
       <div className={styles.filler} />
