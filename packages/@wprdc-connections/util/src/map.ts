@@ -268,7 +268,7 @@ export function makeLayers(
   highlightFilter?: Expression
 ): LayerProps[] {
   const source = `menu/${geogType}`;
-  const sourceLayer = `maps.v_${geogType.toLowerCase()}`;
+  const sourceLayer = `maps.${geogType.toLowerCase()}`;
 
   return [
     {
