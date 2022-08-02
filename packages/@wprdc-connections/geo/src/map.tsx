@@ -26,7 +26,7 @@ export const menuLayerConnection: MapPluginConnection<GeogLevel, GeogBrief> = {
         {
           id: `menu/${selectedLayer.id}`,
           type: 'vector',
-          url: `https://api.profiles.wprdc.org/tiles/maps.v_${selectedLayer.id.toLowerCase()}.json`,
+          url: `https://api.profiles.wprdc.org/tiles/maps.${selectedLayer.id.toLowerCase()}.json`,
         },
       ]);
   },

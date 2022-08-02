@@ -11,7 +11,7 @@ import { LayerPanelVariant } from '@wprdc-types/map';
 import { ConnectedMapEventHandler, ConnectionCollection } from '@wprdc-types/connections';
 import { TaxonomySection } from '../../components/TaxonomySection';
 import { Geog, GeogBrief, GeogLevel, GeographyType } from '@wprdc-types/geo';
-import { IndicatorBase, TopicBrief } from '@wprdc-types/profiles';
+import { TopicBrief } from '@wprdc-types/profiles';
 import { useTaxonomy } from '@wprdc-connections/profiles';
 import { menuLayerConnection, useGeography } from '@wprdc-connections/geo';
 import { serializeParams } from '@wprdc-connections/api';
@@ -208,7 +208,6 @@ const ReachPage: NextPage = () => {
               currentDomainSlug={domainSlug}
               currentTopicSlug={topicSlug}
               onExploreTopic={handleExploreTopic}
-              onCompareTopic={handleCompareTopic}
               onTabsChange={handleTabChange}
             />
           )}

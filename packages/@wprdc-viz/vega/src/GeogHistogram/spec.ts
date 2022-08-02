@@ -1,6 +1,9 @@
 import * as vega from 'vega';
 
 export function makeSpec(valueField: string): vega.Spec {
+  const vegaFormat = valueField === 'percent' ? '1.1%' : '1,';
+  const d3Format = valueField === 'percent' ? '.0%' : ',.2r';
+
   return {
     $schema: 'https://vega.github.io/schema/vega/v5.json',
     description: 'A simple bar chart across one or more series.',
@@ -72,6 +75,8 @@ export function makeSpec(valueField: string): vega.Spec {
         scale: 'valueScale',
         labelFont: 'Helvetica Neue',
         ticks: false,
+        format: d3Format,
+        formatType: 'number',
         labelPadding: 0,
         grid: true,
         domain: false,
@@ -85,9 +90,7 @@ export function makeSpec(valueField: string): vega.Spec {
         encode: {
           enter: {
             tooltip: {
-              signal: `datum.geogLabel + ': ' + format(datum.${valueField}, '${
-                valueField === 'percent' ? '1.1%' : '1,'
-              }')`,
+              signal: `datum.geogLabel + ': ' + format(datum.${valueField}, '${vegaFormat}')`,
             },
             x: { scale: 'geogScale', field: 'geog' },
             width: { scale: 'geogScale', band: 1 },
