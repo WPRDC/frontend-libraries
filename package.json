@@ -14,7 +14,8 @@
     "build:lib": "lerna run prepare",
     "build:profiles-explorer": "yarn workspace profiles-explorer build",
     "watch:profiles-explorer": "yarn workspace profiles-explorer dev",
-    "watch:affordable-housing": "yarn workspace affordable-housing dev",
+    "build:greenprint": "yarn workspace greenprint build",
+    "watch:greenprint": "yarn workspace greenprint dev",
     "watch:reach": "yarn workspace reach dev",
     "watch:components-am": "lerna run --scope '@wprdc-components/[a-m]*' --parallel start",
     "watch:components-nz": "lerna run --scope '@wprdc-components/[n-z]*' --parallel start",
@@ -53,6 +54,7 @@
     "default-browser-id": "^3.0.0",
     "eslint-config-next": "^12.0.9",
     "inquirer": "^8.2.0",
+    "lerna": "^5.4.3",
     "plop": "^3.1.0",
     "postcss": "^8.4.5",
     "postcss-import": "^14.0.2",
@@ -122,5 +124,6 @@
     "react-spinners": "^0.11.0",
     "react-table": "^7.7.0",
     "svg-loaders-react": "^2.2.1"
-  }
+  },
+  "packageManager": "yarn@3.2.3"
 }

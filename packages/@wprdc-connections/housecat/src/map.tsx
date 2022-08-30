@@ -32,9 +32,11 @@ export const affordableHousingProjectMapConnection: MapPluginConnection<
   name: ProjectKey.Housecat,
   use: useMapPlugin,
   getSources() {
+    // retrieved from api in a hook
     return undefined;
   },
   getLayers() {
+    // retrieved from api in a hook
     return undefined;
   },
   getLegendItems(_, __, setLegendItems, options) {

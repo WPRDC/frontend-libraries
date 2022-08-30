@@ -59,6 +59,9 @@ export const TopicViewCard: React.FC<TopicViewCardProps> = props => {
     }
   }, [slug]);
 
+  if (topic?.slug === 'child-emergency-visits')
+    console.log('👋', { primaryIndicator, indicators });
+
   if (!primaryIndicator || !geog) return null;
 
   return (

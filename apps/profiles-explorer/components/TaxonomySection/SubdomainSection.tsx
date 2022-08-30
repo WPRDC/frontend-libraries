@@ -17,7 +17,6 @@ export default function SubdomainSection({
   onExploreTopic,
 }: Props) {
   const { data: subdomain } = useSubdomain(slug);
-
   if (subdomain) {
     return (
       <div id={subdomain.slug} className={styles.wrapper}>

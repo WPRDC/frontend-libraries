@@ -8,7 +8,8 @@
 node_modules
 dist
 packages/*/*/src/*.js*
-
+.yarn/
+.pnp*
 # local env files
 .env.local
 .env.development.local
