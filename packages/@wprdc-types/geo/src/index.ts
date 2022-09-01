@@ -1,5 +1,3 @@
-export * from 'geojson';
-
 import { MapboxGeoJSONFeature } from 'mapbox-gl';
 
 import { Resource } from '@wprdc-types/shared';
