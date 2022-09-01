@@ -39,11 +39,11 @@ export const NumberField: React.FC<NumberFieldProps> = (props) => {
 
   const { buttonProps: incrementProps } = useButton(
     incrementButtonProps,
-    incrRef
+    incrRef,
   );
   const { buttonProps: decrementProps } = useButton(
     decrementButtonProps,
-    decRef
+    decRef,
   );
 
   return (

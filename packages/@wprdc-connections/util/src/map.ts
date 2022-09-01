@@ -1,17 +1,11 @@
-import { useState, useEffect, Key } from 'react';
+import { Key, useEffect, useState } from 'react';
 
 import theme from './theme';
 
 import { GeographyType } from '@wprdc-types/geo';
 import { MapPluginHookArgs, MapPluginToolbox } from '@wprdc-types/connections';
 
-import {
-  SourceProps,
-  LayerProps,
-  LegendItemProps,
-  Expression,
-  MapLayerMouseEvent,
-} from '@wprdc-types/map';
+import { Expression, LayerProps, LegendItemProps, MapLayerMouseEvent, SourceProps } from '@wprdc-types/map';
 
 import { ColorScheme, Resource, Selection } from '@wprdc-types/shared';
 import { ViewState } from 'react-map-gl';
@@ -20,14 +14,14 @@ export const CARTO_USER = 'wprdc';
 export const MAPS_API_ENDPOINT = `https://${CARTO_USER}.carto.com/api/v1/map`;
 
 export function useMapPlugin<T extends Resource, E>({
-  connection,
-  layerItems,
-  layerSelection,
-  selectedMapItem,
-  selectedFilter: defaultSelectedFilter,
-  options,
-  context,
-}: MapPluginHookArgs<T, E>): MapPluginToolbox<T, E> {
+                                                      connection,
+                                                      layerItems,
+                                                      layerSelection,
+                                                      selectedMapItem,
+                                                      selectedFilter: defaultSelectedFilter,
+                                                      options,
+                                                      context,
+                                                    }: MapPluginHookArgs<T, E>): MapPluginToolbox<T, E> {
   const colorScheme = ColorScheme.Light;
   // Mapbox spec/props
   const [sources, setSources] = useState<SourceProps[]>();
@@ -38,15 +32,15 @@ export function useMapPlugin<T extends Resource, E>({
   const [layerPanelSection, setLayerPanelSection] = useState<JSX.Element>();
   const [mapSection, setMapSection] = useState<JSX.Element>();
   const [selection, setSelection] = useState<Selection>(
-    layerSelection || (new Set() as Set<Key>)
+    layerSelection || (new Set() as Set<Key>),
   );
 
   // for filtering styled layers for interaction states
   const [hoveredFilter, setHoveredFilter] = useState<Expression>(
-    clearLayerFilter()
+    clearLayerFilter(),
   );
   const [selectedFilter, setSelectedFilter] = useState<Expression>(
-    defaultSelectedFilter || clearLayerFilter()
+    defaultSelectedFilter || clearLayerFilter(),
   );
   const [interactiveLayerIDs, setInteractiveLayerIDs] = useState<string[]>([]);
   const [selectedItems, setSelectedItems] = useState<T[]>([]);
@@ -119,7 +113,7 @@ export function useMapPlugin<T extends Resource, E>({
         colorScheme,
       });
       setInteractiveLayerIDs(
-        connection.getInteractiveLayerIDs(layerItems, selection)
+        connection.getInteractiveLayerIDs(layerItems, selection),
       );
 
       setSelectedItems(connection.getSelectedItems(layerItems, selection));
@@ -137,7 +131,7 @@ export function useMapPlugin<T extends Resource, E>({
       setLayerPanelSection,
       layerItems,
       selectedItems,
-      handleLayerSelection
+      handleLayerSelection,
     );
   }, [layerItems, selectedItems]);
 
@@ -226,10 +220,10 @@ export function fetchCartoVectorSource(
   apiKey?: string,
   type: 'vector' = 'vector',
   minzoom = 0,
-  maxzoom = 22
+  maxzoom = 22,
 ): PromiseLike<SourceProps> {
   const config = encodeURIComponent(
-    JSON.stringify(cartoInstantiationParams(id, sql))
+    JSON.stringify(cartoInstantiationParams(id, sql)),
   );
 
   const keyParam = apiKey ? `&api_key=${apiKey}` : '';
@@ -243,7 +237,7 @@ export function fetchCartoVectorSource(
     })
       .then(
         response => response.json(),
-        error => reject(error)
+        error => reject(error),
       )
       .then(
         data => {
@@ -255,7 +249,7 @@ export function fetchCartoVectorSource(
             maxzoom,
           });
         },
-        error => reject(error)
+        error => reject(error),
       );
   });
 }
@@ -265,7 +259,7 @@ export function makeLayers(
   hoveredFilter?: Expression,
   selectedFilter?: Expression,
   baseFilter?: Expression,
-  highlightFilter?: Expression
+  highlightFilter?: Expression,
 ): LayerProps[] {
   const source = `menu/${geogType}`;
   const sourceLayer = `maps.${geogType.toLowerCase()}`;

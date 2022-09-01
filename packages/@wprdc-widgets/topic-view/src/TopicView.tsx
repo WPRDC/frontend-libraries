@@ -17,18 +17,18 @@ import { useTopic } from '@wprdc-connections/profiles';
 import { ErrorMessage } from '@wprdc-components/error-message';
 
 export const TopicView: React.FC<TopicViewProps> = ({
-  topic: topicBrief,
-  geog,
-  card,
-  onExploreTopic,
-  onCompareIndicator,
-}) => {
+                                                      topic: topicBrief,
+                                                      geog,
+                                                      card,
+                                                      onExploreTopic,
+                                                      onCompareIndicator,
+                                                    }) => {
   const topicSlug = topicBrief ? topicBrief.slug : '';
   const { data: topic, isLoading, error } = useTopic(topicSlug);
   if (!!error) {
     console.error(error);
     return (
-      <ErrorMessage title={'Error'} message={'error'} variant="centered" />
+      <ErrorMessage title={'Error'} message={'error'} variant='centered' />
     );
   }
   if (!topic) return <div />;

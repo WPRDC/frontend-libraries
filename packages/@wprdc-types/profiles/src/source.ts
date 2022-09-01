@@ -25,6 +25,7 @@ export interface CKANSource extends SourceBase {
   resourceId: string;
 }
 
-export interface CKANVariableSource extends CKANSource {}
+export interface CKANVariableSource extends CKANSource {
+}
 
 export type VariableSource = CensusVariableSource | CKANVariableSource;

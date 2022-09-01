@@ -66,7 +66,7 @@ const columnSpec: vega.Spec = {
         facet: { data: 'table', name: 'facet', groupby: 'variable' },
       },
       encode: { enter: { x: { scale: 'variableScale', field: 'variable' } } },
-      signals: [{ name: 'height', update: "bandwidth('variableScale')" }],
+      signals: [{ name: 'height', update: 'bandwidth(\'variableScale\')' }],
       scales: [
         {
           name: 'pos',
@@ -82,7 +82,7 @@ const columnSpec: vega.Spec = {
           type: 'rect',
           encode: {
             enter: {
-              tooltip: { signal: "'Value: ' + format(datum.value, '1')" },
+              tooltip: { signal: '\'Value: \' + format(datum.value, \'1\')' },
               x: { scale: 'pos', field: 'timeSeries' },
               width: { scale: 'pos', band: 1 },
               y: { scale: 'valueScale', field: 'value' },

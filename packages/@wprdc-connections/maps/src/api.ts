@@ -13,7 +13,7 @@ import { MapLayer } from '@wprdc-types/maps';
 const HOST = 'https://api.profiles.wprdc.org';
 
 enum Endpoint {
-  MapLayers = 'map-layers',
+  MapLayers = 'maps/map-layers',
 }
 
 const api = createAPI<Endpoint>(HOST);
@@ -21,7 +21,7 @@ const api = createAPI<Endpoint>(HOST);
 function requestMapLayers(
   params?: Record<string, string>,
 ): Promise<MapLayer[]> {
-  return api.callAndProcessEndpoint<MapLayer[]>(Endpoint.MapLayers, Method.GET, { params });
+  return api.callAndProcessListEndpoint<MapLayer>(Endpoint.MapLayers, Method.GET, { params });
 }
 
 function requestMapLayer(

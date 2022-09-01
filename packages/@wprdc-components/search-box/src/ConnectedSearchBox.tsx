@@ -6,10 +6,8 @@ import { ConnectedSearchBoxProps } from '@wprdc-types/search-box';
 import { Resource } from '@wprdc-types/shared';
 import { ResourceOptionTemplateOptions } from '@wprdc-types/list-box';
 
-export function ConnectedSearchBox<
-  T extends Resource,
-  O extends object = ResourceOptionTemplateOptions<T>
->(props: ConnectedSearchBoxProps<T, O>) {
+export function ConnectedSearchBox<T extends Resource,
+  O extends object = ResourceOptionTemplateOptions<T>>(props: ConnectedSearchBoxProps<T, O>) {
   const {
     connection,
     label,

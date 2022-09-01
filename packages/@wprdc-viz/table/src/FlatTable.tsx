@@ -24,68 +24,68 @@ export function FlatTable(props: DataTableProps) {
   return (
     <table className={styles.flatWrapper}>
       <thead>
-        <tr>
-          <th scope="col">{''}</th>
-          <td></td>
-          {timeAxis.timeParts.map(timePart => (
-            <th key={timePart.slug} scope="col">
-              {timePart.name}
-            </th>
-          ))}
-        </tr>
+      <tr>
+        <th scope='col'>{''}</th>
+        <td></td>
+        {timeAxis.timeParts.map(timePart => (
+          <th key={timePart.slug} scope='col'>
+            {timePart.name}
+          </th>
+        ))}
+      </tr>
       </thead>
       <tbody>
-        {variables.map((variable, i) => {
-          if (!renderVariables.has(variable.slug)) return null;
-          return [
-            <tr key={variable.slug}>
-              <th
-                scope="row"
-                rowSpan={
-                  useDenominators &&
-                  !!variable.denominators &&
-                  !!variable.denominators.length
-                    ? 2
-                    : 1
-                }
-              >
-                {variable.name}
-              </th>
-              <td>n</td>
+      {variables.map((variable, i) => {
+        if (!renderVariables.has(variable.slug)) return null;
+        return [
+          <tr key={variable.slug}>
+            <th
+              scope='row'
+              rowSpan={
+                useDenominators &&
+                !!variable.denominators &&
+                !!variable.denominators.length
+                  ? 2
+                  : 1
+              }
+            >
+              {variable.name}
+            </th>
+            <td>n</td>
+            {timeAxis.timeParts.map((tp, k) => {
+              if (!renderTimeParts.has(tp.slug)) return null;
+              return (
+                <td key={tp.slug}>
+                  {data[0][k][i].value.toLocaleString(
+                    'en-US',
+                    variable.numberFormatOptions,
+                  )}
+                </td>
+              );
+            })}
+          </tr>,
+          useDenominators &&
+          !!variable.denominators &&
+          !!variable.denominators.length && (
+            <tr className={styles.subrow} key={`${variable.slug}-subrow`}>
+              <td>
+                <abbr title={variable.denominators[0].percentLabel}>%</abbr>
+              </td>
               {timeAxis.timeParts.map((tp, k) => {
                 if (!renderTimeParts.has(tp.slug)) return null;
+
                 return (
                   <td key={tp.slug}>
-                    {data[0][k][i].value.toLocaleString(
-                      'en-US',
-                      variable.numberFormatOptions
-                    )}
+                    {data[0][k][i].percent?.toLocaleString('en-us', {
+                      style: 'percent',
+                    })}
                   </td>
                 );
               })}
-            </tr>,
-            useDenominators &&
-              !!variable.denominators &&
-              !!variable.denominators.length && (
-                <tr className={styles.subrow} key={`${variable.slug}-subrow`}>
-                  <td>
-                    <abbr title={variable.denominators[0].percentLabel}>%</abbr>
-                  </td>
-                  {timeAxis.timeParts.map((tp, k) => {
-                    if (!renderTimeParts.has(tp.slug)) return null;
-
-                    return (
-                      <td key={tp.slug}>
-                        {data[0][k][i].percent?.toLocaleString('en-us', {
-                          style: 'percent',
-                        })}
-                      </td>
-                    );
-                  })}
-                </tr>
-              ),
-          ];
-        })}
+            </tr>
+          ),
+        ];
+      })}
       </tbody>
     </table>
   );

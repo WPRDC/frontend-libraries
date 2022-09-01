@@ -1,60 +1,60 @@
 .container {
-  @apply inline-flex flex-col relative w-full;
-  @apply bg-background;
+    @apply inline-flex flex-col relative w-full;
+    @apply bg-background;
 }
 
 .label {
-  @apply block text-left cursor-default;
-  @apply text-xs font-mono uppercase font-semibold text-gray-500;
+    @apply block text-left cursor-default;
+    @apply text-xs font-mono uppercase font-semibold text-gray-500;
 }
 
 .box {
-  @apply relative flex-row flex;
+    @apply relative flex-row flex;
 }
 
 .placeholder {
-  @apply text-gray-500;
+    @apply text-gray-500;
 }
 
 .focusVis {
 }
 
 .value {
-  @apply text-sm;
+    @apply text-sm;
 }
 
 .iconDiv {
-  @apply absolute inset-y-0 left-0 flex items-center pl-2;
+    @apply absolute inset-y-0 left-0 flex items-center pl-2;
 }
 
 .icon {
-  @apply w-5 h-5 text-gray-500;
+    @apply w-5 h-5 text-gray-500;
 }
 
 .realInput {
-  @apply block;
-  @apply pl-9 pr-2 py-1;
-  @apply text-sm;
-  @apply placeholder:italic placeholder:text-gray-400;
+    @apply block;
+    @apply pl-9 pr-2 py-1;
+    @apply text-sm;
+    @apply placeholder:italic placeholder:text-gray-400;
 
-  @apply w-full border border-black outline-none;
+    @apply w-full border border-black outline-none;
 
-  @apply transition duration-150 ease-in-out;
-  @apply hover:border-focused-600;
+    @apply transition duration-150 ease-in-out;
+    @apply hover:border-focused-600;
 
-  @apply focus:ring-focused-400 focus:ring-1 focus:border-focused-400;
-  @apply focus-visible:outline-none focus:outline-none;
+    @apply focus:ring-focused-400 focus:ring-1 focus:border-focused-400;
+    @apply focus-visible:outline-none focus:outline-none;
 }
 
 .clearButton {
-  @apply absolute inset-y-0 right-2 flex items-center pl-2;
-  @apply cursor-pointer hover:text-gray-600;
+    @apply absolute inset-y-0 right-2 flex items-center pl-2;
+    @apply cursor-pointer hover:text-gray-600;
 }
 
 .clearX {
-  @apply w-5 h-5;
+    @apply w-5 h-5;
 }
 
 .popoverContents {
-  @apply bg-background border border-black;
+    @apply bg-background border border-black;
 }

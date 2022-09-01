@@ -9,11 +9,7 @@ import { ConnectedViz } from '@wprdc-widgets/viz';
 import { parseAndSanitize } from '../util';
 import { IndicatorBaseWithOptions } from '@wprdc-types/profiles';
 
-import {
-  RiBarChartFill,
-  RiInformationLine,
-  RiFlashlightLine,
-} from 'react-icons/ri';
+import { RiBarChartFill, RiFlashlightLine, RiInformationLine } from 'react-icons/ri';
 
 export const TopicViewDetail: React.FC<TopicDetailViewProps> = props => {
   const { topic, showGeog, geog, onGeogSelection, onCompareIndicator } = props;
@@ -48,7 +44,7 @@ export const TopicViewDetail: React.FC<TopicDetailViewProps> = props => {
     {
       blurbs: [] as IndicatorBaseWithOptions[],
       vizes: [] as IndicatorBaseWithOptions[],
-    }
+    },
   );
 
   return (
@@ -135,7 +131,7 @@ export const TopicViewDetail: React.FC<TopicDetailViewProps> = props => {
             <div
               className={styles.detailsItem}
               dangerouslySetInnerHTML={parseAndSanitize(
-                (fullDescription || longDescription) as string
+                (fullDescription || longDescription) as string,
               )}
             />
           </div>

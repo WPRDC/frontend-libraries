@@ -1,3 +1,0 @@
-[submodule "apps/greenprint"]
-	path = apps/greenprint
-	url = git@github.com:WPRDC/Greenprint.git

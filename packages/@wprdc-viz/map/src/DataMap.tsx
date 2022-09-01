@@ -8,11 +8,10 @@ import './main.css';
 
 import { Map } from '@wprdc-components/map';
 
-import { PopupContentProps, LayerPanelVariant } from '@wprdc-types/map';
+import { LayerPanelVariant, LayerProps, PopupContentProps } from '@wprdc-types/map';
 
 import styles from './DataMap.module.css';
 import { ChartRecord, DataMapProps } from '@wprdc-types/viz';
-import { LayerProps } from '@wprdc-types/map';
 import { ConnectedMapEventHandler } from '@wprdc-types/connections';
 
 export function DataMap(props: DataMapProps) {

@@ -5,10 +5,7 @@
  **/
 
 import { ComponentPropsWithoutRef, PropsWithChildren, ReactNode } from 'react';
-import {
-  OverlayTriggerProps,
-  PopoverProps as RTPopoverProps,
-} from '@react-types/overlays';
+import { OverlayTriggerProps, PopoverProps as RTPopoverProps } from '@react-types/overlays';
 
 interface TooltipPropsBase extends OverlayTriggerProps {
   title: string;

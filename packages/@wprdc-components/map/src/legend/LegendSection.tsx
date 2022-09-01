@@ -6,9 +6,9 @@ export interface LegendSectionProps {
 }
 
 export const LegendSection: React.FC<LegendSectionProps> = ({
-  title,
-  children,
-}) => {
+                                                              title,
+                                                              children,
+                                                            }) => {
   return (
     <>
       <p>{title}</p>

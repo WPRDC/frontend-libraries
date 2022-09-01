@@ -4,13 +4,13 @@ import { ChartRecord } from '@wprdc-types/viz';
 
 export function useFilters(
   selectedVariables?: string[],
-  selectedTimeParts?: string[]
+  selectedTimeParts?: string[],
 ) {
   const [renderVariables, setRenderVariables] = React.useState<Set<string>>(
-    new Set()
+    new Set(),
   );
   const [renderTimeParts, setRenderTimeParts] = React.useState<Set<string>>(
-    new Set()
+    new Set(),
   );
 
   React.useEffect(() => {
@@ -24,7 +24,7 @@ export function useFilters(
 export function flattenData(
   indicator: IndicatorWithData,
   renderTimeParts: Set<string>,
-  renderVariables: Set<string>
+  renderVariables: Set<string>,
 ) {
   let result: ChartRecord[] = [];
 

@@ -3,23 +3,22 @@
 @tailwind utilities;
 
 .mapboxgl-popup-tip {
-  visibility: hidden !important;
+    visibility: hidden !important;
 }
 
 .mapboxgl-popup-content {
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
 }
 
 a {
-  @apply underline font-semibold;
-  @apply hover:text-primary-400 active:text-secondary-400;
+    @apply underline font-semibold;
+    @apply hover:text-primary-400 active:text-secondary-400;
 }
 
 /* external links */
-a[href*="//"]:not([href*="profiles.wprdc.org"])
-{
-  @apply underline font-semibold;
-  @apply hover:text-primary-400 active:text-secondary-400;
+a[href*="//"]:not([href*="profiles.wprdc.org"]) {
+    @apply underline font-semibold;
+    @apply hover:text-primary-400 active:text-secondary-400;
 }

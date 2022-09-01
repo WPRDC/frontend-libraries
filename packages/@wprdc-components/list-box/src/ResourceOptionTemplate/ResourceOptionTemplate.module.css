@@ -1,21 +1,21 @@
 .wrapper {
-  @apply flex flex-col w-full;
-  @apply text-gray-700;
+    @apply flex flex-col w-full;
+    @apply text-gray-700;
 }
 
 .titleSection {
-  @apply flex flex-row items-center;
+    @apply flex flex-row items-center;
 }
 
 .icon {
-  @apply w-3.5 h-3.5;
-  @apply mr-0.5;
+    @apply w-3.5 h-3.5;
+    @apply mr-0.5;
 }
 
 .title {
-  @apply text-sm font-semibold;
+    @apply text-sm font-semibold;
 }
 
 .subtitle {
-  @apply ml-4 text-xs italic;
+    @apply ml-4 text-xs italic;
 }

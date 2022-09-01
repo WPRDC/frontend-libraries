@@ -29,13 +29,13 @@ export function Button(props: ButtonProps) {
         color === 'none'
           ? ''
           : classNames([
-              styles.wrapper,
-              {
-                [styles.elevated]: props.elevated,
-                [styles.dense]: props.dense,
-              },
-              styles[color],
-            ])
+            styles.wrapper,
+            {
+              [styles.elevated]: props.elevated,
+              [styles.dense]: props.dense,
+            },
+            styles[color],
+          ])
       }
     >
       {children}

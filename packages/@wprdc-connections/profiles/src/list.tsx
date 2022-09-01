@@ -4,23 +4,20 @@ import { Item } from '@wprdc-components/util';
 
 import { ListConnection, Resource } from '@wprdc-types/shared';
 import { IndicatorBase, Topic, VariableBase } from '@wprdc-types/profiles';
-import {
-  ListBoxOptions,
-  ResourceOptionTemplateOptions,
-} from '@wprdc-types/list-box';
+import { ListBoxOptions, ResourceOptionTemplateOptions } from '@wprdc-types/list-box';
 import { ResourceOptionTemplate } from '@wprdc-components/list-box';
 
 import { RiFolderChartLine, RiLineChartLine } from 'react-icons/ri';
 
 function makeProfilesConnection<T extends Resource>(
-  itemType: string
+  itemType: string,
 ): ListConnection<T> {
   return {
     async load({ signal, cursor, filterText }) {
       const res = await fetch(
         cursor ||
-          `https://api.profiles.wprdc.org/${itemType}/?search=${filterText}&limit=10`,
-        { signal }
+        `https://api.profiles.wprdc.org/${itemType}/?search=${filterText}&limit=10`,
+        { signal },
       );
       const json = await res.json();
 
@@ -34,15 +31,11 @@ function makeProfilesConnection<T extends Resource>(
   };
 }
 
-export const topicConnection: ListConnection<Topic> = makeProfilesConnection<
-  Topic
->('topic');
+export const topicConnection: ListConnection<Topic> = makeProfilesConnection<Topic>('topic');
 
 /** style props */
-export const defaultTopicListBoxProps: ListBoxOptions<
-  Topic,
-  ResourceOptionTemplateOptions<Topic>
-> = {
+export const defaultTopicListBoxProps: ListBoxOptions<Topic,
+  ResourceOptionTemplateOptions<Topic>> = {
   optionTemplate: ResourceOptionTemplate,
   optionTemplateOptions: {
     Icon: RiFolderChartLine,
@@ -50,18 +43,12 @@ export const defaultTopicListBoxProps: ListBoxOptions<
   },
 };
 
-export const indicatorConnection: ListConnection<IndicatorBase> = makeProfilesConnection<
-  IndicatorBase
->('data-viz');
+export const indicatorConnection: ListConnection<IndicatorBase> = makeProfilesConnection<IndicatorBase>('data-viz');
 
-export const variableConnection: ListConnection<VariableBase> = makeProfilesConnection<
-  VariableBase
->('variable');
+export const variableConnection: ListConnection<VariableBase> = makeProfilesConnection<VariableBase>('variable');
 
-export const defaultIndicatorListBoxProps: ListBoxOptions<
-  IndicatorBase,
-  ResourceOptionTemplateOptions<IndicatorBase>
-> = {
+export const defaultIndicatorListBoxProps: ListBoxOptions<IndicatorBase,
+  ResourceOptionTemplateOptions<IndicatorBase>> = {
   optionTemplate: ResourceOptionTemplate,
   optionTemplateOptions: {
     Icon: RiLineChartLine,

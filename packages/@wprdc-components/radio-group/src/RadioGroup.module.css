@@ -2,21 +2,21 @@
 }
 
 .itemsWrapper {
-  @apply pl-2;
+    @apply pl-2;
 }
 
 .label {
-  @apply block text-left cursor-default;
-  @apply text-xs font-mono uppercase font-semibold text-gray-500;
+    @apply block text-left cursor-default;
+    @apply text-xs font-mono uppercase font-semibold text-gray-500;
 }
 
 .itemLabel {
-  @apply cursor-pointer;
+    @apply cursor-pointer;
 }
 
 .input {
-  @apply mr-1;
-  @apply cursor-pointer;
-  @apply border border-transparent outline-none;
-  @apply focus:border-focused-400 focus:ring focus:ring-focused-400;
+    @apply mr-1;
+    @apply cursor-pointer;
+    @apply border border-transparent outline-none;
+    @apply focus:border-focused-400 focus:ring focus:ring-focused-400;
 }

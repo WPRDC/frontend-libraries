@@ -1,25 +1,25 @@
 .wrapper {
-  @apply inline-flex flex-col relative w-full;
+    @apply inline-flex flex-col relative w-full;
 }
 
 .label {
-  @apply block text-left cursor-default;
-  @apply text-xs font-mono uppercase font-semibold text-gray-500;
+    @apply block text-left cursor-default;
+    @apply text-xs font-mono uppercase font-semibold text-gray-500;
 }
 
 .input {
-  @apply py-1 px-2 block;
-  @apply text-sm placeholder:italic placeholder:text-gray-400;
-  @apply transition duration-150 ease-in-out;
-  @apply w-full border border-black focus:border-focused-400;
-  @apply hover:border-focused-600;
-  @apply focus:outline-none focus:ring-focused-400 focus:ring-1;
+    @apply py-1 px-2 block;
+    @apply text-sm placeholder:italic placeholder:text-gray-400;
+    @apply transition duration-150 ease-in-out;
+    @apply w-full border border-black focus:border-focused-400;
+    @apply hover:border-focused-600;
+    @apply focus:outline-none focus:ring-focused-400 focus:ring-1;
 }
 
 .description {
-  @apply text-xs;
+    @apply text-xs;
 }
 
 .error {
-  @apply text-xs font-medium text-red-800;
+    @apply text-xs font-medium text-red-800;
 }

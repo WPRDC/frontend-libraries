@@ -58,27 +58,26 @@
   },
   "devDependencies": {
     "@rollup/plugin-replace": "^4.0.0",
-    "@size-limit/preset-small-lib": "^7.0.5",
-    "@types/react": "^18.0.12",
-    "@types/react-dom": "^18.0.5",
-    "autoprefixer": "^10.4.2",
+    "@size-limit/preset-small-lib": "^7.0.8",
+    "@types/react": "^18.0.18",
+    "@types/react-dom": "^18.0.6",
+    "autoprefixer": "^10.4.8",
     "husky": "^7.0.4",
-    "postcss": "^8.4.5",
-    "postcss-import": "^14.0.2",
+    "postcss": "^8.4.16",
+    "postcss-import": "^14.1.0",
     "postcss-loader": "^6.2.1",
-    "react": "18.1.0",
-    "react-dom": "^18.1.0",
+    "react": "18.2.0",
+    "react-dom": "^18.2.0",
     "rollup-plugin-postcss": "^4.0.2",
-    "size-limit": "^7.0.5",
-    "tailwindcss": "^3.0.18",
+    "size-limit": "^7.0.8",
+    "tailwindcss": "^3.1.8",
     "tsdx": "^0.14.1",
-    "tslib": "^2.3.1",
-    "typescript": "^4.7.3"
+    "tslib": "^2.4.0",
+    "typescript": "^4.8.2"
   },
   "dependencies": {
-    "@react-aria/button": "^3.3.4",
+    "@react-aria/button": "^3.6.1",
     "@wprdc-types/button": "^0.0.12",
     "classnames": "^2.3.1"
-  },
-  "gitHead": "94a124feb01e557bf271b087ab91e7a6590f483b"
+  }
 }

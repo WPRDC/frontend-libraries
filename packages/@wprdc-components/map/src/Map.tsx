@@ -6,25 +6,26 @@
  */
 
 import * as React from 'react';
+import { useMemo } from 'react';
 import styles from './Map.module.css';
 import {
-  Map as ReactMapGLMap,
   Layer,
   LayerProps,
+  Map as ReactMapGLMap,
   MapLayerMouseEvent,
+  MapRef,
   NavigationControl,
   Source,
   SourceProps,
-  MapRef,
   ViewState,
   ViewStateChangeEvent,
 } from 'react-map-gl';
 import { LayerPanelVariant, PopupContentProps } from '@wprdc-types/map';
 import {
-  MouseEventHandler,
-  MapPluginToolbox,
   ConnectableMapProps,
   ConnectedLayerPanelProps,
+  MapPluginToolbox,
+  MouseEventHandler,
 } from '@wprdc-types/connections';
 import { ColorScheme } from '@wprdc-types/shared';
 import { useProvider } from '@wprdc-components/provider';
@@ -40,8 +41,7 @@ import {
 
 import { LayerPanel } from './layerpanel';
 import { Legend, LegendItem } from './legend';
-import { HoverPopup, ClickPopup } from './popup';
-import { useMemo } from 'react';
+import { ClickPopup, HoverPopup } from './popup';
 
 export const userPrefersDark =
   !(typeof window === 'undefined') &&
@@ -84,21 +84,19 @@ export const Map = React.forwardRef<MapRef, ConnectableMapProps>(
       terrain,
       ...otherInteractiveMapProps
     },
-    ref
+    ref,
   ) => {
     const innerRef = React.useRef<MapRef>(null);
     const combinedRef = useCombinedRefs(ref, innerRef);
 
     // context record to share data across plugins
-    const [pluginContext, setPluginContext] = React.useState<
-      Record<string, any>
-    >({});
+    const [pluginContext, setPluginContext] = React.useState<Record<string, any>>({});
 
     // Internal state
     // ------------------------------------------------------------------------
     const [cursor, setCursor] = React.useState<string>('auto');
     const [viewState, setViewState] = React.useState<Partial<ViewState>>(
-      initialViewState || DEFAULT_VIEWSTATE
+      initialViewState || DEFAULT_VIEWSTATE,
     );
     const [hoverPopup, setHoverPopup] = React.useState<React.ReactNode>();
     const [clickPopup, setClickPopup] = React.useState<React.ReactNode>();
@@ -119,7 +117,7 @@ export const Map = React.forwardRef<MapRef, ConnectableMapProps>(
           context: pluginContext,
           setContext: setPluginContext,
         });
-      }
+      },
     );
 
     console.debug('Map Connection Toolboxes');
@@ -151,7 +149,7 @@ export const Map = React.forwardRef<MapRef, ConnectableMapProps>(
       Popup,
       setPopup,
       CustomContentComponent,
-      callback
+      callback,
     ) => {
       const _isOverInteractiveLayer = (event: MapLayerMouseEvent) =>
         !!event.features &&
@@ -185,7 +183,7 @@ export const Map = React.forwardRef<MapRef, ConnectableMapProps>(
               <Popup longitude={lng} latitude={lat}>
                 {customContents}
                 {toolboxContents}
-              </Popup>
+              </Popup>,
             );
           if (!!callback) {
             callback(event, toolboxes, toolboxItems);
@@ -204,7 +202,7 @@ export const Map = React.forwardRef<MapRef, ConnectableMapProps>(
         HoverPopup,
         setHoverPopup,
         CustomHoverContents,
-        onHover
+        onHover,
       );
     };
 
@@ -216,7 +214,7 @@ export const Map = React.forwardRef<MapRef, ConnectableMapProps>(
         ClickPopup,
         setClickPopup,
         CustomClickContents,
-        onClick
+        onClick,
       );
     };
 
@@ -244,9 +242,9 @@ export const Map = React.forwardRef<MapRef, ConnectableMapProps>(
             if (!!tb.interactiveLayerIDs)
               return [...intIDs, ...tb.interactiveLayerIDs];
             return intIDs;
-          }, [] as string[])
+          }, [] as string[]),
         ),
-      [_interactiveLayerIDs, connections]
+      [_interactiveLayerIDs, connections],
     );
 
     const customLegendContent = React.useMemo(() => {
@@ -276,7 +274,7 @@ export const Map = React.forwardRef<MapRef, ConnectableMapProps>(
         {
           tbSources: [] as SourceProps[],
           tbLayers: [] as LayerProps[],
-        }
+        },
       );
     }, [toolboxes, connections, connectionHookArgs]);
 
@@ -350,7 +348,7 @@ export const Map = React.forwardRef<MapRef, ConnectableMapProps>(
         )}
       </div>
     );
-  }
+  },
 );
 
 Map.defaultProps = {

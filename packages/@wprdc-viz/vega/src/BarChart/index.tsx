@@ -29,13 +29,13 @@ export function BarChart(props: BarChartProps) {
 
   const { renderVariables, renderTimeParts } = useFilters(
     selectedVariables,
-    selectedTimeParts
+    selectedTimeParts,
   );
 
   // flatten data for use in vega
   const table = React.useMemo(
     () => flattenData(indicator, renderTimeParts, renderVariables),
-    [indicator, renderVariables, renderTimeParts]
+    [indicator, renderVariables, renderTimeParts],
   );
 
   const labels = React.useMemo(
@@ -47,7 +47,7 @@ export function BarChart(props: BarChartProps) {
           fullLabel: v.name,
           label: v.shortName || v.name,
         })),
-    [indicator.slug, renderVariables]
+    [indicator.slug, renderVariables],
   );
 
   return (
@@ -64,7 +64,7 @@ export function BarChart(props: BarChartProps) {
           <div
             ref={measureRef}
             className={styles.insideWrapper}
-            aria-label="data presentation preview"
+            aria-label='data presentation preview'
           >
             <Vega
               spec={spec}

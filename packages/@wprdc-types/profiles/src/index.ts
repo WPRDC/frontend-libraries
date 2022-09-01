@@ -53,4 +53,5 @@ type URLNavParamKeys =
 
 export type URLNavParams = Record<URLNavParamKeys, string>;
 
-export interface ProfilesMapProperties extends Resource {}
+export interface ProfilesMapProperties extends Resource {
+}

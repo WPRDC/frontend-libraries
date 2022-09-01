@@ -1,34 +1,34 @@
 .container {
-  @apply flex;
+    @apply flex;
 }
 
 .markerSection {
-  @apply mr-0.5 flex content-center justify-center text-gray-600;
+    @apply mr-0.5 flex content-center justify-center text-gray-600;
 }
 
 .labelSection {
-  @apply flex content-center justify-center;
+    @apply flex content-center justify-center;
 }
 
 .label {
-  @apply text-xs;
+    @apply text-xs;
 }
 
 .scaleContainer {
 }
 
 .colorBar {
-  @apply w-full h-2 rounded border-gray-500 border pb-0.5;
+    @apply w-full h-2 rounded border-gray-500 border pb-0.5;
 }
 
 .number {
-  @apply text-xs;
+    @apply text-xs;
 }
 
 .labelBar {
-  @apply flex;
+    @apply flex;
 }
 
 .stretcher {
-  @apply flex-grow;
+    @apply flex-grow;
 }

@@ -155,9 +155,9 @@ export function Tab<T extends Resource>({ item, state }: TabProps<T>) {
 }
 
 export function TabPanel<T extends Resource>({
-  state,
-  ...props
-}: TabPanelProps<T>) {
+                                               state,
+                                               ...props
+                                             }: TabPanelProps<T>) {
   const ref = React.useRef<HTMLDivElement>(null);
   const { tabPanelProps } = useTabPanel(props, state, ref);
   return (

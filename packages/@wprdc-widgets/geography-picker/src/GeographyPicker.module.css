@@ -1,37 +1,37 @@
 .wrapper {
-  @apply w-full flex flex-col items-stretch;
-  @apply relative;
-  @apply bg-white;
+    @apply w-full flex flex-col items-stretch;
+    @apply relative;
+    @apply bg-white;
 }
 
 .menu {
-  @apply flex-shrink p-3 pb-0;
+    @apply flex-shrink p-3 pb-0;
 }
 
 .label {
-  @apply block text-left cursor-default;
-  @apply text-xs font-mono uppercase font-semibold text-gray-500;
+    @apply block text-left cursor-default;
+    @apply text-xs font-mono uppercase font-semibold text-gray-500;
 }
 
 .input {
-  @apply relative inline-flex flex-row w-full;
-  @apply pl-2 pr-2 py-1;
-  @apply text-sm placeholder:italic placeholder:text-gray-400;
-  @apply w-full border border-black outline-none focus:outline-none focus-visible:outline-none;
-  @apply hover:border-focused-600;
-  @apply transition duration-150 ease-in-out;
-  @apply focus:ring-focused-400 focus:ring-1 focus:border-focused-400;
-  @apply shadow-sm hover:shadow;
+    @apply relative inline-flex flex-row w-full;
+    @apply pl-2 pr-2 py-1;
+    @apply text-sm placeholder:italic placeholder:text-gray-400;
+    @apply w-full border border-black outline-none focus:outline-none focus-visible:outline-none;
+    @apply hover:border-focused-600;
+    @apply transition duration-150 ease-in-out;
+    @apply focus:ring-focused-400 focus:ring-1 focus:border-focused-400;
+    @apply shadow-sm hover:shadow;
 }
 
 .value {
-  @apply ml-2 text-sm flex-grow text-left;
+    @apply ml-2 text-sm flex-grow text-left;
 }
 
 .icon {
-  @apply w-5 h-5 text-gray-500;
+    @apply w-5 h-5 text-gray-500;
 }
 
 .placeholder {
-  @apply italic text-gray-600;
+    @apply italic text-gray-600;
 }

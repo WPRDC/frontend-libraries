@@ -8,16 +8,13 @@
 import * as React from 'react';
 import './main.css';
 import styles from './Breadcrumbs.module.css';
-import {
-  BreadcrumbItemProps,
-  BreadcrumbsProps,
-} from '@wprdc-types/breadcrumbs';
+import { BreadcrumbItemProps, BreadcrumbsProps } from '@wprdc-types/breadcrumbs';
 
 import { useBreadcrumbItem, useBreadcrumbs } from '@react-aria/breadcrumbs';
 
 import classNames from 'classnames';
 
-export function Breadcrumbs<T>(props: BreadcrumbsProps<T>) {
+export function Breadcrumbs(props: BreadcrumbsProps) {
   const { navProps } = useBreadcrumbs(props);
   const children = React.Children.toArray(props.children);
   const { showCurrent = true, bigTitle, titleElement = 'h3', shallow } = props;
@@ -78,7 +75,7 @@ export function BreadcrumbItem(props: BreadcrumbItemProps) {
   const Title = TitleComponent || 'h3';
   const Link = LinkComponent || 'a';
   const dividerContent = divider || (
-    <span aria-hidden="true" className={styles.divider}>
+    <span aria-hidden='true' className={styles.divider}>
       /
     </span>
   );

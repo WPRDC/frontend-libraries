@@ -9,7 +9,8 @@ import { TreeState } from '@react-stately/tree';
 import { Node } from '@react-types/shared';
 import { AriaMenuItemProps, AriaMenuSectionProps } from '@react-aria/menu';
 
-export interface MenuProps<T> extends AriaMenuProps<T> {}
+export interface MenuProps<T> extends AriaMenuProps<T> {
+}
 
 export interface MenuSectionProps<T> extends AriaMenuSectionProps {
   section: Node<T>;

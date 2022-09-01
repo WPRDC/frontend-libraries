@@ -13,12 +13,12 @@ interface EditMenuProps {
 }
 
 export const EditMenu: React.FC<EditMenuProps> = ({
-  indicator,
-  onTimePartChange,
-  onVariableChange,
-  selectedTimeParts,
-  selectedVariables,
-}) => {
+                                                    indicator,
+                                                    onTimePartChange,
+                                                    onVariableChange,
+                                                    selectedTimeParts,
+                                                    selectedVariables,
+                                                  }) => {
   function handleTimeChange(selectedTimeParts: string[]) {
     onTimePartChange(selectedTimeParts);
   }
@@ -31,7 +31,7 @@ export const EditMenu: React.FC<EditMenuProps> = ({
     <div>
       <div>
         <CheckboxGroup
-          label="Show/Hide Time Points"
+          label='Show/Hide Time Points'
           onChange={handleTimeChange}
           value={selectedTimeParts}
         >
@@ -42,7 +42,7 @@ export const EditMenu: React.FC<EditMenuProps> = ({
       </div>
       <div>
         <CheckboxGroup
-          label="Show/Hide Variables"
+          label='Show/Hide Variables'
           onChange={handleVariableChange}
           value={selectedVariables}
         >

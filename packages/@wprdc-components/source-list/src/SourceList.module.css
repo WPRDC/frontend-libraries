@@ -2,31 +2,31 @@
 }
 
 .title {
-  @apply font-medium text-sm;
+    @apply font-medium text-sm;
 }
 
 .popover {
-  @apply max-w-lg;
+    @apply max-w-lg;
 }
 
 .popover > a:first-of-type {
-  @apply block w-full;
-  @apply whitespace-nowrap text-ellipsis;
-  @apply overflow-hidden overflow-ellipsis;
+    @apply block w-full;
+    @apply whitespace-nowrap text-ellipsis;
+    @apply overflow-hidden overflow-ellipsis;
 }
 
 .popover p {
-  @apply my-2;
+    @apply my-2;
 }
 
 .list {
-  @apply inline-block;
+    @apply inline-block;
 }
 
 .listItem {
-  @apply pl-1 mb-1;
+    @apply pl-1 mb-1;
 }
 
 .sourceButtonText {
-  @apply italic underline;
+    @apply italic underline;
 }

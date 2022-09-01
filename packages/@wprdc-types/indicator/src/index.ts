@@ -3,11 +3,7 @@
  * TopicView types
  *
  **/
-import {
-  ErrorRecord,
-  IndicatorBase,
-  IndicatorWithData,
-} from '@wprdc-types/profiles';
+import { ErrorRecord, IndicatorBase, IndicatorWithData } from '@wprdc-types/profiles';
 import { GeogBrief } from '@wprdc-types/geo';
 import { ColorScheme } from '@wprdc-types/shared';
 
@@ -26,11 +22,14 @@ export interface IndicatorWidgetProps extends IndicatorSharedProps {
   onExplore?: (indicator: IndicatorBase) => void;
 }
 
-export interface IndicatorDetailProps extends IndicatorSharedProps {}
+export interface IndicatorDetailProps extends IndicatorSharedProps {
+}
 
-export interface IndicatorPreviewProps extends IndicatorSharedProps {}
+export interface IndicatorPreviewProps extends IndicatorSharedProps {
+}
 
-export interface IndicatorMiniProps extends IndicatorSharedProps {}
+export interface IndicatorMiniProps extends IndicatorSharedProps {
+}
 
 export interface IndicatorCardProps extends IndicatorSharedProps {
   onExplore?: (indicator: IndicatorBase) => void;

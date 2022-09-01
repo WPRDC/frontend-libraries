@@ -11,10 +11,10 @@ import { ConnectedLegendProps } from '@wprdc-types/connections';
 import styles from './Legend.module.css';
 
 export const Legend: React.FC<ConnectedLegendProps> = ({
-  title,
-  toolboxes,
-  children,
-}) => {
+                                                         title,
+                                                         toolboxes,
+                                                         children,
+                                                       }) => {
   return (
     <div className={styles.container}>
       {!!title && <div className={styles.title}>{title}</div>}

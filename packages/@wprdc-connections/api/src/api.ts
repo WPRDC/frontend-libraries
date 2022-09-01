@@ -75,7 +75,7 @@ class API<E extends Endpoint> {
   async callAndProcessEndpoint<T = any>(
     endpoint: E,
     method: Method,
-    options?: APIOptions<T>
+    options?: APIOptions<T>,
   ): Promise<T> {
     const response = await this.callEndpoint(endpoint, method, options);
     if (response.ok) {
@@ -92,7 +92,7 @@ class API<E extends Endpoint> {
   async callAndProcessListEndpoint<T = any>(
     endpoint: E,
     method: Method,
-    options?: APIOptions<T>
+    options?: APIOptions<T>,
   ): Promise<T[]> {
     const response = await this.callEndpoint(endpoint, method, options);
     if (response.ok) {
@@ -117,7 +117,7 @@ export function serializeParams(params?: object) {
   return `?${Object.entries(params)
     .map(
       ([key, value]) =>
-        `${encodeURIComponent(key)}=${encodeURIComponent(value)}`
+        `${encodeURIComponent(key)}=${encodeURIComponent(value)}`,
     )
     .join('&')}`;
 }
@@ -129,6 +129,6 @@ export function createAPI<E extends Endpoint>(host: string): API<E> {
 function stripUndefineds(params?: object) {
   if (!params) return {};
   return Object.fromEntries(
-    Object.entries(params).filter(([_, v]) => v != undefined)
+    Object.entries(params).filter(([_, v]) => v != undefined),
   );
 }

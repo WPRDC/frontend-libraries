@@ -8,7 +8,7 @@ export const PopupSection: React.FC<PopupSectionProps> = (props) => {
   return (
     <div>
       <SectionHeading label={label} icon={icon} />
-      <div className="ml-2 mb-1">{children}</div>
+      <div className='ml-2 mb-1'>{children}</div>
     </div>
   );
 };
@@ -19,11 +19,11 @@ interface SectionHeadingProps {
 }
 
 const SectionHeading: React.FC<SectionHeadingProps> = ({
-  label,
-  icon: Icon,
-}) => (
-  <div className="text-gray-500 leading-none">
-    {!!Icon && <Icon className="h-5 inline-block" />}
-    <div className="text-xs leading-none inline-block">{label}</div>
+                                                         label,
+                                                         icon: Icon,
+                                                       }) => (
+  <div className='text-gray-500 leading-none'>
+    {!!Icon && <Icon className='h-5 inline-block' />}
+    <div className='text-xs leading-none inline-block'>{label}</div>
   </div>
 );

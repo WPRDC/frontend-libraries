@@ -12,10 +12,10 @@ import styles from './ErrorMessage.module.css';
 import { ErrorMessageProps } from '@wprdc-types/error-message';
 
 export const ErrorMessage: React.FC<ErrorMessageProps> = ({
-  title = 'Uncaught Error',
-  message = 'Please contact the helpdesk.',
-  variant,
-}) => {
+                                                            title = 'Uncaught Error',
+                                                            message = 'Please contact the helpdesk.',
+                                                            variant,
+                                                          }) => {
   if (variant === 'centered')
     return (
       <div className={styles.centeredContainer}>
@@ -25,7 +25,8 @@ export const ErrorMessage: React.FC<ErrorMessageProps> = ({
     );
   return (
     <div className={styles.inlineContainer}>
-      <div className={styles.inlineTitle}>{title}</div>{' '}
+      <div className={styles.inlineTitle}>{title}</div>
+      {' '}
       <div className={styles.inlineMessage}>{message}</div>
     </div>
   );

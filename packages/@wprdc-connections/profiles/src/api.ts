@@ -8,13 +8,7 @@
 import { createAPI } from '@wprdc-connections/api';
 import { Method } from '@wprdc-types/api';
 
-import {
-  Domain,
-  IndicatorWithData,
-  Subdomain,
-  Taxonomy,
-  Topic,
-} from '@wprdc-types/profiles';
+import { Domain, IndicatorWithData, Subdomain, Taxonomy, Topic } from '@wprdc-types/profiles';
 
 const HOST = 'https://api.profiles.wprdc.org';
 
@@ -30,7 +24,7 @@ const api = createAPI<Endpoint>(HOST);
 
 function requestTaxonomy(
   slug?: string,
-  controller?: AbortController
+  controller?: AbortController,
 ): Promise<Taxonomy> {
   if (!slug) throw Error('slug not provided');
 
@@ -42,7 +36,7 @@ function requestTaxonomy(
 
 function requestDomain(
   slug?: string,
-  controller?: AbortController
+  controller?: AbortController,
 ): Promise<Domain> {
   if (!slug) throw Error('slug not provided');
 
@@ -54,7 +48,7 @@ function requestDomain(
 
 function requestSubdomain(
   slug?: string,
-  controller?: AbortController
+  controller?: AbortController,
 ): Promise<Subdomain> {
   if (!slug) throw Error('slug not provided');
   return api.callAndProcessEndpoint<Subdomain>(Endpoint.Subdomain, Method.GET, {
@@ -65,7 +59,7 @@ function requestSubdomain(
 
 function requestTopic(
   slug?: string,
-  controller?: AbortController
+  controller?: AbortController,
 ): Promise<Topic> {
   if (!slug) throw Error('slug not provided');
   return api.callAndProcessEndpoint<Topic>(Endpoint.Topic, Method.GET, {
@@ -78,7 +72,7 @@ function requestIndicator(
   indicatorSlug?: string,
   geogSlug?: string,
   across?: boolean,
-  controller?: AbortController
+  controller?: AbortController,
 ): Promise<IndicatorWithData> {
   if (!indicatorSlug) throw Error('indicator slug not provided');
   if (!geogSlug) throw Error('geog slug not provided');
@@ -96,7 +90,7 @@ function requestIndicator(
           throw Error(indicator.error.message);
         }
       },
-    }
+    },
   );
 }
 

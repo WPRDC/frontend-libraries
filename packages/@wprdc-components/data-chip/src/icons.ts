@@ -5,10 +5,10 @@ import {
   RiDatabase2Fill,
   RiGroupFill,
   RiMailFill,
+  RiMapPinFill,
+  RiPagesFill,
   RiPhoneFill,
   RiUser3Fill,
-  RiPagesFill,
-  RiMapPinFill,
 } from 'react-icons/ri';
 import { DataChipIcon } from '@wprdc-types/data-chip';
 

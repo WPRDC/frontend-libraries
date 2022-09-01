@@ -24,13 +24,13 @@ export function LineChart(props: LineChartProps) {
 
   const { renderVariables, renderTimeParts } = useFilters(
     selectedVariables,
-    selectedTimeParts
+    selectedTimeParts,
   );
 
   // flatten data for use in vega
   const table = React.useMemo(
     () => flattenData(indicator, renderTimeParts, renderVariables),
-    [indicator, renderVariables, renderTimeParts]
+    [indicator, renderVariables, renderTimeParts],
   );
 
   const labels = React.useMemo(
@@ -42,7 +42,7 @@ export function LineChart(props: LineChartProps) {
           fullLabel: t.name,
           label: t.name,
         })),
-    [indicator.slug, renderTimeParts]
+    [indicator.slug, renderTimeParts],
   );
 
   console.log(table, labels, spec);
@@ -61,7 +61,7 @@ export function LineChart(props: LineChartProps) {
           <div
             ref={measureRef}
             className={styles.insideWrapper}
-            aria-label="data presentation preview"
+            aria-label='data presentation preview'
           >
             <Vega
               spec={spec}

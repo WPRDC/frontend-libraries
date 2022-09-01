@@ -38,12 +38,12 @@ export function GeogHistogram(props: BarChartProps) {
 
   const { renderVariables, renderTimeParts } = useFilters(
     selectedVariables,
-    selectedTimeParts
+    selectedTimeParts,
   );
 
   const table = React.useMemo(
     () => flattenData(indicator, renderTimeParts, renderVariables),
-    [indicator, renderVariables, renderTimeParts]
+    [indicator, renderVariables, renderTimeParts],
   );
 
   const labels = React.useMemo(
@@ -55,14 +55,14 @@ export function GeogHistogram(props: BarChartProps) {
           fullLabel: v.name,
           label: v.shortName || v.name,
         })),
-    [indicator.slug, renderVariables]
+    [indicator.slug, renderVariables],
   );
 
   const highlight = { highlight: hoveredRecord?.geog };
 
   const spec = React.useMemo(
     () => makeSpec(indicator.options.useDenominators ? 'percent' : 'value'),
-    []
+    [],
   );
 
   // TODO: highlight chart based on hover state
@@ -81,7 +81,7 @@ export function GeogHistogram(props: BarChartProps) {
           <div
             ref={measureRef}
             className={styles.insideWrapper}
-            aria-label="data presentation preview"
+            aria-label='data presentation preview'
           >
             <Vega
               spec={spec}

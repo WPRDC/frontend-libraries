@@ -13,9 +13,9 @@ import { DividerProps } from '@wprdc-types/divider';
 import classNames from 'classnames';
 
 export const Divider: React.FC<DividerProps> = ({
-  vertical,
-  weight = 'thin',
-}) => {
+                                                  vertical,
+                                                  weight = 'thin',
+                                                }) => {
   if (!!vertical) {
     return (
       <div

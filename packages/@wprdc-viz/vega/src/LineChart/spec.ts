@@ -145,7 +145,7 @@ const line: vega.Spec = {
             enter: {
               tooltip: {
                 signal:
-                  "scale('labelMap', datum.timePoint) + ': ' + format(datum.value, '1,')",
+                  'scale(\'labelMap\', datum.timePoint) + \': \' + format(datum.value, \'1,\')',
               },
               x: { scale: 'x', field: 'timePoint' },
               y: { scale: 'y', field: 'value' },

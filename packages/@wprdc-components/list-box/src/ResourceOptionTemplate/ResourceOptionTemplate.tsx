@@ -3,14 +3,11 @@ import * as React from 'react';
 import '../main.css';
 import styles from './ResourceOptionTemplate.module.css';
 
-import {
-  OptionFieldAccessor,
-  ResourceOptionTemplateProps,
-} from '@wprdc-types/list-box';
+import { OptionFieldAccessor, ResourceOptionTemplateProps } from '@wprdc-types/list-box';
 import { Resource } from '@wprdc-types/shared';
 
 export function ResourceOptionTemplate<T extends Resource>(
-  props: ResourceOptionTemplateProps<T>
+  props: ResourceOptionTemplateProps<T>,
 ) {
   const {
     item,
@@ -22,7 +19,7 @@ export function ResourceOptionTemplate<T extends Resource>(
 
   function getContent(
     accessor: OptionFieldAccessor<T> | keyof T,
-    item: T
+    item: T,
   ): React.ReactNode {
     if (typeof accessor == 'function') return accessor(item);
     // fixme: figure out how to type this

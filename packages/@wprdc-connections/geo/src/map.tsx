@@ -3,11 +3,7 @@ import { MapPluginConnection } from '@wprdc-types/connections';
 import { GeogBrief, GeogLevel } from '@wprdc-types/geo';
 import { Layer, Source } from '@wprdc-components/map';
 import { Radio, RadioGroup } from '@wprdc-components/radio-group';
-import {
-  clearLayerFilter,
-  makeLayers,
-  useMapPlugin,
-} from '@wprdc-connections/util';
+import { clearLayerFilter, makeLayers, useMapPlugin } from '@wprdc-connections/util';
 import { ProjectKey } from '@wprdc-types/shared';
 
 //maps.v_neighborhood
@@ -44,8 +40,8 @@ export const menuLayerConnection: MapPluginConnection<GeogLevel, GeogBrief> = {
           hoveredFilter,
           selectedFilter,
           undefined,
-          highlightFilter
-        )
+          highlightFilter,
+        ),
       );
   },
   getLegendItems: () => {
@@ -68,7 +64,7 @@ export const menuLayerConnection: MapPluginConnection<GeogLevel, GeogBrief> = {
           !!feature.source &&
           typeof feature.source === 'string' &&
           !!feature.properties &&
-          feature.source.substring(0, 4) === 'menu'
+          feature.source.substring(0, 4) === 'menu',
       );
       let result: GeogBrief[] = [];
       for (const feature of features) {
@@ -107,7 +103,7 @@ export const menuLayerConnection: MapPluginConnection<GeogLevel, GeogBrief> = {
           {layers.map(layer => (
             <Layer {...layer} key={layer.id} />
           ))}
-        </>
+        </>,
       );
     } else setMapSection();
   },
@@ -118,7 +114,7 @@ export const menuLayerConnection: MapPluginConnection<GeogLevel, GeogBrief> = {
   },
   makeHoverContent: hoveredItems => {
     if (!!hoveredItems && !!hoveredItems.length)
-      return <div className="text-xs">{hoveredItems[0].name}</div>;
+      return <div className='text-xs'>{hoveredItems[0].name}</div>;
     return null;
   },
   makeClickContent: () => {
@@ -136,8 +132,8 @@ export const menuLayerConnection: MapPluginConnection<GeogLevel, GeogBrief> = {
         setLayerPanelSection(
           <div key={'geo-menu'}>
             <RadioGroup
-              label="Select a menu layer"
-              aria-label="select the geographic menu layer to display"
+              label='Select a menu layer'
+              aria-label='select the geographic menu layer to display'
               onChange={_handleChange}
             >
               {items.map(item => (
@@ -146,7 +142,7 @@ export const menuLayerConnection: MapPluginConnection<GeogLevel, GeogBrief> = {
                 </Radio>
               ))}
             </RadioGroup>
-          </div>
+          </div>,
         );
       }
     }

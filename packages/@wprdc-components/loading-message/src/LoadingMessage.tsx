@@ -12,9 +12,9 @@ import { LoadingMessageProps } from '@wprdc-types/loading-message';
 import { Spinner } from '@wprdc-components/spinner';
 
 export const LoadingMessage: React.FC<LoadingMessageProps> = ({
-  name,
-  message,
-}) => {
+                                                                name,
+                                                                message,
+                                                              }) => {
   const displayName = !!name ? ` ${name}` : '';
   const msg = message || `Loading ${displayName}...`;
   return (

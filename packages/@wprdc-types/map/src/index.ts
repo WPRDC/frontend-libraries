@@ -1,13 +1,13 @@
 import React from 'react';
 
 import {
-  MapProps as RMGMapProps,
   LayerProps,
   MapLayerMouseEvent,
   MapLayerTouchEvent,
+  MapProps as RMGMapProps,
+  MapRef,
   PopupProps as RMGPopupProps,
   SourceProps,
-  MapRef,
 } from 'react-map-gl';
 
 import { ColorScheme } from '@wprdc-types/shared';
@@ -90,4 +90,5 @@ export interface MapProps extends RMGMapProps {
   mapboxApiAccessToken?: string;
 }
 
-export interface LayerPanelProps {}
+export interface LayerPanelProps {
+}

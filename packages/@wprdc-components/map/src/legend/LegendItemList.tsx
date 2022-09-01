@@ -9,7 +9,7 @@ export const LegendItemList: React.FC<LegendItemListProps> = (props) => {
   if (!items) return <div />;
   return (
     <div>
-      <p className="text-sm">{title}</p>
+      <p className='text-sm'>{title}</p>
       <ul>
         {items.map((item) => (
           <li>

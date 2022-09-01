@@ -2,11 +2,7 @@ import * as React from 'react';
 import '../main.css';
 import styles from './LegendItem.module.css';
 
-import {
-  CategoricalLegendItemProps,
-  ColorScaleLegendItemProps,
-  LegendItemProps,
-} from '@wprdc-types/map';
+import { CategoricalLegendItemProps, ColorScaleLegendItemProps, LegendItemProps } from '@wprdc-types/map';
 
 export const LegendItem: React.FC<LegendItemProps> = (props) => {
   if (props.variant === 'scale') {
@@ -19,7 +15,7 @@ export const LegendItem: React.FC<LegendItemProps> = (props) => {
 };
 
 export const CategoricalLegendItem: React.FC<CategoricalLegendItemProps> = (
-  props
+  props,
 ) => {
   const { label, hollow, marker } = props;
   const _marker =
@@ -40,10 +36,10 @@ export const CategoricalLegendItem: React.FC<CategoricalLegendItemProps> = (
 };
 
 export const ColorScaleLegendItem: React.FC<ColorScaleLegendItemProps> = ({
-  label,
-  scale,
-  numberFormatOptions,
-}) => {
+                                                                            label,
+                                                                            scale,
+                                                                            numberFormatOptions,
+                                                                          }) => {
   const gradient = scale.map((item) => item.marker).join(',');
 
   function styleLabel(label: React.ReactNode): React.ReactNode {
@@ -80,24 +76,24 @@ interface MarkerProps {
 
 const Marker: React.FC<MarkerProps> = ({ color, hollow }) => (
   <svg
-    xmlns="http://www.w3.org/2000/svg"
-    version="1.1"
-    width="14"
-    height="14"
+    xmlns='http://www.w3.org/2000/svg'
+    version='1.1'
+    width='14'
+    height='14'
     style={{
       display: 'block',
       margin: 'auto',
     }}
   >
     {hollow ? (
-      <circle cx="8" cy="8" r="7" stroke={color} strokeWidth="2" />
+      <circle cx='8' cy='8' r='7' stroke={color} strokeWidth='2' />
     ) : (
       <circle
-        cx="7"
-        cy="8"
-        r="5"
-        stroke="rgb(55,65,81)"
-        strokeWidth="1"
+        cx='7'
+        cy='8'
+        r='5'
+        stroke='rgb(55,65,81)'
+        strokeWidth='1'
         fill={color}
       />
     )}

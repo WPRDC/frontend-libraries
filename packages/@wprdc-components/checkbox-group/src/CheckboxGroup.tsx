@@ -11,17 +11,14 @@ import styles from './CheckboxGroup.module.css';
 
 import classNames from 'classnames';
 
-import {
-  CheckboxGroupState,
-  useCheckboxGroupState,
-} from '@react-stately/checkbox';
+import { CheckboxGroupState, useCheckboxGroupState } from '@react-stately/checkbox';
 
 import { useCheckboxGroup, useCheckboxGroupItem } from '@react-aria/checkbox';
 
 import { CheckboxGroupProps, CheckboxProps } from '@wprdc-types/checkbox-group';
 
 const CheckboxGroupContext = React.createContext<CheckboxGroupState | null>(
-  null
+  null,
 );
 
 export function CheckboxGroup(props: CheckboxGroupProps) {

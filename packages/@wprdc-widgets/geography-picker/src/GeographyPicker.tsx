@@ -38,12 +38,12 @@ export function GeographyPicker(props: GeographyPickerProps) {
 
   const value: string | undefined = useMemo(
     () => geog && JSON.stringify(geog),
-    [geog]
+    [geog],
   );
 
   const displayValue: string | undefined = useMemo(
     () => (geog ? geog.title : PLACEHOLDER),
-    [geog]
+    [geog],
   );
 
   function handleSelection(geog: GeogBrief) {
@@ -61,11 +61,11 @@ export function GeographyPicker(props: GeographyPickerProps) {
           <span {...labelProps}>{props.label}</span>
         </div>
       )}
-      <input hidden aria-hidden="true" {...fieldProps} value={value} />
+      <input hidden aria-hidden='true' {...fieldProps} value={value} />
 
       <button {...buttonProps} ref={ref} className={styles.input}>
         <span>
-          <MapIcon aria-hidden="true" className={styles.icon} />
+          <MapIcon aria-hidden='true' className={styles.icon} />
         </span>
         <span
           className={classnames(styles.value, {

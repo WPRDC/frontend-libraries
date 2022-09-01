@@ -5,11 +5,7 @@
  **/
 import React, { Key, RefObject } from 'react';
 
-import {
-  AriaListBoxOptions,
-  AriaListBoxSectionProps,
-  AriaOptionProps,
-} from '@react-aria/listbox';
+import { AriaListBoxOptions, AriaListBoxSectionProps, AriaOptionProps } from '@react-aria/listbox';
 
 import { CollectionChildren, Node } from '@react-types/shared';
 
@@ -42,9 +38,7 @@ export type OptionTemplateProps<T, O extends object = {}> = O & {
 };
 
 /** All option template types should derive from this */
-export type OptionTemplate<T, O extends object = {}> = React.FC<
-  OptionTemplateProps<T, O>
->;
+export type OptionTemplate<T, O extends object = {}> = React.FC<OptionTemplateProps<T, O>>;
 
 export interface ResourceOptionTemplateOptions<T extends Resource> {
   /**
@@ -53,7 +47,7 @@ export interface ResourceOptionTemplateOptions<T extends Resource> {
    * If the function returns null or undefined, `Icon` or nothing will be used
    */
   getIcon?: (
-    item: T
+    item: T,
   ) => React.FC<React.HTMLAttributes<HTMLOrSVGElement>> | null | undefined;
   /**
    * Icon component. Will be overridden by result of `getIcon` if `getIcon` is
@@ -128,11 +122,9 @@ export interface ListBoxState<T> extends ListState<T> {
   setFocused?(isFocused: boolean): void;
 }
 
-export interface ConnectedListBoxProps<
-  T extends Resource,
-  O extends object = {}
-> extends ListConnectableComponentProps<T>,
-    Omit<StatelessListBoxProps<T, O>, 'children'> {
+export interface ConnectedListBoxProps<T extends Resource,
+  O extends object = {}> extends ListConnectableComponentProps<T>,
+  Omit<StatelessListBoxProps<T, O>, 'children'> {
   label?: string;
   /** Function run when an item is selected */
   onSelection?: (item: T) => void;

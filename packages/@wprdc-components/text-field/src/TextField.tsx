@@ -22,7 +22,7 @@ type Elems = {
 };
 
 export function TextField<T extends 'input' | 'textarea'>(
-  props: TextFieldProps<T>
+  props: TextFieldProps<T>,
 ) {
   const { label, inputElementType } = props;
   const ref = React.useRef<Elems[T]>(null);

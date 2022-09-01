@@ -21,7 +21,7 @@ import { HiSelector } from 'react-icons/hi';
 import { AriaListBoxOptions } from '@react-aria/listbox';
 
 export function Select<T extends object, O extends object = {}>(
-  props: SelectProps<T, O>
+  props: SelectProps<T, O>,
 ) {
   // Create state based on the incoming props
   const { onSelection, listBoxProps } = props;
@@ -43,7 +43,7 @@ export function Select<T extends object, O extends object = {}>(
   let { labelProps, triggerProps, valueProps, menuProps } = useSelect(
     props,
     state,
-    ref
+    ref,
   );
 
   // Get props for the button based on the trigger props from useSelect
@@ -72,7 +72,7 @@ export function Select<T extends object, O extends object = {}>(
         <span
           className={classnames(
             styles.value,
-            state.selectedItem ? styles.selected : styles.placeholder
+            state.selectedItem ? styles.selected : styles.placeholder,
           )}
           {...valueProps}
         >

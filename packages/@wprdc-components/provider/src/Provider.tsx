@@ -7,22 +7,19 @@ import { OverlayProvider } from '@react-aria/overlays';
 import { ReactQueryDevtools } from 'react-query/devtools';
 
 import { Geog } from '@wprdc-types/geo';
-import {
-  ProviderAction,
-  ProviderContext,
-  ProviderProps,
-  ProviderState,
-} from '@wprdc-types/provider';
+import { ProviderAction, ProviderContext, ProviderProps, ProviderState } from '@wprdc-types/provider';
 
 const Context = React.createContext<ProviderContext>({
-  dispatch: () => {},
-  setGeog: () => {},
+  dispatch: () => {
+  },
+  setGeog: () => {
+  },
 });
 Context.displayName = 'ProviderContext';
 
 const defaultReducer: Reducer<ProviderState, ProviderAction> = (
   state,
-  action
+  action,
 ) => {
   switch (action.type) {
     case 'set-mapboxAPIToken':

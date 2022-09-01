@@ -35,16 +35,16 @@ export function ComboBox<T extends Resource>(props: ComboBoxProps<T>) {
       listBoxRef,
       popoverRef,
     },
-    state
+    state,
   );
 
   let { buttonProps } = useButton(triggerProps, buttonRef);
 
   return (
-    <div className="inline-flex flex-col relative border-2 border-black">
+    <div className='inline-flex flex-col relative border-2 border-black'>
       <label
         {...labelProps}
-        className="block text-xs font-mono text-gray-700 text-left"
+        className='block text-xs font-mono text-gray-700 text-left'
       >
         {props.label}
       </label>
@@ -54,7 +54,7 @@ export function ComboBox<T extends Resource>(props: ComboBoxProps<T>) {
         <input
           {...inputProps}
           ref={inputRef}
-          className="outline-none px-3 py-1"
+          className='outline-none px-3 py-1'
         />
         <button
           {...buttonProps}

@@ -1,12 +1,7 @@
 import React from 'react';
 import { ConnectionProps, MapPluginConnection } from '@wprdc-types/connections';
 
-import {
-  Layer,
-  LegendItem,
-  LegendSection,
-  Source,
-} from '@wprdc-components/map';
+import { Layer, LegendItem, LegendSection, Source } from '@wprdc-components/map';
 import { useMapPlugin } from '@wprdc-connections/util';
 
 import { ProjectKey, Resource } from '@wprdc-types/shared';
@@ -16,7 +11,8 @@ import styles from './PopupContent.module.css';
 import { CategoricalLegendItemProps } from '@wprdc-types/map';
 import { HousecatAPI } from './api';
 
-interface AffordableHousingLayer extends Resource {}
+interface AffordableHousingLayer extends Resource {
+}
 
 /** Static layer use when showing affordable housing map */
 export const housingProjectLayer: AffordableHousingLayer = {
@@ -25,10 +21,8 @@ export const housingProjectLayer: AffordableHousingLayer = {
   slug: ProjectKey.Housecat,
 };
 
-export const affordableHousingProjectMapConnection: MapPluginConnection<
-  AffordableHousingLayer,
-  ProjectIndexMapProperties
-> = {
+export const affordableHousingProjectMapConnection: MapPluginConnection<AffordableHousingLayer,
+  ProjectIndexMapProperties> = {
   name: ProjectKey.Housecat,
   use: useMapPlugin,
   getSources() {
@@ -45,7 +39,7 @@ export const affordableHousingProjectMapConnection: MapPluginConnection<
       r => {
         if (r.extras) setLegendItems(r.extras.legendItems);
       },
-      err => console.error(err)
+      err => console.error(err),
     );
   },
   getInteractiveLayerIDs() {
@@ -58,10 +52,10 @@ export const affordableHousingProjectMapConnection: MapPluginConnection<
           !!feature &&
           !!feature.source &&
           !!feature.properties &&
-          feature.source === 'all-public-housing-projects'
+          feature.source === 'all-public-housing-projects',
       );
       return features.map(
-        ({ properties }) => properties as ProjectIndexMapProperties
+        ({ properties }) => properties as ProjectIndexMapProperties,
       );
     }
     return [];
@@ -72,13 +66,13 @@ export const affordableHousingProjectMapConnection: MapPluginConnection<
   makeLegendSection: (setLegendSection, items) => {
     if (!!items && !!items.length)
       setLegendSection(
-        <LegendSection title="Affordable Housing Projects by Funding Type">
+        <LegendSection title='Affordable Housing Projects by Funding Type'>
           {items.map(item => {
             const color: string =
               ((item as CategoricalLegendItemProps).marker as string) || 'gray';
             return (
               <LegendItem
-                variant="categorical"
+                variant='categorical'
                 marker={color}
                 label={item.label}
               />
@@ -93,7 +87,7 @@ export const affordableHousingProjectMapConnection: MapPluginConnection<
             Closed projects have a <span style={{ color: 'red' }}>red</span>{' '}
             stroke.
           </p>
-        </LegendSection>
+        </LegendSection>,
       );
     else setLegendSection();
   },
@@ -103,7 +97,7 @@ export const affordableHousingProjectMapConnection: MapPluginConnection<
         <>
           <Source {...sources[0]} key={sources[0].id} />
           <Layer {...layers[0]} key={layers[0].id} />
-        </>
+        </>,
       );
     }
   },

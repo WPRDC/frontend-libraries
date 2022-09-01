@@ -1,48 +1,48 @@
 .wrapper {
-  @apply inline-flex flex-col relative w-full;
+    @apply inline-flex flex-col relative w-full;
 }
 
 .label {
-  @apply block text-left cursor-default;
-  @apply text-xs font-mono uppercase font-semibold text-gray-500;
+    @apply block text-left cursor-default;
+    @apply text-xs font-mono uppercase font-semibold text-gray-500;
 }
 
 .group {
-  @apply flex flex-row w-full items-center;
-  @apply bg-background border border-black;
-  @apply pr-1;
-  @apply transition duration-150 ease-in-out;
-  @apply hover:border-focused-600;
+    @apply flex flex-row w-full items-center;
+    @apply bg-background border border-black;
+    @apply pr-1;
+    @apply transition duration-150 ease-in-out;
+    @apply hover:border-focused-600;
 }
 
 .focused {
-  @apply outline-none ring-focused-400 ring-1 border-focused-400;
+    @apply outline-none ring-focused-400 ring-1 border-focused-400;
 }
 
 .realInput {
-  @apply flex-grow;
-  @apply py-1 px-2;
-  @apply focus:outline-none;
-  @apply text-sm;
-  @apply bg-transparent;
-  @apply placeholder:italic placeholder:text-gray-400;
+    @apply flex-grow;
+    @apply py-1 px-2;
+    @apply focus:outline-none;
+    @apply text-sm;
+    @apply bg-transparent;
+    @apply placeholder:italic placeholder:text-gray-400;
 }
 
 .description {
-  @apply text-xs;
+    @apply text-xs;
 }
 
 .error {
-  @apply text-xs font-medium text-red-800;
+    @apply text-xs font-medium text-red-800;
 }
 
 .buttonSection {
-  @apply h-full flex flex-col justify-center;
-  @apply ml-1.5;
+    @apply h-full flex flex-col justify-center;
+    @apply ml-1.5;
 }
 
 .button {
-  @apply text-xs;
+    @apply text-xs;
 }
 
 .icon {

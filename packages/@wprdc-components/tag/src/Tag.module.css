@@ -1,19 +1,19 @@
 .wrapper {
-  @apply py-0.5 px-1.5 rounded inline-block border border-gray-500;
+    @apply py-0.5 px-1.5 rounded inline-block border border-gray-500;
 }
 
 .label {
-  @apply text-xs font-semibold uppercase text-gray-700;
+    @apply text-xs font-semibold uppercase text-gray-700;
 }
 
 .default {
-  @apply bg-gray-50;
+    @apply bg-gray-50;
 }
 
 .primary {
-  @apply bg-primary-300;
+    @apply bg-primary-300;
 }
 
 .secondary {
-  @apply bg-secondary-300;
+    @apply bg-secondary-300;
 }

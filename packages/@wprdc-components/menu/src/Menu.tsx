@@ -67,7 +67,7 @@ function MenuItem<T>({ item, state, onAction }: MenuItemProps<T>): JSX.Element {
       onAction,
     },
     state,
-    ref
+    ref,
   );
 
   const [isFocused, setFocused] = React.useState(false);
@@ -88,10 +88,10 @@ function MenuItem<T>({ item, state, onAction }: MenuItemProps<T>): JSX.Element {
 }
 
 function MenuSection<T>({
-  section,
-  state,
-  onAction,
-}: MenuSectionProps<T>): JSX.Element {
+                          section,
+                          state,
+                          onAction,
+                        }: MenuSectionProps<T>): JSX.Element {
   const { itemProps, headingProps, groupProps } = useMenuSection({
     heading: section.rendered,
     'aria-label': section['aria-label'],

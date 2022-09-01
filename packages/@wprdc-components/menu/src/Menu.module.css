@@ -1,27 +1,27 @@
 .menu {
-  @apply border rounded-sm border-gray-600 w-max max-w-sm;
+    @apply border rounded-sm border-gray-600 w-max max-w-sm;
 }
 
 .menuItem {
-  @apply py-0.5 px-1 outline-none cursor-pointer;
+    @apply py-0.5 px-1 outline-none cursor-pointer;
 }
 
 .disabled {
-  @apply cursor-default;
+    @apply cursor-default;
 }
 
 .focused {
-  @apply bg-gray-300 text-white;
+    @apply bg-gray-300 text-white;
 }
 
 .separator {
-  @apply border-t border-gray-500 border;
+    @apply border-t border-gray-500 border;
 }
 
 .sectionHeading {
-  @apply font-bold text-sm py-0.5 py-1;
+    @apply font-bold text-sm py-0.5 py-1;
 }
 
 .section {
-  @apply p-0;
+    @apply p-0;
 }

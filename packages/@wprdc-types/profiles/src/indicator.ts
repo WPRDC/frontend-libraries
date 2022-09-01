@@ -4,12 +4,7 @@ import { ContextItem } from './context';
 import { TimeAxis } from './time';
 import { Variable } from './variable';
 import { SourceBase } from './source';
-import {
-  MapProps,
-  SourceProps,
-  LayerProps,
-  LegendItemProps,
-} from '@wprdc-types/map';
+import { LayerProps, LegendItemProps, MapProps, SourceProps } from '@wprdc-types/map';
 
 export enum Dimension {
   Variable = 'vars',
@@ -51,7 +46,8 @@ export interface ChartOptions {
 // API response structure
 // ----------------------
 /** Shared fields across all data vizes */
-export interface IndicatorBase extends Resource {}
+export interface IndicatorBase extends Resource {
+}
 
 export interface IndicatorBaseWithOptions extends IndicatorBase {
   options: IndicatorOptions;

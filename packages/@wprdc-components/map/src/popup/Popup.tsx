@@ -10,12 +10,12 @@ import { Popup as RMGPopup } from 'react-map-gl';
 import { PopupProps } from '@wprdc-types/map';
 
 export const Popup: React.FC<PopupProps> = ({
-  latitude,
-  longitude,
-  onClose,
-  children,
-  ...otherProps
-}) => {
+                                              latitude,
+                                              longitude,
+                                              onClose,
+                                              children,
+                                              ...otherProps
+                                            }) => {
   return (
     <RMGPopup
       latitude={latitude}
@@ -23,7 +23,7 @@ export const Popup: React.FC<PopupProps> = ({
       closeOnClick={true}
       onClose={onClose}
       closeButton={false}
-      anchor="bottom"
+      anchor='bottom'
       {...otherProps}
     >
       {children}

@@ -109,7 +109,7 @@ const bar: vega.Spec = {
           update: {
             text: { scale: 'labelMap', field: 'value' },
             tooltip: {
-              signal: "scale('fullLabelMap', datum.value)",
+              signal: 'scale(\'fullLabelMap\', datum.value)',
             },
           },
         },
@@ -137,7 +137,7 @@ const bar: vega.Spec = {
       },
 
       // update width of y-scale on height change
-      signals: [{ name: 'height', update: "bandwidth('yscale')" }],
+      signals: [{ name: 'height', update: 'bandwidth(\'yscale\')' }],
 
       scales: [
         {
@@ -157,7 +157,7 @@ const bar: vega.Spec = {
             enter: {
               tooltip: {
                 signal:
-                  "scale('fullLabelMap', datum.variable) + ': ' + format(datum.value, '1,')",
+                  'scale(\'fullLabelMap\', datum.variable) + \': \' + format(datum.value, \'1,\')',
               },
               y: { scale: 'pos', field: 'timeLabel' },
               height: { scale: 'pos', band: 1 },

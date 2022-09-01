@@ -11,41 +11,31 @@ import styles from './Viz.module.css';
 
 import classNames from 'classnames';
 
-import {
-  ChartRecord,
-  DataVizCommonProps,
-  VizWidgetProps,
-} from '@wprdc-types/viz';
+import { ChartRecord, DataVizCommonProps, VizWidgetProps } from '@wprdc-types/viz';
 
 import { BigValue } from '@wprdc-viz/simple';
 import { DataMap } from '@wprdc-viz/map';
 import { BarChart, GeogHistogram, LineChart } from '@wprdc-viz/vega';
 import { FlatTable } from '@wprdc-viz/table';
 
-import {
-  RiEditFill,
-  RiShareFill,
-  RiBracesFill,
-  RiCodeSSlashFill,
-  RiFileCopyFill,
-} from 'react-icons/ri';
+import { RiBracesFill, RiCodeSSlashFill, RiEditFill, RiFileCopyFill, RiShareFill } from 'react-icons/ri';
 import { MdCompare } from 'react-icons/md';
 import { Tooltip } from '@wprdc-components/tooltip';
 import { EditMenu } from './menus/edit';
 import { Button } from '@wprdc-components/button';
 
 export const Viz: React.FC<VizWidgetProps> = ({
-  indicator,
-  mini = false,
-  // coplanar = false,  // todo: look into other display formats
-  inPreview,
-  onCompare,
-}: VizWidgetProps) => {
+                                                indicator,
+                                                mini = false,
+                                                // coplanar = false,  // todo: look into other display formats
+                                                inPreview,
+                                                onCompare,
+                                              }: VizWidgetProps) => {
   const [selectedTimeParts, setSelectedTimeParts] = React.useState<string[]>(
-    indicator.timeAxis.timeParts.map(t => t.slug)
+    indicator.timeAxis.timeParts.map(t => t.slug),
   );
   const [selectedVariables, setSelectedVariables] = React.useState<string[]>(
-    indicator.variables.map(v => v.slug)
+    indicator.variables.map(v => v.slug),
   );
 
   const [hoveredRecord, setHoveredRecord] = React.useState<ChartRecord>();
@@ -85,7 +75,7 @@ export const Viz: React.FC<VizWidgetProps> = ({
       selectedVariables,
       selectedTimeParts,
     }),
-    [indicator.slug, inPreview, selectedVariables, selectedTimeParts]
+    [indicator.slug, inPreview, selectedVariables, selectedTimeParts],
   );
 
   const useLineChart = indicator.timeAxis.timeParts.length > 2;
@@ -163,7 +153,7 @@ export const Viz: React.FC<VizWidgetProps> = ({
             )}
             <Tooltip
               button
-              title="Edit"
+              title='Edit'
               content={
                 <div className={styles.editMenu}>
                   <EditMenu
@@ -182,7 +172,7 @@ export const Viz: React.FC<VizWidgetProps> = ({
             </Tooltip>
             <Tooltip
               button
-              title="Share"
+              title='Share'
               content={
                 <div className={styles.shareMenu}>
                   <ul>
@@ -192,8 +182,8 @@ export const Viz: React.FC<VizWidgetProps> = ({
                       </span>{' '}
                       <a
                         href={apiString}
-                        rel="noopener noreferrer"
-                        target="_blank"
+                        rel='noopener noreferrer'
+                        target='_blank'
                       >
                         API
                       </a>

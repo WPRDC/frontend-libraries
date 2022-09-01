@@ -28,7 +28,7 @@ export function BigValue(props: BigValueProps) {
   if (!data[0][0][0]) {
     return (
       <ErrorMessage
-        title="Deprecated Indicator"
+        title='Deprecated Indicator'
         message={`Indicator should be removed`}
       />
     );
@@ -59,14 +59,14 @@ export function BigValue(props: BigValueProps) {
           <span className={styles.value}>
             {value.toLocaleString(
               'en-US',
-              primaryVariable ? primaryVariable.numberFormatOptions : undefined
+              primaryVariable ? primaryVariable.numberFormatOptions : undefined,
             )}
           </span>
           <span className={styles.denom}>
             {'/ '}
             {denom.toLocaleString(
               'en-US',
-              denomVariable ? denomVariable.numberFormatOptions : undefined
+              denomVariable ? denomVariable.numberFormatOptions : undefined,
             )}
           </span>
         </div>
@@ -78,7 +78,7 @@ export function BigValue(props: BigValueProps) {
       <span className={styles.percent}>
         {value.toLocaleString(
           'en-US',
-          primaryVariable ? primaryVariable.numberFormatOptions : undefined
+          primaryVariable ? primaryVariable.numberFormatOptions : undefined,
         )}
       </span>
     );

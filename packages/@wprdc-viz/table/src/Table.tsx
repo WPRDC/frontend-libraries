@@ -35,47 +35,47 @@ export function Table(props: DataTableProps) {
   return (
     <table className={styles.wrapper}>
       <thead>
-        <tr>
-          <td>&nbsp;</td>
-          {timeAxis.timeParts.map(timePart => (
-            <th scope="col">{timePart.name}</th>
-          ))}
-        </tr>
+      <tr>
+        <td>&nbsp;</td>
+        {timeAxis.timeParts.map(timePart => (
+          <th scope='col'>{timePart.name}</th>
+        ))}
+      </tr>
       </thead>
       <tbody>
-        {renderVariables.map((variable, i) => [
-          <tr>
-            <th scope="row">
-              {!!useAbbreviations && !!variable.shortName ? (
-                <abbr title={variable.name}>{variable.shortName}</abbr>
-              ) : (
-                variable.name
+      {renderVariables.map((variable, i) => [
+        <tr>
+          <th scope='row'>
+            {!!useAbbreviations && !!variable.shortName ? (
+              <abbr title={variable.name}>{variable.shortName}</abbr>
+            ) : (
+              variable.name
+            )}
+          </th>
+          {renderTimeParts.map((_, k) => (
+            <td>
+              {data[0][k][i].value.toLocaleString(
+                'en-US',
+                variable.numberFormatOptions,
               )}
-            </th>
+            </td>
+          ))}
+        </tr>,
+        useDenominators &&
+        !!variable.denominators &&
+        !!variable.denominators.length && (
+          <tr className={styles.subrow}>
+            <th scope='row'>{variable.denominators[0].percentLabel}</th>
             {renderTimeParts.map((_, k) => (
               <td>
-                {data[0][k][i].value.toLocaleString(
-                  'en-US',
-                  variable.numberFormatOptions
-                )}
+                {data[0][k][i].percent?.toLocaleString('en-us', {
+                  style: 'percent',
+                })}
               </td>
             ))}
-          </tr>,
-          useDenominators &&
-            !!variable.denominators &&
-            !!variable.denominators.length && (
-              <tr className={styles.subrow}>
-                <th scope="row">{variable.denominators[0].percentLabel}</th>
-                {renderTimeParts.map((_, k) => (
-                  <td>
-                    {data[0][k][i].percent?.toLocaleString('en-us', {
-                      style: 'percent',
-                    })}
-                  </td>
-                ))}
-              </tr>
-            ),
-        ])}
+          </tr>
+        ),
+      ])}
       </tbody>
     </table>
   );

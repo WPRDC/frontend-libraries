@@ -18,16 +18,22 @@ export interface DataVizCommonProps {
 }
 
 /** Props shared across all Vega vizes */
-export interface VegaCommonProps extends DataVizCommonProps {}
+export interface VegaCommonProps extends DataVizCommonProps {
+}
 
 // Specific viz props
 
-export interface BigValueProps extends DataVizCommonProps {}
+export interface BigValueProps extends DataVizCommonProps {
+}
 
-export interface BarChartProps extends VegaCommonProps {}
-export interface LineChartProps extends VegaCommonProps {}
+export interface BarChartProps extends VegaCommonProps {
+}
 
-export interface DataMapProps extends DataVizCommonProps {}
+export interface LineChartProps extends VegaCommonProps {
+}
+
+export interface DataMapProps extends DataVizCommonProps {
+}
 
 export interface DataTableProps extends DataVizCommonProps {
   useAbbreviations?: boolean;

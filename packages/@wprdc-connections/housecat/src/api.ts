@@ -23,12 +23,12 @@ const headers = {
 // if projectID is provided a single detailed response will be expected
 export function requestAffordableHousingProject(
   projectID: number,
-  params?: Record<string, string>
+  params?: Record<string, string>,
 ): Promise<ProjectIndexDetails>;
 // if projectID is not provided a list of projectIndexes will be expected
 export function requestAffordableHousingProject(
   projectID: null | undefined,
-  params?: Record<string, string>
+  params?: Record<string, string>,
 ): Promise<ProjectIndexDetails[]>;
 
 /**
@@ -39,11 +39,9 @@ export function requestAffordableHousingProject(
  */
 export function requestAffordableHousingProject(
   projectID: number | null | undefined,
-  params?: Record<string, string>
+  params?: Record<string, string>,
 ) {
-  return api.callAndProcessEndpoint<
-    ProjectIndexDetails | ProjectIndexDetails[]
-  >(Endpoint.PHProject, Method.GET, {
+  return api.callAndProcessEndpoint<ProjectIndexDetails | ProjectIndexDetails[]>(Endpoint.PHProject, Method.GET, {
     id: projectID,
     headers,
     params,
@@ -58,7 +56,7 @@ export function requestPublicHousingProjectMap(params?: Record<string, any>) {
   return api.callAndProcessEndpoint<APIMapBoxResponse>(
     Endpoint.PHProjectMap,
     Method.GET,
-    { params, headers, credentials: 'include' }
+    { params, headers, credentials: 'include' },
   );
 }
 

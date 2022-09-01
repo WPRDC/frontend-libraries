@@ -6,7 +6,7 @@ export function useGeography(geogSlug?: string): UseQueryResult<Geog> {
   return useQuery(
     ['geog', geogSlug],
     () => GeoAPI.requestGeogDetails(geogSlug),
-    { enabled: !!geogSlug }
+    { enabled: !!geogSlug },
   );
 }
 

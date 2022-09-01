@@ -1,7 +1,7 @@
 import { createAPI } from '@wprdc-connections/api';
 import { Method } from '@wprdc-types/api';
 
-import { Geog, GeogBrief, GeographyType, GeogLevel } from '@wprdc-types/geo';
+import { Geog, GeogBrief, GeogLevel, GeographyType } from '@wprdc-types/geo';
 
 const HOST = 'https://api.profiles.wprdc.org';
 
@@ -15,7 +15,7 @@ const api = createAPI<Endpoint>(HOST);
 export function requestGeoLayers(): Promise<GeogLevel[]> {
   return api.callAndProcessEndpoint<GeogLevel[]>(
     Endpoint.GeogTypes,
-    Method.GET
+    Method.GET,
   );
 }
 

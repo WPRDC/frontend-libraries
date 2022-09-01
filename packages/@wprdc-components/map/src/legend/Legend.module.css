@@ -1,8 +1,8 @@
 .container {
-  @apply p-2 max-w-sm bg-background border-2 border-black;
-  @apply mb-2;
+    @apply p-2 max-w-sm bg-background border-2 border-black;
+    @apply mb-2;
 }
 
 .title {
-  @apply text-xs text-gray-700 font-medium uppercase;
+    @apply text-xs text-gray-700 font-medium uppercase;
 }

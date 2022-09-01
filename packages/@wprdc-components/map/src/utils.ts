@@ -1,26 +1,12 @@
 import { Feature } from 'geojson';
-import {
-  LayerProps,
-  MapLayerMouseEvent,
-  MapRef,
-  SourceProps,
-  ViewState,
-} from 'react-map-gl';
-import {
-  ASSETS_SOURCE_ID,
-  MAPS_API_ENDPOINT,
-  PROFILES_SOURCE_ID,
-} from './settings';
+import { LayerProps, MapLayerMouseEvent, MapRef, SourceProps, ViewState } from 'react-map-gl';
+import { ASSETS_SOURCE_ID, MAPS_API_ENDPOINT, PROFILES_SOURCE_ID } from './settings';
 import { GeographyType } from '@wprdc-types/geo';
 import { Expression } from 'mapbox-gl';
 import { AssetMapProperties } from '@wprdc-types/neighborhood-assets';
 import { PopupContentProps } from '@wprdc-types/map';
-import {
-  ConnectionResourcesRecord,
-  MapPluginToolbox,
-} from '@wprdc-types/connections';
-import { RefObject } from 'react';
-import React from 'react';
+import { ConnectionResourcesRecord, MapPluginToolbox } from '@wprdc-types/connections';
+import React, { RefObject } from 'react';
 
 export function makeContentProps(event: MapLayerMouseEvent): PopupContentProps {
   const features: Feature[] = event.features || [];
@@ -30,7 +16,7 @@ export function makeContentProps(event: MapLayerMouseEvent): PopupContentProps {
 }
 
 export function extractFeatureFromEvent(
-  event: MapLayerMouseEvent
+  event: MapLayerMouseEvent,
 ): Feature | undefined {
   if (event && event.features && event.features.length) {
     return event.features[0];
@@ -69,10 +55,10 @@ export function fetchCartoVectorSource(
   apiKey?: string,
   type: 'vector' = 'vector',
   minzoom = 0,
-  maxzoom = 22
+  maxzoom = 22,
 ): PromiseLike<SourceProps> {
   const config = encodeURIComponent(
-    JSON.stringify(cartoInstantiationParams(id, sql))
+    JSON.stringify(cartoInstantiationParams(id, sql)),
   );
 
   const keyParam = apiKey ? `&api_key=${apiKey}` : '';
@@ -86,7 +72,7 @@ export function fetchCartoVectorSource(
     })
       .then(
         (response) => response.json(),
-        (error) => reject(error)
+        (error) => reject(error),
       )
       .then(
         (data) => {
@@ -98,14 +84,14 @@ export function fetchCartoVectorSource(
             maxzoom,
           });
         },
-        (error) => reject(error)
+        (error) => reject(error),
       );
   });
 }
 
 export function getHoverPopupItems(
   features: any[],
-  menuGeogType?: GeographyType
+  menuGeogType?: GeographyType,
 ): {
   assetsItems: AssetMapProperties[];
   profilesItems: Record<string, any>[];
@@ -126,7 +112,7 @@ export function getHoverPopupItems(
  */
 function sortFeatures(
   features: any[],
-  menuGeogType?: GeographyType
+  menuGeogType?: GeographyType,
 ): {
   w__assets: AssetMapProperties[];
   w__profiles: Record<string, any>[];
@@ -142,7 +128,7 @@ function sortFeatures(
     if (!feature || !feature.source || !feature.properties) continue;
     if (feature.source in sortedFeatures) {
       sortedFeatures[feature.source as keyof typeof sortedFeatures].push(
-        feature.properties as Record<string, any>
+        feature.properties as Record<string, any>,
       );
     }
     if (menuGeogType && feature.source === menuGeogType) {
@@ -158,7 +144,7 @@ function sortFeatures(
  * @param toolboxes
  */
 export function flattenToolboxViewStates(
-  toolboxes: MapPluginToolbox<any, any>[]
+  toolboxes: MapPluginToolbox<any, any>[],
 ): Partial<ViewState> {
   return toolboxes.reduceRight((acc, toolbox) => {
     if (!!toolbox.viewState) {
@@ -196,7 +182,7 @@ export function clearLayerFilter(): Expression {
 export function filteredLayers(
   layers: LayerProps[],
   hoveredFilter: Expression,
-  selectedFilter: Expression
+  selectedFilter: Expression,
 ): LayerProps[] {
   return layers.map((layer) => {
     switch (getLayerType(layer)) {
@@ -222,7 +208,7 @@ export function getLayerType(layer: LayerProps) {
 export function handleMouseEventForToolboxes(
   toolboxes: MapPluginToolbox<any, any>[],
   event: MapLayerMouseEvent,
-  eventType: 'click' | 'hover'
+  eventType: 'click' | 'hover',
 ): {
   toolboxContents: JSX.Element[];
   toolboxItems: ConnectionResourcesRecord;
@@ -249,7 +235,7 @@ export function handleMouseEventForToolboxes(
     {
       toolboxItems: {} as ConnectionResourcesRecord,
       toolboxContents: [] as JSX.Element[],
-    }
+    },
   );
 }
 

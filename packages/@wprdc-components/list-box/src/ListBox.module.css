@@ -1,33 +1,33 @@
 .wrapper {
-  @apply focus:outline-none focus-visible:outline-none;
-  @apply focus:border focus:border-focused-500 focus:ring-focused-500 focus:ring-1;
+    @apply focus:outline-none focus-visible:outline-none;
+    @apply focus:border focus:border-focused-500 focus:ring-focused-500 focus:ring-1;
 }
 
 .focused {
-  @apply outline-none;
+    @apply outline-none;
 }
 
 .label {
 }
 
 .list {
-  @apply outline-0;
+    @apply outline-0;
 }
 
 .listHidden {
-  @apply hidden;
+    @apply hidden;
 }
 
 .loadingMessage {
-  @apply p-2 text-center italic;
+    @apply p-2 text-center italic;
 }
 
 .separator {
-  @apply py-0.5;
+    @apply py-0.5;
 }
 
 .sectionHeading {
-  @apply text-xs text-black font-mono font-semibold uppercase;
+    @apply text-xs text-black font-mono font-semibold uppercase;
 }
 
 .section {
@@ -37,38 +37,38 @@
 }
 
 .optionList {
-  @apply p-0.5 pl-1;
+    @apply p-0.5 pl-1;
 }
 
 .option {
-  @apply flex items-center justify-between;
-  @apply py-0.5 px-2 m-1;
-  @apply text-sm;
-  @apply outline-none cursor-default border border-transparent;
-  @apply focus-visible:ring-1 focus-visible:border focus-visible:border-focused-400 focus-visible:ring-primary-400;
-  @apply focus-visible:text-black;
-  @apply focus-visible:outline-none focus:outline-none;
+    @apply flex items-center justify-between;
+    @apply py-0.5 px-2 m-1;
+    @apply text-sm;
+    @apply outline-none cursor-default border border-transparent;
+    @apply focus-visible:ring-1 focus-visible:border focus-visible:border-focused-400 focus-visible:ring-primary-400;
+    @apply focus-visible:text-black;
+    @apply focus-visible:outline-none focus:outline-none;
 }
 
 .optionSelected {
-  @apply bg-blue-600 text-white;
-  @apply hover:bg-blue-600 hover:text-white;
-  @apply focus:bg-blue-600 focus:text-white;
+    @apply bg-blue-600 text-white;
+    @apply hover:bg-blue-600 hover:text-white;
+    @apply focus:bg-blue-600 focus:text-white;
 }
 
 .optionDisabled {
-  @apply cursor-not-allowed;
+    @apply cursor-not-allowed;
 }
 
 .optionFocused {
-  @apply bg-slate-200 text-black;
+    @apply bg-slate-200 text-black;
 }
 
 .dense {
-  @apply py-0.5 px-1 m-0.5;
+    @apply py-0.5 px-1 m-0.5;
 }
 
 .checkMark {
-  @apply font-bold;
-  @apply w-5 ml-2;
+    @apply font-bold;
+    @apply w-5 ml-2;
 }

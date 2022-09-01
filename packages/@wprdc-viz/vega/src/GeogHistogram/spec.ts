@@ -103,7 +103,7 @@ export function makeSpec(valueField: string): vega.Spec {
           update: {
             fill: [
               {
-                test: "indata('highlight', 'highlight', datum.geog)",
+                test: 'indata(\'highlight\', \'highlight\', datum.geog)',
                 value: '#d95f02',
               },
               { value: '#1b9e77' },

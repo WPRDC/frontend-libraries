@@ -2,59 +2,59 @@
 }
 
 .itemsWrapper {
-  @apply pl-2;
+    @apply pl-2;
 }
 
 .label {
-  @apply block text-left cursor-default;
-  @apply text-xs font-mono uppercase font-semibold text-gray-500;
+    @apply block text-left cursor-default;
+    @apply text-xs font-mono uppercase font-semibold text-gray-500;
 }
 
 .itemLabel {
-  @apply cursor-pointer;
-  @apply relative flex flex-row;
+    @apply cursor-pointer;
+    @apply relative flex flex-row;
 }
 
 .inputDiv {
-  @apply h-4 w-4;
-  @apply mr-1 mt-0.5;
+    @apply h-4 w-4;
+    @apply mr-1 mt-0.5;
 }
 
 .input {
-  @apply appearance-none cursor-pointer;
-  @apply w-full h-full;
-  @apply bg-background checked:bg-zinc-800;
-  @apply border-black border-2;
-  @apply focus:outline-none focus-visible:outline-none focus:border-focused-500;
+    @apply appearance-none cursor-pointer;
+    @apply w-full h-full;
+    @apply bg-background checked:bg-zinc-800;
+    @apply border-black border-2;
+    @apply focus:outline-none focus-visible:outline-none focus:border-focused-500;
 }
 
 /* Create the checkmark/topic (hidden when not checked) */
 .checkmark:after {
-  content: '';
-  position: absolute;
-  display: none;
+    content: '';
+    position: absolute;
+    display: none;
 }
 
 /* Show the checkmark when checked */
 .container input:checked ~ .checkmark:after {
-  display: block;
+    display: block;
 }
 
 /* Style the checkmark/topic */
 .container .checkmark:after {
-  left: 6px;
-  top: 5px;
-  width: 5px;
-  height: 10px;
-  border: solid white;
-  border-width: 0 2px 2px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
+    left: 6px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
 }
 
 .disabledInput {
-  @apply border-zinc-700 bg-zinc-300 cursor-not-allowed;
+    @apply border-zinc-700 bg-zinc-300 cursor-not-allowed;
 }
 
 .labelDiv {

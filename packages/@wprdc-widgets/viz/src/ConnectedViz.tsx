@@ -19,11 +19,11 @@ import { useIndicator } from '@wprdc-connections/profiles';
 import { Viz } from './Viz';
 
 export const ConnectedViz: React.FC<ConnectedVizWidgetProps> = ({
-  indicatorSlug,
-  geog: propsGeog,
-  acrossGeogs,
-  ...indicatorProps
-}) => {
+                                                                  indicatorSlug,
+                                                                  geog: propsGeog,
+                                                                  acrossGeogs,
+                                                                  ...indicatorProps
+                                                                }) => {
   const { geog } = useProvider();
   const { slug: geogSlug } = React.useMemo(() => propsGeog || geog, [
     geog,
@@ -32,13 +32,13 @@ export const ConnectedViz: React.FC<ConnectedVizWidgetProps> = ({
   const { data: indicator, isLoading, error } = useIndicator(
     indicatorSlug,
     geogSlug,
-    acrossGeogs
+    acrossGeogs,
   );
 
   if (!!error) {
     return (
       <ErrorMessage
-        variant="centered"
+        variant='centered'
         title={`Error`}
         message={error.message}
       />

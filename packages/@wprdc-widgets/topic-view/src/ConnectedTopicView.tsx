@@ -10,16 +10,16 @@ import { useTopic } from '@wprdc-connections/profiles';
 import { TopicView } from './TopicView';
 
 export const ConnectedTopicView: React.FC<ConnectedTopicViewProps> = ({
-  topicSlug,
-  geog: propsGeog,
-  ...otherProps
-}) => {
+                                                                        topicSlug,
+                                                                        geog: propsGeog,
+                                                                        ...otherProps
+                                                                      }) => {
   const { geog } = useProvider();
   const usedGeog = React.useMemo(() => propsGeog || geog, [geog, propsGeog]);
   const { data: topic, isLoading, error } = useTopic(topicSlug);
 
   if (!!error) {
-    return <ErrorMessage title={`Not Found`} message="Indicator" />;
+    return <ErrorMessage title={`Not Found`} message='Indicator' />;
   }
   if (!!topic) {
     return (

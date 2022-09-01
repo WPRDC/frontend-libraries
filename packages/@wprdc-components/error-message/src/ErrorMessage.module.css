@@ -1,32 +1,32 @@
 .centeredTitle {
-  @apply font-bold font-mono uppercase;
+    @apply font-bold font-mono uppercase;
 }
 
 .centeredMessage {
-  @apply font-medium;
+    @apply font-medium;
 }
 
 .centeredContainer {
-  @apply text-center w-full;
-  @apply bg-none text-red-600;
-  @apply border border-red-600;
-  @apply shadow-md shadow-red-700;
+    @apply text-center w-full;
+    @apply bg-none text-red-600;
+    @apply border border-red-600;
+    @apply shadow-md shadow-red-700;
 }
 
 .inlineTitle {
-  @apply py-0.5 px-1;
-  @apply bg-none text-red-600;
-  @apply font-semibold font-mono uppercase;
+    @apply py-0.5 px-1;
+    @apply bg-none text-red-600;
+    @apply font-semibold font-mono uppercase;
 }
 
 .inlineMessage {
-  @apply py-0.5 px-1 w-max;
-  @apply bg-none text-red-600;
-  @apply font-medium;
+    @apply py-0.5 px-1 w-max;
+    @apply bg-none text-red-600;
+    @apply font-medium;
 }
 
 .inlineContainer {
-  @apply flex w-max;
-  @apply border border-red-600;
-  @apply shadow-md shadow-red-700;
+    @apply flex w-max;
+    @apply border border-red-600;
+    @apply shadow-md shadow-red-700;
 }
