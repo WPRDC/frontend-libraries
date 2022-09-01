@@ -49,7 +49,7 @@
     "watch": "tsdx watch",
     "test": "tsdx test --passWithNoTests",
     "lint": "tsdx lint",
-    "prepare": "npm run build",
+    "prepare": "yarn run build",
     "size": "size-limit",
     "analyze": "size-limit --why"
   },
@@ -84,5 +84,6 @@
     "@wprdc-types/map": "^0.0.18",
     "@wprdc-types/shared": "^0.0.15",
     "@wprdc-types/viz": "^0.0.26"
-  }
+  },
+  "gitHead": "f0a5bbf3a74b8e5c05a7106fb1f446ad1e75d95f"
 }
