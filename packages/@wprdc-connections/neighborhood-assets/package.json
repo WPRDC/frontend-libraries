@@ -54,7 +54,8 @@
     "analyze": "size-limit --why"
   },
   "peerDependencies": {
-    "react": ">=18"
+    "react": ">=18",
+    "react-query": "^3.39.2"
   },
   "devDependencies": {
     "@rollup/plugin-replace": "^4.0.0",
@@ -91,7 +92,6 @@
     "@wprdc-types/shared": "^0.0.16",
     "chroma-js": "^2.4.2",
     "react-map-gl": "^7.0.19",
-    "react-query": "^3.39.2"
   },
   "gitHead": "f0a5bbf3a74b8e5c05a7106fb1f446ad1e75d95f"
 }
