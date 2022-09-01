@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-widgets/geography-picker",
-  "version": "0.0.47",
+  "version": "0.0.48",
   "description": "",
   "keywords": [],
   "license": "AGPL-3.0-or-later",
@@ -78,12 +78,12 @@
   "dependencies": {
     "@react-aria/button": "^3.6.1",
     "@react-aria/label": "^3.4.1",
-    "@wprdc-components/map": "^0.0.33",
+    "@wprdc-components/map": "^0.0.34",
     "@wprdc-components/popover": "^0.0.16",
     "@wprdc-components/search-box": "^0.0.22",
     "@wprdc-components/select": "^0.0.24",
     "@wprdc-components/util": "^0.0.15",
-    "@wprdc-connections/geo": "^0.0.47",
+    "@wprdc-connections/geo": "^0.0.48",
     "@wprdc-types/connections": "^0.0.25",
     "@wprdc-types/geo": "^0.0.18",
     "@wprdc-types/geography-picker": "^0.0.18",

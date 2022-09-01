@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-connections/geo",
-  "version": "0.0.47",
+  "version": "0.0.48",
   "description": "",
   "keywords": [],
   "license": "AGPL-3.0-or-later",
@@ -78,7 +78,7 @@
   "dependencies": {
     "@react-stately/data": "^3.6.1",
     "@wprdc-components/list-box": "^0.0.22",
-    "@wprdc-components/map": "^0.0.33",
+    "@wprdc-components/map": "^0.0.34",
     "@wprdc-components/radio-group": "^0.0.17",
     "@wprdc-components/util": "^0.0.15",
     "@wprdc-connections/api": "^0.0.23",

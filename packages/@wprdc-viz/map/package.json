@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-viz/map",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "",
   "keywords": [],
   "license": "AGPL-3.0-or-later",
@@ -76,8 +76,8 @@
     "typescript": "^4.8.2"
   },
   "dependencies": {
-    "@wprdc-components/map": "^0.0.33",
-    "@wprdc-components/provider": "^0.0.19",
+    "@wprdc-components/map": "^0.0.34",
+    "@wprdc-components/provider": "^0.0.20",
     "@wprdc-connections/viz": "^0.0.33",
     "@wprdc-types/connections": "^0.0.25",
     "@wprdc-types/geo": "^0.0.18",
