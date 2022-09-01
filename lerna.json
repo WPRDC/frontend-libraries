@@ -3,11 +3,13 @@
     "./packages/**"
   ],
   "ignore": [
-   "greenprint"
+    "greenprint"
   ],
   "command": {
     "publish": {
-      "ignoreChanges": ["*.md"]
+      "ignoreChanges": [
+        "*.md"
+      ]
     },
     "bootstrap": {
       "npmClientArgs": [
@@ -17,5 +19,7 @@
   },
   "useWorkspaces": true,
   "npmClient": "yarn",
-  "version": "independent"
+  "version": "independent",
+  "$schema": "node_modules/lerna/schemas/lerna-schema.json",
+  "useNx": false
 }
