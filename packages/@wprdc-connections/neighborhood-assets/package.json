@@ -91,7 +91,7 @@
     "@wprdc-types/neighborhood-assets": "^0.0.16",
     "@wprdc-types/shared": "^0.0.16",
     "chroma-js": "^2.4.2",
-    "react-map-gl": "^7.0.19",
+    "react-map-gl": "^7.0.19"
   },
   "gitHead": "f0a5bbf3a74b8e5c05a7106fb1f446ad1e75d95f"
 }
