@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-types/dialog",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "Collection of TypeScript/JS libraries for use in/with WPRDC projects.",
   "keywords": [],
   "license": "AGPL-3.0-or-later",
@@ -78,6 +78,6 @@
     "@react-aria/overlays": "^3.10.1",
     "@react-types/dialog": "^3.4.3",
     "@types/react": "^18.0.18",
-    "@wprdc-types/heading": "^0.0.12"
+    "@wprdc-types/heading": "^0.0.13"
   }
 }

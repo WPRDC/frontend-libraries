@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-components/tooltip",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "description": "",
   "keywords": [],
   "license": "AGPL-3.0-or-later",
@@ -82,7 +82,7 @@
     "@react-aria/overlays": "^3.10.1",
     "@react-aria/utils": "^3.13.3",
     "@react-stately/overlays": "^3.4.1",
-    "@wprdc-types/tooltip": "^0.0.14",
+    "@wprdc-types/tooltip": "^0.0.15",
     "classnames": "^2.3.1"
   }
 }

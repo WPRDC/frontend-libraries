@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-components/popover",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "description": "",
   "keywords": [],
   "license": "AGPL-3.0-or-later",
@@ -78,6 +78,6 @@
   "dependencies": {
     "@react-aria/focus": "^3.8.0",
     "@react-aria/overlays": "^3.10.1",
-    "@wprdc-types/popover": "^0.0.13"
+    "@wprdc-types/popover": "^0.0.14"
   }
 }

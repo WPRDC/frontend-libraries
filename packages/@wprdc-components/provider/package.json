@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-components/provider",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "description": "",
   "keywords": [],
   "license": "AGPL-3.0-or-later",
@@ -79,7 +79,7 @@
   "dependencies": {
     "@react-aria/overlays": "^3.10.1",
     "@react-aria/ssr": "^3.3.0",
-    "@wprdc-types/geo": "^0.0.16",
-    "@wprdc-types/provider": "^0.0.16"
+    "@wprdc-types/geo": "^0.0.17",
+    "@wprdc-types/provider": "^0.0.17"
   }
 }

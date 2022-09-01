@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-connections/maps",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "",
   "keywords": [],
   "license": "AGPL-3.0-or-later",
@@ -76,10 +76,10 @@
     "typescript": "^4.8.2"
   },
   "dependencies": {
-    "@wprdc-components/provider": "^0.0.17",
-    "@wprdc-connections/api": "^0.0.21",
-    "@wprdc-types/api": "^0.0.15",
-    "@wprdc-types/maps": "^0.0.0",
+    "@wprdc-components/provider": "^0.0.18",
+    "@wprdc-connections/api": "^0.0.22",
+    "@wprdc-types/api": "^0.0.16",
+    "@wprdc-types/maps": "^0.0.1",
     "react-query": "^3.39.2"
   }
 }

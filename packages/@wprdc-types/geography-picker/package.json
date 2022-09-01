@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-types/geography-picker",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "description": "Collection of TypeScript/JS libraries for use in/with WPRDC projects.",
   "keywords": [],
   "license": "AGPL-3.0-or-later",
@@ -77,6 +77,6 @@
   "dependencies": {
     "@react-aria/label": "^3.4.1",
     "@types/react": "^18.0.18",
-    "@wprdc-types/geo": "^0.0.16"
+    "@wprdc-types/geo": "^0.0.17"
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-components/list-box",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "description": "",
   "keywords": [],
   "license": "AGPL-3.0-or-later",
@@ -85,10 +85,10 @@
     "@react-stately/list": "^3.5.3",
     "@react-stately/select": "^3.3.1",
     "@react-stately/tree": "^3.3.3",
-    "@wprdc-components/util": "^0.0.13",
-    "@wprdc-types/list-box": "^0.0.16",
-    "@wprdc-types/select": "^0.0.18",
-    "@wprdc-types/shared": "^0.0.14",
+    "@wprdc-components/util": "^0.0.14",
+    "@wprdc-types/list-box": "^0.0.17",
+    "@wprdc-types/select": "^0.0.19",
+    "@wprdc-types/shared": "^0.0.15",
     "classnames": "^2.3.1",
     "react-icons": "^4.4.0"
   }

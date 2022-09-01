@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-types/checkbox-group",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "Collection of TypeScript/JS libraries for use in/with WPRDC projects.",
   "keywords": [],
   "license": "AGPL-3.0-or-later",
