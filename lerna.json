@@ -3,6 +3,7 @@
     "./packages/**"
   ],
   "ignore": [
+   "greenprint"
   ],
   "command": {
     "publish": {
