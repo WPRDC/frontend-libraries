@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-viz/map",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "",
   "keywords": [],
   "license": "AGPL-3.0-or-later",
@@ -76,14 +76,14 @@
     "typescript": "^4.8.2"
   },
   "dependencies": {
-    "@wprdc-components/map": "^0.0.32",
-    "@wprdc-components/provider": "^0.0.18",
+    "@wprdc-components/map": "^0.0.33",
+    "@wprdc-components/provider": "^0.0.19",
     "@wprdc-connections/viz": "^0.0.33",
-    "@wprdc-types/connections": "^0.0.24",
-    "@wprdc-types/geo": "^0.0.17",
-    "@wprdc-types/map": "^0.0.18",
-    "@wprdc-types/shared": "^0.0.15",
-    "@wprdc-types/viz": "^0.0.26"
+    "@wprdc-types/connections": "^0.0.25",
+    "@wprdc-types/geo": "^0.0.18",
+    "@wprdc-types/map": "^0.0.19",
+    "@wprdc-types/shared": "^0.0.16",
+    "@wprdc-types/viz": "^0.0.27"
   },
   "gitHead": "f0a5bbf3a74b8e5c05a7106fb1f446ad1e75d95f"
 }

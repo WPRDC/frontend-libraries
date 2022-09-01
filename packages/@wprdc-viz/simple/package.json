@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-viz/simple",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "",
   "keywords": [],
   "license": "AGPL-3.0-or-later",
@@ -76,8 +76,8 @@
     "typescript": "^4.8.2"
   },
   "dependencies": {
-    "@wprdc-components/error-message": "^0.0.16",
-    "@wprdc-types/viz": "^0.0.26",
+    "@wprdc-components/error-message": "^0.0.17",
+    "@wprdc-types/viz": "^0.0.27",
     "classnames": "^2.3.1"
   },
   "gitHead": "f0a5bbf3a74b8e5c05a7106fb1f446ad1e75d95f"

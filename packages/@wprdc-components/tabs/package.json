@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-components/tabs",
-  "version": "0.0.25",
+  "version": "0.0.26",
   "description": "",
   "keywords": [],
   "license": "AGPL-3.0-or-later",
@@ -78,9 +78,9 @@
   "dependencies": {
     "@react-aria/tabs": "^3.3.1",
     "@react-stately/tabs": "^3.2.1",
-    "@wprdc-components/util": "^0.0.14",
-    "@wprdc-types/shared": "^0.0.15",
-    "@wprdc-types/tabs": "^0.0.16",
+    "@wprdc-components/util": "^0.0.15",
+    "@wprdc-types/shared": "^0.0.16",
+    "@wprdc-types/tabs": "^0.0.17",
     "classnames": "^2.3.1",
     "react-icons": "^4.4.0"
   },

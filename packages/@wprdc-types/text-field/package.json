@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-types/text-field",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Form field for text input.",
   "keywords": [],
   "license": "AGPL-3.0-or-later",
