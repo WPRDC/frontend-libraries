@@ -7447,7 +7447,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wprdc-components/breadcrumbs@^0.0.18, @wprdc-components/breadcrumbs@workspace:packages/@wprdc-components/breadcrumbs":
+"@wprdc-components/breadcrumbs@^0.0.19, @wprdc-components/breadcrumbs@workspace:packages/@wprdc-components/breadcrumbs":
   version: 0.0.0-use.local
   resolution: "@wprdc-components/breadcrumbs@workspace:packages/@wprdc-components/breadcrumbs"
   dependencies:
@@ -7456,7 +7456,7 @@ __metadata:
     "@size-limit/preset-small-lib": ^8.0.1
     "@types/react": ^18.0.18
     "@types/react-dom": ^18.0.6
-    "@wprdc-types/breadcrumbs": ^0.0.15
+    "@wprdc-types/breadcrumbs": ^0.0.16
     autoprefixer: ^10.4.8
     classnames: ^2.3.1
     husky: ^8.0.1
@@ -7477,7 +7477,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@wprdc-components/button@^0.0.18, @wprdc-components/button@workspace:^, @wprdc-components/button@workspace:packages/@wprdc-components/button":
+"@wprdc-components/button@^0.0.19, @wprdc-components/button@workspace:^, @wprdc-components/button@workspace:packages/@wprdc-components/button":
   version: 0.0.0-use.local
   resolution: "@wprdc-components/button@workspace:packages/@wprdc-components/button"
   dependencies:
@@ -7486,7 +7486,7 @@ __metadata:
     "@size-limit/preset-small-lib": ^8.0.1
     "@types/react": ^18.0.18
     "@types/react-dom": ^18.0.6
-    "@wprdc-types/button": ^0.0.13
+    "@wprdc-types/button": ^0.0.14
     autoprefixer: ^10.4.8
     classnames: ^2.3.1
     husky: ^8.0.1
@@ -7519,7 +7519,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wprdc-components/checkbox-group@^0.0.18, @wprdc-components/checkbox-group@workspace:packages/@wprdc-components/checkbox-group":
+"@wprdc-components/checkbox-group@^0.0.19, @wprdc-components/checkbox-group@workspace:packages/@wprdc-components/checkbox-group":
   version: 0.0.0-use.local
   resolution: "@wprdc-components/checkbox-group@workspace:packages/@wprdc-components/checkbox-group"
   dependencies:
@@ -7530,7 +7530,7 @@ __metadata:
     "@size-limit/preset-small-lib": ^8.0.1
     "@types/react": ^18.0.18
     "@types/react-dom": ^18.0.6
-    "@wprdc-types/checkbox-group": ^0.0.13
+    "@wprdc-types/checkbox-group": ^0.0.14
     autoprefixer: ^10.4.8
     classnames: ^2.3.1
     husky: ^8.0.1
@@ -7593,11 +7593,11 @@ __metadata:
     "@size-limit/preset-small-lib": ^8.0.1
     "@types/react": ^18.0.18
     "@types/react-dom": ^18.0.6
-    "@wprdc-components/list-box": ^0.0.21
-    "@wprdc-components/popover": ^0.0.15
-    "@wprdc-components/util": ^0.0.14
-    "@wprdc-types/combo-box": ^0.0.17
-    "@wprdc-types/shared": ^0.0.15
+    "@wprdc-components/list-box": ^0.0.22
+    "@wprdc-components/popover": ^0.0.16
+    "@wprdc-components/util": ^0.0.15
+    "@wprdc-types/combo-box": ^0.0.18
+    "@wprdc-types/shared": ^0.0.16
     autoprefixer: ^10.4.8
     classnames: ^2.3.1
     husky: ^8.0.1
@@ -7617,7 +7617,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@wprdc-components/data-chip@^0.0.16, @wprdc-components/data-chip@workspace:packages/@wprdc-components/data-chip":
+"@wprdc-components/data-chip@^0.0.17, @wprdc-components/data-chip@workspace:packages/@wprdc-components/data-chip":
   version: 0.0.0-use.local
   resolution: "@wprdc-components/data-chip@workspace:packages/@wprdc-components/data-chip"
   dependencies:
@@ -7625,7 +7625,7 @@ __metadata:
     "@size-limit/preset-small-lib": ^8.0.1
     "@types/react": ^18.0.18
     "@types/react-dom": ^18.0.6
-    "@wprdc-types/data-chip": ^0.0.13
+    "@wprdc-types/data-chip": ^0.0.14
     autoprefixer: ^10.4.8
     classnames: ^2.3.1
     husky: ^8.0.1
@@ -7671,8 +7671,8 @@ __metadata:
     "@size-limit/preset-small-lib": ^8.0.1
     "@types/react": ^18.0.18
     "@types/react-dom": ^18.0.6
-    "@wprdc-components/heading": ^0.0.16
-    "@wprdc-types/dialog": ^0.0.13
+    "@wprdc-components/heading": ^0.0.17
+    "@wprdc-types/dialog": ^0.0.14
     autoprefixer: ^10.4.8
     classnames: ^2.3.1
     husky: ^8.0.1
@@ -7692,7 +7692,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@wprdc-components/divider@^0.0.16, @wprdc-components/divider@workspace:packages/@wprdc-components/divider":
+"@wprdc-components/divider@^0.0.17, @wprdc-components/divider@workspace:packages/@wprdc-components/divider":
   version: 0.0.0-use.local
   resolution: "@wprdc-components/divider@workspace:packages/@wprdc-components/divider"
   dependencies:
@@ -7700,7 +7700,7 @@ __metadata:
     "@size-limit/preset-small-lib": ^8.0.1
     "@types/react": ^18.0.18
     "@types/react-dom": ^18.0.6
-    "@wprdc-types/divider": ^0.0.13
+    "@wprdc-types/divider": ^0.0.14
     autoprefixer: ^10.4.8
     classnames: ^2.3.1
     husky: ^8.0.1
@@ -7720,7 +7720,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@wprdc-components/error-message@^0.0.16, @wprdc-components/error-message@workspace:packages/@wprdc-components/error-message":
+"@wprdc-components/error-message@^0.0.17, @wprdc-components/error-message@workspace:packages/@wprdc-components/error-message":
   version: 0.0.0-use.local
   resolution: "@wprdc-components/error-message@workspace:packages/@wprdc-components/error-message"
   dependencies:
@@ -7728,7 +7728,7 @@ __metadata:
     "@size-limit/preset-small-lib": ^8.0.1
     "@types/react": ^18.0.18
     "@types/react-dom": ^18.0.6
-    "@wprdc-types/error-message": ^0.0.13
+    "@wprdc-types/error-message": ^0.0.14
     autoprefixer: ^10.4.8
     husky: ^8.0.1
     postcss: ^8.4.16
@@ -7758,7 +7758,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wprdc-components/heading@^0.0.16, @wprdc-components/heading@workspace:packages/@wprdc-components/heading":
+"@wprdc-components/heading@^0.0.17, @wprdc-components/heading@workspace:packages/@wprdc-components/heading":
   version: 0.0.0-use.local
   resolution: "@wprdc-components/heading@workspace:packages/@wprdc-components/heading"
   dependencies:
@@ -7766,7 +7766,7 @@ __metadata:
     "@size-limit/preset-small-lib": ^8.0.1
     "@types/react": ^18.0.18
     "@types/react-dom": ^18.0.6
-    "@wprdc-types/heading": ^0.0.13
+    "@wprdc-types/heading": ^0.0.14
     autoprefixer: ^10.4.8
     husky: ^8.0.1
     postcss: ^8.4.16
@@ -7810,7 +7810,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wprdc-components/list-box@^0.0.21, @wprdc-components/list-box@workspace:packages/@wprdc-components/list-box":
+"@wprdc-components/list-box@^0.0.22, @wprdc-components/list-box@workspace:packages/@wprdc-components/list-box":
   version: 0.0.0-use.local
   resolution: "@wprdc-components/list-box@workspace:packages/@wprdc-components/list-box"
   dependencies:
@@ -7827,10 +7827,10 @@ __metadata:
     "@size-limit/preset-small-lib": ^8.0.1
     "@types/react": ^18.0.18
     "@types/react-dom": ^18.0.6
-    "@wprdc-components/util": ^0.0.14
-    "@wprdc-types/list-box": ^0.0.17
-    "@wprdc-types/select": ^0.0.19
-    "@wprdc-types/shared": ^0.0.15
+    "@wprdc-components/util": ^0.0.15
+    "@wprdc-types/list-box": ^0.0.18
+    "@wprdc-types/select": ^0.0.20
+    "@wprdc-types/shared": ^0.0.16
     autoprefixer: ^10.4.8
     classnames: ^2.3.1
     husky: ^8.0.1
@@ -7901,7 +7901,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wprdc-components/loading-message@^0.0.16, @wprdc-components/loading-message@workspace:packages/@wprdc-components/loading-message":
+"@wprdc-components/loading-message@^0.0.17, @wprdc-components/loading-message@workspace:packages/@wprdc-components/loading-message":
   version: 0.0.0-use.local
   resolution: "@wprdc-components/loading-message@workspace:packages/@wprdc-components/loading-message"
   dependencies:
@@ -7909,8 +7909,8 @@ __metadata:
     "@size-limit/preset-small-lib": ^8.0.1
     "@types/react": ^18.0.18
     "@types/react-dom": ^18.0.6
-    "@wprdc-components/spinner": ^0.0.16
-    "@wprdc-types/loading-message": ^0.0.14
+    "@wprdc-components/spinner": ^0.0.17
+    "@wprdc-types/loading-message": ^0.0.15
     autoprefixer: ^10.4.8
     husky: ^8.0.1
     postcss: ^8.4.16
@@ -7941,7 +7941,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wprdc-components/map@^0.0.32, @wprdc-components/map@workspace:packages/@wprdc-components/map":
+"@wprdc-components/map@^0.0.33, @wprdc-components/map@workspace:packages/@wprdc-components/map":
   version: 0.0.0-use.local
   resolution: "@wprdc-components/map@workspace:packages/@wprdc-components/map"
   dependencies:
@@ -7951,14 +7951,14 @@ __metadata:
     "@types/mapbox-gl": ^2.7.5
     "@types/react": ^18.0.18
     "@types/react-dom": ^18.0.6
-    "@wprdc-components/checkbox-group": ^0.0.18
-    "@wprdc-components/provider": ^0.0.18
-    "@wprdc-types/connections": ^0.0.24
-    "@wprdc-types/geo": ^0.0.17
-    "@wprdc-types/map": ^0.0.18
-    "@wprdc-types/neighborhood-assets": ^0.0.15
-    "@wprdc-types/shared": ^0.0.15
-    "@wprdc-types/viz": ^0.0.26
+    "@wprdc-components/checkbox-group": ^0.0.19
+    "@wprdc-components/provider": ^0.0.19
+    "@wprdc-types/connections": ^0.0.25
+    "@wprdc-types/geo": ^0.0.18
+    "@wprdc-types/map": ^0.0.19
+    "@wprdc-types/neighborhood-assets": ^0.0.16
+    "@wprdc-types/shared": ^0.0.16
+    "@wprdc-types/viz": ^0.0.27
     autoprefixer: ^10.4.8
     husky: ^8.0.1
     mapbox-gl: ^2.10.0
@@ -8042,9 +8042,9 @@ __metadata:
     "@size-limit/preset-small-lib": ^8.0.1
     "@types/react": ^18.0.18
     "@types/react-dom": ^18.0.6
-    "@wprdc-components/util": ^0.0.14
-    "@wprdc-types/menu": ^0.0.13
-    "@wprdc-types/shared": ^0.0.15
+    "@wprdc-components/util": ^0.0.15
+    "@wprdc-types/menu": ^0.0.14
+    "@wprdc-types/shared": ^0.0.16
     autoprefixer: ^10.4.8
     classnames: ^2.3.1
     husky: ^8.0.1
@@ -8077,7 +8077,7 @@ __metadata:
     "@size-limit/preset-small-lib": ^8.0.1
     "@types/react": ^18.0.18
     "@types/react-dom": ^18.0.6
-    "@wprdc-types/number-field": ^0.0.4
+    "@wprdc-types/number-field": ^0.0.5
     autoprefixer: ^10.4.8
     classnames: ^2.3.1
     husky: ^8.0.1
@@ -8098,7 +8098,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@wprdc-components/popover@^0.0.15, @wprdc-components/popover@workspace:packages/@wprdc-components/popover":
+"@wprdc-components/popover@^0.0.16, @wprdc-components/popover@workspace:packages/@wprdc-components/popover":
   version: 0.0.0-use.local
   resolution: "@wprdc-components/popover@workspace:packages/@wprdc-components/popover"
   dependencies:
@@ -8108,7 +8108,7 @@ __metadata:
     "@size-limit/preset-small-lib": ^8.0.1
     "@types/react": ^18.0.18
     "@types/react-dom": ^18.0.6
-    "@wprdc-types/popover": ^0.0.14
+    "@wprdc-types/popover": ^0.0.15
     autoprefixer: ^10.4.8
     husky: ^8.0.1
     postcss: ^8.4.16
@@ -8127,7 +8127,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@wprdc-components/provider@^0.0.18, @wprdc-components/provider@workspace:packages/@wprdc-components/provider":
+"@wprdc-components/provider@^0.0.19, @wprdc-components/provider@workspace:packages/@wprdc-components/provider":
   version: 0.0.0-use.local
   resolution: "@wprdc-components/provider@workspace:packages/@wprdc-components/provider"
   dependencies:
@@ -8137,8 +8137,8 @@ __metadata:
     "@size-limit/preset-small-lib": ^8.0.1
     "@types/react": ^18.0.18
     "@types/react-dom": ^18.0.6
-    "@wprdc-types/geo": ^0.0.17
-    "@wprdc-types/provider": ^0.0.17
+    "@wprdc-types/geo": ^0.0.18
+    "@wprdc-types/provider": ^0.0.18
     autoprefixer: ^10.4.8
     husky: ^8.0.1
     postcss: ^8.4.16
@@ -8186,7 +8186,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wprdc-components/radio-group@^0.0.16, @wprdc-components/radio-group@workspace:packages/@wprdc-components/radio-group":
+"@wprdc-components/radio-group@^0.0.17, @wprdc-components/radio-group@workspace:packages/@wprdc-components/radio-group":
   version: 0.0.0-use.local
   resolution: "@wprdc-components/radio-group@workspace:packages/@wprdc-components/radio-group"
   dependencies:
@@ -8196,7 +8196,7 @@ __metadata:
     "@size-limit/preset-small-lib": ^8.0.1
     "@types/react": ^18.0.18
     "@types/react-dom": ^18.0.6
-    "@wprdc-types/radio-group": ^0.0.13
+    "@wprdc-types/radio-group": ^0.0.14
     autoprefixer: ^10.4.8
     husky: ^8.0.1
     postcss: ^8.4.16
@@ -8228,7 +8228,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wprdc-components/search-box@^0.0.21, @wprdc-components/search-box@workspace:packages/@wprdc-components/search-box":
+"@wprdc-components/search-box@^0.0.22, @wprdc-components/search-box@workspace:packages/@wprdc-components/search-box":
   version: 0.0.0-use.local
   resolution: "@wprdc-components/search-box@workspace:packages/@wprdc-components/search-box"
   dependencies:
@@ -8243,12 +8243,12 @@ __metadata:
     "@size-limit/preset-small-lib": ^8.0.1
     "@types/react": ^18.0.18
     "@types/react-dom": ^18.0.6
-    "@wprdc-components/list-box": ^0.0.21
-    "@wprdc-components/popover": ^0.0.15
-    "@wprdc-components/util": ^0.0.14
-    "@wprdc-types/list-box": ^0.0.17
-    "@wprdc-types/search-box": ^0.0.17
-    "@wprdc-types/shared": ^0.0.15
+    "@wprdc-components/list-box": ^0.0.22
+    "@wprdc-components/popover": ^0.0.16
+    "@wprdc-components/util": ^0.0.15
+    "@wprdc-types/list-box": ^0.0.18
+    "@wprdc-types/search-box": ^0.0.18
+    "@wprdc-types/shared": ^0.0.16
     autoprefixer: ^10.4.8
     classnames: ^2.3.1
     husky: ^8.0.1
@@ -8269,7 +8269,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@wprdc-components/select@^0.0.23, @wprdc-components/select@workspace:packages/@wprdc-components/select":
+"@wprdc-components/select@^0.0.24, @wprdc-components/select@workspace:packages/@wprdc-components/select":
   version: 0.0.0-use.local
   resolution: "@wprdc-components/select@workspace:packages/@wprdc-components/select"
   dependencies:
@@ -8285,12 +8285,12 @@ __metadata:
     "@size-limit/preset-small-lib": ^8.0.1
     "@types/react": ^18.0.18
     "@types/react-dom": ^18.0.6
-    "@wprdc-components/list-box": ^0.0.21
-    "@wprdc-components/popover": ^0.0.15
-    "@wprdc-components/util": ^0.0.14
-    "@wprdc-types/list-box": ^0.0.17
-    "@wprdc-types/select": ^0.0.19
-    "@wprdc-types/shared": ^0.0.15
+    "@wprdc-components/list-box": ^0.0.22
+    "@wprdc-components/popover": ^0.0.16
+    "@wprdc-components/util": ^0.0.15
+    "@wprdc-types/list-box": ^0.0.18
+    "@wprdc-types/select": ^0.0.20
+    "@wprdc-types/shared": ^0.0.16
     autoprefixer: ^10.4.8
     classnames: ^2.3.1
     husky: ^8.0.1
@@ -8333,10 +8333,10 @@ __metadata:
     "@size-limit/preset-small-lib": ^8.0.1
     "@types/react": ^18.0.18
     "@types/react-dom": ^18.0.6
-    "@wprdc-components/data-chip": ^0.0.16
+    "@wprdc-components/data-chip": ^0.0.17
     "@wprdc-components/link": ^0.0.12
-    "@wprdc-components/tooltip": ^0.0.21
-    "@wprdc-types/profiles": ^0.0.26
+    "@wprdc-components/tooltip": ^0.0.22
+    "@wprdc-types/profiles": ^0.0.27
     autoprefixer: ^10.4.8
     husky: ^8.0.1
     postcss: ^8.4.16
@@ -8355,7 +8355,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@wprdc-components/spinner@^0.0.16, @wprdc-components/spinner@workspace:packages/@wprdc-components/spinner":
+"@wprdc-components/spinner@^0.0.17, @wprdc-components/spinner@workspace:packages/@wprdc-components/spinner":
   version: 0.0.0-use.local
   resolution: "@wprdc-components/spinner@workspace:packages/@wprdc-components/spinner"
   dependencies:
@@ -8363,8 +8363,8 @@ __metadata:
     "@size-limit/preset-small-lib": ^8.0.1
     "@types/react": ^18.0.18
     "@types/react-dom": ^18.0.6
-    "@wprdc-types/shared": ^0.0.15
-    "@wprdc-types/spinner": ^0.0.15
+    "@wprdc-types/shared": ^0.0.16
+    "@wprdc-types/spinner": ^0.0.16
     autoprefixer: ^10.4.8
     husky: ^8.0.1
     postcss: ^8.4.16
@@ -8399,7 +8399,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wprdc-components/tabs@^0.0.25, @wprdc-components/tabs@workspace:packages/@wprdc-components/tabs":
+"@wprdc-components/tabs@^0.0.26, @wprdc-components/tabs@workspace:packages/@wprdc-components/tabs":
   version: 0.0.0-use.local
   resolution: "@wprdc-components/tabs@workspace:packages/@wprdc-components/tabs"
   dependencies:
@@ -8409,9 +8409,9 @@ __metadata:
     "@size-limit/preset-small-lib": ^8.0.1
     "@types/react": ^18.0.18
     "@types/react-dom": ^18.0.6
-    "@wprdc-components/util": ^0.0.14
-    "@wprdc-types/shared": ^0.0.15
-    "@wprdc-types/tabs": ^0.0.16
+    "@wprdc-components/util": ^0.0.15
+    "@wprdc-types/shared": ^0.0.16
+    "@wprdc-types/tabs": ^0.0.17
     autoprefixer: ^10.4.8
     classnames: ^2.3.1
     husky: ^8.0.1
@@ -8440,7 +8440,7 @@ __metadata:
     "@size-limit/preset-small-lib": ^8.0.1
     "@types/react": ^18.0.18
     "@types/react-dom": ^18.0.6
-    "@wprdc-types/tag": ^0.0.13
+    "@wprdc-types/tag": ^0.0.14
     autoprefixer: ^10.4.8
     classnames: ^2.3.1
     husky: ^8.0.1
@@ -8469,7 +8469,7 @@ __metadata:
     "@size-limit/preset-small-lib": ^8.0.1
     "@types/react": ^18.0.18
     "@types/react-dom": ^18.0.6
-    "@wprdc-types/text-field": ^0.0.6
+    "@wprdc-types/text-field": ^0.0.7
     autoprefixer: ^10.4.8
     classnames: ^2.3.1
     husky: ^8.0.1
@@ -8489,7 +8489,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@wprdc-components/tooltip@^0.0.21, @wprdc-components/tooltip@workspace:packages/@wprdc-components/tooltip":
+"@wprdc-components/tooltip@^0.0.22, @wprdc-components/tooltip@workspace:packages/@wprdc-components/tooltip":
   version: 0.0.0-use.local
   resolution: "@wprdc-components/tooltip@workspace:packages/@wprdc-components/tooltip"
   dependencies:
@@ -8503,7 +8503,7 @@ __metadata:
     "@size-limit/preset-small-lib": ^8.0.1
     "@types/react": ^18.0.18
     "@types/react-dom": ^18.0.6
-    "@wprdc-types/tooltip": ^0.0.15
+    "@wprdc-types/tooltip": ^0.0.16
     autoprefixer: ^10.4.8
     classnames: ^2.3.1
     husky: ^8.0.1
@@ -8539,7 +8539,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wprdc-components/util@^0.0.14, @wprdc-components/util@workspace:packages/@wprdc-components/util":
+"@wprdc-components/util@^0.0.15, @wprdc-components/util@workspace:packages/@wprdc-components/util":
   version: 0.0.0-use.local
   resolution: "@wprdc-components/util@workspace:packages/@wprdc-components/util"
   dependencies:
@@ -8548,7 +8548,7 @@ __metadata:
     "@size-limit/preset-small-lib": ^8.0.1
     "@types/react": ^18.0.18
     "@types/react-dom": ^18.0.6
-    "@wprdc-types/shared": ^0.0.15
+    "@wprdc-types/shared": ^0.0.16
     autoprefixer: ^10.4.8
     husky: ^8.0.1
     postcss: ^8.4.16
@@ -8590,7 +8590,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wprdc-connections/api@^0.0.22, @wprdc-connections/api@workspace:packages/@wprdc-connections/api":
+"@wprdc-connections/api@^0.0.23, @wprdc-connections/api@workspace:packages/@wprdc-connections/api":
   version: 0.0.0-use.local
   resolution: "@wprdc-connections/api@workspace:packages/@wprdc-connections/api"
   dependencies:
@@ -8598,7 +8598,7 @@ __metadata:
     "@size-limit/preset-small-lib": ^8.0.1
     "@types/react": ^18.0.18
     "@types/react-dom": ^18.0.6
-    "@wprdc-types/api": ^0.0.16
+    "@wprdc-types/api": ^0.0.17
     autoprefixer: ^10.4.8
     husky: ^8.0.1
     postcss: ^8.4.16
@@ -8639,7 +8639,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wprdc-connections/geo@^0.0.46, @wprdc-connections/geo@workspace:packages/@wprdc-connections/geo":
+"@wprdc-connections/geo@^0.0.47, @wprdc-connections/geo@workspace:packages/@wprdc-connections/geo":
   version: 0.0.0-use.local
   resolution: "@wprdc-connections/geo@workspace:packages/@wprdc-connections/geo"
   dependencies:
@@ -8648,21 +8648,21 @@ __metadata:
     "@size-limit/preset-small-lib": ^8.0.1
     "@types/react": ^18.0.18
     "@types/react-dom": ^18.0.6
-    "@wprdc-components/list-box": ^0.0.21
-    "@wprdc-components/map": ^0.0.32
-    "@wprdc-components/radio-group": ^0.0.16
-    "@wprdc-components/util": ^0.0.14
-    "@wprdc-connections/api": ^0.0.22
-    "@wprdc-connections/util": ^0.0.37
-    "@wprdc-types/api": ^0.0.16
-    "@wprdc-types/connections": ^0.0.24
-    "@wprdc-types/geo": ^0.0.17
-    "@wprdc-types/list-box": ^0.0.17
-    "@wprdc-types/map": ^0.0.18
-    "@wprdc-types/neighborhood-assets": ^0.0.15
-    "@wprdc-types/profiles": ^0.0.26
-    "@wprdc-types/shared": ^0.0.15
-    "@wprdc-types/viz": ^0.0.26
+    "@wprdc-components/list-box": ^0.0.22
+    "@wprdc-components/map": ^0.0.33
+    "@wprdc-components/radio-group": ^0.0.17
+    "@wprdc-components/util": ^0.0.15
+    "@wprdc-connections/api": ^0.0.23
+    "@wprdc-connections/util": ^0.0.38
+    "@wprdc-types/api": ^0.0.17
+    "@wprdc-types/connections": ^0.0.25
+    "@wprdc-types/geo": ^0.0.18
+    "@wprdc-types/list-box": ^0.0.18
+    "@wprdc-types/map": ^0.0.19
+    "@wprdc-types/neighborhood-assets": ^0.0.16
+    "@wprdc-types/profiles": ^0.0.27
+    "@wprdc-types/shared": ^0.0.16
+    "@wprdc-types/viz": ^0.0.27
     autoprefixer: ^10.4.8
     husky: ^8.0.1
     postcss: ^8.4.16
@@ -8682,7 +8682,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@wprdc-connections/housecat@^0.0.44, @wprdc-connections/housecat@workspace:packages/@wprdc-connections/housecat":
+"@wprdc-connections/housecat@^0.0.45, @wprdc-connections/housecat@workspace:packages/@wprdc-connections/housecat":
   version: 0.0.0-use.local
   resolution: "@wprdc-connections/housecat@workspace:packages/@wprdc-connections/housecat"
   dependencies:
@@ -8690,19 +8690,19 @@ __metadata:
     "@size-limit/preset-small-lib": ^8.0.1
     "@types/react": ^18.0.18
     "@types/react-dom": ^18.0.6
-    "@wprdc-components/list-box": ^0.0.21
-    "@wprdc-components/map": ^0.0.32
-    "@wprdc-components/util": ^0.0.14
-    "@wprdc-connections/api": ^0.0.22
-    "@wprdc-connections/util": ^0.0.37
-    "@wprdc-types/api": ^0.0.16
-    "@wprdc-types/connections": ^0.0.24
-    "@wprdc-types/geo": ^0.0.17
-    "@wprdc-types/housecat": ^0.0.24
-    "@wprdc-types/list-box": ^0.0.17
-    "@wprdc-types/map": ^0.0.18
-    "@wprdc-types/shared": ^0.0.15
-    "@wprdc-types/viz": ^0.0.26
+    "@wprdc-components/list-box": ^0.0.22
+    "@wprdc-components/map": ^0.0.33
+    "@wprdc-components/util": ^0.0.15
+    "@wprdc-connections/api": ^0.0.23
+    "@wprdc-connections/util": ^0.0.38
+    "@wprdc-types/api": ^0.0.17
+    "@wprdc-types/connections": ^0.0.25
+    "@wprdc-types/geo": ^0.0.18
+    "@wprdc-types/housecat": ^0.0.25
+    "@wprdc-types/list-box": ^0.0.18
+    "@wprdc-types/map": ^0.0.19
+    "@wprdc-types/shared": ^0.0.16
+    "@wprdc-types/viz": ^0.0.27
     autoprefixer: ^10.4.8
     husky: ^8.0.1
     postcss: ^8.4.16
@@ -8747,7 +8747,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wprdc-connections/maps@^0.0.1, @wprdc-connections/maps@workspace:packages/@wprdc-connections/maps":
+"@wprdc-connections/maps@^0.0.2, @wprdc-connections/maps@workspace:packages/@wprdc-connections/maps":
   version: 0.0.0-use.local
   resolution: "@wprdc-connections/maps@workspace:packages/@wprdc-connections/maps"
   dependencies:
@@ -8755,10 +8755,10 @@ __metadata:
     "@size-limit/preset-small-lib": ^8.0.1
     "@types/react": ^18.0.18
     "@types/react-dom": ^18.0.6
-    "@wprdc-components/provider": ^0.0.18
-    "@wprdc-connections/api": ^0.0.22
-    "@wprdc-types/api": ^0.0.16
-    "@wprdc-types/maps": ^0.0.1
+    "@wprdc-components/provider": ^0.0.19
+    "@wprdc-connections/api": ^0.0.23
+    "@wprdc-types/api": ^0.0.17
+    "@wprdc-types/maps": ^0.0.2
     autoprefixer: ^10.4.8
     husky: ^8.0.1
     postcss: ^8.4.16
@@ -8788,17 +8788,17 @@ __metadata:
     "@types/react": ^18.0.18
     "@types/react-dom": ^18.0.6
     "@types/react-map-gl": ^6.1.3
-    "@wprdc-components/checkbox-group": ^0.0.18
-    "@wprdc-components/map": ^0.0.32
-    "@wprdc-components/util": ^0.0.14
-    "@wprdc-connections/api": ^0.0.22
-    "@wprdc-connections/util": ^0.0.37
-    "@wprdc-types/api": ^0.0.16
-    "@wprdc-types/connections": ^0.0.24
-    "@wprdc-types/geo": ^0.0.17
-    "@wprdc-types/map": ^0.0.18
-    "@wprdc-types/neighborhood-assets": ^0.0.15
-    "@wprdc-types/shared": ^0.0.15
+    "@wprdc-components/checkbox-group": ^0.0.19
+    "@wprdc-components/map": ^0.0.33
+    "@wprdc-components/util": ^0.0.15
+    "@wprdc-connections/api": ^0.0.23
+    "@wprdc-connections/util": ^0.0.38
+    "@wprdc-types/api": ^0.0.17
+    "@wprdc-types/connections": ^0.0.25
+    "@wprdc-types/geo": ^0.0.18
+    "@wprdc-types/map": ^0.0.19
+    "@wprdc-types/neighborhood-assets": ^0.0.16
+    "@wprdc-types/shared": ^0.0.16
     autoprefixer: ^10.4.8
     chroma-js: ^2.4.2
     husky: ^8.0.1
@@ -8820,7 +8820,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@wprdc-connections/profiles@^0.0.39, @wprdc-connections/profiles@workspace:packages/@wprdc-connections/profiles":
+"@wprdc-connections/profiles@^0.0.40, @wprdc-connections/profiles@workspace:packages/@wprdc-connections/profiles":
   version: 0.0.0-use.local
   resolution: "@wprdc-connections/profiles@workspace:packages/@wprdc-connections/profiles"
   dependencies:
@@ -8828,16 +8828,16 @@ __metadata:
     "@size-limit/preset-small-lib": ^8.0.1
     "@types/react": ^18.0.18
     "@types/react-dom": ^18.0.6
-    "@wprdc-components/list-box": ^0.0.21
-    "@wprdc-components/util": ^0.0.14
-    "@wprdc-connections/api": ^0.0.22
-    "@wprdc-types/api": ^0.0.16
-    "@wprdc-types/geo": ^0.0.17
-    "@wprdc-types/list-box": ^0.0.17
-    "@wprdc-types/map": ^0.0.18
-    "@wprdc-types/profiles": ^0.0.26
-    "@wprdc-types/shared": ^0.0.15
-    "@wprdc-types/viz": ^0.0.26
+    "@wprdc-components/list-box": ^0.0.22
+    "@wprdc-components/util": ^0.0.15
+    "@wprdc-connections/api": ^0.0.23
+    "@wprdc-types/api": ^0.0.17
+    "@wprdc-types/geo": ^0.0.18
+    "@wprdc-types/list-box": ^0.0.18
+    "@wprdc-types/map": ^0.0.19
+    "@wprdc-types/profiles": ^0.0.27
+    "@wprdc-types/shared": ^0.0.16
+    "@wprdc-types/viz": ^0.0.27
     autoprefixer: ^10.4.8
     husky: ^8.0.1
     postcss: ^8.4.16
@@ -8858,7 +8858,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@wprdc-connections/util@^0.0.37, @wprdc-connections/util@workspace:packages/@wprdc-connections/util":
+"@wprdc-connections/util@^0.0.38, @wprdc-connections/util@workspace:packages/@wprdc-connections/util":
   version: 0.0.0-use.local
   resolution: "@wprdc-connections/util@workspace:packages/@wprdc-connections/util"
   dependencies:
@@ -8868,13 +8868,13 @@ __metadata:
     "@types/react": ^18.0.18
     "@types/react-dom": ^18.0.6
     "@types/react-map-gl": ^6.1.3
-    "@wprdc-components/util": ^0.0.14
-    "@wprdc-types/connections": ^0.0.24
-    "@wprdc-types/geo": ^0.0.17
-    "@wprdc-types/map": ^0.0.18
-    "@wprdc-types/neighborhood-assets": ^0.0.15
-    "@wprdc-types/shared": ^0.0.15
-    "@wprdc-types/viz": ^0.0.26
+    "@wprdc-components/util": ^0.0.15
+    "@wprdc-types/connections": ^0.0.25
+    "@wprdc-types/geo": ^0.0.18
+    "@wprdc-types/map": ^0.0.19
+    "@wprdc-types/neighborhood-assets": ^0.0.16
+    "@wprdc-types/shared": ^0.0.16
+    "@wprdc-types/viz": ^0.0.27
     autoprefixer: ^10.4.8
     husky: ^8.0.1
     mapbox-gl: ^2.10.0
@@ -8938,7 +8938,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wprdc-types/api@^0.0.16, @wprdc-types/api@workspace:packages/@wprdc-types/api":
+"@wprdc-types/api@^0.0.17, @wprdc-types/api@workspace:packages/@wprdc-types/api":
   version: 0.0.0-use.local
   resolution: "@wprdc-types/api@workspace:packages/@wprdc-types/api"
   dependencies:
@@ -8982,7 +8982,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wprdc-types/breadcrumbs@^0.0.15, @wprdc-types/breadcrumbs@workspace:packages/@wprdc-types/breadcrumbs":
+"@wprdc-types/breadcrumbs@^0.0.16, @wprdc-types/breadcrumbs@workspace:packages/@wprdc-types/breadcrumbs":
   version: 0.0.0-use.local
   resolution: "@wprdc-types/breadcrumbs@workspace:packages/@wprdc-types/breadcrumbs"
   dependencies:
@@ -9009,7 +9009,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@wprdc-types/button@^0.0.13, @wprdc-types/button@workspace:packages/@wprdc-types/button":
+"@wprdc-types/button@^0.0.14, @wprdc-types/button@workspace:packages/@wprdc-types/button":
   version: 0.0.0-use.local
   resolution: "@wprdc-types/button@workspace:packages/@wprdc-types/button"
   dependencies:
@@ -9048,7 +9048,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wprdc-types/checkbox-group@^0.0.13, @wprdc-types/checkbox-group@workspace:packages/@wprdc-types/checkbox-group":
+"@wprdc-types/checkbox-group@^0.0.14, @wprdc-types/checkbox-group@workspace:packages/@wprdc-types/checkbox-group":
   version: 0.0.0-use.local
   resolution: "@wprdc-types/checkbox-group@workspace:packages/@wprdc-types/checkbox-group"
   dependencies:
@@ -9093,7 +9093,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wprdc-types/ckan@^0.0.1, @wprdc-types/ckan@workspace:packages/@wprdc-types/ckan":
+"@wprdc-types/ckan@^0.0.2, @wprdc-types/ckan@workspace:packages/@wprdc-types/ckan":
   version: 0.0.0-use.local
   resolution: "@wprdc-types/ckan@workspace:packages/@wprdc-types/ckan"
   dependencies:
@@ -9119,7 +9119,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@wprdc-types/combo-box@^0.0.17, @wprdc-types/combo-box@workspace:packages/@wprdc-types/combo-box":
+"@wprdc-types/combo-box@^0.0.18, @wprdc-types/combo-box@workspace:packages/@wprdc-types/combo-box":
   version: 0.0.0-use.local
   resolution: "@wprdc-types/combo-box@workspace:packages/@wprdc-types/combo-box"
   dependencies:
@@ -9131,8 +9131,8 @@ __metadata:
     "@size-limit/preset-small-lib": ^8.0.1
     "@types/react": ^18.0.18
     "@types/react-dom": ^18.0.6
-    "@wprdc-types/list-box": ^0.0.17
-    "@wprdc-types/shared": ^0.0.15
+    "@wprdc-types/list-box": ^0.0.18
+    "@wprdc-types/shared": ^0.0.16
     autoprefixer: ^10.4.8
     husky: ^8.0.1
     postcss: ^8.4.16
@@ -9151,7 +9151,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@wprdc-types/connections@^0.0.24, @wprdc-types/connections@workspace:packages/@wprdc-types/connections":
+"@wprdc-types/connections@^0.0.25, @wprdc-types/connections@workspace:packages/@wprdc-types/connections":
   version: 0.0.0-use.local
   resolution: "@wprdc-types/connections@workspace:packages/@wprdc-types/connections"
   dependencies:
@@ -9161,12 +9161,12 @@ __metadata:
     "@types/mapbox-gl": ^2.7.5
     "@types/react": ^18.0.18
     "@types/react-dom": ^18.0.6
-    "@wprdc-types/geo": ^0.0.17
-    "@wprdc-types/housecat": ^0.0.24
-    "@wprdc-types/map": ^0.0.18
-    "@wprdc-types/neighborhood-assets": ^0.0.15
-    "@wprdc-types/profiles": ^0.0.26
-    "@wprdc-types/shared": ^0.0.15
+    "@wprdc-types/geo": ^0.0.18
+    "@wprdc-types/housecat": ^0.0.25
+    "@wprdc-types/map": ^0.0.19
+    "@wprdc-types/neighborhood-assets": ^0.0.16
+    "@wprdc-types/profiles": ^0.0.27
+    "@wprdc-types/shared": ^0.0.16
     autoprefixer: ^10.4.8
     husky: ^8.0.1
     postcss: ^8.4.16
@@ -9222,7 +9222,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wprdc-types/data-chip@^0.0.13, @wprdc-types/data-chip@workspace:packages/@wprdc-types/data-chip":
+"@wprdc-types/data-chip@^0.0.14, @wprdc-types/data-chip@workspace:packages/@wprdc-types/data-chip":
   version: 0.0.0-use.local
   resolution: "@wprdc-types/data-chip@workspace:packages/@wprdc-types/data-chip"
   dependencies:
@@ -9276,7 +9276,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wprdc-types/dialog@^0.0.13, @wprdc-types/dialog@workspace:packages/@wprdc-types/dialog":
+"@wprdc-types/dialog@^0.0.14, @wprdc-types/dialog@workspace:packages/@wprdc-types/dialog":
   version: 0.0.0-use.local
   resolution: "@wprdc-types/dialog@workspace:packages/@wprdc-types/dialog"
   dependencies:
@@ -9286,7 +9286,7 @@ __metadata:
     "@size-limit/preset-small-lib": ^8.0.1
     "@types/react": ^18.0.18
     "@types/react-dom": ^18.0.6
-    "@wprdc-types/heading": ^0.0.13
+    "@wprdc-types/heading": ^0.0.14
     autoprefixer: ^10.4.8
     husky: ^8.0.1
     postcss: ^8.4.16
@@ -9305,7 +9305,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@wprdc-types/divider@^0.0.13, @wprdc-types/divider@workspace:packages/@wprdc-types/divider":
+"@wprdc-types/divider@^0.0.14, @wprdc-types/divider@workspace:packages/@wprdc-types/divider":
   version: 0.0.0-use.local
   resolution: "@wprdc-types/divider@workspace:packages/@wprdc-types/divider"
   dependencies:
@@ -9331,7 +9331,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@wprdc-types/error-message@^0.0.13, @wprdc-types/error-message@workspace:packages/@wprdc-types/error-message":
+"@wprdc-types/error-message@^0.0.14, @wprdc-types/error-message@workspace:packages/@wprdc-types/error-message":
   version: 0.0.0-use.local
   resolution: "@wprdc-types/error-message@workspace:packages/@wprdc-types/error-message"
   dependencies:
@@ -9368,17 +9368,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wprdc-types/geo@^0.0.17, @wprdc-types/geo@workspace:packages/@wprdc-types/geo":
+"@wprdc-types/geo@^0.0.18, @wprdc-types/geo@workspace:packages/@wprdc-types/geo":
   version: 0.0.0-use.local
   resolution: "@wprdc-types/geo@workspace:packages/@wprdc-types/geo"
   dependencies:
     "@rollup/plugin-replace": ^4.0.0
     "@size-limit/preset-small-lib": ^8.0.1
-    "@types/geojson": ^7946.0.10
     "@types/mapbox-gl": ^2.7.5
     "@types/react": ^18.0.18
     "@types/react-dom": ^18.0.6
-    "@wprdc-types/shared": ^0.0.15
+    "@wprdc-types/shared": ^0.0.16
     autoprefixer: ^10.4.8
     husky: ^8.0.1
     postcss: ^8.4.16
@@ -9425,7 +9424,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wprdc-types/geography-picker@^0.0.17, @wprdc-types/geography-picker@workspace:packages/@wprdc-types/geography-picker":
+"@wprdc-types/geography-picker@^0.0.18, @wprdc-types/geography-picker@workspace:packages/@wprdc-types/geography-picker":
   version: 0.0.0-use.local
   resolution: "@wprdc-types/geography-picker@workspace:packages/@wprdc-types/geography-picker"
   dependencies:
@@ -9434,7 +9433,7 @@ __metadata:
     "@size-limit/preset-small-lib": ^8.0.1
     "@types/react": ^18.0.18
     "@types/react-dom": ^18.0.6
-    "@wprdc-types/geo": ^0.0.17
+    "@wprdc-types/geo": ^0.0.18
     autoprefixer: ^10.4.8
     husky: ^8.0.1
     postcss: ^8.4.16
@@ -9461,8 +9460,8 @@ __metadata:
     "@size-limit/preset-small-lib": ^8.0.1
     "@types/react": ^18.0.18
     "@types/react-dom": ^18.0.6
-    "@wprdc-types/breadcrumbs": ^0.0.15
-    "@wprdc-types/geo": ^0.0.17
+    "@wprdc-types/breadcrumbs": ^0.0.16
+    "@wprdc-types/geo": ^0.0.18
     autoprefixer: ^10.4.8
     husky: ^8.0.1
     postcss: ^8.4.16
@@ -9481,7 +9480,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@wprdc-types/heading@^0.0.13, @wprdc-types/heading@workspace:packages/@wprdc-types/heading":
+"@wprdc-types/heading@^0.0.14, @wprdc-types/heading@workspace:packages/@wprdc-types/heading":
   version: 0.0.0-use.local
   resolution: "@wprdc-types/heading@workspace:packages/@wprdc-types/heading"
   dependencies:
@@ -9516,7 +9515,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wprdc-types/housecat@^0.0.24, @wprdc-types/housecat@workspace:packages/@wprdc-types/housecat":
+"@wprdc-types/housecat@^0.0.25, @wprdc-types/housecat@workspace:packages/@wprdc-types/housecat":
   version: 0.0.0-use.local
   resolution: "@wprdc-types/housecat@workspace:packages/@wprdc-types/housecat"
   dependencies:
@@ -9524,8 +9523,8 @@ __metadata:
     "@size-limit/preset-small-lib": ^8.0.1
     "@types/react": ^18.0.18
     "@types/react-dom": ^18.0.6
-    "@wprdc-types/geo": ^0.0.17
-    "@wprdc-types/shared": ^0.0.15
+    "@wprdc-types/geo": ^0.0.18
+    "@wprdc-types/shared": ^0.0.16
     autoprefixer: ^10.4.8
     husky: ^8.0.1
     postcss: ^8.4.16
@@ -9565,9 +9564,9 @@ __metadata:
     "@size-limit/preset-small-lib": ^8.0.1
     "@types/react": ^18.0.18
     "@types/react-dom": ^18.0.6
-    "@wprdc-types/geo": ^0.0.17
-    "@wprdc-types/profiles": ^0.0.26
-    "@wprdc-types/shared": ^0.0.15
+    "@wprdc-types/geo": ^0.0.18
+    "@wprdc-types/profiles": ^0.0.27
+    "@wprdc-types/shared": ^0.0.16
     autoprefixer: ^10.4.8
     husky: ^8.0.1
     postcss: ^8.4.16
@@ -9626,7 +9625,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@wprdc-types/list-box@^0.0.17, @wprdc-types/list-box@workspace:packages/@wprdc-types/list-box":
+"@wprdc-types/list-box@^0.0.18, @wprdc-types/list-box@workspace:packages/@wprdc-types/list-box":
   version: 0.0.0-use.local
   resolution: "@wprdc-types/list-box@workspace:packages/@wprdc-types/list-box"
   dependencies:
@@ -9638,7 +9637,7 @@ __metadata:
     "@size-limit/preset-small-lib": ^8.0.1
     "@types/react": ^18.0.18
     "@types/react-dom": ^18.0.6
-    "@wprdc-types/shared": ^0.0.15
+    "@wprdc-types/shared": ^0.0.16
     autoprefixer: ^10.4.8
     husky: ^8.0.1
     postcss: ^8.4.16
@@ -9691,7 +9690,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wprdc-types/loading-message@^0.0.14, @wprdc-types/loading-message@workspace:packages/@wprdc-types/loading-message":
+"@wprdc-types/loading-message@^0.0.15, @wprdc-types/loading-message@workspace:packages/@wprdc-types/loading-message":
   version: 0.0.0-use.local
   resolution: "@wprdc-types/loading-message@workspace:packages/@wprdc-types/loading-message"
   dependencies:
@@ -9726,7 +9725,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wprdc-types/map@^0.0.18, @wprdc-types/map@workspace:packages/@wprdc-types/map":
+"@wprdc-types/map@^0.0.19, @wprdc-types/map@workspace:packages/@wprdc-types/map":
   version: 0.0.0-use.local
   resolution: "@wprdc-types/map@workspace:packages/@wprdc-types/map"
   dependencies:
@@ -9737,9 +9736,9 @@ __metadata:
     "@types/mapbox-gl": ^2.7.5
     "@types/react": ^18.0.18
     "@types/react-dom": ^18.0.6
-    "@wprdc-types/geo": ^0.0.17
-    "@wprdc-types/neighborhood-assets": ^0.0.15
-    "@wprdc-types/shared": ^0.0.15
+    "@wprdc-types/geo": ^0.0.18
+    "@wprdc-types/neighborhood-assets": ^0.0.16
+    "@wprdc-types/shared": ^0.0.16
     autoprefixer: ^10.4.8
     husky: ^8.0.1
     postcss: ^8.4.16
@@ -9795,7 +9794,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wprdc-types/maps@^0.0.1, @wprdc-types/maps@workspace:packages/@wprdc-types/maps":
+"@wprdc-types/maps@^0.0.2, @wprdc-types/maps@workspace:packages/@wprdc-types/maps":
   version: 0.0.0-use.local
   resolution: "@wprdc-types/maps@workspace:packages/@wprdc-types/maps"
   dependencies:
@@ -9803,8 +9802,8 @@ __metadata:
     "@size-limit/preset-small-lib": ^8.0.1
     "@types/react": ^18.0.18
     "@types/react-dom": ^18.0.6
-    "@wprdc-types/ckan": ^0.0.1
-    "@wprdc-types/map": ^0.0.18
+    "@wprdc-types/ckan": ^0.0.2
+    "@wprdc-types/map": ^0.0.19
     autoprefixer: ^10.4.8
     husky: ^8.0.1
     postcss: ^8.4.16
@@ -9858,7 +9857,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@wprdc-types/menu@^0.0.13, @wprdc-types/menu@workspace:packages/@wprdc-types/menu":
+"@wprdc-types/menu@^0.0.14, @wprdc-types/menu@workspace:packages/@wprdc-types/menu":
   version: 0.0.0-use.local
   resolution: "@wprdc-types/menu@workspace:packages/@wprdc-types/menu"
   dependencies:
@@ -9903,7 +9902,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wprdc-types/neighborhood-assets@^0.0.15, @wprdc-types/neighborhood-assets@workspace:packages/@wprdc-types/neighborhood-assets":
+"@wprdc-types/neighborhood-assets@^0.0.16, @wprdc-types/neighborhood-assets@workspace:packages/@wprdc-types/neighborhood-assets":
   version: 0.0.0-use.local
   resolution: "@wprdc-types/neighborhood-assets@workspace:packages/@wprdc-types/neighborhood-assets"
   dependencies:
@@ -9912,7 +9911,7 @@ __metadata:
     "@types/geojson": ^7946.0.10
     "@types/react": ^18.0.18
     "@types/react-dom": ^18.0.6
-    "@wprdc-types/shared": ^0.0.15
+    "@wprdc-types/shared": ^0.0.16
     autoprefixer: ^10.4.8
     husky: ^8.0.1
     postcss: ^8.4.16
@@ -9957,7 +9956,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wprdc-types/number-field@^0.0.4, @wprdc-types/number-field@workspace:packages/@wprdc-types/number-field":
+"@wprdc-types/number-field@^0.0.5, @wprdc-types/number-field@workspace:packages/@wprdc-types/number-field":
   version: 0.0.0-use.local
   resolution: "@wprdc-types/number-field@workspace:packages/@wprdc-types/number-field"
   dependencies:
@@ -9985,7 +9984,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@wprdc-types/popover@^0.0.14, @wprdc-types/popover@workspace:packages/@wprdc-types/popover":
+"@wprdc-types/popover@^0.0.15, @wprdc-types/popover@workspace:packages/@wprdc-types/popover":
   version: 0.0.0-use.local
   resolution: "@wprdc-types/popover@workspace:packages/@wprdc-types/popover"
   dependencies:
@@ -10012,7 +10011,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@wprdc-types/profiles@^0.0.26, @wprdc-types/profiles@workspace:packages/@wprdc-types/profiles":
+"@wprdc-types/profiles@^0.0.27, @wprdc-types/profiles@workspace:packages/@wprdc-types/profiles":
   version: 0.0.0-use.local
   resolution: "@wprdc-types/profiles@workspace:packages/@wprdc-types/profiles"
   dependencies:
@@ -10020,9 +10019,9 @@ __metadata:
     "@size-limit/preset-small-lib": ^8.0.1
     "@types/react": ^18.0.18
     "@types/react-dom": ^18.0.6
-    "@wprdc-types/geo": ^0.0.17
-    "@wprdc-types/map": ^0.0.18
-    "@wprdc-types/shared": ^0.0.15
+    "@wprdc-types/geo": ^0.0.18
+    "@wprdc-types/map": ^0.0.19
+    "@wprdc-types/shared": ^0.0.16
     autoprefixer: ^10.4.8
     husky: ^8.0.1
     postcss: ^8.4.16
@@ -10075,7 +10074,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wprdc-types/provider@^0.0.17, @wprdc-types/provider@workspace:packages/@wprdc-types/provider":
+"@wprdc-types/provider@^0.0.18, @wprdc-types/provider@workspace:packages/@wprdc-types/provider":
   version: 0.0.0-use.local
   resolution: "@wprdc-types/provider@workspace:packages/@wprdc-types/provider"
   dependencies:
@@ -10083,8 +10082,8 @@ __metadata:
     "@size-limit/preset-small-lib": ^8.0.1
     "@types/react": ^18.0.18
     "@types/react-dom": ^18.0.6
-    "@wprdc-types/geo": ^0.0.17
-    "@wprdc-types/shared": ^0.0.15
+    "@wprdc-types/geo": ^0.0.18
+    "@wprdc-types/shared": ^0.0.16
     autoprefixer: ^10.4.8
     husky: ^8.0.1
     postcss: ^8.4.16
@@ -10092,6 +10091,7 @@ __metadata:
     postcss-loader: ^7.0.1
     react: 18.2.0
     react-dom: ^18.2.0
+    react-query: ^3.39.2
     rollup-plugin-postcss: ^4.0.2
     size-limit: ^8.0.1
     tailwindcss: ^3.1.8
@@ -10129,7 +10129,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wprdc-types/radio-group@^0.0.13, @wprdc-types/radio-group@workspace:packages/@wprdc-types/radio-group":
+"@wprdc-types/radio-group@^0.0.14, @wprdc-types/radio-group@workspace:packages/@wprdc-types/radio-group":
   version: 0.0.0-use.local
   resolution: "@wprdc-types/radio-group@workspace:packages/@wprdc-types/radio-group"
   dependencies:
@@ -10168,7 +10168,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wprdc-types/search-box@^0.0.17, @wprdc-types/search-box@workspace:packages/@wprdc-types/search-box":
+"@wprdc-types/search-box@^0.0.18, @wprdc-types/search-box@workspace:packages/@wprdc-types/search-box":
   version: 0.0.0-use.local
   resolution: "@wprdc-types/search-box@workspace:packages/@wprdc-types/search-box"
   dependencies:
@@ -10178,9 +10178,9 @@ __metadata:
     "@size-limit/preset-small-lib": ^8.0.1
     "@types/react": ^18.0.18
     "@types/react-dom": ^18.0.6
-    "@wprdc-types/combo-box": ^0.0.17
-    "@wprdc-types/list-box": ^0.0.17
-    "@wprdc-types/shared": ^0.0.15
+    "@wprdc-types/combo-box": ^0.0.18
+    "@wprdc-types/list-box": ^0.0.18
+    "@wprdc-types/shared": ^0.0.16
     autoprefixer: ^10.4.8
     husky: ^8.0.1
     postcss: ^8.4.16
@@ -10199,7 +10199,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@wprdc-types/select@^0.0.19, @wprdc-types/select@workspace:packages/@wprdc-types/select":
+"@wprdc-types/select@^0.0.20, @wprdc-types/select@workspace:packages/@wprdc-types/select":
   version: 0.0.0-use.local
   resolution: "@wprdc-types/select@workspace:packages/@wprdc-types/select"
   dependencies:
@@ -10208,8 +10208,8 @@ __metadata:
     "@size-limit/preset-small-lib": ^8.0.1
     "@types/react": ^18.0.18
     "@types/react-dom": ^18.0.6
-    "@wprdc-types/list-box": ^0.0.17
-    "@wprdc-types/shared": ^0.0.15
+    "@wprdc-types/list-box": ^0.0.18
+    "@wprdc-types/shared": ^0.0.16
     autoprefixer: ^10.4.8
     husky: ^8.0.1
     postcss: ^8.4.16
@@ -10254,7 +10254,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wprdc-types/shared@^0.0.15, @wprdc-types/shared@workspace:packages/@wprdc-types/shared":
+"@wprdc-types/shared@^0.0.16, @wprdc-types/shared@workspace:packages/@wprdc-types/shared":
   version: 0.0.0-use.local
   resolution: "@wprdc-types/shared@workspace:packages/@wprdc-types/shared"
   dependencies:
@@ -10316,7 +10316,7 @@ __metadata:
     "@size-limit/preset-small-lib": ^8.0.1
     "@types/react": ^18.0.18
     "@types/react-dom": ^18.0.6
-    "@wprdc-types/profiles": ^0.0.26
+    "@wprdc-types/profiles": ^0.0.27
     autoprefixer: ^10.4.8
     husky: ^8.0.1
     postcss: ^8.4.16
@@ -10335,7 +10335,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@wprdc-types/spinner@^0.0.15, @wprdc-types/spinner@workspace:packages/@wprdc-types/spinner":
+"@wprdc-types/spinner@^0.0.16, @wprdc-types/spinner@workspace:packages/@wprdc-types/spinner":
   version: 0.0.0-use.local
   resolution: "@wprdc-types/spinner@workspace:packages/@wprdc-types/spinner"
   dependencies:
@@ -10343,7 +10343,7 @@ __metadata:
     "@size-limit/preset-small-lib": ^8.0.1
     "@types/react": ^18.0.18
     "@types/react-dom": ^18.0.6
-    "@wprdc-types/shared": ^0.0.15
+    "@wprdc-types/shared": ^0.0.16
     autoprefixer: ^10.4.8
     husky: ^8.0.1
     postcss: ^8.4.16
@@ -10376,7 +10376,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wprdc-types/tabs@^0.0.16, @wprdc-types/tabs@workspace:packages/@wprdc-types/tabs":
+"@wprdc-types/tabs@^0.0.17, @wprdc-types/tabs@workspace:packages/@wprdc-types/tabs":
   version: 0.0.0-use.local
   resolution: "@wprdc-types/tabs@workspace:packages/@wprdc-types/tabs"
   dependencies:
@@ -10387,7 +10387,7 @@ __metadata:
     "@size-limit/preset-small-lib": ^8.0.1
     "@types/react": ^18.0.18
     "@types/react-dom": ^18.0.6
-    "@wprdc-types/shared": ^0.0.15
+    "@wprdc-types/shared": ^0.0.16
     autoprefixer: ^10.4.8
     husky: ^8.0.1
     postcss: ^8.4.16
@@ -10406,7 +10406,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@wprdc-types/tag@^0.0.13, @wprdc-types/tag@workspace:packages/@wprdc-types/tag":
+"@wprdc-types/tag@^0.0.14, @wprdc-types/tag@workspace:packages/@wprdc-types/tag":
   version: 0.0.0-use.local
   resolution: "@wprdc-types/tag@workspace:packages/@wprdc-types/tag"
   dependencies:
@@ -10440,7 +10440,7 @@ __metadata:
     "@size-limit/preset-small-lib": ^8.0.1
     "@types/react": ^18.0.18
     "@types/react-dom": ^18.0.6
-    "@wprdc-types/tag": ^0.0.13
+    "@wprdc-types/tag": ^0.0.14
     autoprefixer: ^10.4.8
     husky: ^8.0.1
     postcss: ^8.4.16
@@ -10459,7 +10459,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@wprdc-types/text-field@^0.0.6, @wprdc-types/text-field@workspace:packages/@wprdc-types/text-field":
+"@wprdc-types/text-field@^0.0.7, @wprdc-types/text-field@workspace:packages/@wprdc-types/text-field":
   version: 0.0.0-use.local
   resolution: "@wprdc-types/text-field@workspace:packages/@wprdc-types/text-field"
   dependencies:
@@ -10486,7 +10486,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@wprdc-types/tooltip@^0.0.15, @wprdc-types/tooltip@workspace:packages/@wprdc-types/tooltip":
+"@wprdc-types/tooltip@^0.0.16, @wprdc-types/tooltip@workspace:packages/@wprdc-types/tooltip":
   version: 0.0.0-use.local
   resolution: "@wprdc-types/tooltip@workspace:packages/@wprdc-types/tooltip"
   dependencies:
@@ -10525,7 +10525,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wprdc-types/topic-view@^0.0.25, @wprdc-types/topic-view@workspace:packages/@wprdc-types/topic-view":
+"@wprdc-types/topic-view@^0.0.26, @wprdc-types/topic-view@workspace:packages/@wprdc-types/topic-view":
   version: 0.0.0-use.local
   resolution: "@wprdc-types/topic-view@workspace:packages/@wprdc-types/topic-view"
   dependencies:
@@ -10533,8 +10533,8 @@ __metadata:
     "@size-limit/preset-small-lib": ^8.0.1
     "@types/react": ^18.0.18
     "@types/react-dom": ^18.0.6
-    "@wprdc-types/geo": ^0.0.17
-    "@wprdc-types/profiles": ^0.0.26
+    "@wprdc-types/geo": ^0.0.18
+    "@wprdc-types/profiles": ^0.0.27
     autoprefixer: ^10.4.8
     husky: ^8.0.1
     postcss: ^8.4.16
@@ -10553,7 +10553,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@wprdc-types/viz@^0.0.26, @wprdc-types/viz@workspace:packages/@wprdc-types/viz":
+"@wprdc-types/viz@^0.0.27, @wprdc-types/viz@workspace:packages/@wprdc-types/viz":
   version: 0.0.0-use.local
   resolution: "@wprdc-types/viz@workspace:packages/@wprdc-types/viz"
   dependencies:
@@ -10562,10 +10562,10 @@ __metadata:
     "@types/react": ^18.0.18
     "@types/react-dom": ^18.0.6
     "@types/react-table": ^7.7.12
-    "@wprdc-types/geo": ^0.0.17
-    "@wprdc-types/map": ^0.0.18
-    "@wprdc-types/profiles": ^0.0.26
-    "@wprdc-types/shared": ^0.0.15
+    "@wprdc-types/geo": ^0.0.18
+    "@wprdc-types/map": ^0.0.19
+    "@wprdc-types/profiles": ^0.0.27
+    "@wprdc-types/shared": ^0.0.16
     autoprefixer: ^10.4.8
     husky: ^8.0.1
     postcss: ^8.4.16
@@ -10636,7 +10636,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wprdc-viz/map@^0.0.12, @wprdc-viz/map@workspace:packages/@wprdc-viz/map":
+"@wprdc-viz/map@^0.0.13, @wprdc-viz/map@workspace:packages/@wprdc-viz/map":
   version: 0.0.0-use.local
   resolution: "@wprdc-viz/map@workspace:packages/@wprdc-viz/map"
   dependencies:
@@ -10644,14 +10644,14 @@ __metadata:
     "@size-limit/preset-small-lib": ^8.0.1
     "@types/react": ^18.0.18
     "@types/react-dom": ^18.0.6
-    "@wprdc-components/map": ^0.0.32
-    "@wprdc-components/provider": ^0.0.18
+    "@wprdc-components/map": ^0.0.33
+    "@wprdc-components/provider": ^0.0.19
     "@wprdc-connections/viz": ^0.0.33
-    "@wprdc-types/connections": ^0.0.24
-    "@wprdc-types/geo": ^0.0.17
-    "@wprdc-types/map": ^0.0.18
-    "@wprdc-types/shared": ^0.0.15
-    "@wprdc-types/viz": ^0.0.26
+    "@wprdc-types/connections": ^0.0.25
+    "@wprdc-types/geo": ^0.0.18
+    "@wprdc-types/map": ^0.0.19
+    "@wprdc-types/shared": ^0.0.16
+    "@wprdc-types/viz": ^0.0.27
     autoprefixer: ^10.4.8
     husky: ^8.0.1
     postcss: ^8.4.16
@@ -10702,7 +10702,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wprdc-viz/simple@^0.0.10, @wprdc-viz/simple@workspace:packages/@wprdc-viz/simple":
+"@wprdc-viz/simple@^0.0.11, @wprdc-viz/simple@workspace:packages/@wprdc-viz/simple":
   version: 0.0.0-use.local
   resolution: "@wprdc-viz/simple@workspace:packages/@wprdc-viz/simple"
   dependencies:
@@ -10710,8 +10710,8 @@ __metadata:
     "@size-limit/preset-small-lib": ^8.0.1
     "@types/react": ^18.0.18
     "@types/react-dom": ^18.0.6
-    "@wprdc-components/error-message": ^0.0.16
-    "@wprdc-types/viz": ^0.0.26
+    "@wprdc-components/error-message": ^0.0.17
+    "@wprdc-types/viz": ^0.0.27
     autoprefixer: ^10.4.8
     classnames: ^2.3.1
     husky: ^8.0.1
@@ -10731,7 +10731,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@wprdc-viz/table@^0.0.27, @wprdc-viz/table@workspace:packages/@wprdc-viz/table":
+"@wprdc-viz/table@^0.0.28, @wprdc-viz/table@workspace:packages/@wprdc-viz/table":
   version: 0.0.0-use.local
   resolution: "@wprdc-viz/table@workspace:packages/@wprdc-viz/table"
   dependencies:
@@ -10739,7 +10739,7 @@ __metadata:
     "@size-limit/preset-small-lib": ^8.0.1
     "@types/react": ^18.0.18
     "@types/react-dom": ^18.0.6
-    "@wprdc-types/viz": ^0.0.26
+    "@wprdc-types/viz": ^0.0.27
     autoprefixer: ^10.4.8
     classnames: ^2.3.1
     husky: ^8.0.1
@@ -10784,7 +10784,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wprdc-viz/vega@^0.0.13, @wprdc-viz/vega@workspace:packages/@wprdc-viz/vega":
+"@wprdc-viz/vega@^0.0.14, @wprdc-viz/vega@workspace:packages/@wprdc-viz/vega":
   version: 0.0.0-use.local
   resolution: "@wprdc-viz/vega@workspace:packages/@wprdc-viz/vega"
   dependencies:
@@ -10794,12 +10794,12 @@ __metadata:
     "@types/react-dom": ^18.0.6
     "@types/react-measure": ^2.0.8
     "@types/vega": ^3.2.0
-    "@wprdc-components/map": ^0.0.32
-    "@wprdc-components/provider": ^0.0.18
-    "@wprdc-types/geo": ^0.0.17
-    "@wprdc-types/profiles": ^0.0.26
-    "@wprdc-types/shared": ^0.0.15
-    "@wprdc-types/viz": ^0.0.26
+    "@wprdc-components/map": ^0.0.33
+    "@wprdc-components/provider": ^0.0.19
+    "@wprdc-types/geo": ^0.0.18
+    "@wprdc-types/profiles": ^0.0.27
+    "@wprdc-types/shared": ^0.0.16
+    "@wprdc-types/viz": ^0.0.27
     autoprefixer: ^10.4.8
     classnames: ^2.3.1
     husky: ^8.0.1
@@ -10873,7 +10873,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wprdc-widgets/geography-picker@^0.0.46, @wprdc-widgets/geography-picker@workspace:packages/@wprdc-widgets/geography-picker":
+"@wprdc-widgets/geography-picker@^0.0.47, @wprdc-widgets/geography-picker@workspace:packages/@wprdc-widgets/geography-picker":
   version: 0.0.0-use.local
   resolution: "@wprdc-widgets/geography-picker@workspace:packages/@wprdc-widgets/geography-picker"
   dependencies:
@@ -10883,17 +10883,17 @@ __metadata:
     "@size-limit/preset-small-lib": ^8.0.1
     "@types/react": ^18.0.18
     "@types/react-dom": ^18.0.6
-    "@wprdc-components/map": ^0.0.32
-    "@wprdc-components/popover": ^0.0.15
-    "@wprdc-components/search-box": ^0.0.21
-    "@wprdc-components/select": ^0.0.23
-    "@wprdc-components/util": ^0.0.14
-    "@wprdc-connections/geo": ^0.0.46
-    "@wprdc-types/connections": ^0.0.24
-    "@wprdc-types/geo": ^0.0.17
-    "@wprdc-types/geography-picker": ^0.0.17
-    "@wprdc-types/map": ^0.0.18
-    "@wprdc-types/shared": ^0.0.15
+    "@wprdc-components/map": ^0.0.33
+    "@wprdc-components/popover": ^0.0.16
+    "@wprdc-components/search-box": ^0.0.22
+    "@wprdc-components/select": ^0.0.24
+    "@wprdc-components/util": ^0.0.15
+    "@wprdc-connections/geo": ^0.0.47
+    "@wprdc-types/connections": ^0.0.25
+    "@wprdc-types/geo": ^0.0.18
+    "@wprdc-types/geography-picker": ^0.0.18
+    "@wprdc-types/map": ^0.0.19
+    "@wprdc-types/shared": ^0.0.16
     autoprefixer: ^10.4.8
     classnames: ^2.3.1
     husky: ^8.0.1
@@ -10935,7 +10935,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wprdc-widgets/topic-view@^0.0.58, @wprdc-widgets/topic-view@workspace:packages/@wprdc-widgets/topic-view":
+"@wprdc-widgets/topic-view@^0.0.59, @wprdc-widgets/topic-view@workspace:packages/@wprdc-widgets/topic-view":
   version: 0.0.0-use.local
   resolution: "@wprdc-widgets/topic-view@workspace:packages/@wprdc-widgets/topic-view"
   dependencies:
@@ -10945,20 +10945,20 @@ __metadata:
     "@types/react": ^18.0.18
     "@types/react-dom": ^18.0.6
     "@types/sanitize-html": ^2.6.2
-    "@wprdc-components/button": ^0.0.18
-    "@wprdc-components/divider": ^0.0.16
-    "@wprdc-components/error-message": ^0.0.16
-    "@wprdc-components/loading-message": ^0.0.16
-    "@wprdc-components/provider": ^0.0.18
-    "@wprdc-connections/profiles": ^0.0.39
-    "@wprdc-types/connections": ^0.0.24
+    "@wprdc-components/button": ^0.0.19
+    "@wprdc-components/divider": ^0.0.17
+    "@wprdc-components/error-message": ^0.0.17
+    "@wprdc-components/loading-message": ^0.0.17
+    "@wprdc-components/provider": ^0.0.19
+    "@wprdc-connections/profiles": ^0.0.40
+    "@wprdc-types/connections": ^0.0.25
     "@wprdc-types/data-viz": ^0.0.18
-    "@wprdc-types/profiles": ^0.0.26
-    "@wprdc-types/shared": ^0.0.15
-    "@wprdc-types/topic-view": ^0.0.25
-    "@wprdc-types/viz": ^0.0.26
-    "@wprdc-widgets/geography-picker": ^0.0.46
-    "@wprdc-widgets/viz": ^0.0.15
+    "@wprdc-types/profiles": ^0.0.27
+    "@wprdc-types/shared": ^0.0.16
+    "@wprdc-types/topic-view": ^0.0.26
+    "@wprdc-types/viz": ^0.0.27
+    "@wprdc-widgets/geography-picker": ^0.0.47
+    "@wprdc-widgets/viz": ^0.0.16
     autoprefixer: ^10.4.8
     classnames: ^2.3.1
     husky: ^8.0.1
@@ -10981,26 +10981,26 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@wprdc-widgets/viz@^0.0.15, @wprdc-widgets/viz@workspace:^, @wprdc-widgets/viz@workspace:packages/@wprdc-widgets/viz":
+"@wprdc-widgets/viz@^0.0.16, @wprdc-widgets/viz@workspace:^, @wprdc-widgets/viz@workspace:packages/@wprdc-widgets/viz":
   version: 0.0.0-use.local
   resolution: "@wprdc-widgets/viz@workspace:packages/@wprdc-widgets/viz"
   dependencies:
     "@size-limit/preset-small-lib": ^8.0.1
     "@types/react": ^18.0.18
     "@types/react-dom": ^18.0.6
-    "@wprdc-components/button": ^0.0.18
-    "@wprdc-components/checkbox-group": ^0.0.18
-    "@wprdc-components/error-message": ^0.0.16
-    "@wprdc-components/loading-message": ^0.0.16
-    "@wprdc-components/provider": ^0.0.18
-    "@wprdc-components/tooltip": ^0.0.21
-    "@wprdc-connections/profiles": ^0.0.39
-    "@wprdc-types/profiles": ^0.0.26
-    "@wprdc-types/viz": ^0.0.26
-    "@wprdc-viz/map": ^0.0.12
-    "@wprdc-viz/simple": ^0.0.10
-    "@wprdc-viz/table": ^0.0.27
-    "@wprdc-viz/vega": ^0.0.13
+    "@wprdc-components/button": ^0.0.19
+    "@wprdc-components/checkbox-group": ^0.0.19
+    "@wprdc-components/error-message": ^0.0.17
+    "@wprdc-components/loading-message": ^0.0.17
+    "@wprdc-components/provider": ^0.0.19
+    "@wprdc-components/tooltip": ^0.0.22
+    "@wprdc-connections/profiles": ^0.0.40
+    "@wprdc-types/profiles": ^0.0.27
+    "@wprdc-types/viz": ^0.0.27
+    "@wprdc-viz/map": ^0.0.13
+    "@wprdc-viz/simple": ^0.0.11
+    "@wprdc-viz/table": ^0.0.28
+    "@wprdc-viz/vega": ^0.0.14
     autoprefixer: ^10.4.8
     classnames: ^2.3.1
     husky: ^8.0.1
@@ -17517,9 +17517,9 @@ __metadata:
     "@types/node": 18.7.14
     "@types/react": 18.0.18
     "@types/react-dom": 18.0.6
-    "@wprdc-components/map": ^0.0.32
-    "@wprdc-components/provider": ^0.0.18
-    "@wprdc-connections/maps": ^0.0.1
+    "@wprdc-components/map": ^0.0.33
+    "@wprdc-components/provider": ^0.0.19
+    "@wprdc-connections/maps": ^0.0.2
     autoprefixer: ^10.4.8
     eslint: 8.23.0
     eslint-config-next: 12.2.5
@@ -23709,37 +23709,37 @@ __metadata:
     "@types/mapbox-gl": ^2.7.5
     "@types/node": 18.7.14
     "@types/react": 18.0.18
-    "@wprdc-components/breadcrumbs": ^0.0.18
-    "@wprdc-components/button": ^0.0.18
-    "@wprdc-components/divider": ^0.0.16
-    "@wprdc-components/list-box": ^0.0.21
-    "@wprdc-components/loading-message": ^0.0.16
-    "@wprdc-components/map": ^0.0.32
-    "@wprdc-components/provider": ^0.0.18
-    "@wprdc-components/search-box": ^0.0.21
-    "@wprdc-components/select": ^0.0.23
-    "@wprdc-components/tabs": ^0.0.25
-    "@wprdc-components/util": ^0.0.14
-    "@wprdc-connections/api": ^0.0.22
-    "@wprdc-connections/geo": ^0.0.46
-    "@wprdc-connections/housecat": ^0.0.44
-    "@wprdc-connections/profiles": ^0.0.39
-    "@wprdc-connections/util": ^0.0.37
+    "@wprdc-components/breadcrumbs": ^0.0.19
+    "@wprdc-components/button": ^0.0.19
+    "@wprdc-components/divider": ^0.0.17
+    "@wprdc-components/list-box": ^0.0.22
+    "@wprdc-components/loading-message": ^0.0.17
+    "@wprdc-components/map": ^0.0.33
+    "@wprdc-components/provider": ^0.0.19
+    "@wprdc-components/search-box": ^0.0.22
+    "@wprdc-components/select": ^0.0.24
+    "@wprdc-components/tabs": ^0.0.26
+    "@wprdc-components/util": ^0.0.15
+    "@wprdc-connections/api": ^0.0.23
+    "@wprdc-connections/geo": ^0.0.47
+    "@wprdc-connections/housecat": ^0.0.45
+    "@wprdc-connections/profiles": ^0.0.40
+    "@wprdc-connections/util": ^0.0.38
     "@wprdc-connections/viz": ^0.0.33
-    "@wprdc-types/connections": ^0.0.24
+    "@wprdc-types/connections": ^0.0.25
     "@wprdc-types/data-viz": ^0.0.18
-    "@wprdc-types/geo": ^0.0.17
-    "@wprdc-types/housecat": ^0.0.24
-    "@wprdc-types/list-box": ^0.0.17
-    "@wprdc-types/map": ^0.0.18
-    "@wprdc-types/profiles": ^0.0.26
-    "@wprdc-types/select": ^0.0.19
-    "@wprdc-types/shared": ^0.0.15
-    "@wprdc-types/viz": ^0.0.26
+    "@wprdc-types/geo": ^0.0.18
+    "@wprdc-types/housecat": ^0.0.25
+    "@wprdc-types/list-box": ^0.0.18
+    "@wprdc-types/map": ^0.0.19
+    "@wprdc-types/profiles": ^0.0.27
+    "@wprdc-types/select": ^0.0.20
+    "@wprdc-types/shared": ^0.0.16
+    "@wprdc-types/viz": ^0.0.27
     "@wprdc-widgets/ah-project-view": ^0.0.33
     "@wprdc-widgets/data-viz": ^0.0.33
-    "@wprdc-widgets/geography-picker": ^0.0.46
-    "@wprdc-widgets/topic-view": ^0.0.58
+    "@wprdc-widgets/geography-picker": ^0.0.47
+    "@wprdc-widgets/topic-view": ^0.0.59
     autoprefixer: ^10.4.8
     classnames: ^2.3.1
     eslint: 8.23.0

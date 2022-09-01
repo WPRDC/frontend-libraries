@@ -1,6 +1,6 @@
 import React, { Reducer, useContext, useReducer } from 'react';
 import './main.css';
-import { QueryClient, QueryClientProvider } from 'react-query';
+import { QueryClientProvider } from 'react-query';
 
 import { SSRProvider } from '@react-aria/ssr';
 import { OverlayProvider } from '@react-aria/overlays';
@@ -32,7 +32,6 @@ const defaultReducer: Reducer<ProviderState, ProviderAction> = (
   }
 };
 
-const queryClient = new QueryClient();
 
 export const Provider: React.FC<ProviderProps> = props => {
   const {
@@ -40,6 +39,7 @@ export const Provider: React.FC<ProviderProps> = props => {
     reducer = defaultReducer,
     usingSSR,
     children,
+    queryClient,
   } = props;
 
   const [state, dispatch] = useReducer(reducer, { mapboxAPIToken });
@@ -61,10 +61,10 @@ export const Provider: React.FC<ProviderProps> = props => {
       <Context.Provider value={context}>
         <SSRProvider>
           <OverlayProvider>
-            <QueryClientProvider client={queryClient}>
+            {!!queryClient ? <QueryClientProvider client={queryClient}>
               {children}
               <ReactQueryDevtools />
-            </QueryClientProvider>
+            </QueryClientProvider> : children}
           </OverlayProvider>
         </SSRProvider>
       </Context.Provider>
@@ -73,10 +73,10 @@ export const Provider: React.FC<ProviderProps> = props => {
   return (
     <Context.Provider value={context}>
       <OverlayProvider>
-        <QueryClientProvider client={queryClient}>
+        {!!queryClient ? <QueryClientProvider client={queryClient}>
           {children}
           <ReactQueryDevtools />
-        </QueryClientProvider>
+        </QueryClientProvider> : children}
       </OverlayProvider>
     </Context.Provider>
   );

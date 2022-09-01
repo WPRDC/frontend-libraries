@@ -16509,7 +16509,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@wprdc-types/geo", "virtual:f55fd8b388ba2d1f40386bfd8eb0b642ef5fa4f43bf7da068f85c48b0b934bb7ef67073f92c4eba735de76e4d3afb7ba31b00fedb28f92965f1c8ff1b7d88787#workspace:packages/@wprdc-types/geo"],\
             ["@rollup/plugin-replace", "virtual:9b5cb81261995e197ae76a4bc9ae63b615873a1d7d1ed1d7fa4e85e923d11a8f93e5aa08eb74c70302352ca339ab17e02f1331020a2264c1426bb9923d2eb433#npm:4.0.0"],\
             ["@size-limit/preset-small-lib", "virtual:9b5cb81261995e197ae76a4bc9ae63b615873a1d7d1ed1d7fa4e85e923d11a8f93e5aa08eb74c70302352ca339ab17e02f1331020a2264c1426bb9923d2eb433#npm:8.0.1"],\
-            ["@types/geojson", "npm:7946.0.10"],\
             ["@types/mapbox-gl", "npm:2.7.5"],\
             ["@types/react", "npm:18.0.18"],\
             ["@types/react-dom", "npm:18.0.6"],\
@@ -16540,7 +16539,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@wprdc-types/geo", "workspace:packages/@wprdc-types/geo"],\
             ["@rollup/plugin-replace", "virtual:9b5cb81261995e197ae76a4bc9ae63b615873a1d7d1ed1d7fa4e85e923d11a8f93e5aa08eb74c70302352ca339ab17e02f1331020a2264c1426bb9923d2eb433#npm:4.0.0"],\
             ["@size-limit/preset-small-lib", "virtual:9b5cb81261995e197ae76a4bc9ae63b615873a1d7d1ed1d7fa4e85e923d11a8f93e5aa08eb74c70302352ca339ab17e02f1331020a2264c1426bb9923d2eb433#npm:8.0.1"],\
-            ["@types/geojson", "npm:7946.0.10"],\
             ["@types/mapbox-gl", "npm:2.7.5"],\
             ["@types/react", "npm:18.0.18"],\
             ["@types/react-dom", "npm:18.0.6"],\
@@ -17759,6 +17757,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["postcss-loader", "virtual:d4f9ecfa61895c32501a9ee896d355c389be704122fe4098d864b20ff69503c1d726f9e3dc9eca5ad96375ad02a75e7e7c395695c89c98118132504073ae478d#npm:7.0.1"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:d4f9ecfa61895c32501a9ee896d355c389be704122fe4098d864b20ff69503c1d726f9e3dc9eca5ad96375ad02a75e7e7c395695c89c98118132504073ae478d#npm:18.2.0"],\
+            ["react-query", "virtual:f55fd8b388ba2d1f40386bfd8eb0b642ef5fa4f43bf7da068f85c48b0b934bb7ef67073f92c4eba735de76e4d3afb7ba31b00fedb28f92965f1c8ff1b7d88787#npm:3.39.2"],\
             ["rollup-plugin-postcss", "virtual:d4f9ecfa61895c32501a9ee896d355c389be704122fe4098d864b20ff69503c1d726f9e3dc9eca5ad96375ad02a75e7e7c395695c89c98118132504073ae478d#npm:4.0.2"],\
             ["size-limit", "npm:8.0.1"],\
             ["tailwindcss", "virtual:9b5cb81261995e197ae76a4bc9ae63b615873a1d7d1ed1d7fa4e85e923d11a8f93e5aa08eb74c70302352ca339ab17e02f1331020a2264c1426bb9923d2eb433#npm:3.1.8"],\
@@ -17804,6 +17803,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["postcss-loader", "virtual:d4f9ecfa61895c32501a9ee896d355c389be704122fe4098d864b20ff69503c1d726f9e3dc9eca5ad96375ad02a75e7e7c395695c89c98118132504073ae478d#npm:7.0.1"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:d4f9ecfa61895c32501a9ee896d355c389be704122fe4098d864b20ff69503c1d726f9e3dc9eca5ad96375ad02a75e7e7c395695c89c98118132504073ae478d#npm:18.2.0"],\
+            ["react-query", "virtual:f55fd8b388ba2d1f40386bfd8eb0b642ef5fa4f43bf7da068f85c48b0b934bb7ef67073f92c4eba735de76e4d3afb7ba31b00fedb28f92965f1c8ff1b7d88787#npm:3.39.2"],\
             ["rollup-plugin-postcss", "virtual:d4f9ecfa61895c32501a9ee896d355c389be704122fe4098d864b20ff69503c1d726f9e3dc9eca5ad96375ad02a75e7e7c395695c89c98118132504073ae478d#npm:4.0.2"],\
             ["size-limit", "npm:8.0.1"],\
             ["tailwindcss", "virtual:9b5cb81261995e197ae76a4bc9ae63b615873a1d7d1ed1d7fa4e85e923d11a8f93e5aa08eb74c70302352ca339ab17e02f1331020a2264c1426bb9923d2eb433#npm:3.1.8"],\
