@@ -33,6 +33,12 @@ export interface DataChipProps {
   /** When true, the DataChip will match its parent's width. */
   color?: 'primary' | 'secondary' | string;
 
+  /**
+   * Wrap with `dl` element instead of `div` if true.
+   * When false or not provided, you must wrap with DataChipProvider in your app.
+   */
+  standalone?: boolean;
+
   size?: 'S' | 'M' | 'L';
 }
 

@@ -3,10 +3,7 @@
  * CheckboxGroup types
  *
  **/
-import {
-  AriaCheckboxGroupItemProps,
-  AriaCheckboxGroupProps,
-} from '@react-types/checkbox';
+import { AriaCheckboxGroupItemProps, AriaCheckboxGroupProps } from '@react-types/checkbox';
 import { ReactElement } from 'react';
 
 export interface CheckboxGroupProps extends AriaCheckboxGroupProps {

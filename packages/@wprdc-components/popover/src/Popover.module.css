@@ -1,5 +1,5 @@
 .container {
-  @apply absolute z-10 top-full min-h-0;
-  @apply w-full mt-2 shadow-lg;
-  @apply bg-transparent;
+    @apply absolute z-10 top-full min-h-0;
+    @apply w-full mt-2 shadow-lg;
+    @apply bg-background;
 }

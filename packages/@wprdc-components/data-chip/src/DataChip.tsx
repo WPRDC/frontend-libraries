@@ -13,7 +13,6 @@ import classNames from 'classnames';
 import { icons } from './icons';
 import { DataChipProps } from '@wprdc-types/data-chip';
 
-//todo: bring back icons
 export const DataChip: React.FC<DataChipProps> = (props) => {
   const {
     value,
@@ -23,7 +22,7 @@ export const DataChip: React.FC<DataChipProps> = (props) => {
     label,
     href,
     fullWidth,
-    color,
+    standalone,
     size = 'M',
   } = props;
 
@@ -34,14 +33,14 @@ export const DataChip: React.FC<DataChipProps> = (props) => {
 
   const title = `${displayValue}`;
   const Icon = typeof icon === 'string' ? icons[icon] : icon;
-
+  const Wrapper = !!standalone ? 'dl' : 'div';
   return (
-    <div
-      className={classNames(styles.container, styles[`size-${size}`], {
+    <Wrapper
+      className={classNames(styles.wrapper, styles[`size-${size}`], {
         [styles.full]: fullWidth,
       })}
     >
-      <div className={classNames(styles.label, `bg-${color}-300`)}>
+      <div className={classNames(styles.label)}>
         {!!Icon && <Icon {...iconProps} className={styles.icon} />}
         {!!label && <div className={styles.labelText}>{label}</div>}
       </div>
@@ -56,8 +55,6 @@ export const DataChip: React.FC<DataChipProps> = (props) => {
           </p>
         )}
       </div>
-    </div>
+    </Wrapper>
   );
 };
-
-export default DataChip;

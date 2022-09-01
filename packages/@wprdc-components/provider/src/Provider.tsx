@@ -1,26 +1,25 @@
 import React, { Reducer, useContext, useReducer } from 'react';
 import './main.css';
+import { QueryClient, QueryClientProvider } from 'react-query';
 
 import { SSRProvider } from '@react-aria/ssr';
 import { OverlayProvider } from '@react-aria/overlays';
+import { ReactQueryDevtools } from 'react-query/devtools';
 
 import { Geog } from '@wprdc-types/geo';
-import {
-  ProviderAction,
-  ProviderContext,
-  ProviderProps,
-  ProviderState,
-} from '@wprdc-types/provider';
+import { ProviderAction, ProviderContext, ProviderProps, ProviderState } from '@wprdc-types/provider';
 
 const Context = React.createContext<ProviderContext>({
-  dispatch: () => {},
-  setGeog: () => {},
+  dispatch: () => {
+  },
+  setGeog: () => {
+  },
 });
 Context.displayName = 'ProviderContext';
 
 const defaultReducer: Reducer<ProviderState, ProviderAction> = (
   state,
-  action
+  action,
 ) => {
   switch (action.type) {
     case 'set-mapboxAPIToken':
@@ -33,7 +32,9 @@ const defaultReducer: Reducer<ProviderState, ProviderAction> = (
   }
 };
 
-export const Provider: React.FC<ProviderProps> = (props) => {
+const queryClient = new QueryClient();
+
+export const Provider: React.FC<ProviderProps> = props => {
   const {
     mapboxAPIToken,
     reducer = defaultReducer,
@@ -59,14 +60,24 @@ export const Provider: React.FC<ProviderProps> = (props) => {
     return (
       <Context.Provider value={context}>
         <SSRProvider>
-          <OverlayProvider>{children}</OverlayProvider>
+          <OverlayProvider>
+            <QueryClientProvider client={queryClient}>
+              {children}
+              <ReactQueryDevtools />
+            </QueryClientProvider>
+          </OverlayProvider>
         </SSRProvider>
       </Context.Provider>
     );
   }
   return (
     <Context.Provider value={context}>
-      <OverlayProvider>{children}</OverlayProvider>
+      <OverlayProvider>
+        <QueryClientProvider client={queryClient}>
+          {children}
+          <ReactQueryDevtools />
+        </QueryClientProvider>
+      </OverlayProvider>
     </Context.Provider>
   );
 };

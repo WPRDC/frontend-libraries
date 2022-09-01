@@ -14,22 +14,13 @@ import classNames from 'classnames';
 
 import { useSeparator } from '@react-aria/separator';
 
-import {
-  ListBoxSectionAria,
-  useListBox,
-  useListBoxSection,
-  useOption,
-} from '@react-aria/listbox';
+import { ListBoxSectionAria, useListBox, useListBoxSection, useOption } from '@react-aria/listbox';
 import { RiCheckFill } from 'react-icons/ri';
 
-import {
-  ListBoxSectionProps,
-  OptionProps,
-  StatelessListBoxProps,
-} from '@wprdc-types/list-box';
+import { ListBoxSectionProps, OptionProps, StatelessListBoxProps } from '@wprdc-types/list-box';
 
 export const StatelessListBox = <T extends object, O extends object = {}>(
-  props: StatelessListBoxProps<T, O>
+  props: StatelessListBoxProps<T, O>,
 ): JSX.Element => {
   const defaultRef = React.useRef<HTMLUListElement>(null);
   const {
@@ -85,7 +76,7 @@ export const StatelessListBox = <T extends object, O extends object = {}>(
 };
 
 export const ListBoxSection = <T extends object, O extends object = {}>(
-  props: ListBoxSectionProps<T, O>
+  props: ListBoxSectionProps<T, O>,
 ) => {
   const { section, state, dense, optionTemplate, optionTemplateOptions } =
     props;
@@ -125,7 +116,7 @@ export const ListBoxSection = <T extends object, O extends object = {}>(
                   optionTemplate={optionTemplate}
                   optionTemplateOptions={optionTemplateOptions}
                 />
-              )
+              ),
           )}
         </ul>
       </li>
@@ -134,12 +125,12 @@ export const ListBoxSection = <T extends object, O extends object = {}>(
 };
 
 export const Option = <T extends object, O extends object = {}>({
-  item,
-  state,
-  dense,
-  optionTemplate,
-  optionTemplateOptions,
-}: OptionProps<T, O>) => {
+                                                                  item,
+                                                                  state,
+                                                                  dense,
+                                                                  optionTemplate,
+                                                                  optionTemplateOptions,
+                                                                }: OptionProps<T, O>) => {
   const ref = React.useRef<HTMLLIElement>(null);
   const Template = optionTemplate;
   const { optionProps, isDisabled, isSelected, isFocused } = useOption(
@@ -147,7 +138,7 @@ export const Option = <T extends object, O extends object = {}>({
       key: item.key,
     },
     state,
-    ref
+    ref,
   );
 
   const content = React.useMemo(() => {
@@ -169,8 +160,8 @@ export const Option = <T extends object, O extends object = {}>({
         [styles.dense]: dense,
       })}
     >
-      <div className="flex-grow">{content}</div>
-      <div className="flex items-center">
+      <div className='flex-grow'>{content}</div>
+      <div className='flex items-center'>
         {isSelected ? (
           <RiCheckFill className={styles.checkMark} />
         ) : (

@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-types/map",
-  "version": "0.0.13",
+  "version": "0.0.17",
   "description": "Collection of TypeScript/JS libraries for use in/with WPRDC projects.",
   "keywords": [],
   "license": "AGPL-3.0-or-later",
@@ -53,34 +53,35 @@
     "analyze": "size-limit --why"
   },
   "peerDependencies": {
-    "react": ">=16"
+    "react": ">=18"
   },
   "devDependencies": {
-    "@size-limit/preset-small-lib": "^7.0.5",
-    "@types/react": "^17.0.38",
-    "@types/react-dom": "^17.0.11",
-    "autoprefixer": "^10.4.2",
+    "@rollup/plugin-replace": "^4.0.0",
+    "@size-limit/preset-small-lib": "^7.0.8",
+    "@types/react": "^18.0.18",
+    "@types/react-dom": "^18.0.6",
+    "autoprefixer": "^10.4.8",
     "husky": "^7.0.4",
-    "postcss": "^8.4.5",
-    "postcss-import": "^14.0.2",
+    "postcss": "^8.4.16",
+    "postcss-import": "^14.1.0",
     "postcss-loader": "^6.2.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "react": "18.2.0",
+    "react-dom": "^18.2.0",
     "rollup-plugin-postcss": "^4.0.2",
-    "size-limit": "^7.0.5",
-    "tailwindcss": "^3.0.18",
+    "size-limit": "^7.0.8",
+    "tailwindcss": "^3.1.8",
     "tsdx": "^0.14.1",
-    "tslib": "^2.3.1",
-    "typescript": "^4.5.5"
+    "tslib": "^2.4.0",
+    "typescript": "^4.8.2"
   },
   "dependencies": {
-    "@react-types/shared": "^3.10.1",
-    "@types/react": "^17.0.38",
-    "@wprdc-types/geo": "^0.0.14",
-    "@wprdc-types/neighborhood-assets": "^0.0.12",
-    "@wprdc-types/shared": "^0.0.12",
-    "geojson": "^0.5.0",
-    "mapbox-gl": "^2.8.2",
-    "react-map-gl": "^7.0.11"
+    "@react-types/shared": "^3.14.1",
+    "@types/geojson": "^7946.0.10",
+    "@types/mapbox-gl": "^2.7.5",
+    "@types/react": "^18.0.18",
+    "@wprdc-types/geo": "^0.0.16",
+    "@wprdc-types/neighborhood-assets": "^0.0.14",
+    "@wprdc-types/shared": "^0.0.14",
+    "react-map-gl": "^7.0.19"
   }
 }

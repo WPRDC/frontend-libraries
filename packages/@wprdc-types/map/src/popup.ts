@@ -2,23 +2,25 @@ import { PopupProps as RMGPopupProps } from 'react-map-gl/src/components/popup';
 import { MapLayerMouseEvent } from 'react-map-gl';
 import React from 'react';
 
-export interface PopupProps extends RMGPopupProps {}
+export interface PopupProps extends RMGPopupProps {
+}
 
-export interface HoverPopupProps extends PopupProps {}
+export interface HoverPopupProps extends PopupProps {
+}
 
-export interface ClickPopupProps extends PopupProps {}
+export interface ClickPopupProps extends PopupProps {
+}
 
 export interface PopupSectionProps {
   /** Label to show above list. */
   label: string;
   /** Icon next to label. */
   icon?: (props: any) => JSX.Element;
+  children?: React.ReactChild;
 }
 
-export interface PopupContentProps<
-  G extends GeoJSON.Geometry | null = GeoJSON.Geometry,
-  P = GeoJSON.GeoJsonProperties
-> {
+export interface PopupContentProps<G extends GeoJSON.Geometry | null = GeoJSON.Geometry,
+  P = GeoJSON.GeoJsonProperties> {
   /** Event responsible for this popup. */
   event: MapLayerMouseEvent;
   /**
@@ -33,9 +35,7 @@ export interface PopupContentProps<
   primaryFeatureProps: P;
 }
 
-export type PopupContentComponent<
-  P extends PopupContentProps = PopupContentProps
-> = React.FC<P>;
+export type PopupContentComponent<P extends PopupContentProps = PopupContentProps> = React.FC<P>;
 
 export interface UserPopupContentProps {
   getLabel?: (eventData: PopupContentProps) => React.ReactNode;

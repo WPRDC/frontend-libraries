@@ -1,6 +1,6 @@
 import { createAPI } from '@wprdc-connections/api';
 
-import { ResponsePackage, Method } from '@wprdc-types/api';
+import { Method } from '@wprdc-types/api';
 import { APIMapBoxResponse } from '@wprdc-types/connections';
 import { ProjectIndexDetails, Watchlist } from '@wprdc-types/housecat';
 import { getCookie } from '@wprdc-connections/util';
@@ -23,13 +23,13 @@ const headers = {
 // if projectID is provided a single detailed response will be expected
 export function requestAffordableHousingProject(
   projectID: number,
-  params?: Record<string, string>
-): Promise<ResponsePackage<ProjectIndexDetails>>;
+  params?: Record<string, string>,
+): Promise<ProjectIndexDetails>;
 // if projectID is not provided a list of projectIndexes will be expected
 export function requestAffordableHousingProject(
   projectID: null | undefined,
-  params?: Record<string, string>
-): Promise<ResponsePackage<ProjectIndexDetails[]>>;
+  params?: Record<string, string>,
+): Promise<ProjectIndexDetails[]>;
 
 /**
  * Request project data details or a list of projects
@@ -39,11 +39,9 @@ export function requestAffordableHousingProject(
  */
 export function requestAffordableHousingProject(
   projectID: number | null | undefined,
-  params?: Record<string, string>
+  params?: Record<string, string>,
 ) {
-  return api.callAndProcessEndpoint<
-    ProjectIndexDetails | ProjectIndexDetails[]
-  >(Endpoint.PHProject, Method.GET, {
+  return api.callAndProcessEndpoint<ProjectIndexDetails | ProjectIndexDetails[]>(Endpoint.PHProject, Method.GET, {
     id: projectID,
     headers,
     params,
@@ -58,11 +56,12 @@ export function requestPublicHousingProjectMap(params?: Record<string, any>) {
   return api.callAndProcessEndpoint<APIMapBoxResponse>(
     Endpoint.PHProjectMap,
     Method.GET,
-    { params, headers, credentials: 'include' }
+    { params, headers, credentials: 'include' },
   );
 }
 
-export function requestWatchlist(slug: string) {
+export function requestWatchlist(slug?: string) {
+  if (!slug) throw Error('slug not provided');
   return api.callAndProcessEndpoint<Watchlist>(Endpoint.Watchlist, Method.GET, {
     id: slug,
     headers,

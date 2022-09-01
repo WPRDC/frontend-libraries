@@ -17,7 +17,7 @@ import { useFilter } from '@react-aria/i18n';
 import { useButton } from '@react-aria/button';
 import { useSearchField } from '@react-aria/searchfield';
 
-import { RiSearchLine, RiCloseLine } from 'react-icons/ri';
+import { RiCloseLine, RiSearchLine } from 'react-icons/ri';
 
 import { Popover } from '@wprdc-components/popover';
 import { StatelessListBox } from '@wprdc-components/list-box';
@@ -25,16 +25,15 @@ import { SearchBoxProps } from '@wprdc-types/search-box';
 import { Resource } from '@wprdc-types/shared';
 
 export function SearchBox<T extends Resource, O extends object = {}>(
-  props: SearchBoxProps<T, O>
+  props: SearchBoxProps<T, O>,
 ) {
-  const { loadingState, listBoxProps: extListBoxProps } = props;
-  const { contains } = useFilter({ sensitivity: 'base' });
-  const state = useComboBoxState({ ...props, defaultFilter: contains });
-
   const inputRef = React.useRef<HTMLInputElement>(null);
   const listBoxRef = React.useRef<HTMLUListElement>(null);
   const popoverRef = React.useRef<HTMLDivElement>(null);
   const clearButtonRef = React.useRef<HTMLButtonElement>(null);
+
+  const { contains } = useFilter({ sensitivity: 'base' });
+  const state = useComboBoxState({ ...props, defaultFilter: contains });
 
   const {
     inputProps,
@@ -47,15 +46,17 @@ export function SearchBox<T extends Resource, O extends object = {}>(
       listBoxRef,
       popoverRef,
     },
-    state
+    state,
   );
 
+  // apply list box props in main props is necessary
+  const { loadingState, listBoxProps: extListBoxProps } = props;
   const listBoxProps = { ...comboBoxListBoxProps, ...extListBoxProps };
 
   // todo: handling loading state
   // @ts-ignore
   const [isLoading, setIsLoading] = React.useState<boolean>(
-    loadingState === 'loading'
+    loadingState === 'loading',
   );
   // Get props for the clear button from useSearchField
   const searchProps = {
@@ -68,7 +69,7 @@ export function SearchBox<T extends Resource, O extends object = {}>(
   const { clearButtonProps } = useSearchField(
     searchProps,
     searchState,
-    inputRef
+    inputRef,
   );
   const { buttonProps } = useButton(clearButtonProps, clearButtonRef);
 
@@ -98,7 +99,7 @@ export function SearchBox<T extends Resource, O extends object = {}>(
       )}
       <div className={styles.box}>
         <span className={styles.iconDiv}>
-          <RiSearchLine aria-hidden="true" className={styles.icon} />
+          <RiSearchLine aria-hidden='true' className={styles.icon} />
         </span>
         <input {...inputProps} ref={inputRef} className={styles.realInput} />
         <button
@@ -117,7 +118,7 @@ export function SearchBox<T extends Resource, O extends object = {}>(
           isOpen={state.isOpen}
           onClose={state.close}
         >
-          <div className={styles.popoverContent}>
+          <div className={styles.popoverContents}>
             <StatelessListBox<T, O>
               fullWidth
               {...listBoxProps}

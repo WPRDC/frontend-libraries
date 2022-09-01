@@ -13,21 +13,14 @@ import styles from './GeographyPickerMenu.module.css';
 
 import { Select } from '@wprdc-components/select';
 import { ConnectedSearchBox } from '@wprdc-components/search-box';
-import { Map } from '@wprdc-widgets/map';
+import { Map } from '@wprdc-components/map';
 
-import {
-  menuLayerConnection,
-  GeographyConnection,
-  GeoAPI,
-} from '@wprdc-connections/geo';
+import { GeoAPI, GeographyConnection, menuLayerConnection } from '@wprdc-connections/geo';
 
 import { GeogBrief, GeogLevel } from '@wprdc-types/geo';
 import { LayerPanelVariant } from '@wprdc-types/map';
 
-import {
-  ConnectedMapEventHandler,
-  ConnectionCollection,
-} from '@wprdc-types/connections';
+import { ConnectedMapEventHandler, ConnectionCollection } from '@wprdc-types/connections';
 
 import { ProjectKey } from '@wprdc-types/shared';
 
@@ -36,23 +29,23 @@ import { Item } from '@wprdc-components/util';
 import { GeographyPickerMenuProps } from '@wprdc-types/geography-picker';
 
 export const GeographyPickerMenu: React.FC<GeographyPickerMenuProps> = ({
-  selectedGeog,
-  onSelection,
-}) => {
+                                                                          selectedGeog,
+                                                                          onSelection,
+                                                                        }) => {
   const [geogLevels, setGeogLevels] = useState<GeogLevel[]>();
   const [selectedGeogLevel, setSelectedGeogLevel] = useState<GeogLevel>();
 
   // on mount, get list of available layers
   useEffect(() => {
-    GeoAPI.requestGeoLayers().then(({ data }) => setGeogLevels(data));
+    GeoAPI.requestGeoLayers().then(data => setGeogLevels(data));
   }, []);
 
   // when the geogLevels load, select a default geogLevel
   useEffect(() => {
     if (!!geogLevels) {
       setSelectedGeogLevel(
-        geogLevels.find((layer) => layer.id === selectedGeog?.geogType) ||
-          geogLevels[0]
+        geogLevels.find(layer => layer.id === selectedGeog?.geogType) ||
+        geogLevels[0],
       );
     }
   }, [geogLevels]);
@@ -87,12 +80,12 @@ export const GeographyPickerMenu: React.FC<GeographyPickerMenuProps> = ({
         <div className={styles.menuItem}>
           <div className={styles.dropdown}>
             <Select<GeogLevel>
-              label="Type of area"
+              label='Type of area'
               items={geogLevels}
               selectedKey={selectedGeogLevel.id}
               onSelection={handleSelection}
             >
-              {(item) => <Item key={item.id}>{item.name}</Item>}
+              {item => <Item key={item.id}>{item.name}</Item>}
             </Select>
           </div>
         </div>

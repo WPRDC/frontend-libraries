@@ -3,14 +3,11 @@ import * as React from 'react';
 import '../main.css';
 import styles from './ResourceOptionTemplate.module.css';
 
-import {
-  OptionFieldAccessor,
-  ResourceOptionTemplateProps,
-} from '@wprdc-types/list-box';
+import { OptionFieldAccessor, ResourceOptionTemplateProps } from '@wprdc-types/list-box';
 import { Resource } from '@wprdc-types/shared';
 
 export function ResourceOptionTemplate<T extends Resource>(
-  props: ResourceOptionTemplateProps<T>
+  props: ResourceOptionTemplateProps<T>,
 ) {
   const {
     item,
@@ -20,9 +17,13 @@ export function ResourceOptionTemplate<T extends Resource>(
     subtitleAccessor = 'description',
   } = props;
 
-  function getContent(accessor: OptionFieldAccessor<T> | keyof T, item: T) {
+  function getContent(
+    accessor: OptionFieldAccessor<T> | keyof T,
+    item: T,
+  ): React.ReactNode {
     if (typeof accessor == 'function') return accessor(item);
-    return item[accessor];
+    // fixme: figure out how to type this
+    return (item[accessor] as unknown) as React.ReactNode;
   }
 
   // Try `getIcon`, and then `Icon` to generate an icon.
@@ -34,7 +35,7 @@ export function ResourceOptionTemplate<T extends Resource>(
     return Icon;
   }, [item, getIcon, Icon]);
 
-  const title = React.useMemo(() => {
+  const title: React.ReactNode = React.useMemo(() => {
     return getContent(titleAccessor, item);
   }, [titleAccessor, item]);
 

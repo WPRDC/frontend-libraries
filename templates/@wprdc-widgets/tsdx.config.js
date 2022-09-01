@@ -11,8 +11,9 @@ module.exports = {
             extract: !!options.writeMeta,
           },
         },
-      })
+      }),
     );
+    config.preventAssignment = true;
     return config;
   },
 };

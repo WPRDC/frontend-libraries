@@ -12,10 +12,13 @@ export enum Method {
 
 export type Endpoint = string;
 
-export interface APIOptions {
+export interface APIOptions<T> {
   id?: string | number | null;
   params?: Record<string, string | number | boolean | null | undefined>;
   headers?: Record<string, string | number | boolean | null | undefined>;
   fetchInit?: {};
   credentials?: 'omit' | 'same-origin' | 'include';
+  controller?: AbortController;
+  /** function that throws error on invalid data response */
+  validator?: (data: T) => void;
 }

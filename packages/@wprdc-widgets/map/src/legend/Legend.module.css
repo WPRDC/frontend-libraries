@@ -1,7 +1,0 @@
-.container {
-  @apply p-2 max-w-sm bg-background border-2 border-black rounded;
-}
-
-.title {
-  @apply text-xs text-gray-700 font-medium uppercase;
-}

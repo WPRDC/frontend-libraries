@@ -1,0 +1,14 @@
+.wrapper {
+    @apply flex-grow;
+    @apply w-full h-full;
+    @apply overflow-hidden;
+}
+
+.wrapper.inPreview {
+    @apply w-full h-full p-0.5;
+    @apply overflow-hidden;
+}
+
+.insideWrapper {
+    @apply h-full;
+}

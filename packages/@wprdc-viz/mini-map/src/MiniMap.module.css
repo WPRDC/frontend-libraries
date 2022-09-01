@@ -1,7 +1,0 @@
-.container {
-  @apply min-h-0 h-24 max-h-96;
-}
-
-.popup {
-  @apply text-xs bg-opacity-70;
-}

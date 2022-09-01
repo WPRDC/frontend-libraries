@@ -6,11 +6,7 @@
  *
  */
 import { createAPI } from '@wprdc-connections/api';
-import {
-  Asset,
-  AssetBrief,
-  AssetCategory,
-} from '@wprdc-types/neighborhood-assets';
+import { Asset, AssetBrief, AssetCategory } from '@wprdc-types/neighborhood-assets';
 
 import { Method } from '@wprdc-types/api';
 
@@ -37,7 +33,7 @@ export function getAssets(params: Record<string, any>) {
     Method.GET,
     {
       params,
-    }
+    },
   );
 }
 
@@ -59,7 +55,7 @@ export function getCategories() {
   return api.callAndProcessEndpoint<AssetCategory[]>(
     Endpoints.Categories,
     Method.GET,
-    {}
+    {},
   );
 }
 

@@ -5,12 +5,13 @@
 }
 
 .navMenu {
-  @apply flex-1 flex shadow-lg md:border-b lg:border-r lg:border-b-0;
+  @apply flex-1 flex;
   /* on medium screens, it's horizontal */
   @apply flex-col md:flex-row lg:flex-col;
-
+  @apply border-black md:border-b-2 lg:border-r-2 lg:border-b-0;
   @apply md:col-span-12 md:row-span-1 md:w-full;
   @apply lg:col-span-4 xl:col-span-3;
+  @apply bg-background-50;
 }
 
 .content {
@@ -18,6 +19,7 @@
   @apply md:col-span-12 lg:col-span-8 xl:col-span-9;
   @apply md:flex-grow;
   @apply lg:overflow-y-hidden;
+  @apply bg-background-50;
 }
 
 /* Navmenu parts */
@@ -31,20 +33,22 @@
 
 .map {
   @apply flex-grow;
+  @apply lg:border-t-2 border-black;
 }
 
 /* Content parts */
 .geogContainer {
-  @apply py-4 pl-4 shadow-md border-b;
+  @apply pt-6 pb-3 pl-6 border-b-2 border-black;
 }
 
 .geogTitle {
-  @apply text-4xl font-medium;
+  @apply mt-4 mb-2;
+  @apply text-3xl font-semibold lg:text-4xl xl:text-4xl lg:font-light;
 }
 
 .taxonomyContainer {
-  @apply p-4 pt-1;
-  @apply flex-grow overflow-y-auto;
+  @apply flex flex-col;
+  @apply overflow-y-hidden;
 }
 
 .cta {

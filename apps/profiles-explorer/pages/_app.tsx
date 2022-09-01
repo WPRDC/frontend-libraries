@@ -20,7 +20,8 @@ const MAPBOX_KEY =
   '.WDBLMZYfh-ZGFjmwO82xvw';
 
 function MyApp({ Component, pageProps }: AppPropsWithLayout) {
-  const getLayout = Component.getLayout ?? ((page) => <Layout>{page}</Layout>);
+  // default layout is components/Layout
+  const getLayout = Component.getLayout ?? (page => <Layout>{page}</Layout>);
 
   return (
     <Provider usingSSR mapboxAPIToken={MAPBOX_KEY}>

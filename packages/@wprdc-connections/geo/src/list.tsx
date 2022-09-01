@@ -2,24 +2,21 @@ import * as React from 'react';
 
 import { Item } from '@wprdc-components/util';
 
-import { GeographyType, GeogBrief, GeogLevel } from '@wprdc-types/geo';
+import { GeogBrief, GeogLevel, GeographyType } from '@wprdc-types/geo';
 import { ListConnection } from '@wprdc-types/shared';
 import { AsyncListLoadOptions } from '@react-stately/data';
-import {
-  ListBoxOptions,
-  ResourceOptionTemplateOptions,
-} from '@wprdc-types/list-box';
+import { ListBoxOptions, ResourceOptionTemplateOptions } from '@wprdc-types/list-box';
 import { ResourceOptionTemplate } from '@wprdc-components/list-box';
 
 export function makeGeographyConnection(
-  geogType: GeographyType
+  geogType: GeographyType,
 ): ListConnection<GeogBrief> {
   return {
     async load({ signal, cursor, filterText }) {
       const res = await fetch(
         cursor ||
-          `https://api.profiles.wprdc.org/geo/${geogType}/?search=${filterText}&limit=20`,
-        { signal }
+        `https://api.profiles.wprdc.org/geo/${geogType}/?search=${filterText}&limit=20`,
+        { signal },
       );
       const json = await res.json();
       return {
@@ -45,14 +42,14 @@ export class GeographyConnection implements ListConnection<GeogBrief> {
   }
 
   public load = async ({
-    signal,
-    cursor,
-    filterText,
-  }: AsyncListLoadOptions<GeogBrief, string>) => {
+                         signal,
+                         cursor,
+                         filterText,
+                       }: AsyncListLoadOptions<GeogBrief, string>) => {
     const res = await fetch(
       cursor ||
-        `https://api.profiles.wprdc.org/geo/${this.geogType}/?search=${filterText}&limit=${this.limit}`,
-      { signal }
+      `https://api.profiles.wprdc.org/geo/${this.geogType}/?search=${filterText}&limit=${this.limit}`,
+      { signal },
     );
     const json = await res.json();
     return {
@@ -86,10 +83,8 @@ export const geographyTypeConnection: ListConnection<GeogLevel> = {
 
 export const geographyLevelConnection = geographyTypeConnection;
 
-export const defaultGeogListBoxProps: ListBoxOptions<
-  GeogBrief,
-  ResourceOptionTemplateOptions<GeogBrief>
-> = {
+export const defaultGeogListBoxProps: ListBoxOptions<GeogBrief,
+  ResourceOptionTemplateOptions<GeogBrief>> = {
   optionTemplate: ResourceOptionTemplate,
   optionTemplateOptions: {
     titleAccessor: 'title',
@@ -97,10 +92,8 @@ export const defaultGeogListBoxProps: ListBoxOptions<
   },
 };
 
-export const defaultGeogLevelListBoxProps: ListBoxOptions<
-  GeogLevel,
-  ResourceOptionTemplateOptions<GeogLevel>
-> = {
+export const defaultGeogLevelListBoxProps: ListBoxOptions<GeogLevel,
+  ResourceOptionTemplateOptions<GeogLevel>> = {
   optionTemplate: ResourceOptionTemplate,
   optionTemplateOptions: {
     subtitleAccessor: (_: GeogLevel) => null,

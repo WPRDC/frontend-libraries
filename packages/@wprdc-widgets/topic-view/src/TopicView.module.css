@@ -1,0 +1,145 @@
+.pageContainer {
+    @apply relative flex-col flex h-full;
+}
+
+.cardContainer {
+    @apply w-full shadow border-2 border-black outline-none;
+    @apply transition duration-150 ease-in-out;
+    @apply hover:shadow-lg hover:border-focused-600;
+    @apply focus:shadow-lg focus:border-focused-400 focus:ring-1 focus:ring-focused-400;
+    @apply text-left;
+    @apply bg-white;
+}
+
+.vizPane {
+    @apply max-h-48 h-48 min-w-0 w-full flex max-w-full;
+    @apply border-b border-black overflow-hidden;
+}
+
+.titleSection {
+    @apply pt-1 pb-3;
+}
+
+.detailSection {
+    @apply mt-4 space-y-3;
+}
+
+.details {
+    @apply pb-5;
+}
+
+.details .title {
+    @apply text-xs uppercase font-bold;
+    @apply mb-1;
+}
+
+.detailsItem {
+    @apply mt-2;
+    @apply text-lg;
+}
+
+.detailsItem p {
+    @apply mb-2;
+}
+
+.importance {
+    @apply mt-2;
+}
+
+.geogPicker {
+    @apply text-xs;
+    @apply max-w-md;
+}
+
+.cardTitle {
+    @apply text-lg font-semibold pt-2 px-2.5;
+}
+
+.bigTitle {
+    @apply mt-4 mb-2 text-4xl font-bold;
+}
+
+.cardContainer .descriptionContainer {
+    @apply h-12;
+}
+
+.description {
+    @apply text-black font-medium;
+    @apply pt-0.5 pb-1 mb-4;
+}
+
+.cardDescription {
+    @apply text-xs;
+    @apply p-2 px-2.5;
+    @apply truncate;
+}
+
+.menuSection {
+}
+
+.menuSection button {
+    @apply max-w-max;
+}
+
+.vizes {
+    @apply my-2;
+    @apply w-full;
+}
+
+.vizList {
+    @apply w-full;
+    @apply space-y-12;
+}
+
+.vizListItem {
+}
+
+.subtitle {
+    @apply py-1 my-2;
+    @apply border-t-2 border-black;
+    @apply font-medium text-cyan-600 text-sm uppercase;
+    @apply flex items-center;
+}
+
+.subtitle > svg {
+    @apply mr-1.5;
+}
+
+.blurbs {
+    @apply mb-4;
+}
+
+.blurbList {
+}
+
+.blurbListItem {
+    @apply inline-block m-2;
+}
+
+.stretchy {
+    @apply flex-grow;
+}
+
+.titleBar {
+    @apply flex;
+}
+
+.titleDiv {
+    @apply flex-grow;
+}
+
+.menuButtonDiv {
+}
+
+.callout {
+    @apply border border-black bg-cyan-50 p-2;
+}
+
+.callout .title {
+    @apply text-xs uppercase font-bold text-amber-700;
+    @apply mb-1;
+}
+
+.callout p {
+    @apply my-0 py-0;
+}

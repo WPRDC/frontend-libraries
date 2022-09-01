@@ -8,12 +8,15 @@
 node_modules
 dist
 packages/*/*/src/*.js*
+.yarn/
 
 # local env files
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
+
+.yarnrc.yml
 
 # typescript
 *.tsbuildinfo
@@ -22,3 +25,6 @@ packages/*/*/src/*.js*
 .run
 
 storybook-static
+
+# Apps developed with library but not part of monorepo
+apps/greenprint

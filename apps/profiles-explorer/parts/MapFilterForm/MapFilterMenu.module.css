@@ -18,6 +18,7 @@
 .buttonSection {
   @apply py-2;
   @apply text-center;
+  @apply space-x-2 space-y-2;
 }
 
 .legend {

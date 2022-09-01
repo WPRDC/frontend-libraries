@@ -8,7 +8,8 @@ import { AriaFieldProps } from '@react-aria/label';
 
 export interface GeographyPickerProps
   extends AriaFieldProps,
-    GeographyPickerMenuProps {}
+    GeographyPickerMenuProps {
+}
 
 export interface GeographyPickerMenuProps {
   variant?: 'default' | 'dialog' | 'popup';
@@ -16,4 +17,5 @@ export interface GeographyPickerMenuProps {
   onSelection?: (geog: GeogBrief) => any;
 }
 
-export interface GeographyPickerInputProps {}
+export interface GeographyPickerInputProps {
+}

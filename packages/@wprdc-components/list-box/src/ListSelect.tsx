@@ -11,7 +11,7 @@ import { StatelessListBox } from './StatelessListBox';
 import { SelectProps } from '@wprdc-types/select';
 
 export function ListSelect<T extends object, O extends object = {}>(
-  props: SelectProps<T, O>
+  props: SelectProps<T, O>,
 ) {
   // Create state based on the incoming props
   const { onSelection, listBoxProps } = props;

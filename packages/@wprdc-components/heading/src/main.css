@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+a {
+    @apply underline font-semibold;
+    @apply hover:text-primary-400 active:text-secondary-400;
+}
+
+/* external links */
+a[href*="//"]:not([href*="profiles.wprdc.org"]) {
+    @apply underline font-semibold;
+    @apply hover:text-primary-400 active:text-secondary-400;
+}

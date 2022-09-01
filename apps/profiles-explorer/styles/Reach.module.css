@@ -1,6 +1,7 @@
 .wrapper {
   @apply w-full;
   @apply overflow-auto;
+  @apply bg-background-50;
 }
 
 .main {
@@ -103,7 +104,7 @@
   @apply text-4xl font-bold;
 }
 
-.indicatorSection {
+.topicSection {
   @apply py-3;
 }
 

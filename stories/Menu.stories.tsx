@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { Menu, Item } from '../packages/@wprdc-components/menu';
+import { Menu } from '../packages/@wprdc-components/menu';
+import { Item } from '../packages/@wprdc-components/util';
 
 export default {
   title: 'Components/Menu',

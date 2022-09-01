@@ -8,7 +8,7 @@ export default {
   component: DataChip,
   decorators: [
     (TheStory: Story) => (
-      <div style={{ margin: '3em' }}>
+      <div style={{ margin: '1em' }}>
         <TheStory />
       </div>
     ),
@@ -18,6 +18,15 @@ export default {
 export const Default = () => (
   <div>
     <DataChip icon="map" value="3343 Forbes Ave" label="Address" />
-    <DataChip icon="map" value="3343 Forbes Ave" label="Address" color="blue" />
+    <br />
+    <br />
+    <DataChip icon="map" value="3343 Forbes Ave" label="Address" />
+    <br />
+    <br />
+    <DataChip icon="map" value="3343 Forbes Ave" label="Address" size="S" />
+    <br />
+    <DataChip icon="map" value="3343 Forbes Ave" label="Address" size="M" />
+    <br />
+    <DataChip icon="map" value="3343 Forbes Ave" label="Address" size="L" />
   </div>
 );

@@ -1,64 +1,32 @@
-import { useEffect, useState } from 'react';
-
-import { ErrorRecord } from '@wprdc-types/viz';
-import { ResponsePackage } from '@wprdc-types/api';
-import {
-  ProjectIndex,
-  ProjectIndexDetails,
-  Watchlist,
-} from '@wprdc-types/housecat';
+import { ProjectIndex, ProjectIndexDetails, Watchlist } from '@wprdc-types/housecat';
 
 import { HousecatAPI } from './api';
 
+import { useQuery, UseQueryResult } from 'react-query';
+import { APIMapBoxResponse } from '@wprdc-types/connections';
+
 export function usePublicHousingProject(
-  identifier?: number | string | ProjectIndex
-) {
-  const [affordableHousingProject, setAffordableHousingProject] =
-    useState<ProjectIndexDetails>();
-
-  const [isLoading, setIsLoading] = useState<boolean>();
-  const [error, setError] = useState<ErrorRecord>();
-
-  useEffect(() => {
-    function handleResponse({
-      data,
-      error,
-    }: ResponsePackage<ProjectIndexDetails>) {
-      setAffordableHousingProject(data);
-      if (!!error) setError({ status: 'ERROR', level: 100, message: error });
-      else setError(undefined);
-      setIsLoading(false);
-    }
-
-    let argID: number;
-    if (typeof identifier === 'object') argID = identifier.id;
-    else argID = parseInt(identifier as string);
-    setIsLoading(true);
-    HousecatAPI.requestAffordableHousingProject(argID).then(handleResponse);
-
-    return function cleanup() {};
-  }, [identifier]);
-
-  return { affordableHousingProject, error, isLoading };
+  identifier?: number | string | ProjectIndex,
+): UseQueryResult<ProjectIndexDetails> {
+  let argID: number;
+  if (typeof identifier === 'object') argID = identifier.id;
+  else argID = parseInt(identifier as string);
+  return useQuery<ProjectIndexDetails>(['projectDetails', argID], () =>
+    HousecatAPI.requestAffordableHousingProject(argID),
+  );
 }
 
 export function useWatchlist(slug?: string) {
-  const [watchlist, setWatchlist] = useState<Watchlist>();
-  const [isLoading, setIsLoading] = useState<boolean>();
-  const [error, setError] = useState<ErrorRecord>();
+  return useQuery<Watchlist>(['projectWatchlist', slug], () =>
+    HousecatAPI.requestWatchlist(slug),
+  );
+}
 
-  useEffect(() => {
-    function handleResponse({ data, error }: ResponsePackage<Watchlist>) {
-      setWatchlist(data);
-      if (!!error) setError({ status: 'ERROR', level: 100, message: error });
-      else setError(undefined);
-      setIsLoading(false);
-    }
-
-    if (!!slug) {
-      HousecatAPI.requestWatchlist(slug).then(handleResponse);
-    }
-  }, [slug]);
-
-  return { watchlist, error, isLoading };
+/**
+ * Hook that returns all the stuff to load into the map
+ */
+export function useHousingProjectMap(filterParams?: Record<string, any>) {
+  return useQuery<APIMapBoxResponse>(['housing map', filterParams], () =>
+    HousecatAPI.requestPublicHousingProjectMap(filterParams),
+  );
 }

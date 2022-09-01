@@ -1,14 +1,44 @@
-.container {
+.wrapper {
+    @apply cursor-pointer;
+    @apply border-2 border-transparent outline-none;
+    @apply focus:border-2 focus:border-focused-500;
+    @apply focus-visible:border-2 focus-visible:border-focused-500;
+}
+
+.button {
+    @apply font-mono font-semibold uppercase;
+    @apply focus:outline-none focus-visible:outline-none border;
+    @apply hover:border-focused-600;
+    @apply transition duration-150 ease-in-out;
+    @apply focus:border-focused-400 focus:ring-1 focus:ring-offset-0 focus:ring-focused-400 active:ring-0;
+    @apply text-black;
+    @apply border-black;
+    @apply bg-background;
+    @apply bg-white;
+
+    @apply text-xs font-medium;
+    @apply shadow-sm hover:shadow active:shadow-none;
+}
+
+.button div {
+    @apply py-0.5 px-1.5;
+    @apply bg-white;
 }
 
 .popover {
-  @apply p-2.5 border shadow-lg bg-background;
+    @apply m-2 p-2.5 border shadow-lg bg-background;
 }
 
 .popover:focus-visible {
-  outline: none;
+    outline: none;
 }
 
 .popoverTitle {
-  @apply font-semibold;
+    @apply font-bold text-cyan-600;
+    @apply text-sm uppercase;
+}
+
+.label {
+    @apply font-semibold text-sm;
+    @apply underline decoration-textSecondary-400 decoration-dashed decoration-2;
 }

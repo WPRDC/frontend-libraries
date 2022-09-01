@@ -21,7 +21,7 @@ export const DEFAULT_ASSET_TYPES = [
   },
   {
     name: 'veterans_social_orgs',
-    title: "Veteran's Social Orgs",
+    title: 'Veteran\'s Social Orgs',
   },
   {
     name: 'va_facilities',
@@ -53,7 +53,7 @@ export const DEFAULT_ASSET_TYPES = [
   },
   {
     name: 'farmers_markets',
-    title: "Farmers' Markets",
+    title: 'Farmers\' Markets',
   },
   {
     name: 'libraries',

@@ -1,4 +1,4 @@
-import { SourceBase } from '@wprdc-types/viz';
+import { SourceBase } from '@wprdc-types/profiles';
 
 export interface SourceListProps {
   sources: SourceBase[];

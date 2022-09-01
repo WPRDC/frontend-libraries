@@ -1,54 +1,55 @@
-import { useEffect, useState } from 'react';
-import { Indicator, Taxonomy } from '@wprdc-types/profiles';
-import { ResponsePackage } from '@wprdc-types/api';
+import { Domain, IndicatorWithData, Subdomain, Taxonomy, Topic } from '@wprdc-types/profiles';
 import { ProfilesAPI } from './api';
+import { useQuery, UseQueryResult } from 'react-query';
 
-/**
- * Hook that handles retrieving indicator details.
- */
-export function useIndicator(indicatorSlug?: string) {
-  const [indicator, setIndicator] = useState<Indicator>();
-  const [isLoading, setIsLoading] = useState<boolean>();
-  const [error, setError] = useState<string>();
+const staleTime = 1000 * 60 * 5;
 
-  useEffect(() => {
-    function handleResponse({ data, error }: ResponsePackage<Indicator>) {
-      setIndicator(data);
-      setError(error);
-      setIsLoading(false);
-    }
-
-    if (!!indicatorSlug) {
-      setIsLoading(true);
-      ProfilesAPI.requestIndicator(indicatorSlug).then(handleResponse);
-    }
-
-    return function cleanup() {};
-  }, [indicatorSlug]);
-
-  return { indicator, isLoading, error };
+export function useTopic(topicSlug?: string): UseQueryResult<Topic> {
+  return useQuery(
+    ['topic', topicSlug],
+    () => ProfilesAPI.requestTopic(topicSlug),
+    { enabled: !!topicSlug, staleTime },
+  );
 }
 
-export function useTaxonomy(slug: string): {
-  taxonomy?: Taxonomy;
-  isLoading?: boolean;
-  error?: string;
-} {
-  const [taxonomy, setTaxonomy] = useState<Taxonomy | undefined>();
-  const [isLoading, setIsLoading] = useState<boolean>();
-  const [error, setError] = useState<string>();
+export function useDomain(slug?: string): UseQueryResult<Domain> {
+  return useQuery<Domain>(
+    ['domain', slug],
+    () => ProfilesAPI.requestDomain(slug),
+    { enabled: !!slug, staleTime },
+  );
+}
 
-  useEffect(() => {
-    function handleResponse({ data, error }: ResponsePackage<Taxonomy>) {
-      setTaxonomy(data);
-      setError(error);
-      setIsLoading(false);
-    }
-    setIsLoading(true);
-    ProfilesAPI.requestTaxonomy(slug).then(handleResponse);
+export function useSubdomain(slug?: string): UseQueryResult<Subdomain> {
+  return useQuery<Subdomain>(
+    ['subdomain', slug],
+    () => ProfilesAPI.requestSubdomain(slug),
+    { enabled: !!slug, staleTime },
+  );
+}
 
-    return function cleanup() {};
-  }, []);
+export function useIndicator(
+  indicatorSlug?: string,
+  geogSlug?: string,
+  acrossGeogs?: boolean,
+): UseQueryResult<IndicatorWithData, Error> {
+  const keys: any[] = ['domain', indicatorSlug];
+  if (acrossGeogs && geogSlug) {
+    keys.push(geogSlug.slice(0, geogSlug.lastIndexOf('-')), acrossGeogs);
+  } else {
+    keys.push(geogSlug);
+  }
+  return useQuery<IndicatorWithData, Error>(
+    keys,
+    () => ProfilesAPI.requestIndicator(indicatorSlug, geogSlug, acrossGeogs),
+    { enabled: !!indicatorSlug && !!geogSlug, staleTime },
+  );
+}
 
-  return { taxonomy, isLoading, error };
+export function useTaxonomy(slug?: string): UseQueryResult<Taxonomy> {
+  return useQuery<Taxonomy>(
+    ['domain', slug],
+    () => ProfilesAPI.requestTaxonomy(slug),
+    { enabled: !!slug, staleTime },
+  );
 }

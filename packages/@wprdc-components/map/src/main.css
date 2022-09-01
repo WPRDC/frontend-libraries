@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.mapboxgl-popup-tip {
+    visibility: hidden !important;
+}
+
+.mapboxgl-popup-content {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+a {
+    @apply underline font-semibold;
+    @apply hover:text-primary-400 active:text-secondary-400;
+}
+
+/* external links */
+a[href*="//"]:not([href*="profiles.wprdc.org"]) {
+    @apply underline font-semibold;
+    @apply hover:text-primary-400 active:text-secondary-400;
+}

@@ -1,10 +1,7 @@
 import * as React from 'react';
 
 import { ListConnection } from '@wprdc-types/shared';
-import {
-  ListBoxOptions,
-  ResourceOptionTemplateOptions,
-} from '@wprdc-types/list-box';
+import { ListBoxOptions, ResourceOptionTemplateOptions } from '@wprdc-types/list-box';
 import { ProjectIndex } from '@wprdc-types/housecat';
 
 import { ResourceOptionTemplate } from '@wprdc-components/list-box';
@@ -23,8 +20,8 @@ export const affordableHousingProjectConnection: ListConnection<ProjectIndex> =
     async load({ signal, cursor, filterText }) {
       const res = await fetch(
         cursor ||
-          `https://api.profiles.wprdc.org/public-housing/project/?search=${filterText}&limit=10`,
-        { signal, headers, credentials: 'include' }
+        `https://api.profiles.wprdc.org/public-housing/project/?search=${filterText}&limit=10`,
+        { signal, headers, credentials: 'include' },
       );
       const json = await res.json();
 
@@ -38,10 +35,8 @@ export const affordableHousingProjectConnection: ListConnection<ProjectIndex> =
   };
 
 /** style props */
-export const defaultAffordableHousingListBoxProps: ListBoxOptions<
-  ProjectIndex,
-  ResourceOptionTemplateOptions<ProjectIndex>
-> = {
+export const defaultAffordableHousingListBoxProps: ListBoxOptions<ProjectIndex,
+  ResourceOptionTemplateOptions<ProjectIndex>> = {
   optionTemplate: ResourceOptionTemplate,
   optionTemplateOptions: {
     Icon: RiCommunityFill,
@@ -54,7 +49,7 @@ export const makeWatchlistConnection = (slug: string) =>
     async load({ signal }) {
       const res = await fetch(
         `https://api.profiles.wprdc.org/public-housing/watchlist/${slug}?limit=5000`,
-        { signal, headers }
+        { signal, headers },
       );
       const json = await res.json();
 

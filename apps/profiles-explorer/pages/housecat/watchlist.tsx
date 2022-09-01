@@ -9,7 +9,7 @@ import {
   usePublicHousingProject,
   useWatchlist,
 } from '@wprdc-connections/housecat';
-import { Map } from '@wprdc-widgets/map';
+import { Map } from '@wprdc-components/map';
 import { ConnectedMapEventHandler } from '@wprdc-types/connections';
 import { ListSelect } from '@wprdc-components/list-box';
 import { AHProjectView } from '@wprdc-widgets/ah-project-view';
@@ -24,8 +24,10 @@ interface Props {}
 function Watchlist(props: Props) {
   const [currentProject, setCurrentProject] = React.useState<number>();
 
-  const { watchlist } = useWatchlist('steves-watchlist');
-  const { affordableHousingProject } = usePublicHousingProject(currentProject);
+  const { data: watchlist } = useWatchlist('steves-watchlist');
+  const { data: affordableHousingProject } = usePublicHousingProject(
+    currentProject,
+  );
 
   function handleSelect(x: React.Key) {
     setCurrentProject(parseInt(x as string));
@@ -43,7 +45,7 @@ function Watchlist(props: Props) {
         <h2 className={styles.sectionHeader}>Watchlist</h2>
         {!!watchlist && (
           <ListSelect onSelectionChange={handleSelect}>
-            {watchlist.projectIndices.map((projIdx) => (
+            {watchlist.projectIndices.map(projIdx => (
               <Item key={projIdx.id}>{projIdx.name}</Item>
             ))}
           </ListSelect>

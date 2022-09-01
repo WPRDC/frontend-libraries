@@ -1,6 +1,6 @@
 import styles from '../styles/LandingPage.module.css';
 
-export default function DataVizLandingPage() {
+export default function IndicatorLandingPage() {
   return (
     <div className={styles.wrapper}>
       <h2 className={styles.title}>Data Vizes Landing Page</h2>

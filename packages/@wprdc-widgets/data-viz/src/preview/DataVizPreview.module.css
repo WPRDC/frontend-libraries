@@ -1,7 +1,0 @@
-.container {
-  @apply min-h-0 h-full rounded-t overflow-auto flex flex-grow;
-}
-
-.wrapper {
-  @apply rounded min-h-0 flex-grow;
-}

@@ -1,0 +1,50 @@
+.wrapper {
+    @apply border-2 border-black;
+    @apply p-4;
+    @apply bg-white;
+}
+
+.number {
+    @apply text-gray-500 text-3xl;
+}
+
+.wrapper.inPreview {
+    @apply border-none;
+    @apply flex w-full h-full items-center justify-center;
+    @apply text-center;
+    @apply p-2;
+}
+
+.inPreview .name {
+    @apply px-3;
+}
+
+.name {
+    @apply mb-2;
+    @apply text-center text-sm font-semibold text-gray-900 leading-none;
+}
+
+.valueGroup {
+    @apply text-sm font-semibold p-0 m-0 text-gray-500 leading-none;
+}
+
+.value {
+    @apply text-left text-zinc-800 text-sm;
+}
+
+.denom {
+    @apply text-left text-zinc-800 text-sm;
+}
+
+.secondLine {
+    @apply text-center;
+}
+
+.percent {
+    @apply block text-center;
+    @apply text-3xl font-mono text-gray-800;
+}
+
+.note {
+    @apply italic text-xs;
+}

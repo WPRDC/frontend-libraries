@@ -1,22 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@font-face {
-  font-family: 'Public Sans';
-  src: url('assets/fonts/PublicSans/PublicSans-VariableFont_wght.ttf')
-      format('truetype'),
-    url('assets/fonts/PublicSans/PublicSans-Italic-VariableFont_wght.ttf')
-      format('truetype');
-  font-weight: normal;
-  font-style: normal;
+
+a {
+    @apply underline font-semibold;
+    @apply hover:text-primary-400 active:text-secondary-400;
 }
 
-.mapboxgl-popup-tip {
-  visibility: hidden !important;
-}
-
-.mapboxgl-popup-content {
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
+/* external links */
+a[href*="//"]:not([href*="profiles.wprdc.org"]) {
+    @apply underline font-semibold;
+    @apply hover:text-primary-400 active:text-secondary-400;
 }

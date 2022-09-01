@@ -2,14 +2,14 @@ import { useRouter } from 'next/router';
 import { useEffect, useMemo, useState } from 'react';
 
 import styles from '../../styles/ItemPage.module.css';
-import DataVizLandingPage from '../../parts/DataVizLandingPage';
+import IndicatorLandingPage from '../../parts/IndicatorLandingPage';
 import { DEFAULT_GEOG_SLUG } from '../../settings';
 import { GeographyPicker } from '@wprdc-widgets/geography-picker';
-import { DataVizVariant } from '@wprdc-types/data-viz';
+import { IndicatorVariant } from '@wprdc-types/data-viz';
 import {
-  dataVizConnection,
+  indicatorConnection,
   defaultVizListBoxProps,
-  useDataViz,
+  useIndicator,
 } from '@wprdc-connections/viz';
 import { ConnectedSearchBox } from '@wprdc-components/search-box';
 import { useGeography } from '@wprdc-connections/geo';
@@ -17,24 +17,24 @@ import { serializeParams } from '@wprdc-connections/api';
 import { GeogBrief } from '@wprdc-types/geo';
 import { LoadingMessage } from '@wprdc-components/loading-message';
 import { ErrorMessage } from '@wprdc-components/error-message';
-import { DataVizID } from '@wprdc-types/viz';
-import { DataViz } from '@wprdc-widgets/data-viz';
+import { IndicatorID } from '@wprdc-types/viz';
+import { Indicator } from '@wprdc-widgets/data-viz';
 
-export default function DataVizPageView({ embed }: { embed?: boolean }) {
+export default function IndicatorPageView({ embed }: { embed?: boolean }) {
   const [slug, setSlug] = useState<string>();
-  const [geogSlug, setGeogSlug] =
-    useState<string | undefined>(DEFAULT_GEOG_SLUG);
+  const [geogSlug, setGeogSlug] = useState<string | undefined>(
+    DEFAULT_GEOG_SLUG,
+  );
 
   const router = useRouter();
 
   const base_path = embed ? 'embed' : 'explore';
 
   const { geog } = useGeography(geogSlug);
-  const {
-    dataViz,
-    isLoading: dvLoading,
-    error: dvError,
-  } = useDataViz(slug, geogSlug);
+  const { indicator, isLoading: dvLoading, error: dvError } = useIndicator(
+    slug,
+    geogSlug,
+  );
 
   // handle query params
   useEffect(() => {
@@ -64,7 +64,7 @@ export default function DataVizPageView({ embed }: { embed?: boolean }) {
     );
   }
 
-  function handleDataVizSelection(d: DataVizID) {
+  function handleIndicatorSelection(d: IndicatorID) {
     const { slug: _, ...params } = router.query;
     router.push(`/${base_path}/data-viz/${d.slug}/${serializeParams(params)}`);
   }
@@ -72,7 +72,7 @@ export default function DataVizPageView({ embed }: { embed?: boolean }) {
   // determine the content to display in the main section
   const mainContent = useMemo(() => {
     // landing page requested `/`
-    if (!dataViz && !dvLoading && !dvError) return <DataVizLandingPage />;
+    if (!indicator && !dvLoading && !dvError) return <IndicatorLandingPage />;
     // loading
     if (!!dvLoading)
       return (
@@ -81,11 +81,11 @@ export default function DataVizPageView({ embed }: { embed?: boolean }) {
         </div>
       );
     // data viz requested
-    if (!!dataViz)
+    if (!!indicator)
       return (
-        <DataViz
-          variant={DataVizVariant.Details}
-          dataViz={dataViz}
+        <Indicator
+          variant={IndicatorVariant.Details}
+          indicator={indicator}
           showGeog={!embed}
           onGeogSelection={handleGeogSelection}
           geog={geog}
@@ -97,7 +97,7 @@ export default function DataVizPageView({ embed }: { embed?: boolean }) {
         <ErrorMessage title="Error" message={dvError || 'Unknown error'} />
       </div>
     );
-  }, [slug, dataViz, dvError, dvLoading, geog, embed]);
+  }, [slug, indicator, dvError, dvLoading, geog, embed]);
 
   return (
     <div className={embed ? styles.embedWrapper : styles.wrapper}>
@@ -105,10 +105,10 @@ export default function DataVizPageView({ embed }: { embed?: boolean }) {
         <div className={styles.searchSection}>
           <ConnectedSearchBox
             label="Search for another Data Viz"
-            connection={dataVizConnection}
+            connection={indicatorConnection}
             listBoxProps={defaultVizListBoxProps}
-            onSelection={handleDataVizSelection}
-            inputValue={dataViz && dataViz.name}
+            onSelection={handleIndicatorSelection}
+            inputValue={indicator && indicator.name}
             selectedKey={slug}
           />
           <div className={styles.geogSelection}>

@@ -3,32 +3,35 @@ import { useRouter } from 'next/router';
 
 import styles from '../../../styles/Compare.module.css';
 import { useGeography } from '@wprdc-connections/geo';
-import { dataVizConnection, defaultVizListBoxProps, useDataViz } from '@wprdc-connections/viz';
+import {
+  topicConnection,
+  defaultTopicListBoxProps,
+  useTopic,
+} from '@wprdc-connections/profiles';
 import { GeogBrief } from '@wprdc-types/geo';
 import { serializeParams } from '@wprdc-connections/api';
-import { DataVizID } from '@wprdc-types/viz';
 import { ConnectedSearchBox } from '@wprdc-components/search-box';
 import { GeographyPicker } from '@wprdc-widgets/geography-picker';
-import { DataVizVariant } from '@wprdc-types/data-viz';
-import { DataViz } from '@wprdc-widgets/data-viz';
+import { TopicView } from '@wprdc-widgets/topic-view';
+import { TopicBrief } from '@wprdc-types/profiles';
 
-export default function IndicatorComparisonPage() {
-  const [dataVizSlug, setDataVizSlug] = useState<string>();
+export default function TopicComparisonPage() {
+  const [topicSlug, setTopicSlug] = useState<string>();
   const [geogSlugA, setGeogSlugA] = useState<string>();
   const [geogSlugB, setGeogSlugB] = useState<string>();
 
   const router = useRouter();
 
-  const { geog: geogA } = useGeography(geogSlugA);
-  const { geog: geogB } = useGeography(geogSlugB);
-  const { dataViz } = useDataViz(dataVizSlug);
+  const { data: geogA } = useGeography(geogSlugA);
+  const { data: geogB } = useGeography(geogSlugB);
+  const { data: topic } = useTopic(topicSlug);
 
   useEffect(() => {
     if (router.query) {
       const { g1, g2, d } = router.query;
       if (typeof g1 === 'string') setGeogSlugA(g1);
       if (typeof g2 === 'string') setGeogSlugB(g2);
-      if (typeof d === 'string') setDataVizSlug(d);
+      if (typeof d === 'string') setTopicSlug(d);
     }
   }, [router.query]);
 
@@ -40,19 +43,21 @@ export default function IndicatorComparisonPage() {
     router.push(`${path}/${serializeParams(newParams)}`);
   };
 
-  function handleDataVizSelection(dv: DataVizID) {
+  function handleTopicSelection(topic: TopicBrief) {
     const path = router.asPath.split('?')[0];
-    router.push(`${path}/${serializeParams({ ...router.query, d: dv.slug })}`);
+    router.push(
+      `${path}/${serializeParams({ ...router.query, d: topic.slug })}`,
+    );
   }
 
   return (
     <div className={styles.wrapper}>
-      <div className={styles.indicatorSection}>
+      <div className={styles.topicSection}>
         <h1 className={styles.cta}>Pick an Data Viz to compare: </h1>
         <ConnectedSearchBox
-          connection={dataVizConnection}
-          listBoxProps={defaultVizListBoxProps}
-          onSelection={handleDataVizSelection}
+          connection={topicConnection}
+          listBoxProps={defaultTopicListBoxProps}
+          onSelection={handleTopicSelection}
         />
       </div>
       <div className={styles.dashboard}>
@@ -65,11 +70,7 @@ export default function IndicatorComparisonPage() {
             <h2>{geogA ? geogA.title : 'no geography selected'}</h2>
           </div>
           <div className={styles.indSection}>
-            <DataViz
-              variant={DataVizVariant.Details}
-              dataViz={dataViz}
-              geog={geogA}
-            />
+            <TopicView topic={topic} geog={geogA} />
           </div>
         </div>
         <div className={styles.dashboardSection}>
@@ -81,11 +82,7 @@ export default function IndicatorComparisonPage() {
             <h2>{geogB ? geogB.title : 'no geography selected'}</h2>
           </div>
           <div className={styles.indSection}>
-            <DataViz
-              variant={DataVizVariant.Details}
-              dataViz={dataViz}
-              geog={geogB}
-            />
+            <TopicView topic={topic} geog={geogB} />
           </div>
         </div>
       </div>

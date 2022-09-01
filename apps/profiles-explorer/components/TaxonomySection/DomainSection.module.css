@@ -1,0 +1,13 @@
+.wrapper {
+  @apply lg:h-auto;
+}
+
+.description {
+  @apply mt-0.5 mb-2;
+  @apply py-2;
+}
+
+.wrapper h2 {
+  @apply font-bold;
+  @apply text-3xl;
+}

@@ -17,12 +17,11 @@ import { StatelessListBox } from '@wprdc-components/list-box';
 
 import { SelectProps } from '@wprdc-types/select';
 
-// todo: get icons
 import { HiSelector } from 'react-icons/hi';
 import { AriaListBoxOptions } from '@react-aria/listbox';
 
 export function Select<T extends object, O extends object = {}>(
-  props: SelectProps<T, O>
+  props: SelectProps<T, O>,
 ) {
   // Create state based on the incoming props
   const { onSelection, listBoxProps } = props;
@@ -37,20 +36,19 @@ export function Select<T extends object, O extends object = {}>(
   const listBoxRef = React.useRef<HTMLUListElement>(null);
 
   const onSelectionChange = props.onSelectionChange || selectionShim;
-  let state = useSelectState({ ...props, onSelectionChange });
+  const state = useSelectState({ ...props, onSelectionChange });
 
   // Get props for child elements from useSelect
   let ref = React.useRef(null);
   let { labelProps, triggerProps, valueProps, menuProps } = useSelect(
     props,
     state,
-    ref
+    ref,
   );
 
   // Get props for the button based on the trigger props from useSelect
   let { buttonProps } = useButton(triggerProps, ref);
   let { focusProps, isFocusVisible } = useFocusRing();
-
   return (
     <div className={styles.container}>
       {!!props.label && (
@@ -74,7 +72,7 @@ export function Select<T extends object, O extends object = {}>(
         <span
           className={classnames(
             styles.value,
-            state.selectedItem ? styles.selected : styles.placeholder
+            state.selectedItem ? styles.selected : styles.placeholder,
           )}
           {...valueProps}
         >
@@ -90,8 +88,9 @@ export function Select<T extends object, O extends object = {}>(
           />
         </span>
       </button>
+
       {state.isOpen && (
-        <Popover isOpen={state.isOpen} onClose={state.close}>
+        <Popover isOpen={state.isOpen} onClose={state.close} shouldCloseOnBlur>
           <div className={styles.popoverContent}>
             <StatelessListBox<T, O>
               listBoxRef={listBoxRef}

@@ -10,6 +10,7 @@ export interface ProviderAction {
 export interface ProviderProps extends ProviderState {
   usingSSR?: boolean;
   reducer?: Reducer<ProviderState, ProviderAction>;
+  children?: React.ReactNode;
 }
 
 export interface ProviderState {

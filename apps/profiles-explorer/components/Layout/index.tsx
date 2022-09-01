@@ -1,12 +1,14 @@
-import { PropsWithChildren } from 'react';
+import * as React from 'react';
+
 import DefaultFooter from '../Footer';
 import DefaultNavbar from '../Navbar';
 
 import styles from './Layout.module.css';
 
-export interface LayoutProps extends PropsWithChildren<{}> {
+export interface LayoutProps {
   Navbar?: React.FC<any>;
   Footer?: React.FC<any>;
+  children?: React.ReactNode | typeof React.Children;
 }
 
 export default function Layout({
@@ -17,7 +19,7 @@ export default function Layout({
   return (
     <div className={styles.wrapper}>
       <Navbar />
-      <main className={styles.main}>{children}</main>
+      <main className={styles.main}>{children as React.ReactNode}</main>
       <Footer />
     </div>
   );

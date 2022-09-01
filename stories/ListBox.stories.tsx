@@ -26,8 +26,8 @@ export const Default = () => (
 );
 
 export const Dense = () => (
-  <div className="w-h">
-    <ListBox selectionMode="multiple" dense>
+  <div style={{ width: '240px', border: '1px solid black', padding: '6px' }}>
+    <ListBox label="Dense listbox example" selectionMode="single" dense>
       <Section title="section">
         <Item>A thing</Item>
         <Item>Another thing</Item>

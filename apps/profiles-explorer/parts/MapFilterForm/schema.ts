@@ -64,6 +64,14 @@ export const schema: Schema = {
       { id: 'multiple', label: 'Multiple Sources' },
     ],
   },
+  status: {
+    label: 'Status',
+    items: [
+      { id: '', label: '---' },
+      { id: 'closed', label: 'Closed' },
+      { id: 'unknown', label: 'Unknown' },
+    ],
+  },
 };
 
 export const initValues: Record<string, string | null> = {
@@ -72,4 +80,5 @@ export const initValues: Record<string, string | null> = {
   'reac-score': null,
   'last-inspection': null,
   'funding-category': null,
+  status: null,
 };

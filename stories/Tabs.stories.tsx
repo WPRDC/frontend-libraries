@@ -1,17 +1,18 @@
 import * as React from 'react';
 import { Story } from '@storybook/react';
 
-import { Tabs } from '../packages/@wprdc-components/tabs';
+import { Tabs, NavTabs } from '../packages/@wprdc-components/tabs';
 import { TabsProps } from '../packages/@wprdc-types/tabs';
 import { Item } from '../packages/@wprdc-components/util';
 import { Resource } from '../packages/@wprdc-types/shared';
+import { useTaxonomy } from '@wprdc-connections/profiles';
 
 export default {
   title: 'Components/Tabs',
   component: Tabs,
 };
 
-const Template: Story<TabsProps<Resource>> = (args) => <Tabs {...args} />;
+const Template: Story<TabsProps<Resource>> = args => <Tabs {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
@@ -39,4 +40,18 @@ Primary.args = {
       Spaces tremble with life at the bare homeworld.
     </Item>,
   ],
+};
+
+export const Nav = () => {
+  const { taxonomy } = useTaxonomy('affordable-housing');
+  const selectedDomain = 'housing-market';
+  const disabledKeys = new Set(['fiscal']);
+  if (!taxonomy) return null;
+  return (
+    <NavTabs
+      items={taxonomy.domains}
+      selectedKey={selectedDomain}
+      disabledKeys={disabledKeys}
+    />
+  );
 };

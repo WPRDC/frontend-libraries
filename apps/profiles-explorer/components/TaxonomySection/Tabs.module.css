@@ -1,0 +1,72 @@
+.wrapper {
+  @apply flex flex-col w-full h-full;
+}
+
+.tabSection {
+  @apply flex flex-row;
+  @apply border-b border-black;
+}
+
+.tabList {
+  @apply flex flex-grow overflow-x-hidden;
+  @apply pt-1;
+}
+
+.tab {
+  @apply px-1.5 py-1.5;
+  @apply text-sm font-medium whitespace-nowrap text-center font-mono uppercase;
+  @apply cursor-pointer;
+  @apply border-2 border-transparent;
+  @apply outline-none focus:outline-none focus-visible:outline-none;
+  @apply focus-visible:border-primary-400 focus-visible:border-primary-400;
+  @apply hover:border-2 hover:border-primary-400 hover:bg-slate-50;
+}
+
+.tab::before {
+  content: attr(title);
+  @apply font-bold;
+  @apply h-0 block overflow-hidden;
+}
+
+.tabWrapper {
+  @apply ml-3 first:ml-1;
+  @apply pb-0.5;
+}
+
+.tab.selected {
+  @apply font-bold;
+}
+
+.tabWrapper.selected {
+  @apply border-b-4 border-b-primary-400;
+}
+
+.disabled {
+  @apply opacity-50;
+  @apply hover:border-transparent;
+  @apply cursor-not-allowed;
+}
+
+.scrollButton.disabledButton {
+  @apply text-gray-300 hover:text-gray-300 cursor-default;
+}
+
+.tabPanel {
+  @apply flex-grow overflow-y-auto;
+}
+
+.scrollButton {
+  @apply px-1;
+  @apply pb-1;
+  @apply hover:text-cyan-500;
+}
+
+/* to override the default link styles (see main.css) */
+.anchorFix {
+  @apply no-underline block hover:text-black;
+}
+
+.navWrapper {
+  @apply flex flex-grow overflow-x-hidden;
+  @apply block;
+}

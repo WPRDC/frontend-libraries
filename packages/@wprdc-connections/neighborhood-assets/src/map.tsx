@@ -6,96 +6,76 @@ import * as React from 'react';
 
 import * as chroma from 'chroma-js';
 
-import { Layer, Source, LayerProps } from 'react-map-gl';
+import { Layer, LayerProps, Source } from 'react-map-gl';
 
-import {
-  Expression,
-  ExpressionName,
-  CategoricalLegendItemProps,
-} from '@wprdc-types/map';
+import { CategoricalLegendItemProps, Expression, ExpressionName } from '@wprdc-types/map';
 
-import {
-  AssetMapProperties,
-  AssetType,
-} from '@wprdc-types/neighborhood-assets';
+import { AssetMapProperties, AssetType } from '@wprdc-types/neighborhood-assets';
 import { MapPluginConnection } from '@wprdc-types/connections';
 import { ColorScheme, ProjectKey } from '@wprdc-types/shared';
 
-import { fetchCartoVectorSource } from '@wprdc-connections/util';
+import { fetchCartoVectorSource, useMapPlugin } from '@wprdc-connections/util';
 
-import { LegendSection, LegendItem } from '@wprdc-widgets/map';
-import { CheckboxGroup, Checkbox } from '@wprdc-components/checkbox-group';
+import { LegendItem, LegendSection } from '@wprdc-components/map';
+import { Checkbox, CheckboxGroup } from '@wprdc-components/checkbox-group';
 
-import {
-  ASSETS_LAYER_ID,
-  ASSETS_SOURCE_ID,
-  ASSETS_CARTO_SQL,
-} from './settings';
-import { useMapPlugin } from '@wprdc-connections/util';
+import { ASSETS_CARTO_SQL, ASSETS_LAYER_ID, ASSETS_SOURCE_ID } from './settings';
 
-export const assetMapConnection: MapPluginConnection<
-  AssetType,
-  AssetMapProperties
-> = {
+export const assetMapConnection: MapPluginConnection<AssetType,
+  AssetMapProperties> = {
   name: ProjectKey.NeighborhoodAssets,
   use: useMapPlugin,
   getSources: (_, __, setSources) => {
     fetchCartoVectorSource(ASSETS_SOURCE_ID, ASSETS_CARTO_SQL).then(
-      (source) => setSources([source]),
-      (err) => console.error('CARTO', err)
+      source => setSources([source]),
+      err => console.error('CARTO', err),
     );
   },
   getLayers: (items, selected, setLayers, options) => {
     const { colorScheme } = options || {};
     const categories =
-      selected === 'all'
-        ? items.map((item) => item.name)
-        : Array.from(selected);
+      selected === 'all' ? items.map(item => item.name) : Array.from(selected);
     setLayers([makeAssetLayer(categories, colorScheme)]);
   },
   getLegendItems: (items, selected, setLegendItems, options) => {
     const selectedTypes =
-      selected === 'all'
-        ? items.map((item) => item.name)
-        : Array.from(selected);
+      selected === 'all' ? items.map(item => item.name) : Array.from(selected);
     const { colorScheme } = options || {};
     const legendItems = makeAssetLegendItems(items, selectedTypes, colorScheme);
     setLegendItems(legendItems);
   },
   getInteractiveLayerIDs: (items, selected) => {
     const categories =
-      selected === 'all'
-        ? items.map((item) => item.name)
-        : Array.from(selected);
+      selected === 'all' ? items.map(item => item.name) : Array.from(selected);
     // for now asset layer just has one id
     if (!!categories.length) return [ASSETS_LAYER_ID];
     return [];
   },
-  parseMapEvent: (event) => {
+  parseMapEvent: event => {
     if (!!event && !!event.features) {
       const features = event.features.filter(
-        (feature) =>
+        feature =>
           !!feature &&
           !!feature.source &&
           !!feature.properties &&
-          feature.source === ASSETS_SOURCE_ID
+          feature.source === ASSETS_SOURCE_ID,
       );
       return features.map(({ properties }) => properties as AssetMapProperties);
     }
     return [];
   },
-  makeFilter: (item) => {
-    if (Array.isArray(item)) return ['in', 'geoid', item.map((i) => i.id)];
+  makeFilter: item => {
+    if (Array.isArray(item)) return ['in', 'geoid', item.map(i => i.id)];
     return ['==', 'id', item.id];
   },
   makeLegendSection: (setLegendSection, items) => {
     if (!!items && !!items.length)
       setLegendSection(
-        <LegendSection title="Neighborhood Assets">
-          {items.map((item) => (
+        <LegendSection title='Neighborhood Assets'>
+          {items.map(item => (
             <LegendItem {...item} />
           ))}
-        </LegendSection>
+        </LegendSection>,
       );
     else setLegendSection();
   },
@@ -104,15 +84,16 @@ export const assetMapConnection: MapPluginConnection<
       setMapSection(
         <>
           <Source {...sources[0]} key={sources[0].id} />
+          {/* @ts-ignore todo: WTF is up with layer types */}
           <Layer {...layers[0]} key={layers[0].id} />
-        </>
+        </>,
       );
     }
   },
   getSelectedItems(items, selection) {
     return selection === 'all'
       ? items
-      : items.filter((item) => selection.has(item.name));
+      : items.filter(item => selection.has(item.name));
   },
   makeLayerPanelSection(setLayerPanelSection, items, _, handleChange) {
     function _handleChange(val: string[]) {
@@ -121,13 +102,13 @@ export const assetMapConnection: MapPluginConnection<
 
     if (!!items && !!items.length)
       setLayerPanelSection(
-        <div className="pt-2">
+        <div className='pt-2'>
           <CheckboxGroup
-            label="Select neighborhood assets to display"
-            aria-label="select neighborhood asset layers to display"
+            label='Select neighborhood assets to display'
+            aria-label='select neighborhood asset layers to display'
             onChange={_handleChange}
           >
-            {items.map((item) => (
+            {items.map(item => (
               <Checkbox
                 key={`assets/${item.name}`}
                 value={`assets/${item.name}`}
@@ -136,12 +117,12 @@ export const assetMapConnection: MapPluginConnection<
               </Checkbox>
             ))}
           </CheckboxGroup>
-        </div>
+        </div>,
       );
   },
-  makeHoverContent: (hoveredItems) => {
+  makeHoverContent: hoveredItems => {
     if (!!hoveredItems && !!hoveredItems.length)
-      return <div className="text-xs">{hoveredItems[0].name}</div>;
+      return <div className='text-xs'>{hoveredItems[0].name}</div>;
     return null;
   },
   makeClickContent: () => {
@@ -152,17 +133,17 @@ export const assetMapConnection: MapPluginConnection<
 export const makeAssetLegendItems = (
   availableAssetTypes: AssetType[],
   selectedAssetTypes: React.Key[],
-  colorScheme: ColorScheme = ColorScheme.Light
+  colorScheme: ColorScheme = ColorScheme.Light,
 ) => {
   return availableAssetTypes
-    .filter((at) => selectedAssetTypes.includes(at.name))
-    .map((at) => ({
+    .filter(at => selectedAssetTypes.includes(at.name))
+    .map(at => ({
       variant: 'categorical',
       key: at.name,
       label: at.title,
       marker: categoryColors(
-        selectedAssetTypes.map((t) => t.toString()),
-        colorScheme
+        selectedAssetTypes.map(t => t.toString()),
+        colorScheme,
       )[at.name],
     })) as CategoricalLegendItemProps[];
 };
@@ -170,7 +151,7 @@ export const makeAssetLegendItems = (
 export const makeAssetLayer = (
   categories: React.Key[],
   colorScheme: ColorScheme = ColorScheme.Light,
-  field: string = 'asset_type'
+  field: string = 'asset_type',
 ): LayerProps => ({
   id: ASSETS_LAYER_ID,
   source: ASSETS_SOURCE_ID,
@@ -188,9 +169,9 @@ export const makeAssetLayer = (
       12,
     ],
     'circle-color': colorExpression(
-      categories.map((c) => `${c}`),
+      categories.map(c => `${c}`),
       colorScheme,
-      field
+      field,
     ),
     'circle-stroke-width': 1,
     'circle-stroke-color': 'rgb(55,65,81)',
@@ -214,11 +195,11 @@ export const makeAssetLayer = (
 const colorExpression = (
   categories: string[],
   colorScheme: ColorScheme = ColorScheme.Light,
-  field: string = 'asset_type'
+  field: string = 'asset_type',
 ): Expression | string => {
   const colors = Object.entries(categoryColors(categories, colorScheme)).reduce(
     (expression, [cat, color]) => [...expression, [cat], color] as string[],
-    [] as string[]
+    [] as string[],
   );
 
   if (!colors || !colors.length) {
@@ -237,7 +218,7 @@ const colorExpression = (
 
 const categoryColors = (
   categories: string[],
-  colorScheme: ColorScheme = ColorScheme.Light
+  colorScheme: ColorScheme = ColorScheme.Light,
 ) =>
   categories.reduce(
     (record, category, index) => ({
@@ -247,6 +228,6 @@ const categoryColors = (
           ? chroma.brewer.Set1[index]
           : chroma.brewer.Set1[index],
     }),
-    {} as Record<string, string>
+    {} as Record<string, string>,
   );
 2;

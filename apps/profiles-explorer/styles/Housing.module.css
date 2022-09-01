@@ -28,7 +28,7 @@
 
 .description {
   @apply pt-6;
-  @apply w-2/3;
+  @apply pr-4;
 }
 
 .mapSection {
@@ -76,7 +76,7 @@
   @apply underline text-blue-800;
 }
 
-.indicatorSection {
+.topicSection {
   @apply py-3;
 }
 

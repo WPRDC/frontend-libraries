@@ -1,30 +1,30 @@
 .vertical {
-  @apply w-0 inline mx-1 my-0.5;
+    @apply w-0 inline mx-1 my-0.5;
 }
 
 .horizontal {
 }
 
 .vertical-thin {
-  @apply border-gray-700 border-r;
+    @apply border-black border-r;
 }
 
 .vertical-thick {
-  @apply border-gray-900 border-r-2;
+    @apply border-black border-r-2;
 }
 
 .vertical-thicker {
-  @apply border-gray-700 border-r-4;
+    @apply border-black border-r-4;
 }
 
 .horizontal-thin {
-  @apply border-gray-300 border-t;
+    @apply border-black border-t;
 }
 
 .horizontal-thick {
-  @apply border-gray-900 border-t-2;
+    @apply border-black border-t-2;
 }
 
 .horizontal-thicker {
-  @apply border-gray-700 border-t-4;
+    @apply border-black border-t-4;
 }

@@ -1,40 +1,40 @@
 .container {
-  @apply fixed z-50 top-0 left-0 bottom-0 right-0 bg-gray-800
+    @apply fixed z-50 top-0 left-0 bottom-0 right-0 bg-gray-800
     bg-opacity-30 flex items-center justify-center;
 }
 
 .modal {
-  @apply bg-background p-2.5 rounded shadow-lg;
+    @apply bg-background p-2.5 rounded shadow-lg;
 }
 
 .header {
-  @apply mb-2.5;
+    @apply mb-2.5;
 }
 
 .title {
-  @apply text-lg mt-0;
+    @apply text-lg mt-0;
 }
 
 .size-S {
-  @apply w-96;
+    @apply w-96;
 }
 
 .size-M {
-  width: 32rem;
+    width: 32rem;
 }
 
 .size-L {
-  width: 48rem;
+    width: 48rem;
 }
 
 .size-XL {
-  @apply w-11/12;
+    @apply w-11/12;
 }
 
 .size-Full {
-  @apply w-screen h-screen;
+    @apply w-screen h-screen;
 }
 
 .closeButton {
-  @apply bg-none;
+    @apply bg-none;
 }

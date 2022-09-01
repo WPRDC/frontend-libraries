@@ -17,7 +17,7 @@ import { useTabListState } from '@react-stately/tabs';
 
 import { TabPanelProps, TabProps, TabsProps } from '@wprdc-types/tabs';
 import { Resource } from '@wprdc-types/shared';
-import { useWindowSize } from '@wprdc-connections/util';
+import { useWindowSize } from '@wprdc-components/util';
 
 import { RiArrowLeftSLine, RiArrowRightSLine } from 'react-icons/ri';
 
@@ -104,7 +104,7 @@ export function Tabs<T extends Resource>(props: TabsProps<T>) {
           </button>
         )}
         <div {...tabListProps} ref={ref} className={styles.tabList}>
-          {Array.from(state.collection).map((item) => (
+          {Array.from(state.collection).map(item => (
             <Tab<T> key={item.key} item={item} state={state} />
           ))}
         </div>
@@ -155,9 +155,9 @@ export function Tab<T extends Resource>({ item, state }: TabProps<T>) {
 }
 
 export function TabPanel<T extends Resource>({
-  state,
-  ...props
-}: TabPanelProps<T>) {
+                                               state,
+                                               ...props
+                                             }: TabPanelProps<T>) {
   const ref = React.useRef<HTMLDivElement>(null);
   const { tabPanelProps } = useTabPanel(props, state, ref);
   return (

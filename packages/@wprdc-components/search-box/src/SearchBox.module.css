@@ -1,53 +1,60 @@
 .container {
-  @apply inline-flex flex-col relative w-full;
+    @apply inline-flex flex-col relative w-full;
+    @apply bg-background;
 }
 
 .label {
-  @apply block text-xs font-semibold text-gray-500 text-left cursor-default;
+    @apply block text-left cursor-default;
+    @apply text-xs font-mono uppercase font-semibold text-gray-500;
 }
 
 .box {
-  @apply relative flex-row flex;
+    @apply relative flex-row flex;
 }
 
 .placeholder {
-  @apply text-gray-500;
+    @apply text-gray-500;
 }
 
 .focusVis {
-  @apply border-pink-600;
 }
 
 .value {
-  @apply text-sm;
+    @apply text-sm;
 }
 
 .iconDiv {
-  @apply absolute inset-y-0 left-0 flex items-center pl-2;
+    @apply absolute inset-y-0 left-0 flex items-center pl-2;
 }
 
 .icon {
-  @apply w-5 h-5 text-gray-500;
+    @apply w-5 h-5 text-gray-500;
 }
 
 .realInput {
-  @apply block;
-  @apply placeholder:italic placeholder:text-gray-400;
-  @apply bg-white w-full border border-gray-300;
-  @apply rounded-md py-2 pl-9 pr-3 shadow-sm  sm:text-sm;
-  @apply focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1;
+    @apply block;
+    @apply pl-9 pr-2 py-1;
+    @apply text-sm;
+    @apply placeholder:italic placeholder:text-gray-400;
+
+    @apply w-full border border-black outline-none;
+
+    @apply transition duration-150 ease-in-out;
+    @apply hover:border-focused-600;
+
+    @apply focus:ring-focused-400 focus:ring-1 focus:border-focused-400;
+    @apply focus-visible:outline-none focus:outline-none;
 }
 
 .clearButton {
-  @apply absolute inset-y-0 right-2 flex items-center pl-2;
-  @apply cursor-pointer hover:text-gray-600;
+    @apply absolute inset-y-0 right-2 flex items-center pl-2;
+    @apply cursor-pointer hover:text-gray-600;
 }
 
 .clearX {
-  @apply w-5 h-5;
+    @apply w-5 h-5;
 }
 
-.popoverContent {
-  @apply bg-background;
-  @apply border border-gray-300 rounded-md;
+.popoverContents {
+    @apply bg-background border border-black;
 }

@@ -1,7 +1,7 @@
 .title {
-  @apply text-base font-bold;
+    @apply text-base font-bold;
 }
 
 .details {
-  @apply text-sm;
+    @apply text-sm;
 }

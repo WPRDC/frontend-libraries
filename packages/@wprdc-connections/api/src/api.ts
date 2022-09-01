@@ -6,12 +6,7 @@
  * create product-specific functional APIs.
  *
  */
-import {
-  ResponsePackage,
-  Method,
-  Endpoint,
-  APIOptions,
-} from '@wprdc-types/api';
+import { APIOptions, Endpoint, Method } from '@wprdc-types/api';
 
 /**
  * Default headers to apply to all requests
@@ -40,17 +35,18 @@ class API<E extends Endpoint> {
    * @param {Object} [options.fetchInit] - catchall for other fetch init options
    * @returns {Promise<Response>}
    */
-  callEndpoint(endpoint: E, method: Method, options?: APIOptions) {
+  callEndpoint<T>(endpoint: E, method: Method, options?: APIOptions<T>) {
     const { id, params, headers, fetchInit, credentials } = options || {
       id: undefined,
       params: undefined,
       body: undefined,
       headers: {},
       fetchInit: {},
+      credentials: undefined,
     };
 
     const idPath = ['object', 'undefined'].includes(typeof id) ? '' : `${id}/`;
-    const urlParams = serializeParams(params);
+    const urlParams = serializeParams(stripUndefineds(params));
     const url = `${this.host}/${endpoint}/${idPath}${urlParams}`;
 
     return fetch(url, {
@@ -79,21 +75,16 @@ class API<E extends Endpoint> {
   async callAndProcessEndpoint<T = any>(
     endpoint: E,
     method: Method,
-    options?: APIOptions
-  ): Promise<ResponsePackage<T>> {
-    try {
-      const response = await this.callEndpoint(endpoint, method, options);
-      if (response.ok) {
-        const data = (await response.json()) as T;
-        return { data };
-      } else {
-        const message = await response.text();
-        console.warn(response.status, message);
-        return { error: message };
-      }
-    } catch (err) {
-      console.warn(err);
-      return { error: err as string };
+    options?: APIOptions<T>,
+  ): Promise<T> {
+    const response = await this.callEndpoint(endpoint, method, options);
+    if (response.ok) {
+      const data = (await response.json()) as T;
+      if (options?.validator) options.validator(data);
+      return Promise.resolve(data);
+    } else {
+      const message = await response.text();
+      throw Error(message);
     }
   }
 
@@ -101,21 +92,15 @@ class API<E extends Endpoint> {
   async callAndProcessListEndpoint<T = any>(
     endpoint: E,
     method: Method,
-    options?: APIOptions
-  ): Promise<ResponsePackage<T[]>> {
-    try {
-      const response = await this.callEndpoint(endpoint, method, options);
-      if (response.ok) {
-        const data = (await response.json()) as { results: T[] };
-        return { data: data.results };
-      } else {
-        const message = await response.text();
-        console.warn(response.status, message);
-        return { error: message };
-      }
-    } catch (err) {
-      console.warn(err);
-      return { error: err as string };
+    options?: APIOptions<T>,
+  ): Promise<T[]> {
+    const response = await this.callEndpoint(endpoint, method, options);
+    if (response.ok) {
+      const data = (await response.json()) as { results: T[] };
+      return Promise.resolve(data.results);
+    } else {
+      const message = await response.text();
+      throw Error(message);
     }
   }
 }
@@ -132,11 +117,18 @@ export function serializeParams(params?: object) {
   return `?${Object.entries(params)
     .map(
       ([key, value]) =>
-        `${encodeURIComponent(key)}=${encodeURIComponent(value)}`
+        `${encodeURIComponent(key)}=${encodeURIComponent(value)}`,
     )
     .join('&')}`;
 }
 
 export function createAPI<E extends Endpoint>(host: string): API<E> {
   return new API<E>(host);
+}
+
+function stripUndefineds(params?: object) {
+  if (!params) return {};
+  return Object.fromEntries(
+    Object.entries(params).filter(([_, v]) => v != undefined),
+  );
 }

@@ -1,26 +1,29 @@
-.container {
+.wrapper {
 }
 
 .list {
-  @apply flex;
+    @apply font-mono uppercase text-xs;
+    @apply flex h-4;
 }
 
 .listItem {
-  @apply flex;
+    @apply flex;
 }
 
 .title {
-  @apply font-medium;
+    @apply font-medium;
 }
 
 .bigTitle {
-  @apply font-semibold text-2xl;
+    @apply font-semibold text-2xl;
+    @apply no-underline;
 }
 
 .link {
+    @apply hover:text-blue-600;
 }
 
 .divider {
-  @apply mx-1 font-bold text-gray-400;
-  @apply flex flex-col justify-center;
+    @apply mx-1.5 font-bold text-gray-400;
+    @apply flex flex-col justify-center;
 }

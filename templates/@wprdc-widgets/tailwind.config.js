@@ -9,7 +9,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['"Public Sans"', ...defaultTheme.fontFamily.sans],
+        sans: ['Helvetica', 'Arial', 'sans-serif'],
       },
       colors: {
         primary: colors.slate,

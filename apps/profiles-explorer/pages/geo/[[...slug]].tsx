@@ -6,7 +6,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/router';
 
 import styles from '../../styles/Geo.module.css';
-import { Map } from '@wprdc-widgets/map';
+import { Map } from '@wprdc-components/map';
 import { DEFAULT_GEOG_SLUG } from '../../settings';
 import { serializeParams } from '@wprdc-connections/api';
 import { LayerPanelVariant } from '@wprdc-types/map';
@@ -25,8 +25,8 @@ export default function GeogPage() {
   >({});
 
   const router = useRouter();
-  const { geogLevels } = useGeographyLevels();
-  const { geog } = useGeography(geogSlug);
+  const { data: geogLevels } = useGeographyLevels();
+  const { data: geog } = useGeography(geogSlug);
 
   function handleMenuItemChange(slug: string, options: GeogLevelOptions) {
     setGeogLevelOptions({ ...geogLevelOptions, [slug]: options });
@@ -53,7 +53,7 @@ export default function GeogPage() {
       <div className={styles.navSection}>
         <div className={styles.menuSection}>
           {!!geogLevels &&
-            geogLevels.map((geogLevel) => (
+            geogLevels.map(geogLevel => (
               <LayerMenuItem
                 key={geogLevel.slug}
                 geogLevel={geogLevel}

@@ -1,23 +1,32 @@
 .centeredTitle {
-  @apply font-bold;
+    @apply font-bold font-mono uppercase;
 }
 
 .centeredMessage {
-  @apply font-medium;
+    @apply font-medium;
 }
 
 .centeredContainer {
-  @apply text-center text-red-700 w-full;
+    @apply text-center w-full;
+    @apply bg-none text-red-600;
+    @apply border border-red-600;
+    @apply shadow-md shadow-red-700;
 }
 
 .inlineTitle {
-  @apply font-semibold;
+    @apply py-0.5 px-1;
+    @apply bg-none text-red-600;
+    @apply font-semibold font-mono uppercase;
 }
 
 .inlineMessage {
-  @apply font-medium;
+    @apply py-0.5 px-1 w-max;
+    @apply bg-none text-red-600;
+    @apply font-medium;
 }
 
 .inlineContainer {
-  @apply text-red-700 border-red-900 border rounded py-0.5 px-1;
+    @apply flex w-max;
+    @apply border border-red-600;
+    @apply shadow-md shadow-red-700;
 }
