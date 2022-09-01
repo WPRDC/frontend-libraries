@@ -1,4 +1,5 @@
-/*
+
+y/*
  * Asset Map Settings
  */
 export const ASSETS_SOURCE_ID = 'w__assets';
