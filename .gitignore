@@ -29,4 +29,4 @@ storybook-static
 # Apps developed with library but not part of monorepo
 apps/greenprint
 
-.pnp.*`
+.pnp.*
