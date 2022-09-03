@@ -6619,7 +6619,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/mapbox-gl@npm:*, @types/mapbox-gl@npm:^2.6.0, @types/mapbox-gl@npm:^2.6.4, @types/mapbox-gl@npm:^2.7.5":
+"@types/mapbox-gl@npm:^2.6.0, @types/mapbox-gl@npm:^2.6.4, @types/mapbox-gl@npm:^2.7.5":
   version: 2.7.5
   resolution: "@types/mapbox-gl@npm:2.7.5"
   dependencies:
@@ -6760,18 +6760,6 @@ __metadata:
   dependencies:
     "@types/react": ^17
   checksum: 23caf98aa03e968811560f92a2c8f451694253ebe16b670929b24eaf0e7fa62ba549abe9db0ac028a9d8a9086acd6ab9c6c773f163fa21224845edbc00ba6232
-  languageName: node
-  linkType: hard
-
-"@types/react-map-gl@npm:^6.1.3":
-  version: 6.1.3
-  resolution: "@types/react-map-gl@npm:6.1.3"
-  dependencies:
-    "@types/geojson": "*"
-    "@types/mapbox-gl": "*"
-    "@types/react": "*"
-    "@types/viewport-mercator-project": "*"
-  checksum: 8d3cc09e5c88f5fb2c53ba4e72de59cc26c5ac1932a06ea559741b8c7f24f479ee6dcfca3b1f024ae07e4e62051d1a9823cbcdfa45b0767294700029a846cac9
   languageName: node
   linkType: hard
 
@@ -6917,15 +6905,6 @@ __metadata:
   dependencies:
     vega: "*"
   checksum: 4399176be9dd87d7df72b426d29b7ee7f33550a9fcd5472f5d12f9b75446aaffd575715ee64416a984d8327a6a2ccca4d6b0a1827516f5d7804b190237fea637
-  languageName: node
-  linkType: hard
-
-"@types/viewport-mercator-project@npm:*":
-  version: 6.1.2
-  resolution: "@types/viewport-mercator-project@npm:6.1.2"
-  dependencies:
-    gl-matrix: ^3.2.0
-  checksum: 5d1c4666bb39c2eb16fa3c09a8ee58ee4deb9ddbb19d5bd3089c88ca5b57463b9672326443da21db6698192bbf502f1cc0eddfb33954ad1e4b273800950c62fd
   languageName: node
   linkType: hard
 
@@ -7941,7 +7920,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wprdc-components/map@^0.0.33, @wprdc-components/map@workspace:packages/@wprdc-components/map":
+"@wprdc-components/map@^0.0.35, @wprdc-components/map@workspace:packages/@wprdc-components/map":
   version: 0.0.0-use.local
   resolution: "@wprdc-components/map@workspace:packages/@wprdc-components/map"
   dependencies:
@@ -7952,7 +7931,7 @@ __metadata:
     "@types/react": ^18.0.18
     "@types/react-dom": ^18.0.6
     "@wprdc-components/checkbox-group": ^0.0.19
-    "@wprdc-components/provider": ^0.0.19
+    "@wprdc-components/provider": ^0.0.21
     "@wprdc-types/connections": ^0.0.25
     "@wprdc-types/geo": ^0.0.18
     "@wprdc-types/map": ^0.0.19
@@ -8127,7 +8106,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@wprdc-components/provider@^0.0.19, @wprdc-components/provider@workspace:packages/@wprdc-components/provider":
+"@wprdc-components/provider@^0.0.21, @wprdc-components/provider@workspace:packages/@wprdc-components/provider":
   version: 0.0.0-use.local
   resolution: "@wprdc-components/provider@workspace:packages/@wprdc-components/provider"
   dependencies:
@@ -8138,7 +8117,7 @@ __metadata:
     "@types/react": ^18.0.18
     "@types/react-dom": ^18.0.6
     "@wprdc-types/geo": ^0.0.18
-    "@wprdc-types/provider": ^0.0.18
+    "@wprdc-types/provider": ^0.0.19
     autoprefixer: ^10.4.8
     husky: ^8.0.1
     postcss: ^8.4.16
@@ -8146,7 +8125,6 @@ __metadata:
     postcss-loader: ^7.0.1
     react: 18.2.0
     react-dom: ^18.2.0
-    react-query: ^3.39.2
     rollup-plugin-postcss: ^4.0.2
     size-limit: ^8.0.1
     tailwindcss: ^3.1.8
@@ -8155,6 +8133,7 @@ __metadata:
     typescript: ^4.8.2
   peerDependencies:
     react: ">=18"
+    react-query: ^3.39.2
   languageName: unknown
   linkType: soft
 
@@ -8639,7 +8618,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wprdc-connections/geo@^0.0.47, @wprdc-connections/geo@workspace:packages/@wprdc-connections/geo":
+"@wprdc-connections/geo@^0.0.49, @wprdc-connections/geo@workspace:packages/@wprdc-connections/geo":
   version: 0.0.0-use.local
   resolution: "@wprdc-connections/geo@workspace:packages/@wprdc-connections/geo"
   dependencies:
@@ -8649,7 +8628,7 @@ __metadata:
     "@types/react": ^18.0.18
     "@types/react-dom": ^18.0.6
     "@wprdc-components/list-box": ^0.0.22
-    "@wprdc-components/map": ^0.0.33
+    "@wprdc-components/map": ^0.0.35
     "@wprdc-components/radio-group": ^0.0.17
     "@wprdc-components/util": ^0.0.15
     "@wprdc-connections/api": ^0.0.23
@@ -8670,7 +8649,6 @@ __metadata:
     postcss-loader: ^7.0.1
     react: 18.2.0
     react-dom: ^18.2.0
-    react-query: ^3.39.2
     rollup-plugin-postcss: ^4.0.2
     size-limit: ^8.0.1
     tailwindcss: ^3.1.8
@@ -8679,10 +8657,11 @@ __metadata:
     typescript: ^4.8.2
   peerDependencies:
     react: ">=18"
+    react-query: ^3.39.2
   languageName: unknown
   linkType: soft
 
-"@wprdc-connections/housecat@^0.0.45, @wprdc-connections/housecat@workspace:packages/@wprdc-connections/housecat":
+"@wprdc-connections/housecat@^0.0.47, @wprdc-connections/housecat@workspace:packages/@wprdc-connections/housecat":
   version: 0.0.0-use.local
   resolution: "@wprdc-connections/housecat@workspace:packages/@wprdc-connections/housecat"
   dependencies:
@@ -8691,7 +8670,7 @@ __metadata:
     "@types/react": ^18.0.18
     "@types/react-dom": ^18.0.6
     "@wprdc-components/list-box": ^0.0.22
-    "@wprdc-components/map": ^0.0.33
+    "@wprdc-components/map": ^0.0.35
     "@wprdc-components/util": ^0.0.15
     "@wprdc-connections/api": ^0.0.23
     "@wprdc-connections/util": ^0.0.38
@@ -8711,7 +8690,6 @@ __metadata:
     react: 18.2.0
     react-dom: ^18.2.0
     react-icons: ^4.4.0
-    react-query: ^3.39.2
     rollup-plugin-postcss: ^4.0.2
     size-limit: ^8.0.1
     tailwindcss: ^3.1.8
@@ -8720,6 +8698,7 @@ __metadata:
     typescript: ^4.8.2
   peerDependencies:
     react: ">=18"
+    react-query: ^3.39.2
   languageName: unknown
   linkType: soft
 
@@ -8747,7 +8726,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wprdc-connections/maps@^0.0.2, @wprdc-connections/maps@workspace:packages/@wprdc-connections/maps":
+"@wprdc-connections/maps@^0.0.4, @wprdc-connections/maps@workspace:packages/@wprdc-connections/maps":
   version: 0.0.0-use.local
   resolution: "@wprdc-connections/maps@workspace:packages/@wprdc-connections/maps"
   dependencies:
@@ -8755,7 +8734,7 @@ __metadata:
     "@size-limit/preset-small-lib": ^8.0.1
     "@types/react": ^18.0.18
     "@types/react-dom": ^18.0.6
-    "@wprdc-components/provider": ^0.0.19
+    "@wprdc-components/provider": ^0.0.21
     "@wprdc-connections/api": ^0.0.23
     "@wprdc-types/api": ^0.0.17
     "@wprdc-types/maps": ^0.0.2
@@ -8766,7 +8745,6 @@ __metadata:
     postcss-loader: ^7.0.1
     react: 18.2.0
     react-dom: ^18.2.0
-    react-query: ^3.39.2
     rollup-plugin-postcss: ^4.0.2
     size-limit: ^8.0.1
     tailwindcss: ^3.1.8
@@ -8775,6 +8753,7 @@ __metadata:
     typescript: ^4.8.2
   peerDependencies:
     react: ">=18"
+    react-query: ^3.39.2
   languageName: unknown
   linkType: soft
 
@@ -8787,9 +8766,8 @@ __metadata:
     "@types/chroma-js": ^2.1.4
     "@types/react": ^18.0.18
     "@types/react-dom": ^18.0.6
-    "@types/react-map-gl": ^6.1.3
     "@wprdc-components/checkbox-group": ^0.0.19
-    "@wprdc-components/map": ^0.0.33
+    "@wprdc-components/map": ^0.0.35
     "@wprdc-components/util": ^0.0.15
     "@wprdc-connections/api": ^0.0.23
     "@wprdc-connections/util": ^0.0.38
@@ -8808,7 +8786,6 @@ __metadata:
     react: 18.2.0
     react-dom: ^18.2.0
     react-map-gl: ^7.0.19
-    react-query: ^3.39.2
     rollup-plugin-postcss: ^4.0.2
     size-limit: ^8.0.1
     tailwindcss: ^3.1.8
@@ -8817,10 +8794,11 @@ __metadata:
     typescript: ^4.8.2
   peerDependencies:
     react: ">=18"
+    react-query: ^3.39.2
   languageName: unknown
   linkType: soft
 
-"@wprdc-connections/profiles@^0.0.40, @wprdc-connections/profiles@workspace:packages/@wprdc-connections/profiles":
+"@wprdc-connections/profiles@^0.0.41, @wprdc-connections/profiles@workspace:packages/@wprdc-connections/profiles":
   version: 0.0.0-use.local
   resolution: "@wprdc-connections/profiles@workspace:packages/@wprdc-connections/profiles"
   dependencies:
@@ -8846,7 +8824,6 @@ __metadata:
     react: 18.2.0
     react-dom: ^18.2.0
     react-icons: ^4.4.0
-    react-query: ^3.39.2
     rollup-plugin-postcss: ^4.0.2
     size-limit: ^8.0.1
     tailwindcss: ^3.1.8
@@ -8855,6 +8832,7 @@ __metadata:
     typescript: ^4.8.2
   peerDependencies:
     react: ">=18"
+    react-query: ^3.39.2
   languageName: unknown
   linkType: soft
 
@@ -8867,7 +8845,6 @@ __metadata:
     "@types/mapbox-gl": ^2.7.5
     "@types/react": ^18.0.18
     "@types/react-dom": ^18.0.6
-    "@types/react-map-gl": ^6.1.3
     "@wprdc-components/util": ^0.0.15
     "@wprdc-types/connections": ^0.0.25
     "@wprdc-types/geo": ^0.0.18
@@ -8883,6 +8860,7 @@ __metadata:
     postcss-loader: ^7.0.1
     react: 18.2.0
     react-dom: ^18.2.0
+    react-map-gl: ^7.0.19
     rollup-plugin-postcss: ^4.0.2
     size-limit: ^8.0.1
     tailwindcss: ^3.1.8
@@ -10074,7 +10052,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wprdc-types/provider@^0.0.18, @wprdc-types/provider@workspace:packages/@wprdc-types/provider":
+"@wprdc-types/provider@^0.0.19, @wprdc-types/provider@workspace:packages/@wprdc-types/provider":
   version: 0.0.0-use.local
   resolution: "@wprdc-types/provider@workspace:packages/@wprdc-types/provider"
   dependencies:
@@ -10636,7 +10614,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wprdc-viz/map@^0.0.13, @wprdc-viz/map@workspace:packages/@wprdc-viz/map":
+"@wprdc-viz/map@^0.0.15, @wprdc-viz/map@workspace:packages/@wprdc-viz/map":
   version: 0.0.0-use.local
   resolution: "@wprdc-viz/map@workspace:packages/@wprdc-viz/map"
   dependencies:
@@ -10644,8 +10622,8 @@ __metadata:
     "@size-limit/preset-small-lib": ^8.0.1
     "@types/react": ^18.0.18
     "@types/react-dom": ^18.0.6
-    "@wprdc-components/map": ^0.0.33
-    "@wprdc-components/provider": ^0.0.19
+    "@wprdc-components/map": ^0.0.35
+    "@wprdc-components/provider": ^0.0.21
     "@wprdc-connections/viz": ^0.0.33
     "@wprdc-types/connections": ^0.0.25
     "@wprdc-types/geo": ^0.0.18
@@ -10784,7 +10762,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wprdc-viz/vega@^0.0.14, @wprdc-viz/vega@workspace:packages/@wprdc-viz/vega":
+"@wprdc-viz/vega@^0.0.16, @wprdc-viz/vega@workspace:packages/@wprdc-viz/vega":
   version: 0.0.0-use.local
   resolution: "@wprdc-viz/vega@workspace:packages/@wprdc-viz/vega"
   dependencies:
@@ -10794,8 +10772,8 @@ __metadata:
     "@types/react-dom": ^18.0.6
     "@types/react-measure": ^2.0.8
     "@types/vega": ^3.2.0
-    "@wprdc-components/map": ^0.0.33
-    "@wprdc-components/provider": ^0.0.19
+    "@wprdc-components/map": ^0.0.35
+    "@wprdc-components/provider": ^0.0.21
     "@wprdc-types/geo": ^0.0.18
     "@wprdc-types/profiles": ^0.0.27
     "@wprdc-types/shared": ^0.0.16
@@ -10873,7 +10851,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wprdc-widgets/geography-picker@^0.0.47, @wprdc-widgets/geography-picker@workspace:packages/@wprdc-widgets/geography-picker":
+"@wprdc-widgets/geography-picker@^0.0.49, @wprdc-widgets/geography-picker@workspace:packages/@wprdc-widgets/geography-picker":
   version: 0.0.0-use.local
   resolution: "@wprdc-widgets/geography-picker@workspace:packages/@wprdc-widgets/geography-picker"
   dependencies:
@@ -10883,12 +10861,12 @@ __metadata:
     "@size-limit/preset-small-lib": ^8.0.1
     "@types/react": ^18.0.18
     "@types/react-dom": ^18.0.6
-    "@wprdc-components/map": ^0.0.33
+    "@wprdc-components/map": ^0.0.35
     "@wprdc-components/popover": ^0.0.16
     "@wprdc-components/search-box": ^0.0.22
     "@wprdc-components/select": ^0.0.24
     "@wprdc-components/util": ^0.0.15
-    "@wprdc-connections/geo": ^0.0.47
+    "@wprdc-connections/geo": ^0.0.49
     "@wprdc-types/connections": ^0.0.25
     "@wprdc-types/geo": ^0.0.18
     "@wprdc-types/geography-picker": ^0.0.18
@@ -10935,7 +10913,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wprdc-widgets/topic-view@^0.0.59, @wprdc-widgets/topic-view@workspace:packages/@wprdc-widgets/topic-view":
+"@wprdc-widgets/topic-view@^0.0.61, @wprdc-widgets/topic-view@workspace:packages/@wprdc-widgets/topic-view":
   version: 0.0.0-use.local
   resolution: "@wprdc-widgets/topic-view@workspace:packages/@wprdc-widgets/topic-view"
   dependencies:
@@ -10949,16 +10927,16 @@ __metadata:
     "@wprdc-components/divider": ^0.0.17
     "@wprdc-components/error-message": ^0.0.17
     "@wprdc-components/loading-message": ^0.0.17
-    "@wprdc-components/provider": ^0.0.19
-    "@wprdc-connections/profiles": ^0.0.40
+    "@wprdc-components/provider": ^0.0.21
+    "@wprdc-connections/profiles": ^0.0.41
     "@wprdc-types/connections": ^0.0.25
     "@wprdc-types/data-viz": ^0.0.18
     "@wprdc-types/profiles": ^0.0.27
     "@wprdc-types/shared": ^0.0.16
     "@wprdc-types/topic-view": ^0.0.26
     "@wprdc-types/viz": ^0.0.27
-    "@wprdc-widgets/geography-picker": ^0.0.47
-    "@wprdc-widgets/viz": ^0.0.16
+    "@wprdc-widgets/geography-picker": ^0.0.49
+    "@wprdc-widgets/viz": ^0.0.18
     autoprefixer: ^10.4.8
     classnames: ^2.3.1
     husky: ^8.0.1
@@ -10981,7 +10959,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@wprdc-widgets/viz@^0.0.16, @wprdc-widgets/viz@workspace:^, @wprdc-widgets/viz@workspace:packages/@wprdc-widgets/viz":
+"@wprdc-widgets/viz@^0.0.18, @wprdc-widgets/viz@workspace:^, @wprdc-widgets/viz@workspace:packages/@wprdc-widgets/viz":
   version: 0.0.0-use.local
   resolution: "@wprdc-widgets/viz@workspace:packages/@wprdc-widgets/viz"
   dependencies:
@@ -10992,15 +10970,15 @@ __metadata:
     "@wprdc-components/checkbox-group": ^0.0.19
     "@wprdc-components/error-message": ^0.0.17
     "@wprdc-components/loading-message": ^0.0.17
-    "@wprdc-components/provider": ^0.0.19
+    "@wprdc-components/provider": ^0.0.21
     "@wprdc-components/tooltip": ^0.0.22
-    "@wprdc-connections/profiles": ^0.0.40
+    "@wprdc-connections/profiles": ^0.0.41
     "@wprdc-types/profiles": ^0.0.27
     "@wprdc-types/viz": ^0.0.27
-    "@wprdc-viz/map": ^0.0.13
+    "@wprdc-viz/map": ^0.0.15
     "@wprdc-viz/simple": ^0.0.11
     "@wprdc-viz/table": ^0.0.28
-    "@wprdc-viz/vega": ^0.0.14
+    "@wprdc-viz/vega": ^0.0.16
     autoprefixer: ^10.4.8
     classnames: ^2.3.1
     husky: ^8.0.1
@@ -17240,7 +17218,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gl-matrix@npm:^3.2.0, gl-matrix@npm:^3.4.3":
+"gl-matrix@npm:^3.4.3":
   version: 3.4.3
   resolution: "gl-matrix@npm:3.4.3"
   checksum: c47830ba727f3d0fab635c48135af96aef66274079a3e0afd6f68b68c98eae9fc1bcfdc7312fe2301e4fd22dd24c5e0f1b5d025960a208e50d07101ed8d940f9
@@ -17517,9 +17495,9 @@ __metadata:
     "@types/node": 18.7.14
     "@types/react": 18.0.18
     "@types/react-dom": 18.0.6
-    "@wprdc-components/map": ^0.0.33
-    "@wprdc-components/provider": ^0.0.19
-    "@wprdc-connections/maps": ^0.0.2
+    "@wprdc-components/map": ^0.0.35
+    "@wprdc-components/provider": ^0.0.21
+    "@wprdc-connections/maps": ^0.0.4
     autoprefixer: ^10.4.8
     eslint: 8.23.0
     eslint-config-next: 12.2.5
@@ -23714,16 +23692,16 @@ __metadata:
     "@wprdc-components/divider": ^0.0.17
     "@wprdc-components/list-box": ^0.0.22
     "@wprdc-components/loading-message": ^0.0.17
-    "@wprdc-components/map": ^0.0.33
-    "@wprdc-components/provider": ^0.0.19
+    "@wprdc-components/map": ^0.0.35
+    "@wprdc-components/provider": ^0.0.21
     "@wprdc-components/search-box": ^0.0.22
     "@wprdc-components/select": ^0.0.24
     "@wprdc-components/tabs": ^0.0.26
     "@wprdc-components/util": ^0.0.15
     "@wprdc-connections/api": ^0.0.23
-    "@wprdc-connections/geo": ^0.0.47
-    "@wprdc-connections/housecat": ^0.0.45
-    "@wprdc-connections/profiles": ^0.0.40
+    "@wprdc-connections/geo": ^0.0.49
+    "@wprdc-connections/housecat": ^0.0.47
+    "@wprdc-connections/profiles": ^0.0.41
     "@wprdc-connections/util": ^0.0.38
     "@wprdc-connections/viz": ^0.0.33
     "@wprdc-types/connections": ^0.0.25
@@ -23738,8 +23716,8 @@ __metadata:
     "@wprdc-types/viz": ^0.0.27
     "@wprdc-widgets/ah-project-view": ^0.0.33
     "@wprdc-widgets/data-viz": ^0.0.33
-    "@wprdc-widgets/geography-picker": ^0.0.47
-    "@wprdc-widgets/topic-view": ^0.0.59
+    "@wprdc-widgets/geography-picker": ^0.0.49
+    "@wprdc-widgets/topic-view": ^0.0.61
     autoprefixer: ^10.4.8
     classnames: ^2.3.1
     eslint: 8.23.0

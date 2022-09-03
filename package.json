@@ -7,7 +7,7 @@
   ],
   "scripts": {
     "bootstrap": "lerna clean -y && lerna bootstrap --hoist",
-    "publish": "lerna publish",
+    "publish": "lerna publish --ignore 'greenprint'",
     "link": "lerna link",
     "pretest": "eslint packages",
     "test": "jest",

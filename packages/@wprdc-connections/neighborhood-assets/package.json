@@ -78,7 +78,6 @@
     "typescript": "^4.8.2"
   },
   "dependencies": {
-    "@types/react-map-gl": "^6.1.3",
     "@wprdc-components/checkbox-group": "^0.0.19",
     "@wprdc-components/map": "^0.0.35",
     "@wprdc-components/util": "^0.0.15",
