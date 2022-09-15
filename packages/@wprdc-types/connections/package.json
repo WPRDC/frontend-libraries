@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-types/connections",
-  "version": "0.0.26",
+  "version": "0.0.27",
   "description": "Collection of TypeScript/JS libraries for use in/with WPRDC projects.",
   "keywords": [],
   "license": "AGPL-3.0-or-later",
@@ -79,7 +79,7 @@
     "@types/mapbox-gl": "^2.7.5",
     "@types/react": "^18.0.18",
     "@wprdc-types/geo": "^0.0.18",
-    "@wprdc-types/housecat": "^0.0.26",
+    "@wprdc-types/housecat": "^0.0.27",
     "@wprdc-types/map": "^0.0.19",
     "@wprdc-types/neighborhood-assets": "^0.0.16",
     "@wprdc-types/profiles": "^0.0.27",
