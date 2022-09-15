@@ -44,7 +44,6 @@ export function useHousingProjectMap(filterParams?: Record<string, any>) {
   );
 }
 
-
 export function useAccount(email: string): UseQueryResult<UserProfile> {
   const { housecatHost } = useProvider();
   const api = new HousecatAPI(housecatHost || DEFAULT_HOST);

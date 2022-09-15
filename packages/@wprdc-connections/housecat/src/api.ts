@@ -9,11 +9,10 @@ import { getCookie } from '@wprdc-connections/util';
 import {DEFAULT_HOST} from './settings'
 
 export enum Endpoint {
-  PHProject = 'project',
-  PHProjectMap = 'vector-map',
-  Watchlist = 'watchlist',
+  PHProject = 'data/project',
+  PHProjectMap = 'data/vector-map',
+  Watchlist = 'data/watchlist',
   Profile = 'accounts/profile',
-
 }
 
 const headers = {
