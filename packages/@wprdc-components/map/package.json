@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-components/map",
-  "version": "0.0.36",
+  "version": "0.0.37",
   "description": "",
   "keywords": [],
   "license": "AGPL-3.0-or-later",
@@ -80,7 +80,7 @@
     "@types/geojson": "^7946.0.10",
     "@types/mapbox-gl": "^2.7.5",
     "@wprdc-components/checkbox-group": "^0.0.19",
-    "@wprdc-components/provider": "^0.0.22",
+    "@wprdc-components/provider": "^0.0.23",
     "@wprdc-types/connections": "^0.0.25",
     "@wprdc-types/geo": "^0.0.18",
     "@wprdc-types/map": "^0.0.19",
