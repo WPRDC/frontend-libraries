@@ -10,7 +10,7 @@ export enum Endpoint {
   GeogTypes = 'geo/geog-types',
 }
 
-const api = createAPI<Endpoint>(HOST);
+const api = createAPI(HOST);
 
 export function requestGeoLayers(): Promise<GeogLevel[]> {
   return api.callAndProcessEndpoint<GeogLevel[]>(

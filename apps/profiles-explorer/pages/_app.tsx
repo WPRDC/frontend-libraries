@@ -6,6 +6,7 @@ import { AppProps } from 'next/app';
 import { NextPage } from 'next';
 import { ReactElement, ReactNode } from 'react';
 import { Provider } from '@wprdc-components/provider';
+import { QueryClient } from 'react-query';
 
 type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode;
@@ -14,6 +15,8 @@ type NextPageWithLayout = NextPage & {
 type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout;
 };
+
+const queryClient = new QueryClient();
 
 const MAPBOX_KEY =
   'pk.eyJ1Ijoic3RldmVuZHNheWxvciIsImEiOiJja295ZmxndGEwbGxvMm5xdTc3M2MwZ2xkIn0' +
@@ -24,7 +27,7 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   const getLayout = Component.getLayout ?? (page => <Layout>{page}</Layout>);
 
   return (
-    <Provider usingSSR mapboxAPIToken={MAPBOX_KEY}>
+    <Provider usingSSR mapboxAPIToken={MAPBOX_KEY} queryClient={queryClient}>
       {getLayout(<Component {...pageProps} />)}
     </Provider>
   );

@@ -25,4 +25,6 @@ export interface ProviderState {
 export interface ProviderContext extends ProviderState {
   dispatch: Dispatch<ProviderAction>;
   setGeog: (geog?: Geog) => void;
+  housecatHost?: string
+  profilesHost?: string
 }

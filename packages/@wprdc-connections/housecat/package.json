@@ -54,8 +54,7 @@
     "analyze": "size-limit --why"
   },
   "peerDependencies": {
-    "react": ">=18",
-    "react-query": "^3.39.2"
+    "react": ">=18"
   },
   "devDependencies": {
     "@rollup/plugin-replace": "^4.0.0",
@@ -69,6 +68,7 @@
     "postcss-loader": "^7.0.1",
     "react": "18.2.0",
     "react-dom": "^18.2.0",
+    "react-query": "^3.39.2",
     "rollup-plugin-postcss": "^4.0.2",
     "size-limit": "^8.0.1",
     "tailwindcss": "^3.1.8",
@@ -79,6 +79,7 @@
   "dependencies": {
     "@wprdc-components/list-box": "^0.0.22",
     "@wprdc-components/map": "^0.0.35",
+    "@wprdc-components/provider": "^0.0.21",
     "@wprdc-components/util": "^0.0.15",
     "@wprdc-connections/api": "^0.0.23",
     "@wprdc-connections/util": "^0.0.40",
@@ -90,7 +91,8 @@
     "@wprdc-types/map": "^0.0.19",
     "@wprdc-types/shared": "^0.0.16",
     "@wprdc-types/viz": "^0.0.27",
-    "react-icons": "^4.4.0"
+    "react-icons": "^4.4.0",
+    "react-query": "^3.39.2"
   },
   "gitHead": "849b0d5b0b9e58ca58f95b282fe4eaa9806e968b"
 }

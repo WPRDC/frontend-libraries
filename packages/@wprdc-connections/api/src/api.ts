@@ -6,7 +6,7 @@
  * create product-specific functional APIs.
  *
  */
-import { APIOptions, Endpoint, Method } from '@wprdc-types/api';
+import { APIOptions, Method , API as IAPI} from '@wprdc-types/api';
 
 /**
  * Default headers to apply to all requests
@@ -15,7 +15,7 @@ import { APIOptions, Endpoint, Method } from '@wprdc-types/api';
  */
 const baseHeaders = {};
 
-class API<E extends Endpoint> {
+class API implements IAPI{
   host: string;
 
   constructor(host: string) {
@@ -25,7 +25,7 @@ class API<E extends Endpoint> {
   /**
    * Base api call function.
    *
-   * @param {Endpoint} endpoint - target for request
+   * @param {string} endpoint - target for request
    * @param {Method} method - HTTP method to use
    * @param {Object} [options] - optional parameters
    * @param {string | number} [options.id] - id of resource at endpoint to be retrieved
@@ -35,7 +35,7 @@ class API<E extends Endpoint> {
    * @param {Object} [options.fetchInit] - catchall for other fetch init options
    * @returns {Promise<Response>}
    */
-  callEndpoint<T>(endpoint: E, method: Method, options?: APIOptions<T>) {
+  callEndpoint<T>(endpoint: string, method: Method, options?: APIOptions<T>) {
     const { id, params, headers, fetchInit, credentials } = options || {
       id: undefined,
       params: undefined,
@@ -73,7 +73,7 @@ class API<E extends Endpoint> {
    * @returns {Object | null}
    */
   async callAndProcessEndpoint<T = any>(
-    endpoint: E,
+    endpoint: string,
     method: Method,
     options?: APIOptions<T>,
   ): Promise<T> {
@@ -90,7 +90,7 @@ class API<E extends Endpoint> {
 
   /** Hack for simple lists */
   async callAndProcessListEndpoint<T = any>(
-    endpoint: E,
+    endpoint: string,
     method: Method,
     options?: APIOptions<T>,
   ): Promise<T[]> {
@@ -122,8 +122,8 @@ export function serializeParams(params?: object) {
     .join('&')}`;
 }
 
-export function createAPI<E extends Endpoint>(host: string): API<E> {
-  return new API<E>(host);
+export function createAPI(host: string): API {
+  return new API(host);
 }
 
 function stripUndefineds(params?: object) {

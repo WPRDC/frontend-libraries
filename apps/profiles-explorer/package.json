@@ -47,10 +47,10 @@
     "@wprdc-types/select": "^0.0.20",
     "@wprdc-types/shared": "^0.0.16",
     "@wprdc-types/viz": "^0.0.27",
-    "@wprdc-widgets/ah-project-view": "^0.0.33",
     "@wprdc-widgets/data-viz": "^0.0.33",
     "@wprdc-widgets/geography-picker": "^0.0.51",
     "@wprdc-widgets/topic-view": "^0.0.63",
+    "@wprdc-widgets/viz": "^0.0.18",
     "autoprefixer": "^10.4.8",
     "classnames": "^2.3.1",
     "formik": "^2.2.9",
@@ -60,6 +60,7 @@
     "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
     "react-map-gl": "^7.0.19",
+    "react-query": "^3.39.2",
     "tailwindcss": "^3.1.8"
   }
 }

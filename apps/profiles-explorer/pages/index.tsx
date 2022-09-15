@@ -7,8 +7,8 @@ export default function Home() {
     <div className={styles.wrapper}>
       <Head>
         <title>WPRDC Indicators - Home</title>
-        <meta name="description" content="New WPRDC App" />
-        <link rel="icon" href="/favicon.ico" />
+        <meta name='description' content='New WPRDC App' />
+        <link rel='icon' href='/favicon.ico' />
       </Head>
       <main className={styles.main}>
         <div className={styles.hero}>
@@ -30,7 +30,7 @@ export default function Home() {
         <div className={styles.menu}>
           <h2 className={styles.sectionTitle}>Apps</h2>
           <div className={styles.appsMenu}>
-            <Link href="/explore">
+            <Link href='/explore'>
               <div className={styles.bigButton}>
                 <div className={styles.buttonTitle}>Explore all the Data</div>
                 <p className={styles.buttonText}>
@@ -39,7 +39,7 @@ export default function Home() {
                 </p>
               </div>
             </Link>
-            <Link href="/reach">
+            <Link href='/reach'>
               <div className={styles.bigButton}>
                 <div className={styles.buttonTitle}>
                   Community Data Explorer
@@ -49,7 +49,7 @@ export default function Home() {
                 </p>
               </div>
             </Link>
-            <Link href="/housing">
+            <Link href='/housing'>
               <div className={styles.bigButton}>
                 <div className={styles.buttonTitle}>Housing Indicators</div>
                 <p className={styles.buttonText}>
@@ -62,7 +62,7 @@ export default function Home() {
           <h2 className={styles.sectionTitle}>Tools</h2>
           <div className={styles.toolsMenu}>
             <a
-              href="https://api.profiles.wprdc.org"
+              href='https://api.profiles.wprdc.org'
               className={styles.toolButton}
             >
               <div>
@@ -73,7 +73,7 @@ export default function Home() {
               </div>
             </a>
             <a
-              href="https://api.profiles.wprdc.org/tiles/index.json"
+              href='https://api.profiles.wprdc.org/tiles/index.json'
               className={styles.toolButton}
             >
               <div>
@@ -84,7 +84,7 @@ export default function Home() {
               </div>
             </a>
             <a
-              href="https://profiles.wprdc.org/components/"
+              href='https://profiles.wprdc.org/components/'
               className={styles.toolButton}
             >
               <div>

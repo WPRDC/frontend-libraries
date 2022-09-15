@@ -10,8 +10,6 @@ export enum Method {
   DELETE = 'DELETE',
 }
 
-export type Endpoint = string;
-
 export interface APIOptions<T> {
   id?: string | number | null;
   params?: Record<string, string | number | boolean | null | undefined>;
@@ -22,3 +20,24 @@ export interface APIOptions<T> {
   /** function that throws error on invalid data response */
   validator?: (data: T) => void;
 }
+
+
+export interface API {
+  host: string;
+
+  callEndpoint<T>(endpoint: string, method: Method, options?: APIOptions<T>): Promise<Response>;
+
+  callAndProcessEndpoint<T = any>(
+    endpoint: string,
+    method: Method,
+    options?: APIOptions<T>,
+  ): Promise<T>;
+
+  callAndProcessListEndpoint<T = any>(
+    endpoint: string,
+    method: Method,
+    options?: APIOptions<T>,
+  ): Promise<T[]>;
+}
+
+

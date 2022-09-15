@@ -20,7 +20,7 @@ enum Endpoint {
   Indicator = 'indicator',
 }
 
-const api = createAPI<Endpoint>(HOST);
+const api = createAPI(HOST);
 
 function requestTaxonomy(
   slug?: string,

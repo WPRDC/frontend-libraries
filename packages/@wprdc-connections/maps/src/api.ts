@@ -16,7 +16,7 @@ enum Endpoint {
   MapLayers = 'maps/map-layers',
 }
 
-const api = createAPI<Endpoint>(HOST);
+const api = createAPI(HOST);
 
 function requestMapLayers(
   params?: Record<string, string>,
