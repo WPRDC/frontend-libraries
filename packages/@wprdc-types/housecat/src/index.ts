@@ -465,6 +465,7 @@ export interface PHFAStats {
 
 
 export interface UserProfile {
+  email: string;
   category: string
   affiliation: string
   intended_use: string
