@@ -1,7 +1,7 @@
 {
   "name": "profiles-explorer",
   "private": true,
-  "version": "0.0.37",
+  "version": "0.0.38",
   "scripts": {
     "dev": "next dev --port 3030",
     "build": "next build",
@@ -33,7 +33,7 @@
     "@wprdc-components/util": "^0.0.15",
     "@wprdc-connections/api": "^0.0.24",
     "@wprdc-connections/geo": "^0.0.55",
-    "@wprdc-connections/housecat": "^0.0.55",
+    "@wprdc-connections/housecat": "^0.0.56",
     "@wprdc-connections/profiles": "^0.0.42",
     "@wprdc-connections/util": "^0.0.42",
     "@wprdc-connections/viz": "^0.0.33",
