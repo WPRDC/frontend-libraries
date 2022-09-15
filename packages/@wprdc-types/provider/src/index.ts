@@ -14,17 +14,18 @@ export interface ProviderProps extends ProviderState {
   reducer?: Reducer<ProviderState, ProviderAction>;
   children?: React.ReactNode;
   queryClient?: QueryClient;
+
 }
 
 export interface ProviderState {
   colorScheme?: ColorScheme;
   mapboxAPIToken?: string;
   geog?: Geog;
+  housecatHost?: string
+  profilesHost?: string
 }
 
 export interface ProviderContext extends ProviderState {
   dispatch: Dispatch<ProviderAction>;
   setGeog: (geog?: Geog) => void;
-  housecatHost?: string
-  profilesHost?: string
 }
