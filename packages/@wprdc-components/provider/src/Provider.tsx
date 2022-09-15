@@ -35,14 +35,16 @@ const defaultReducer: Reducer<ProviderState, ProviderAction> = (
 
 export const Provider: React.FC<ProviderProps> = props => {
   const {
-    mapboxAPIToken,
     reducer = defaultReducer,
     usingSSR,
     children,
     queryClient,
+    mapboxAPIToken,
+    housecatHost,
+    profilesHost,
   } = props;
 
-  const [state, dispatch] = useReducer(reducer, { mapboxAPIToken });
+  const [state, dispatch] = useReducer(reducer, { mapboxAPIToken, housecatHost, profilesHost });
 
   function setGeog(geog?: Geog) {
     dispatch({
