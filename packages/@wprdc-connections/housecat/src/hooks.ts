@@ -45,7 +45,7 @@ export function useHousingProjectMap(filterParams?: Record<string, any>) {
 }
 
 
-export function useAccount(email: string) {
+export function useAccount(email: string): UseQueryResult<UserProfile> {
   const { housecatHost } = useProvider();
   const api = new HousecatAPI(housecatHost || DEFAULT_HOST);
 
@@ -54,7 +54,7 @@ export function useAccount(email: string) {
   );
 }
 
-export function useAccountList(filterParams?: Record<string, any>) {
+export function useAccountList(filterParams?: Record<string, any>): UseQueryResult<UserProfile[]> {
   const { housecatHost } = useProvider();
   const api = new HousecatAPI(housecatHost || DEFAULT_HOST);
 
