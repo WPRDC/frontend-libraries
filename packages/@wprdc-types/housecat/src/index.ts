@@ -462,3 +462,16 @@ export interface PHFAStats {
   unitsWProjectBasedSection8Certificate?: number | null;
   unitsWUncategorizedSubsidy?: number | null;
 }
+
+
+export interface UserProfile {
+  category: string
+  affiliation: string
+  intended_use: string
+  expected_account_tenure: string
+  conflicts: string
+  expiration_date: string
+  agreed_to_terms: string
+  approved: string
+}
+

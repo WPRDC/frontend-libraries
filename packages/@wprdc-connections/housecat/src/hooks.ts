@@ -1,4 +1,4 @@
-import { ProjectIndex, ProjectIndexDetails, Watchlist } from '@wprdc-types/housecat';
+import { ProjectIndex, ProjectIndexDetails, Watchlist, UserProfile } from '@wprdc-types/housecat';
 
 import { HousecatAPI } from './api';
 
@@ -41,5 +41,24 @@ export function useHousingProjectMap(filterParams?: Record<string, any>) {
 
   return useQuery<APIMapBoxResponse>(['housing map', filterParams], () =>
     api.requestPublicHousingProjectMap(filterParams),
+  );
+}
+
+
+export function useAccount(email: string) {
+  const { housecatHost } = useProvider();
+  const api = new HousecatAPI(housecatHost || DEFAULT_HOST);
+
+  return useQuery<UserProfile>(['user', email], () =>
+    api.requestAccount(email),
+  );
+}
+
+export function useAccountList(filterParams?: Record<string, any>) {
+  const { housecatHost } = useProvider();
+  const api = new HousecatAPI(housecatHost || DEFAULT_HOST);
+
+  return useQuery<UserProfile[]>(['users', filterParams], () =>
+    api.requestAccounts(filterParams),
   );
 }

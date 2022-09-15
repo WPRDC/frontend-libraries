@@ -2,7 +2,7 @@ import { createAPI } from '@wprdc-connections/api';
 
 import { Method, API } from '@wprdc-types/api';
 import { APIMapBoxResponse } from '@wprdc-types/connections';
-import { ProjectIndexDetails, Watchlist } from '@wprdc-types/housecat';
+import { ProjectIndexDetails, UserProfile, Watchlist } from '@wprdc-types/housecat';
 import { getCookie } from '@wprdc-connections/util';
 
 
@@ -12,6 +12,8 @@ export enum Endpoint {
   PHProject = 'project',
   PHProjectMap = 'vector-map',
   Watchlist = 'watchlist',
+  Profile = 'accounts/profile',
+
 }
 
 const headers = {
@@ -74,5 +76,21 @@ export class HousecatAPI {
       headers,
       credentials: 'include',
     });
+  }
+
+  requestAccount(email: string) {
+    return this.api.callAndProcessEndpoint<UserProfile>(Endpoint.Profile, Method.GET, {
+      id: email,
+      headers,
+      credentials: 'include'
+    })
+  }
+
+  requestAccounts(params?: Record<string, any>) {
+    return this.api.callAndProcessListEndpoint<UserProfile>(Endpoint.Profile, Method.GET, {
+      params,
+      headers,
+      credentials: 'include'
+    })
   }
 }
