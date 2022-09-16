@@ -9,6 +9,9 @@ import { ProjectIndexMapProperties } from '@wprdc-types/housecat';
 
 import styles from './PopupContent.module.css';
 import { CategoricalLegendItemProps } from '@wprdc-types/map';
+import { HousecatAPI } from './api';
+import { DEFAULT_HOST } from './settings';
+import { useProvider } from '@wprdc-components/provider';
 
 interface AffordableHousingLayer extends Resource {
 }
@@ -32,7 +35,17 @@ export const affordableHousingProjectMapConnection: MapPluginConnection<Affordab
     // retrieved from api in a hook
     return undefined;
   },
-  getLegendItems() {
+  getLegendItems(_, __, setLegendItems, options) {
+    const { housecatHost } = useProvider();
+    const api = new HousecatAPI(housecatHost || DEFAULT_HOST);
+    const { filterParams } = options || {};
+
+    api.requestPublicHousingProjectMap(filterParams).then(
+      r => {
+        if (r.extras) setLegendItems(r.extras.legendItems);
+      },
+      err => console.error(err),
+    );
   },
   getInteractiveLayerIDs() {
     return ['all-public-housing-projects/marker'];
