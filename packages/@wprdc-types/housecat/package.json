@@ -1,6 +1,6 @@
 {
   "name": "@wprdc-types/housecat",
-  "version": "0.0.27",
+  "version": "0.0.28",
   "description": "Collection of TypeScript/JS libraries for use in/with WPRDC projects.",
   "keywords": [],
   "license": "AGPL-3.0-or-later",
