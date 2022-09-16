@@ -11,7 +11,6 @@ import styles from './PopupContent.module.css';
 import { CategoricalLegendItemProps } from '@wprdc-types/map';
 import { HousecatAPI } from './api';
 import { DEFAULT_HOST } from './settings';
-import { useProvider } from '@wprdc-components/provider';
 
 interface AffordableHousingLayer extends Resource {
 }
@@ -36,9 +35,8 @@ export const affordableHousingProjectMapConnection: MapPluginConnection<Affordab
     return undefined;
   },
   getLegendItems(_, __, setLegendItems, options) {
-    const { housecatHost } = useProvider();
-    const api = new HousecatAPI(housecatHost || DEFAULT_HOST);
-    const { filterParams } = options || {};
+    const { filterParams, apiHost } = options || {};
+    const api = new HousecatAPI(apiHost || DEFAULT_HOST);
 
     api.requestPublicHousingProjectMap(filterParams).then(
       r => {
