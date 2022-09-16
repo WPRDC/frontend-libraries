@@ -1,6 +1,5 @@
 .container {
     @apply inline-flex flex-col relative w-full;
-    @apply bg-white;
 }
 
 .label {
@@ -10,7 +9,7 @@
 
 .button {
     @apply relative inline-flex flex-row  w-full;
-    @apply bg-background border border-black outline-none;
+    @apply bg-white border border-black outline-none;
     @apply py-1 pl-2 pr-1;
     @apply text-sm;
     @apply hover:border-focused-600;
