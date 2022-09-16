@@ -20,6 +20,7 @@ export function usePublicHousingProject(
 
   return useQuery<ProjectIndexDetails>(['projectDetails', argID], () =>
     api.requestAffordableHousingProject(argID),
+    {enabled: !!projectID}
   );
 }
 
@@ -29,6 +30,8 @@ export function useWatchlist(slug?: string) {
 
   return useQuery<Watchlist>(['projectWatchlist', slug], () =>
     api.requestWatchlist(slug),
+    {enabled: !!slug}
+
   );
 }
 
@@ -44,12 +47,13 @@ export function useHousingProjectMap(filterParams?: Record<string, any>) {
   );
 }
 
-export function useAccount(email: string): UseQueryResult<UserProfile> {
+export function useAccount(email?: string): UseQueryResult<UserProfile> {
   const { housecatHost } = useProvider();
   const api = new HousecatAPI(housecatHost || DEFAULT_HOST);
 
   return useQuery<UserProfile>(['user', email], () =>
     api.requestAccount(email),
+    {enabled: !!email}
   );
 }
 

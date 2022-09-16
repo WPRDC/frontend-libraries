@@ -77,7 +77,7 @@ export class HousecatAPI {
     });
   }
 
-  requestAccount(email: string) {
+  requestAccount(email?: string) {
     return this.api.callAndProcessEndpoint<UserProfile>(Endpoint.Profile, Method.GET, {
       id: email,
       headers,
