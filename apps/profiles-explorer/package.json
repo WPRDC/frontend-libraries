@@ -39,7 +39,6 @@
     "@wprdc-types/connections": "^0.0.28",
     "@wprdc-types/data-viz": "^0.0.18",
     "@wprdc-types/geo": "^0.0.18",
-    "@wprdc-types/housecat": "^0.0.28",
     "@wprdc-types/list-box": "^0.0.18",
     "@wprdc-types/map": "^0.0.19",
     "@wprdc-types/profiles": "^0.0.27",
