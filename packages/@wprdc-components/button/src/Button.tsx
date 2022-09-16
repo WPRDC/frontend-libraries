@@ -25,7 +25,7 @@ export function Button(props: ButtonProps) {
     <button
       {...buttonProps}
       ref={ref}
-      className={
+      className={classNames(
         color === 'none'
           ? ''
           : classNames([
@@ -35,7 +35,9 @@ export function Button(props: ButtonProps) {
               [styles.dense]: props.dense,
             },
             styles[color],
-          ])
+          ]),
+        props.className || ''
+      )
       }
     >
       {children}
