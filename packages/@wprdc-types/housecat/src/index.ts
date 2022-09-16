@@ -463,16 +463,21 @@ export interface PHFAStats {
   unitsWUncategorizedSubsidy?: number | null;
 }
 
-
-export interface UserProfile {
+export interface User {
+  username: string;
   email: string;
-  category: string
-  affiliation: string
-  intended_use: string
-  expected_account_tenure: string
-  conflicts: string
-  expiration_date: string
-  agreed_to_terms: string
-  approved: string
+  dateJoined: string;
 }
 
+export interface UserProfile {
+  id: number;
+  user: User;
+  category: string;
+  affiliation: string;
+  intended_use: string;
+  expected_account_tenure: string;
+  conflicts: string;
+  expiration_date: string;
+  agreed_to_terms: string;
+  approved: string;
+}
