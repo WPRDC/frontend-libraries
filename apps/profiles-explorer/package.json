@@ -1,7 +1,7 @@
 {
   "name": "profiles-explorer",
   "private": true,
-  "version": "0.0.44",
+  "version": "0.0.45",
   "scripts": {
     "dev": "next dev --port 3030",
     "build": "next build",
@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "@wprdc-components/breadcrumbs": "^0.0.19",
-    "@wprdc-components/button": "^0.0.19",
+    "@wprdc-components/button": "^0.0.20",
     "@wprdc-components/divider": "^0.0.17",
     "@wprdc-components/list-box": "^0.0.22",
     "@wprdc-components/loading-message": "^0.0.17",
@@ -47,8 +47,8 @@
     "@wprdc-types/viz": "^0.0.27",
     "@wprdc-widgets/data-viz": "^0.0.33",
     "@wprdc-widgets/geography-picker": "^0.0.57",
-    "@wprdc-widgets/topic-view": "^0.0.69",
-    "@wprdc-widgets/viz": "^0.0.23",
+    "@wprdc-widgets/topic-view": "^0.0.70",
+    "@wprdc-widgets/viz": "^0.0.24",
     "autoprefixer": "^10.4.8",
     "classnames": "^2.3.1",
     "formik": "^2.2.9",
