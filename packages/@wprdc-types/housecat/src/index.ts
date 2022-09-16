@@ -474,10 +474,10 @@ export interface UserProfile {
   user: User;
   category: string;
   affiliation: string;
-  intended_use: string;
-  expected_account_tenure: string;
+  intendedUse: string;
+  expectedAccountTenure: string;
   conflicts: string;
-  expiration_date: string;
-  agreed_to_terms: string;
+  expirationDate: string;
+  agreedToTerms: string;
   approved: string;
 }
