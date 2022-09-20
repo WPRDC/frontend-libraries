@@ -67,9 +67,11 @@ export function useAccountList(filterParams?: Record<string, any>): UseQueryResu
   );
 }
 
-export function useLoggedIn() {
+export function useLoggedIn(onError: () => void) {
   const { housecatHost } = useProvider();
   const api = new HousecatAPI(housecatHost || DEFAULT_HOST);
 
-  return useQuery<UserProfile>('logged-in', () => api.requestLoggedIn());
+  return useQuery<UserProfile>('logged-in', () => api.requestLoggedIn(), {
+    onError
+  });
 }
