@@ -7,6 +7,7 @@ import { APIMapBoxResponse } from '@wprdc-types/connections';
 import { useProvider } from '@wprdc-components/provider';
 import { DEFAULT_HOST } from './settings';
 
+const staleTime = 1000 * 60 * 5;
 
 export function usePublicHousingProject(
   projectID?: number | string | ProjectIndex,
@@ -20,7 +21,7 @@ export function usePublicHousingProject(
 
   return useQuery<ProjectIndexDetails>(['projectDetails', argID], () =>
       api.requestAffordableHousingProject(argID),
-    { enabled: !!projectID },
+    { enabled: !!projectID, staleTime },
   );
 }
 
@@ -30,7 +31,7 @@ export function useWatchlist(slug?: string) {
 
   return useQuery<Watchlist>(['projectWatchlist', slug], () =>
       api.requestWatchlist(slug),
-    { enabled: !!slug },
+    { enabled: !!slug, staleTime },
   );
 }
 
@@ -52,7 +53,7 @@ export function useAccount(email?: string): UseQueryResult<UserProfile> {
 
   return useQuery<UserProfile>(['user', email], () =>
       api.requestAccount(email),
-    { enabled: !!email },
+    { enabled: !!email, staleTime },
   );
 }
 
@@ -61,7 +62,8 @@ export function useAccountList(filterParams?: Record<string, any>): UseQueryResu
   const api = new HousecatAPI(housecatHost || DEFAULT_HOST);
 
   return useQuery<UserProfile[]>(['users', filterParams], () =>
-    api.requestAccounts(filterParams),
+      api.requestAccounts(filterParams),
+    { staleTime },
   );
 }
 
@@ -69,5 +71,7 @@ export function useLoggedIn() {
   const { housecatHost } = useProvider();
   const api = new HousecatAPI(housecatHost || DEFAULT_HOST);
 
-  return useQuery<UserProfile>('logged-in', () => api.requestLoggedIn());
+  return useQuery<UserProfile>('logged-in', () => api.requestLoggedIn(), {
+    staleTime
+  });
 }
