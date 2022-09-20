@@ -19,8 +19,8 @@ export function usePublicHousingProject(
   else argID = parseInt(projectID as string);
 
   return useQuery<ProjectIndexDetails>(['projectDetails', argID], () =>
-    api.requestAffordableHousingProject(argID),
-    {enabled: !!projectID}
+      api.requestAffordableHousingProject(argID),
+    { enabled: !!projectID },
   );
 }
 
@@ -29,9 +29,8 @@ export function useWatchlist(slug?: string) {
   const api = new HousecatAPI(housecatHost || DEFAULT_HOST);
 
   return useQuery<Watchlist>(['projectWatchlist', slug], () =>
-    api.requestWatchlist(slug),
-    {enabled: !!slug}
-
+      api.requestWatchlist(slug),
+    { enabled: !!slug },
   );
 }
 
@@ -52,8 +51,8 @@ export function useAccount(email?: string): UseQueryResult<UserProfile> {
   const api = new HousecatAPI(housecatHost || DEFAULT_HOST);
 
   return useQuery<UserProfile>(['user', email], () =>
-    api.requestAccount(email),
-    {enabled: !!email}
+      api.requestAccount(email),
+    { enabled: !!email },
   );
 }
 
@@ -64,4 +63,11 @@ export function useAccountList(filterParams?: Record<string, any>): UseQueryResu
   return useQuery<UserProfile[]>(['users', filterParams], () =>
     api.requestAccounts(filterParams),
   );
+}
+
+export function useLoggedIn() {
+  const { housecatHost } = useProvider();
+  const api = new HousecatAPI(housecatHost || DEFAULT_HOST);
+
+  return useQuery<UserProfile>('logged-in', () => api.requestLoggedIn());
 }

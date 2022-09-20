@@ -13,6 +13,7 @@ export enum Endpoint {
   PHProjectMap = 'data/vector-map',
   Watchlist = 'data/watchlist',
   Profile = 'accounts/profile',
+  CurrentUser = 'accounts/user',
 }
 
 const headers = {
@@ -88,6 +89,13 @@ export class HousecatAPI {
   requestAccounts(params?: Record<string, any>) {
     return this.api.callAndProcessListEndpoint<UserProfile>(Endpoint.Profile, Method.GET, {
       params,
+      headers,
+      credentials: 'include'
+    })
+  }
+
+  requestLoggedIn(){
+    return this.api.callAndProcessEndpoint<UserProfile>(Endpoint.CurrentUser, Method.GET, {
       headers,
       credentials: 'include'
     })
