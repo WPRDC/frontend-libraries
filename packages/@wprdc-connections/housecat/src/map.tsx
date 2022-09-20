@@ -75,6 +75,7 @@ export const affordableHousingProjectMapConnection: MapPluginConnection<Affordab
               ((item as CategoricalLegendItemProps).marker as string) || 'gray';
             return (
               <LegendItem
+                key={item.label}
                 variant='categorical'
                 marker={color}
                 label={item.label}

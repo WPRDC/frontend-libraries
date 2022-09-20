@@ -71,7 +71,5 @@ export function useLoggedIn() {
   const { housecatHost } = useProvider();
   const api = new HousecatAPI(housecatHost || DEFAULT_HOST);
 
-  return useQuery<UserProfile>('logged-in', () => api.requestLoggedIn(), {
-    staleTime
-  });
+  return useQuery<UserProfile>('logged-in', () => api.requestLoggedIn());
 }
