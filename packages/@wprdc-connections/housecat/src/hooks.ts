@@ -72,6 +72,7 @@ export function useLoggedIn(onError: () => void) {
   const api = new HousecatAPI(housecatHost || DEFAULT_HOST);
 
   return useQuery<UserProfile>('logged-in', () => api.requestLoggedIn(), {
-    onError
+    onError,
+    retry: false,
   });
 }
