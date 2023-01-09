@@ -20,7 +20,7 @@ export const affordableHousingProjectConnection: ListConnection<ProjectIndex> =
     async load({ signal, cursor, filterText }) {
       const res = await fetch(
         cursor ||
-        `https://api.profiles.wprdc.org/public-housing/project/?search=${filterText}&limit=10`,
+        `https://housecatpgh.org/api/data/project/?search=${filterText}&limit=10`,
         { signal, headers, credentials: 'include' },
       );
       const json = await res.json();

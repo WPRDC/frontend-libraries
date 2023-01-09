@@ -18,16 +18,16 @@ type AppPropsWithLayout = AppProps & {
 
 const queryClient = new QueryClient();
 
-const MAPBOX_KEY =
-  'pk.eyJ1Ijoic3RldmVuZHNheWxvciIsImEiOiJja295ZmxndGEwbGxvMm5xdTc3M2MwZ2xkIn0' +
-  '.WDBLMZYfh-ZGFjmwO82xvw';
+const API_HOST = process.env.NEXT_PUBLIC_API_HOST || '127.0.0.1:8000'
+const MAPBOX_KEY = process.env.NEXT_PUBLIC_MAPBOX_KEY || ''
+
 
 function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   // default layout is components/Layout
   const getLayout = Component.getLayout ?? (page => <Layout>{page}</Layout>);
 
   return (
-    <Provider usingSSR mapboxAPIToken={MAPBOX_KEY} queryClient={queryClient}>
+    <Provider usingSSR mapboxAPIToken={MAPBOX_KEY} queryClient={queryClient} profilesHost={API_HOST}>
       {getLayout(<Component {...pageProps} />)}
     </Provider>
   );

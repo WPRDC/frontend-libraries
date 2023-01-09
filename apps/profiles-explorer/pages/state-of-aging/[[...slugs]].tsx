@@ -24,7 +24,7 @@ import { BreadcrumbLink } from '../../components/BreadcrumbLink';
 const TAXONOMY_SLUG = 'state-of-aging';
 const BASE_PATH = '/state-of-aging';
 
-const ReachPage: NextPage = () => {
+const SoAPage: NextPage = () => {
 
   const [geogBrief, setGeogBrief] = React.useState<GeogBrief>(defaultGeogBrief);
   const [pathSlugs, setPathSlugs] = React.useState<string[]>([]);
@@ -97,29 +97,27 @@ const ReachPage: NextPage = () => {
         <div className={styles.main}>
           <div className={styles.intro}>
             <div className={styles.title}>
-              <a href={BASE_PATH}>Just a Number</a>
-            </div>
-            <div className={styles.subtitle}>
-              Community topics related to the state of aging
+              <a href={BASE_PATH}>Age-Friendly Community Index</a>
             </div>
             <div className={styles.description}>
-              <p>
-                We&apos;ll put a description of this tool here as well as one for the
-                survey itself. We&apos;ll flood this with links to UCSUR/Pitt sites,
-                the report on the state of aging, the data released, and whatever
-                else we&apos;ll need.
-              </p>
-              <p>
-                Another paragraph of description. Ubi est audax vortex? Pius,
-                neuter domuss solite imperium de alter, rusticus byssus. gluten de
-                talis equiso, resuscitabo turpis! fortis, teres vitas cito fallere
-                de fatalis, brevis nix. speciess sunt mortems de velox fluctui.
-              </p>
-              <p>
-                <strong>
-                  Click on the map to see topics for other tracts.{' '}
-                </strong>
-              </p>
+              <p>Census Tracts are small statistical subdivisions of a county defined by the U.S. Census and average
+                about 4,000 inhabitants. These areas are commonly used as a surrogate for the neighborhood environment
+                in studies of health and environmental exposure. While they provide a relatively precise level of
+                geographic detail, we realize that most people do not know what Census Tract they reside in. Because
+                each Census Tract can be associated with a specific neighborhood or municipality, all indicators include
+                both Census Tract and the associated neighborhood/municipality.</p>
+              <p>The data are organized using a framework of five Domains including 1) Physical Environment; 2)
+                Transport; 3) Housing; 4) Social Engagement; and 5) Community Services. Each Domain is first
+                characterized using a percentile ranking of spatial indicator variables. Individual indicator rankings
+                are summed to get Domain rankings which are then merged to generate an overall Age-Friendly Community
+                Index. The measures are designed to allow direct comparison of census tracts for each individual AFC
+                indicator, Domain, and Age-Friendly Community Index across the county. This enables the user to assess
+                not just overall age-friendliness but also the relative contribution of each indicator and Domain to the
+                AFC Index, identifying areas of strength and weakness regardless of AFC status.</p>
+              <p>We hope that users of the data, including policy makers, service providers, community members and other
+                stakeholders will utilize these rankings to focus on policy, services, and other interventions designed
+                to improve not only the age-friendliness of their communities, but the quality of life of all
+                residents.</p>
             </div>
 
             <div className={styles.geoDetails}>
@@ -152,7 +150,6 @@ const ReachPage: NextPage = () => {
           </div>
         </div>
 
-
         {!taxonomyIsLoading && !!taxonomy && (
           <div className={styles.dashboard}>
             {!!taxonomyIsLoading && (
@@ -177,6 +174,7 @@ const ReachPage: NextPage = () => {
             )}
           </div>
         )}
+
         <footer className={styles.footer}></footer>
       </div>
     </div>
@@ -243,4 +241,4 @@ function GeogOverlapListing({ geog }: GeogOverlapListingProps) {
 
 const selectedGeogLevel: Set<React.Key> = new Set([GeographyType.Tract]);
 
-export default ReachPage;
+export default SoAPage;
