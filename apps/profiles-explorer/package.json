@@ -1,7 +1,7 @@
 {
   "name": "profiles-explorer",
   "private": true,
-  "version": "0.0.46",
+  "version": "0.0.47",
   "scripts": {
     "dev": "next dev --port 3030",
     "build": "next build",
